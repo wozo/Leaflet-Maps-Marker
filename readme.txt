@@ -162,6 +162,9 @@ This program is free software; you can redistribute it and/or modify it under th
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
+= v1.5 =
+added WMS support for KML files
+
 = v1.4.2 =
 fix for bug causing custom marker icons not to show up on certain hosts
 
@@ -191,6 +194,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
 = v1.5 - xx.02.2012 =
+* NEW: added WMS support for KML-files via <networklink> (Thanks Atif!)
 * BUGFIX: missing KML schema declaration causing KML file not to work with scribblemaps.com
 
 = v1.4.2 - 25.01.2012 =
