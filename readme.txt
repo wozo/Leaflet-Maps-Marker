@@ -163,7 +163,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v1.4.3 =
-added WMS support for KML files, bugfix for defect routing link attached to popuptext
+added WMS support for KML files, bugfix for defect routing link attached to popup-text
 
 = v1.4.2 =
 fix for bug causing custom marker icons not to show up on certain hosts
