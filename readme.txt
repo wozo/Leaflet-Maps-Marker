@@ -193,7 +193,7 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v1.4.3 - 29.02.2012 =
+= v1.4.3 - 29.01.2012 =
 * NEW: added WMS support for KML-files via <networklink>
 * BUGFIX: routing link attached to popup text did not work
 * BUGFIX: missing KML schema declaration causing KML file not to work with scribblemaps.com
