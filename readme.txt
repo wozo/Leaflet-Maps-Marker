@@ -162,6 +162,9 @@ This program is free software; you can redistribute it and/or modify it under th
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
+= v1.5 =
+add support for vector layers + add GeoRSS feed to head
+
 = v1.4.3 =
 added WMS support for KML files, bugfix for defect routing link attached to popup-text
 
@@ -193,6 +196,10 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v1.5 - xx.02.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v1.5)
+* NEW: included option to add GeoRSS feed for all markers to &lt;head&gt; to allow users subscribing to your markers easily
+
 = v1.4.3 - 29.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.4.3)
 * NEW: added WMS support for KML-files via networklink

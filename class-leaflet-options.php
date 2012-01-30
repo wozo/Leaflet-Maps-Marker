@@ -4673,6 +4673,18 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'misc'
 		);
+		$this->settings['misc_add_georss_to_head'] = array(
+			'version' => '1.5',
+			'section' => 'misc',
+			'title'   => __('Add GeoRSS feed to &lt;head&gt;','lmm'),
+			'desc'    => __('if enabled, a GeoRSS feed for all markers will be added to the &lt;head&gt;-section of the website, allowing users to subscribe to your markers','lmm'),
+			'type'    => 'radio',
+			'std'     => 'enabled',
+			'choices' => array(
+				'enabled' => __('enabled','lmm'),
+				'disabled' => __('disabled','lmm')
+			)
+		);
 		$this->settings['admin_bar_integration'] = array(
 			'version' => '1.0',
 			'section' => 'misc',

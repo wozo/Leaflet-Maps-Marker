@@ -56,7 +56,10 @@ function leafletmapsmarker() {
 	add_action('admin_init', array(&$this, 'lmm_plugin_meta_links'),6);
 	add_action('admin_bar_menu', array(&$this, 'lmm_add_admin_bar_menu'),149);
 	add_shortcode($lmm_options['shortcode'], array(&$this, 'lmm_showmap'));
-   }
+	if ($lmm_options['misc_add_georss_to_head'] == 'enabled') {
+		add_action( 'wp_head', array( &$this, 'lmm_add_georss_to_head' ) );
+	}
+  }
   function lmm_load_translation_files() {
 	load_plugin_textdomain('lmm', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
   }
@@ -87,6 +90,10 @@ function leafletmapsmarker() {
   function lmm_tools()
   {
     include('leaflet-tools.php');
+  }
+  function lmm_add_georss_to_head() {
+	$georss_to_head = '<link rel="alternate" type="application/rss+xml" title="' . get_bloginfo('name') . ' GeoRSS-Feed" href="' . LEAFLET_PLUGIN_URL . 'leaflet-georss.php?layer=all" />'.PHP_EOL;
+	echo $georss_to_head;
   }
   function lmm_showmap($atts) {
     global $wpdb;
