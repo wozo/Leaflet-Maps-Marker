@@ -4,7 +4,7 @@ Plugin Name: Leaflet Maps Marker
 Plugin URI: http://www.mapsmarker.com
 Description: Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 Tags: map, maps, Leaflet, OpenStreetMap, geoJSON, OSM, travelblog, opendata, opengov, ogdwien, google maps, WMTS, geoRSS, location, geo, geocoding, geolocation, travel, mapnick, osmarender, cloudmade, mapquest, wms
-Version: 1.4.3
+Version: 1.5
 Author: Robert Harm (with special support from Sindre Wimberger)
 Author URI: http://www.harm.co.at
 Donate link: http://www.mapsmarker.com/donations
@@ -122,7 +122,7 @@ function leafletmapsmarker() {
 	//info: prepare layers
 	if (!empty($layer)) {
 	  $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
-	  $row = $wpdb->get_row('SELECT id,name,basemap,mapwidth,mapheight,mapwidthunit,panel,layerzoom,layerviewlat,layerviewlon,controlbox,overlays_custom,overlays_custom2,overlays_custom3,overlays_custom4,wms,wms2,wms3,wms4,wms5,wms6,wms7,wms8,wms9,wms10 FROM '.$table_name_layers.' WHERE id='.$layer, ARRAY_A);
+	  $row = $wpdb->get_row('SELECT id,name,basemap,mapwidth,mapheight,mapwidthunit,panel,layerzoom,layerviewlat,layerviewlon,controlbox,overlays_custom,overlays_custom2,overlays_custom3,overlays_custom4,wms,wms2,wms3,wms4,wms5,wms6,wms7,wms8,wms9,wms10,listmarkers FROM '.$table_name_layers.' WHERE id='.$layer, ARRAY_A);
 	  $id = $row['id'];
 	  $basemap = $row['basemap'];
 	  $lat = $row['layerviewlat'];
@@ -148,6 +148,7 @@ function leafletmapsmarker() {
 	  $wms8 = $row['wms8'];
 	  $wms9 = $row['wms9'];
 	  $wms10 = $row['wms10'];
+	  $listmarkers = $row['listmarkers'];
 	}
 	//info: prepare markers
     if (!empty($marker))  {
@@ -342,6 +343,40 @@ function leafletmapsmarker() {
 	$lmm_out .= '<div id="lmm_geo_tags_'.$uid.'" class="lmm-geo-tags geo">'.PHP_EOL;
 	$lmm_out .= '<span class="latitude">' . $mlat . '</span>, <span class="longitude">' . $mlon . '</span>'.PHP_EOL;
 	$lmm_out .= '</div>'.PHP_EOL;
+	}
+	//info: display a list of markers under the map
+	if (!empty($layer) && empty($marker) && ($listmarkers == 1))
+	{
+	$layermarklist = $wpdb->get_results('SELECT l.id as lid, m.lon as mlon, m.lat as mlat, m.icon as micon, m.popuptext as mpopuptext,m.markername as markername,m.id as markerid, m.createdon as mcreatedon, m.updatedon as mupdatedon FROM '.$table_name_layers.' as l INNER JOIN '.$table_name_markers.' AS m ON l.id=m.layer WHERE l.id='.$id.' ORDER BY ' . $lmm_options[ 'defaults_layer_listmarkers_order_by' ] . ' ' . $lmm_options[ 'defaults_layer_listmarkers_sort_order' ] , ARRAY_A);
+	$lmm_out .= '<div id="lmm-listmarkers-'.$uid.'" class="lmm-listmarkers" style="width:' . $mapwidth.$mapwidthunit . ';">'.PHP_EOL;
+	$lmm_out .= '<table>';
+	foreach ($layermarklist as $row){
+		$lmm_out .= '<tr><td style="width:35px;vertical-align:top;">';
+		if ($row['micon'] != null) { 
+			$lmm_out .= '<img src="' . LEAFLET_PLUGIN_ICONS_URL . '/'.$row['micon'].'" title="' . stripslashes($row['markername']) . '" />'; 
+		} else { 
+			$lmm_out .= '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png" title="' . stripslashes($row['markername']) . '" />';
+		};
+		$lmm_out .= '</td><td style="width:200px;"><div class="lmm-listmarkers-panel-icons">';
+		if ($lmm_options['directions_provider'] == 'googlemaps') {
+			if ((isset($lmm_options[ 'directions_googlemaps_route_type_walking' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_walking' ] == 1 )) { $yours_transport_type_icon = 'icon-walk.png'; } else { $yours_transport_type_icon = 'icon-car.png'; }
+			$avoidhighways = (isset($lmm_options[ 'directions_googlemaps_route_type_highways' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_highways' ] == 1 ) ? '&dirflg=h' : '';
+			$avoidtolls = (isset($lmm_options[ 'directions_googlemaps_route_type_tolls' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_tolls' ] == 1 ) ? '&dirflg=t' : '';
+			$publictransport = (isset($lmm_options[ 'directions_googlemaps_route_type_public_transport' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_public_transport' ] == 1 ) ? '&dirflg=r' : '';
+			$walking = (isset($lmm_options[ 'directions_googlemaps_route_type_walking' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_walking' ] == 1 ) ? '&dirflg=w' : '';
+			$lmm_out .= '<a href="http://maps.google.com/maps?daddr=' . $row['mlat'] . ',' . $row['mlon'] . '&t=' . $lmm_options[ 'directions_googlemaps_map_type' ] . '&layer=' . $lmm_options[ 'directions_googlemaps_traffic' ] . '&doflg=' . $lmm_options[ 'directions_googlemaps_distance_units' ] . $avoidhighways . $avoidtolls . $publictransport . $walking . '&hl=' . $lmm_options[ 'directions_googlemaps_host_language' ] . '&om=' . $lmm_options[ 'directions_googlemaps_overview_map' ] . '" target="_blank" title="' . esc_attr__('Get directions','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'img/' . $yours_transport_type_icon . '" width="14" height="14" class="lmm-panel-api-images" /></a>';
+		} else if ($lmm_options['directions_provider'] == 'yours') {
+			if ($lmm_options[ 'directions_yours_type_of_transport' ] == 'motorcar') { $yours_transport_type_icon = 'icon-car.png'; } else if ($lmm_options[ 'directions_yours_type_of_transport' ] == 'bicycle') { $yours_transport_type_icon = 'icon-bicycle.png'; } else if ($lmm_options[ 'directions_yours_type_of_transport' ] == 'foot') { $yours_transport_type_icon = 'icon-walk.png'; }
+			$lmm_out .= '<a href="http://www.yournavigation.org/?tlat=' . $row['mlat'] . '&tlon=' . $row['mlon'] . '&v=' . $lmm_options[ 'directions_yours_type_of_transport' ] . '&fast=' . $lmm_options[ 'directions_yours_route_type' ] . '&layer=' . $lmm_options[ 'directions_yours_layer' ] . '" target="_blank" title="' . esc_attr__('Get directions','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'img/' . $yours_transport_type_icon . '" width="14" height="14" class="lmm-panel-api-images" /></a>';
+		} else if ($lmm_options['directions_provider'] == 'ors') {
+			if ($lmm_options[ 'directions_ors_route_preferences' ] == 'Pedestrian') { $yours_transport_type_icon = 'icon-walk.png'; } else if ($lmm_options[ 'directions_ors_route_preferences' ] == 'Bicycle') { $yours_transport_type_icon = 'icon-bicycle.png'; } else { $yours_transport_type_icon = 'icon-car.png'; }
+			$lmm_out .= '<a href="http://openrouteservice.org/index.php?end=' . $row['mlon'] . ',' . $row['mlat'] . '&pref=' . $lmm_options[ 'directions_ors_route_preferences' ] . '&lang=' . $lmm_options[ 'directions_ors_language' ] . '&noMotorways=' . $lmm_options[ 'directions_ors_no_motorways' ] . '&noTollways=' . $lmm_options[ 'directions_ors_no_tollways' ] . '" target="_blank" title="' . esc_attr__('Get directions','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'img/' . $yours_transport_type_icon . '" width="14" height="14" class="lmm-panel-api-images" /></a>';
+		}
+		$lmm_out .= '&nbsp;<a href="' . LEAFLET_PLUGIN_URL . 'leaflet-fullscreen.php?marker=' . $row['markerid'] . '" style="text-decoration:none;" title="' . __('Open standalone map in fullscreen mode','lmm') . '" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-fullscreen.png" width="14" height="14" alt="Fullscreen-Logo" class="lmm-panel-api-images" /></a>';
+		$lmm_out .= '&nbsp;<a href="' . LEAFLET_PLUGIN_URL . 'leaflet-kml.php?marker=' . $row['markerid'] . '" style="text-decoration:none;" title="' . __('Export as KML for Google Earth/Google Maps','lmm') . '" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-kml.png" width="14" height="14" alt="KML-Logo" class="lmm-panel-api-images" /></a>';
+		$lmm_out .= '</div><strong>' . stripslashes($row['markername']) . '</strong><br/>' . stripslashes($row['mpopuptext']) . '</td></tr>';
+	} //info: end foreach
+	$lmm_out .= '</table></div>';
 	}
 	$plugin_version = get_option('leafletmapsmarker_version');
 	$lmm_out .= '<script type="text/javascript">'.PHP_EOL;
@@ -880,6 +915,19 @@ function leafletmapsmarker() {
 		$save_defaults_for_new_options = new Leafletmapsmarker_options();
 		$save_defaults_for_new_options->save_defaults_for_new_options();
 		update_option('leafletmapsmarker_version', '1.4.3');
+	}
+	if (get_option('leafletmapsmarker_version') == '1.4.3' ) {
+		$table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
+		$table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
+		$update15_1 = "ALTER TABLE `" . $table_name_markers . "` CHANGE `wms` `wms` TINYINT( 1 ) NOT NULL, CHANGE `wms2` `wms2` TINYINT( 1 ) NOT NULL, CHANGE `wms3` `wms3` TINYINT( 1 ) NOT NULL, CHANGE `wms4` `wms4` TINYINT( 1 ) NOT NULL, CHANGE `wms5` `wms5` TINYINT( 1 ) NOT NULL, CHANGE `wms6` `wms6` TINYINT( 1 ) NOT NULL, CHANGE `wms7` `wms7` TINYINT( 1 ) NOT NULL, CHANGE `wms8` `wms8` TINYINT( 1 ) NOT NULL, CHANGE `wms9` `wms9` TINYINT( 1 ) NOT NULL, CHANGE `wms10` `wms10` TINYINT( 1 ) NOT NULL;";
+		$wpdb->query($update15_1);
+		$update15_2 = "ALTER TABLE `" . $table_name_layers . "` CHANGE `panel` `panel` TINYINT( 1 ) NOT NULL, CHANGE `wms` `wms` TINYINT( 1 ) NOT NULL, CHANGE `wms2` `wms2` TINYINT( 1 ) NOT NULL, CHANGE `wms3` `wms3` TINYINT( 1 ) NOT NULL, CHANGE `wms4` `wms4` TINYINT( 1 ) NOT NULL, CHANGE `wms5` `wms5` TINYINT( 1 ) NOT NULL, CHANGE `wms6` `wms6` TINYINT( 1 ) NOT NULL, CHANGE `wms7` `wms7` TINYINT( 1 ) NOT NULL, CHANGE `wms8` `wms8` TINYINT( 1 ) NOT NULL, CHANGE `wms9` `wms9` TINYINT( 1 ) NOT NULL, CHANGE `wms10` `wms10` TINYINT( 1 ) NOT NULL;";
+		$wpdb->query($update15_2);
+		$update15_3 = "ALTER TABLE `" . $table_name_layers . "` ADD `listmarkers` TINYINT(1) NOT NULL AFTER `wms10`;";
+		$wpdb->query($update15_3);
+		$save_defaults_for_new_options = new Leafletmapsmarker_options();
+		$save_defaults_for_new_options->save_defaults_for_new_options();
+		update_option('leafletmapsmarker_version', '1.5');
 		//info: redirect to settings page only on first plugin activation, otherwise redirect is also done on bulk plugin activations
 		if (get_option('leafletmapsmarker_redirect') == 'true') 
 		{
@@ -888,13 +936,13 @@ function leafletmapsmarker() {
 		}
 	}
 	/* template for plugin updates 
-	if (get_option('leafletmapsmarker_version') == '1.4.3' ) {
+	if (get_option('leafletmapsmarker_version') == '1.5' ) {
+		//optional: add code for sql ddl updates
 		//mandatory if new options in class-leaflet-options.php were added
 		$save_defaults_for_new_options = new Leafletmapsmarker_options();
 		$save_defaults_for_new_options->save_defaults_for_new_options();
-		//optional: add code for sql ddl updates
 		//mandatory
-		update_option('leafletmapsmarker_version', '1.5');
+		update_option('leafletmapsmarker_version', '1.6');
 		//mandatory: move code for redirect-on-first-activation-check to here
 	}
 	*/

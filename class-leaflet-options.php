@@ -3291,7 +3291,6 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'std'     => '1' 
 		);
-
 		/*===========================================
 		*
 		*
@@ -4282,7 +4281,52 @@ class Leafletmapsmarker_options {
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);	
-			
+		$this->settings['defaults_layer_listmarkers_helptext'] = array(
+			'version' => '1.5',
+			'section' => 'defaults_layer',
+			'std'     => '', 
+			'title'   => '<strong>' . __('List marker settings','lmm') . '</strong>',
+			'desc'    => '',
+			'type'    => 'helptext'
+		);
+		$this->settings['defaults_layer_listmarkers'] = array(
+			'version' => '1.5',
+			'section' => 'defaults_layer',
+			'title'   => __('Display a list of markers under the map','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => '1',
+			'choices' => array(
+				'0' => __('no','lmm'),
+				'1' => __('yes','lmm')
+			)
+		);			
+		$this->settings['defaults_layer_listmarkers_order_by'] = array(
+			'version' => '1.5',
+			'section' => 'defaults_layer',
+			'title'   => __('Order list of markers by','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => 'm.id',
+			'choices' => array(
+				'm.id' => 'ID',
+				'm.markername' => __('marker name','lmm'),
+				'm.createdon' => __('created on','lmm'),
+				'm.updatedon' => __('updated on','lmm')
+			)
+		);
+		$this->settings['defaults_layer_listmarkers_sort_order'] = array(
+			'version' => '1.5',
+			'section' => 'defaults_layer',
+			'title'   => __('Sort order','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => 'ASC',
+			'choices' => array(
+				'ASC' => __('ascending','lmm'),
+				'DESC' => __('descending','lmm')
+			)
+		);
 		/*===========================================
 		*
 		*
@@ -5474,7 +5518,6 @@ class Leafletmapsmarker_options {
 		$options_new = array_merge($options_current, $new_options_defaults);
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
-		/* template for plugin updates 
 		//info:  set defaults for options introduced in v1.5
 		if (get_option('leafletmapsmarker_version') == '1.4.3' )
 		{
@@ -5482,6 +5525,22 @@ class Leafletmapsmarker_options {
 			foreach ( $this->settings as $id => $setting ) 
 			{
 				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.5')
+				{
+				$new_options_defaults[$id] = $setting['std'];
+				}
+			}
+		$options_current = get_option( 'leafletmapsmarker_options' );
+		$options_new = array_merge($options_current, $new_options_defaults);
+		update_option( 'leafletmapsmarker_options', $options_new );
+		}
+		/* template for plugin updates 
+		//info:  set defaults for options introduced in v1.6
+		if (get_option('leafletmapsmarker_version') == '1.5' )
+		{
+			$new_options_defaults = array();
+			foreach ( $this->settings as $id => $setting ) 
+			{
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.6')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
