@@ -163,7 +163,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v1.5 =
-add support for vector layers + add GeoRSS feed to head
+add support for vector layers, display list of markers below layer maps, add GeoRSS feed to head, bugfixes
 
 = v1.4.3 =
 added WMS support for KML files, bugfix for defect routing link attached to popup-text
@@ -198,7 +198,11 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v1.5 - xx.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.5)
+* NEW: added option to display a list of markers below layer maps (enabled for new layer maps, disabled for existing layer maps)
 * NEW: included option to add GeoRSS feed for all markers to &lt;head&gt; to allow users subscribing to your markers easily
+* NEW: add mass actions for layer maps
+* CHANGED: database structure for boolean values from tinyint(4) to tinyint(1)
+* BUGFIX: overlay status for layer maps wasnt displayed in backend preview
 
 = v1.4.3 - 29.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.4.3)
