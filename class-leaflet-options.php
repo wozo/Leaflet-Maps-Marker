@@ -5433,8 +5433,8 @@ class Leafletmapsmarker_options {
 				add_settings_section( $slug, $title, array( &$this, 'display_overlays_section' ), 'leafletmapsmarker_settings' );
 			else if ( $slug == 'wms' )
 				add_settings_section( $slug, $title, array( &$this, 'display_wms_section' ), 'leafletmapsmarker_settings' );
-			else if ( $slug == 'vl' )
-				add_settings_section( $slug, $title, array( &$this, 'display_vl_section' ), 'leafletmapsmarker_settings' );
+			/*else if ( $slug == 'vl' )
+				add_settings_section( $slug, $title, array( &$this, 'display_vl_section' ), 'leafletmapsmarker_settings' );*/
 			else if ( $slug == 'defaults_marker' )
 				add_settings_section( $slug, $title, array( &$this, 'display_defaults_marker_section' ), 'leafletmapsmarker_settings' );
 			else if ( $slug == 'google_places' )
