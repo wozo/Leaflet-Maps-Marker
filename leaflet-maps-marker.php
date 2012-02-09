@@ -351,13 +351,13 @@ function leafletmapsmarker() {
 	$lmm_out .= '<div id="lmm-listmarkers-'.$uid.'" class="lmm-listmarkers" style="width:' . $mapwidth.$mapwidthunit . ';">'.PHP_EOL;
 	$lmm_out .= '<table>';
 	foreach ($layermarklist as $row){
-		$lmm_out .= '<tr><td style="width:35px;vertical-align:top;">';
+		$lmm_out .= '<tr><td style="width:35px;vertical-align:top;text-align:center;">';
 		if ($row['micon'] != null) { 
 			$lmm_out .= '<img src="' . LEAFLET_PLUGIN_ICONS_URL . '/'.$row['micon'].'" title="' . stripslashes($row['markername']) . '" />'; 
 		} else { 
 			$lmm_out .= '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png" title="' . stripslashes($row['markername']) . '" />';
 		};
-		$lmm_out .= '</td><td style="width:200px;"><div class="lmm-listmarkers-panel-icons">';
+		$lmm_out .= '</td><td><div class="lmm-listmarkers-panel-icons">';
 		if ($lmm_options['directions_provider'] == 'googlemaps') {
 			if ((isset($lmm_options[ 'directions_googlemaps_route_type_walking' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_walking' ] == 1 )) { $yours_transport_type_icon = 'icon-walk.png'; } else { $yours_transport_type_icon = 'icon-car.png'; }
 			$avoidhighways = (isset($lmm_options[ 'directions_googlemaps_route_type_highways' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_highways' ] == 1 ) ? '&dirflg=h' : '';
