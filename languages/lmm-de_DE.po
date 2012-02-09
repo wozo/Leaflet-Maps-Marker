@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MapsMarker.com\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-09 21:08+0100\n"
-"PO-Revision-Date: 2012-02-09 21:12+0100\n"
+"PO-Revision-Date: 2012-02-09 22:24+0100\n"
 "Last-Translator: Robert Harm <info@mapsmarker.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1388,7 +1388,7 @@ msgstr "Einstellungen f&uuml;r Marker auflisten"
 #: ../leaflet-layer.php:248
 #: ../leaflet-tools.php:647
 msgid "Display a list of markers under the map"
-msgstr "Markerliste unter der Karten anzeigen"
+msgstr "Markerliste unter der Karte anzeigen"
 
 #: ../class-leaflet-options.php:4307
 msgid "Order list of markers by"
