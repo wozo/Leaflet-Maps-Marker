@@ -8,7 +8,7 @@ Author:            Robert Harm (with special support from Sindre Wimberger)
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.4-alpha-19719
-Stable tag:        1.5
+Stable tag:        1.6
 
 Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 
@@ -204,6 +204,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.6)
 * OPTIMIZED: javascript variable definitions for wms layers and custom overlays get added to sourcecode only when they are active on the current map
 * BUGFIX: legend link for WMS layer did not work
+* BUGFIX: links in panel had a border with some templates
 
 = v1.5 - 09.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.5)
