@@ -7,7 +7,7 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm (with special support from Sindre Wimberger)
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.4-alpha-19720
+Tested up to:      3.4-alpha-19719
 Stable tag:        1.5
 
 Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
@@ -163,6 +163,9 @@ This program is free software; you can redistribute it and/or modify it under th
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
+= v1.6 =
+added support for vector layers plus bugfixes and optimizations
+
 = v1.5 =
 added option to display a list of markers below layer maps, add GeoRSS feed to head, bugfixes
 
@@ -197,6 +200,11 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v1.6 - xx.02.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v1.6)
+* OPTIMIZED: javascript variable definitions for wms layers and custom overlays get added to sourcecode only when they are active on the current map
+* BUGFIX: legend link for WMS layer did not work
+
 = v1.5 - 09.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.5)
 * NEW: added option to display a list of markers below layer maps (enabled for new layer maps, disabled for existing layer maps)
