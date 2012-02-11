@@ -28,6 +28,9 @@
 .lmm-panel {
 	border:1px solid #ccc;
 }
+.lmm-panel a {
+	border:none;
+}
 .lmm-panel-text {
 	position:relative;
 	padding:5px;
