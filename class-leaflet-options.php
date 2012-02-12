@@ -21,7 +21,7 @@ class Leafletmapsmarker_options {
 		$this->sections['basemaps']      = 'Basemaps';
 		$this->sections['overlays']      = 'Overlays';
 		$this->sections['wms']      = 'WMS';
-		$this->sections['vl']      = 'Vector layers';
+		//$this->sections['vl']      = 'Vector layers';
 		$this->sections['defaults_marker']   = 'Marker defaults';
 		$this->sections['defaults_layer']   = 'Layer defaults';
 		$this->sections['google_places']   = 'Google Places';
@@ -228,14 +228,14 @@ class Leafletmapsmarker_options {
 	/**
 	 * Listing for vector layers
 	 */
-	public function display_vl_section() {
+	/*public function display_vl_section() {
 		
 		echo '<span class="leafletmapsmarker-listings"><p>' . __( 'Vector layers is a javascript library by Jason Sanford which allows you to easily add one or more vector layers from a number of different geo web services to a Leaflet map. For more information please visit the <a href="http://geojason.info/leaflet-vector-layers/" target="_blank">project website</a>.', 'lmm') . '</p><p><strong>Index</strong></p><ul style="list-style-type:disc;margin-left:24px;">
 			<li>' . __('ArcGIS Server settings','lmm') . '</li>
 			<li>' . __('Arc2Earth Sync instance settings','lmm') . '</li>
 			<li>' . __('GeoIQ dataset settings','lmm') . '</li>
 			<li>' . __('CartoDB table settings','lmm') . '</li></ul></span>';
-	}	
+	}*/	
 	/**
 	 * Listing for marker defaults section
 	 */
@@ -3301,7 +3301,7 @@ class Leafletmapsmarker_options {
 		/*
 		* ArcGIS Server settings
 		*/
-		$this->settings['vl_ags_heading'] = array(
+		/*$this->settings['vl_ags_heading'] = array(
 			'version' => '1.6',
 			'section' => 'vl',
 			'title'   => '', 
@@ -3435,12 +3435,12 @@ class Leafletmapsmarker_options {
 			'std'     => '',
 			'type'    => 'text',
 			'section' => 'vl'
-		);	
+		);*/	
 													
 		/*
 		* Arc2Earth Sync instance settings
 		*/
-		$this->settings['vl_a2e_heading'] = array(
+		/*$this->settings['vl_a2e_heading'] = array(
 			'version' => '1.6',
 			'section' => 'vl',
 			'title'   => '', 
@@ -3454,12 +3454,12 @@ class Leafletmapsmarker_options {
 			'title'   => '',
 			'desc'    => __( 'Use these settings to create a layer that processes and displays features from an Arc2Earth Sync instance.', 'lmm'),
 			'type'    => 'helptext'
-		);
+		);*/
 		
 		/*
 		* GeoIQ dataset settings
 		*/
-		$this->settings['vl_geoiq_heading'] = array(
+		/*$this->settings['vl_geoiq_heading'] = array(
 			'version' => '1.6',
 			'section' => 'vl',
 			'title'   => '', 
@@ -3473,12 +3473,12 @@ class Leafletmapsmarker_options {
 			'title'   => '',
 			'desc'    => __( 'Use these settings to create a layer that processes and displays features from a GeoIQ dataset.', 'lmm'),
 			'type'    => 'helptext'
-		);
+		);*/
 		
 		/*
 		* CartoDB table settings
 		*/
-		$this->settings['vl_cartodb_heading'] = array(
+		/*$this->settings['vl_cartodb_heading'] = array(
 			'version' => '1.6',
 			'section' => 'vl',
 			'title'   => '', 
@@ -3492,7 +3492,7 @@ class Leafletmapsmarker_options {
 			'title'   => '',
 			'desc'    => __( 'Use these settings to create a layer that processes and displays features from a CartoDB table.', 'lmm'),
 			'type'    => 'helptext'
-		);				
+		);*/				
 						
 		/*===========================================
 		*
@@ -5433,8 +5433,8 @@ class Leafletmapsmarker_options {
 				add_settings_section( $slug, $title, array( &$this, 'display_overlays_section' ), 'leafletmapsmarker_settings' );
 			else if ( $slug == 'wms' )
 				add_settings_section( $slug, $title, array( &$this, 'display_wms_section' ), 'leafletmapsmarker_settings' );
-			else if ( $slug == 'vl' )
-				add_settings_section( $slug, $title, array( &$this, 'display_vl_section' ), 'leafletmapsmarker_settings' );
+			/*else if ( $slug == 'vl' )
+				add_settings_section( $slug, $title, array( &$this, 'display_vl_section' ), 'leafletmapsmarker_settings' );*/
 			else if ( $slug == 'defaults_marker' )
 				add_settings_section( $slug, $title, array( &$this, 'display_defaults_marker_section' ), 'leafletmapsmarker_settings' );
 			else if ( $slug == 'google_places' )
@@ -5533,7 +5533,8 @@ class Leafletmapsmarker_options {
 		$options_new = array_merge($options_current, $new_options_defaults);
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
-		if (get_option('leafletmapsmarker_version') == '1.5' )
+		//info:  set defaults for options introduced in v1.6
+		if (get_option('leafletmapsmarker_version') == '1.5.1' )
 		{
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 

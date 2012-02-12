@@ -4,7 +4,7 @@ Plugin Name: Leaflet Maps Marker
 Plugin URI: http://www.mapsmarker.com
 Description: Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 Tags: map, maps, Leaflet, OpenStreetMap, geoJSON, OSM, travelblog, opendata, opengov, ogdwien, google maps, WMTS, geoRSS, location, geo, geocoding, geolocation, travel, mapnick, osmarender, cloudmade, mapquest, wms
-Version: 1.6
+Version: 1.5.1
 Author: Robert Harm (with special support from Sindre Wimberger)
 Author URI: http://www.harm.co.at
 Donate link: http://www.mapsmarker.com/donations
@@ -958,9 +958,7 @@ function leafletmapsmarker() {
 		update_option('leafletmapsmarker_version', '1.5');
 	}
 	if (get_option('leafletmapsmarker_version') == '1.5' ) {
-		$save_defaults_for_new_options = new Leafletmapsmarker_options();
-		$save_defaults_for_new_options->save_defaults_for_new_options();
-		update_option('leafletmapsmarker_version', '1.6');
+		update_option('leafletmapsmarker_version', '1.5.1');
 		//info: redirect to settings page only on first plugin activation, otherwise redirect is also done on bulk plugin activations
 		if (get_option('leafletmapsmarker_redirect') == 'true') 
 		{
@@ -969,13 +967,13 @@ function leafletmapsmarker() {
 		}
 	}
 	/* template for plugin updates 
-	if (get_option('leafletmapsmarker_version') == '1.6' ) {
+	if (get_option('leafletmapsmarker_version') == '1.5.1' ) {
 		//optional: add code for sql ddl updates
 		//mandatory if new options in class-leaflet-options.php were added
 		$save_defaults_for_new_options = new Leafletmapsmarker_options();
 		$save_defaults_for_new_options->save_defaults_for_new_options();
 		//mandatory
-		update_option('leafletmapsmarker_version', '1.7');
+		update_option('leafletmapsmarker_version', '1.6');
 		//mandatory: move code for redirect-on-first-activation-check to here
 	}
 	*/

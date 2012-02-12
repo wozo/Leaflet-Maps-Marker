@@ -22,10 +22,9 @@ if (is_multisite())
 			}
 		restore_current_blog();
 		/*remove map icons directory*/
-		$icons_directory = ABSPATH . 'wp-content/uploads/leaflet-maps-marker-icons/';
-		if (is_dir($icons_directory)) 
+		if (is_dir(LEAFLET_PLUGIN_ICONS_DIR)) 
 		{
-		foreach(glob($icons_directory.'*.*') as $v){
+		foreach(glob($icons_directory.'/*.*') as $v){
 		unlink($v);
 		}
 		rmdir($icons_directory);
@@ -42,10 +41,9 @@ else
 	$GLOBALS['wpdb']->query("DROP TABLE `".$GLOBALS['wpdb']->prefix."leafletmapsmarker_markers`");
 	$GLOBALS['wpdb']->query("OPTIMIZE TABLE `" .$GLOBALS['wpdb']->prefix."options`");
 	/*remove map icons directory*/
-	$icons_directory = ABSPATH . 'wp-content/uploads/leaflet-maps-marker-icons/';
-	if (is_dir($icons_directory)) 
+	if (is_dir(LEAFLET_PLUGIN_ICONS_DIR)) 
 	{
-	foreach(glob($icons_directory.'*.*') as $v){
+	foreach(glob($icons_directory.'/*.*') as $v){
 	unlink($v);
 	}
 	rmdir($icons_directory);
