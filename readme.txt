@@ -206,6 +206,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: legend link for WMS layer did not work
 * BUGFIX: links in panel had a border with some templates
 * BUGFIX: removed double slashes from LEAFLET_PLUGIN_URL-links
+* BUGFIX: uninstall didnt remove marker-icon-directory on some installations
+* BUGFIX: admin pages for map/layer edit screens broken on WordPress 3.0 installations
 * OPTIMIZED: javascript variable definitions for wms layers and custom overlays get added to sourcecode only when they are active on the current map
 
 = v1.5 - 09.02.2012 =

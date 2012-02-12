@@ -846,9 +846,13 @@ var markers = {};
       mapcentermarker.setLatLng(e.latlng);
   });
   var mapElement = $('#selectlayer'), mapWidth = $('#mapwidth'), mapHeight = $('#mapheight'), layerviewlat = $('#layerviewlat'), layerviewlon = $('#layerviewlon'), panel = $('#lmm-panel'), lmm = $('#lmm'), layername = $('#layername'), listmarkers = $('#lmm-listmarkers');
+	//info: bugfix causing maps not to show up in WP 3.0 and errors in WP <3.3
+	<?php global $wp_version;
+	if ( version_compare( $wp_version, '3.3', '>=' ) ) { ?>
 	layername.on('blur', function(e) { 
 		document.getElementById('lmm-panel-text').innerHTML = layername.val();
 	});
+	<?php } ?>
 	mapWidth.blur(function() {
 		if(!isNaN(mapWidth.val())) {
 			lmm.css("width",mapWidth.val()+$('input:radio[name=mapwidthunit]:checked').val());

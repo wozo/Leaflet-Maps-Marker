@@ -755,9 +755,12 @@ var marker,selectlayer,osm_mapnik,osm_osmarender,mapquest_osm,mapquest_aerial,og
       <?php }?>
   });
   var mapElement = $('#selectlayer'), mapWidth = $('#mapwidth'), mapHeight = $('#mapheight'), popupText = $('#popuptext'), lat = $('#lat'), lon = $('#lon'), panel = $('#lmm-panel'), lmm = $('#lmm'), markername = $('#markername');
+	//info: bugfix causing maps not to show up in WP 3.0 and errors in WP <3.3
+	<?php if ( version_compare( $wp_version, '3.3', '>=' ) ) { ?>
 	markername.on('blur', function(e) { 
 		document.getElementById('lmm-panel-text').innerHTML = markername.val();
 	});
+	<?php } ?>
 	mapWidth.blur(function() {
 		if(!isNaN(mapWidth.val())) {
 			lmm.css("width",mapWidth.val()+$('input:radio[name=mapwidthunit]:checked').val());
