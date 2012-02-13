@@ -7,7 +7,7 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm (with special support from Sindre Wimberger)
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.4-alpha-19719
+Tested up to:      3.4-alpha-19904
 Stable tag:        1.6
 
 Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
@@ -164,7 +164,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v1.6 =
-update leaflet to 0.3 stable, support for vector layers, bugfixes
+update leaflet to 0.3 stable, support for Cloudmade maps with styles, support for vector layers, bugfixes
 
 = v1.5.1 =
 important bugfixes for multisite installations fixing layer map and API bugs
@@ -205,6 +205,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v1.6 - xx.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.6)
+* NEW: added support for Cloudmade maps with styles as basemaps
 * UPDATE from leaflet 0.3 beta to 0.3 stable [changelog](https://github.com/CloudMade/Leaflet/blob/master/CHANGELOG.md)
 * BUGFIX: lat/lon values for layer and marker maps were rounded on some installations
 * CHANGED: added updated Japanes translation (thanks to Shu Higashi, @higa4)

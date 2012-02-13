@@ -495,7 +495,7 @@ foreach ($iconlist as $row)
 <!--wrap--> 
 <script type="text/javascript">
 /* //<![CDATA[ */
-var marker,selectlayer,osm_mapnik,osm_osmarender,mapquest_osm,mapquest_aerial,ogdwien_basemap,ogdwien_satellite,custom_basemap,custom_basemap2,custom_basemap3,overlays_custom,overlays_custom2,overlays_custom3,overlays_custom4,wms,wms2,wms3,wms4,wms5,wms6,wms7,wms8,wms9,wms10,layersControl;
+var marker,selectlayer,osm_mapnik,osm_osmarender,mapquest_osm,mapquest_aerial,ogdwien_basemap,ogdwien_satellite,cloudmade,cloudmade2,cloudmade3,custom_basemap,custom_basemap2,custom_basemap3,overlays_custom,overlays_custom2,overlays_custom3,overlays_custom4,wms,wms2,wms3,wms4,wms5,wms6,wms7,wms8,wms9,wms10,layersControl;
 (function($) {
   selectlayer = new L.Map("selectlayer", { crs: <?php echo $lmm_options['misc_projections'] ?> });
 	<?php 
@@ -507,18 +507,33 @@ var marker,selectlayer,osm_mapnik,osm_osmarender,mapquest_osm,mapquest_aerial,og
 		$attrib_mapquest_aerial = __("Map",'lmm').': <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"' . LEAFLET_PLUGIN_URL . 'img/logo-mapquest.png\" />, Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency';
 		$attrib_ogdwien_basemap = __("Map",'lmm').': ' . __("City of Vienna","lmm") . ' (<a href=\"http://data.wien.gv.at\" target=\"_blank\" style=\"\">data.wien.gv.at</a>)';
 		$attrib_ogdwien_satellite = __("Map",'lmm').': ' . __("City of Vienna","lmm") . ' (<a href=\"http://data.wien.gv.at\" target=\"_blank\">data.wien.gv.at</a>)';
+		$attrib_cloudmade = __("Map",'lmm').': &copy; ' . date("Y") . ' <a href=\"http://www.openstreetmap.org\" target=\"_blank\" style=\"\">OpenStreetMap contributors</a>, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">CC-BY-SA</a>, Imagery &copy; <a href=\"http://cloudmade.com\" target=\"_blank\">CloudMade</a>';
 		$attrib_custom_basemap = __("Map",'lmm').': ' . addslashes($lmm_options[ 'custom_basemap_attribution' ]);
 		$attrib_custom_basemap2 = __("Map",'lmm').': ' . addslashes($lmm_options[ 'custom_basemap2_attribution' ]);
 		$attrib_custom_basemap3 = __("Map",'lmm').': ' . addslashes($lmm_options[ 'custom_basemap3_attribution' ]);
 	?>
 	selectlayer.attributionControl.setPrefix("<?php echo $attrib_prefix; ?>");
 	
-	osm_mapnik = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {mmid: 'osm_mapnik', maxZoom: 18, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_osm_mapnik; ?>"});
+	osm_mapnik = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {mmid: 'osm_mapnik', maxZoom: 18, minZoom: 0, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_osm_mapnik; ?>"});
 	osm_osmarender = new L.TileLayer("http://{s}.tah.openstreetmap.org/Tiles/tile/{z}/{x}/{y}.png", {mmid: 'osm_osmarender', maxZoom: 17, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_osm_osmarender; ?>"});
 	mapquest_osm = new L.TileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {mmid: 'mapquest_osm', maxZoom: 18, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_mapquest_osm; ?>", subdomains: ['otile1','otile2','otile3','otile4']});
 	mapquest_aerial = new L.TileLayer("http://{s}.mqcdn.com/naip/{z}/{x}/{y}.png", {mmid: 'mapquest_aerial', maxZoom: 18, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_mapquest_aerial; ?>", subdomains: ['oatile1','oatile2','oatile3','oatile4']});
 	ogdwien_basemap = new L.TileLayer("http://{s}.wien.gv.at/wmts/fmzk/pastell/google3857/{z}/{y}/{x}.jpeg", {mmid: 'ogdwien_basemap', errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", maxZoom: 19, minZoom: 11, attribution: "<?php echo $attrib_ogdwien_basemap; ?>", subdomains: ['maps','maps1', 'maps2', 'maps3']});
 	ogdwien_satellite = new L.TileLayer("http://{s}.wien.gv.at/wmts/lb/farbe/google3857/{z}/{y}/{x}.jpeg", {mmid: 'ogdwien_satellite', errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", maxZoom: 19, minZoom: 11, attribution: "<?php echo $attrib_ogdwien_satellite; ?>", subdomains: ['maps','maps1', 'maps2', 'maps3']});
+
+	//info: create Cloudmade TileURLs
+	<?php 
+	$cloudmade_double_resolution = ($lmm_options[ 'cloudmade_double_resolution' ] == 'enabled') ? "@2x" : "";
+	$cloudmade2_double_resolution = ($lmm_options[ 'cloudmade2_double_resolution' ] == 'enabled') ? "@2x" : "";
+	$cloudmade3_double_resolution = ($lmm_options[ 'cloudmade3_double_resolution' ] == 'enabled') ? "@2x" : "";
+	$cloudmade_tileurl = "http://{s}.tile.cloudmade.com/" . $lmm_options[ 'cloudmade_api_key' ] . "/" . $lmm_options[ 'cloudmade_styleid' ] . $cloudmade_double_resolution . "/256/{z}/{x}/{y}.png"; 
+	$cloudmade2_tileurl = "http://{s}.tile.cloudmade.com/" . $lmm_options[ 'cloudmade2_api_key' ] . "/" . $lmm_options[ 'cloudmade2_styleid' ] . $cloudmade2_double_resolution . "/256/{z}/{x}/{y}.png"; 
+	$cloudmade3_tileurl = "http://{s}.tile.cloudmade.com/" . $lmm_options[ 'cloudmade3_api_key' ] . "/" . $lmm_options[ 'cloudmade3_styleid' ] . $cloudmade3_double_resolution . "/256/{z}/{x}/{y}.png"; 
+	?>
+	var cloudmade = new L.TileLayer("<?php echo $cloudmade_tileurl; ?>", {mmid: 'cloudmade', maxZoom: 19, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_cloudmade; ?>", subdomains: ['a','b','c']});
+	var cloudmade2 = new L.TileLayer("<?php echo $cloudmade2_tileurl; ?>", {mmid: 'cloudmade2', maxZoom: 19, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_cloudmade; ?>", subdomains: ['a','b','c']});
+	var cloudmade3 = new L.TileLayer("<?php echo $cloudmade3_tileurl; ?>", {mmid: 'cloudmade3', maxZoom: 19, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_cloudmade; ?>", subdomains: ['a','b','c']});
+
 	//info: check if subdomains are set for custom basemaps
 	<?php 
 	$custom_basemap_subdomains = ((isset($lmm_options[ 'custom_basemap_subdomains_enabled' ]) == TRUE ) && ($lmm_options[ 'custom_basemap_subdomains_enabled' ] == 'yes' )) ? ", subdomains: [" . htmlspecialchars_decode($lmm_options[ 'custom_basemap_subdomains_names' ], ENT_QUOTES) . "]" :  "";
@@ -594,6 +609,12 @@ var marker,selectlayer,osm_mapnik,osm_osmarender,mapquest_osm,mapquest_aerial,og
 			$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_ogdwien_basemap' ]) . "': ogdwien_basemap,";
 		if ( (isset($lmm_options[ 'controlbox_ogdwien_satellite' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_satellite' ] == 1 ) )
 			$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_ogdwien_satellite' ]) . "': ogdwien_satellite,";
+		if ( (isset($lmm_options[ 'controlbox_cloudmade' ]) == TRUE ) && ($lmm_options[ 'controlbox_cloudmade' ] == 1 ) )
+			$basemaps_available .= "'".addslashes($lmm_options[ 'cloudmade_name' ])."': cloudmade,";
+		if ( (isset($lmm_options[ 'controlbox_cloudmade2' ]) == TRUE ) && ($lmm_options[ 'controlbox_cloudmade2' ] == 1 ) )
+			$basemaps_available .= "'".addslashes($lmm_options[ 'cloudmade2_name' ])."': cloudmade2,";
+		if ( (isset($lmm_options[ 'controlbox_cloudmade3' ]) == TRUE ) && ($lmm_options[ 'controlbox_cloudmade3' ] == 1 ) )
+			$basemaps_available .= "'".addslashes($lmm_options[ 'cloudmade3_name' ])."': cloudmade3,";
 		if ( (isset($lmm_options[ 'controlbox_custom_basemap' ]) == TRUE ) && ($lmm_options[ 'controlbox_custom_basemap' ] == 1 ) )
 			$basemaps_available .= "'".addslashes($lmm_options[ 'custom_basemap_name' ])."': custom_basemap,";
 		if ( (isset($lmm_options[ 'controlbox_custom_basemap2' ]) == TRUE ) && ($lmm_options[ 'controlbox_custom_basemap2' ] == 1 ) )

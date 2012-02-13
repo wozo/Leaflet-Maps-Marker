@@ -192,9 +192,13 @@ class Leafletmapsmarker_options {
 			<li>' . __('Names for default basemaps','lmm') . '</li>
 			<li>' . __('Available basemaps in control box','lmm') . '</li>
 			<li>' . __('OGD Vienna Selector','lmm') . '</li>
+			<li>' . __('Cloudmade 1 settings','lmm') . '</li>
+			<li>' . __('Cloudmade 2 settings','lmm') . '</li>
+			<li>' . __('Cloudmade 3 settings','lmm') . '</li>
 			<li>' . __('Custom basemap 1 settings','lmm') . '</li>
 			<li>' . __('Custom basemap 2 settings','lmm') . '</li>
 			<li>' . __('Custom basemap 3 settings','lmm') . '</li></ul></span>';
+
 	}
 	/**
 	 * Listing for overlays section
@@ -400,6 +404,9 @@ class Leafletmapsmarker_options {
 				'mapquest_aerial' => __('MapQuest (Aerial, max zoom 12 globally, 12+ in the United States)','lmm'),
 				'ogdwien_basemap' => __('OGD Vienna basemap (max zoom 19)','lmm'),
 				'ogdwien_satellite' => __('OGD Vienna satellite (max zoom 19)','lmm'),
+				'cloudmade' => 'Cloudmade',
+				'cloudmade2' => 'Cloudmade 2',
+				'cloudmade3' => 'Cloudmade 3',
 				'custom_basemap' => __('Custom basemap','lmm'),
 				'custom_basemap2' => __('Custom basemap 2','lmm'),
 				'custom_basemap3' => __('Custom basemap 3','lmm')
@@ -471,6 +478,55 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'basemaps'
 		);
+		$this->settings['cloudmade_name'] = array(
+			'version' => '1.6',
+			'title'   => 'Cloudmade',
+			'desc'    => '',
+			'std'     => 'Cloudmade',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
+		$this->settings['cloudmade2_name'] = array(
+			'version' => '1.6',
+			'title'   => 'Cloudmade 2',
+			'desc'    => '',
+			'std'     => 'Cloudmade 2',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
+		$this->settings['cloudmade3_name'] = array(
+			'version' => '1.6',
+			'title'   => 'Cloudmade 3',
+			'desc'    => '',
+			'std'     => 'Cloudmade 3',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
+		$this->settings['custom_basemap_name'] = array(
+			'version' => '1.0',
+			'title'   => __( 'Custom Basemap', 'lmm' ),
+			'desc'    => '',
+			'std'     => 'Custom1',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
+		$this->settings['custom_basemap2_name'] = array(
+			'version' => '1.0',
+			'title'   => __( 'Custom Basemap 2', 'lmm' ),
+			'desc'    => '',
+			'std'     => 'Custom2',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
+		$this->settings['custom_basemap3_name'] = array(
+			'version' => '1.0',
+			'title'   => __( 'Custom Basemap 3', 'lmm' ),
+			'desc'    => '',
+			'std'     => 'Custom3',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
+		
 		/*
 		* Available basemaps in control box
 		*/
@@ -538,6 +594,30 @@ class Leafletmapsmarker_options {
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
+		$this->settings['controlbox_cloudmade'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => 'Cloudmade',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);	
+		$this->settings['controlbox_cloudmade2'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => 'Cloudmade 2',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);	
+		$this->settings['controlbox_cloudmade3'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => 'Cloudmade 3',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);	
 		$this->settings['controlbox_custom_basemap'] = array(
 			'version' => '1.0',
 			'section' => 'basemaps',
@@ -602,6 +682,144 @@ class Leafletmapsmarker_options {
 			'std'     => 1 
 		);
 		/*
+		* Cloudmade settings
+		*/
+		$this->settings['cloudmade_heading'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'Cloudmade settings', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['cloudmade_helptext'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-cloudmade.jpg />',
+			'type'    => 'helptext'
+		);
+		$this->settings['cloudmade_api_key'] = array(
+			'version' => '1.6',
+			'title'   => __( 'API key', 'lmm' ),
+			'desc'    => '',
+			'std'     => '',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['cloudmade_styleid'] = array(
+			'version' => '1.6',
+			'title'   => 'styleID',
+			'desc'    => '',
+			'std'     => '',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['cloudmade_double_resolution'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'title'   => __('Double resolution','lmm'),
+			'desc'    => __('This will improve map look for iPhone 4, Motorola Milestone, etc.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'enabled',
+			'choices' => array(
+				'enabled' => __('enabled','lmm'),
+				'disabled' => __('disabled','lmm')
+			)
+		);		
+		/*
+		* Cloudmade 2 settings
+		*/
+		$this->settings['cloudmade2_heading'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'Cloudmade 2 settings', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['cloudmade2_helptext'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-cloudmade.jpg />',
+			'type'    => 'helptext'
+		);
+		$this->settings['cloudmade2_api_key'] = array(
+			'version' => '1.6',
+			'title'   => __( 'API key', 'lmm' ),
+			'desc'    => '',
+			'std'     => '',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['cloudmade2_styleid'] = array(
+			'version' => '1.6',
+			'title'   => 'styleID',
+			'desc'    => '',
+			'std'     => '',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
+		$this->settings['cloudmade2_double_resolution'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'title'   => __('Double resolution','lmm'),
+			'desc'    => __('This will improve map look for iPhone 4, Motorola Milestone, etc.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'enabled',
+			'choices' => array(
+				'enabled' => __('enabled','lmm'),
+				'disabled' => __('disabled','lmm')
+			)
+		);				
+		/*
+		* Cloudmade 3 settings
+		*/
+		$this->settings['cloudmade3_heading'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'Cloudmade 3 settings', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['cloudmade3_helptext'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-cloudmade.jpg />',
+			'type'    => 'helptext'
+		);
+		$this->settings['cloudmade3_api_key'] = array(
+			'version' => '1.6',
+			'title'   => __( 'API key', 'lmm' ),
+			'desc'    => '',
+			'std'     => '',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['cloudmade3_styleid'] = array(
+			'version' => '1.6',
+			'title'   => 'styleID',
+			'desc'    => '',
+			'std'     => '',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
+		$this->settings['cloudmade3_double_resolution'] = array(
+			'version' => '1.6',
+			'section' => 'basemaps',
+			'title'   => __('Double resolution','lmm'),
+			'desc'    => __('This will improve map look for iPhone 4, Motorola Milestone, etc.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'enabled',
+			'choices' => array(
+				'enabled' => __('enabled','lmm'),
+				'disabled' => __('disabled','lmm')
+			)
+		);				
+		/*
 		* Custom basemap 1 settings
 		*/
 		$this->settings['custom_basemap_heading'] = array(
@@ -619,15 +837,6 @@ class Leafletmapsmarker_options {
 			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 1):<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-custom-basemap1.jpg />',
 			'type'    => 'helptext'
 		);
-		$this->settings['custom_basemap_name'] = array(
-			'version' => '1.0',
-			'title'   => __( 'Name', 'lmm' ),
-			'desc'   => __( 'Will be displayed in controlbox if selected', 'lmm' ),
-			'std'     => 'Custom1',
-			'type'    => 'text',
-			'section' => 'basemaps'
-		);		
-		
 		$this->settings['custom_basemap_tileurl'] = array(
 			'version' => '1.0',
 			'title'   => __( 'Tiles URL', 'lmm' ),
@@ -698,15 +907,6 @@ class Leafletmapsmarker_options {
 			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 2):<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-custom-basemap2.jpg />',
 			'type'    => 'helptext'
 		);
-		$this->settings['custom_basemap2_name'] = array(
-			'version' => '1.0',
-			'title'   => __( 'Name', 'lmm' ),
-			'desc'   => __( 'Will be displayed in controlbox if selected', 'lmm' ),
-			'std'     => 'Custom2',
-			'type'    => 'text',
-			'section' => 'basemaps'
-		);		
-		
 		$this->settings['custom_basemap2_tileurl'] = array(
 			'version' => '1.0',
 			'title'   => __( 'Tiles URL', 'lmm' ),
@@ -777,15 +977,6 @@ class Leafletmapsmarker_options {
 			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 3):<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-custom-basemap3.jpg />',
 			'type'    => 'helptext'
 		);
-		$this->settings['custom_basemap3_name'] = array(
-			'version' => '1.0',
-			'title'   => __( 'Name', 'lmm' ),
-			'desc'   => __( 'Will be displayed in controlbox if selected', 'lmm' ),
-			'std'     => 'Custom3',
-			'type'    => 'text',
-			'section' => 'basemaps'
-		);		
-		
 		$this->settings['custom_basemap3_tileurl'] = array(
 			'version' => '1.0',
 			'title'   => __( 'Tiles URL', 'lmm' ),
@@ -3829,6 +4020,9 @@ class Leafletmapsmarker_options {
 				'mapquest_aerial' => __('MapQuest (Aerial, max zoom 12 globally, 12+ in the United States)','lmm'),
 				'ogdwien_basemap' => __('OGD Vienna basemap (max zoom 19)','lmm'),
 				'ogdwien_satellite' => __('OGD Vienna satellite (max zoom 19)','lmm'),
+				'cloudmade' => 'Cloudmade',
+				'cloudmade2' => 'Cloudmade 2',
+				'cloudmade3' => 'Cloudmade 3',
 				'custom_basemap' => __('Custom basemap','lmm'),
 				'custom_basemap2' => __('Custom basemap 2','lmm'),
 				'custom_basemap3' => __('Custom basemap 3','lmm')
