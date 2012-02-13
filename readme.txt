@@ -164,7 +164,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v1.6 =
-
+update leaflet to 0.3 stable, support for vector layers, bugfixes
 
 = v1.5.1 =
 important bugfixes for multisite installations fixing layer map and API bugs
@@ -205,6 +205,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v1.6 - xx.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.6)
+* UPDATE from leaflet 0.3 beta to 0.3 stable [changelog](https://github.com/CloudMade/Leaflet/blob/master/CHANGELOG.md)
 * BUGFIX: lat/lon values for layer and marker maps were rounded on some installations
 * CHANGED: added updated Japanes translation (thanks to Shu Higashi, @higa4)
 
