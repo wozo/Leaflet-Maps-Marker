@@ -86,7 +86,7 @@ Please let me know which feature you think is missing by adding your ideas at [h
 
 * English (en_US)
 * German (de_DE)
-* Japanes (ja) [Shu Higashi](http://twitter.com/higa4)
+* Japanese (ja) [Shu Higashi](http://twitter.com/higa4)
 
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
@@ -210,7 +210,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * UPDATE from leaflet 0.3 beta to 0.3.1 stable [changelog](https://github.com/CloudMade/Leaflet/blob/master/CHANGELOG.md)
 * BUGFIX: markers did not show up in Wikitude World Browser due to a bug with different provider name
 * BUGFIX: lat/lon values for layer and marker maps were rounded on some installations
-* CHANGED: added updated Japanes translation (thanks to Shu Higashi, @higa4)
+* CHANGED: added updated Japanese translation (thanks to Shu Higashi, @higa4)
+* CHANGED: added updated German translation
 
 = v1.5.1 - 12.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.5.1)
@@ -244,7 +245,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 = v1.4.1 - 24.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.4.1)
 * BUGFIX: markers & layers could not be added on some hosting providers (changed updatedby & updatedon column on both tables to NULL instead of NOT NULL)
-* CHANGED: added updated Japanes translation (thanks to Shu Higashi, @higa4)
+* CHANGED: added updated Japanese translation (thanks to Shu Higashi, @higa4)
 
 = v1.4 - 23.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.4)
