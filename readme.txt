@@ -31,7 +31,7 @@ Leaflet Maps Marker allows you to
 * organize your markers in layers and
 * show them thanks to the [Leaflet library from Cloudmade](http://leaflet.cloudmade.com/)
 * by adding a shortcode (e.g. mapsmarker marker="1")] to posts or pages
-* through OSM/OpenStreetMap, MapQuest, [OGD Vienna Maps](http://data.wien.gv.at)
+* through OSM/OpenStreetMap, MapQuest, Cloudmade, [OGD Vienna Maps](http://data.wien.gv.at)
 * or any custom WMTS-map
 
 to the visitors of your website.
@@ -45,6 +45,7 @@ to the visitors of your website.
 * export your markers as GeoRSS for embedding in external websites or apps
 * export your markers as ARML for displaying in the augmented-reality browser from Wikitude
 * export your markers as csv-file
+* configure up to 3 basemaps from Cloudmade with custom styles
 * display a list of markers below layer maps
 * show standalone maps in fullscreen mode
 * support for microformat geo-markup to make your maps machine-readable
@@ -164,7 +165,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v1.6 =
-update leaflet to 0.3 stable, support for Cloudmade maps with styles, support for vector layers, bugfixes
+update leaflet to 0.3.1 stable, support for Cloudmade maps with styles, bugfix for Wikitude API
 
 = v1.5.1 =
 important bugfixes for multisite installations fixing layer map and API bugs
@@ -203,10 +204,11 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v1.6 - xx.02.2012 =
+= v1.6 - 14.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.6)
 * NEW: added support for Cloudmade maps with styles as basemaps
-* UPDATE from leaflet 0.3 beta to 0.3 stable [changelog](https://github.com/CloudMade/Leaflet/blob/master/CHANGELOG.md)
+* UPDATE from leaflet 0.3 beta to 0.3.1 stable [changelog](https://github.com/CloudMade/Leaflet/blob/master/CHANGELOG.md)
+* BUGFIX: markers did not show up in Wikitude World Browser due to a bug with different provider name
 * BUGFIX: lat/lon values for layer and marker maps were rounded on some installations
 * CHANGED: added updated Japanes translation (thanks to Shu Higashi, @higa4)
 

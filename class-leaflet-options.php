@@ -3493,14 +3493,14 @@ class Leafletmapsmarker_options {
 		* ArcGIS Server settings
 		*/
 		/*$this->settings['vl_ags_heading'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'title'   => '', 
 			'desc'    => __( 'ArcGIS Server settings', 'lmm'),
 			'type'    => 'heading'
 		);
 		$this->settings['vl_ags_helptext'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'std'     => '', 
 			'title'   => '',
@@ -3508,7 +3508,7 @@ class Leafletmapsmarker_options {
 			'type'    => 'helptext'
 		);
 		$this->settings['vl_ags_name'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'title'   => __('Name','lmm'),
 			'desc'    => '',
 			'std'     => 'Denver Light Rail Lines',
@@ -3516,7 +3516,7 @@ class Leafletmapsmarker_options {
 			'section' => 'vl'
 		);		
 		$this->settings['vl_ags_url'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'title'   => 'url',
 			'desc'    => __( 'Required - A url for a specific layer in an ArcGIS Server service.', 'lmm' ),
 			'std'     => 'http://maps.rtd-denver.com/ArcGIS/rest/services/SystemMapLiteGoogleVectors/MapServer/1',
@@ -3524,7 +3524,7 @@ class Leafletmapsmarker_options {
 			'section' => 'vl'
 		);			
 		$this->settings['vl_ags_scalerange'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'title'   => 'scaleRange',
 			'desc'    => __( 'An array with two number values that represent the minimum and maximum scales the layer is visible. For example: [13, 20]', 'lmm' ),
 			'std'     => '[13, 20]',
@@ -3532,7 +3532,7 @@ class Leafletmapsmarker_options {
 			'section' => 'vl'
 		);				
 		$this->settings['vl_ags_dynamic'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'title'   => 'dynamic',
 			'desc'    => __('Whether or not the layer contains dynamic data. If true, feature geometry and attributes will be checked for changes after extent change and/or after a defined interval. For details check the <a href="http://geojason.info/leaflet-vector-layers/documentation/#docs-dynamic" target="_blank">dynamic data documentation</a>.','lmm'),
@@ -3544,7 +3544,7 @@ class Leafletmapsmarker_options {
 			)
 		);	
 		$this->settings['vl_ags_autoupdate'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'title'   => 'autoUpdate',
 			'desc'    => __('Whether or not to auto-update a dynamic layer. If true, feature geometry and attributes will be updated at an interval set by the autoUpdateInterval option. For details check the <a href="http://geojason.info/leaflet-vector-layers/documentation/#docs-dynamic" target="_blank">dynamic data documentation</a>.','lmm'),
@@ -3556,7 +3556,7 @@ class Leafletmapsmarker_options {
 			)
 		);	
 		$this->settings['vl_ags_autoupdateinterval'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'title'   => 'autoUpdateInterval',
 			'desc'    => __( 'The interval (in milliseconds) between checks for updated feature geometry and attributes when the autoUpdate option is set to true. For details check the <a href="http://geojason.info/leaflet-vector-layers/documentation/#docs-dynamic" target="_blank">dynamic data documentation</a>.', 'lmm' ),
 			'std'     => '',
@@ -3564,7 +3564,7 @@ class Leafletmapsmarker_options {
 			'section' => 'vl'
 		);			
 		$this->settings['vl_ags_popuptemplate'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'title'   => 'popupTemplate',
 			'desc'    => __( 'A template for creating the content of a <a href="http://leaflet.cloudmade.com/reference.html#popup" target="_blank">Leaflet Popup</a> when a feature is clicked. For details check the <a href="http://geojason.info/leaflet-vector-layers/documentation/#docs-popup" target="_blank">Popup Template documentation</a>.', 'lmm' ),
 			'std'     => '<div class=&quot;iw-content&quot;><h3>Light Rail Line</h3><table class=&quot;condensed-table&quot;><tr><th>Route</th><td>{ROUTE}</td></tr></table></div>',
@@ -3572,7 +3572,7 @@ class Leafletmapsmarker_options {
 			'section' => 'vl'
 		);		
 		$this->settings['vl_ags_singlepopup'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'title'   => 'singlePopup',
 			'desc'    => __('Whether or not to show a single Popup for a layer when features are clicked. This keeps the map from getting cluttered when multiple features are clicked.','lmm'),
@@ -3584,7 +3584,7 @@ class Leafletmapsmarker_options {
 			)
 		);			
 		$this->settings['vl_ags_popupoptions'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'title'   => 'popupOptions',
 			'desc'    => __( 'Controls the width of and the presence of a close button for the Popup and whether the map should be panned when the Popup is opened.', 'lmm' ),
 			'std'     => '',
@@ -3592,7 +3592,7 @@ class Leafletmapsmarker_options {
 			'section' => 'vl'
 		);
 		$this->settings['vl_ags_symbology'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'title'   => 'symbology',
 			'desc'    => __( 'The symbology options for the layer. Features can be rendered with a single symbology or can also be symbolized based on an attribute using unique values or a value range. For details check the <a href="http://geojason.info/leaflet-vector-layers/documentation/#docs-symbology" target="_blank">symbology options documentation</a>.', 'lmm' ),
 			'std'     => '{ type: "single", vectorOptions: { weight: 4, opacity: 0.8, color: "#004a00" } }',
@@ -3600,7 +3600,7 @@ class Leafletmapsmarker_options {
 			'section' => 'vl'
 		);	
 		$this->settings['vl_ags_showall'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'title'   => 'showAll',
 			'desc'    => __('If true, all features will be fetched and shown once, not after a map extent change. This is helpful for layers with only a handful of features.','lmm'),
@@ -3612,7 +3612,7 @@ class Leafletmapsmarker_options {
 			)
 		);	
 		$this->settings['vl_ags_fields'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'title'   => 'fields',
 			'desc'    => __( 'A list of comma separated fields to be returned with the features. For example "OBJECTID,OWNER_NAME" returns two fields and "*" returns all fields.', 'lmm' ),
 			'std'     => '*',
@@ -3620,7 +3620,7 @@ class Leafletmapsmarker_options {
 			'section' => 'vl'
 		);	
 		$this->settings['vl_ags_uniqueFields'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'title'   => 'uniqueFields',
 			'desc'    => __( 'A field in the returned data that can be considered unique. This is not required but is very helpful in determining which features are already on the map when the map extent changes.', 'lmm' ),
 			'std'     => '',
@@ -3632,14 +3632,14 @@ class Leafletmapsmarker_options {
 		* Arc2Earth Sync instance settings
 		*/
 		/*$this->settings['vl_a2e_heading'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'title'   => '', 
 			'desc'    => __( 'Arc2Earth Sync instance settings', 'lmm'),
 			'type'    => 'heading'
 		);
 		$this->settings['vl_a2e_helptext'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'std'     => '', 
 			'title'   => '',
@@ -3651,14 +3651,14 @@ class Leafletmapsmarker_options {
 		* GeoIQ dataset settings
 		*/
 		/*$this->settings['vl_geoiq_heading'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'title'   => '', 
 			'desc'    => __( 'GeoIQ dataset settings', 'lmm'),
 			'type'    => 'heading'
 		);
 		$this->settings['vl_geoiq_helptext'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'std'     => '', 
 			'title'   => '',
@@ -3670,14 +3670,14 @@ class Leafletmapsmarker_options {
 		* CartoDB table settings
 		*/
 		/*$this->settings['vl_cartodb_heading'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'title'   => '', 
 			'desc'    => __( 'CartoDB table settings', 'lmm'),
 			'type'    => 'heading'
 		);
 		$this->settings['vl_cartodb_helptext'] = array(
-			'version' => '1.6',
+			'version' => '1.7',
 			'section' => 'vl',
 			'std'     => '', 
 			'title'   => '',
