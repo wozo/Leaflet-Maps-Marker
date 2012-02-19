@@ -210,6 +210,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 = v1.7 - xx.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.7)
 * NEW: Wikitude World Browser now displays custom marker icons instead of standard icon from settings
+* CHANGED: default font color in popups to black due to incompabilities with several themes
 
 = v1.6 - 14.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.6)
