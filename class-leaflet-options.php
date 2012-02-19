@@ -29,19 +29,6 @@ class Leafletmapsmarker_options {
 		$this->sections['ar']   = 'Augmented-Reality';
 		$this->sections['misc']   = 'Misc';
 		$this->sections['reset']        = 'Reset';
-	/* info: localized tab texts break jQuery (jQuery UI Tabs: Mismatching fragment identifier) - no fix yet, help appreciated :-/
-		$this->sections['basemaps']      = __( 'Basemaps', 'lmm' );
-		$this->sections['overlays']      = __( 'Overlays', 'lmm' );
-		$this->sections['wms']      = __( 'WMS', 'lmm' );
-		$this->sections['vl']      = __( 'Vector layers', 'lmm' );
-		$this->sections['defaults_marker']   = __( 'Marker defaults', 'lmm' );
-		$this->sections['defaults_layer']   = __( 'Layer defaults', 'lmm' );
-		$this->sections['google_places']   = __( 'Google Places', 'lmm' );
-		$this->sections['directions']   = __( 'Directions', 'lmm' );
-		$this->sections['ar']   = __( 'Augmented-Reality', 'lmm' );
-		$this->sections['misc']   = __( 'Misc', 'lmm' );
-		$this->sections['reset']        = __( 'Reset to Defaults', 'lmm' );
-	*/
 		add_action( 'admin_init', array( &$this, 'register_settings' ) );
 		if ( ! get_option( 'leafletmapsmarker_options' ) )
 			$this->initialize_settings();
@@ -5742,7 +5729,6 @@ class Leafletmapsmarker_options {
 		$options_new = array_merge($options_current, $new_options_defaults);
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
-		/* template for plugin updates 
 		//info:  set defaults for options introduced in v1.7
 		if (get_option('leafletmapsmarker_version') == '1.6' )
 		{
@@ -5750,6 +5736,22 @@ class Leafletmapsmarker_options {
 			foreach ( $this->settings as $id => $setting ) 
 			{
 				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.7')
+				{
+				$new_options_defaults[$id] = $setting['std'];
+				}
+			}
+		$options_current = get_option( 'leafletmapsmarker_options' );
+		$options_new = array_merge($options_current, $new_options_defaults);
+		update_option( 'leafletmapsmarker_options', $options_new );
+		}
+		/* template for plugin updates 
+		//info:  set defaults for options introduced in v1.8
+		if (get_option('leafletmapsmarker_version') == '1.7' )
+		{
+			$new_options_defaults = array();
+			foreach ( $this->settings as $id => $setting ) 
+			{
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.8')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}

@@ -8,7 +8,7 @@ Author:            Robert Harm (with special support from Sindre Wimberger)
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.4-alpha-19904
-Stable tag:        1.6
+Stable tag:        1.7
 
 Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 
@@ -165,7 +165,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v1.7 =
-
+added multi-layer-maps, Wikitude enhancements
 
 = v1.6 =
 update leaflet to 0.3.1 stable, support for Cloudmade maps with styles, bugfix for Wikitude API
