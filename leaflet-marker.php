@@ -102,7 +102,7 @@ else {
   global $current_user;
   get_currentuserinfo();	  
   //info: get layers list
-  $layerlist = $wpdb->get_results('SELECT * FROM '.$table_name_layers.' WHERE id>0', ARRAY_A);
+  $layerlist = $wpdb->get_results('SELECT * FROM '.$table_name_layers.' WHERE id>0 AND multi_layer_map = 0', ARRAY_A);
   $id = '';
   $markername = '';
   $basemap = $lmm_options[ 'standard_basemap' ];

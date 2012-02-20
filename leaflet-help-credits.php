@@ -33,7 +33,7 @@
 		<li>- Address autocompletion powered by <a href="http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html" target="_blank">Google Places API</a></li>
 		<li>- <a href="http://mapicons.nicolasmollet.com" target="_blank">Map Icons Collection</a> by Nicolas Mollet</li>
 		<li>- Map center icon by <a href="http://glyphish.com/" target="_blank">Joseph Wain</a>, licence: Creative Commons Attribution (by)</li>
-		<li>- Plus, json &amp; csv-export icon by <a href="http://www.pinvoke.com/" target="_blank">Yusuke Kamiyamane</a>, licence: Creative Commons Attribution (by)</li>
+		<li>- Plus, json, layer &amp; csv-export icon by <a href="http://www.pinvoke.com/" target="_blank">Yusuke Kamiyamane</a>, licence: Creative Commons Attribution (by)</li>
 		<li>- Question Mark Icon by <a href="http://www.randomjabber.com/" target="_blank">RandomJabber</a></li>
 	</ul>
 	<h3><?php _e('Credits & special thanks','lmm') ?></h3>

@@ -5417,6 +5417,14 @@ class Leafletmapsmarker_options {
 			'type'    => 'checkbox-readonly',
 			'std'     => 1 
 		);
+		$this->settings['misc_layer_listing_columns_type'] = array(
+			'version' => '1.7',
+			'section' => 'misc',
+			'title'    => '',
+			'desc'    => __('Type','lmm'),
+			'type'    => 'checkbox-readonly',
+			'std'     => 1 
+		);		
 		$this->settings['misc_layer_listing_columns_layername'] = array(
 			'version' => '1.0',
 			'section' => 'misc',
