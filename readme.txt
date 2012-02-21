@@ -161,11 +161,15 @@ This program is free software; you can redistribute it and/or modify it under th
 
 = Translations =
 
+* Spanish (by David Ramírez, [http://www.hiperterminal.com](http://www.hiperterminal.com)</li>
+* Japanese (by Shu Higashi, [http://twitter.com/higa4](@higa4))
+* German (by [http://twitter.com/robertharm](@RobertHarm)))
+
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
 = v1.7 =
-added multi-layer-maps, Wikitude enhancements
+added multi-layer-maps, Wikitude enhancements, added Spanish translation
 
 = v1.6 =
 update leaflet to 0.3.1 stable, support for Cloudmade maps with styles, bugfix for Wikitude API
@@ -209,7 +213,11 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v1.7 - xx.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.7)
+* NEW: added multi-layer support allowing you to combine markers from different layer maps
 * NEW: Wikitude World Browser now displays custom marker icons instead of standard icon from settings
+* NEW: option to set the maximum number of markers you want to display in the list below layer maps
+* NEW: Spanish translation thanks to David Ramírez, [http://www.hiperterminal.com](http://www.hiperterminal.com)
+* OPTIMIZED: added with & height attributes to custom marker-image-tags on marker edit page to speed up page load time
 * CHANGED: default font color in popups to black due to incompabilities with several themes
 
 = v1.6 - 14.02.2012 =

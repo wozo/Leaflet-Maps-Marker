@@ -41,6 +41,10 @@ if (isset($_GET['layer'])) {
  	$latUser = isset($_GET['latitude']) ? floatval($_GET['latitude']) : $first_marker_lat;
 	$lonUser = isset($_GET['longitude']) ? floatval($_GET['longitude']) : $first_marker_lon;
   } else {
+	$sql_mlm_check = 'SELECT multi_layer_map FROM '.$table_name_layers.' WHERE id='.$layer;
+	$sql_mlm_check_list = 'SELECT multi_layer_map_list FROM '.$table_name_layers.' WHERE id='.$layer;
+	$mlm_check = $wpdb->get_var($sql_mlm_check);
+	$mlm_check_list = $wpdb->get_row($sql_mlm_check_list, ARRAY_A);
 	$layerviewlat = $wpdb->get_var('SELECT layerviewlat FROM '.$table_name_layers.' WHERE id='.$layer);
 	$layerviewlon = $wpdb->get_var('SELECT layerviewlon FROM '.$table_name_layers.' WHERE id='.$layer);
  	$latUser = isset($_GET['latitude']) ? floatval($_GET['latitude']) : $layerviewlat;

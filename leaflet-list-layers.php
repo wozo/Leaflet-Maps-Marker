@@ -126,7 +126,19 @@ if ($getorder == 'asc') { $sortordericon = 'asc'; } else { $sortordericon = 'des
 		} else {
 			$delete_link_layer = '';
 		}
-	    $markercount = $wpdb->get_var('SELECT count(*) FROM '.$table_name_layers.' as l INNER JOIN '.$table_name_markers.' AS m ON l.id=m.layer WHERE l.id='.$row['id']);
+		$multi_layer_map_list_exploded = explode(",", $wpdb->get_var('SELECT l.multi_layer_map_list FROM '.$table_name_layers.' as l WHERE l.id='.$row['id']));
+		if ($row['multi_layer_map'] == 0) {
+			$markercount = $wpdb->get_var('SELECT count(*) FROM '.$table_name_layers.' as l INNER JOIN '.$table_name_markers.' AS m ON l.id=m.layer WHERE l.id='.$row['id']);
+		} else 	if ( ($row['multi_layer_map'] == 1) && ( $row['multi_layer_map_list'] == 'all' ) ) {
+			$markercount = intval($wpdb->get_var('SELECT COUNT(*) FROM '.$table_name_markers));
+		} else 	if ( ($row['multi_layer_map'] == 1) && ( $row['multi_layer_map_list'] != NULL ) && ($row['multi_layer_map_list'] != 'all') ) {
+			foreach ($multi_layer_map_list_exploded as $mlmrowcount){
+			$mlm_count_temp{$mlmrowcount} = $wpdb->get_var('SELECT count(*) FROM '.$table_name_layers.' as l INNER JOIN '.$table_name_markers.' AS m ON l.id=m.layer WHERE l.id='.$mlmrowcount);
+			}
+			$markercount = array_sum($mlm_count_temp); 
+		} else 	if ( ($row['multi_layer_map'] == 1) && ( $row['multi_layer_map_list'] == NULL ) ) {
+			$markercount = 0;
+		}
 		$multi_layer_map_type = ($row['multi_layer_map'] == 0) ? '&nbsp;&nbsp;<img src="' . LEAFLET_PLUGIN_URL . 'img/icon-layer.png" width="16" height="16" title="' . esc_attr__('single layer','lmm') . '" />' : '&nbsp;&nbsp;<img src="' . LEAFLET_PLUGIN_URL . 'img/icon-multi_layer_map.png" width="16" height="16" title="' . esc_attr__('multi layer map','lmm') . '" />';
 
 	    $openpanelstatus = ($row['panel'] == 1) ? __('visible','lmm') : __('hidden','lmm');

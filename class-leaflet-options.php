@@ -185,7 +185,6 @@ class Leafletmapsmarker_options {
 			<li>' . __('Custom basemap 1 settings','lmm') . '</li>
 			<li>' . __('Custom basemap 2 settings','lmm') . '</li>
 			<li>' . __('Custom basemap 3 settings','lmm') . '</li></ul></span>';
-
 	}
 	/**
 	 * Listing for overlays section
@@ -4345,7 +4344,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.0',
 			'section' => 'defaults_layer',
 			'title'   => '',
-			'desc'    => 'GeoJSON <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-json.png">',
+			'desc'    => 'GeoJSON <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-json.png"> (' . __('not available on multi layer maps','lmm') . ')',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -4474,7 +4473,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.5',
 			'section' => 'defaults_layer',
 			'title'   => __('Display a list of markers under the map','lmm'),
-			'desc'    => '',
+			'desc'    => __('(not available on multi layer maps)','lmm'),
 			'type'    => 'radio',
 			'std'     => '1',
 			'choices' => array(
@@ -4507,6 +4506,14 @@ class Leafletmapsmarker_options {
 				'ASC' => __('ascending','lmm'),
 				'DESC' => __('descending','lmm')
 			)
+		);
+		$this->settings['defaults_layer_listmarkers_limit'] = array(
+			'version' => '1.7',
+			'title'   => __( 'Limit', 'lmm' ),
+			'desc'    => __( 'maximum number of markers to display in the list', 'lmm' ),
+			'std'     => '100',
+			'type'    => 'text',
+			'section' => 'defaults_layer'
 		);
 		/*===========================================
 		*
