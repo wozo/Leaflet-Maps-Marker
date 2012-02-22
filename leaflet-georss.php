@@ -49,8 +49,10 @@ if (isset($_GET['layer'])) {
 	    }
 	    if (count($checkedlayers) > 0)
 	      $q = 'WHERE layer IN ('.implode(',', $checkedlayers).')';
-    } else if ($mlm_check == 1) {
+    } else if ( ($mlm_check == 1) && (!in_array('all',$mlm_check_list) ) ){
 	      $q = 'WHERE layer IN ('.implode(',', $mlm_check_list).')';
+    } else if ( ($mlm_check == 1) && (in_array('all',$mlm_check_list) ) ){
+	      $q = 'LIMIT 1000';
     }
   }
   $sql = 'SELECT m.id as mid, m.markername as mmarkername, m.layer as mlayer, CONCAT(m.lon,\',\',m.lat) AS mcoords, m.icon as micon, m.createdby as mcreatedby, m.createdon as mcreatedon, m.updatedby as mupdatedby, m.updatedon as mupdatedon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext, l.id as lid, l.createdby as lcreatedby, l.createdon as lcreatedon, l.updatedby as lupdatedby, l.updatedon as lupdatedon, l.name AS lname FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;

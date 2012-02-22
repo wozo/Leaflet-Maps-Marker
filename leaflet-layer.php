@@ -211,7 +211,6 @@ else {
 	}
   }  
 ?>
-
 <?php //info: check if layer exists - part 1
 if ($layerviewlat == NULL) {
 $error_layer_not_exists = sprintf( esc_attr__('Error: a layer with the ID %1$s does not exist!','lmm'), $_GET['id']); 
@@ -285,7 +284,6 @@ echo '<p><a class=\'button-secondary\' href=\'' . WP_ADMIN_URL . 'admin.php?page
 				<input type="radio" name="panel" value="1" <?php checked($panel, 1 ); ?>><?php _e('show','lmm') ?><br/>
 				<input type="radio" name="panel" value="0" <?php checked($panel, 0 ); ?>><?php _e('hide','lmm') ?>
 				<br/><br/>
-
 				<?php if ($multi_layer_map == 0) { ?>
 				<label for="listmarkers"><strong><?php _e('Display a list of markers under the map','lmm') ?>:</strong></label><br/>
 				<input type="radio" name="listmarkers" value="1" <?php checked($llistmarkers, 1 ); ?>><?php _e('yes','lmm') ?><br/>
@@ -436,7 +434,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . WP_ADMIN_URL . 'admin.php?page
 					<?php
 					$multi_layer_map_state = ($multi_layer_map == 1) ? 'block' : 'none';
 					echo '<div id="lmm-multi_layer_map" style="display:' . $multi_layer_map_state . ';">'.PHP_EOL;
-					_e('Please select the layers, whose markers you would like to display on this multi layer map. Please note that the following features are not supported for multi layer maps: adding markers directly, displaying a list of markers under the map and access of all assigned markers via GeoJSON (please use GeoJSON-feeds for individual layers instead). Please also do not change an existing layer map with assigned markers to a multi layer map, as those assigned markers will not be displayed on the multi layer map.','lmm').PHP_EOL;
+					_e('Please select the layers, whose markers you would like to display on this multi layer map. Please note that the following features are not supported for multi layer maps: adding markers directly, displaying a list of markers under the map, access of all assigned markers via GeoJSON (please use GeoJSON-feeds for individual layers instead) and dynamic preview in backend (select layers instead, click save and the edit button again). Please also do not change an existing layer map with assigned markers to a multi layer map, as those assigned markers will not be displayed on the multi layer map.','lmm').PHP_EOL;
 					$mlm_checked_all = ( in_array('all', $multi_layer_map_list_exploded) ) ? ' checked="checked"' : ''; 
 					echo '<br/><br/><input type="checkbox" id="mlm-all" name="mlm-all" ' . $mlm_checked_all . '> ' . __('display all markers','lmm') . '<br/><br/><strong>' . __('Display markers from selected layers only','lmm') . '</strong><br/>';
 					foreach ($layerlist as $mlmrow){
@@ -507,7 +505,6 @@ echo '<p><a class=\'button-secondary\' href=\'' . WP_ADMIN_URL . 'admin.php?page
 	<p>
 		<?php _e('Total','lmm') ?>: <?php echo $markercount; ?> <?php _e('marker','lmm') ?>
 	</p>
-
 	<?php if ($multi_layer_map == 1) {	
 	_e('For details on assigned markers to this multi-layer map, please open the individual layer maps.','lmm');
 	} else if ($multi_layer_map == 0) {	?>
@@ -673,7 +670,6 @@ $markernonce = wp_create_nonce('marker-nonce'); //info: for delete-links
 		<p> <?php echo "<a href=\"" . WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_marker&addtoLayer=$id\" style=\"text-decoration:none;\"><img src=\"" . LEAFLET_PLUGIN_URL . "img/icon-add.png\" /></a> <a href=\"" . WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_marker&addtoLayer=$id&Layername=" . urlencode(stripslashes($name)) . "\" style=\"text-decoration:none;\">" . __('add new marker to this layer','lmm') . "</a>"; ?> </p>
 	<?php } //end multi-layer map-check for marker table listing?>
 	<?php } //end $isedit ?>
-
 	<!--isedit--> 
 </div>
 <!--wrap--> 

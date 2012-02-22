@@ -40,6 +40,7 @@ to the visitors of your website.
 
 * show directions for your locations using Google Maps, yournavigation.org or openrouteservice.org
 * configure up to 10 WMS servers to display additional information from external geodata providers (like the European Environment Agency) on your maps
+* organize markers from different layers in multi-layer-maps
 * export your markers as KML file for displaying in Google Earth or Google Maps
 * export your markers as GeoJSON file for embedding in external websites or apps
 * export your markers as GeoRSS for embedding in external websites or apps
@@ -87,6 +88,7 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * English (en_US)
 * German (de_DE)
 * Japanese (ja) [Shu Higashi](http://twitter.com/higa4)
+* Spanish (es_ES) David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com)
 
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
@@ -159,12 +161,6 @@ This program is free software; you can redistribute it and/or modify it under th
 * Wordpress-Settings-API-Class by Aliso the geek ([http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/](http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/))
 * [Hind](http://www.nanodesu.ru) who originally release a basic [Leaflet plugin](https://wordpress.org/extend/plugins/leaflet/) which I used partly as a basis for Leaflet Maps Marker plugin
 
-= Translations =
-
-* Spanish (by David Ramírez, [http://www.hiperterminal.com](http://www.hiperterminal.com)</li>
-* Japanese (by Shu Higashi, [http://twitter.com/higa4](@higa4))
-* German (by [http://twitter.com/robertharm](@RobertHarm)))
-
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
@@ -211,7 +207,7 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v1.7 - xx.02.2012 =
+= v1.7 - 22.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.7)
 * NEW: added multi-layer support allowing you to combine markers from different layer maps
 * NEW: Wikitude World Browser now displays custom marker icons instead of standard icon from settings
