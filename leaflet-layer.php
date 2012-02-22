@@ -436,7 +436,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . WP_ADMIN_URL . 'admin.php?page
 					<?php
 					$multi_layer_map_state = ($multi_layer_map == 1) ? 'block' : 'none';
 					echo '<div id="lmm-multi_layer_map" style="display:' . $multi_layer_map_state . ';">'.PHP_EOL;
-					_e('Please select the layers, whose markers you would like to display on this multi layer map. Please note that the following features are not supported for multi layer maps: adding markers directly, displaying a list of markers under the map and access of all assigned markers via GeoJSON (please use GeoJSON-feeds for individual layers instead).','lmm').PHP_EOL;
+					_e('Please select the layers, whose markers you would like to display on this multi layer map. Please note that the following features are not supported for multi layer maps: adding markers directly, displaying a list of markers under the map and access of all assigned markers via GeoJSON (please use GeoJSON-feeds for individual layers instead). Please also do not change an existing layer map with assigned markers to a multi layer map, as those assigned markers will not be displayed on the multi layer map.','lmm').PHP_EOL;
 					$mlm_checked_all = ( in_array('all', $multi_layer_map_list_exploded) ) ? ' checked="checked"' : ''; 
 					echo '<br/><br/><input type="checkbox" id="mlm-all" name="mlm-all" ' . $mlm_checked_all . '> ' . __('display all markers','lmm') . '<br/><br/><strong>' . __('Display markers from selected layers only','lmm') . '</strong><br/>';
 					foreach ($layerlist as $mlmrow){
@@ -1003,6 +1003,10 @@ var markers = {};
 		}
 		if($('input:radio[name=multi_layer_map]:checked').val() == 0) {
 			multi_layer_map.css("display",'none');
+		}
+		//info: hide layer list below map on new layer creation
+		if($('input:radio[name=listmarkers]:checked').val() == 1) {
+			listmarkers.css("display",'none');
 		}
 	});
 	//info: check if layerviewlat is a number
