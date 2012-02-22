@@ -10,7 +10,7 @@ global $wpdb;
 $lmm_options = get_option( 'leafletmapsmarker_options' );
 $table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
 $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
-$layerlist = $wpdb->get_results('SELECT l.id as lid,l.name as lname FROM '.$table_name_layers.' as l WHERE l.multi_layer_map = 0', ARRAY_A);
+$layerlist = $wpdb->get_results('SELECT l.id as lid,l.name as lname FROM '.$table_name_layers.' as l WHERE l.multi_layer_map = 0 and l.id != 0', ARRAY_A);
 $action = isset($_POST['action']) ? $_POST['action'] : (isset($_GET['action']) ? $_GET['action'] : '');
 $oid = isset($_POST['id']) ? $_POST['id'] : (isset($_GET['id']) ? intval($_GET['id']) : '');
 $lat_check = isset($_POST['layerviewlat']) ? $_POST['layerviewlat'] : (isset($_GET['layerviewlat']) ? $_GET['layerviewlat'] : '');
