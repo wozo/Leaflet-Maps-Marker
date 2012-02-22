@@ -207,6 +207,9 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v1.x - xx.02.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v1.x)
+
 = v1.7 - 22.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.7)
 * NEW: added multi-layer support allowing you to combine markers from different layer maps
