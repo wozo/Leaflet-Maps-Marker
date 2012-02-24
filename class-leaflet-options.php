@@ -3712,6 +3712,14 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'defaults_marker'
 		);
+		$this->settings['defaults_marker_icon'] = array(
+			'version' => '1.8',
+			'title'   => __( 'Icon', 'lmm' ),
+			'desc'    => __( 'If you want to use another icon than the blue pin, please enter the file name of the icon in the form field - e.g. smiley_happy.png', 'lmm' ),
+			'std'     => '',
+			'type'    => 'text',
+			'section' => 'defaults_marker'
+		);
 		$this->settings['defaults_marker_zoom'] = array(
 			'version' => '1.0',
 			'title'   => __( 'Zoom', 'lmm' ),
@@ -5759,7 +5767,6 @@ class Leafletmapsmarker_options {
 		$options_new = array_merge($options_current, $new_options_defaults);
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
-		/* template for plugin updates 
 		//info:  set defaults for options introduced in v1.8
 		if (get_option('leafletmapsmarker_version') == '1.7' )
 		{
@@ -5767,6 +5774,22 @@ class Leafletmapsmarker_options {
 			foreach ( $this->settings as $id => $setting ) 
 			{
 				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.8')
+				{
+				$new_options_defaults[$id] = $setting['std'];
+				}
+			}
+		$options_current = get_option( 'leafletmapsmarker_options' );
+		$options_new = array_merge($options_current, $new_options_defaults);
+		update_option( 'leafletmapsmarker_options', $options_new );
+		}
+		/* template for plugin updates 
+		//info:  set defaults for options introduced in v1.9
+		if (get_option('leafletmapsmarker_version') == '1.8' )
+		{
+			$new_options_defaults = array();
+			foreach ( $this->settings as $id => $setting ) 
+			{
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.9')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
