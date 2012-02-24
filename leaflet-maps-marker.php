@@ -4,7 +4,7 @@ Plugin Name: Leaflet Maps Marker
 Plugin URI: http://www.mapsmarker.com
 Description: Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 Tags: map, maps, Leaflet, OpenStreetMap, geoJSON, OSM, travelblog, opendata, opengov, ogdwien, google maps, WMTS, geoRSS, location, geo, geocoding, geolocation, travel, mapnick, osmarender, cloudmade, mapquest, wms
-Version: 1.7
+Version: 1.8
 Author: Robert Harm (with special support from Sindre Wimberger)
 Author URI: http://www.harm.co.at
 Donate link: http://www.mapsmarker.com/donations
@@ -683,6 +683,8 @@ function leafletmapsmarker() {
 	add_action('admin_print_scripts-'.$page6, array(&$this, 'lmm_add_contextual_help'));
 	add_action('admin_print_scripts-'.$page7, array(&$this, 'lmm_add_contextual_help'));
 	add_action('admin_print_scripts-'.$page8, array(&$this, 'lmm_add_contextual_help'));	
+	//info: add any+time datepicker on marker page
+	add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_admin_enqueue_scripts_anytime'));	
   }
   function lmm_add_admin_bar_menu() {
 	global $wp_version;
@@ -804,6 +806,9 @@ function leafletmapsmarker() {
 		'lmm_zoom_out' => __( 'Zoom out', 'lmm' )
 		) );
   }
+  function lmm_admin_enqueue_scripts_anytime() {
+	wp_enqueue_script( 'anytime-datepicker', LEAFLET_PLUGIN_URL . 'js/anytimec.js', array(), NULL); 
+  }
   function lmm_frontend_enqueue_stylesheets() {
 	global $wp_styles;
 	wp_register_style('leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.css', array(), NULL);
@@ -821,6 +826,8 @@ function leafletmapsmarker() {
 	wp_register_style('leafletmapsmarker-ie-only', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.ie.css', array(), NULL);
 	wp_enqueue_style('leafletmapsmarker-ie-only');
 	$wp_styles->add_data('leafletmapsmarker-ie-only', 'conditional', 'lt IE 9');
+	wp_register_style( 'anytime-datepicker', LEAFLET_PLUGIN_URL . 'css/anytime.c.css', array(), NULL );
+	wp_enqueue_style( 'anytime-datepicker' );
    }
    function lmm_install_and_updates() {
 	global $wpdb;
@@ -994,6 +1001,14 @@ function leafletmapsmarker() {
 		$save_defaults_for_new_options = new Leafletmapsmarker_options();
 		$save_defaults_for_new_options->save_defaults_for_new_options();
 		update_option('leafletmapsmarker_version', '1.7');
+	}
+	if (get_option('leafletmapsmarker_version') == '1.7' ) {
+		$table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
+		$update18_1 = "ALTER TABLE `" . $table_name_markers . "` ADD `kml_timestamp` DATETIME NULL AFTER `wms10`;";
+		$wpdb->query($update18_1);
+		$save_defaults_for_new_options = new Leafletmapsmarker_options();
+		$save_defaults_for_new_options->save_defaults_for_new_options();
+		update_option('leafletmapsmarker_version', '1.8');
 		//info: redirect to settings page only on first plugin activation, otherwise redirect is also done on bulk plugin activations
 		if (get_option('leafletmapsmarker_redirect') == 'true') 
 		{
@@ -1002,12 +1017,12 @@ function leafletmapsmarker() {
 		}
 	}
 	/* template for plugin updates 
-	if (get_option('leafletmapsmarker_version') == '1.7' ) {
+	if (get_option('leafletmapsmarker_version') == '1.8' ) {
 		//optional: add code for sql ddl updates
 		//mandatory if new options in class-leaflet-options.php were added
 		$save_defaults_for_new_options = new Leafletmapsmarker_options();
 		$save_defaults_for_new_options->save_defaults_for_new_options();
-		update_option('leafletmapsmarker_version', '1.8');
+		update_option('leafletmapsmarker_version', '1.9');
 		//mandatory: move code for redirect-on-first-activation-check to here
 	}
 	*/
