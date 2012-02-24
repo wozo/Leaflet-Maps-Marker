@@ -151,6 +151,7 @@ This program is free software; you can redistribute it and/or modify it under th
 * OpenStreetMap - The Free Wiki World Map: [OpenStreetMap License](http://wiki.openstreetmap.org/wiki/OpenStreetMap_License) 
 * Map Icons Collection by Nicolas Mollet - [http://mapicons.nicolasmollet.com](http://mapicons.nicolasmollet.com)
 * Datasource OGD Vienna maps: Stadt Wien, Creative Commons Attribution (by) [http://data.wien.gv.at](http://data.wien.gv.at)
+* Any+Time DatePicker/TimePicker, [http://www.ama3.com/anytime/](http://www.ama3.com/anytime/), licence: BY-NC-SA 3.0
 * Adress autocompletion powered by [Google Places API](http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html)
 * Map center icon [Joseph Wain](http://glyphish.com/) - Creative Commons Attribution (by)
 * Plus, json & csv-export icon by [Yusuke Kamiyamane](http://www.pinvoke.com/) - Creative Commons Attribution (by)
