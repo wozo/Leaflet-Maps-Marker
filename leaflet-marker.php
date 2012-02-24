@@ -287,7 +287,15 @@ echo '<p><a class=\'button-secondary\' href=\'' . WP_ADMIN_URL . 'admin.php?page
 					<small><?php _e('If empty, marker creation date is used','lmm') ?><br/></small></p>
 					<script>
 					  AnyTime.picker( "kml_timestamp",
-					    { } );
+					    { 	dayAbbreviations: ["<?php esc_attr_e('Sun','lmm'); ?>","<?php esc_attr_e('Mon','lmm'); ?>","<?php esc_attr_e('Tue','lmm'); ?>","<?php esc_attr_e('Wed','lmm'); ?>","<?php esc_attr_e('Thu','lmm'); ?>","<?php esc_attr_e('Fri','lmm'); ?>","<?php esc_attr_e('Sat','lmm'); ?>"],
+							labelDayOfMonth: "<?php esc_attr_e('Day of Month','lmm'); ?>",
+							labelHour: "<?php esc_attr_e('Hour','lmm'); ?>",
+							labelMinute: "<?php esc_attr_e('Minute','lmm'); ?>",
+							labelSecond: "<?php esc_attr_e('Second','lmm'); ?>",
+							labelTitle: "<?php esc_attr_e('Please select a date and time','lmm'); ?>",
+							labelYear: "<?php esc_attr_e('Year','lmm'); ?>",
+							monthAbbreviations: ["<?php esc_attr_e('Jan','lmm'); ?>","<?php esc_attr_e('Feb','lmm'); ?>","<?php esc_attr_e('Mar','lmm'); ?>","<?php esc_attr_e('Apr','lmm'); ?>","<?php esc_attr_e('May','lmm'); ?>","<?php esc_attr_e('Jun','lmm'); ?>","<?php esc_attr_e('Jul','lmm'); ?>","<?php esc_attr_e('Aug','lmm'); ?>","<?php esc_attr_e('Sep','lmm'); ?>","<?php esc_attr_e('Oct','lmm'); ?>","<?php esc_attr_e('Nov','lmm'); ?>","<?php esc_attr_e('Dec','lmm'); ?>"]
+						} );
 					</script>
 				</td>
 				<td id="wmscheckboxes">
