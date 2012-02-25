@@ -8,7 +8,7 @@ Author:            Robert Harm (with special support from Sindre Wimberger)
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.4-alpha-19904
-Stable tag:        1.7
+Stable tag:        1.8
 
 Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 
@@ -165,6 +165,9 @@ This program is free software; you can redistribute it and/or modify it under th
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
+= v1.8 =
+added tinymce-button, timestamp support for more precise KML animations and option to set default icon, bugfixes
+
 = v1.7 =
 added multi-layer-maps, Wikitude enhancements, added Spanish translation
 
@@ -212,6 +215,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.8)
 * NEW: added option to add a timestamp for each marker for more precise KML animations
 * NEW: added option to change the default marker icon for new marker maps
+* BUGFIX: styles for each marker icon in KML output are now unique (SELECT DISTINCT...)
+* BUGFIX: output of multiple markers as KML did not work (leaflet-kml.php?marker=1,2,3)
+* BUGFIX: output of multiple markers as ARML did not work (leaflet-wikitude.php?marker=1,2,3)
 
 = v1.7 - 22.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.7)
