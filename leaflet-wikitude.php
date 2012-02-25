@@ -219,8 +219,8 @@ elseif (isset($_GET['marker'])) {
   $markerid = mysql_real_escape_string($_GET['marker']);
   $markers = explode(',', $markerid);
   $maxNumberOfPois = isset($_GET['maxNumberOfPois']) ? intval($_GET['maxNumberOfPois']) : $lmm_options[ 'ar_wikitude_maxnumberpois' ];
-  $markerlat = $wpdb->get_var('SELECT lat FROM '.$table_name_markers.' WHERE id='.$markerid);
-  $markerlon = $wpdb->get_var('SELECT lon FROM '.$table_name_markers.' WHERE id='.$markerid);
+  $markerlat = $wpdb->get_var('SELECT lat FROM '.$table_name_markers.' WHERE id IN ('.$markerid.')');
+  $markerlon = $wpdb->get_var('SELECT lon FROM '.$table_name_markers.' WHERE id IN ('.$markerid.')');
  
   $latUser = isset($_GET['latitude']) ? floatval($_GET['latitude']) : $markerlat;
   $lonUser = isset($_GET['longitude']) ? floatval($_GET['longitude']) : $markerlon;
