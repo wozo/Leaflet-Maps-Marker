@@ -223,6 +223,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: output of multiple markers as KML did not work (leaflet-kml.php?marker/layer=1,2,3)
 * BUGFIX: output of multiple markers as GeoRSS did not work (leaflet-georss.php?marker/layer=1,2,3)
 * BUGFIX: output of multiple markers as ARML did not work (leaflet-wikitude.php?marker/layer=1,2,3)
+* BUGFIX: if single layer was changed into multi layer map, list of markers was still displayed below map
 * BUGFIX: button "add to layer" did not work on new layers
 
 = v1.7 - 22.02.2012 =
