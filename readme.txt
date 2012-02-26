@@ -220,8 +220,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: UTC offset calculations for KML timestamp was wrong if UTC was < 0
 * BUGFIX: markers are not clickable anymore if there is no popup text 
 * BUGFIX: styles for each marker icon in KML output are now unique (SELECT DISTINCT...)
-* BUGFIX: output of multiple markers as KML did not work (leaflet-kml.php?marker=1,2,3)
-* BUGFIX: output of multiple markers as ARML did not work (leaflet-wikitude.php?marker=1,2,3)
+* BUGFIX: output of multiple markers as KML did not work (leaflet-kml.php?marker/layer=1,2,3)
+* BUGFIX: output of multiple markers as GeoRSS did not work (leaflet-georss.php?marker/layer=1,2,3)
+* BUGFIX: output of multiple markers as ARML did not work (leaflet-wikitude.php?marker/layer=1,2,3)
 * BUGFIX: button "add to layer" did not work on new layers
 
 = v1.7 - 22.02.2012 =

@@ -46,8 +46,16 @@ if (isset($_GET['layer'])) {
   if ($layer == '*' or $layer == 'all')
     $q = 'LIMIT 5000';
   else {
-    $sql_mlm_check = 'SELECT multi_layer_map FROM '.$table_name_layers.' WHERE id='.$layer;
-    $sql_mlm_check_list = 'SELECT multi_layer_map_list FROM '.$table_name_layers.' WHERE id='.$layer;
+	$mlm_layers = explode(',', $layer);
+	  $mlm_checkedlayers = array();
+	  foreach ($mlm_layers as $mlm_clayer) {
+	    if (intval($mlm_clayer) > 0)
+	      $mlm_checkedlayers[] = intval($mlm_clayer);
+	  }
+    if (count($mlm_checkedlayers) > 0)
+	    $mlm_q = 'WHERE id IN ('.implode(',', $mlm_checkedlayers).')';
+    $sql_mlm_check = 'SELECT multi_layer_map FROM '.$table_name_layers.' '.$mlm_q;
+    $sql_mlm_check_list = 'SELECT multi_layer_map_list FROM '.$table_name_layers.' '.$mlm_q;
     $mlm_check = $wpdb->get_var($sql_mlm_check);
     $mlm_check_list = $wpdb->get_row($sql_mlm_check_list, ARRAY_A);
     if ($mlm_check == 0) {
@@ -70,7 +78,7 @@ if (isset($_GET['layer'])) {
   $sql_distinct = 'SELECT DISTINCT m.icon as micon FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
   $styles_distinct = $wpdb->get_results($sql_distinct, ARRAY_A);
   	if ($_GET['layer'] != 'all') {
-	  $sql_wms_layer_for_kml = 'SELECT l.id as lid, l.wms as lwms, l.wms2 as lwms2, l.wms3 as lwms3, l.wms4 as lwms4, l.wms5 as lwms5, l.wms6 as lwms6, l.wms7 as lwms7, l.wms8 as lwms8, l.wms9 as lwms9, l.wms10 as lwms10 FROM '.$table_name_layers.' AS l WHERE l.id='.$layer;
+	  $sql_wms_layer_for_kml = 'SELECT l.id as lid, l.wms as lwms, l.wms2 as lwms2, l.wms3 as lwms3, l.wms4 as lwms4, l.wms5 as lwms5, l.wms6 as lwms6, l.wms7 as lwms7, l.wms8 as lwms8, l.wms9 as lwms9, l.wms10 as lwms10 FROM '.$table_name_layers.' AS l '.$mlm_q;
 	  $wmslayer_kml = $wpdb->get_results($sql_wms_layer_for_kml, ARRAY_A);
 	}
   //info: check if layer result is not null

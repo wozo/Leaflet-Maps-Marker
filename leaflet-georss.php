@@ -36,8 +36,16 @@ if (isset($_GET['layer'])) {
   if ($layer == '*' or $layer == 'all')
     $q = 'LIMIT 1000';
   else {
-    $sql_mlm_check = 'SELECT multi_layer_map FROM '.$table_name_layers.' WHERE id='.$layer;
-    $sql_mlm_check_list = 'SELECT multi_layer_map_list FROM '.$table_name_layers.' WHERE id='.$layer;
+	$mlm_layers = explode(',', $layer);
+	  $mlm_checkedlayers = array();
+	  foreach ($mlm_layers as $mlm_clayer) {
+	    if (intval($mlm_clayer) > 0)
+	      $mlm_checkedlayers[] = intval($mlm_clayer);
+	  }
+    if (count($mlm_checkedlayers) > 0)
+	    $mlm_q = 'WHERE id IN ('.implode(',', $mlm_checkedlayers).')';
+    $sql_mlm_check = 'SELECT multi_layer_map FROM '.$table_name_layers.' '.$mlm_q;
+    $sql_mlm_check_list = 'SELECT multi_layer_map_list FROM '.$table_name_layers.' '.$mlm_q;
     $mlm_check = $wpdb->get_var($sql_mlm_check);
     $mlm_check_list = $wpdb->get_row($sql_mlm_check_list, ARRAY_A);
     if ($mlm_check == 0) {
