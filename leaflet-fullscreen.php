@@ -359,8 +359,10 @@ if (isset($_GET['layer'])) {
 	} else if (!empty($geojson) or !empty($geojsonurl) or !empty($layer) ) {
 		$lmm_out .= 'var geojson = new L.GeoJSON();'.PHP_EOL;
 		$lmm_out .= 'geojson.on("featureparse",  function(e) {'.PHP_EOL;
-		$lmm_out .= 'if (typeof e.properties.text != \'undefined\') e.layer.bindPopup(e.properties.text);'.PHP_EOL;
-		$lmm_out .= 'e.layer.options.icon = new L.Icon(e.properties.icon);'.PHP_EOL;
+		$lmm_out .= 'if (e.properties.text != \'\') e.layer.bindPopup(e.properties.text);'.PHP_EOL;
+		$lmm_out .= 'if (e.properties.icon != \'\') e.layer.options.icon = new L.Icon("' . LEAFLET_PLUGIN_ICONS_URL . '/" + e.properties.icon);'.PHP_EOL;
+  		$lmm_out .= 'if (e.properties.icon == \'\') e.layer.options.icon = new L.Icon("' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' . '");'.PHP_EOL;
+		$lmm_out .= 'if (e.properties.text == \'\') e.layer.options.clickable = false;'.PHP_EOL;
 		$lmm_out .= 'layers[e.properties.layer] = e.properties.layername;'.PHP_EOL;
 		$lmm_out .= 'if (typeof markers[e.properties.layer] == \'undefined\') markers[e.properties.layer] = [];'.PHP_EOL;
 		$lmm_out .= 'markers[e.properties.layer].push(e.layer);'.PHP_EOL;
@@ -757,8 +759,10 @@ elseif (isset($_GET['marker'])) {
 	} else if (!empty($geojson) or !empty($geojsonurl) or !empty($layer) ) {
 		$lmm_out .= 'var geojson = new L.GeoJSON();'.PHP_EOL;
 		$lmm_out .= 'geojson.on("featureparse",  function(e) {'.PHP_EOL;
-		$lmm_out .= 'if (typeof e.properties.text != \'undefined\') e.layer.bindPopup(e.properties.text);'.PHP_EOL;
-		$lmm_out .= 'e.layer.options.icon = new L.Icon(e.properties.icon);'.PHP_EOL;
+		$lmm_out .= 'if (e.properties.text != \'\') e.layer.bindPopup(e.properties.text);'.PHP_EOL;
+		$lmm_out .= 'if (e.properties.icon != \'\') e.layer.options.icon = new L.Icon("' . LEAFLET_PLUGIN_ICONS_URL . '/" + e.properties.icon);'.PHP_EOL;
+  		$lmm_out .= 'if (e.properties.icon == \'\') e.layer.options.icon = new L.Icon("' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' . '");'.PHP_EOL;
+		$lmm_out .= 'if (e.properties.text == \'\') e.layer.options.clickable = false;'.PHP_EOL;
 		$lmm_out .= 'layers[e.properties.layer] = e.properties.layername;'.PHP_EOL;
 		$lmm_out .= 'if (typeof markers[e.properties.layer] == \'undefined\') markers[e.properties.layer] = [];'.PHP_EOL;
 		$lmm_out .= 'markers[e.properties.layer].push(e.layer);'.PHP_EOL;

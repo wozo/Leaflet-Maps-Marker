@@ -869,7 +869,9 @@ var markers = {};
   var geojson = new L.GeoJSON();
   geojson.on("featureparse",  function(e) {
   		if (typeof e.properties.text != 'undefined') e.layer.bindPopup(e.properties.text);
-  		e.layer.options.icon = new L.Icon(e.properties.icon);
+  		if (e.properties.icon != '') e.layer.options.icon = new L.Icon("<?php echo LEAFLET_PLUGIN_ICONS_URL ?>/" + e.properties.icon);
+  		if (e.properties.icon == '') e.layer.options.icon = new L.Icon("<?php echo LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' ?>");
+		if (e.properties.text == '') e.layer.options.clickable = false;
   layers[e.properties.layer] = e.properties.layername;
   if (typeof markers[e.properties.layer] == 'undefined') markers[e.properties.layer] = [];
   markers[e.properties.layer].push(e.layer);

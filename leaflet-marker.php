@@ -708,6 +708,9 @@ var marker,selectlayer,osm_mapnik,osm_osmarender,mapquest_osm,mapquest_aerial,og
   <?php if ($icon != NULL) { ?>
   marker.options.icon = new L.Icon('<?php echo LEAFLET_PLUGIN_ICONS_URL . '/'.$icon ?>');
   <?php }?>
+  <?php if ($popuptext == NULL) { ?>
+  marker.options.clickable = false;
+  <?php }?>
   selectlayer.addLayer(marker);
   
  <?php if ( ($lmm_options['directions_popuptext_panel'] == 'yes') && ($lmm_options['directions_provider'] == 'googlemaps') ) { 

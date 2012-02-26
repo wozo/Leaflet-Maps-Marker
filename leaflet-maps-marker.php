@@ -591,6 +591,7 @@ function leafletmapsmarker() {
 	if (!(empty($mlat) or empty($mlon)) ) {
 	$lmm_out .= PHP_EOL . 'var marker = new L.Marker(new L.LatLng('.$mlat.', '.$mlon.'));'.PHP_EOL;
 	if (!empty($micon)) $lmm_out .= 'marker.options.icon = new L.Icon("' . LEAFLET_PLUGIN_ICONS_URL . '/'.$micon.'");'.PHP_EOL;
+	if (empty($mpopuptext)) $lmm_out .= 'marker.options.clickable = false;'.PHP_EOL;
 	$lmm_out .= $mapname.'.addLayer(marker);'.PHP_EOL;
 	
 	if ( ($lmm_options['directions_popuptext_panel'] == 'yes') && ($lmm_options['directions_provider'] == 'googlemaps') ) { 
@@ -607,13 +608,14 @@ function leafletmapsmarker() {
 	$mpopuptext_css = ($mpopuptext != NULL) ? "border-top:1px solid #f0f0e7;padding-top:5px;margin-top:5px;" : "";
 	$mpopuptext = $mpopuptext . "<div style='" . $mpopuptext_css . "'><a href=http://openrouteservice.org/index.php?end=" . $lon . "," . $lat . "&pref=" . $lmm_options[ 'directions_ors_route_preferences' ] . "&lang=" . $lmm_options[ 'directions_ors_language' ] . "&noMotorways=" . $lmm_options[ 'directions_ors_no_motorways' ] . "&noTollways=" . $lmm_options[ 'directions_ors_no_tollways' ] . " target='_blank' title='" . esc_attr__('Get directions','lmm') . "'>" . __('Directions','lmm') . "</a></div>"; 
 	}
-		
 	if (!empty($mpopuptext)) $lmm_out .= 'marker.bindPopup("' . preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$mpopuptext) . '")'.$mopenpopup.';'.PHP_EOL;
 	} else if (!empty($geojson) or !empty($geojsonurl) or !empty($layer) ) {
 		$lmm_out .= 'var geojson = new L.GeoJSON();'.PHP_EOL;
 		$lmm_out .= 'geojson.on("featureparse",  function(e) {'.PHP_EOL;
-		$lmm_out .= 'if (typeof e.properties.text != \'undefined\') e.layer.bindPopup(e.properties.text);'.PHP_EOL;
-		$lmm_out .= 'e.layer.options.icon = new L.Icon(e.properties.icon);'.PHP_EOL;
+		$lmm_out .= 'if (e.properties.text != \'\') e.layer.bindPopup(e.properties.text);'.PHP_EOL;
+		$lmm_out .= 'if (e.properties.icon != \'\') e.layer.options.icon = new L.Icon("' . LEAFLET_PLUGIN_ICONS_URL . '/" + e.properties.icon);'.PHP_EOL;
+  		$lmm_out .= 'if (e.properties.icon == \'\') e.layer.options.icon = new L.Icon("' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' . '");'.PHP_EOL;
+		$lmm_out .= 'if (e.properties.text == \'\') e.layer.options.clickable = false;'.PHP_EOL;
 		$lmm_out .= 'layers[e.properties.layer] = e.properties.layername;'.PHP_EOL;
 		$lmm_out .= 'if (typeof markers[e.properties.layer] == \'undefined\') markers[e.properties.layer] = [];'.PHP_EOL;
 		$lmm_out .= 'markers[e.properties.layer].push(e.layer);'.PHP_EOL;
