@@ -117,8 +117,8 @@ if (isset($_GET['layer'])) {
 		$date_kml =  strtotime($marker['mkml_timestamp']);
 		$time_kml =  strtotime($marker['mkml_timestamp']);
 	}
-	$offset_kml = date('H:i',get_option('gmt_offset')*3600);
-	if ($offset_kml >= 0) { $plus_minus = '+'; } else { $plus_minus = '-'; };
+	$offset_kml = date('H:i',abs(get_option('gmt_offset')*3600));
+	if (get_option('gmt_offset') >= 0) { $plus_minus = '+'; } else { $plus_minus = '-'; };
 	echo '<Placemark id="marker-' . $marker['mid'] . '">'.PHP_EOL;
 	//info: google maps has problems displaying custom icons in ff - get parameter default_icons displays standard icons
 	if (!isset($_GET['default_icons'])) {
@@ -224,8 +224,8 @@ elseif (isset($_GET['marker'])) {
 		$date_kml =  strtotime($marker['mkml_timestamp']);
 		$time_kml =  strtotime($marker['mkml_timestamp']);
 	}
-	$offset_kml = date('H:i',get_option('gmt_offset')*3600);
-	if ($offset_kml >= 0) { $plus_minus = '+'; } else { $plus_minus = '-'; };
+	$offset_kml = date('H:i',abs(get_option('gmt_offset')*3600));
+	if (get_option('gmt_offset') >= 0) { $plus_minus = '+'; } else { $plus_minus = '-'; };
 	echo '<Placemark id="marker-' . $marker['mid'] . '">'.PHP_EOL;
 	//info: google maps has problems displaying custom icons in ff - get parameter default_icons displays standard icons
 	if (!isset($_GET['default_icons'])) {
