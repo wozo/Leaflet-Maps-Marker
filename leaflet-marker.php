@@ -284,7 +284,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . WP_ADMIN_URL . 'admin.php?page
 					<br/><br/>				
 					<label for="kml_datetime"><strong><?php _e('Timestamp for KML animation','lmm') ?>:</strong></label> <a href="http://www.mapsmarker.com/kml-timestamp" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>img/icon-question-mark.png" title="<?php esc_attr_e('Click here for more information on animations in KML/Google Earth','lmm'); ?>" width="12" height="12" border="0"/></a><br/>
 					<input type="text" id="kml_timestamp" name="kml_timestamp" value="<?php echo $kml_timestamp ; ?>" style="width:145px;background-image:url(<?php echo LEAFLET_PLUGIN_URL; ?>img/icon-calendar.png);background-position:123px center;background-repeat:no-repeat;" /><br/>
-					<small><?php _e('If empty, marker creation date is used','lmm') ?><br/></small></p>
+					<small><?php _e('If empty, marker creation date will be used','lmm') ?><br/></small></p>
 					<script>
 					  AnyTime.picker( "kml_timestamp",
 					    { 	dayAbbreviations: ["<?php esc_attr_e('Sun','lmm'); ?>","<?php esc_attr_e('Mon','lmm'); ?>","<?php esc_attr_e('Tue','lmm'); ?>","<?php esc_attr_e('Wed','lmm'); ?>","<?php esc_attr_e('Thu','lmm'); ?>","<?php esc_attr_e('Fri','lmm'); ?>","<?php esc_attr_e('Sat','lmm'); ?>"],

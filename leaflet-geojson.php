@@ -35,7 +35,7 @@ if (isset($_GET['layer'])) {
   $layer = mysql_real_escape_string($_GET['layer']); //info: not intval() cause otherwise $layer=0 when creating new layer and showing all markers with layer id = 0
   $q = 'LIMIT 0';
   if ($layer == '*' or $layer == 'all')
-    $q = 'LIMIT 5000';
+    $q = 'LIMIT 0';
   else {
    	    $layers = explode(',', $layer);
 	    $checkedlayers = array();

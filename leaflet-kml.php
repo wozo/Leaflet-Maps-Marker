@@ -44,7 +44,7 @@ if (isset($_GET['layer'])) {
   
   $q = 'LIMIT 0';
   if ($layer == '*' or $layer == 'all')
-    $q = 'LIMIT 5000';
+    $q = 'LIMIT 0';
   else {
 	$mlm_layers = explode(',', $layer);
 	  $mlm_checkedlayers = array();
@@ -70,7 +70,7 @@ if (isset($_GET['layer'])) {
     } else if ( ($mlm_check == 1) && (!in_array('all',$mlm_check_list) ) ){
 	      $q = 'WHERE layer IN ('.implode(',', $mlm_check_list).')';
     } else if ( ($mlm_check == 1) && (in_array('all',$mlm_check_list) ) ){
-	      $q = 'LIMIT 5000';
+	      $q = 'LIMIT 0';
     }
   }
   $sql = 'SELECT m.id as mid, m.markername as mmarkername, m.layer as mlayer, m.icon as micon, m.createdby as mcreatedby, m.createdon as mcreatedon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext, m.kml_timestamp as mkml_timestamp, l.createdby as lcreatedby, l.createdon as lcreatedon, l.name as lname, l.wms as lwms, l.wms2 as lwms2, l.wms3 as lwms3, l.wms4 as lwms4, l.wms5 as lwms5, l.wms6 as lwms6, l.wms7 as lwms7, l.wms8 as lwms8, l.wms9 as lwms9, l.wms10 as lwms10 FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
@@ -113,6 +113,19 @@ if (isset($_GET['layer'])) {
 	}
 	
   foreach ($markers as $marker) {
+    if ( isset($_GET['name']) && ($_GET['name'] == 'show') ) {
+	$name = stripslashes($marker['mmarkername']);
+	$name_popup = '';
+    } else if ( isset($_GET['name']) && ($_GET['name'] == 'hide') ) {
+	$name = '';
+	$name_popup = '';
+    } else if ( isset($_GET['name']) && ($_GET['name'] == 'popup') ) {
+	$name = '';
+	$name_popup = '<strong>' . stripslashes($marker['mmarkername']) . '</strong><br/><br/>';
+    } else {
+	$name = stripslashes($marker['mmarkername']);
+	$name_popup = '';
+    }
     if ($marker['micon'] == NULL) {
 		$micon_name = 'default';
     } else {
@@ -132,10 +145,10 @@ if (isset($_GET['layer'])) {
 	if (!isset($_GET['default_icons'])) {
 	echo '<styleUrl>#' . $micon_name . '</styleUrl>'.PHP_EOL;
 	}
-	echo '<name>' . stripslashes($marker['mmarkername']) . '</name>'.PHP_EOL;
+	echo '<name>' . $name . '</name>'.PHP_EOL;
 	echo '<TimeStamp><when>' . date("Y-m-d", $date_kml) . 'T' . date("h:m:s", $time_kml) . $plus_minus . $offset_kml . '</when></TimeStamp>'.PHP_EOL;
 	echo '<atom:author>' . $marker['mcreatedby'] . '</atom:author>'.PHP_EOL;
-	echo '<description><![CDATA[' .  stripslashes(preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])) . ']]></description>'.PHP_EOL;
+	echo '<description><![CDATA[' .  $name_popup . stripslashes(preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])) . ']]></description>'.PHP_EOL;
 	echo '<Point>'.PHP_EOL;
 	echo '<coordinates>' . $marker['mlon'] . ',' . $marker['mlat'] . '</coordinates>'.PHP_EOL;
 	echo '</Point>'.PHP_EOL;
@@ -220,6 +233,19 @@ elseif (isset($_GET['marker'])) {
   
   echo '<name>' . get_bloginfo('name') . '</name>'.PHP_EOL;  
   foreach ($markers as $marker) {
+	if ( isset($_GET['name']) && ($_GET['name'] == 'show') ) {
+		$name = stripslashes($marker['mmarkername']);
+		$name_popup = '';
+	} else if ( isset($_GET['name']) && ($_GET['name'] == 'hide') ) {
+		$name = '';
+		$name_popup = '';
+	} else if ( isset($_GET['name']) && ($_GET['name'] == 'popup') ) {
+		$name = '';
+		$name_popup = '<strong>' . stripslashes($marker['mmarkername']) . '</strong><br/><br/>';
+	} else {
+		$name = stripslashes($marker['mmarkername']);
+		$name_popup = '';
+	}
 	if ($marker['micon'] == null) {
 		$micon_name = 'default';
 	} else {
@@ -239,10 +265,10 @@ elseif (isset($_GET['marker'])) {
 	if (!isset($_GET['default_icons'])) {
 	echo '<styleUrl>#' . $micon_name . '</styleUrl>'.PHP_EOL;
 	}
-	echo '<name>' . stripslashes($marker['mmarkername']) . '</name>'.PHP_EOL;
+	echo '<name>' . $name . '</name>'.PHP_EOL;
 	echo '<TimeStamp><when>' . date("Y-m-d", $date_kml) . 'T' . date("h:m:s", $time_kml) . $plus_minus . $offset_kml . '</when></TimeStamp>'.PHP_EOL;
 	echo '<atom:author>' . $marker['mcreatedby'] . '</atom:author>'.PHP_EOL;
-	echo '<description><![CDATA[' .  stripslashes(preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])) . ']]></description>'.PHP_EOL;
+	echo '<description><![CDATA[' .  $name_popup . stripslashes(preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])) . ']]></description>'.PHP_EOL;
 	echo '<Point>'.PHP_EOL;
 	echo '<coordinates>' . $marker['mlon'] . ',' . $marker['mlat'] . '</coordinates>'.PHP_EOL;
 	echo '</Point>'.PHP_EOL;
