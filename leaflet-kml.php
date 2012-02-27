@@ -42,9 +42,9 @@ if ($lmm_options[ 'wms_wms10_kml_support' ] == 'yes') { $wms10_kml_output = '<Ne
 if (isset($_GET['layer'])) {
   $layer = mysql_real_escape_string($_GET['layer']);
   
-  $q = 'LIMIT 0';
+  $q = ''; //info: removed limit 5000
   if ($layer == '*' or $layer == 'all')
-    $q = 'LIMIT 0';
+    $q = ''; //info: removed limit 5000
   else {
 	$mlm_layers = explode(',', $layer);
 	  $mlm_checkedlayers = array();
@@ -70,7 +70,7 @@ if (isset($_GET['layer'])) {
     } else if ( ($mlm_check == 1) && (!in_array('all',$mlm_check_list) ) ){
 	      $q = 'WHERE layer IN ('.implode(',', $mlm_check_list).')';
     } else if ( ($mlm_check == 1) && (in_array('all',$mlm_check_list) ) ){
-	      $q = 'LIMIT 0';
+	      $q = ''; //info: removed limit 5000
     }
   }
   $sql = 'SELECT m.id as mid, m.markername as mmarkername, m.layer as mlayer, m.icon as micon, m.createdby as mcreatedby, m.createdon as mcreatedon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext, m.kml_timestamp as mkml_timestamp, l.createdby as lcreatedby, l.createdon as lcreatedon, l.name as lname, l.wms as lwms, l.wms2 as lwms2, l.wms3 as lwms3, l.wms4 as lwms4, l.wms5 as lwms5, l.wms6 as lwms6, l.wms7 as lwms7, l.wms8 as lwms8, l.wms9 as lwms9, l.wms10 as lwms10 FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;

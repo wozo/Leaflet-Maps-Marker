@@ -64,9 +64,9 @@ if (isset($_GET['layer'])) {
   isset($_GET['searchterm']) ? $searchterm = mysql_real_escape_string($_GET['searchterm']) : $searchterm = NULL;
   if ($searchterm != NULL)
   {
-		  $q = 'LIMIT 0';
+		  $q = ''; //info: removed limit 5000
 		  if ($layer == '*' or $layer == 'all') {
-			$q = "WHERE m.lat BETWEEN " . $boundingBoxLatitude1 . " AND " . $boundingBoxLatitude2 . " AND m.lon BETWEEN " . $boundingBoxLongitude1 . " AND " . $boundingBoxLongitude2 . " AND (m.markername LIKE '%" . $searchterm . "%' OR m.popuptext LIKE '%" . $searchterm . "%') LIMIT 0";
+			$q = "WHERE m.lat BETWEEN " . $boundingBoxLatitude1 . " AND " . $boundingBoxLatitude2 . " AND m.lon BETWEEN " . $boundingBoxLongitude1 . " AND " . $boundingBoxLongitude2 . " AND (m.markername LIKE '%" . $searchterm . "%' OR m.popuptext LIKE '%" . $searchterm . "%')"; //info: removed limit 5000
 		  } else {
 			$sql_mlm_check = 'SELECT multi_layer_map FROM '.$table_name_layers.' '.$mlm_q;
 			$sql_mlm_check_list = 'SELECT multi_layer_map_list FROM '.$table_name_layers.' '.$mlm_q;
@@ -88,7 +88,7 @@ if (isset($_GET['layer'])) {
 				$q = "WHERE layer IN (".implode(",", $mlm_check_list).") and m.lat BETWEEN " . $boundingBoxLatitude1 . " AND " . $boundingBoxLatitude2 . " AND m.lon BETWEEN " . $boundingBoxLongitude1 . " AND " . $boundingBoxLongitude2 . " AND (m.markername LIKE '%" . $searchterm . "%' OR m.popuptext LIKE '%" . $searchterm . "%')";
 			} else if ( ($mlm_check == 1) && (in_array('all',$mlm_check_list) ) ) {
 				$clayer = 0;
-				$q = "LIMIT 0";
+				$q = ''; //info: removed limit 5000
 			} 
 		}
 		$sql = 'SELECT m.id as mid, m.layer as mlayer, m.markername as mmarkername, m.icon as micon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
@@ -143,9 +143,9 @@ if (isset($_GET['layer'])) {
 		echo '</kml>';
   	//info: if no searchterm
 	}  else  {
-		  $q = 'LIMIT 0';
+		  $q = ''; //info: removed limit 5000
 		  if ($layer == '*' or $layer == 'all') {
-			$q = "WHERE m.lat BETWEEN " . $boundingBoxLatitude1 . " AND " . $boundingBoxLatitude2 . " AND m.lon BETWEEN " . $boundingBoxLongitude1 . " AND " . $boundingBoxLongitude2 . " LIMIT 0";
+			$q = "WHERE m.lat BETWEEN " . $boundingBoxLatitude1 . " AND " . $boundingBoxLatitude2 . " AND m.lon BETWEEN " . $boundingBoxLongitude1 . " AND " . $boundingBoxLongitude2 . "";//info: removed limit 5000
 		  } else {
 			$sql_mlm_check = 'SELECT multi_layer_map FROM '.$table_name_layers.' '.$mlm_q;
 			$sql_mlm_check_list = 'SELECT multi_layer_map_list FROM '.$table_name_layers.' '.$mlm_q;
@@ -167,7 +167,7 @@ if (isset($_GET['layer'])) {
 				$q = "WHERE layer IN (" . implode(",", $mlm_check_list) . ") and m.lat BETWEEN " . $boundingBoxLatitude1 . " AND " . $boundingBoxLatitude2 . " AND m.lon BETWEEN " . $boundingBoxLongitude1 . " AND " . $boundingBoxLongitude2 . "";
 			} else if ( ($mlm_check == 1) && (in_array('all',$mlm_check_list) ) ) {
 				$clayer = 0;
-				$q = "LIMIT 0";
+				$q = ''; //info: removed limit 5000
 			} 
 		}
 		$sql = 'SELECT m.id as mid, m.layer as mlayer, m.markername as mmarkername, m.icon as micon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;

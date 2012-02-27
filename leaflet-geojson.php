@@ -33,9 +33,9 @@ $lmm_options = get_option( 'leafletmapsmarker_options' );
 $full = ( isset($_GET['full']) && ($_GET['full'] == 'yes') ) ? '1' : '0'; 
 if (isset($_GET['layer'])) {
   $layer = mysql_real_escape_string($_GET['layer']); //info: not intval() cause otherwise $layer=0 when creating new layer and showing all markers with layer id = 0
-  $q = 'LIMIT 0';
+  $q = ''; //info: removed limit 5000
   if ($layer == '*' or $layer == 'all')
-    $q = 'LIMIT 0';
+    $q = ''; //info: removed limit 5000
   else {
    	    $layers = explode(',', $layer);
 	    $checkedlayers = array();

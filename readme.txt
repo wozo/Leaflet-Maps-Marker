@@ -213,6 +213,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v1.8 - xx.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.8)
+* NEW: added tinymce button with dynamic search for more easily adding markers to posts or pages
 * NEW: added option to add a timestamp for each marker for more precise KML animations
 * NEW: added option to change the default marker icon for new marker maps
 * NEW: option to configure output of names for KML (show, hide, put in front of popup-text)
