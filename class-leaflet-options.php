@@ -258,6 +258,7 @@ class Leafletmapsmarker_options {
 	public function display_misc_section() {
 		echo '<span class="leafletmapsmarker-listings"><p><strong>Index</strong></p><ul style="list-style-type:disc;margin-left:24px;">
 			<li>' . __('General settings','lmm') . '</li>
+			<li>' . __('KML settings','lmm') . '</li>
 			<li>' . __('CRS (Coordinate Reference System)','lmm') . '</li>
 			<li>' . __('Available columns for marker listing page','lmm') . '</li>
 			<li>' . __('Available columns for layer listing page','lmm') . '</li></ul></span>';
@@ -5172,6 +5173,37 @@ class Leafletmapsmarker_options {
 			'std'     => '150',
 			'type'    => 'text',
 			'section' => 'misc'
+		);
+		/*
+		* KML Settings
+		*/
+		$this->settings['misc_kml_heading'] = array(
+			'version' => '1.8',
+			'section' => 'misc',
+			'title'   => '', 
+			'desc'    => __( 'KML settings', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['misc_kml_helptext'] = array(
+			'version' => '1.8',
+			'section' => 'misc',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'Choose how marker names should be displayed in KML files', 'lmm') . ' <a href="http://www.mapsmarker.com/kml-names" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+			'type'    => 'helptext'
+		);
+		$this->settings['misc_kml'] = array(
+			'version' => '1.8',
+			'section' => 'misc',
+			'title'   => __( 'Marker names in KML', 'lmm' ),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => 'show',
+			'choices' => array(
+				'show' => __('show', 'lmm'),
+				'hide' => __('hide', 'lmm'),
+				'popup' => __('put in front of popup-text', 'lmm')
+			)
 		);
 		/*
 		* Projections / CRS - Coordinate Reference System

@@ -215,6 +215,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.8)
 * NEW: added option to add a timestamp for each marker for more precise KML animations
 * NEW: added option to change the default marker icon for new marker maps
+* NEW: option to configure output of names for KML (show, hide, put in front of popup-text)
 * OPTIMIZED: reduced load for GeoJSON feeds up to 75% (full list of attributes can be shown by adding &full=yes to URL)
 * CHANGED: updated columns for CSV export file (custom overlay & WMS status, kml timestamp)
 * BUGFIX: UTC offset calculations for KML timestamp was wrong if UTC was < 0
