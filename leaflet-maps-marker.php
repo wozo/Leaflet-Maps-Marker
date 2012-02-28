@@ -685,8 +685,8 @@ function leafletmapsmarker() {
 	add_action('admin_print_scripts-'.$page6, array(&$this, 'lmm_add_contextual_help'));
 	add_action('admin_print_scripts-'.$page7, array(&$this, 'lmm_add_contextual_help'));
 	add_action('admin_print_scripts-'.$page8, array(&$this, 'lmm_add_contextual_help'));	
-	//info: add any+time datepicker on marker page
-	add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_admin_enqueue_scripts_anytime'));	
+	//info: add jquery datepicker on marker page
+	add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_admin_enqueue_scripts_jquerydatepicker'));	
   }
   function lmm_add_admin_bar_menu() {
 	global $wp_version;
@@ -808,8 +808,9 @@ function leafletmapsmarker() {
 		'lmm_zoom_out' => __( 'Zoom out', 'lmm' )
 		) );
   }
-  function lmm_admin_enqueue_scripts_anytime() {
-	wp_enqueue_script( 'anytime-datepicker', LEAFLET_PLUGIN_URL . 'js/anytimec.js', array(), NULL); 
+  function lmm_admin_enqueue_scripts_jquerydatepicker() {
+	wp_enqueue_script( array ( 'jquery', 'jquery-ui-tabs','jquery-ui-datepicker','jquery-ui-slider' ) );
+	wp_enqueue_script( 'jquery-ui-timepicker-addon', LEAFLET_PLUGIN_URL . 'js/jquery-ui-timepicker-addon.js', array('jquery', 'jquery-ui-tabs','jquery-ui-datepicker'), NULL); 
   }
   function lmm_frontend_enqueue_stylesheets() {
 	global $wp_styles;
@@ -828,8 +829,10 @@ function leafletmapsmarker() {
 	wp_register_style('leafletmapsmarker-ie-only', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.ie.css', array(), NULL);
 	wp_enqueue_style('leafletmapsmarker-ie-only');
 	$wp_styles->add_data('leafletmapsmarker-ie-only', 'conditional', 'lt IE 9');
-	wp_register_style( 'anytime-datepicker', LEAFLET_PLUGIN_URL . 'css/anytime.c.css', array(), NULL );
-	wp_enqueue_style( 'anytime-datepicker' );
+	wp_register_style( 'jquery-ui-all', LEAFLET_PLUGIN_URL . 'css/jquery-datepicker-theme/jquery-ui-1.8.18.custom.css', array(), NULL );
+	wp_enqueue_style( 'jquery-ui-all' );
+	wp_register_style( 'jquery-ui-timepicker-addon', LEAFLET_PLUGIN_URL . 'css/jquery-datepicker-theme/jquery-ui-timepicker-addon.css', array('jquery-ui-all'), NULL );
+	wp_enqueue_style( 'jquery-ui-timepicker-addon' );	
    }
    function lmm_install_and_updates() {
 	global $wpdb;
