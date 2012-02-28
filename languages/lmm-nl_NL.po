@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MapsMarker.com\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-22 21:47+0100\n"
-"PO-Revision-Date: 2012-02-28 20:00+0100\n"
+"PO-Revision-Date: 2012-02-28 21:10+0100\n"
 "Last-Translator: Marijke Metz <marijke@mergenmetz.nl>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -2136,7 +2136,7 @@ msgstr "Gemaakt op"
 #: ../leaflet-list-markers.php:117
 #: ../leaflet-list-markers.php:165
 msgid "Updated by"
-msgstr "Bewerkt door"
+msgstr "Bijgewerkt door"
 
 #: ../class-leaflet-options.php:5333
 #: ../class-leaflet-options.php:5519
@@ -2147,7 +2147,7 @@ msgstr "Bewerkt door"
 #: ../leaflet-list-markers.php:119
 #: ../leaflet-list-markers.php:167
 msgid "Updated on"
-msgstr "Bewerkt op"
+msgstr "Bijgewerkt op"
 
 #: ../class-leaflet-options.php:5341
 #: ../class-leaflet-options.php:5527
@@ -3210,7 +3210,7 @@ msgstr "Marker toegevoegd door"
 
 #: ../leaflet-marker.php:480
 msgid "update marker"
-msgstr "bewerk marker"
+msgstr "bijwerken marker"
 
 #: ../leaflet-marker.php:480
 msgid "add marker"
