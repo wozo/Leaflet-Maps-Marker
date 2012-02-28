@@ -47,7 +47,7 @@ if (isset($_GET['layer'])) {
 	      $q = 'WHERE layer IN ('.implode(',', $checkedlayers).')';
   }
   if ($full == 0) {
-	  $sql = 'SELECT CONCAT(m.lon,\',\',m.lat) AS mcoords, m.icon as micon, m.popuptext as mpopuptext FROM '.$table_name_markers.' AS m '.$q;
+	 $sql = 'SELECT CONCAT(m.lon,\',\',m.lat) AS mcoords, m.icon as micon, m.popuptext as mpopuptext FROM '.$table_name_markers.' AS m '.$q;
   } else {
 	 $sql = 'SELECT m.id as mid, m.markername as mmarkername, m.layer as mlayer, CONCAT(m.lon,\',\',m.lat) AS mcoords, m.icon as micon, m.createdby as mcreatedby, m.createdon as mcreatedon, m.updatedby as mupdatedby, m.updatedon as mupdatedon,m.zoom as mzoom, m.basemap as mbasemap, m.lat as mlat, m.lon as mlon, m.openpopup as mopenpopup, m.popuptext as mpopuptext, m.mapwidth as mmapwidth, m.mapwidthunit as mmapwidthunit, m.mapheight as mmapheight, m.controlbox as mcontrolbox, m.overlays_custom as moverlays_custom, m.overlays_custom2 as moverlays_custom2, m.overlays_custom3 as moverlays_custom3, m.overlays_custom4 as moverlays_custom4, m.wms as mwms, m.wms2 as mwms2, m.wms3 as mwms3, m.wms4 as mwms4, m.wms5 as mwms5, m.wms6 as mwms6, m.wms7 as mwms7, m.wms8 as mwms8, m.wms9 as mwms9, m.wms10 as mwms10, m.kml_timestamp as mkml_timestamp, l.createdby as lcreatedby, l.createdon as lcreatedon, l.updatedby as lupdatedby, l.updatedon as lupdatedon, l.name AS lname FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q; 
   }
@@ -62,76 +62,78 @@ if (isset($_GET['layer'])) {
   }
   echo '{"type":"FeatureCollection",'.PHP_EOL;
   echo '"features":['.PHP_EOL;
-  foreach ($markers as $marker) {
-    if ($first) $first = false;
-    else echo ','.PHP_EOL;
-    echo '{'.PHP_EOL;
-	echo '"type":"Feature",'.PHP_EOL;
-	echo '"geometry":'.PHP_EOL;
-	echo '{'.PHP_EOL;
-	echo '"type":"Point",'.PHP_EOL;
-	echo '"coordinates":[' . $marker['mcoords'] . ']'.PHP_EOL;
-	echo '},'.PHP_EOL;
-	echo '"properties":'.PHP_EOL;
-	echo '{'.PHP_EOL;
-	if ($full == 1) {
-		echo '"markerid":"'.$marker['mid'].'",'.PHP_EOL;
-		echo '"markername":"' . stripslashes($marker['mmarkername']) . '",'.PHP_EOL;
-		echo '"basemap":"'.$marker['mbasemap'].'",'.PHP_EOL;
-		echo '"lat":"'.$marker['mlat'].'",'.PHP_EOL;
-		echo '"lon":"'.$marker['mlon'].'",'.PHP_EOL;
-	}
-	echo '"icon":"'.$marker['micon'].'",'.PHP_EOL;
-
-	$mpopuptext_css = ($marker['mpopuptext'] != NULL) ? "border-top:1px solid #f0f0e7;padding-top:5px;margin-top:5px;" : "";
-	$mpopuptext = stripslashes(str_replace('"', '\"', preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])));
-	if ( ($lmm_options['directions_popuptext_panel'] == 'yes') && ($lmm_options['directions_provider'] == 'googlemaps') ) { 
-	$avoidhighways = (isset($lmm_options[ 'directions_googlemaps_route_type_highways' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_highways' ] == 1 ) ? '&dirflg=h' : '';
-	$avoidtolls = (isset($lmm_options[ 'directions_googlemaps_route_type_tolls' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_tolls' ] == 1 ) ? '&dirflg=t' : '';
-	$publictransport = (isset($lmm_options[ 'directions_googlemaps_route_type_public_transport' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_public_transport' ] == 1 ) ? '&dirflg=r' : '';
-	$walking = (isset($lmm_options[ 'directions_googlemaps_route_type_walking' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_walking' ] == 1 ) ? '&dirflg=w' : '';
-	$mpopuptext = $mpopuptext . "<div style='" . $mpopuptext_css . "'><a href='http://maps.google.com/maps?daddr=" . $marker['mlat'] . "," . $marker['mlon'] . "&t=" . $lmm_options[ 'directions_googlemaps_map_type' ] . "&layer=" . $lmm_options[ 'directions_googlemaps_traffic' ] . "&doflg=" . $lmm_options[ 'directions_googlemaps_distance_units' ] . $avoidhighways . $avoidtolls . $publictransport . $walking . "&hl=" . $lmm_options[ 'directions_googlemaps_host_language' ] . "&om=" . $lmm_options[ 'directions_googlemaps_overview_map' ] . "' target='_blank' title='" . esc_attr__('Get directions','lmm') . "'>" . __('Directions','lmm') . "</a></div>"; 
-	} else if ( ($lmm_options['directions_popuptext_panel'] == 'yes') && ($lmm_options['directions_provider'] == 'yours') ) {
-	$mpopuptext = $mpopuptext . "<div style='" . $mpopuptext_css . "'><a href='http://www.yournavigation.org/?tlat=" . $marker['mlat'] . "&tlon=" . $marker['mlon'] . "&v=" . $lmm_options[ 'directions_yours_type_of_transport' ] . "&fast=" . $lmm_options[ 'directions_yours_route_type' ] . "&layer=" . $lmm_options[ 'directions_yours_layer' ] . "' target='_blank' title='" . esc_attr__('Get directions','lmm') . "'>" . __('Directions','lmm') . "</a></div>"; 
-	} else if ( ($lmm_options['directions_popuptext_panel'] == 'yes') && ($lmm_options['directions_provider'] == 'ors') ) {
-	$mpopuptext = $mpopuptext . "<div style='" . $mpopuptext_css . "'><a href='http://openrouteservice.org/index.php?end=" . $marker['mlon'] . "," . $marker['mlat'] . "&pref=" . $lmm_options[ 'directions_ors_route_preferences' ] . "&lang=" . $lmm_options[ 'directions_ors_language' ] . "&noMotorways=" . $lmm_options[ 'directions_ors_no_motorways' ] . "&noTollways=" . $lmm_options[ 'directions_ors_no_tollways' ] . "' target='_blank' title='" . esc_attr__('Get directions','lmm') . "'>" . __('Directions','lmm') . "</a></div>"; 
-	}
-	echo '"text":"' . $mpopuptext . '"';
-	if ($full == 1) {
-		echo ','.PHP_EOL.'"zoom":"' . $marker['mzoom'] . '",'.PHP_EOL;
-		echo '"openpopup":"' . $marker['mopenpopup'] . '",'.PHP_EOL;
-		echo '"mapwidth":"' . $marker['mmapwidth'] . '",'.PHP_EOL;
-		echo '"mapwidthunit":"' . $marker['mmapwidthunit'] . '",'.PHP_EOL;
-		echo '"mapheight":"' . $marker['mmapheight'] . '",'.PHP_EOL;
-		echo '"marker-createdby":"' . stripslashes($marker['mcreatedby']) . '",'.PHP_EOL;
-		echo '"marker-createdon":"' . $marker['mcreatedon'] . '",'.PHP_EOL;
-		echo '"marker-updatedby":"' . stripslashes($marker['mupdatedby']) . '",'.PHP_EOL;
-		echo '"marker-updatedon":"' . stripslashes($marker['mupdatedon']) . '",'.PHP_EOL;
-		echo '"layerid":"'.$marker['mlayer'].'",'.PHP_EOL;
-		echo '"layername":"' . stripslashes($marker['lname']) . '",'.PHP_EOL;
-		echo '"layer-createdby":"' . $marker['lcreatedby'] . '",'.PHP_EOL;
-		echo '"layer-createdon":"' . $marker['lcreatedon'] . '",'.PHP_EOL;
-		echo '"layer-updatedby":"' . stripslashes($marker['lupdatedby']) . '",'.PHP_EOL;
-		echo '"layer-updatedon":"' . stripslashes($marker['lupdatedon']) . '",'.PHP_EOL;
-		echo '"controlbox":"'.$marker['mcontrolbox'].'",'.PHP_EOL;
-		echo '"overlays_custom":"'.$marker['moverlays_custom'].'",'.PHP_EOL;
-		echo '"overlays_custom2":"'.$marker['moverlays_custom2'].'",'.PHP_EOL;
-		echo '"overlays_custom3":"'.$marker['moverlays_custom3'].'",'.PHP_EOL;
-		echo '"overlays_custom4":"'.$marker['moverlays_custom4'].'",'.PHP_EOL;
-		echo '"wms":"'.$marker['mwms'].'",'.PHP_EOL;
-		echo '"wms2":"'.$marker['mwms2'].'",'.PHP_EOL;
-		echo '"wms3":"'.$marker['mwms3'].'",'.PHP_EOL;
-		echo '"wms4":"'.$marker['mwms4'].'",'.PHP_EOL;
-		echo '"wms5":"'.$marker['mwms5'].'",'.PHP_EOL;
-		echo '"wms6":"'.$marker['mwms6'].'",'.PHP_EOL;
-		echo '"wms7":"'.$marker['mwms7'].'",'.PHP_EOL;
-		echo '"wms8":"'.$marker['mwms8'].'",'.PHP_EOL;
-		echo '"wms9":"'.$marker['mwms9'].'",'.PHP_EOL;
-		echo '"wms10":"'.$marker['mwms10'].'",'.PHP_EOL;
-		echo '"kml_timestamp":"'.$marker['mkml_timestamp'].'"'.PHP_EOL;
-	}
-	echo '}}';
-  }
+  if ($layer != NULL) { //info: needed for adding new layers
+	  foreach ($markers as $marker) {
+		if ($first) $first = false;
+		else echo ','.PHP_EOL;
+		echo '{'.PHP_EOL;
+		echo '"type":"Feature",'.PHP_EOL;
+		echo '"geometry":'.PHP_EOL;
+		echo '{'.PHP_EOL;
+		echo '"type":"Point",'.PHP_EOL;
+		echo '"coordinates":[' . $marker['mcoords'] . ']'.PHP_EOL;
+		echo '},'.PHP_EOL;
+		echo '"properties":'.PHP_EOL;
+		echo '{'.PHP_EOL;
+		if ($full == 1) {
+			echo '"markerid":"'.$marker['mid'].'",'.PHP_EOL;
+			echo '"markername":"' . stripslashes($marker['mmarkername']) . '",'.PHP_EOL;
+			echo '"basemap":"'.$marker['mbasemap'].'",'.PHP_EOL;
+			echo '"lat":"'.$marker['mlat'].'",'.PHP_EOL;
+			echo '"lon":"'.$marker['mlon'].'",'.PHP_EOL;
+		}
+		echo '"icon":"'.$marker['micon'].'",'.PHP_EOL;
+	
+		$mpopuptext_css = ($marker['mpopuptext'] != NULL) ? "border-top:1px solid #f0f0e7;padding-top:5px;margin-top:5px;" : "";
+		$mpopuptext = stripslashes(str_replace('"', '\"', preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])));
+		if ( ($lmm_options['directions_popuptext_panel'] == 'yes') && ($lmm_options['directions_provider'] == 'googlemaps') ) { 
+		$avoidhighways = (isset($lmm_options[ 'directions_googlemaps_route_type_highways' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_highways' ] == 1 ) ? '&dirflg=h' : '';
+		$avoidtolls = (isset($lmm_options[ 'directions_googlemaps_route_type_tolls' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_tolls' ] == 1 ) ? '&dirflg=t' : '';
+		$publictransport = (isset($lmm_options[ 'directions_googlemaps_route_type_public_transport' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_public_transport' ] == 1 ) ? '&dirflg=r' : '';
+		$walking = (isset($lmm_options[ 'directions_googlemaps_route_type_walking' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_walking' ] == 1 ) ? '&dirflg=w' : '';
+		$mpopuptext = $mpopuptext . "<div style='" . $mpopuptext_css . "'><a href='http://maps.google.com/maps?daddr=" . $marker['mlat'] . "," . $marker['mlon'] . "&t=" . $lmm_options[ 'directions_googlemaps_map_type' ] . "&layer=" . $lmm_options[ 'directions_googlemaps_traffic' ] . "&doflg=" . $lmm_options[ 'directions_googlemaps_distance_units' ] . $avoidhighways . $avoidtolls . $publictransport . $walking . "&hl=" . $lmm_options[ 'directions_googlemaps_host_language' ] . "&om=" . $lmm_options[ 'directions_googlemaps_overview_map' ] . "' target='_blank' title='" . esc_attr__('Get directions','lmm') . "'>" . __('Directions','lmm') . "</a></div>"; 
+		} else if ( ($lmm_options['directions_popuptext_panel'] == 'yes') && ($lmm_options['directions_provider'] == 'yours') ) {
+		$mpopuptext = $mpopuptext . "<div style='" . $mpopuptext_css . "'><a href='http://www.yournavigation.org/?tlat=" . $marker['mlat'] . "&tlon=" . $marker['mlon'] . "&v=" . $lmm_options[ 'directions_yours_type_of_transport' ] . "&fast=" . $lmm_options[ 'directions_yours_route_type' ] . "&layer=" . $lmm_options[ 'directions_yours_layer' ] . "' target='_blank' title='" . esc_attr__('Get directions','lmm') . "'>" . __('Directions','lmm') . "</a></div>"; 
+		} else if ( ($lmm_options['directions_popuptext_panel'] == 'yes') && ($lmm_options['directions_provider'] == 'ors') ) {
+		$mpopuptext = $mpopuptext . "<div style='" . $mpopuptext_css . "'><a href='http://openrouteservice.org/index.php?end=" . $marker['mlon'] . "," . $marker['mlat'] . "&pref=" . $lmm_options[ 'directions_ors_route_preferences' ] . "&lang=" . $lmm_options[ 'directions_ors_language' ] . "&noMotorways=" . $lmm_options[ 'directions_ors_no_motorways' ] . "&noTollways=" . $lmm_options[ 'directions_ors_no_tollways' ] . "' target='_blank' title='" . esc_attr__('Get directions','lmm') . "'>" . __('Directions','lmm') . "</a></div>"; 
+		}
+		echo '"text":"' . $mpopuptext . '"';
+		if ($full == 1) {
+			echo ','.PHP_EOL.'"zoom":"' . $marker['mzoom'] . '",'.PHP_EOL;
+			echo '"openpopup":"' . $marker['mopenpopup'] . '",'.PHP_EOL;
+			echo '"mapwidth":"' . $marker['mmapwidth'] . '",'.PHP_EOL;
+			echo '"mapwidthunit":"' . $marker['mmapwidthunit'] . '",'.PHP_EOL;
+			echo '"mapheight":"' . $marker['mmapheight'] . '",'.PHP_EOL;
+			echo '"marker-createdby":"' . stripslashes($marker['mcreatedby']) . '",'.PHP_EOL;
+			echo '"marker-createdon":"' . $marker['mcreatedon'] . '",'.PHP_EOL;
+			echo '"marker-updatedby":"' . stripslashes($marker['mupdatedby']) . '",'.PHP_EOL;
+			echo '"marker-updatedon":"' . stripslashes($marker['mupdatedon']) . '",'.PHP_EOL;
+			echo '"layerid":"'.$marker['mlayer'].'",'.PHP_EOL;
+			echo '"layername":"' . stripslashes($marker['lname']) . '",'.PHP_EOL;
+			echo '"layer-createdby":"' . $marker['lcreatedby'] . '",'.PHP_EOL;
+			echo '"layer-createdon":"' . $marker['lcreatedon'] . '",'.PHP_EOL;
+			echo '"layer-updatedby":"' . stripslashes($marker['lupdatedby']) . '",'.PHP_EOL;
+			echo '"layer-updatedon":"' . stripslashes($marker['lupdatedon']) . '",'.PHP_EOL;
+			echo '"controlbox":"'.$marker['mcontrolbox'].'",'.PHP_EOL;
+			echo '"overlays_custom":"'.$marker['moverlays_custom'].'",'.PHP_EOL;
+			echo '"overlays_custom2":"'.$marker['moverlays_custom2'].'",'.PHP_EOL;
+			echo '"overlays_custom3":"'.$marker['moverlays_custom3'].'",'.PHP_EOL;
+			echo '"overlays_custom4":"'.$marker['moverlays_custom4'].'",'.PHP_EOL;
+			echo '"wms":"'.$marker['mwms'].'",'.PHP_EOL;
+			echo '"wms2":"'.$marker['mwms2'].'",'.PHP_EOL;
+			echo '"wms3":"'.$marker['mwms3'].'",'.PHP_EOL;
+			echo '"wms4":"'.$marker['mwms4'].'",'.PHP_EOL;
+			echo '"wms5":"'.$marker['mwms5'].'",'.PHP_EOL;
+			echo '"wms6":"'.$marker['mwms6'].'",'.PHP_EOL;
+			echo '"wms7":"'.$marker['mwms7'].'",'.PHP_EOL;
+			echo '"wms8":"'.$marker['mwms8'].'",'.PHP_EOL;
+			echo '"wms9":"'.$marker['mwms9'].'",'.PHP_EOL;
+			echo '"wms10":"'.$marker['mwms10'].'",'.PHP_EOL;
+			echo '"kml_timestamp":"'.$marker['mkml_timestamp'].'"'.PHP_EOL;
+		}
+		echo '}}';
+	  }
+  } //info: end ($layer != NULL)
   echo ']}';
   //info: callback for JSONP - part 2
   if ($callback != NULL) { echo ');'; }
