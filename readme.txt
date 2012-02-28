@@ -50,6 +50,7 @@ to the visitors of your website.
 * display a list of markers below layer maps
 * show standalone maps in fullscreen mode
 * support for microformat geo-markup to make your maps machine-readable
+* support for custom marker timestamps for more precise KML animations
 * create QR code images for standalone maps in fullscreen mode
 * automatically add meta-tags with location information to maps
 * automatically add microformat geo-markup to maps
@@ -87,8 +88,9 @@ Please let me know which feature you think is missing by adding your ideas at [h
 
 * English (en_US)
 * German (de_DE)
-* Japanese (ja) [Shu Higashi](http://twitter.com/higa4)
-* Spanish (es_ES) David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com)
+* Japanese (ja) thanks to [Shu Higashi](http://twitter.com/higa4)
+* Spanish (es_ES) thanks to David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com)
+* Dutch (nl_NL) thanks to Marijke Metz [http://www.mergenmetz.nl](http://www.mergenmetz.nl)
 
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
@@ -166,7 +168,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v1.8 =
-added tinymce-button, timestamp support for more precise KML animations and option to set default icon, bugfixes
+added timestamp support for more precise KML animations and option to set default icon, Dutch translation, bugfixes
 
 = v1.7 =
 added multi-layer-maps, Wikitude enhancements, added Spanish translation
@@ -211,14 +213,15 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v1.8 - xx.02.2012 =
+= v1.8 - 28.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.8)
-* NEW: added tinymce button with dynamic search for more easily adding markers to posts or pages
 * NEW: added option to add a timestamp for each marker for more precise KML animations
 * NEW: added option to change the default marker icon for new marker maps
 * NEW: option to configure output of names for KML (show, hide, put in front of popup-text)
+* NEW: added Dutch translation thanks to [Marijke](http://www.mergenmetz.nl)
 * OPTIMIZED: reduced load for GeoJSON feeds up to 75% (full list of attributes can be shown by adding &full=yes to URL)
 * CHANGED: updated columns for CSV export file (custom overlay & WMS status, kml timestamp)
+* CHANGED: KML links are now opened in the same window (removed target="_blank")
 * BUGFIX: UTC offset calculations for KML timestamp was wrong if UTC was < 0
 * BUGFIX: markers are not clickable anymore if there is no popup text 
 * BUGFIX: styles for each marker icon in KML output are now unique (SELECT DISTINCT...)
