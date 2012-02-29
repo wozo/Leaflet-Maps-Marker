@@ -829,7 +829,7 @@ function leafletmapsmarker() {
 	wp_register_style('leafletmapsmarker-ie-only', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.ie.css', array(), NULL);
 	wp_enqueue_style('leafletmapsmarker-ie-only');
 	$wp_styles->add_data('leafletmapsmarker-ie-only', 'conditional', 'lt IE 9');
-	wp_register_style( 'jquery-ui-all', LEAFLET_PLUGIN_URL . 'css/jquery-datepicker-theme/jquery-ui-1.8.18.custom.css', array(), NULL );
+	wp_register_style( 'jquery-ui-all', LEAFLET_PLUGIN_URL . 'css/jquery-datepicker-theme/jquery-ui-1.8.16.custom.css', array(), NULL );
 	wp_enqueue_style( 'jquery-ui-all' );
 	wp_register_style( 'jquery-ui-timepicker-addon', LEAFLET_PLUGIN_URL . 'css/jquery-datepicker-theme/jquery-ui-timepicker-addon.css', array('jquery-ui-all'), NULL );
 	wp_enqueue_style( 'jquery-ui-timepicker-addon' );	

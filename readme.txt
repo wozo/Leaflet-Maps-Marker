@@ -8,7 +8,7 @@ Author:            Robert Harm (with special support from Sindre Wimberger)
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.4-alpha-19904
-Stable tag:        1.9
+Stable tag:        1.8
 
 Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 
@@ -153,7 +153,7 @@ This program is free software; you can redistribute it and/or modify it under th
 * OpenStreetMap - The Free Wiki World Map: [OpenStreetMap License](http://wiki.openstreetmap.org/wiki/OpenStreetMap_License) 
 * Map Icons Collection by Nicolas Mollet - [http://mapicons.nicolasmollet.com](http://mapicons.nicolasmollet.com)
 * Datasource OGD Vienna maps: Stadt Wien, Creative Commons Attribution (by) [http://data.wien.gv.at](http://data.wien.gv.at)
-* Any+Time DatePicker/TimePicker, [http://www.ama3.com/anytime/](http://www.ama3.com/anytime/), licence: BY-NC-SA 3.0
+* Jquery TimePicker, by Trent Richardson, [http://trentrichardson.com/examples/timepicker/](http://trentrichardson.com/examples/timepicker/), licence: GPL
 * Adress autocompletion powered by [Google Places API](http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html)
 * Map center icon [Joseph Wain](http://glyphish.com/) - Creative Commons Attribution (by)
 * Plus, json & csv-export icon by [Yusuke Kamiyamane](http://www.pinvoke.com/) - Creative Commons Attribution (by)
@@ -167,9 +167,6 @@ This program is free software; you can redistribute it and/or modify it under th
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
-= v1.9 =
-added tinymce button for easily adding maps to posts/pages
-
 = v1.8 =
 added timestamp support for more precise KML animations and option to set default icon, Dutch translation, bugfixes
 
@@ -216,10 +213,7 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v1.9 - xx.03.2012 =
-* [Blog post with more details about this release](http://www.mapsmarker.com/v1.9)
-
-= v1.8 - 28.02.2012 =
+= v1.8 - 29.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.8)
 * NEW: added option to add a timestamp for each marker for more precise KML animations
 * NEW: added option to change the default marker icon for new marker maps

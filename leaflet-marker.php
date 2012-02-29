@@ -285,8 +285,19 @@ echo '<p><a class=\'button-secondary\' href=\'' . WP_ADMIN_URL . 'admin.php?page
 					<script type="text/javascript">
 						var $j = jQuery.noConflict();
 						$j(function() {
-							$j("#kml_timestamp").datetimepicker();
-						});
+						$j("#kml_timestamp").datetimepicker({
+							dateFormat: 'yy-mm-dd',
+							changeMonth: true,
+							changeYear: true,
+							timeText: '<?php esc_attr_e('Time','lmm'); ?>',
+							hourText: '<?php esc_attr_e('Hour','lmm'); ?>',
+							minuteText: '<?php esc_attr_e('Minute','lmm'); ?>',
+							secondText: '<?php esc_attr_e('Second','lmm'); ?>',
+							currentText: '<?php esc_attr_e('Now','lmm'); ?>',
+							closeText: '<?php esc_attr_e('Add','lmm'); ?>',
+							timeFormat: 'hh:mm:ss',
+							showSecond: true,
+						});});
 					</script>
 					<label for="kml_datetime"><strong><?php _e('Timestamp for KML animation','lmm') ?>:</strong></label> <a href="http://www.mapsmarker.com/kml-timestamp" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>img/icon-question-mark.png" title="<?php esc_attr_e('Click here for more information on animations in KML/Google Earth','lmm'); ?>" width="12" height="12" border="0"/></a><br/>
 					<input type="text" id="kml_timestamp" name="kml_timestamp" value="<?php echo $kml_timestamp ; ?>" style="width:145px;background-image:url(<?php echo LEAFLET_PLUGIN_URL; ?>img/icon-calendar.png);background-position:123px center;background-repeat:no-repeat;" /><br/>
