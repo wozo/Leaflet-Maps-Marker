@@ -378,7 +378,7 @@ class Leafletmapsmarker_options {
 			'type'    => 'helptext'
 		);
 		$this->settings['standard_basemap'] = array(
-			'version' => '1.0',
+			'version' => '1.9',
 			'section' => 'basemaps',
 			'title'   => __('Default basemap','lmm'),
 			'desc'    => '',
@@ -5070,7 +5070,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.0',
 			'section' => 'misc',
 			'title'   => __( 'User role needed for adding and editing markers/layers', 'lmm' ),
-			'desc'    => __( 'Note: the settings page is always visible to admins only.', 'lmm' ),
+			'desc'    => __( 'Note: the settings and tools pages are always visible to admins only.', 'lmm' ),
 			'type'    => 'radio',
 			'std'     => 'edit_posts',
 			'choices' => array(
@@ -5085,7 +5085,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.0',
 			'section' => 'misc',
 			'title'   => __( 'User role needed for deleting markers/layers', 'lmm' ),
-			'desc'    => __( 'Note: the settings page is always visible to admins only.', 'lmm' ),
+			'desc'    => __( 'Note: the settings and tool pages are always visible to admins only.', 'lmm' ),
 			'type'    => 'radio',
 			'std'     => 'edit_posts',
 			'choices' => array(
@@ -5111,6 +5111,18 @@ class Leafletmapsmarker_options {
 			'std'     => 'mapsmarker',
 			'type'    => 'text',
 			'section' => 'misc'
+		);
+		$this->settings['misc_tinymce_button'] = array(
+			'version' => '1.9',
+			'section' => 'misc',
+			'title'   => __('TinyMCE button','lmm'),
+			'desc'    => __('if enabled, a button on post/page edit screen gets added for easily searching and inserting maps','lmm'),
+			'type'    => 'radio',
+			'std'     => 'enabled',
+			'choices' => array(
+				'enabled' => __('enabled','lmm'),
+				'disabled' => __('disabled','lmm')
+			)
 		);
 		$this->settings['misc_add_georss_to_head'] = array(
 			'version' => '1.5',

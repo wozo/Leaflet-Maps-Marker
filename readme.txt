@@ -218,6 +218,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v1.9 - xx.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.9)
+* NEW: added TinyMCE-button for easily searching and inserting maps on post/pages-edit screen
+* NEW: added French translation thanks to Vincèn Pujol
+* UPDATED Dutch translation thanks to [Marijke](http://www.mergenmetz.nl)
 * REMOVED support for OSM Osmarender basemaps (service has been discontinued)
 
 = v1.8 - 29.02.2012 =

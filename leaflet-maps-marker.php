@@ -44,6 +44,7 @@ if ( ! defined( 'LEAFLET_PLUGIN_ICONS_DIR' ) )
 	define ("LEAFLET_PLUGIN_ICONS_DIR", $lmm_upload_dir['basedir'] . DIRECTORY_SEPARATOR . "leaflet-maps-marker-icons");
 //info: not in class Leafletmapsmarker as otherwise warnings on resetting defaults options
 require_once( plugin_dir_path( __FILE__ ).'class-leaflet-options.php' );
+
 class Leafletmapsmarker
 {
 function leafletmapsmarker() {
@@ -58,6 +59,9 @@ function leafletmapsmarker() {
 	add_shortcode($lmm_options['shortcode'], array(&$this, 'lmm_showmap'));
 	if ($lmm_options['misc_add_georss_to_head'] == 'enabled') {
 		add_action( 'wp_head', array( &$this, 'lmm_add_georss_to_head' ) );
+	}
+	if ($lmm_options['misc_tinymce_button'] == 'enabled') {
+		require_once( plugin_dir_path( __FILE__ ).'tinymce_plugin.php' );
 	}
   }
   function lmm_load_translation_files() {
