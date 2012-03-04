@@ -386,7 +386,6 @@ class Leafletmapsmarker_options {
 			'std'     => 'ogdwien_basemap',
 			'choices' => array(
 				'osm_mapnik' => __('OpenStreetMap (Mapnik, max zoom 18)','lmm'),
-				'osm_osmarender' => __('OpenStreetMap (Osmarender, max zoom 17)','lmm'),
 				'mapquest_osm' => __('MapQuest (OSM, max zoom 18)','lmm'),
 				'mapquest_aerial' => __('MapQuest (Aerial, max zoom 12 globally, 12+ in the United States)','lmm'),
 				'ogdwien_basemap' => __('OGD Vienna basemap (max zoom 19)','lmm'),
@@ -422,14 +421,6 @@ class Leafletmapsmarker_options {
 			'title'   => 'OpenStreetMap (Mapnik)',
 			'desc'    => '',
 			'std'     => 'OSM Mapnik',
-			'type'    => 'text',
-			'section' => 'basemaps'
-		);
-		$this->settings['default_basemap_name_osm_osmarender'] = array(
-			'version' => '1.0',
-			'title'   => 'OpenStreetMap (Osmarender)',
-			'desc'    => '',
-			'std'     => 'OSM Osmarender',
 			'type'    => 'text',
 			'section' => 'basemaps'
 		);
@@ -537,14 +528,6 @@ class Leafletmapsmarker_options {
 			'section' => 'basemaps',
 			'title'   => __( 'Basemaps available in control box', 'lmm' ),
 			'desc'    => __( 'OpenStreetMap (Mapnik)', 'lmm' ),
-			'type'    => 'checkbox',
-			'std'     => 1 
-		);
-		$this->settings['controlbox_osm_osmarender'] = array(
-			'version' => '1.0',
-			'section' => 'basemaps',
-			'title'   => '',
-			'desc'    => __('OpenStreetMap (Osmarender)','lmm'),
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -4010,7 +3993,6 @@ class Leafletmapsmarker_options {
 			'std'     => 'osm_mapnik',
 			'choices' => array(
 				'osm_mapnik' => __('OpenStreetMap (Mapnik, max zoom 18)','lmm'),
-				'osm_osmarender' => __('OpenStreetMap (Osmarender, max zoom 17)','lmm'),
 				'mapquest_osm' => __('MapQuest (OSM, max zoom 18)','lmm'),
 				'mapquest_aerial' => __('MapQuest (Aerial, max zoom 12 globally, 12+ in the United States)','lmm'),
 				'ogdwien_basemap' => __('OGD Vienna basemap (max zoom 19)','lmm'),
@@ -5814,7 +5796,6 @@ class Leafletmapsmarker_options {
 		$options_new = array_merge($options_current, $new_options_defaults);
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
-		/* template for plugin updates 
 		//info:  set defaults for options introduced in v1.9
 		if (get_option('leafletmapsmarker_version') == '1.8' )
 		{
@@ -5822,6 +5803,22 @@ class Leafletmapsmarker_options {
 			foreach ( $this->settings as $id => $setting ) 
 			{
 				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.9')
+				{
+				$new_options_defaults[$id] = $setting['std'];
+				}
+			}
+		$options_current = get_option( 'leafletmapsmarker_options' );
+		$options_new = array_merge($options_current, $new_options_defaults);
+		update_option( 'leafletmapsmarker_options', $options_new );
+		}
+		/* template for plugin updates 
+		//info:  set defaults for options introduced in v2.0
+		if (get_option('leafletmapsmarker_version') == '1.9' )
+		{
+			$new_options_defaults = array();
+			foreach ( $this->settings as $id => $setting ) 
+			{
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.0')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
