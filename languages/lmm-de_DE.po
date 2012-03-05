@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MapsMarker.com\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-05 20:03+0100\n"
-"PO-Revision-Date: 2012-03-05 20:07+0100\n"
+"POT-Creation-Date: 2012-03-05 20:12+0100\n"
+"PO-Revision-Date: 2012-03-05 20:13+0100\n"
 "Last-Translator: Robert Harm <info@mapsmarker.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -3615,6 +3615,10 @@ msgstr "Wikitude API powered by www.mapsmarker.com"
 #: ../tinymce_plugin.php:75
 msgid "If no search term is entered, the latest 15 maps will be shown."
 msgstr "Wird kein Suchbegriff angegeben, werden die letzten 15 Karten angezeigt."
+
+#: ../tinymce_plugin.php:76
+msgid "Search"
+msgstr "Suche"
 
 #: ../tinymce_plugin.php:78
 msgid "Please select the map you would like to add"
