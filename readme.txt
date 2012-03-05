@@ -218,6 +218,9 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= vx.x - xx.03.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/vx.x)
+
 = v1.9 - 05.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.9)
 * NEW: added TinyMCE-button for easily searching and inserting maps on post/pages-edit screen
