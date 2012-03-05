@@ -72,10 +72,10 @@ function get_mm_list(){
         <link rel='stylesheet' href='<?php echo plugins_url( 'css/marker_select_box.css' , __FILE__ ) ?>' type='text/css' media='all' />
 </head>
 <body>
-<span id="msb_header_description"><?php _e('Please select the map you would like to add','lmm'); ?></span>
+<span id="msb_header_description"><?php _e('If no search term is entered, the latest 15 maps will be shown.','lmm'); ?></span>
 <div id="msb_serchContainer">Search <input type="text" name="q" id="msb_serch"/></div>
 <div id="msb_listContainer">
-	<div id="msb_listHint" ><?php _e('No search term specified. Showing recent 15 maps.','lmm'); ?></div>
+	<div id="msb_listHint" ><?php _e('Please select the map you would like to add','lmm'); ?></div>
 	<?php buildMarkersList($marklist); ?>
 </div>
 
