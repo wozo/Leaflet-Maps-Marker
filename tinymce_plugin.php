@@ -73,7 +73,7 @@ function get_mm_list(){
 </head>
 <body>
 <span id="msb_header_description"><?php _e('If no search term is entered, the latest 15 maps will be shown.','lmm'); ?></span>
-<div id="msb_serchContainer">Search <input type="text" name="q" id="msb_serch"/></div>
+<div id="msb_serchContainer"><?php _e('Search','lmm'); ?> <input type="text" name="q" id="msb_serch"/></div>
 <div id="msb_listContainer">
 	<div id="msb_listHint" ><?php _e('Please select the map you would like to add','lmm'); ?></div>
 	<?php buildMarkersList($marklist); ?>
