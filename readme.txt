@@ -220,6 +220,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = vx.x - xx.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/vx.x)
+* UPDATED French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 
 = v1.9 - 05.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.9)
