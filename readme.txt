@@ -8,7 +8,7 @@ Author:            Robert Harm (with special support from Sindre Wimberger)
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.4-alpha-19904
-Stable tag:        1.x
+Stable tag:        2.0
 
 Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 
@@ -170,8 +170,8 @@ This program is free software; you can redistribute it and/or modify it under th
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
-= v1.x =
-added support for geo sitemaps
+= v2.0 =
+added support for geo sitemaps, new mass actions for selected markers only
 
 = v1.9 =
 added tinymce-button for inserting maps, removed OSM osmarender basemap
@@ -222,9 +222,10 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= vx.x - xx.03.2012 =
+= v2.0 - xx.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/vx.x)
 * NEW: added support for geo sitemaps for all marker and layer maps
+* NEW: added mass actions (delete+assign to layer) for selected markers only
 * UPDATED French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 
 = v1.9 - 05.03.2012 =
