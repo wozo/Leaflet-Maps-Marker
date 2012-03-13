@@ -171,7 +171,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v2.0 =
-added support for geo sitemaps, new mass actions for selected markers only
+added support for geo sitemaps, new mass actions for selected markers only, important bugfix for French translations causing maps to break
 
 = v1.9 =
 added tinymce-button for inserting maps, removed OSM osmarender basemap
@@ -222,10 +222,11 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v2.0 - xx.03.2012 =
-* [Blog post with more details about this release](http://www.mapsmarker.com/vx.x)
+= v2.0 - 13.03.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v2.0)
 * NEW: added support for geo sitemaps for all marker and layer maps
 * NEW: added mass actions (delete+assign to layer) for selected markers only
+* BUGFIX: maps didnt show up on French installations on backend
 * UPDATED French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 
 = v1.9 - 05.03.2012 =
