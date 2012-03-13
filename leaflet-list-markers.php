@@ -218,7 +218,7 @@ $csvexportlink = LEAFLET_PLUGIN_URL . 'leaflet-exportcsv.php?_wpnonce=' . $nonce
 		} else {
 			$delete_link_marker = '';
 		}
-     $rowlayername = ($row['layerid'] == 0) ? "" . __('unassigned','lmm') . "<br>" : "<a title='" . __('Edit layer ','lmm') . $row['layer'] . "' href='" . WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_layer&id=" . $row['layer'] . "'>" . $row['layername'] . "</a>";
+     $rowlayername = ($row['layerid'] == 0) ? "" . __('unassigned','lmm') . "<br>" : "<a title='" . __('Edit layer ','lmm') . $row['layer'] . "' href='" . WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_layer&id=" . $row['layer'] . "'>" . $row['layername'] . " (ID " .$row['layerid'] . ")</a>";
      $openpopupstatus = ($row['openpopup'] == 1) ? __('open','lmm') : __('closed','lmm');
      $openpanelstatus = ($row['panel'] == 1) ? __('visible','lmm') : __('hidden','lmm');
 	 if ($row['controlbox'] == 0) { $controlboxstatus = __('hidden','lmm'); } else if ($row['controlbox'] == 1) { $controlboxstatus = __('collapsed (except on mobiles)','lmm'); } else if ($row['controlbox'] == 2) { $controlboxstatus = __('expanded','lmm'); };
@@ -296,7 +296,7 @@ $csvexportlink = LEAFLET_PLUGIN_URL . 'leaflet-exportcsv.php?_wpnonce=' . $nonce
 		<?php $layerlist = $wpdb->get_results('SELECT * FROM '.$table_name_layers.' WHERE id>0 AND multi_layer_map = 0', ARRAY_A); ?>
 		<input type="checkbox" id="assignselected" name="assignselected" /> <?php _e('assign to the following layer:','lmm') ?>
 		<select id="layer" name="layer">
-		<option value="0"><?php _e('Do not assign marker to a layer','lmm') ?></option>		
+		<option value="0"><?php _e('unassigned','lmm') ?></option>		
 		<?php
 			foreach ($layerlist as $row)
 			echo '<option value="' . $row['id'] . '">' . stripslashes($row['name']) . ' (ID ' . $row['id'] . ')</option>';
