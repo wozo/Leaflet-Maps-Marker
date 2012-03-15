@@ -4506,6 +4506,63 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'defaults_layer'
 		);
+		// defaults_layer - active API links in markers list
+		$this->settings['defaults_layer_listmarkers_api_directions'] = array(
+			'version' => '2.1',
+			'section' => 'defaults_layer',
+			'title'    => __('Visible API links for each marker','lmm'),
+			'desc'    => __('Directions','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-car.png">',
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);
+		$this->settings['defaults_layer_listmarkers_api_kml'] = array(
+			'version' => '2.1',
+			'section' => 'defaults_layer',
+			'title'    => '',
+			'desc'    => 'KML <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-kml.png">',
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);
+		$this->settings['defaults_layer_listmarkers_api_fullscreen'] = array(
+			'version' => '2.1',
+			'section' => 'defaults_layer',
+			'title'    => '',
+			'desc'    => __('Fullscreen','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-fullscreen.png">',
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);		
+		$this->settings['defaults_layer_listmarkers_api_qr_code'] = array(
+			'version' => '2.1',
+			'section' => 'defaults_layer',
+			'title'    => '',
+			'desc'    => __('QR code','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-qr-code.png">',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);		
+		$this->settings['defaults_layer_listmarkers_api_geojson'] = array(
+			'version' => '2.1',
+			'section' => 'defaults_layer',
+			'title'   => '',
+			'desc'    => 'GeoJSON <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-json.png">',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);
+		$this->settings['defaults_layer_listmarkers_api_georss'] = array(
+			'version' => '2.1',
+			'section' => 'defaults_layer',
+			'title'   => '',
+			'desc'    => 'GeoRSS <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-georss.png">',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);
+		$this->settings['defaults_layer_listmarkers_api_wikitude'] = array(
+			'version' => '2.1',
+			'section' => 'defaults_layer',
+			'title'   => '',
+			'desc'    => 'Wikitude <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-wikitude.png">',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);		
 		/*===========================================
 		*
 		*
@@ -5823,7 +5880,6 @@ class Leafletmapsmarker_options {
 		$options_new = array_merge($options_current, $new_options_defaults);
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
-		/* template for plugin updates 
 		//info:  set defaults for options introduced in v2.1
 		if (get_option('leafletmapsmarker_version') == '2.0' )
 		{
@@ -5831,6 +5887,22 @@ class Leafletmapsmarker_options {
 			foreach ( $this->settings as $id => $setting ) 
 			{
 				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.1')
+				{
+				$new_options_defaults[$id] = $setting['std'];
+				}
+			}
+		$options_current = get_option( 'leafletmapsmarker_options' );
+		$options_new = array_merge($options_current, $new_options_defaults);
+		update_option( 'leafletmapsmarker_options', $options_new );
+		}
+		/* template for plugin updates 
+		//info:  set defaults for options introduced in v2.2
+		if (get_option('leafletmapsmarker_version') == '2.1' )
+		{
+			$new_options_defaults = array();
+			foreach ( $this->settings as $id => $setting ) 
+			{
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.2')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}

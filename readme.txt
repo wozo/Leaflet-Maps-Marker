@@ -226,6 +226,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.1 - xx.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.1)
+* NEW: added option to hide API links on markers list below layer maps
+* UPDATED French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 
 = v2.0 - 13.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.0)
