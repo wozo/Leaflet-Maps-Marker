@@ -172,6 +172,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v2.1 =
+added support for MapBox basemaps, TinyMCE button optimizations, compatibility checks for cformsII
 
 = v2.0 =
 added support for geo sitemaps, new mass actions for selected markers only, important bugfix for French translations causing maps to break
