@@ -50,6 +50,7 @@ to the visitors of your website.
 * TinyMCE button for easily searching and adding maps on post/pages edit screen
 * display a list of markers below layer maps
 * show standalone maps in fullscreen mode
+* automatically generated geo sitemap for all maps (for submitting to Google)
 * support for microformat geo-markup to make your maps machine-readable
 * support for custom marker timestamps for more precise KML animations - [demo video](http://www.youtube.com/watch?v=LXliLaZ4u-E)
 * create QR code images for standalone maps in fullscreen mode
@@ -226,7 +227,11 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.1 - xx.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.1)
+* NEW: added support for MapBox basemaps
 * NEW: added option to hide API links on markers list below layer maps
+* NEW: added check if cformsII plugin is active and info on how to fix a related TinyMCE bug
+* BUGFIX: attribution text is not cleared on backend maps if basemap is changed
+* BUGFIX: removed double slashes from image path in settings
 * UPDATED French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 
 = v2.0 - 13.03.2012 =

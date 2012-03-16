@@ -182,6 +182,9 @@ class Leafletmapsmarker_options {
 			<li>' . __('Cloudmade 1 settings','lmm') . '</li>
 			<li>' . __('Cloudmade 2 settings','lmm') . '</li>
 			<li>' . __('Cloudmade 3 settings','lmm') . '</li>
+			<li>' . __('MapBox 1 settings','lmm') . '</li>
+			<li>' . __('MapBox 2 settings','lmm') . '</li>
+			<li>' . __('MapBox 3 settings','lmm') . '</li>
 			<li>' . __('Custom basemap 1 settings','lmm') . '</li>
 			<li>' . __('Custom basemap 2 settings','lmm') . '</li>
 			<li>' . __('Custom basemap 3 settings','lmm') . '</li></ul></span>';
@@ -374,7 +377,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.0',
 			'section' => 'basemaps',
 			'title'   => '',
-			'desc'    => __( 'Please select the basemap which should be pre-selected as default for new markers and layers. Can be changed afterwards on each marker/layer.', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap.jpg />',
+			'desc'    => __( 'Please select the basemap which should be pre-selected as default for new markers and layers. Can be changed afterwards on each marker/layer.', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['standard_basemap'] = array(
@@ -393,6 +396,9 @@ class Leafletmapsmarker_options {
 				'cloudmade' => 'Cloudmade',
 				'cloudmade2' => 'Cloudmade 2',
 				'cloudmade3' => 'Cloudmade 3',
+				'mapbox' => 'MapBox 1',
+				'mapbox2' => 'MapBox 2',
+				'mapbox3' => 'MapBox 3',
 				'custom_basemap' => __('Custom basemap','lmm'),
 				'custom_basemap2' => __('Custom basemap 2','lmm'),
 				'custom_basemap3' => __('Custom basemap 3','lmm')
@@ -413,7 +419,7 @@ class Leafletmapsmarker_options {
 			'section' => 'basemaps',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Optionally you can also change the name of the predefined basemaps in the controlbox.', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-names.jpg />',
+			'desc'    => __( 'Optionally you can also change the name of the predefined basemaps in the controlbox.', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-names.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['default_basemap_name_osm_mapnik'] = array(
@@ -480,6 +486,30 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'basemaps'
 		);		
+		$this->settings['mapbox_name'] = array(
+			'version' => '2.1',
+			'title'   => 'MapBox',
+			'desc'    => '',
+			'std'     => 'Blue Marble Topography',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
+		$this->settings['mapbox2_name'] = array(
+			'version' => '2.1',
+			'title'   => 'MapBox 2',
+			'desc'    => '',
+			'std'     => 'Geography Class',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
+		$this->settings['mapbox3_name'] = array(
+			'version' => '2.1',
+			'title'   => 'MapBox 3',
+			'desc'    => '',
+			'std'     => 'MapBox Streets',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
 		$this->settings['custom_basemap_name'] = array(
 			'version' => '1.0',
 			'title'   => __( 'Custom Basemap', 'lmm' ),
@@ -520,7 +550,7 @@ class Leafletmapsmarker_options {
 			'section' => 'basemaps',
 			'std'     => '', 
 			'title'    => '',
-			'desc'    => __( 'Please select the basemaps which should be available in the control box.', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-available-basemaps.jpg />',
+			'desc'    => __( 'Please select the basemaps which should be available in the control box.', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-available-basemaps.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['controlbox_osm_mapnik'] = array(
@@ -588,6 +618,30 @@ class Leafletmapsmarker_options {
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);	
+		$this->settings['controlbox_mapbox'] = array(
+			'version' => '2.1',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => 'MapBox',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);	
+		$this->settings['controlbox_mapbox2'] = array(
+			'version' => '2.1',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => 'MapBox 2',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);	
+		$this->settings['controlbox_mapbox3'] = array(
+			'version' => '2.1',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => 'MapBox 3',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);
 		$this->settings['controlbox_custom_basemap'] = array(
 			'version' => '1.0',
 			'section' => 'basemaps',
@@ -627,7 +681,7 @@ class Leafletmapsmarker_options {
 			'section' => 'basemaps',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'If coordinates within boundaries of Vienna/Austria are selected for a marker or layer, the basemap automatically switches to OGD Vienna basemap and the overlay OGD Vienna addresses gets checked.', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-ogdvienna-selector.jpg />',
+			'desc'    => __( 'If coordinates within boundaries of Vienna/Austria are selected for a marker or layer, the basemap automatically switches to OGD Vienna basemap and the overlay OGD Vienna addresses gets checked.', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-ogdvienna-selector.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['ogdvienna_selector'] = array(
@@ -666,7 +720,7 @@ class Leafletmapsmarker_options {
 			'section' => 'basemaps',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-cloudmade.jpg />',
+			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-cloudmade.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['cloudmade_api_key'] = array(
@@ -712,7 +766,7 @@ class Leafletmapsmarker_options {
 			'section' => 'basemaps',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-cloudmade.jpg />',
+			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-cloudmade.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['cloudmade2_api_key'] = array(
@@ -758,7 +812,7 @@ class Leafletmapsmarker_options {
 			'section' => 'basemaps',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-cloudmade.jpg />',
+			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-cloudmade.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['cloudmade3_api_key'] = array(
@@ -788,7 +842,181 @@ class Leafletmapsmarker_options {
 				'enabled' => __('enabled','lmm'),
 				'disabled' => __('disabled','lmm')
 			)
-		);				
+		);	
+		/*
+		* MapBox settings
+		*/
+		$this->settings['mapbox_heading'] = array(
+			'version' => '2.1',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'MapBox settings', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['mapbox_helptext'] = array(
+			'version' => '2.1',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-mapbox.jpg />',
+			'type'    => 'helptext'
+		);
+		$this->settings['mapbox_user'] = array(
+			'version' => '2.1',
+			'title'   => __( 'User', 'lmm' ),
+			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/<strong>mapbox</strong>/map/blue-marble-topo-jul',
+			'std'     => 'mapbox',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['mapbox_map'] = array(
+			'version' => '2.1',
+			'title'   => __('map','lmm'),
+			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/mapbox/map/<strong>blue-marble-topo-jul</strong>',
+			'std'     => 'blue-marble-topo-jul',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['mapbox_minzoom'] = array(
+			'version' => '2.1',
+			'title'   => __('Minimum zoom level','lmm'),
+			'desc'    => '',
+			'std'     => '0',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['mapbox_maxzoom'] = array(
+			'version' => '2.1',
+			'title'   => __('Maximum zoom level','lmm'),
+			'desc'    => '',
+			'std'     => '8',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['mapbox_attribution'] = array(
+			'version' => '2.1',
+			'title'   => __('Attribution','lmm'),
+			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider X&lt;/a&gt;",
+			'std'     => "MapBox/NASA, <a href=&quot;http://www.mapbox.com&quot; target=&quot;_blank&quot;>http://www.mapbox.com</a>",
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		/*
+		* MapBox 2 settings
+		*/
+		$this->settings['mapbox2_heading'] = array(
+			'version' => '2.1',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'MapBox 2 settings', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['mapbox2_helptext'] = array(
+			'version' => '2.1',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-mapbox.jpg />',
+			'type'    => 'helptext'
+		);
+		$this->settings['mapbox2_user'] = array(
+			'version' => '2.1',
+			'title'   => __( 'User', 'lmm' ),
+			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/<strong>mapbox</strong>/map/geography-class',
+			'std'     => 'mapbox',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['mapbox2_map'] = array(
+			'version' => '2.1',
+			'title'   => __('map','lmm'),
+			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/mapbox/map/<strong>geography-class</strong>',
+			'std'     => 'geography-class',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);	
+		$this->settings['mapbox2_minzoom'] = array(
+			'version' => '2.1',
+			'title'   => __('Minimum zoom level','lmm'),
+			'desc'    => '',
+			'std'     => '0',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['mapbox2_maxzoom'] = array(
+			'version' => '2.1',
+			'title'   => __('Maximum zoom level','lmm'),
+			'desc'    => '',
+			'std'     => '8',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['mapbox2_attribution'] = array(
+			'version' => '2.1',
+			'title'   => __('Attribution','lmm'),
+			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider X&lt;/a&gt;",
+			'std'     => "MapBox, <a href=&quot;http://www.mapbox.com&quot; target=&quot;_blank&quot;>http://www.mapbox.com</a>",
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		/*
+		* MapBox 3 settings
+		*/
+		$this->settings['mapbox3_heading'] = array(
+			'version' => '2.1',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'MapBox 3 settings', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['mapbox3_helptext'] = array(
+			'version' => '2.1',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-mapbox.jpg />',
+			'type'    => 'helptext'
+		);
+		$this->settings['mapbox3_user'] = array(
+			'version' => '2.1',
+			'title'   => __( 'User', 'lmm' ),
+			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/<strong>mapbox</strong>/map/mapbox-streets',
+			'std'     => 'mapbox',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['mapbox3_map'] = array(
+			'version' => '2.1',
+			'title'   => __('map','lmm'),
+			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/mapbox/map/<strong>mapbox-streets</strong>',
+			'std'     => 'mapbox-streets',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);					
+		$this->settings['mapbox3_minzoom'] = array(
+			'version' => '2.1',
+			'title'   => __('Minimum zoom level','lmm'),
+			'desc'    => '',
+			'std'     => '0',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['mapbox3_maxzoom'] = array(
+			'version' => '2.1',
+			'title'   => __('Maximum zoom level','lmm'),
+			'desc'    => '',
+			'std'     => '17',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['mapbox3_attribution'] = array(
+			'version' => '2.1',
+			'title'   => __('Attribution','lmm'),
+			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider X&lt;/a&gt;",
+			'std'     => "MapBox, <a href=&quot;http://www.mapbox.com&quot; target=&quot;_blank&quot;>http://www.mapbox.com</a>",
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
 		/*
 		* Custom basemap 1 settings
 		*/
@@ -804,7 +1032,7 @@ class Leafletmapsmarker_options {
 			'section' => 'basemaps',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 1):<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-custom-basemaps.jpg />',
+			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 1):<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-custom-basemaps.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['custom_basemap_tileurl'] = array(
@@ -874,7 +1102,7 @@ class Leafletmapsmarker_options {
 			'section' => 'basemaps',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 2):<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-custom-basemaps.jpg />',
+			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 2):<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-custom-basemaps.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['custom_basemap2_tileurl'] = array(
@@ -944,7 +1172,7 @@ class Leafletmapsmarker_options {
 			'section' => 'basemaps',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 3):<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-default-basemap-custom-basemaps.jpg />',
+			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 3):<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-default-basemap-custom-basemaps.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['custom_basemap3_tileurl'] = array(
@@ -1022,7 +1250,7 @@ class Leafletmapsmarker_options {
 			'section' => 'overlays',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please select the overlays which should be available in the control box.', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-custom-overlays-available-overlays.jpg />',
+			'desc'    => __( 'Please select the overlays which should be available in the control box.', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-custom-overlays-available-overlays.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['overlays_custom'] = array(
@@ -1075,7 +1303,7 @@ class Leafletmapsmarker_options {
 			'section' => 'overlays',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').':<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-overlays-custom.jpg />',
+			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').':<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-overlays-custom.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['overlays_custom_name'] = array(
@@ -1154,7 +1382,7 @@ class Leafletmapsmarker_options {
 			'section' => 'overlays',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 2:<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-overlays-custom2.jpg />',
+			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 2:<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-overlays-custom2.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['overlays_custom2_name'] = array(
@@ -1233,7 +1461,7 @@ class Leafletmapsmarker_options {
 			'section' => 'overlays',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 3:<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-overlays-custom3.jpg />',
+			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 3:<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-overlays-custom3.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['overlays_custom3_name'] = array(
@@ -1311,7 +1539,7 @@ class Leafletmapsmarker_options {
 			'section' => 'overlays',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 4:<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-overlays-custom4.jpg />',
+			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 4:<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-overlays-custom4.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['overlays_custom4_name'] = array(
@@ -1398,7 +1626,7 @@ class Leafletmapsmarker_options {
 			'section' => 'wms',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please select the WMS layers which should be available when creating new markers/layers', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-wms-available-wms-layers.jpg />',
+			'desc'    => __( 'Please select the WMS layers which should be available when creating new markers/layers', 'lmm').'<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-wms-available-wms-layers.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['wms_wms_available'] = array(
@@ -3677,7 +3905,7 @@ class Leafletmapsmarker_options {
 			'section' => 'defaults_marker',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Will be used when creating a new marker. All values can be changed afterwards on each marker.', 'lmm') . '<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-marker-defaults.jpg />',
+			'desc'    => __( 'Will be used when creating a new marker. All values can be changed afterwards on each marker.', 'lmm') . '<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-marker-defaults.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['defaults_marker_lat'] = array(
@@ -3816,7 +4044,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.4',
 			'section' => 'defaults_marker',
 			'title'    => __('Visible API links in panel','lmm'),
-			'desc'    => __('Directions','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-car.png">',
+			'desc'    => __('Directions','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-car.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -3824,7 +4052,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.0',
 			'section' => 'defaults_marker',
 			'title'    => '',
-			'desc'    => 'KML <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-kml.png">',
+			'desc'    => 'KML <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-kml.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -3832,7 +4060,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.1',
 			'section' => 'defaults_marker',
 			'title'    => '',
-			'desc'    => __('Fullscreen','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-fullscreen.png">',
+			'desc'    => __('Fullscreen','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-fullscreen.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);		
@@ -3840,7 +4068,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.1',
 			'section' => 'defaults_marker',
 			'title'    => '',
-			'desc'    => __('QR code','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-qr-code.png">',
+			'desc'    => __('QR code','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-qr-code.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);		
@@ -3848,7 +4076,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.0',
 			'section' => 'defaults_marker',
 			'title'   => '',
-			'desc'    => 'GeoJSON <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-json.png">',
+			'desc'    => 'GeoJSON <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-json.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -3856,7 +4084,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.2',
 			'section' => 'defaults_marker',
 			'title'   => '',
-			'desc'    => 'GeoRSS <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-georss.png">',
+			'desc'    => 'GeoRSS <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-georss.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -3864,7 +4092,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.0',
 			'section' => 'defaults_marker',
 			'title'   => '',
-			'desc'    => 'Wikitude <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-wikitude.png">',
+			'desc'    => 'Wikitude <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-wikitude.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);		
@@ -3981,7 +4209,7 @@ class Leafletmapsmarker_options {
 			'section' => 'defaults_marker',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'You can also add markers directly to posts or pages without having to save them to your database previously. You just have to use the shortcode with the attributes mlat and mlon (e.g. <strong>[mapsmarker mlat="48.216038" mlon="16.378984"]</strong>).', 'lmm') . '<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-marker-direct.jpg /><br/><br/>' . __('Defaults values for markers added directly:','lmm'),
+			'desc'    => __( 'You can also add markers directly to posts or pages without having to save them to your database previously. You just have to use the shortcode with the attributes mlat and mlon (e.g. <strong>[mapsmarker mlat="48.216038" mlon="16.378984"]</strong>).', 'lmm') . '<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-marker-direct.jpg /><br/><br/>' . __('Defaults values for markers added directly:','lmm'),
 			'type'    => 'helptext'
 		);
 		$this->settings['defaults_marker_shortcode_basemap'] = array(
@@ -4193,7 +4421,7 @@ class Leafletmapsmarker_options {
 			'section' => 'defaults_layer',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Will be used when creating a new layer. All values can be changed afterwards on each layer.', 'lmm') . '<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-layer-defaults.jpg />',
+			'desc'    => __( 'Will be used when creating a new layer. All values can be changed afterwards on each layer.', 'lmm') . '<br/><br/><img src='. LEAFLET_PLUGIN_URL .'img/help-layer-defaults.jpg />',
 			'type'    => 'helptext'
 		);
 		$this->settings['defaults_layer_lat'] = array(
@@ -4311,7 +4539,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.0',
 			'section' => 'defaults_layer',
 			'title'    => __('Visible API links in panel','lmm'),
-			'desc'    => 'KML <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-kml.png">',
+			'desc'    => 'KML <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-kml.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -4319,7 +4547,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.1',
 			'section' => 'defaults_layer',
 			'title'    => '',
-			'desc'    => __('Fullscreen','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-fullscreen.png">',
+			'desc'    => __('Fullscreen','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-fullscreen.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);		
@@ -4327,7 +4555,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.1',
 			'section' => 'defaults_layer',
 			'title'    => '',
-			'desc'    => __('QR code','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-qr-code.png">',
+			'desc'    => __('QR code','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-qr-code.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);		
@@ -4335,7 +4563,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.0',
 			'section' => 'defaults_layer',
 			'title'   => '',
-			'desc'    => 'GeoJSON <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-json.png"> (' . __('not available on multi layer maps','lmm') . ')',
+			'desc'    => 'GeoJSON <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-json.png"> (' . __('not available on multi layer maps','lmm') . ')',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -4343,7 +4571,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.2',
 			'section' => 'defaults_layer',
 			'title'   => '',
-			'desc'    => 'GeoRSS <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-georss.png">',
+			'desc'    => 'GeoRSS <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-georss.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -4351,7 +4579,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.0',
 			'section' => 'defaults_layer',
 			'title'   => '',
-			'desc'    => 'Wikitude <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-wikitude.png">',
+			'desc'    => 'Wikitude <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-wikitude.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);		
@@ -4511,7 +4739,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.1',
 			'section' => 'defaults_layer',
 			'title'    => __('Visible API links for each marker','lmm'),
-			'desc'    => __('Directions','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-car.png">',
+			'desc'    => __('Directions','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-car.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -4519,7 +4747,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.1',
 			'section' => 'defaults_layer',
 			'title'    => '',
-			'desc'    => 'KML <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-kml.png">',
+			'desc'    => 'KML <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-kml.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -4527,7 +4755,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.1',
 			'section' => 'defaults_layer',
 			'title'    => '',
-			'desc'    => __('Fullscreen','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-fullscreen.png">',
+			'desc'    => __('Fullscreen','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-fullscreen.png">',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);		
@@ -4535,7 +4763,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.1',
 			'section' => 'defaults_layer',
 			'title'    => '',
-			'desc'    => __('QR code','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-qr-code.png">',
+			'desc'    => __('QR code','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-qr-code.png">',
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);		
@@ -4543,7 +4771,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.1',
 			'section' => 'defaults_layer',
 			'title'   => '',
-			'desc'    => 'GeoJSON <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-json.png">',
+			'desc'    => 'GeoJSON <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-json.png">',
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
@@ -4551,7 +4779,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.1',
 			'section' => 'defaults_layer',
 			'title'   => '',
-			'desc'    => 'GeoRSS <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-georss.png">',
+			'desc'    => 'GeoRSS <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-georss.png">',
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
@@ -4559,7 +4787,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.1',
 			'section' => 'defaults_layer',
 			'title'   => '',
-			'desc'    => 'Wikitude <img src="' . LEAFLET_PLUGIN_URL . '/img/icon-wikitude.png">',
+			'desc'    => 'Wikitude <img src="' . LEAFLET_PLUGIN_URL . 'img/icon-wikitude.png">',
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);		
