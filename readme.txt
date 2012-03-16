@@ -230,6 +230,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: added support for MapBox basemaps
 * NEW: added option to hide API links on markers list below layer maps
 * NEW: added check if cformsII plugin is active and info on how to fix a related TinyMCE bug
+* OPTIMIZED: search results for search started with TinyMCE button on post/page edit screen
+* BUGFIX: TinyMCE button did not work on certain installations
 * BUGFIX: attribution text is not cleared on backend maps if basemap is changed
 * BUGFIX: removed double slashes from image path in settings
 * UPDATED French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
