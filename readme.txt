@@ -94,6 +94,7 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * Spanish (es_ES) thanks to David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com)
 * Dutch (nl_NL) thanks to Marijke Metz, [http://www.mergenmetz.nl](http://www.mergenmetz.nl)
 * French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
+* Italian (it_IT) thanks to Luca Barbetti
 
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
@@ -172,7 +173,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v2.1 =
-added support for MapBox basemaps, TinyMCE button optimizations, compatibility checks for cformsII
+added support for MapBox basemaps, TinyMCE button optimizations, check for incompatible plugins, Italian translation
 
 = v2.0 =
 added support for geo sitemaps, new mass actions for selected markers only, important bugfix for French translations causing maps to break
@@ -230,7 +231,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.1)
 * NEW: added support for MapBox basemaps
 * NEW: added option to hide API links on markers list below layer maps
-* NEW: added check if cformsII plugin is active and info on how to fix a related TinyMCE bug
+* NEW: added check for incompatible plugins
+* NEW: Italian translation thanks to Luca Barbetti
 * OPTIMIZED: search results for search started with TinyMCE button on post/page edit screen
 * BUGFIX: TinyMCE button did not work on certain installations
 * BUGFIX: attribution text is not cleared on backend maps if basemap is changed
