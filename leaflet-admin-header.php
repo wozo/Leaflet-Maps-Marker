@@ -58,7 +58,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
-			Italian translation thanks to Luca Barbetti
+			Italian translation thanks to <a href="mailto:lucabarbetti@gmail.com">Luca Barbetti</a>
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">

@@ -94,7 +94,7 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * Spanish (es_ES) thanks to David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com)
 * Dutch (nl_NL) thanks to Marijke Metz, [http://www.mergenmetz.nl](http://www.mergenmetz.nl)
 * French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
-* Italian (it_IT) thanks to Luca Barbetti
+* Italian (it_IT) thanks to [Luca Barbetti](lucabarbetti@gmail.com)
 
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
