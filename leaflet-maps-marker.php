@@ -1060,6 +1060,7 @@ function leafletmapsmarker() {
 		update_option('leafletmapsmarker_version', '2.0');
 	}
 	if (get_option('leafletmapsmarker_version') == '2.0' ) {
+		add_option('leafletmapsmarker_update_info', 'show');
 		$save_defaults_for_new_options = new Leafletmapsmarker_options();
 		$save_defaults_for_new_options->save_defaults_for_new_options();
 		update_option('leafletmapsmarker_version', '2.1');
@@ -1077,6 +1078,7 @@ function leafletmapsmarker() {
 		$save_defaults_for_new_options = new Leafletmapsmarker_options();
 		$save_defaults_for_new_options->save_defaults_for_new_options();
 		update_option('leafletmapsmarker_version', '2.2');
+		update_option('leafletmapsmarker_update_info', 'show');
 		//mandatory: move code for redirect-on-first-activation-check to here
 	}
 	*/

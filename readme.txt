@@ -229,15 +229,15 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.1 - xx.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.1)
+* NEW: added changelog info box after each plugin update
 * NEW: added support for MapBox basemaps
 * NEW: added option to hide API links on markers list below layer maps
 * NEW: added check for incompatible plugins
 * NEW: Italian translation thanks to Luca Barbetti
-* OPTIMIZED: search results for search started with TinyMCE button on post/page edit screen
-* BUGFIX: TinyMCE button did not work on certain installations
+* CHANGED: optimized search results table for maps (started with TinyMCE button on post/page edit screen)
+* CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 * BUGFIX: attribution text is not cleared on backend maps if basemap is changed
-* BUGFIX: removed double slashes from image path in settings
-* UPDATED French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
+* BUGFIX: removed double slashes from image urls in settings
 
 = v2.0 - 13.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.0)

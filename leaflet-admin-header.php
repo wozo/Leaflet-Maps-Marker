@@ -24,6 +24,71 @@ $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ?
   </p>
 
 <?php
+//info: display update info with current release notes
+$update_info_action = isset($_POST['update_info_action']) ? $_POST['update_info_action'] : ''; 
+if ($update_info_action == 'hide') {
+	update_option('leafletmapsmarker_update_info', 'hide');
+}
+
+if (get_option('leafletmapsmarker_update_info') == 'show') {
+	echo '<div class="updated" style="padding:10px;"><p><strong>Leaflet Maps Marker has been updated successfully!</strong></p>
+		  <p>For more details about this release, please visit <a href="http://www.mapsmarker.com/v2.1" target="_blank">http://www.mapsmarker.com/v2.1</a></p>
+			Changelog for version 2.1:
+			<table>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			added changelog info box after each plugin update
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			added support for MapBox basemaps
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			added option to hide API links on markers list below layer maps
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			added check for incompatible plugins
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			Italian translation thanks to Luca Barbetti
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			optimized search results table for maps (started with TinyMCE button on post/page edit screen)
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			updated French translation thanks to Vincèn Pujol, <a href="http://www.skivr.com" target="_blank">http://www.skivr.com</a>
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
+			attribution text is not cleared on backend maps if basemap is changed
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
+			removed double slashes from image urls in settings
+			</td></tr>
+			</table>
+			<p>If you upgraded from a version <2.0, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.
+			<form method="post">
+			<input type="hidden" name="update_info_action" value="hide" />
+			<input class="button-secondary" type="submit" value="' . __('remove message', 'lmm') . '"/></form></div>'.PHP_EOL;
+}
+?>
+
+<?php
 //info: check for incompability with other plugins
 if (is_plugin_active('jquery-colorbox/jquery-colorbox.php') ) {
 	$lmm_jquery_colorbox_options = get_option( 'jquery-colorbox_settings' );
