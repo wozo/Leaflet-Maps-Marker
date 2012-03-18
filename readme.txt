@@ -227,7 +227,7 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v2.1 - xx.03.2012 =
+= v2.1 - 18.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.1)
 * NEW: added changelog info box after each plugin update
 * NEW: added support for MapBox basemaps
