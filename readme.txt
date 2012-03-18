@@ -8,7 +8,7 @@ Author:            Robert Harm (with special support from Sindre Wimberger)
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.4-alpha-19904
-Stable tag:        2.1
+Stable tag:        2.2
 
 Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 
@@ -172,6 +172,8 @@ This program is free software; you can redistribute it and/or modify it under th
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
+= v2.2 =
+
 = v2.1 =
 added support for MapBox basemaps, TinyMCE button optimizations, check for incompatible plugins, Italian translation
 
@@ -227,6 +229,10 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v2.2 - xx.03.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v2.2)
+
+
 = v2.1 - 18.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.1)
 * NEW: added changelog info box after each plugin update
