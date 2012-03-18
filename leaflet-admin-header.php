@@ -26,10 +26,11 @@ $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ?
 <?php
 //info: display update info with current release notes
 $update_info_action = isset($_POST['update_info_action']) ? $_POST['update_info_action'] : ''; 
-if ($update_info_action == 'hide') {
+//info: dont display on new installs
+$new_install = (isset($_GET['display']) ? 'true' : 'false'); 
+if ( ($update_info_action == 'hide') && ($new_install == 'false') ) {
 	update_option('leafletmapsmarker_update_info', 'hide');
 }
-
 if (get_option('leafletmapsmarker_update_info') == 'show') {
 	echo '<div class="updated" style="padding:10px;"><p><strong>Leaflet Maps Marker has been updated successfully!</strong></p>
 		  <p>For more details about this release, please visit <a href="http://www.mapsmarker.com/v2.1" target="_blank">http://www.mapsmarker.com/v2.1</a></p>
@@ -71,6 +72,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			updated French translation thanks to Vincèn Pujol, <a href="http://www.skivr.com" target="_blank">http://www.skivr.com</a>
 			</td></tr>
 			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			updated Dutch translation thanks to Marijke, <a href="http://www.mergenmetz.nl" target="_blank">http://www.mergenmetz.nl</a>
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			updated Japanes translations thanks to <a href="http://twitter.com/higa4" target="_blank">Shu Higashi</a>
+			</td></tr>
+			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
 			attribution text is not cleared on backend maps if basemap is changed
@@ -93,7 +104,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 if (is_plugin_active('jquery-colorbox/jquery-colorbox.php') ) {
 	$lmm_jquery_colorbox_options = get_option( 'jquery-colorbox_settings' );
 	if ($lmm_jquery_colorbox_options['autoColorbox'] == TRUE) { 
-		echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you are using the plugin jQuery Colorbox Settings which is causing maps to break!</strong><br/><br/>Here is how to fix this:<br/>1. click on to "Settings" / "jQuery Colorbox" in your WordPress admin menu<br/>2. Uncheck the setting "Automate jQuery Colorbox for all images in pages, posts and galleries:"<br/>3. check the setting "Automate jQuery Colorbox for images in WordPress galleries only:" instead<br/>4. save changes<br/><br/>This message will disappear automatically when the jQuery Colorbox option was updated.','lmm') . '</div></p>';
+		echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you are using the plugin jQuery Colorbox which is causing maps to break!</strong><br/><br/>Here is how to fix this:<br/>1. click on to "Settings" / "jQuery Colorbox" in your WordPress admin menu<br/>2. Uncheck the setting "Automate jQuery Colorbox for all images in pages, posts and galleries:"<br/>3. check the setting "Automate jQuery Colorbox for images in WordPress galleries only:" instead<br/>4. save changes<br/><br/>This message will disappear automatically when the jQuery Colorbox option was updated.','lmm') . '</div></p>';
 	} 
 }
 if (is_plugin_active('cforms/cforms.php') ) {
@@ -103,7 +114,7 @@ if (is_plugin_active('cforms/cforms.php') ) {
 	} 
 }
 if (is_plugin_active('wp-google-analytics/wp-google-analytics.php') ) {
-	echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you are using the outdated plugin WP Google Analytics which is incompatible with Leaflet Maps Marker. Please update to a more current Google analytics plugin like http://wordpress.org/extend/plugins/google-analytics-for-wordpress/','lmm') . '</div></p>';
+	echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you are using the outdated plugin WP Google Analytics which is incompatible with Leaflet Maps Marker. Please update to a more current Google analytics plugin like http://wordpress.org/extend/plugins/google-analytics-for-wordpress/','lmm') . '</strong></div></p>';
 }
 ?>
 

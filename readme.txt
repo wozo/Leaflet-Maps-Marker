@@ -236,6 +236,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: Italian translation thanks to Luca Barbetti
 * CHANGED: optimized search results table for maps (started with TinyMCE button on post/page edit screen)
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
+* CHANGED: updated Dutch translation thanks to [Marijke](http://www.mergenmetz.nl)
+* CHANGED: updated Japanes translations thanks to [Shu Higashi](http://twitter.com/higa4)
 * BUGFIX: attribution text is not cleared on backend maps if basemap is changed
 * BUGFIX: removed double slashes from image urls in settings
 
