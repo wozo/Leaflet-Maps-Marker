@@ -49,6 +49,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
+			TinyMCE button did not work when WordPress was installed in custom directory
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
 
 			</td></tr>
 			</table>

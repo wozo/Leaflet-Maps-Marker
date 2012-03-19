@@ -231,7 +231,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.2 - xx.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.2)
-
+* BUGFIX: TinyMCE button did not work when WordPress was installed in custom directory
 
 = v2.1 - 18.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.1)
@@ -239,7 +239,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: added support for MapBox basemaps
 * NEW: added option to hide API links on markers list below layer maps
 * NEW: added check for incompatible plugins
-* NEW: Italian translation thanks to Luca Barbetti
+* NEW: Italian translation thanks to [Luca Barbetti](lucabarbetti@gmail.com)
 * CHANGED: optimized search results table for maps (started with TinyMCE button on post/page edit screen)
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 * CHANGED: updated Dutch translation thanks to [Marijke](http://www.mergenmetz.nl)
