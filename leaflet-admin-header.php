@@ -33,26 +33,26 @@ if ( ($update_info_action == 'hide') && ($new_install == 'false') ) {
 }
 if (get_option('leafletmapsmarker_update_info') == 'show') {
 	echo '<div class="updated" style="padding:10px;"><p><strong>Leaflet Maps Marker has been updated successfully!</strong></p>
-		  <p>For more details about this release, please visit <a href="http://www.mapsmarker.com/v2.2" target="_blank">http://www.mapsmarker.com/v2.2</a></p>
-			Changelog for version 2.2:
+		  <p>For more details about this release, please visit <a href="http://www.mapsmarker.com/v2.3" target="_blank">http://www.mapsmarker.com/v2.3</a></p>
+			Changelog for version 2.3:
 			<table>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
-			support for new map options (dragging, touchzoom, scrollWheelZoom...)
+			
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
-			updated Italian translation thanks to Luca Barbetti
+			
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
-			TinyMCE button did not work when WordPress was installed in custom directory
+			
 			</td></tr>
 			</table>
-			<p>If you upgraded from a version <2.1, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.
+			<p>If you upgraded from a version <2.2, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.
 			<form method="post">
 			<input type="hidden" name="update_info_action" value="hide" />
 			<input class="button-secondary" type="submit" value="' . __('remove message', 'lmm') . '"/></form></div>'.PHP_EOL;
