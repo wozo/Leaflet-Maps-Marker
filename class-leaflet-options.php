@@ -265,7 +265,9 @@ class Leafletmapsmarker_options {
 			<li>' . __('KML settings','lmm') . '</li>
 			<li>' . __('General Map settings','lmm') . '</li>
 			<li>' . __('Available columns for marker listing page','lmm') . '</li>
-			<li>' . __('Available columns for layer listing page','lmm') . '</li></ul></span>';
+			<li>' . __('Sort order for marker listing page','lmm') . '</li>
+			<li>' . __('Available columns for layer listing page','lmm') . '</li></ul></span>
+			<li>' . __('Sort order for layer listing page','lmm') . '</li>';
 	}	
 	/**
 	 * HTML output for text field
@@ -5801,7 +5803,54 @@ class Leafletmapsmarker_options {
 			'desc'    => 'Wikitude',
 			'type'    => 'checkbox',
 			'std'     => 1 
-		);			
+		);		
+		/*
+		* Sort order for marker listing page
+		*/
+		$this->settings['misc_marker_listing_sort_heading'] = array(
+			'version' => '2.3',
+			'section' => 'misc',
+			'title'   => '', 
+			'desc'    => __( 'Sort order for marker listing page', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['misc_marker_listing_sort_helptext'] = array(
+			'version' => '2.3',
+			'section' => 'misc',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'Please select order by and sort order for "List all markers" page', 'lmm'),
+			'type'    => 'helptext'
+		);
+		$this->settings['misc_marker_listing_sort_order_by'] = array(
+			'version' => '2.3',
+			'section' => 'misc',
+			'title'   => __('Order list of markers by','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => 'm.id',
+			'choices' => array(
+				'm.id' => 'ID',
+				'm.markername' => __('marker name','lmm'),
+				'm.layer' => __('assigned layer','lmm') . '(ID)',
+				'm.createdon' => __('created on','lmm'),
+				'm.createdby' => __('created by','lmm'),
+				'm.updatedon' => __('updated on','lmm'),
+				'm.updatedby' => __('updated by','lmm')
+			)
+		);
+		$this->settings['misc_marker_listing_sort_sort_order'] = array(
+			'version' => '2.3',
+			'section' => 'misc',
+			'title'   => __('Sort order','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => 'ASC',
+			'choices' => array(
+				'ASC' => __('ascending','lmm'),
+				'DESC' => __('descending','lmm')
+			)
+		);
 		/*
 		* Available columns for layer listing page
 		*/
@@ -5988,7 +6037,52 @@ class Leafletmapsmarker_options {
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);	
-				
+		/*
+		* Sort order for layer listing page
+		*/
+		$this->settings['misc_layer_listing_sort_heading'] = array(
+			'version' => '2.3',
+			'section' => 'misc',
+			'title'   => '', 
+			'desc'    => __( 'Sort order for layer listing page', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['misc_layer_listing_sort_helptext'] = array(
+			'version' => '2.3',
+			'section' => 'misc',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'Please select order by and sort order for "List all layers" page', 'lmm'),
+			'type'    => 'helptext'
+		);
+		$this->settings['misc_layer_listing_sort_order_by'] = array(
+			'version' => '2.3',
+			'section' => 'misc',
+			'title'   => __('Order list of markers by','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => 'id',
+			'choices' => array(
+				'id' => 'ID',
+				'name' => __('layer name','lmm'),
+				'createdon' => __('created on','lmm'),
+				'createdby' => __('created by','lmm'),
+				'updatedon' => __('updated on','lmm'),
+				'updatedby' => __('updated by','lmm')
+			)
+		);
+		$this->settings['misc_layer_listing_sort_sort_order'] = array(
+			'version' => '2.3',
+			'section' => 'misc',
+			'title'   => __('Sort order','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => 'ASC',
+			'choices' => array(
+				'ASC' => __('ascending','lmm'),
+				'DESC' => __('descending','lmm')
+			)
+		);		
 		/*===========================================
 		*
 		*

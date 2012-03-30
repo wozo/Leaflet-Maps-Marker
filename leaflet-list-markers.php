@@ -8,8 +8,8 @@ $table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
 $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
 $radius = 1;
 $pagenum = isset($_POST['paged']) ? intval($_POST['paged']) : (isset($_GET['paged']) ? intval($_GET['paged']) : 1);
-$columnsort = isset($_GET['orderby']) ? mysql_real_escape_string($_GET['orderby']) : 'id'; 
-$columnsortorder = isset($_GET['order']) ? mysql_real_escape_string($_GET['order']) : 'asc'; 
+$columnsort = isset($_GET['orderby']) ? mysql_real_escape_string($_GET['orderby']) : $lmm_options[ 'misc_marker_listing_sort_order_by' ]; 
+$columnsortorder = isset($_GET['order']) ? mysql_real_escape_string($_GET['order']) : $lmm_options[ 'misc_marker_listing_sort_sort_order' ]; 
 $start = ($pagenum - 1) * intval($lmm_options[ 'markers_per_page' ]);
 $action = isset($_POST['action']) ? $_POST['action'] : (isset($_GET['action']) ? $_GET['action'] : '');
 $searchtext = isset($_POST['searchtext']) ? $_POST['searchtext'] : (isset($_GET['searchtext']) ? mysql_real_escape_string($_GET['searchtext']) : '');
@@ -25,7 +25,7 @@ if ($action == 'search') {
 if ($start > $mcount or $start < 0)
 $start = 0;
 //info:  get pagination
-$getorder = isset($_GET['order']) ? htmlspecialchars($_GET['order']) : ''; 
+$getorder = isset($_GET['order']) ? htmlspecialchars($_GET['order']) : $lmm_options[ 'misc_marker_listing_sort_sort_order' ]; 
 if ($getorder == 'asc') { $sortorder = 'desc'; } else { $sortorder= 'asc'; };
 if ($getorder == 'asc') { $sortordericon = 'asc'; } else { $sortordericon = 'desc'; };
 $pager = '';

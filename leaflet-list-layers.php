@@ -10,8 +10,8 @@
 <?php 
 global $wpdb;
 $lmm_options = get_option( 'leafletmapsmarker_options' );
-$columnsort = isset($_GET['orderby']) ? mysql_real_escape_string($_GET['orderby']) : 'id';
-$columnsortorder = isset($_GET['order']) ? mysql_real_escape_string($_GET['order']) : 'asc'; 
+$columnsort = isset($_GET['orderby']) ? mysql_real_escape_string($_GET['orderby']) : $lmm_options[ 'misc_layer_listing_sort_order_by' ];
+$columnsortorder = isset($_GET['order']) ? mysql_real_escape_string($_GET['order']) : $lmm_options[ 'misc_layer_listing_sort_sort_order' ]; 
 $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
 $table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
 $layerlist = $wpdb->get_results('SELECT * FROM '.$table_name_layers.' WHERE id>0 order by '.$columnsort.' '.$columnsortorder.'', ARRAY_A);
@@ -24,7 +24,7 @@ $csvexportlink = LEAFLET_PLUGIN_URL . 'leaflet-exportcsv.php?_wpnonce=' . $nonce
 <?php if (current_user_can('activate_plugins')) { echo '<a href="' . WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings#misc" title="' . esc_attr__('select columns to display','lmm') . '" style="text-decoration:none;">' . __('columns','lmm') . '</a>'; } ?>
 </p>
 <?php
-$getorder = isset($_GET['order']) ? $_GET['order'] : '';
+$getorder = isset($_GET['order']) ? $_GET['order'] : $lmm_options[ 'misc_layer_listing_sort_sort_order' ];
 if ($getorder == 'asc') { $sortorder = 'desc'; } else { $sortorder= 'asc'; };
 if ($getorder == 'asc') { $sortordericon = 'asc'; } else { $sortordericon = 'desc'; };
 ?>

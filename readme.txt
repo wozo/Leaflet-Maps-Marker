@@ -173,6 +173,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v2.3 =
+added sort options for marker and layer listing pages
 
 = v2.2 =
 added new map options, bugfix
@@ -234,6 +235,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.3 - xx.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.3)
+* NEW: added sort options for marker and layer listing pages in backend
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * BUGFIX: TinyMCE button error on certain installations (function redeclaration)
