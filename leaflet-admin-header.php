@@ -56,6 +56,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			</td><td>
 			TinyMCE button error on certain installations (function redeclaration)
 			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
+			list of markers below layer maps was not as wide as the map on some templates
+			</td></tr>
 			</table>
 			<p>If you upgraded from a version <2.2, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.
 			<form method="post">

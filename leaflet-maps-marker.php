@@ -354,7 +354,7 @@ function leafletmapsmarker() {
 	{
 	$layer_mark_list = $wpdb->get_results('SELECT l.id as lid, m.lon as mlon, m.lat as mlat, m.icon as micon, m.popuptext as mpopuptext,m.markername as markername,m.id as markerid, m.createdon as mcreatedon, m.updatedon as mupdatedon FROM '.$table_name_layers.' as l INNER JOIN '.$table_name_markers.' AS m ON l.id=m.layer WHERE l.id='.$id.' ORDER BY ' . $lmm_options[ 'defaults_layer_listmarkers_order_by' ] . ' ' . $lmm_options[ 'defaults_layer_listmarkers_sort_order' ] . ' LIMIT ' . intval($lmm_options[ 'defaults_layer_listmarkers_limit' ]), ARRAY_A);
 	$lmm_out .= '<div id="lmm-listmarkers-'.$uid.'" class="lmm-listmarkers" style="width:' . $mapwidth.$mapwidthunit . ';">'.PHP_EOL;
-	$lmm_out .= '<table>';
+	$lmm_out .= '<table width="' . $mapwidth.$mapwidthunit . '">';
 	foreach ($layer_mark_list as $row){
 		$lmm_out .= '<tr><td style="width:35px;vertical-align:top;text-align:center;">';
 		if ($row['micon'] != null) { 

@@ -239,7 +239,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * BUGFIX: TinyMCE button error on certain installations (function redeclaration)
-
+* BUGFIX: list of markers below layer maps was not as wide as the map on some templates
 
 = v2.2 - 24.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.2)
