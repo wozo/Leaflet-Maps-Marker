@@ -62,7 +62,8 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			list of markers below layer maps was not as wide as the map on some templates
 			</td></tr>
 			</table>
-			<p>If you upgraded from a version <2.2, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.
+			<p>If you upgraded from a version <2.2, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.</p>
+			<p><strong>If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and vote for it on <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">wordpress.org</a> - thanks!</strong></p>
 			<form method="post">
 			<input type="hidden" name="update_info_action" value="hide" />
 			<input class="button-secondary" type="submit" value="' . __('remove message', 'lmm') . '"/></form></div>'.PHP_EOL;
