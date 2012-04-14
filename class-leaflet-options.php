@@ -81,7 +81,7 @@ class Leafletmapsmarker_options {
 		$install_note = (isset($_GET['display']) ? $_GET['display'] : '');
 		$settings_updated = isset($_GET['settings-updated']) ? $_GET['settings-updated'] : (isset($_GET['updated']) ? $_GET['updated'] : '');
 		if ( ( $install_note != NULL ) && ( $settings_updated == NULL ) ) {
-			$install_success_message = sprintf( __('You just successfully installed the "Leaflet Maps Marker" plugin. You can now optionally change the default settings below or <a href="%1$sadmin.php?page=leafletmapsmarker_marker">add your first marker</a>.<br/>For tutorials and help, please check the <a href="%1$sadmin.php?page=leafletmapsmarker_help">Help &amp; Credits page</a>!','lmm'), WP_ADMIN_URL); 
+			$install_success_message = sprintf( __('You just successfully installed the "Leaflet Maps Marker" plugin. You can now optionally change the default settings below or <a href="%1$sadmin.php?page=leafletmapsmarker_marker">add your first marker</a>.<br/>For tutorials and help, please check the <a href="%1$sadmin.php?page=leafletmapsmarker_help">Help &amp; Credits page</a>!','lmm'), LEAFLET_WP_ADMIN_URL); 
 			echo '<div class="updated" style="padding:10px;"><p>' . $install_success_message . '</p></div>';
 		//info: check if custom icons could be unzipped
 		if ( ! file_exists(LEAFLET_PLUGIN_ICONS_DIR . DIRECTORY_SEPARATOR . 'information.png') ) {

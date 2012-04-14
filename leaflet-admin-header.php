@@ -5,7 +5,7 @@
 ?>
 <?php 
 require_once(ABSPATH . "/wp-includes/pluggable.php");
-$admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ? "<a class='button-secondary' href='" . WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_settings'>".__('Settings','lmm')."</a>" : "";
+$admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ? "<a class='button-secondary' href='" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_settings'>".__('Settings','lmm')."</a>" : "";
 ?>
 
 <div style="float:right;">
@@ -13,14 +13,14 @@ $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ?
   <a href="http://www.open3.at" target="_blank" title="open3.at - network for the promotion of Open Society, OpenGov and OpenData in Austria"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/logo-open3-small.png" width="143" height="30" border="0"/></a></div>
   <div style="font-size:1.5em;margin-bottom:5px;padding:10px 0 0 0;"><span style="font-weight:bold;">Leaflet Maps Marker v<?php echo get_option("leafletmapsmarker_version") ?></span> - "OGD Wien - Meine Platzl im Gr&auml;tzl"-Edition</div>
   <p style="margin:1.5em 0;">
-  <a class="button-secondary" href="<?php echo WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_markers"><?php _e("List all markers", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a class="button-secondary" href="<?php echo WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_marker"><?php _e("Add new marker", "lmm") ?></a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-  <a class="button-secondary" href="<?php echo WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layers"><?php _e("List all layers", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a class="button-secondary" href="<?php echo WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layer"><?php _e("Add new layer", "lmm") ?></a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-  <a class="button-secondary" href="<?php echo WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_tools"><?php _e("Tools", "lmm") ?></a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+  <a class="button-secondary" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_markers"><?php _e("List all markers", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="button-secondary" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_marker"><?php _e("Add new marker", "lmm") ?></a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+  <a class="button-secondary" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layers"><?php _e("List all layers", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="button-secondary" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layer"><?php _e("Add new layer", "lmm") ?></a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+  <a class="button-secondary" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_tools"><?php _e("Tools", "lmm") ?></a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
   <?php echo $admin_quicklink_settings_buttons ?>
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-  <a class="button-secondary" href="<?php echo WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_help"><?php _e("Help & Credits", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="button-secondary" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_help"><?php _e("Help & Credits", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </p>
 
 <?php
@@ -60,6 +60,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
 			list of markers below layer maps was not as wide as the map on some templates
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
+			changed constant WP_ADMIN_URL to LEAFLET_WP_ADMIN_URL due to problems on some blogs
 			</td></tr>
 			</table>
 			<p>If you upgraded from a version <2.2, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.</p>

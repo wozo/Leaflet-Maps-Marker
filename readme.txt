@@ -7,7 +7,7 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm (with special support from Sindre Wimberger)
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.4-beta1
+Tested up to:      3.4-beta2
 Stable tag:        2.3
 
 Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
@@ -240,6 +240,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * BUGFIX: TinyMCE button error on certain installations (function redeclaration)
 * BUGFIX: list of markers below layer maps was not as wide as the map on some templates
+* BUGFIX: changed constant WP_ADMIN_URL to LEAFLET_WP_ADMIN_URL due to problems on some blogs
 
 = v2.2 - 24.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.2)

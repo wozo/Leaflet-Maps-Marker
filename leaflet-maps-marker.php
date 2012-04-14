@@ -9,7 +9,7 @@ Author: Robert Harm (with special support from Sindre Wimberger)
 Author URI: http://www.harm.co.at
 Donate link: http://www.mapsmarker.com/donations
 Requires at least: 3.0
-Tested up to: 3.4-beta1
+Tested up to: 3.4-beta2
 Requires at least PHP 5.2
 Copyright 2011-2012 - @RobertHarm - All rights reserved
 Parts of this plugin were originally based on the Leaflet Plugin by Hind (Copyright 2011)
@@ -33,8 +33,8 @@ if (version_compare(phpversion(),"5.2","<")){
   exit('[Leaflet Maps Marker Plugin - installation failed]: PHP 5.2 is needed for this plugin (you are using PHP '.phpversion().'; note: support for PHP 4 has been officially discontinued since 2007-12-31!) - please upgrade your PHP installation!');
 }
 //info: define necessary paths and urls
-if ( ! defined( 'WP_ADMIN_URL' ) )
-	define( 'WP_ADMIN_URL', get_admin_url() );
+if ( ! defined( 'LEAFLET_WP_ADMIN_URL' ) )
+	define( 'LEAFLET_WP_ADMIN_URL', get_admin_url() );
 if ( ! defined( 'LEAFLET_PLUGIN_URL' ) )
 define ("LEAFLET_PLUGIN_URL", plugin_dir_url(__FILE__));
 $lmm_upload_dir = wp_upload_dir();
@@ -1079,7 +1079,7 @@ function leafletmapsmarker() {
 		if (get_option('leafletmapsmarker_redirect') == 'true') 
 		{
 			update_option('leafletmapsmarker_redirect', 'false');
-			wp_redirect(WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings&display=install_note');
+			wp_redirect(LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings&display=install_note');
 		} else {
 			update_option('leafletmapsmarker_update_info', 'show');
 		}
@@ -1104,9 +1104,9 @@ function leafletmapsmarker() {
     	if ( $file == FB_BASENAME ) {
         	array_unshift(
 	            $links,
-    	        '<a href="' . WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers">'.__('Markers','lmm').'</a>',
-        	    '<a href="' . WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layers">'.__('Layers','lmm').'</a>' ,
-            	'<a href="' . WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings">'.__('Settings','lmm').'</a>'
+    	        '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers">'.__('Markers','lmm').'</a>',
+        	    '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layers">'.__('Layers','lmm').'</a>' ,
+            	'<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings">'.__('Settings','lmm').'</a>'
 	        );
     	}
 	    return $links;
