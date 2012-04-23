@@ -105,6 +105,24 @@ if (is_plugin_active('wp-google-analytics/wp-google-analytics.php') ) {
 <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="ZKVA3VKMEU2TA">
+<?php if ( (defined('WPLANG')) && (strtoupper(substr(WPLANG, 0, 2)) == 'EN') ) { 
+		echo '<input type="hidden" name="LC" value="EN">';
+	} else if ( (defined('WPLANG')) && (strtoupper(substr(WPLANG, 0, 2)) == 'FR') ) {
+		echo '<input type="hidden" name="LC" value="FR">';
+	} else if ( (defined('WPLANG')) && (strtoupper(substr(WPLANG, 0, 2)) == 'CN') ) {
+		echo '<input type="hidden" name="LC" value="CN">';
+	} else if ( (defined('WPLANG')) && (strtoupper(substr(WPLANG, 0, 2)) == 'DE') ) {
+		echo '<input type="hidden" name="LC" value="DE">';
+	} else if ( (defined('WPLANG')) && (strtoupper(substr(WPLANG, 0, 2)) == 'IT') ) {
+		echo '<input type="hidden" name="LC" value="IT">';
+	} else if ( (defined('WPLANG')) && (strtoupper(substr(WPLANG, 0, 2)) == 'JP') ) {
+		echo '<input type="hidden" name="LC" value="JP">';
+	} else if ( (defined('WPLANG')) && (strtoupper(substr(WPLANG, 0, 2)) == 'ES') ) {
+		echo '<input type="hidden" name="LC" value="ES">';
+	} else { 
+		echo '<input type="hidden" name="LC" value="EN">';
+	} ?>
+
 <table>
 <tr><td><input type="hidden" name="on0" value="Sponsorship Level">
 	<select name="os0" style="width:210px;">
