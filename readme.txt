@@ -236,6 +236,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 = v2.3 - xx.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.3)
 * NEW: added sort options for marker and layer listing pages in backend
+* NEW: localized paypal check out pages for donations :-)
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * BUGFIX: TinyMCE button error on certain installations (function redeclaration)
