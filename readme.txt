@@ -239,7 +239,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: localized paypal check out pages for donations :-)
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
-* BUGFIX: TinyMCE button error on certain installations (function redeclaration)
+* BUGFIX: TinyMCE button error on certain installations (function redeclaration, different wp-admin-directory)
 * BUGFIX: list of markers below layer maps was not as wide as the map on some templates
 * BUGFIX: changed constant WP_ADMIN_URL to LEAFLET_WP_ADMIN_URL due to problems on some blogs
 
