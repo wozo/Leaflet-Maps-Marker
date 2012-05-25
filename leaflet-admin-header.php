@@ -33,9 +33,23 @@ if ( ($update_info_action == 'hide') && ($new_install == 'false') ) {
 }
 if (get_option('leafletmapsmarker_update_info') == 'show') {
 	echo '<div class="updated" style="padding:10px;"><p><strong>Leaflet Maps Marker has been updated successfully!</strong></p>
-		  <p>For more details about this release, please visit <a href="http://www.mapsmarker.com/v2.4" target="_blank">http://www.mapsmarker.com/v2.4</a></p>
-			Changelog for version 2.4:
+		  <p>For more details about this release, please visit <a href="http://www.mapsmarker.com/v2.3.1" target="_blank">http://www.mapsmarker.com/v2.3.1</a></p>
+			Changelog for version 2.3.1:
 			<table>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
+			fixed possible SQL injections and cross site scripting issues
+			</td></tr>
+			</table>
+			<p>If you upgraded from a version <2.3, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.</p>
+			<p><strong>If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">rate the plugin on wordpress.org</a> - thanks!</strong></p>
+			<form method="post">
+			<input type="hidden" name="update_info_action" value="hide" />
+			<input class="button-secondary" type="submit" value="' . __('remove message', 'lmm') . '"/></form></div>'.PHP_EOL;
+}
+?>
+<!--
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
@@ -46,20 +60,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			</td><td>
 
 			</td></tr>
-			<tr><td>
-			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
-			</td><td>
-
-			</td></tr>
-			</table>
-			<p>If you upgraded from a version <2.3, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.</p>
-			<p><strong>If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and vote for it on <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">wordpress.org</a> - thanks!</strong></p>
-			<form method="post">
-			<input type="hidden" name="update_info_action" value="hide" />
-			<input class="button-secondary" type="submit" value="' . __('remove message', 'lmm') . '"/></form></div>'.PHP_EOL;
-}
-?>
-
+-->
 <?php
 //info: check for incompability with other plugins
 if (is_plugin_active('jquery-colorbox/jquery-colorbox.php') ) {
