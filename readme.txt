@@ -7,7 +7,7 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm (with special support from Sindre Wimberger)
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.4-beta4-20892
+Tested up to:      3.4-RC1-20965
 Stable tag:        2.3
 
 Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
@@ -239,6 +239,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 = v2.3.1 - 25.05.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.3.1)
 * BUGFIX: fixed several SQL injections and cross site scripting issues based on an external audit of the plugin
+* BUGFIX: removed geo tags from Google (geo) sitemap as they are not supported anymore
 
 = v2.3 - 26.04.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.3)

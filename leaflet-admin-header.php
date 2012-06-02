@@ -41,6 +41,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			</td><td>
 			fixed several SQL injections and cross site scripting issues based on an external audit of the plugin
 			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			removed geo tags from Google (geo) sitemap as they are not supported anymore
+			</td></tr>
 			</table>
 			<p>If you upgraded from a version <2.3, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.</p>
 			<p><strong>If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">rate the plugin on wordpress.org</a> - thanks!</strong></p>
@@ -52,11 +57,6 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 <!--
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
-			</td><td>
-
-			</td></tr>
-			<tr><td>
-			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
 
 			</td></tr>
