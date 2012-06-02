@@ -240,6 +240,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.3.1)
 * BUGFIX: fixed several SQL injections and cross site scripting issues based on an external audit of the plugin
 * BUGFIX: removed geo tags from Google (geo) sitemap as they are not supported anymore
+* BUGFIX: CSS bugfix for wrong sized leaflet attribution links on several templates
 
 = v2.3 - 26.04.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.3)

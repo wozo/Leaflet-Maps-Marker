@@ -42,6 +42,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			fixed several SQL injections and cross site scripting issues based on an external audit of the plugin
 			</td></tr>
 			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
+			CSS bugfix for wrong sized leaflet attribution links on several templates
+			</td></tr>
+			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
 			removed geo tags from Google (geo) sitemap as they are not supported anymore
