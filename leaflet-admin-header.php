@@ -33,9 +33,20 @@ if ( ($update_info_action == 'hide') && ($new_install == 'false') ) {
 }
 if (get_option('leafletmapsmarker_update_info') == 'show') {
 	echo '<div class="updated" style="padding:10px;"><p><strong>Leaflet Maps Marker has been updated successfully!</strong></p>
-		  <p>For more details about this release, please visit <a href="http://www.mapsmarker.com/v2.3.1" target="_blank">http://www.mapsmarker.com/v2.3.1</a></p>
-			Changelog for version 2.3.1:
+		  <p>For more details about this release, please visit <a href="http://www.mapsmarker.com/v2.4" target="_blank">http://www.mapsmarker.com/v2.4</a></p>
+			Changelog for version 2.4:
 			<table>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			option to add widgets showing recent marker entries
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			added Chinese translation thanks to John Shen, <a href="http://talk.synyan.net" target="_blank">http://talk.synyan.net</a><br/>
+			<strong>Do you want to use this plugin in a language not yet available? <a href="http://mapsmarker.com/translations" target="_blank">Then click here for more information on how to contribute a translation!</a> Any help is appreciated!</strong>
+			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
@@ -45,6 +56,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
 			CSS bugfix for wrong sized leaflet attribution links on several templates
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
+			direction link on popuptext was not shown if popuptext was empty
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
@@ -59,13 +75,6 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<input class="button-secondary" type="submit" value="' . __('remove message', 'lmm') . '"/></form></div>'.PHP_EOL;
 }
 ?>
-<!--
-			<tr><td>
-			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
-			</td><td>
-
-			</td></tr>
--->
 <?php
 //info: check for incompability with other plugins
 if (is_plugin_active('jquery-colorbox/jquery-colorbox.php') ) {

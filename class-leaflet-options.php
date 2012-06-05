@@ -6333,13 +6333,13 @@ class Leafletmapsmarker_options {
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
 		/* template for plugin updates 
-		//info:  set defaults for options introduced in v2.4
-		if (get_option('leafletmapsmarker_version') == '2.3.1' )
+		//info:  set defaults for options introduced in v2.5
+		if (get_option('leafletmapsmarker_version') == '2.4' )
 		{
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.4')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.5')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
