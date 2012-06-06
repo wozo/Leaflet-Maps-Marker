@@ -44,8 +44,13 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
-			added Chinese translation thanks to John Shen, <a href="http://talk.synyan.net" target="_blank">http://talk.synyan.net</a><br/>
+			added Chinese translation thanks to John Shen, <a href="http://www.synyan.net" target="_blank">http://www.synyan.net</a><br/>
 			<strong>Do you want to use this plugin in a language not yet available? <a href="http://mapsmarker.com/translations" target="_blank">Then click here for more information on how to contribute a translation!</a> Any help is appreciated!</strong>
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			option to select plugin default language in settings for backend and frontend
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">

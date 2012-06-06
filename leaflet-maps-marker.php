@@ -62,10 +62,25 @@ function leafletmapsmarker() {
 	if ($lmm_options['misc_tinymce_button'] == 'enabled') {
 		require_once( plugin_dir_path( __FILE__ ).'tinymce_plugin.php' );
 	}
+	if ($lmm_options['misc_plugin_language'] != 'automatic') {
+		add_filter('plugin_locale', array(&$this,'lmm_set_plugin_locale'), 'lmm');
+	}
 	add_action('widgets_init', create_function('', 'return register_widget("lmm_recent_marker_widget");'));
   }
   function lmm_load_translation_files() {
 	load_plugin_textdomain('lmm', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
+  }
+  function lmm_set_plugin_locale( $lang ) {
+	$lmm_options = get_option( 'leafletmapsmarker_options' );
+	if ($lmm_options['misc_plugin_language_area'] == 'backend') {
+		return is_admin() ? $lmm_options['misc_plugin_language'] : $locale;
+	} else if ($lmm_options['misc_plugin_language_area'] == 'frontend') {
+		return is_admin() ? $locale : $lmm_options['misc_plugin_language'];
+	} else if ($lmm_options['misc_plugin_language_area'] == 'both') {
+		return $lmm_options['misc_plugin_language'];
+	} else {
+		return $locale;
+	}
   }
   function lmm_help()
   {
@@ -1077,6 +1092,8 @@ function leafletmapsmarker() {
 		update_option('leafletmapsmarker_version', '2.3');
 	}
 	if (get_option('leafletmapsmarker_version') == '2.3' ) {
+		$save_defaults_for_new_options = new Leafletmapsmarker_options();
+		$save_defaults_for_new_options->save_defaults_for_new_options();
 		update_option('leafletmapsmarker_version', '2.4');
 		update_option('leafletmapsmarker_update_info', 'show');
 		//info: redirect to settings page only on first plugin activation, otherwise redirect is also done on bulk plugin activations

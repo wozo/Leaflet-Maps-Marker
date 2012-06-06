@@ -2,7 +2,7 @@
 Contributors:      harmr
 Plugin Name:       Leaflet Maps Marker
 Plugin URI:        http://www.mapsmarker.com
-Tags:              map, maps, Leaflet, OpenStreetMap, geoJSON, json, jsonp, OSM, travelblog, opendata, open data, opengov, open government, ogdwien, google maps, googlemaps, gmaps, WMTS, geoRSS, location, geo, geocoding, geolocation, travel, mapnick, osmarender, cloudmade, mapquest, geotag, geocaching, gpx, OpenLayers, mapping, bikemap, coordinates, geocode, geocoding, geotagging, latitude, longitude, position, route, tracks, google maps, google earth, gmaps, ar, augmented-reality, wikitude, wms, web map service, geocache, geocaching, qr, qr code, fullscreen, marker, layer, karte, blogmap, geocms, geographic, routes, tracks, directions, navigation, routing, location plan, YOURS, yournavigation, ORS, openrouteservice
+Tags:              map, maps, Leaflet, OpenStreetMap, geoJSON, json, jsonp, OSM, travelblog, opendata, open data, opengov, open government, ogdwien, google maps, googlemaps, gmaps, WMTS, geoRSS, location, geo, geocoding, geolocation, travel, mapnick, osmarender, cloudmade, mapquest, geotag, geocaching, gpx, OpenLayers, mapping, bikemap, coordinates, geocode, geocoding, geotagging, latitude, longitude, position, route, tracks, google maps, google earth, gmaps, ar, augmented-reality, wikitude, wms, web map service, geocache, geocaching, qr, qr code, fullscreen, marker, layer, karte, blogmap, geocms, geographic, routes, tracks, directions, navigation, routing, location plan, YOURS, yournavigation, ORS, openrouteservice, widget
 Author URI:        http://www.harm.co.at
 Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
@@ -65,6 +65,7 @@ to the visitors of your website.
 * option to reset plugin settings to defaults
 * option to change the default shortcode '[mapsmarker...]'
 * dynamic preview of maps in backend (no need to reload)
+* option to select plugin default language in settings for backend and frontend
 * WordPress Admin Bar integration to quickly access plugins features (can be disabled)
 * global stats for marker/layer count on mapsmarker.com (can be disabled)
 * "OGD Vienna selector": if a place within boundaries of Vienna/Austria is chosen, OGD Vienna basemaps are automatically selected
@@ -96,8 +97,9 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * Dutch (nl_NL) thanks to Marijke Metz, [http://www.mergenmetz.nl](http://www.mergenmetz.nl)
 * French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 * Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
-* Chinese (zh_CN) thanks to John Shen, [http://talk.synyan.net](http://talk.synyan.net)
+* Chinese (zh_CN) thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 
+Leaflet Maps Marker also supports easy switching between translations through a specific plugin setting.
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 = Leaflet Maps Marker Needs Your Support =
@@ -175,7 +177,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v2.4 =
-added recent marker widget, Chinese translation and security fixes based on an external audit of the plugin
+added recent marker widget, Chinese translation, language selection and security fixes based on an external audit of the plugin
 
 = v2.3 =
 added sort options for marker and layer listing pages
@@ -239,9 +241,10 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
 = v2.4 - 07.06.2012 =
-* [Blog post with more details about this release](http://www.mapsmarker.com/v2.3.1)
+* [Blog post with more details about this release](http://www.mapsmarker.com/v2.4)
 * NEW: option to add widgets showing recent marker entries
-* NEW: Chinese translation thanks to John Shen, [http://talk.synyan.net](http://talk.synyan.net)
+* NEW: Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* NEW: option to select plugin default language in settings for backend and frontend
 * BUGFIX: fixed several SQL injections and cross site scripting issues based on an external audit of the plugin
 * BUGFIX: CSS bugfix for wrong sized leaflet attribution links on several templates
 * BUGFIX: direction link on popuptext was not shown if popuptext was empty
