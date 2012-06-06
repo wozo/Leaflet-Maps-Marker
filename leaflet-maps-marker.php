@@ -62,7 +62,7 @@ function leafletmapsmarker() {
 	if ($lmm_options['misc_tinymce_button'] == 'enabled') {
 		require_once( plugin_dir_path( __FILE__ ).'tinymce_plugin.php' );
 	}
-	if ($lmm_options['misc_plugin_language'] != 'automatic') {
+	if ( isset($lmm_options['misc_plugin_language']) && ($lmm_options['misc_plugin_language'] != 'automatic') ){
 		add_filter('plugin_locale', array(&$this,'lmm_set_plugin_locale'), 'lmm');
 	}
 	add_action('widgets_init', create_function('', 'return register_widget("lmm_recent_marker_widget");'));
