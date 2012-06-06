@@ -5489,7 +5489,7 @@ class Leafletmapsmarker_options {
 				'ja' => __('Japanese','lmm') . ' (ja)',
 				'nl_NL' => __('Dutch','lmm') . ' (nl_NL)',
 				'fr_FR' => __('French','lmm') . ' (fr_FR)',
-				'it_IT' => __('Italien','lmm') . ' (it_IT)',
+				'it_IT' => __('Italian','lmm') . ' (it_IT)',
 				'zn_CH' => __('Chinese','lmm') . ' (zn_CH)',
 			)
 		);
