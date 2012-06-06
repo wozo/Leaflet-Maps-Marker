@@ -176,6 +176,8 @@ This program is free software; you can redistribute it and/or modify it under th
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
+= v2.5 =
+
 = v2.4 =
 added recent marker widget, Chinese translation, language selection and security fixes based on an external audit of the plugin
 
@@ -240,6 +242,9 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v2.5 - xx.06.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v2.5)
+
 = v2.4 - 07.06.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.4)
 * NEW: option to add widgets showing recent marker entries

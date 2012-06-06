@@ -33,47 +33,26 @@ if ( ($update_info_action == 'hide') && ($new_install == 'false') ) {
 }
 if (get_option('leafletmapsmarker_update_info') == 'show') {
 	echo '<div class="updated" style="padding:10px;"><p><strong>Leaflet Maps Marker has been updated successfully!</strong></p>
-		  <p>For more details about this release, please visit <a href="http://www.mapsmarker.com/v2.4" target="_blank">http://www.mapsmarker.com/v2.4</a></p>
-			Changelog for version 2.4:
+		  <p>For more details about this release, please visit <a href="http://www.mapsmarker.com/v2.5" target="_blank">http://www.mapsmarker.com/v2.5</a></p>
+			Changelog for version 2.5:
 			<table>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
-			option to add widgets showing recent marker entries
-			</td></tr>
-			<tr><td>
-			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
-			</td><td>
-			added Chinese translation thanks to John Shen, <a href="http://www.synyan.net" target="_blank">http://www.synyan.net</a><br/>
-			<strong>Do you want to use this plugin in a language not yet available? <a href="http://mapsmarker.com/translations" target="_blank">Then click here for more information on how to contribute a translation!</a> Any help is appreciated!</strong>
-			</td></tr>
-			<tr><td>
-			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
-			</td><td>
-			option to select plugin default language in settings for backend and frontend
+
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
-			fixed several SQL injections and cross site scripting issues based on an external audit of the plugin
-			</td></tr>
-			<tr><td>
-			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
-			</td><td>
-			CSS bugfix for wrong sized leaflet attribution links on several templates
-			</td></tr>
-			<tr><td>
-			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
-			</td><td>
-			direction link on popuptext was not shown if popuptext was empty
+
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
-			removed geo tags from Google (geo) sitemap as they are not supported anymore
+
 			</td></tr>
 			</table>
-			<p>If you upgraded from a version <2.3, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.</p>
+			<p>If you upgraded from a version <2.4, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.</p>
 			<p><strong>If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">rate the plugin on wordpress.org</a> - thanks!</strong></p>
 			<form method="post">
 			<input type="hidden" name="update_info_action" value="hide" />
