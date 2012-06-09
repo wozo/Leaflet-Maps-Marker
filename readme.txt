@@ -177,6 +177,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v2.5 =
+new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com)
 
 = v2.4 =
 added recent marker widget, Chinese translation, language selection and security fixes based on an external audit of the plugin
@@ -244,6 +245,11 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.5 - xx.06.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.5)
+* NEW: new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com)- contributing new translations is now more easier than ever :-)
+* CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
+* CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
+* CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 
 = v2.4 - 07.06.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.4)
