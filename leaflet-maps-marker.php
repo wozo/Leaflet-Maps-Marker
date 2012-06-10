@@ -1270,36 +1270,40 @@ class lmm_recent_marker_widget extends WP_Widget {
 		if (!empty($instance['lmm-widget-textbeforelist'])) {
 			echo '<p style="margin-bottom:5px;">' . $instance['lmm-widget-textbeforelist'] . '</p>';
 		} 
-		echo '<table><tr>';
-		foreach ($result as $row ) {
-			if (!empty($instance['lmm-widget-showicons'])) {
-				$icon = ($row['icon'] == NULL) ? LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' : LEAFLET_PLUGIN_ICONS_URL.'/'.$row['icon'];
-					if ($instance['lmm-widget-linktarget'] != 'none') {
-						echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;min-width:30px;"><a href="' . LEAFLET_PLUGIN_URL . 'leaflet-' . $instance['lmm-widget-linktarget'] . '.php?marker='.$row['ID'].'" title="' . __('show map','lmm') . ' (' . $instance['lmm-widget-linktarget'] . ')" target="_blank"><img src="'.$icon.'" style="width:' . $instance['lmm-widget-iconsize'] . '%;"></a>';
-						} else {
-		    			echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;"><img src="'.$icon.'" style="width:' . $instance['lmm-widget-iconsize'] . '%;"></td>';
-					}
+		if ($result != NULL) {
+			echo '<table><tr>';
+			foreach ($result as $row ) {
+				if (!empty($instance['lmm-widget-showicons'])) {
+					$icon = ($row['icon'] == NULL) ? LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' : LEAFLET_PLUGIN_ICONS_URL.'/'.$row['icon'];
+						if ($instance['lmm-widget-linktarget'] != 'none') {
+							echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;min-width:30px;"><a href="' . LEAFLET_PLUGIN_URL . 'leaflet-' . $instance['lmm-widget-linktarget'] . '.php?marker='.$row['ID'].'" title="' . __('show map','lmm') . ' (' . $instance['lmm-widget-linktarget'] . ')" target="_blank"><img src="'.$icon.'" style="width:' . $instance['lmm-widget-iconsize'] . '%;"></a>';
+							} else {
+							echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;"><img src="'.$icon.'" style="width:' . $instance['lmm-widget-iconsize'] . '%;"></td>';
+						}
+				}
+				echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;">';
+				if ($instance['lmm-widget-linktarget'] != 'none') {
+					echo '<a href="' . LEAFLET_PLUGIN_URL . 'leaflet-' . $instance['lmm-widget-linktarget'] . '.php?marker='.$row['ID'].'" title="' . __('show map','lmm') . ' (' . $instance['lmm-widget-linktarget'] . ')" target="_blank">'.htmlspecialchars(stripslashes($row['markername'])).'</a>';
+					} else {
+					echo htmlspecialchars(stripslashes($row['markername']));
+				}
+				if (!empty($instance['lmm-widget-showpopuptext'])) {
+					$popuptext = (!empty($row['popuptext'])) ? '<br/>' . stripslashes(strip_tags($row['popuptext'])) : '';
+					echo $popuptext;
+				}
+				if (!empty($instance['lmm-widget-createdon'])) {
+					$createdon =  date(htmlspecialchars(stripslashes($instance['lmm-widget-createdonformat'])), strtotime($row['createdon']));
+					echo '<br/><span title="' . esc_attr__('created on','lmm') . '">' . $createdon . '</span>';
+				}
+				echo '</td></tr>';
+				if (!empty($instance['lmm-widget-separatorline'])) {
+					echo '<tr><td colspan="2"><hr style="border:0;background-color:#' . htmlspecialchars(stripslashes($instance['lmm-widget-separatorline'])) . ';height:1px;padding:0;margin:0.5em 0 1em 0;"></td></tr>';
+				}
 			}
-			echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;">';
-			if ($instance['lmm-widget-linktarget'] != 'none') {
-				echo '<a href="' . LEAFLET_PLUGIN_URL . 'leaflet-' . $instance['lmm-widget-linktarget'] . '.php?marker='.$row['ID'].'" title="' . __('show map','lmm') . ' (' . $instance['lmm-widget-linktarget'] . ')" target="_blank">'.htmlspecialchars(stripslashes($row['markername'])).'</a>';
-				} else {
-				echo htmlspecialchars(stripslashes($row['markername']));
-			}
-			if (!empty($instance['lmm-widget-showpopuptext'])) {
-				$popuptext = (!empty($row['popuptext'])) ? '<br/>' . stripslashes(strip_tags($row['popuptext'])) : '';
-				echo $popuptext;
-			}
-			if (!empty($instance['lmm-widget-createdon'])) {
-				$createdon =  date(htmlspecialchars(stripslashes($instance['lmm-widget-createdonformat'])), strtotime($row['createdon']));
-				echo '<br/><span title="' . esc_attr__('created on','lmm') . '">' . $createdon . '</span>';
-			}
-			echo '</td></tr>';
-			if (!empty($instance['lmm-widget-separatorline'])) {
-				echo '<tr><td colspan="2"><hr style="border:0;background-color:#' . htmlspecialchars(stripslashes($instance['lmm-widget-separatorline'])) . ';height:1px;padding:0;margin:0.5em 0 1em 0;"></td></tr>';
-			}
+			echo '</table>';	
+		} else {
+			echo '<p style="margin-bottom:5px;">' . __('No marker created yet','lmm') . '</p>';
 		}
-		echo '</table>';	
 		if (!empty($instance['lmm-widget-textafterlist'])) {
 			echo '<p style="margin:0;">' . $instance['lmm-widget-textafterlist'] . '</p>';
 		} 
