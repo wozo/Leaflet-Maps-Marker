@@ -7,7 +7,6 @@
 require_once(ABSPATH . "/wp-includes/pluggable.php");
 $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ? "<a class='button-secondary' href='" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_settings'>".__('Settings','lmm')."</a>" : "";
 ?>
-
 <div style="float:right;">
   <div style="text-align:center;"><small><a href="http://www.mapsmarker.com" target="_blank" style="text-decoration:none;">MapsMarker.com</a> supports</small></div>
   <a href="http://www.open3.at" target="_blank" title="open3.at - network for the promotion of Open Society, OpenGov and OpenData in Austria"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/logo-open3-small.png" width="143" height="30" border="0"/></a></div>
@@ -22,7 +21,6 @@ $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ?
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
   <a class="button-secondary" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_help"><?php _e("Help & Credits", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </p>
-
 <?php
 //info: display update info with current release notes
 $update_info_action = isset($_POST['update_info_action']) ? $_POST['update_info_action'] : ''; 
@@ -44,7 +42,6 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
-
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
@@ -54,22 +51,27 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
-			updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
+			updated Italian translation thanks to <a href="http://twitter.com/okibone" target="_blank">Luca Barbetti</a>
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
-			updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+			updated Chinese translation thanks to John Shen, <a href="http://www.synyan.net" target="_blank">http://www.synyan.net</a>
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
-			updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
+			updated Spanish translation thanks to Alvaro Lara, <a href="http://www.alvarolara.com" target="_blank">http://www.alvarolara.com</a>
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
-			updated French translation thanks to Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
+			updated French translation thanks to Rodolphe Quiedeville, <a href="http://rodolphe.quiedeville.org/" target="_blank">http://rodolphe.quiedeville.org/</a>
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			updated Dutch translation thanks to Marijke <a href="http://www.mergenmetz.nl" target="_blank">http://www.mergenmetz.nl</a>
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
@@ -79,7 +81,6 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
-
 			</td></tr>
 			</table>
 			<p>If you upgraded from a version <2.4, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.</p>
@@ -107,7 +108,6 @@ if (is_plugin_active('wp-google-analytics/wp-google-analytics.php') ) {
 	echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you are using the outdated plugin WP Google Analytics which is incompatible with Leaflet Maps Marker. Please update to a more current Google analytics plugin like http://wordpress.org/extend/plugins/google-analytics-for-wordpress/','lmm') . '</strong></div></p>';
 }
 ?>
-
 <table cellpadding="5" cellspacing="0" style="border:1px solid #ccc;width:98%;background:#efefef;">
   <tr>
     <td valign="center"><div style="float:left;"><a href="http://www.mapsmarker.com" target="_blank" title="www.MapsMarker.com"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/logo-mapsmarker.png" width="156" height="125" alt="Leaflet Maps Marker Plugin Logo by Susanne Mandl - www.greenflamingomedia.com" /></a></div>
@@ -136,7 +136,6 @@ if (is_plugin_active('wp-google-analytics/wp-google-analytics.php') ) {
 	} else { 
 		echo '<input type="hidden" name="LC" value="EN">';
 	} ?>
-
 <table>
 <tr><td><input type="hidden" name="on0" value="Sponsorship Level">
 	<select name="os0" style="width:210px;">
