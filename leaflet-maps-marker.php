@@ -66,6 +66,27 @@ function leafletmapsmarker() {
 		add_filter('plugin_locale', array(&$this,'lmm_set_plugin_locale'), 'lmm');
 	}
 	add_action('widgets_init', create_function('', 'return register_widget("lmm_recent_marker_widget");'));
+	add_action('wp_dashboard_setup', array( &$this,'lmm_register_widgets' ));
+  }
+  function lmm_register_widgets(){
+    wp_add_dashboard_widget( 'lmm-css-id', 'Leaflet Maps Marker', array( &$this,'lmm_dashboard_widget'));
+  }
+  function lmm_dashboard_widget(){
+	require_once(ABSPATH.WPINC.'/rss.php');  
+	if ( $rss = fetch_rss( 'http://feeds.feedburner.com/MapsMarker' ) ) {
+		$content = '<ul>';
+		$rss->items = array_slice( $rss->items, 0, 3 );
+		foreach ( (array) $rss->items as $item ) {
+			$content .= '<li class="yoast">';
+			$content .= '<a class="rsswidget" href="'.clean_url( $item['link'], $protocolls=null, 'display' ).'">'. htmlentities($item['title']) .'</a> ';
+			$content .= '</li>';
+		}
+		$content .= '<li class="rss"><a href="http://feeds.feedburner.com/MapsMarker">' . __('Subscribe with RSS','lmm') . '</a></li>';
+		$content .= '<li class="email"><a href="http://feedburner.google.com/fb/a/mailverify?uri=MapsMarker">' . __('Subscribe by email','lmm') . '</a></li>';
+		echo '<div id="lmm" class="postbox"><div class="handlediv" title="Click to toggle"><br /></div><h3 class="hndle"><span>' . __('Latest blog posts','lmm') . '</span></h3><div class="inside">' . $content . '</div>';
+	} else {
+		_e('no blog posts available','lmm');
+	}
   }
   function lmm_load_translation_files() {
 	load_plugin_textdomain('lmm', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
@@ -847,6 +868,7 @@ function leafletmapsmarker() {
   function lmm_admin_enqueue_scripts() {
 	wp_enqueue_script( array ( 'jquery' ) );
 	wp_enqueue_script( 'leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js', array(), NULL); 
+	wp_enqueue_script( 'leafletmapsmarker-googlemaps', 'https://maps.google.com/maps/api/js?v=3.2&sensor=false', array(), NULL); 
 	wp_localize_script ( 'leafletmapsmarker', 'leafletmapsmarker_L10n', array(
 		'lmm_zoom_in' => __( 'Zoom in', 'lmm' ),
 		'lmm_zoom_out' => __( 'Zoom out', 'lmm' )
@@ -1278,7 +1300,7 @@ class lmm_recent_marker_widget extends WP_Widget {
 						if ($instance['lmm-widget-linktarget'] != 'none') {
 							echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;min-width:30px;"><a href="' . LEAFLET_PLUGIN_URL . 'leaflet-' . $instance['lmm-widget-linktarget'] . '.php?marker='.$row['ID'].'" title="' . __('show map','lmm') . ' (' . $instance['lmm-widget-linktarget'] . ')" target="_blank"><img src="'.$icon.'" style="width:' . $instance['lmm-widget-iconsize'] . '%;"></a>';
 							} else {
-							echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;"><img src="'.$icon.'" style="width:' . $instance['lmm-widget-iconsize'] . '%;"></td>';
+							echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;"><img src="'.$icon.'" style="width:' . $instance['lmm-widget-iconsize'] . '%;border:none;"></td>';
 						}
 				}
 				echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;">';

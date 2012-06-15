@@ -404,7 +404,8 @@ class Leafletmapsmarker_options {
 				'mapbox3' => 'MapBox 3',
 				'custom_basemap' => __('Custom basemap','lmm'),
 				'custom_basemap2' => __('Custom basemap 2','lmm'),
-				'custom_basemap3' => __('Custom basemap 3','lmm')
+				'custom_basemap3' => __('Custom basemap 3','lmm'),
+				'googleLayer' => 'Google Maps'
 			)
 		);
 		/*

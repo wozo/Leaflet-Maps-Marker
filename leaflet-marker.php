@@ -678,6 +678,7 @@ var marker,selectlayer,osm_mapnik,mapquest_osm,mapquest_aerial,ogdwien_basemap,o
 	},
 	{ collapsed: false }); //info open layer control box by default on all devices on backend
   selectlayer.setView(new L.LatLng(<?php echo $lat . ', ' . $lon; ?>), <?php echo $zoom ?>);
+  var googleLayer = new L.Google('ROADMAP');
   selectlayer.addLayer(<?php echo $basemap ?>)
 	//info: controlbox - add active overlays on marker level
 	<?php 
