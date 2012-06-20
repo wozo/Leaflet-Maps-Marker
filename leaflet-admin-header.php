@@ -30,10 +30,29 @@ if ( ($update_info_action == 'hide') && ($new_install == 'false') ) {
 	update_option('leafletmapsmarker_update_info', 'hide');
 }
 if (get_option('leafletmapsmarker_update_info') == 'show') {
-	echo '<div class="updated" style="padding:10px;"><p><strong>Leaflet Maps Marker has been updated successfully!</strong></p>
-		  <p>For more details about this release, please visit <a href="http://www.mapsmarker.com/v2.5" target="_blank">http://www.mapsmarker.com/v2.5</a></p>
-			Changelog for version 2.5:
+	$lmm_version_old = '2.4';
+	$lmm_version_new = '2.5';
+	$lmm_changelog_new_version = '<a href="http://www.mapsmarker.com/v' . $lmm_version_new . '" target="_blank">http://www.mapsmarker.com/v' . $lmm_version_new . '</a>';
+	$lmm_full_changelog = '<a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a>';
+	echo '<div class="updated" style="padding:10px;"><p><strong>' . __('Leaflet Maps Marker has been updated successfully!','lmm') . '</strong></p>
+		  <p>' . sprintf(__('For more details about this release, please visit %s'), $lmm_changelog_new_version) . '</p>
+			' . sprintf(__('Changelog for version %s:'), $lmm_version_new) . '
 			<table>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			admin dashboard widget showing latest markers and blog posts from mapsmarker.com
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			Russian translation thanks to Ekaterina Golubina
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			Bulgarian translation thanks to Andon Ivanov, <a href="http://coffebreak.info" target="_blank">http://coffebreak.info</a>
+			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
@@ -79,12 +98,18 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			show "no markers created yet" on sidebar widget, if no markers are available
 			</td></tr>
 			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			added translations strings for plugin update notice
+			</td></tr>
+			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
+			WMS layer legend links were broken on marker/layer maps in admin area
 			</td></tr>
 			</table>
-			<p>If you upgraded from a version <2.4, please visit <a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a> for a complete list of changes.</p>
-			<p><strong>If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">rate the plugin on wordpress.org</a> - thanks!</strong></p>
+			<p>' . sprintf(__('If you upgraded from a version <%s, please visit %s for a complete list of changes.'), $lmm_version_old, $lmm_full_changelog) . '</p>
+			<p><strong>' . __('If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">rate the plugin on wordpress.org</a> - thanks!','lmm') . '</strong></p>
 			<form method="post">
 			<input type="hidden" name="update_info_action" value="hide" />
 			<input class="button-secondary" type="submit" value="' . __('remove message', 'lmm') . '"/></form></div>'.PHP_EOL;

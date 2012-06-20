@@ -74,6 +74,7 @@ to the visitors of your website.
 = Technical details =
 
 * Wordpress Multisite compatibility
+* plugin was successfully tested to ÖNORM 7700 and OWASP TOP 10 for security issues
 * full UTF8-support for cyrillic, chinese or other alphabets on marker/layername and marker popup text
 * support for other languages through .po/.mo-files (please see http://mapsmarker.com/languages for details if you want to contribute a new translation)
 * GeoJSON feeds for every marker and layer with [JSONP support](http://www.mapsmarker.com/geojson)
@@ -98,6 +99,8 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
 * Chinese (zh_CN) thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* Russian (ru_RU) thanks to Ekaterina Golubina
+* Bulgarian (bg_BG) thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
 
 Leaflet Maps Marker also supports easy switching between translations through a specific plugin setting.
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
@@ -177,7 +180,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v2.5 =
-new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com)
+new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com), Russian+Bulgarian translation + lots of updates
 
 = v2.4 =
 added recent marker widget, Chinese translation, language selection and security fixes based on an external audit of the plugin
@@ -245,6 +248,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.5 - xx.06.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.5)
+* NEW: admin dashboard widget showing latest markers and blog posts from mapsmarker.com
+* NEW: Russian translation thanks to Ekaterina Golubina
+* NEW: Bulgarian translation thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
 * NEW: new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com)- contributing new translations is now more easier than ever :-)
 * CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
@@ -253,6 +259,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated French translation thanks to Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * CHANGED: updated Dutch translation thanks to [Marijke](http://www.mergenmetz.nl)
 * CHANGED: show "no markers created yet" on sidebar widget, if no markers are available
+* CHANGED: added translations strings for plugin update notice
+* BUGFIX: WMS layer legend links were broken on marker/layer maps in admin area
 
 = v2.4 - 07.06.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.4)

@@ -5428,8 +5428,20 @@ class Leafletmapsmarker_options {
 		$this->settings['admin_bar_integration'] = array(
 			'version' => '1.0',
 			'section' => 'misc',
-			'title'   => __('Wordpress Admin Bar integration','lmm'),
+			'title'   => __('WordPress Admin Bar integration','lmm'),
 			'desc'    => __('show or hide drop down menu for Leaflet Maps Marker in Wordpress Admin Bar','lmm'),
+			'type'    => 'radio',
+			'std'     => 'enabled',
+			'choices' => array(
+				'enabled' => __('enabled','lmm'),
+				'disabled' => __('disabled','lmm')
+			)
+		);
+		$this->settings['misc_admin_dashboard_widget'] = array(
+			'version' => '2.5',
+			'section' => 'misc',
+			'title'   => __('WordPress admin dashboard widget','lmm'),
+			'desc'    => __('shows a widget on the admin dashboard which displays latest markers and blog posts from mapsmarker.com','lmm'),
 			'type'    => 'radio',
 			'std'     => 'enabled',
 			'choices' => array(
@@ -6398,7 +6410,6 @@ class Leafletmapsmarker_options {
 		$options_new = array_merge($options_current, $new_options_defaults);
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
-		/* template for plugin updates 
 		//info:  set defaults for options introduced in v2.5
 		if (get_option('leafletmapsmarker_version') == '2.4' )
 		{
@@ -6406,6 +6417,22 @@ class Leafletmapsmarker_options {
 			foreach ( $this->settings as $id => $setting ) 
 			{
 				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.5')
+				{
+				$new_options_defaults[$id] = $setting['std'];
+				}
+			}
+		$options_current = get_option( 'leafletmapsmarker_options' );
+		$options_new = array_merge($options_current, $new_options_defaults);
+		update_option( 'leafletmapsmarker_options', $options_new );
+		}
+		/* template for plugin updates 
+		//info:  set defaults for options introduced in v2.6
+		if (get_option('leafletmapsmarker_version') == '2.5' )
+		{
+			$new_options_defaults = array();
+			foreach ( $this->settings as $id => $setting ) 
+			{
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.6')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}

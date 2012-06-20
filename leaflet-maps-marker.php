@@ -66,27 +66,68 @@ function leafletmapsmarker() {
 		add_filter('plugin_locale', array(&$this,'lmm_set_plugin_locale'), 'lmm');
 	}
 	add_action('widgets_init', create_function('', 'return register_widget("lmm_recent_marker_widget");'));
-	add_action('wp_dashboard_setup', array( &$this,'lmm_register_widgets' ));
+	if ( isset($lmm_options['misc_admin_dashboard_widget']) && ($lmm_options['misc_admin_dashboard_widget'] == 'enabled') ){
+		add_action('wp_dashboard_setup', array( &$this,'lmm_register_widgets' ));
+	}
   }
   function lmm_register_widgets(){
-    wp_add_dashboard_widget( 'lmm-css-id', 'Leaflet Maps Marker', array( &$this,'lmm_dashboard_widget'));
+    wp_add_dashboard_widget( 'lmm-admin-dashboard-widget', __('Leaflet Maps Marker - recent markers','lmm'), array( &$this,'lmm_dashboard_widget'), array( &$this,'lmm_dashboard_widget_control'));
   }
   function lmm_dashboard_widget(){
-	require_once(ABSPATH.WPINC.'/rss.php');  
-	if ( $rss = fetch_rss( 'http://feeds.feedburner.com/MapsMarker' ) ) {
-		$content = '<ul>';
-		$rss->items = array_slice( $rss->items, 0, 3 );
-		foreach ( (array) $rss->items as $item ) {
-			$content .= '<li class="yoast">';
-			$content .= '<a class="rsswidget" href="'.clean_url( $item['link'], $protocolls=null, 'display' ).'">'. htmlentities($item['title']) .'</a> ';
-			$content .= '</li>';
+	global $wpdb;
+	$table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
+	$widgets = get_option( 'dashboard_widget_options' );
+	$widget_id = 'lmm-admin-dashboard-widget'; 
+	$number_of_markers =  isset( $widgets[$widget_id] ) && isset( $widgets[$widget_id]['items'] ) ? absint( $widgets[$widget_id]['items'] ) : 3;
+	$result = $wpdb->get_results($wpdb->prepare("SELECT ID,markername,icon,createdon,createdby FROM $table_name_markers ORDER BY createdon desc LIMIT $number_of_markers"), ARRAY_A);
+	if ($result != NULL) {
+		echo '<table style="margin-bottom:5px;"><tr>';
+		foreach ($result as $row ) {
+			$icon = ($row['icon'] == NULL) ? LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' : LEAFLET_PLUGIN_ICONS_URL.'/' . $row['icon'];
+			echo '<td><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['ID'] . '" title="' . __('edit marker','lmm') . '"><img src="' . $icon . '" style="width:80%;"></a>';
+			echo '<td style="vertical-align:top;line-height:1.2em;">';
+			echo '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['ID'] . '" title="' . __('edit marker','lmm') . '">'.htmlspecialchars(stripslashes($row['markername'])).'</a><br/>' . __('created on','lmm') . ' ' . date("Y-m-d - h:m", strtotime($row['createdon'])) . ', ' . __('created by','lmm') . ' ' . $row['createdby'];
+			echo '</td></tr>';
 		}
-		$content .= '<li class="rss"><a href="http://feeds.feedburner.com/MapsMarker">' . __('Subscribe with RSS','lmm') . '</a></li>';
-		$content .= '<li class="email"><a href="http://feedburner.google.com/fb/a/mailverify?uri=MapsMarker">' . __('Subscribe by email','lmm') . '</a></li>';
-		echo '<div id="lmm" class="postbox"><div class="handlediv" title="Click to toggle"><br /></div><h3 class="hndle"><span>' . __('Latest blog posts','lmm') . '</span></h3><div class="inside">' . $content . '</div>';
+		echo '</table>';	
 	} else {
-		_e('no blog posts available','lmm');
+		echo '<p style="margin-bottom:5px;">' . __('No marker created yet','lmm') . '</p>';
+	}  
+	if ($widgets[$widget_id]['blogposts'] == 0) {
+			require_once(ABSPATH.WPINC.'/rss.php');  
+			if ( $rss = fetch_rss( 'http://feeds.feedburner.com/MapsMarker' ) ) {
+				$content_rss = '<ul style="list-style:disc inside none;">';
+				$rss->items = array_slice( $rss->items, 0, 3 );
+				foreach ( (array) $rss->items as $item ) {
+					$content_rss .= '<li><a href="' . esc_url( $item['link'], $protocolls=null, 'display' ).'" title="' . $item['pubdate'] . '">'. htmlentities($item['title']) . '</a></li>';
+				}
+				$content_rss .= '<p><a href="http://feeds.feedburner.com/MapsMarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . '/img/icon-rss.png" width="16" height="16" alt="rss"> ' . __('Subscribe with RSS','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="http://feedburner.google.com/fb/a/mailverify?uri=MapsMarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . '/img/icon-rss-email.png" width="16" height="16" alt="rss-email"> ' . __('Subscribe by email','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/mapsmarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . '/img/icon-twitter.png" width="16" height="16" alt="twitter"> Twitter</a>&nbsp;&nbsp;&nbsp;<a href="http://facebook.com/mapsmarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . '/img/icon-facebook.png" width="16" height="16" alt="facebook"> Facebook</a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/robertharm/Leaflet-Maps-Marker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . '/img/icon-github.png" width="16" height="16" alt="github"> github</a>&nbsp;&nbsp;&nbsp;<a href="http://www.mapsmarker.com/donations" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . '/img/icon-donations.png" width="16" height="16" alt="donations"> ' . __('donations','lmm') . '</a></p>';		
+				echo '<hr style="border:0;height:1px;background-color:#d8d8d8;"><strong><p>' . __('Latest blog posts from www.mapsmarker.com','lmm') . '</p></strong>' . $content_rss . '';
+			} else {
+				echo '<hr style="border:0;height:1px;background-color:#d8d8d8;"><strong><p>' . __('Latest blog posts from www.mapsmarker.com','lmm') . '<br/></strong>' . __('no blog posts available','lmm') . '</p>';
+			}
 	}
+  }
+  function lmm_dashboard_widget_control(){
+	$widget_id = 'lmm-admin-dashboard-widget';
+	$form_id = 'lmm-admin-dashboard-widget-control';
+    if ( !$widget_options = get_option( 'dashboard_widget_options' ) )
+      $widget_options = array(); 
+    if ( !isset($widget_options[$widget_id]) )
+      $widget_options[$widget_id] = array(); 
+    if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST[$form_id]) ) {
+	  $number = ($_POST[$form_id]['items'] == NULL) ? '3' : absint( $_POST[$form_id]['items'] );
+      //$number = absint( $_POST[$form_id]['items'] );
+	  $blogposts = isset($_POST[$form_id]['blogposts']) ? '1' : '0';
+      $widget_options[$widget_id]['items'] = $number; 
+      $widget_options[$widget_id]['blogposts'] = $blogposts; 
+      update_option( 'dashboard_widget_options', $widget_options ); 
+    }
+    $number = isset( $widget_options[$widget_id]['items'] ) ? (int) $widget_options[$widget_id]['items'] : '';
+    echo '<p><label for="lmm-admin-dashboard-widget-number">' . __('Number of markers to show:') . ' </label>';
+    echo '<input id="lmm-admin-dashboard-widget-number" name="'.$form_id.'[items]" type="text" value="' . $number . '" size="2" /></p>';
+    echo '<p><label for="lmm-admin-dashboard-widget-blogposts">' . __('Hide blog posts and link section:') . ' </label>';
+    echo '<input id="lmm-admin-dashboard-widget-blogposts" name="'.$form_id.'[blogposts]" type="checkbox" ' . checked($widget_options[$widget_id]['blogposts'],1,false) . '/></p>';
   }
   function lmm_load_translation_files() {
 	load_plugin_textdomain('lmm', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
@@ -1119,8 +1160,8 @@ function leafletmapsmarker() {
 		update_option('leafletmapsmarker_version', '2.4');
 	}
 	if (get_option('leafletmapsmarker_version') == '2.4' ) {
-		//$save_defaults_for_new_options = new Leafletmapsmarker_options();
-		//$save_defaults_for_new_options->save_defaults_for_new_options();
+		$save_defaults_for_new_options = new Leafletmapsmarker_options();
+		$save_defaults_for_new_options->save_defaults_for_new_options();
 		update_option('leafletmapsmarker_version', '2.5');
 		update_option('leafletmapsmarker_update_info', 'show');
 		//info: redirect to settings page only on first plugin activation, otherwise redirect is also done on bulk plugin activations
