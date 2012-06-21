@@ -3931,7 +3931,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_icon'] = array(
 			'version' => '1.8',
 			'title'   => __( 'Icon', 'lmm' ),
-			'desc'    => __( 'If you want to use another icon than the blue pin, please enter the file name of the icon in the form field - e.g. smiley_happy.png', 'lmm' ),
+			'desc'    => sprintf(__( 'If you want to use another icon than the blue pin, please enter the file name of the icon (located in the directory %s) in the form field - e.g. smiley_happy.png', 'lmm' ),LEAFLET_PLUGIN_ICONS_URL),
 			'std'     => '',
 			'type'    => 'text',
 			'section' => 'defaults_marker'

@@ -17,7 +17,7 @@ Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Map
 = Plugin's Official Site =
 http://mapsmarker.com
 
-* [Demo](http://www.mapsmarker.com/demo/) - [FAQ](http://www.mapsmarker.com/faq/) - [Docs](http://www.mapsmarker.com/docs/) - [Support](http://mapsmarker.com/support/) - [Github](https://github.com/robertharm/Leaflet-Maps-Marker) - [Donations](http://mapsmarker.com/donations) - [Twitter](http://twitter.com/mapsmarker) - [Facebook](http://facebook.com/mapsmarker)
+* [Demo](http://www.mapsmarker.com/demo/) - [FAQ](http://www.mapsmarker.com/faq/) - [Docs](http://www.mapsmarker.com/docs/) - [Support](http://mapsmarker.com/support/) - [Github](https://github.com/robertharm/Leaflet-Maps-Marker) - [Donations](http://mapsmarker.com/donations) - [Twitter](http://twitter.com/mapsmarker) - [Facebook](http://facebook.com/mapsmarker) - [Translations](http://translate.mapsmarker.com/projects/lmm)
 
 = Main features = 
 
