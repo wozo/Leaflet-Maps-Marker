@@ -5504,6 +5504,8 @@ class Leafletmapsmarker_options {
 				'fr_FR' => __('French','lmm') . ' (fr_FR)',
 				'it_IT' => __('Italian','lmm') . ' (it_IT)',
 				'zn_CH' => __('Chinese','lmm') . ' (zn_CH)',
+				'ru_RU' => __('Russian','lmm') . ' (zn_CH)',
+				'bg_BG' => __('Bulgarian','lmm') . ' (zn_CH)'
 			)
 		);
 		$this->settings['misc_plugin_language_area'] = array(
