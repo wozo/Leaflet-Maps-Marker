@@ -35,8 +35,8 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 	$lmm_changelog_new_version = '<a href="http://www.mapsmarker.com/v' . $lmm_version_new . '" target="_blank">http://www.mapsmarker.com/v' . $lmm_version_new . '</a>';
 	$lmm_full_changelog = '<a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a>';
 	echo '<div class="updated" style="padding:10px;"><p><strong>' . __('Leaflet Maps Marker has been updated successfully!','lmm') . '</strong></p>
-		  <p>' . sprintf(__('For more details about this release, please visit %s'), $lmm_changelog_new_version) . '</p>
-			' . sprintf(__('Changelog for version %s:'), $lmm_version_new) . '
+		  <p>' . sprintf(__('For more details about this release, please visit %s','lmm'), $lmm_changelog_new_version) . '</p>
+			' . sprintf(__('Changelog for version %s:','lmm'), $lmm_version_new) . '
 			<table>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
@@ -46,7 +46,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
-			Russian translation thanks to Ekaterina Golubina
+			Russian translation thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - <a href="http://te-st.ru" target="_blank">http://te-st.ru</a>
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
@@ -108,7 +108,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			WMS layer legend links were broken on marker/layer maps in admin area
 			</td></tr>
 			</table>
-			<p>' . sprintf(__('If you upgraded from a version <%s, please visit %s for a complete list of changes.'), $lmm_version_old, $lmm_full_changelog) . '</p>
+			<p>' . sprintf(__('If you upgraded from a version <%s, please visit %s for a complete list of changes.','lmm'), $lmm_version_old, $lmm_full_changelog) . '</p>
 			<p><strong>' . __('If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">rate the plugin on wordpress.org</a> - thanks!','lmm') . '</strong></p>
 			<form method="post">
 			<input type="hidden" name="update_info_action" value="hide" />

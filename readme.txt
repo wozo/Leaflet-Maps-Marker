@@ -99,7 +99,7 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
 * Chinese (zh_CN) thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
-* Russian (ru_RU) thanks to Ekaterina Golubina
+* Russian (ru_RU) thanks to Ekaterina Golubina, , supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
 * Bulgarian (bg_BG) thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
 
 Leaflet Maps Marker also supports easy switching between translations through a specific plugin setting.
