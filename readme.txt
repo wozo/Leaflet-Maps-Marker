@@ -7,7 +7,7 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.4
+Tested up to:      3.5-alpha-21103
 Stable tag:        2.4
 
 Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
@@ -261,6 +261,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: show "no markers created yet" on sidebar widget, if no markers are available
 * CHANGED: added translations strings for plugin update notice
 * BUGFIX: WMS layer legend links were broken on marker/layer maps in admin area
+* BUGFIX: \" in popup text caused layer maps to break (now " gets replaced with ')
 
 = v2.4 - 07.06.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.4)

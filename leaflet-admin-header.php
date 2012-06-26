@@ -107,6 +107,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			</td><td>
 			WMS layer legend links were broken on marker/layer maps in admin area
 			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
+			\" in popup text caused layer maps to break (now " get replaced with ')
+			</td></tr>
 			</table>
 			<p>' . sprintf(__('If you upgraded from a version <%s, please visit %s for a complete list of changes.','lmm'), $lmm_version_old, $lmm_full_changelog) . '</p>
 			<p><strong>' . __('If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">rate the plugin on wordpress.org</a> - thanks!','lmm') . '</strong></p>
