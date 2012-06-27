@@ -394,6 +394,9 @@ class Leafletmapsmarker_options {
 				'osm_mapnik' => __('OpenStreetMap (Mapnik, max zoom 18)','lmm'),
 				'mapquest_osm' => __('MapQuest (OSM, max zoom 18)','lmm'),
 				'mapquest_aerial' => __('MapQuest (Aerial, max zoom 12 globally, 12+ in the United States)','lmm'),
+				'googleLayer_roadmap' => __('Google Maps (Roadmap)','lmm'),
+				'googleLayer_satellite' => __('Google Maps (Satellite)','lmm'),
+				'googleLayer_hybrid' => __('Google Maps (Hybrid)','lmm'),
 				'ogdwien_basemap' => __('OGD Vienna basemap (max zoom 19)','lmm'),
 				'ogdwien_satellite' => __('OGD Vienna satellite (max zoom 19)','lmm'),
 				'cloudmade' => 'Cloudmade',
@@ -404,8 +407,7 @@ class Leafletmapsmarker_options {
 				'mapbox3' => 'MapBox 3',
 				'custom_basemap' => __('Custom basemap','lmm'),
 				'custom_basemap2' => __('Custom basemap 2','lmm'),
-				'custom_basemap3' => __('Custom basemap 3','lmm'),
-				'googleLayer' => 'Google Maps'
+				'custom_basemap3' => __('Custom basemap 3','lmm')
 			)
 		);
 		/*
@@ -447,6 +449,30 @@ class Leafletmapsmarker_options {
 			'title'   => 'Mapquest (Aerial)',
 			'desc'    => '',
 			'std'     => 'Mapquest (Aerial)',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['default_basemap_name_googleLayer_roadmap'] = array(
+			'version' => '2.5',
+			'title'   => __('Google Maps (Roadmap)','lmm'),
+			'desc'    => '',
+			'std'   => __('Google Maps (Roadmap)','lmm'),
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['default_basemap_name_googleLayer_satellite'] = array(
+			'version' => '2.5',
+			'title'   => __('Google Maps (Satellite)','lmm'),
+			'desc'    => '',
+			'std'   => __('Google Maps (Satellite)','lmm'),
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['default_basemap_name_googleLayer_hybrid'] = array(
+			'version' => '2.5',
+			'title'   => __('Google Maps (Hybrid)','lmm'),
+			'desc'    => '',
+			'std'   => __('Google Maps (Hybrid)','lmm'),
 			'type'    => 'text',
 			'section' => 'basemaps'
 		);
@@ -581,7 +607,30 @@ class Leafletmapsmarker_options {
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
-		
+		$this->settings['controlbox_googleLayer_roadmap'] = array(
+			'version' => '2.5',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => __('Google Maps (Roadmap)','lmm'),
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);
+		$this->settings['controlbox_googleLayer_satellite'] = array(
+			'version' => '2.5',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => __('Google Maps (Satellite)','lmm'),
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);
+		$this->settings['controlbox_googleLayer_hybrid'] = array(
+			'version' => '2.5',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => __('Google Maps (Hybrid)','lmm'),
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);
 		$this->settings['controlbox_ogdwien_basemap'] = array(
 			'version' => '1.0',
 			'section' => 'basemaps',
@@ -4227,6 +4276,9 @@ class Leafletmapsmarker_options {
 				'osm_mapnik' => __('OpenStreetMap (Mapnik, max zoom 18)','lmm'),
 				'mapquest_osm' => __('MapQuest (OSM, max zoom 18)','lmm'),
 				'mapquest_aerial' => __('MapQuest (Aerial, max zoom 12 globally, 12+ in the United States)','lmm'),
+				'googleLayer_roadmap' => __('Google Maps (Roadmap)','lmm'),
+				'googleLayer_satellite' => __('Google Maps (Satellite)','lmm'),
+				'googleLayer_hybrid' => __('Google Maps (Hybrid)','lmm'),
 				'ogdwien_basemap' => __('OGD Vienna basemap (max zoom 19)','lmm'),
 				'ogdwien_satellite' => __('OGD Vienna satellite (max zoom 19)','lmm'),
 				'cloudmade' => 'Cloudmade',

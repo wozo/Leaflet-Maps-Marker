@@ -905,15 +905,18 @@ function leafletmapsmarker() {
 		'lmm_zoom_in' => __( 'Zoom in', 'lmm' ),
 		'lmm_zoom_out' => __( 'Zoom out', 'lmm' )
 		) );
+    if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps', 'http://maps.google.com/maps/api/js?v=3.2&sensor=false&language='.$lang);
   }
   function lmm_admin_enqueue_scripts() {
 	wp_enqueue_script( array ( 'jquery' ) );
 	wp_enqueue_script( 'leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js', array(), NULL); 
-	wp_enqueue_script( 'leafletmapsmarker-googlemaps', 'https://maps.google.com/maps/api/js?v=3.2&sensor=false', array(), NULL); 
 	wp_localize_script ( 'leafletmapsmarker', 'leafletmapsmarker_L10n', array(
 		'lmm_zoom_in' => __( 'Zoom in', 'lmm' ),
 		'lmm_zoom_out' => __( 'Zoom out', 'lmm' )
 		) );
+    if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps', 'http://maps.google.com/maps/api/js?v=3.2&sensor=false&language='.$lang);
   }
   function lmm_admin_enqueue_scripts_jquerydatepicker() {
 	wp_enqueue_script( array ( 'jquery', 'jquery-ui-tabs','jquery-ui-datepicker','jquery-ui-slider' ) );
