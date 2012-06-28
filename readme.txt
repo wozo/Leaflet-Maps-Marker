@@ -101,6 +101,7 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * Chinese (zh_CN) thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * Russian (ru_RU) thanks to Ekaterina Golubina, , supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
 * Bulgarian (bg_BG) thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
+* Turkish (tr_TR) thanks to <li>- Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
 
 Leaflet Maps Marker also supports easy switching between translations through a specific plugin setting.
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
@@ -180,7 +181,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v2.5 =
-new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com), Russian+Bulgarian translation + lots of updates
+Google Maps support, new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com), Russian+Bulgarian+Turkish translation, admin dashboard widget
 
 = v2.4 =
 added recent marker widget, Chinese translation, language selection and security fixes based on an external audit of the plugin
@@ -251,6 +252,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: admin dashboard widget showing latest markers and blog posts from mapsmarker.com
 * NEW: Russian translation thanks to Ekaterina Golubina
 * NEW: Bulgarian translation thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
+* NEW: Turkish (tr_TR) thanks to <li>- Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
 * NEW: new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com)- contributing new translations is now more easier than ever :-)
 * CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)

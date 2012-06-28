@@ -56,6 +56,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
+			Turkish translation thanks to Emre Erkan, <a href="http://www.karalamalar.net" target="_blank">http://www.karalamalar.net</a>
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
 			new collaborative translation site <a href="http://translate.mapsmarker.com" target="_blank">http://translate.mapsmarker.com</a> - contributing new translations is now more easier than ever :-)
 			</td></tr>
 			<tr><td>
