@@ -110,6 +110,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
+			v2.4 was broken on Wordpress 3.0-3.1.3
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
 			WMS layer legend links were broken on marker/layer maps in admin area
 			</td></tr>
 			<tr><td>

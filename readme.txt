@@ -262,6 +262,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated Dutch translation thanks to [Marijke](http://www.mergenmetz.nl)
 * CHANGED: show "no markers created yet" on sidebar widget, if no markers are available
 * CHANGED: added translations strings for plugin update notice
+* BUGFIX: v2.4 was broken on Wordpress 3.0-3.1.3
 * BUGFIX: WMS layer legend links were broken on marker/layer maps in admin area
 * BUGFIX: \" in popup text caused layer maps to break (now " gets replaced with ')
 
@@ -270,7 +271,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: option to add widgets showing recent marker entries
 * NEW: Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * NEW: option to select plugin default language in settings for backend and frontend
-* BUGFIX: fixed several SQL injections and cross site scripting issues based on an external audit of the plugin
+* BUGFIX: fixed several SQL injections and cross site scripting issues based on an external audit of the plugin (ÖNORM 7700, OWASP TOP 10)
 * BUGFIX: CSS bugfix for wrong sized leaflet attribution links on several templates
 * BUGFIX: direction link on popuptext was not shown if popuptext was empty
 * CHANGED: removed geo tags from Google (geo) sitemap as they are not supported anymore
