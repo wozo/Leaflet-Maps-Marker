@@ -10,7 +10,7 @@ Requires at least: 3.0
 Tested up to:      3.5-alpha-21103
 Stable tag:        2.4
 
-Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
+Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 
 == Description ==
 
@@ -31,7 +31,7 @@ Leaflet Maps Marker allows you to
 * organize your markers in layers and
 * show them thanks to the [Leaflet library from Cloudmade](http://leaflet.cloudmade.com/)
 * by adding a shortcode (e.g. mapsmarker marker="1")] to posts or pages
-* through OSM/OpenStreetMap, MapQuest, Cloudmade, [OGD Vienna Maps](http://data.wien.gv.at)
+* through OSM/OpenStreetMap, Google Maps, MapQuest, Cloudmade, [OGD Vienna Maps](http://data.wien.gv.at)
 * or any custom WMTS-map
 
 to the visitors of your website.
@@ -99,9 +99,9 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
 * Chinese (zh_CN) thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
-* Russian (ru_RU) thanks to Ekaterina Golubina, , supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
+* Russian (ru_RU) thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
 * Bulgarian (bg_BG) thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
-* Turkish (tr_TR) thanks to <li>- Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
+* Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
 
 Leaflet Maps Marker also supports easy switching between translations through a specific plugin setting.
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
@@ -247,12 +247,13 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v2.5 - xx.06.2012 =
+= v2.5 - xx.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.5)
+* NEW: support for Google Maps as basemaps
 * NEW: admin dashboard widget showing latest markers and blog posts from mapsmarker.com
-* NEW: Russian translation thanks to Ekaterina Golubina
+* NEW: Russian translation thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
 * NEW: Bulgarian translation thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
-* NEW: Turkish (tr_TR) thanks to <li>- Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
+* NEW: Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
 * NEW: new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com)- contributing new translations is now more easier than ever :-)
 * CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)

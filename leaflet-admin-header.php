@@ -41,6 +41,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
+			support for Google Maps as basemaps
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
 			admin dashboard widget showing latest markers and blog posts from mapsmarker.com
 			</td></tr>
 			<tr><td>
@@ -62,10 +67,6 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
 			new collaborative translation site <a href="http://translate.mapsmarker.com" target="_blank">http://translate.mapsmarker.com</a> - contributing new translations is now more easier than ever :-)
-			</td></tr>
-			<tr><td>
-			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
-			</td><td>
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
