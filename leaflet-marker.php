@@ -906,7 +906,9 @@ function updateicon(newicon) {
 			}
 		}
 		function setup(){
-			check(gLoader.loadMap);
+			//info: disabled with v2.5/Google Maps
+			//check(gLoader.loadMap);
+			return true;
 		}
 		function load(){
 		script = document.createElement("script");
@@ -964,11 +966,25 @@ function updateicon(newicon) {
 				if( (place.geometry.location.lat().toFixed(6) > 48.321560) || (place.geometry.location.lat().toFixed(6) < 48.116142) || (place.geometry.location.lng().toFixed(6) < 16.182175) || (place.geometry.location.lng().toFixed(6) > 16.579056) ) 
 				{
 					selectlayer.attributionControl._attributions = [];
-					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(osm_mapnik);
+					if ('<?php echo $basemap ?>' == 'googleLayer_roadmap') {
+						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(googleLayer_roadmap);
+					} else if ('<?php echo $basemap ?>' == 'googleLayer_satellite') {
+						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(googleLayer_satellite);
+					} else if ('<?php echo $basemap ?>' == 'googleLayer_hybrid') {
+						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(googleLayer_hybrid);
+					} else if ('<?php echo $basemap ?>' == 'osm_mapnik') {
+						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(osm_mapnik);
+					} else if ('<?php echo $basemap ?>' == 'mapquest_osm') {
+						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(mapquest_osm);
+					} else if ('<?php echo $basemap ?>' == 'mapquest_aerial') {
+						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(mapquest_aerial);
+					} else  {
+						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(osm_mapnik);
+					}
 					if (('<?php echo $basemap ?>' == 'ogdwien_basemap') || ('<?php echo $basemap ?>' == 'ogdwien_satellite'))
 					{
-					selectlayer.removeLayer(overlays_custom);
-					}
+						selectlayer.removeLayer(overlays_custom);
+					} 
 					selectlayer.addControl(layersControl);					
 					selectlayer.attributionControl.addAttribution("<?php echo $attrib_osm_mapnik ?>");
 				}
@@ -994,13 +1010,14 @@ function updateicon(newicon) {
 			});			
 		}				
 		return{
-		setup:setup,
-		check:check,
-		loadMap:loadMap,
+		//info: disabled with v2.5/Google Maps - delete? 
+		//setup:setup,
+		//check:check,
+		//loadMap:loadMap,
 		autocomplete:initAutocomplete
 		}
 	}();
-	gLoader.setup();
+	gLoader.autocomplete();
 /* //]]> */
 </script>
 <?php //info: check if marker exists - part 2 

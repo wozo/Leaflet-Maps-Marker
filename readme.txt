@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.5-alpha-21103
-Stable tag:        2.4
+Stable tag:        2.5
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 
@@ -91,16 +91,17 @@ Please let me know which feature you think is missing by adding your ideas at [h
 
 = Available translations =
 
-* English (en_US)
-* German (de_DE)
-* Japanese (ja) thanks to [Shu Higashi](http://twitter.com/higa4)
-* Spanish (es_ES) thanks to David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com) and Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
-* Dutch (nl_NL) thanks to Marijke Metz, [http://www.mergenmetz.nl](http://www.mergenmetz.nl)
-* French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
-* Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
-* Chinese (zh_CN) thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
-* Russian (ru_RU) thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
 * Bulgarian (bg_BG) thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
+* Chinese (zh_CN) thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* Dutch (nl_NL) thanks to Marijke Metz, [http://www.mergenmetz.nl](http://www.mergenmetz.nl)
+* English (en_US)
+* French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
+* German (de_DE)
+* Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
+* Japanese (ja) thanks to [Shu Higashi](http://twitter.com/higa4)
+* Polish (pl_PL) translation thanks to Pawel Wyszynski, [http://injit.pl](http://injit.pl)
+* Russian (ru_RU) thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
+* Spanish (es_ES) thanks to David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com) and Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 * Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
 
 Leaflet Maps Marker also supports easy switching between translations through a specific plugin setting.
@@ -254,6 +255,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: Russian translation thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
 * NEW: Bulgarian translation thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
 * NEW: Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
+* NEW: Polish (pl_PL) translation thanks to Pawel Wyszynski, [http://injit.pl](http://injit.pl)
 * NEW: new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com)- contributing new translations is now more easier than ever :-)
 * CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)

@@ -66,7 +66,12 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
-			new collaborative translation site <a href="http://translate.mapsmarker.com" target="_blank">http://translate.mapsmarker.com</a> - contributing new translations is now more easier than ever :-)
+			Polish translation thanks to Pawel Wyszy&#324;ski, <a href="http://injit.pl" target="_blank">http://injit.pl</a>
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			new collaborative translation site <a href="http://translate.mapsmarker.com/projects/lmm" target="_blank">http://translate.mapsmarker.com</a> - contributing new translations is now more easier than ever :-)
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">

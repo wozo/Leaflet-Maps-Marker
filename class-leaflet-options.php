@@ -5548,16 +5548,17 @@ class Leafletmapsmarker_options {
 			'std'     => 'automatic',
 			'choices' => array(
 				'automatic' => __('automatic (use WordPress default)','lmm'),
-				'en_US' => __('English','lmm') . ' (en_US)',
-				'de_DE' => __('German','lmm') . ' (de_DE)',
-				'es_ES' => __('Spanish','lmm') . ' (es_ES)',
-				'ja' => __('Japanese','lmm') . ' (ja)',
-				'nl_NL' => __('Dutch','lmm') . ' (nl_NL)',
-				'fr_FR' => __('French','lmm') . ' (fr_FR)',
-				'it_IT' => __('Italian','lmm') . ' (it_IT)',
-				'zn_CH' => __('Chinese','lmm') . ' (zn_CH)',
-				'ru_RU' => __('Russian','lmm') . ' (ru_RU)',
 				'bg_BG' => __('Bulgarian','lmm') . ' (bg_BG)',
+				'zn_CH' => __('Chinese','lmm') . ' (zn_CH)',
+				'nl_NL' => __('Dutch','lmm') . ' (nl_NL)',
+				'en_US' => __('English','lmm') . ' (en_US)',
+				'fr_FR' => __('French','lmm') . ' (fr_FR)',
+				'de_DE' => __('German','lmm') . ' (de_DE)',
+				'it_IT' => __('Italian','lmm') . ' (it_IT)',
+				'ja' => __('Japanese','lmm') . ' (ja)',
+				'pl_PL' => __('Polish','lmm') . ' (pl_PL)',
+				'ru_RU' => __('Russian','lmm') . ' (ru_RU)',
+				'es_ES' => __('Spanish','lmm') . ' (es_ES)',
 				'tr_TR' => __('Turkish','lmm') . ' (tr_TR)'
 			)
 		);
