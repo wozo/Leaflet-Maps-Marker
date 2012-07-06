@@ -248,7 +248,7 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v2.5 - xx.07.2012 =
+= v2.5 - 06.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.5)
 * NEW: support for Google Maps as basemaps
 * NEW: admin dashboard widget showing latest markers and blog posts from mapsmarker.com
