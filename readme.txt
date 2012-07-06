@@ -181,6 +181,8 @@ This program is free software; you can redistribute it and/or modify it under th
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
+= v2.6 =
+
 = v2.5 =
 Google Maps support, new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com), Russian+Bulgarian+Turkish translation, admin dashboard widget
 
@@ -248,6 +250,9 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v2.6 - xx.07.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v2.6)
+
 = v2.5 - 06.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.5)
 * NEW: support for Google Maps as basemaps
