@@ -179,6 +179,7 @@ class Leafletmapsmarker_options {
 			<li>' . __('Default basemap for new markers/layers','lmm') . '</li>
 			<li>' . __('Names for default basemaps','lmm') . '</li>
 			<li>' . __('Available basemaps in control box','lmm') . '</li>
+			<li>' . __('Bing Maps API key','lmm') . '</li>
 			<li>' . __('OGD Vienna Selector','lmm') . '</li>
 			<li>' . __('Cloudmade 1 settings','lmm') . '</li>
 			<li>' . __('Cloudmade 2 settings','lmm') . '</li>
@@ -397,6 +398,9 @@ class Leafletmapsmarker_options {
 				'googleLayer_roadmap' => __('Google Maps (Roadmap)','lmm'),
 				'googleLayer_satellite' => __('Google Maps (Satellite)','lmm'),
 				'googleLayer_hybrid' => __('Google Maps (Hybrid)','lmm'),
+				'bingaerial' => __('Bing Maps (Aerial)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+				'bingaerialwithlabels' => __('Bing Maps (Aerial+Labels)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+				'bingroad' => __('Bing Maps (Road)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 				'ogdwien_basemap' => __('OGD Vienna basemap (max zoom 19)','lmm'),
 				'ogdwien_satellite' => __('OGD Vienna satellite (max zoom 19)','lmm'),
 				'cloudmade' => 'Cloudmade',
@@ -473,6 +477,30 @@ class Leafletmapsmarker_options {
 			'title'   => __('Google Maps (Hybrid)','lmm'),
 			'desc'    => '',
 			'std'   => __('Google Maps (Hybrid)','lmm'),
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['default_basemap_name_bingaerial'] = array(
+			'version' => '2.6',
+			'title'   => __('Bing Maps (Aerial)','lmm'),
+			'desc'    => '',
+			'std'   => __('Bing Maps (Aerial)','lmm'),
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['default_basemap_name_bingaerialwithlabels'] = array(
+			'version' => '2.6',
+			'title'   => __('Bing Maps (Aerial+Labels)','lmm'),
+			'desc'    => '',
+			'std'   => __('Bing Maps (Aerial+Labels)','lmm'),
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['default_basemap_name_bingroad'] = array(
+			'version' => '2.6',
+			'title'   => __('Bing Maps (Road)','lmm'),
+			'desc'    => '',
+			'std'   => __('Bing Maps (Road)','lmm'),
 			'type'    => 'text',
 			'section' => 'basemaps'
 		);
@@ -631,6 +659,30 @@ class Leafletmapsmarker_options {
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
+		$this->settings['controlbox_bingaerial'] = array(
+			'version' => '2.6',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => __('Bing Maps (Aerial)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);
+		$this->settings['controlbox_bingaerialwithlabels'] = array(
+			'version' => '2.6',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => __('Bing Maps (Aerial+Labels)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);
+		$this->settings['controlbox_bingroad'] = array(
+			'version' => '2.6',
+			'section' => 'basemaps',
+			'title'   => '',
+			'desc'    => __('Bing Maps (Road)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);
 		$this->settings['controlbox_ogdwien_basemap'] = array(
 			'version' => '1.0',
 			'section' => 'basemaps',
@@ -719,6 +771,32 @@ class Leafletmapsmarker_options {
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);	
+		/*
+		* Bing Maps API Key
+		*/
+		$this->settings['bingmaps_api_key_heading'] = array(
+			'version' => '2.6',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'Bing Maps API Key', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['bingmaps_api_key_helptext'] = array(
+			'version' => '2.6',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'An API key is required if you want to use Bing Maps as basemap for marker or layer maps. Please click on the question mark for more info on how to get your API key.', 'lmm') . ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+			'type'    => 'helptext'
+		);		
+		$this->settings['bingmaps_api_key'] = array(
+			'version' => '2.6',
+			'title'   => __( 'Bing Maps API key', 'lmm' ),
+			'desc'    => '',
+			'std'     => '',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
 		/*
 		* OGD Vienna Selector
 		*/
