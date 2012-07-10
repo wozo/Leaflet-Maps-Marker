@@ -434,11 +434,15 @@ function __construct() {
 	$lmm_out .= '<div id="lmm-listmarkers-'.$uid.'" class="lmm-listmarkers" style="width:' . $mapwidth.$mapwidthunit . ';">'.PHP_EOL;
 	$lmm_out .= '<table width="' . $mapwidth.$mapwidthunit . '">';
 	foreach ($layer_mark_list as $row){
-		$lmm_out .= '<tr><td style="width:35px;vertical-align:top;text-align:center;">';
-		if ($row['micon'] != null) { 
-			$lmm_out .= '<img src="' . LEAFLET_PLUGIN_ICONS_URL . '/'.$row['micon'].'" title="' . stripslashes($row['markername']) . '" />'; 
-		} else { 
-			$lmm_out .= '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png" title="' . stripslashes($row['markername']) . '" />';
+		if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_icon' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_icon' ] == 1 ) ) {
+			$lmm_out .= '<tr><td style="width:35px;vertical-align:top;text-align:center;">';
+			if ($row['micon'] != null) { 
+				$lmm_out .= '<img src="' . LEAFLET_PLUGIN_ICONS_URL . '/'.$row['micon'].'" title="' . stripslashes($row['markername']) . '" />'; 
+			} else { 
+				$lmm_out .= '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png" title="' . stripslashes($row['markername']) . '" />';
+			};
+		} else {
+			$lmm_out .= '<tr><td>';			
 		};
 		$lmm_out .= '</td><td><div class="lmm-listmarkers-panel-icons">';
 		if ( (isset($lmm_options[ 'defaults_layer_listmarkers_api_directions' ] ) == TRUE ) && ( $lmm_options[ 'defaults_layer_listmarkers_api_directions' ] == 1 ) ) {
@@ -475,7 +479,14 @@ function __construct() {
 		if ( (isset($lmm_options[ 'defaults_layer_listmarkers_api_wikitude' ] ) == TRUE ) && ( $lmm_options[ 'defaults_layer_listmarkers_api_wikitude' ] == 1 ) ) {
 			$lmm_out .= '&nbsp;<a href="' . LEAFLET_PLUGIN_URL . 'leaflet-wikitude.php?layer=' . $row['markerid'] . '" style="text-decoration:none;" title="' . __('Export as ARML for Wikitude Augmented-Reality browser','lmm') . '" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-wikitude.png" width="14" height="14" alt="Wikitude-Logo" class="lmm-panel-api-images" /></a>';
 		}
-		$lmm_out .= '</div><strong>' . stripslashes(htmlspecialchars($row['markername'])) . '</strong><br/>' . stripslashes($row['mpopuptext']) . '</td></tr>';
+		$lmm_out .= '</div>';
+		if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_markername' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_markername' ] == 1 ) ) {
+			$lmm_out .= '<strong>' . stripslashes(htmlspecialchars($row['markername'])) . '</strong>';
+		}
+		if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_popuptext' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_popuptext' ] == 1 ) ) {
+			$lmm_out .= '<br/>' . stripslashes($row['mpopuptext']);
+		}
+		$lmm_out .= '</td></tr>';
 	} //info: end foreach
 	$lmm_out .= '</table></div>';
 	}

@@ -255,6 +255,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.6 - xx.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.6)
+* NEW: configure marker attributes to show in marker list below layer maps (icon, marker name, popuptext)
 * NEW: Hindi translation thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
 * NEW: Added compatibility check for plugin [WordPress Better Minify](http://wordpress.org/extend/plugins/bwp-minify/)
 

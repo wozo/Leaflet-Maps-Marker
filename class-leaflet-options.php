@@ -4834,6 +4834,31 @@ class Leafletmapsmarker_options {
 				'1' => __('yes','lmm')
 			)
 		);			
+		$this->settings['defaults_layer_listmarkers_show_icon'] = array(
+			'version' => '2.6',
+			'section' => 'defaults_layer',
+			'title'    => __('Marker attributes to display in list','lmm'),
+			'desc'    => __('Icon','lmm'),
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);
+		$this->settings['defaults_layer_listmarkers_show_markername'] = array(
+			'version' => '2.6',
+			'section' => 'defaults_layer',
+			'title'    => '',
+			'desc'    => __('Marker name','lmm'),
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);
+		$this->settings['defaults_layer_listmarkers_show_popuptext'] = array(
+			'version' => '2.6',
+			'section' => 'defaults_layer',
+			'title'    => '',
+			'desc'    => __('Popup text','lmm'),
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);
+
 		$this->settings['defaults_layer_listmarkers_order_by'] = array(
 			'version' => '1.5',
 			'section' => 'defaults_layer',
