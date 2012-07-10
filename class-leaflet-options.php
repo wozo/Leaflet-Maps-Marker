@@ -5632,6 +5632,7 @@ class Leafletmapsmarker_options {
 				'en_US' => __('English','lmm') . ' (en_US)',
 				'fr_FR' => __('French','lmm') . ' (fr_FR)',
 				'de_DE' => __('German','lmm') . ' (de_DE)',
+				'hi_IN' => __('Hindi','lmm') . ' (hi_IN)',
 				'it_IT' => __('Italian','lmm') . ' (it_IT)',
 				'ja' => __('Japanese','lmm') . ' (ja)',
 				'pl_PL' => __('Polish','lmm') . ' (pl_PL)',
