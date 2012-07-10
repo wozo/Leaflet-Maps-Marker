@@ -9,6 +9,7 @@ Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.5-alpha-21103
 Stable tag:        2.5
+License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
 
@@ -97,6 +98,7 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * English (en_US)
 * French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * German (de_DE)
+* Hindi (hi_IN) thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
 * Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
 * Japanese (ja) thanks to [Shu Higashi](http://twitter.com/higa4)
 * Polish (pl_PL) translation thanks to Pawel Wyszynski, [http://injit.pl](http://injit.pl)
@@ -176,13 +178,14 @@ This program is free software; you can redistribute it and/or modify it under th
 * Sindre Wimberger ([http://www.sindre.at](http://www.sindre.at)) for help with bugfixing & geo-consulting
 * Susanne Mandl ([http://www.greenflamingomedia.com](http://www.greenflamingomedia.com)) for plugin logo
 * Wordpress-Settings-API-Class by Aliso the geek ([http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/](http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/))
-* [Hind](http://www.nanodesu.ru) who originally release a basic [Leaflet plugin](https://wordpress.org/extend/plugins/leaflet/) which I used partly as a basis for Leaflet Maps Marker plugin
+* [Hind](http://www.nanodesu.ru) who originally release a basic Leaflet plugin (not available anymore) which I used partly as a basis for Leaflet Maps Marker plugin
 
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
 = v2.6 =
-
+Bing Maps support - see http://www.mapsmarker.com/v2.6 for more details
+ 
 = v2.5 =
 Google Maps support, new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com), Russian+Bulgarian+Turkish translation, admin dashboard widget
 
@@ -252,6 +255,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.6 - xx.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.6)
+* NEW: Hindi translation thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
+* NEW: Added compatibility check for plugin [WordPress Better Minify](http://wordpress.org/extend/plugins/bwp-minify/)
 
 = v2.5 - 06.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.5)
@@ -279,7 +284,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: option to add widgets showing recent marker entries
 * NEW: Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * NEW: option to select plugin default language in settings for backend and frontend
-* BUGFIX: fixed several SQL injections and cross site scripting issues based on an external audit of the plugin (ÖNORM 7700, OWASP TOP 10)
+* BUGFIX: fixed several SQL injections and cross site scripting issues based on an external audit of the plugin (ÖNORM 7700, OWASP TOP 10) - [Secunia Advisory](https://secunia.com/advisories/product/41554/)
 * BUGFIX: CSS bugfix for wrong sized leaflet attribution links on several templates
 * BUGFIX: direction link on popuptext was not shown if popuptext was empty
 * CHANGED: removed geo tags from Google (geo) sitemap as they are not supported anymore
