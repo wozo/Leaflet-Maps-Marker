@@ -2,6 +2,8 @@
 /*
     Help and credits page - Leaflet Maps Marker Plugin
 */
+//info prevent file from being accessed directly
+if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-help-credits.php') { die ("Please do not access this file directly. Thanks!<br/><a href='http://www.mapsmarker.com/go'>www.mapsmarker.com</a>"); }
 ?>
 <div class="wrap">
 	<?php $lmm_options = get_option( 'leafletmapsmarker_options' ); ?>
@@ -16,7 +18,7 @@
 		<li>- <a href="http://www.mapsmarker.com/docs/" target="_blank"><?php _e('Documentation','lmm') ?></a></li>
 		<li>- <a href="http://www.mapsmarker.com/docs/changelog/" target="_blank"><?php _e('Changelog','lmm') ?></a></li>
 		<li>- <a href="http://www.mapsmarker.com/ideas/" target="_blank"><?php _e('Ideas','lmm') ?></a> <?php _e('(feature requests)','lmm') ?></li>
-		<li>- <a href="http://wordpress.org/tags/leaflet-maps-marker?forum_id=10" target="_blank">WordPress Support Forum</a> <?php _e('(free community support)','lmm') ?></li>
+		<li>- <a href="http://wordpress.org/support/plugin/leaflet-maps-marker" target="_blank">WordPress Support Forum</a> <?php _e('(free community support)','lmm') ?></li>
 		<li>- <a href="http://wpquestions.com/affiliates/register/name/robertharm" target="_blank">WP Questions</a>	<?php _e('(paid community support)','lmm') ?></li>
 		<li>- <a href="http://wphelpcenter.com/" target="_blank">WordPress HelpCenter</a> <?php _e('(paid professional support)','lmm') ?></li>
 	</ul>

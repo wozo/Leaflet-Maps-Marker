@@ -3,6 +3,8 @@
  * Leaflet Maps Marker Plugin - settings class
  * based on class by Alison Barrett, http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/
  */
+//info prevent file from being accessed directly
+if (basename($_SERVER['SCRIPT_FILENAME']) == 'class-leaflet-options.php') { die ("Please do not access this file directly. Thanks!<br/><a href='http://www.mapsmarker.com/go'>www.mapsmarker.com</a>"); }
 class Leafletmapsmarker_options {
 	private $sections;
 	private $checkboxes;
