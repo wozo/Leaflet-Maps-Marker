@@ -58,12 +58,12 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
-			
+			increased Google Maps maximal zoom level from 18 to 22
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
-			
+			fixed vertical alignment of basemaps in layer control box in backend
 			</td></tr>
 			</table>
 			<p>' . sprintf(__('If you upgraded from a version <%s, please visit %s for a complete list of changes.','lmm'), $lmm_version_old, $lmm_full_changelog) . '</p>
