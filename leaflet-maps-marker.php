@@ -2,14 +2,14 @@
 /*
 Plugin Name: Leaflet Maps Marker
 Plugin URI: http://www.mapsmarker.com
-Description: Pin, organize & show your favorite places through OpenStreetMap/WMTS, Google Maps/Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
-Tags: map, maps, Leaflet, OpenStreetMap, geoJSON, OSM, travelblog, opendata, opengov, ogdwien, google maps, WMTS, geoRSS, location, geo, geocoding, geolocation, travel, mapnick, cloudmade, mapquest, wms, mapbox, widget
+Description: Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
+Tags: map, maps, Leaflet, OpenStreetMap, geoJSON, json, jsonp, OSM, travelblog, opendata, open data, opengov, open government, ogdwien, google maps, googlemaps, gmaps, WMTS, geoRSS, location, geo, geocoding, geolocation, travel, mapnick, osmarender, cloudmade, mapquest, geotag, geocaching, gpx, OpenLayers, mapping, bikemap, coordinates, geocode, geocoding, geotagging, latitude, longitude, position, route, tracks, google maps, google earth, gmaps, ar, augmented-reality, wikitude, wms, web map service, geocache, geocaching, qr, qr code, fullscreen, marker, layer, karte, blogmap, geocms, geographic, routes, tracks, directions, navigation, routing, location plan, YOURS, yournavigation, ORS, openrouteservice, widget, bing, bing maps, microsoft
 Version: 2.6
 Author: Robert Harm
 Author URI: http://www.harm.co.at
 Donate link: http://www.mapsmarker.com/donations
 Requires at least: 3.0
-Tested up to: 3.5-alpha-21206
+Tested up to: 3.5-alpha-21273
 Requires at least PHP 5.2
 Copyright 2011-2012 - @RobertHarm - All rights reserved
 Parts of this plugin were originally based on the Leaflet Plugin by Hind (Copyright 2011)
@@ -520,6 +520,11 @@ function __construct() {
 	$lmm_out .= 'var googleLayer_roadmap = new L.Google("ROADMAP");'.PHP_EOL;
 	$lmm_out .= 'var googleLayer_satellite = new L.Google("SATELLITE");'.PHP_EOL;
 	$lmm_out .= 'var googleLayer_hybrid = new L.Google("HYBRID");'.PHP_EOL;
+	if ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) ) { 
+		$lmm_out .= 'var bingaerial = new L.BingLayerAerial("' . $lmm_options[ 'bingmaps_api_key' ] . '", {maxZoom: 21, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png"});'.PHP_EOL;
+		$lmm_out .= 'var bingaerialwithlabels = new L.BingLayerAerialWithLabels("' . $lmm_options[ 'bingmaps_api_key' ] . '", {maxZoom: 21, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png"});'.PHP_EOL;
+		$lmm_out .= 'var bingroad = new L.BingLayerRoad("' . $lmm_options[ 'bingmaps_api_key' ] . '", {maxZoom: 21, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png"});'.PHP_EOL;
+	};
 	$lmm_out .= 'var ogdwien_basemap = new L.TileLayer("http://{s}.wien.gv.at/wmts/fmzk/pastell/google3857/{z}/{y}/{x}.jpeg", {maxZoom: 19, minZoom: 11, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_ogdwien_basemap . '", subdomains: ["maps","maps1", "maps2", "maps3"]});'.PHP_EOL;
 	$lmm_out .= 'var ogdwien_satellite = new L.TileLayer("http://{s}.wien.gv.at/wmts/lb/farbe/google3857/{z}/{y}/{x}.jpeg", {maxZoom: 19, minZoom: 11, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_ogdwien_satellite . '", subdomains: ["maps","maps1", "maps2", "maps3"]});'.PHP_EOL;
 	//info: create Cloudmade TileURLs
@@ -632,6 +637,14 @@ function __construct() {
 		$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_googleLayer_satellite' ]) . "': googleLayer_satellite,";
 	if ( (isset($lmm_options[ 'controlbox_googleLayer_hybrid' ]) == TRUE ) && ($lmm_options[ 'controlbox_googleLayer_hybrid' ] == 1 ) )
 		$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_googleLayer_hybrid' ]) . "': googleLayer_hybrid,";
+	if ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) ) { 
+		if ( (isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 ) )
+			$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_bingaerial' ]) . "': bingaerial,";
+		if ( (isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 ) )
+			$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_bingaerialwithlabels' ]) . "': bingaerialwithlabels,";
+		if ( (isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 ) )
+			$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_bingroad' ]) . "': bingroad,";
+	};
 	if ( (isset($lmm_options[ 'controlbox_ogdwien_basemap' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_basemap' ] == 1 ) )
 		$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_ogdwien_basemap' ]) . "': ogdwien_basemap,";
 	if ( (isset($lmm_options[ 'controlbox_ogdwien_satellite' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_satellite' ] == 1 ) )
@@ -921,6 +934,7 @@ function __construct() {
     wp_enqueue_script( array ( 'jquery', 'jquery-ui-tabs' ) );
   }
   function lmm_frontend_enqueue_scripts() {
+	$lmm_options = get_option( 'leafletmapsmarker_options' );
 	$plugin_version = get_option('leafletmapsmarker_version');
 	wp_enqueue_script( array ( 'jquery' ) );
 	wp_enqueue_script( 'leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js', array(), $plugin_version); 
@@ -928,8 +942,23 @@ function __construct() {
 		'lmm_zoom_in' => __( 'Zoom in', 'lmm' ),
 		'lmm_zoom_out' => __( 'Zoom out', 'lmm' )
 		) );
+    //info: google maps
     if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
-    wp_enqueue_script( 'leafletmapsmarker-googlemaps', 'http://maps.google.com/maps/api/js?v=3.2&sensor=false&language='.$lang);
+    if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key == ''; }
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps-loader', 'http://www.google.com/jsapi?key='.$google_maps_api_key);
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps-frontend', LEAFLET_PLUGIN_URL . 'js/gmaps-frontend.js', array('leafletmapsmarker','leafletmapsmarker-googlemaps-loader'), $plugin_version); 
+    wp_localize_script ( 'leafletmapsmarker-googlemaps-frontend', 'leafletmapsmarker_gmaps_L10n', array(
+		'lmm_googlemaps_language' => $lang
+		) );
+    //info: bing maps
+    if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad')) 
+        || ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) 
+        || ((isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 )) 
+        || ((isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 )) 
+        ) && ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) 
+        )) {
+        wp_enqueue_script( 'leafletmapsmarker-bingmaps', LEAFLET_PLUGIN_URL . 'js/bing.js', array('leafletmapsmarker'), $plugin_version); 
+    }
   }
   function lmm_admin_enqueue_scripts() {
 	$lmm_options = get_option( 'leafletmapsmarker_options' );
@@ -940,11 +969,23 @@ function __construct() {
 		'lmm_zoom_in' => __( 'Zoom in', 'lmm' ),
 		'lmm_zoom_out' => __( 'Zoom out', 'lmm' )
 		) );
+    //info: google maps
     if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
-    wp_enqueue_script( 'leafletmapsmarker-googlemaps', 'http://maps.google.com/maps/api/js?v=3.2&sensor=false&libraries=places&language='.$lang);
-	if ( ($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad') || ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) || ((isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 )) || ((isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 ))){
-		wp_enqueue_script( 'leafletmapsmarker-bingmaps', LEAFLET_PLUGIN_URL . 'leaflet-dist/bing.js', array(), $plugin_version); 
-	}
+    if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key == ''; }
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps-loader', 'http://www.google.com/jsapi?key='.$google_maps_api_key);
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps-backend', LEAFLET_PLUGIN_URL . 'js/gmaps-backend.js', array('leafletmapsmarker','leafletmapsmarker-googlemaps-loader'), $plugin_version); 
+    wp_localize_script ( 'leafletmapsmarker-googlemaps-backend', 'leafletmapsmarker_gmaps_L10n', array(
+		'lmm_googlemaps_language' => $lang
+		) );
+    //info: bing maps
+    if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad')) 
+        || ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) 
+        || ((isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 )) 
+        || ((isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 )) 
+        ) && ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) 
+        )) {
+        wp_enqueue_script( 'leafletmapsmarker-bingmaps', LEAFLET_PLUGIN_URL . 'js/bing.js', array('leafletmapsmarker'), $plugin_version); 
+    }
   }
   function lmm_admin_enqueue_scripts_jquerydatepicker() {
 	wp_enqueue_script( array ( 'jquery', 'jquery-ui-tabs','jquery-ui-datepicker','jquery-ui-slider' ) );

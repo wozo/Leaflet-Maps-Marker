@@ -2,16 +2,16 @@
 Contributors:      harmr
 Plugin Name:       Leaflet Maps Marker
 Plugin URI:        http://www.mapsmarker.com
-Tags:              map, maps, Leaflet, OpenStreetMap, geoJSON, json, jsonp, OSM, travelblog, opendata, open data, opengov, open government, ogdwien, google maps, googlemaps, gmaps, WMTS, geoRSS, location, geo, geocoding, geolocation, travel, mapnick, osmarender, cloudmade, mapquest, geotag, geocaching, gpx, OpenLayers, mapping, bikemap, coordinates, geocode, geocoding, geotagging, latitude, longitude, position, route, tracks, google maps, google earth, gmaps, ar, augmented-reality, wikitude, wms, web map service, geocache, geocaching, qr, qr code, fullscreen, marker, layer, karte, blogmap, geocms, geographic, routes, tracks, directions, navigation, routing, location plan, YOURS, yournavigation, ORS, openrouteservice, widget
+Tags:              map, maps, Leaflet, OpenStreetMap, geoJSON, json, jsonp, OSM, travelblog, opendata, open data, opengov, open government, ogdwien, google maps, googlemaps, gmaps, WMTS, geoRSS, location, geo, geocoding, geolocation, travel, mapnick, osmarender, cloudmade, mapquest, geotag, geocaching, gpx, OpenLayers, mapping, bikemap, coordinates, geocode, geocoding, geotagging, latitude, longitude, position, route, tracks, google maps, google earth, gmaps, ar, augmented-reality, wikitude, wms, web map service, geocache, geocaching, qr, qr code, fullscreen, marker, layer, karte, blogmap, geocms, geographic, routes, tracks, directions, navigation, routing, location plan, YOURS, yournavigation, ORS, openrouteservice, widget, bing, bing maps, microsoft
 Author URI:        http://www.harm.co.at
 Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.5-alpha-21103
-Stable tag:        2.5
+Tested up to:      3.5-alpha-21273
+Stable tag:        2.6
 License:           GPLv2
 
-Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), GeoJSON, GeoRSS or Augmented-Reality browsers
+Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
 
 == Description ==
 
@@ -32,7 +32,7 @@ Leaflet Maps Marker allows you to
 * organize your markers in layers and
 * show them thanks to the [Leaflet library from Cloudmade](http://leaflet.cloudmade.com/)
 * by adding a shortcode (e.g. mapsmarker marker="1")] to posts or pages
-* through OSM/OpenStreetMap, Google Maps, MapQuest, Cloudmade, [OGD Vienna Maps](http://data.wien.gv.at)
+* through OSM/OpenStreetMap, Google Maps, Bing Maps, MapQuest, Cloudmade, [OGD Vienna Maps](http://data.wien.gv.at)
 * or any custom WMTS-map
 
 to the visitors of your website.
@@ -91,8 +91,8 @@ to the visitors of your website.
 Please let me know which feature you think is missing by adding your ideas at [http://www.mapsmarker.com/ideas](http://www.mapsmarker.com/ideas)
 
 = Available translations =
-
 * Bulgarian (bg_BG) thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
+* Catalan (ca) thanks to Vicent Cubells, [http://vcubells.net](http://vcubells.net)
 * Chinese (zh_CN) thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * Dutch (nl_NL) thanks to Marijke Metz, [http://www.mergenmetz.nl](http://www.mergenmetz.nl)
 * English (en_US)
@@ -105,6 +105,7 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * Russian (ru_RU) thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
 * Spanish (es_ES) thanks to David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com) and Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 * Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
+* Yiddish (yi) thanks to Raphael Finkel, [http://www.cs.uky.edu/~raphael/yiddish.html](http://www.cs.uky.edu/~raphael/yiddish.html)
 
 Leaflet Maps Marker also supports easy switching between translations through a specific plugin setting.
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
@@ -184,13 +185,13 @@ For more information on translations of the plugin and how to contribute a new t
 
 == Upgrade Notice ==
 = v2.6 =
-Bing Maps support - see http://www.mapsmarker.com/v2.6 for more details
+Bing Maps support, new translations, Google Maps optimizations and more - see http://www.mapsmarker.com/v2.6 for more details
  
 = v2.5 =
 Google Maps support, new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com), Russian+Bulgarian+Turkish translation, admin dashboard widget
 
 = v2.4 =
-added recent marker widget, Chinese translation, language selection and security fixes based on an external audit of the plugin
+Added recent marker widget, Chinese translation, language selection and security fixes based on an external audit of the plugin
 
 = v2.3 =
 added sort options for marker and layer listing pages
@@ -253,12 +254,18 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v2.6 - xx.07.2012 =
+
+= v2.6 - 18.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.6)
+* NEW: support for bing maps as basemaps - [API key required](http://www.mapsmarker.com/bing-maps)
 * NEW: configure marker attributes to show in marker list below layer maps (icon, marker name, popuptext)
+* NEW: option to add Google Maps API key (required for commercial usage) - see [http://www.mapsmarker.com/google-maps-api-key](http://www.mapsmarker.com/google-maps-api-key) for more details
 * NEW: Hindi translation thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
+* NEW: Catalan translation thanks to Vicent Cubells, [http://vcubells.net](http://vcubells.net)
+* NEW: Yiddish translation thanks to Raphael Finkel, [http://www.cs.uky.edu/~raphael/yiddish.html](http://www.cs.uky.edu/~raphael/yiddish.html)
 * NEW: Added compatibility check for plugin [WordPress Better Minify](http://wordpress.org/extend/plugins/bwp-minify/)
 * CHANGED: increased Google Maps maximal zoom level from 18 to 22
+* CHANGED: changed the way Google Maps API is called in order to prevent errors with unset sensor parameter when using certain proxy servers (thanks to Dragan, [http://EdWeWo.com](http://EdWeWo.com)
 * BUGFIX: fixed vertical alignment of basemaps in layer control box in backend
 
 = v2.5 - 06.07.2012 =

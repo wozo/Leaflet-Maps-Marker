@@ -2,6 +2,8 @@
 /*
     Edit marker - Leaflet Maps Marker Plugin
 */
+//info prevent file from being accessed directly
+if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-marker.php') { die ("Please do not access this file directly. Thanks!<br/><a href='http://www.mapsmarker.com/go'>www.mapsmarker.com</a>"); }
 ?>
 <div class="wrap">
 <?php include('leaflet-admin-header.php'); ?>
@@ -549,9 +551,11 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
 	googleLayer_roadmap = new L.Google("ROADMAP", {mmid: 'googleLayer_roadmap'});
 	googleLayer_satellite = new L.Google("SATELLITE", {mmid: 'googleLayer_satellite'});
 	googleLayer_hybrid = new L.Google("HYBRID", {mmid: 'googleLayer_hybrid'});
-	bingaerial = new L.BingLayerAerial("Agj2Jczv837wHWeeM10JbkthyPBN2-0w4IvzNuXS9Wqrixod0hMXSzFt5mpzLTQR", {mmid: 'bingaerial', maxZoom: 21, minZoom: 1});
-	//bingaerialwithlabels = new L.BingLayerAerialWithLabels("Agj2Jczv837wHWeeM10JbkthyPBN2-0w4IvzNuXS9Wqrixod0hMXSzFt5mpzLTQR", {mmid: 'bingaerialwithlabels', maxZoom: 21, minZoom: 1});
-	//bingroad = new L.BingLayerRoad("<x?php echo $lmm_options[ 'bingmaps_api_key' ]; ?>", {mmid: 'bingroad', maxZoom: 21, minZoom: 1, errorTileUrl: "<x?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png"});
+	<?php if ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) ) { ?>
+	bingaerial = new L.BingLayerAerial("<?php echo $lmm_options[ 'bingmaps_api_key' ]; ?>", {mmid: 'bingaerial', maxZoom: 21, minZoom: 1});
+	bingaerialwithlabels = new L.BingLayerAerialWithLabels("<?php echo $lmm_options[ 'bingmaps_api_key' ]; ?>", {mmid: 'bingaerialwithlabels', maxZoom: 21, minZoom: 1});
+	bingroad = new L.BingLayerRoad("<?php echo $lmm_options[ 'bingmaps_api_key' ]; ?>", {mmid: 'bingroad', maxZoom: 21, minZoom: 1});
+	<?php }; ?>
 	ogdwien_basemap = new L.TileLayer("http://{s}.wien.gv.at/wmts/fmzk/pastell/google3857/{z}/{y}/{x}.jpeg", {mmid: 'ogdwien_basemap', errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", maxZoom: 19, minZoom: 11, attribution: "<?php echo $attrib_ogdwien_basemap; ?>", subdomains: ['maps','maps1', 'maps2', 'maps3']});
 	ogdwien_satellite = new L.TileLayer("http://{s}.wien.gv.at/wmts/lb/farbe/google3857/{z}/{y}/{x}.jpeg", {mmid: 'ogdwien_satellite', errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", maxZoom: 19, minZoom: 11, attribution: "<?php echo $attrib_ogdwien_satellite; ?>", subdomains: ['maps','maps1', 'maps2', 'maps3']});
 	//info: create Cloudmade TileURLs
@@ -645,12 +649,14 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
 			$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_googleLayer_satellite' ]) . "': googleLayer_satellite,";
 		if ( (isset($lmm_options[ 'controlbox_googleLayer_hybrid' ]) == TRUE ) && ($lmm_options[ 'controlbox_googleLayer_hybrid' ] == 1 ) )
 			$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_googleLayer_hybrid' ]) . "': googleLayer_hybrid,";
-		if ( (isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 ) )
-			$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_bingaerial' ]) . "': bingaerial,";
-		//if ( (isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 ) )
-			//$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_bingaerialwithlabels' ]) . "': bingaerialwithlabels,";
-		//if ( (isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 ) )
-			//$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_bingroad' ]) . "': bingroad,";
+		if ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) ) { 
+			if ( (isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 ) )
+				$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_bingaerial' ]) . "': bingaerial,";
+			if ( (isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 ) )
+				$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_bingaerialwithlabels' ]) . "': bingaerialwithlabels,";
+			if ( (isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 ) )
+				$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_bingroad' ]) . "': bingroad,";
+		};
 		if ( (isset($lmm_options[ 'controlbox_ogdwien_basemap' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_basemap' ] == 1 ) )
 			$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_ogdwien_basemap' ]) . "': ogdwien_basemap,";
 		if ( (isset($lmm_options[ 'controlbox_ogdwien_satellite' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_satellite' ] == 1 ) )
@@ -697,7 +703,6 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
 	{ collapsed: false }); //info open layer control box by default on all devices on backend
   selectlayer.setView(new L.LatLng(<?php echo $lat . ', ' . $lon; ?>), <?php echo $zoom ?>);
   selectlayer.addLayer(<?php echo $basemap ?>)
-
 	//info: controlbox - add active overlays on marker level
 	<?php 
 		if ( (isset($overlays_custom) == TRUE) && ($overlays_custom == 1) )

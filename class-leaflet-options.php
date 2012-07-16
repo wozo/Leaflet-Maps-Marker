@@ -26,7 +26,7 @@ class Leafletmapsmarker_options {
 		//$this->sections['vl']      = 'Vector layers';
 		$this->sections['defaults_marker']   = 'Marker defaults';
 		$this->sections['defaults_layer']   = 'Layer defaults';
-		$this->sections['google_places']   = 'Google Places';
+		$this->sections['google']   = 'Google';
 		$this->sections['directions']   = 'Directions';
 		$this->sections['ar']   = 'Augmented-Reality';
 		$this->sections['misc']   = 'Misc';
@@ -242,10 +242,11 @@ class Leafletmapsmarker_options {
 			<li>' . __('Default values for markers added directly','lmm') . '</li></ul></span>';
 	}	
 	/**
-	 * Listing for google places section
+	 * Listing for google section
 	 */
-	public function display_google_places_section() {
+	public function display_google_section() {
 		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;margin-left:24px;">
+			<li>' . __('Google Maps API key','lmm') . '</li>
 			<li>' . __('Google Places bounds','lmm') . '</li>
 			<li>' . __('Google Places search prefix','lmm') . '</li></ul></span>';
 	}	
@@ -397,12 +398,12 @@ class Leafletmapsmarker_options {
 				'osm_mapnik' => __('OpenStreetMap (Mapnik, max zoom 18)','lmm'),
 				'mapquest_osm' => __('MapQuest (OSM, max zoom 18)','lmm'),
 				'mapquest_aerial' => __('MapQuest (Aerial, max zoom 12 globally, 12+ in the United States)','lmm'),
-				'googleLayer_roadmap' => __('Google Maps (Roadmap)','lmm'),
-				'googleLayer_satellite' => __('Google Maps (Satellite)','lmm'),
-				'googleLayer_hybrid' => __('Google Maps (Hybrid)','lmm'),
-				'bingaerial' => __('Bing Maps (Aerial)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
-				'bingaerialwithlabels' => __('Bing Maps (Aerial+Labels)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
-				'bingroad' => __('Bing Maps (Road)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+				'googleLayer_roadmap' => __('Google Maps (Roadmap)','lmm')  . ' - <strong>' . __('API key required for commercial usage!','lmm') . '</strong> <a href="http://www.mapsmarker.com/google-maps-api-key" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+				'googleLayer_satellite' => __('Google Maps (Satellite)','lmm')  . ' - <strong>' . __('API key required for commercial usage!','lmm') . '</strong> <a href="http://www.mapsmarker.com/google-maps-api-key" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+				'googleLayer_hybrid' => __('Google Maps (Hybrid)','lmm')  . ' - <strong>' . __('API key required for commercial usage!','lmm') . '</strong> <a href="http://www.mapsmarker.com/google-maps-api-key" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+				'bingaerial' => __('Bing Maps (Aerial)','lmm') . ' - <strong>' . __('API key required!','lmm') . '</strong> <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+				'bingaerialwithlabels' => __('Bing Maps (Aerial+Labels)','lmm') . ' - <strong>' . __('API key required!','lmm'). '</strong> <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+				'bingroad' => __('Bing Maps (Road)','lmm') . ' - <strong>' . __('API key required!','lmm'). '</strong> <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 				'ogdwien_basemap' => __('OGD Vienna basemap (max zoom 19)','lmm'),
 				'ogdwien_satellite' => __('OGD Vienna satellite (max zoom 19)','lmm'),
 				'cloudmade' => 'Cloudmade',
@@ -641,7 +642,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.5',
 			'section' => 'basemaps',
 			'title'   => '',
-			'desc'    => __('Google Maps (Roadmap)','lmm'),
+			'desc'    => __('Google Maps (Roadmap)','lmm')  . ' - <strong>' . __('API key required for commercial usage!','lmm') . '</strong> <a href="http://www.mapsmarker.com/google-maps-api-key" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -649,7 +650,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.5',
 			'section' => 'basemaps',
 			'title'   => '',
-			'desc'    => __('Google Maps (Satellite)','lmm'),
+			'desc'    => __('Google Maps (Satellite)','lmm')  . ' - <strong>' . __('API key required for commercial usage!','lmm') . '</strong> <a href="http://www.mapsmarker.com/google-maps-api-key" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -657,7 +658,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.5',
 			'section' => 'basemaps',
 			'title'   => '',
-			'desc'    => __('Google Maps (Hybrid)','lmm'),
+			'desc'    => __('Google Maps (Hybrid)','lmm')  . ' - <strong>' . __('API key required for commercial usage!','lmm') . '</strong> <a href="http://www.mapsmarker.com/google-maps-api-key" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -665,7 +666,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.6',
 			'section' => 'basemaps',
 			'title'   => '',
-			'desc'    => __('Bing Maps (Aerial)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+			'desc'    => __('Bing Maps (Aerial)','lmm') . ' - <strong>' . __('API key required!','lmm'). '</strong> <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
@@ -673,7 +674,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.6',
 			'section' => 'basemaps',
 			'title'   => '',
-			'desc'    => __('Bing Maps (Aerial+Labels)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+			'desc'    => __('Bing Maps (Aerial+Labels)','lmm') . ' - <strong>' . __('API key required!','lmm'). '</strong> <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
@@ -681,7 +682,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.6',
 			'section' => 'basemaps',
 			'title'   => '',
-			'desc'    => __('Bing Maps (Road)','lmm') . ' - ' . __('API key required!','lmm'). ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+			'desc'    => __('Bing Maps (Road)','lmm') . ' - <strong>' . __('API key required!','lmm'). '</strong> <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
@@ -4860,7 +4861,6 @@ class Leafletmapsmarker_options {
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
-
 		$this->settings['defaults_layer_listmarkers_order_by'] = array(
 			'version' => '1.5',
 			'section' => 'defaults_layer',
@@ -4955,39 +4955,57 @@ class Leafletmapsmarker_options {
 		/*===========================================
 		*
 		*
-		* section Google Places
+		* section Google
 		*
 		*
 		===========================================*/	
 		/*
-		* Google Places Bounds
+		* Google Maps API Key
 		*/
-		$this->settings['google_places_bounds_helptext1'] = array(
-			'version' => '1.0',
-			'section' => 'google_places',
+		$this->settings['google_maps_api_key_heading'] = array(
+			'version' => '2.6',
+			'section' => 'google',
+			'title'   => '', 
+			'desc'    => __( 'Google Maps API key', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['google_maps_api_key_helptext'] = array(
+			'version' => '2.6',
+			'section' => 'google',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Leaflet Maps Marker uses the <a href="http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html" target="_blank">Google Places Autocomplete API</a> to easily find coordinates for places or addresses. This feature is enabled by default. Preview:', 'lmm') . '<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-google-places-preview.png />',
+			'desc'    => __( 'The usage of Google Maps is free for non-commercial users. Since 01/2012, commercial users have a current usage limit of 25.000 free requests a day - with additional usage cost of 0.5$/1000 requests. In order to comply with the <a href="https://developers.google.com/maps/faq" target="_blank">Google Maps terms of services</a>, commercial users have to <a href="https://developers.google.com/maps/documentation/javascript/tutorial#api_key">register for a free API key</a>. This API key can also be used by non-commercial users in order to monitor their Google Maps API usage.', 'lmm'),
 			'type'    => 'helptext'
 		);
+		$this->settings['google_maps_api_key'] = array(
+			'version' => '2.6',
+			'title'   => __( 'Google Maps API key', 'lmm'),
+			'desc'    => __( 'Please enter your Google Maps API key here', 'lmm' ),
+			'std'     => '',
+			'type'    => 'text',
+			'section' => 'google'
+		);
+		/*
+		* Google Places Bounds
+		*/
 		$this->settings['google_places_bounds_heading'] = array(
 			'version' => '1.0',
-			'section' => 'google_places',
+			'section' => 'google',
 			'title'   => '', 
 			'desc'    => __( 'Google Places bounds', 'lmm'),
 			'type'    => 'heading'
 		);
 		$this->settings['google_places_bounds_helptext2'] = array(
 			'version' => '1.0',
-			'section' => 'google_places',
+			'section' => 'google',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'You can get better search results if you enable the bounds feature. This allows you to specify the area in which to primarily search for places or addresses. Please note: the results are biased towards, but not restricted to places or addresses contained within these bounds.', 'lmm'),
+			'desc'    => __( 'Leaflet Maps Marker uses the <a href="http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html" target="_blank">Google Places Autocomplete API</a> to easily find coordinates for places or addresses. This feature is enabled by default. Preview:', 'lmm') . '<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-google-places-preview.png /><br/>' . __( 'You can get better search results if you enable the bounds feature. This allows you to specify the area in which to primarily search for places or addresses. Please note: the results are biased towards, but not restricted to places or addresses contained within these bounds.', 'lmm'),
 			'type'    => 'helptext'
 		);
 		$this->settings['google_places_bounds_status'] = array(
 			'version' => '1.0',
-			'section' => 'google_places',
+			'section' => 'google',
 			'title'   => __('Google Places bounds','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4999,7 +5017,7 @@ class Leafletmapsmarker_options {
 		);
 		$this->settings['google_places_bounds_helptext3'] = array(
 			'version' => '1.0',
-			'section' => 'google_places',
+			'section' => 'google',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'If enabled, please enter longitude and latitude values below for the corner points of the prefered search area. Below you find an example for Vienna/Austria:', 'lmm') . '<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-google-places-bounds.jpg />',
@@ -5011,7 +5029,7 @@ class Leafletmapsmarker_options {
 			'desc'    => __( 'Please use a dot instead of a coma as decimal delimiter!', 'lmm' ),
 			'std'     => '48.326583',
 			'type'    => 'text',
-			'section' => 'google_places'
+			'section' => 'google'
 		);
 		$this->settings['google_places_bounds_lon1'] = array(
 			'version' => '1.0',
@@ -5019,7 +5037,7 @@ class Leafletmapsmarker_options {
 			'desc'    => __( 'Please use a dot instead of a coma as decimal delimiter!', 'lmm' ),
 			'std'     => '16.55056',
 			'type'    => 'text',
-			'section' => 'google_places'
+			'section' => 'google'
 		);
 		$this->settings['google_places_bounds_lat2'] = array(
 			'version' => '1.0',
@@ -5027,7 +5045,7 @@ class Leafletmapsmarker_options {
 			'desc'    => __( 'Please use a dot instead of a coma as decimal delimiter!', 'lmm' ),
 			'std'     => '48.114308',
 			'type'    => 'text',
-			'section' => 'google_places'
+			'section' => 'google'
 		);
 		$this->settings['google_places_bounds_lon2'] = array(
 			'version' => '1.0',
@@ -5035,18 +5053,18 @@ class Leafletmapsmarker_options {
 			'desc'    => __( 'Please use a dot instead of a coma as decimal delimiter!', 'lmm' ),
 			'std'     => '16.187325',
 			'type'    => 'text',
-			'section' => 'google_places'
+			'section' => 'google'
 		);		
 		$this->settings['google_places_search_prefix_heading'] = array(
 			'version' => '1.0',
-			'section' => 'google_places',
+			'section' => 'google',
 			'title'   => '', 
 			'desc'    => __( 'Google Places search prefix', 'lmm'),
 			'type'    => 'heading'
 		);
 		$this->settings['google_places_search_prefix_helptext1'] = array(
 			'version' => '1.0',
-			'section' => 'google_places',
+			'section' => 'google',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'You can also select a search prefix, which automatically gets added to search form when creating a new marker or layer.', 'lmm') . '<br/><br/><img src='. LEAFLET_PLUGIN_URL .'/img/help-google-places-prefix.png />',
@@ -5054,7 +5072,7 @@ class Leafletmapsmarker_options {
 		);
 		$this->settings['google_places_search_prefix_status'] = array(
 			'version' => '1.0',
-			'section' => 'google_places',
+			'section' => 'google',
 			'title'   => __('Google Places search prefix','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -5073,7 +5091,7 @@ class Leafletmapsmarker_options {
 			'desc'    => '',
 			'std'     => 'Wien, ',
 			'type'    => 'text',
-			'section' => 'google_places'
+			'section' => 'google'
 		);	
 		/*===========================================
 		*
@@ -5654,6 +5672,7 @@ class Leafletmapsmarker_options {
 			'choices' => array(
 				'automatic' => __('automatic (use WordPress default)','lmm'),
 				'bg_BG' => __('Bulgarian','lmm') . ' (bg_BG)',
+				'ca' => __('Catalan','lmm') . ' (ca)',
 				'zn_CH' => __('Chinese','lmm') . ' (zn_CH)',
 				'nl_NL' => __('Dutch','lmm') . ' (nl_NL)',
 				'en_US' => __('English','lmm') . ' (en_US)',
@@ -5665,6 +5684,7 @@ class Leafletmapsmarker_options {
 				'pl_PL' => __('Polish','lmm') . ' (pl_PL)',
 				'ru_RU' => __('Russian','lmm') . ' (ru_RU)',
 				'es_ES' => __('Spanish','lmm') . ' (es_ES)',
+				'tr_TR' => __('Yiddish','lmm') . ' (yi)',
 				'tr_TR' => __('Turkish','lmm') . ' (tr_TR)'
 			)
 		);
@@ -6356,8 +6376,8 @@ class Leafletmapsmarker_options {
 				add_settings_section( $slug, $title, array( &$this, 'display_vl_section' ), 'leafletmapsmarker_settings' );*/
 			else if ( $slug == 'defaults_marker' )
 				add_settings_section( $slug, $title, array( &$this, 'display_defaults_marker_section' ), 'leafletmapsmarker_settings' );
-			else if ( $slug == 'google_places' )
-				add_settings_section( $slug, $title, array( &$this, 'display_google_places_section' ), 'leafletmapsmarker_settings' );
+			else if ( $slug == 'google' )
+				add_settings_section( $slug, $title, array( &$this, 'display_google_section' ), 'leafletmapsmarker_settings' );
 			else if ( $slug == 'directions' )
 				add_settings_section( $slug, $title, array( &$this, 'display_directions_section' ), 'leafletmapsmarker_settings' );
 			else if ( $slug == 'misc' )
