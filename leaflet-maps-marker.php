@@ -1237,6 +1237,10 @@ function __construct() {
 		update_option('leafletmapsmarker_version', '2.5');
 	}
 	if (get_option('leafletmapsmarker_version') == '2.5' ) {
+		$table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
+		$table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
+		$update26_1 = "ALTER TABLE `" . $table_name_markers . "` CHANGE `basemap` `basemap` VARCHAR( 25 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;";
+		$wpdb->query($update26_1);
 		$save_defaults_for_new_options = new Leafletmapsmarker_options();
 		$save_defaults_for_new_options->save_defaults_for_new_options();
 		update_option('leafletmapsmarker_version', '2.6');
