@@ -82,11 +82,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			increased Google Maps maximal zoom level from 18 to 22
 			</td></tr>
 			<tr><td>
-			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
 			changed the way Google Maps API is called in order to prevent errors with unset sensor parameter when using certain proxy servers (thanks <a href="http://EdWeWo.com" target="_blank">Dragan</a>!)
 			</td></tr>
+			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
 			fixed vertical alignment of basemaps in layer control box in backend
