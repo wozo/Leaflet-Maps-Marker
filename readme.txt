@@ -266,6 +266,10 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: Added compatibility check for plugin [WordPress Better Minify](http://wordpress.org/extend/plugins/bwp-minify/)
 * CHANGED: increased Google Maps maximal zoom level from 18 to 22
 * CHANGED: changed the way Google Maps API is called in order to prevent errors with unset sensor parameter when using certain proxy servers (thanks to Dragan, [http://EdWeWo.com](http://EdWeWo.com)
+* CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
+* CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
+* CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 * BUGFIX: fixed vertical alignment of basemaps in layer control box in backend
 
 = v2.5 - 06.07.2012 =
