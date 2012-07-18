@@ -520,7 +520,7 @@ function __construct() {
 	$lmm_out .= 'var mapquest_aerial = new L.TileLayer("http://{s}.mqcdn.com/naip/{z}/{x}/{y}.png", {maxZoom: 18, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_mapquest_aerial . '", subdomains: ["oatile1","oatile2","oatile3","oatile4"]});'.PHP_EOL;
     if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; };
 	$lmm_out .= 'var googleLayer_roadmap = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=m&hl=' . $lang . '&x={x}&y={y}&z={z}&s=", {maxZoom: 22, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_googleLayer . '", subdomains:["0","1","2","3"]});'.PHP_EOL;
-	$lmm_out .= 'var googleLayer_satellite = new L.TileLayer("http://khm{s}.google.com/kh/v=101&hl=' . $lang . '&x={x}&y={y}&z={z}&s=", {maxZoom: 22, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_googleLayer . '", subdomains:["0","1","2","3"]});'.PHP_EOL;
+	$lmm_out .= 'var googleLayer_satellite = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=s&hl=' . $lang . '&x={x}&y={y}&z={z}&s=", {maxZoom: 22, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_googleLayer . '", subdomains:["0","1","2","3"]});'.PHP_EOL;
 	$lmm_out .= 'var googleLayer_hybrid = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=y&hl=' . $lang . '&x={x}&y={y}&z={z}&s=", {maxZoom: 22, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_googleLayer . '", subdomains:["0","1","2","3"]});'.PHP_EOL;
 	$lmm_out .= 'var googleLayer_terrain = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=p&hl=' . $lang . '&x={x}&y={y}&z={z}&s=", {maxZoom: 22, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_googleLayer . '", subdomains:["0","1","2","3"]});'.PHP_EOL;
 	if ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) ) { 
@@ -976,7 +976,6 @@ function __construct() {
 			$google_maps_api_key = $lmm_options['google_maps_api_key']; 
 			wp_enqueue_script( 'leafletmapsmarker-googlemaps-loader', 'http://www.google.com/jsapi?key='.$google_maps_api_key);
 	}
-    //wp_enqueue_script( 'leafletmapsmarker-googlemaps-backend', LEAFLET_PLUGIN_URL . 'js/gmaps-backend.js', array('leafletmapsmarker','leafletmapsmarker-googlemaps-loader'), $plugin_version); 
     //info: bing maps
     if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad')) 
         || ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) 
