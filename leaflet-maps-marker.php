@@ -1243,6 +1243,10 @@ function __construct() {
 		$wpdb->query($update26_1);
 		$update26_2 = "ALTER TABLE `" . $table_name_layers . "` CHANGE `basemap` `basemap` VARCHAR( 25 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;";
 		$wpdb->query($update26_2);
+		$update26_3 = "UPDATE `" . $table_name_markers . "` SET basemap = 'googleLayer_satellite' WHERE basemap = 'googleLayer_satellit';";
+		$wpdb->query($update26_3);
+		$update26_4 = "UPDATE `" . $table_name_layers . "` SET basemap = 'googleLayer_satellite' WHERE basemap = 'googleLayer_satellit';";
+		$wpdb->query($update26_4);
 		$save_defaults_for_new_options = new Leafletmapsmarker_options();
 		$save_defaults_for_new_options->save_defaults_for_new_options();
 		update_option('leafletmapsmarker_version', '2.6');

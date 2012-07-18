@@ -166,7 +166,7 @@ This program is free software; you can redistribute it and/or modify it under th
 
 = Licenses for used libraries, services and images =
 
-* Leaflet - Copyright (c) 2010-2011, CloudMade, Vladimir Agafonkin [http://leaflet.cloudmade.com](http://leaflet.cloudmade.com)
+* Leaflet - Copyright (c) 2010-2012, CloudMade, Vladimir Agafonkin [http://leaflet.cloudmade.com](http://leaflet.cloudmade.com)
 * OpenStreetMap - The Free Wiki World Map: [OpenStreetMap License](http://wiki.openstreetmap.org/wiki/OpenStreetMap_License) 
 * Map Icons Collection by Nicolas Mollet - [http://mapicons.nicolasmollet.com](http://mapicons.nicolasmollet.com)
 * Datasource OGD Vienna maps: Stadt Wien, Creative Commons Attribution (by) [http://data.wien.gv.at](http://data.wien.gv.at)
@@ -180,12 +180,13 @@ This program is free software; you can redistribute it and/or modify it under th
 * Susanne Mandl ([http://www.greenflamingomedia.com](http://www.greenflamingomedia.com)) for plugin logo
 * Wordpress-Settings-API-Class by Aliso the geek ([http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/](http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/))
 * [Hind](http://www.nanodesu.ru) who originally release a basic Leaflet plugin (not available anymore) which I used partly as a basis for Leaflet Maps Marker plugin
+* [shramov](http://psha.org.ru/b/leaflet-plugins.html) for bing and google maps plugins for leaflet
 
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
 = v2.6 =
-Bing Maps support, new translations, Google Maps optimizations and more - see http://www.mapsmarker.com/v2.6 for more details
+Bing Maps support, new translations, Google Maps optimizations+bugfixes and more - see http://www.mapsmarker.com/v2.6 for more details
  
 = v2.5 =
 Google Maps support, new collaborative translation site [http://translate.mapsmarker.com](http://translate.mapsmarker.com), Russian+Bulgarian+Turkish translation, admin dashboard widget
@@ -270,6 +271,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
+* BUGFIX: maps using Google Maps Satellite as basemaps were broken on some installations
 * BUGFIX: fixed vertical alignment of basemaps in layer control box in backend
 
 = v2.5 - 06.07.2012 =

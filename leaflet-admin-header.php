@@ -109,6 +109,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
+			maps using Google Maps Satellite as basemaps were broken on some installations
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
 			fixed vertical alignment of basemaps in layer control box in backend
 			</td></tr>
 			</table>
