@@ -260,6 +260,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.6)
 * NEW: support for bing maps as basemaps - [API key required](http://www.mapsmarker.com/bing-maps)
 * NEW: configure marker attributes to show in marker list below layer maps (icon, marker name, popuptext)
+* NEW: option to use Google Maps (Terrain) as basemap and the use of Google tile server instead of a leaflet plugin
 * NEW: option to add Google Maps API key (required for commercial usage) - see [http://www.mapsmarker.com/google-maps-api-key](http://www.mapsmarker.com/google-maps-api-key) for more details
 * NEW: Hindi translation thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
 * NEW: Catalan translation thanks to Vicent Cubells, [http://vcubells.net](http://vcubells.net)
