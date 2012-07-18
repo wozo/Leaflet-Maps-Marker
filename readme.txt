@@ -271,7 +271,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
-* BUGFIX: maps using Google Maps Satellite as basemaps were broken on some installations
+* BUGFIX: maps using Google Maps Satellite as basemaps were broken
 * BUGFIX: fixed vertical alignment of basemaps in layer control box in backend
 
 = v2.5 - 06.07.2012 =
