@@ -40,6 +40,7 @@ to the visitors of your website.
 = Additional features =
 
 * show directions for your locations using Google Maps, yournavigation.org or openrouteservice.org
+* support for Google Maps API key which is required for commercial users
 * configure up to 10 WMS servers to display additional information from external geodata providers (like the European Environment Agency) on your maps
 * organize markers from different layers in multi-layer-maps
 * export your markers as KML file for displaying in Google Earth or Google Maps
@@ -260,7 +261,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.6)
 * NEW: support for bing maps as basemaps - [API key required](http://www.mapsmarker.com/bing-maps)
 * NEW: configure marker attributes to show in marker list below layer maps (icon, marker name, popuptext)
-* NEW: option to use Google Maps (Terrain) as basemap and the use of Google tile server instead of a leaflet plugin
+* NEW: option to use Google Maps (Terrain) as basemap
 * NEW: option to add Google Maps API key (required for commercial usage) - see [http://www.mapsmarker.com/google-maps-api-key](http://www.mapsmarker.com/google-maps-api-key) for more details
 * NEW: Hindi translation thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
 * NEW: Catalan translation thanks to Vicent Cubells, [http://vcubells.net](http://vcubells.net)

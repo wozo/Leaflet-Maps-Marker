@@ -504,7 +504,6 @@ function __construct() {
 	$attrib_osm_mapnik = __("Map",'lmm').': &copy; ' . date("Y") . ' <a href=\"http://www.openstreetmap.org\" target=\"_blank\">OpenStreetMap contributors</a>, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">CC-BY-SA</a>';
 	$attrib_mapquest_osm = __("Map",'lmm').': Tiles Courtesy of <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"' . LEAFLET_PLUGIN_URL . 'img/logo-mapquest.png\" style=\"\" />';
 	$attrib_mapquest_aerial = __("Map",'lmm').': <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"' . LEAFLET_PLUGIN_URL . 'img/logo-mapquest.png\" />, Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency';
-	$attrib_googleLayer = __("Map",'lmm').': &copy; <a href=\"http://maps.google.com/\" target=\"_blank\">Google</a> ' . date("Y") . ' (<a href=\"http://www.google.com/intl/en_ALL/help/terms_maps.html\" target=\"_blank\">Terms of Use</a>)';
 	$attrib_ogdwien_basemap = __("Map",'lmm').': ' . __("City of Vienna","lmm") . ' (<a href=\"http://data.wien.gv.at\" target=\"_blank\" style=\"\">data.wien.gv.at</a>)';
 	$attrib_ogdwien_satellite = __("Map",'lmm').': ' . __("City of Vienna","lmm") . ' (<a href=\"http://data.wien.gv.at\" target=\"_blank\">data.wien.gv.at</a>)';
 	$attrib_cloudmade = __("Map",'lmm').': &copy; ' . date("Y") . ' <a href=\"http://www.openstreetmap.org\" target=\"_blank\" style=\"\">OpenStreetMap contributors</a>, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">CC-BY-SA</a>, Imagery &copy; <a href=\"http://cloudmade.com\" target=\"_blank\">CloudMade</a>';
@@ -518,11 +517,10 @@ function __construct() {
 	$lmm_out .= 'var osm_mapnik = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 18, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_osm_mapnik . '"});'.PHP_EOL;
 	$lmm_out .= 'var mapquest_osm = new L.TileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {maxZoom: 18, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_mapquest_osm . '", subdomains: ["otile1","otile2","otile3","otile4"]});'.PHP_EOL;
 	$lmm_out .= 'var mapquest_aerial = new L.TileLayer("http://{s}.mqcdn.com/naip/{z}/{x}/{y}.png", {maxZoom: 18, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_mapquest_aerial . '", subdomains: ["oatile1","oatile2","oatile3","oatile4"]});'.PHP_EOL;
-    if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; };
-	$lmm_out .= 'var googleLayer_roadmap = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=m&hl=' . $lang . '&x={x}&y={y}&z={z}&s=", {maxZoom: 22, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_googleLayer . '", subdomains:["0","1","2","3"]});'.PHP_EOL;
-	$lmm_out .= 'var googleLayer_satellite = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=s&hl=' . $lang . '&x={x}&y={y}&z={z}&s=", {maxZoom: 22, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_googleLayer . '", subdomains:["0","1","2","3"]});'.PHP_EOL;
-	$lmm_out .= 'var googleLayer_hybrid = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=y&hl=' . $lang . '&x={x}&y={y}&z={z}&s=", {maxZoom: 22, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_googleLayer . '", subdomains:["0","1","2","3"]});'.PHP_EOL;
-	$lmm_out .= 'var googleLayer_terrain = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=p&hl=' . $lang . '&x={x}&y={y}&z={z}&s=", {maxZoom: 22, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_googleLayer . '", subdomains:["0","1","2","3"]});'.PHP_EOL;
+	$lmm_out .= 'var googleLayer_roadmap = new L.Google("ROADMAP");'.PHP_EOL;
+	$lmm_out .= 'var googleLayer_satellite = new L.Google("SATELLITE");'.PHP_EOL;
+	$lmm_out .= 'var googleLayer_hybrid = new L.Google("HYBRID");'.PHP_EOL;
+	$lmm_out .= 'var googleLayer_terrain = new L.Google("TERRAIN");'.PHP_EOL;
 	if ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) ) { 
 		$lmm_out .= 'var bingaerial = new L.BingLayerAerial("' . $lmm_options[ 'bingmaps_api_key' ] . '", {maxZoom: 21, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png"});'.PHP_EOL;
 		$lmm_out .= 'var bingaerialwithlabels = new L.BingLayerAerialWithLabels("' . $lmm_options[ 'bingmaps_api_key' ] . '", {maxZoom: 21, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png"});'.PHP_EOL;
@@ -948,10 +946,13 @@ function __construct() {
 		'lmm_zoom_out' => __( 'Zoom out', 'lmm' )
 		) );
     //info: google maps
-    if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { 
-			$google_maps_api_key = $lmm_options['google_maps_api_key']; 
-			wp_enqueue_script( 'leafletmapsmarker-googlemaps-loader', 'http://www.google.com/jsapi?key='.$google_maps_api_key);
-	}
+    if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
+    if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps-loader', 'http://www.google.com/jsapi?key='.$google_maps_api_key);
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps-frontend', LEAFLET_PLUGIN_URL . 'js/gmaps-frontend.js', array('leafletmapsmarker','leafletmapsmarker-googlemaps-loader'), $plugin_version); 
+    wp_localize_script ( 'leafletmapsmarker-googlemaps-frontend', 'leafletmapsmarker_gmaps_L10n', array(
+    'lmm_googlemaps_language' => $lang
+    ) );
     //info: bing maps
     if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad')) 
         || ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) 
@@ -972,10 +973,13 @@ function __construct() {
 		'lmm_zoom_out' => __( 'Zoom out', 'lmm' )
 		) );
     //info: google maps
-    if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { 
-			$google_maps_api_key = $lmm_options['google_maps_api_key']; 
-			wp_enqueue_script( 'leafletmapsmarker-googlemaps-loader', 'http://www.google.com/jsapi?key='.$google_maps_api_key);
-	}
+    if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
+    if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps-loader', 'http://www.google.com/jsapi?key='.$google_maps_api_key);
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps-backend', LEAFLET_PLUGIN_URL . 'js/gmaps-backend.js', array('leafletmapsmarker','leafletmapsmarker-googlemaps-loader'), $plugin_version); 
+    wp_localize_script ( 'leafletmapsmarker-googlemaps-backend', 'leafletmapsmarker_gmaps_L10n', array(
+    'lmm_googlemaps_language' => $lang
+    ) );
     //info: bing maps
     if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad')) 
         || ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) 

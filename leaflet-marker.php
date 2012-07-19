@@ -536,7 +536,6 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
 		$attrib_osm_mapnik = __("Map",'lmm').': &copy; ' . date("Y") . ' <a href=\"http://www.openstreetmap.org\" target=\"_blank\">OpenStreetMap contributors</a>, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">CC-BY-SA</a>';
 		$attrib_mapquest_osm = __("Map",'lmm').': Tiles Courtesy of <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"' . LEAFLET_PLUGIN_URL . 'img/logo-mapquest.png\" style=\"\" />';
 		$attrib_mapquest_aerial = __("Map",'lmm').': <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"' . LEAFLET_PLUGIN_URL . 'img/logo-mapquest.png\" />, Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency';
-		$attrib_googleLayer = __("Map",'lmm').': &copy; <a href=\"http://maps.google.com/\" target=\"_blank\">Google</a> ' . date("Y") . ' (<a href=\"http://www.google.com/intl/en_ALL/help/terms_maps.html\" target=\"_blank\">Terms of Use</a>)';
 		$attrib_ogdwien_basemap = __("Map",'lmm').': ' . __("City of Vienna","lmm") . ' (<a href=\"http://data.wien.gv.at\" target=\"_blank\" style=\"\">data.wien.gv.at</a>)';
 		$attrib_ogdwien_satellite = __("Map",'lmm').': ' . __("City of Vienna","lmm") . ' (<a href=\"http://data.wien.gv.at\" target=\"_blank\">data.wien.gv.at</a>)';
 		$attrib_cloudmade = __("Map",'lmm').': &copy; ' . date("Y") . ' <a href=\"http://www.openstreetmap.org\" target=\"_blank\" style=\"\">OpenStreetMap contributors</a>, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">CC-BY-SA</a>, Imagery &copy; <a href=\"http://cloudmade.com\" target=\"_blank\">CloudMade</a>';
@@ -549,11 +548,10 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
 	osm_mapnik = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {mmid: 'osm_mapnik', maxZoom: 18, minZoom: 0, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_osm_mapnik; ?>"});
 	mapquest_osm = new L.TileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {mmid: 'mapquest_osm', maxZoom: 18, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_mapquest_osm; ?>", subdomains: ['otile1','otile2','otile3','otile4']});
 	mapquest_aerial = new L.TileLayer("http://{s}.mqcdn.com/naip/{z}/{x}/{y}.png", {mmid: 'mapquest_aerial', maxZoom: 18, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_mapquest_aerial; ?>", subdomains: ['oatile1','oatile2','oatile3','oatile4']});
-    <?php if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; } ?>
-	googleLayer_roadmap = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=m&hl=<?php echo $lang; ?>&x={x}&y={y}&z={z}&s=", {mmid: 'googleLayer_roadmap', maxZoom: 22, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_googleLayer; ?>", subdomains:['0','1','2','3']});
-	googleLayer_satellite = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=s&hl=<?php echo $lang; ?>&x={x}&y={y}&z={z}&s=", {mmid: 'googleLayer_satellite', maxZoom: 22, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_googleLayer; ?>", subdomains:['0','1','2','3']});
-	googleLayer_hybrid = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=y&hl=<?php echo $lang; ?>&x={x}&y={y}&z={z}&s=", {mmid: 'googleLayer_hybrid', maxZoom: 22, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_googleLayer; ?>", subdomains:['0','1','2','3']});
-	googleLayer_terrain = new L.TileLayer("http://mt{s}.google.com/vt/lyrs=p&hl=<?php echo $lang; ?>&x={x}&y={y}&z={z}&s=", {mmid: 'googleLayer_terrain', maxZoom: 22, minZoom: 1, errorTileUrl: "<?php echo LEAFLET_PLUGIN_URL ?>img/error-tile-image.png", attribution: "<?php echo $attrib_googleLayer; ?>", subdomains:['0','1','2','3']});
+	googleLayer_roadmap = new L.Google("ROADMAP", {mmid: 'googleLayer_roadmap'});
+	googleLayer_satellite = new L.Google("SATELLITE", {mmid: 'googleLayer_satellite'});
+	googleLayer_hybrid = new L.Google("HYBRID", {mmid: 'googleLayer_hybrid'});
+	googleLayer_terrain = new L.Google("TERRAIN", {mmid: 'googleLayer_terrain'});
 	<?php if ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) ) { ?>
 	bingaerial = new L.BingLayerAerial("<?php echo $lmm_options[ 'bingmaps_api_key' ]; ?>", {mmid: 'bingaerial', maxZoom: 21, minZoom: 1});
 	bingaerialwithlabels = new L.BingLayerAerialWithLabels("<?php echo $lmm_options[ 'bingmaps_api_key' ]; ?>", {mmid: 'bingaerialwithlabels', maxZoom: 21, minZoom: 1});
@@ -926,7 +924,9 @@ function updateicon(newicon) {
 			}
 		}
 		function setup(){
-			check(gLoader.loadMap);
+			//info: disabled with v2.5/Google Maps
+			//check(gLoader.loadMap);
+			return true;
 		}
 		function load(){
 		script = document.createElement("script");
@@ -937,7 +937,12 @@ function updateicon(newicon) {
 		s.parentNode.insertBefore(script, s);
 		}
 		function loadMap() {
+			/*
+			info: if you in-comment this, Google Adress search won´t work anymore because of GoogleMaps basemap integration
 			google.load("maps", "3",  {callback: gLoader.autocomplete, other_params:"sensor=false&libraries=places&language=<?php if ( defined('WPLANG') ) { echo substr(WPLANG, 0, 2); } else { echo 'en'; } ?>"});  //info: get locale from wp-config with fallback if not set
+			return true;
+			*/
+			return true;
 		}
 		function initAutocomplete() {
 			var input = document.getElementById('placesearch');
@@ -1021,13 +1026,14 @@ function updateicon(newicon) {
 			});			
 		}				
 		return{
-		setup:setup,
-		check:check,
-		loadMap:loadMap,
+		//info: disabled with v2.5/Google Maps - delete? 
+		//setup:setup,
+		//check:check,
+		//loadMap:loadMap,
 		autocomplete:initAutocomplete
 		}
 	}();
-	gLoader.setup();
+	gLoader.autocomplete();
 /* //]]> */
 </script>
 <?php //info: check if marker exists - part 2 
