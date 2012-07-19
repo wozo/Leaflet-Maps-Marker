@@ -96,9 +96,12 @@ if (isset($_GET['layer'])) {
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<style>form { margin: 0 ; } </style>'.PHP_EOL; //info: for layer controlbox
 	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js" type="text/css" media="all"></script>'.PHP_EOL;
-	if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
-	if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key == ''; }
-	$lmm_out .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?key='.$google_maps_api_key.'&sensor=false&libraries=places&language=' . $lang . '"></script>'.PHP_EOL;
+    //info: google maps
+    if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { 
+			$google_maps_api_key = $lmm_options['google_maps_api_key']; 
+			$lmm_out .= '<script type="text/javascript" src="http://www.google.com/jsapi?key=' . $google_maps_api_key . '"></script>'.PHP_EOL;
+	}
+	//info: bing maps
 	if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad')) 
 		|| ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) 
 		|| ((isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 )) 
@@ -516,8 +519,12 @@ elseif (isset($_GET['marker'])) {
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<style>form { margin: 0 ; } </style>'.PHP_EOL; //info: for layer controlbox
 	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js" type="text/css" media="all"></script>'.PHP_EOL;
-	if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
-	if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key == ''; }
+    //info: google maps
+    if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { 
+			$google_maps_api_key = $lmm_options['google_maps_api_key']; 
+			$lmm_out .= '<script type="text/javascript" src="http://www.google.com/jsapi?key=' . $google_maps_api_key . '"></script>'.PHP_EOL;
+	}
+	//info: bing maps
 	if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad')) 
 		|| ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) 
 		|| ((isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 )) 
@@ -526,7 +533,6 @@ elseif (isset($_GET['marker'])) {
 		)) {
 		$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'js/bing.js"></script>'.PHP_EOL;
 	}
-	$lmm_out .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?key='.$google_maps_api_key.'&sensor=false&libraries=places&language=' . $lang . '"></script>'.PHP_EOL;
 	$lmm_out .= '<meta charset="UTF-8" />'.PHP_EOL;
 	$lmm_out .= '<meta name="geo.position" content="' . $lat . ';' . $lon . '" />'.PHP_EOL;
 	$lmm_out .= '<meta name="ICBM" content="' . $lat . ', ' . $lon . '" />'.PHP_EOL;
