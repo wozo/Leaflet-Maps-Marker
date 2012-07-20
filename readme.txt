@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.5-alpha-21273
-Stable tag:        2.6.1
+Stable tag:        2.7
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
@@ -186,6 +186,8 @@ This program is free software; you can redistribute it and/or modify it under th
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
+= v2.7 =
+
 = v2.6.1 =
 Bing maps bug should now be fixed
 
@@ -259,6 +261,8 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v2.7 - xx.08.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v2.7)
 
 = v2.6.1 - 20.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.6.1)
