@@ -34,7 +34,7 @@ if ( ($update_info_action == 'hide') && ($new_install == 'false') ) {
 }
 if (get_option('leafletmapsmarker_update_info') == 'show') {
 	$lmm_version_old = '2.6';
-	$lmm_version_new = '2.7';
+	$lmm_version_new = '2.6.1';
 	$lmm_changelog_new_version = '<a href="http://www.mapsmarker.com/v' . $lmm_version_new . '" target="_blank">http://www.mapsmarker.com/v' . $lmm_version_new . '</a>';
 	$lmm_full_changelog = '<a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a>';
 	echo '<div class="updated" style="padding:10px;"><p><strong>' . __('Leaflet Maps Marker has been updated successfully!','lmm') . '</strong></p>
@@ -42,19 +42,9 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			' . sprintf(__('Changelog for version %s:','lmm'), $lmm_version_new) . '
 			<table>
 			<tr><td>
-			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
-			</td><td>
-			
-			</td></tr>
-			<tr><td>
-			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
-			</td><td>
-			
-			</td></tr>
-			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
-			
+			bing maps should now work as designed - thank to Pavel Shramov!
 			</td></tr>
 			</table>
 			<p>' . sprintf(__('If you upgraded from a version <%s, please visit %s for a complete list of changes.','lmm'), $lmm_version_old, $lmm_full_changelog) . '</p>
