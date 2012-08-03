@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.5-alpha-21273
-Stable tag:        2.7
+Stable tag:        2.7.1
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
@@ -104,6 +104,7 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * Japanese (ja) thanks to [Shu Higashi](http://twitter.com/higa4)
 * Polish (pl_PL) translation thanks to Pawel Wyszynski, [http://injit.pl](http://injit.pl)
 * Russian (ru_RU) thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
+* Slovak (sk_SK) thanks to Zdenko Podobny
 * Spanish (es_ES) thanks to David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com) and Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 * Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
 * Yiddish (yi) thanks to Raphael Finkel, [http://www.cs.uky.edu/~raphael/yiddish.html](http://www.cs.uky.edu/~raphael/yiddish.html)
@@ -186,7 +187,7 @@ This program is free software; you can redistribute it and/or modify it under th
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
 
 == Upgrade Notice ==
-= v2.7 =
+= v2.7.1 =
 
 = v2.6.1 =
 Bing maps bug should now be fixed
@@ -261,8 +262,14 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v2.7 - xx.08.2012 =
-* [Blog post with more details about this release](http://www.mapsmarker.com/v2.7)
+= v2.7.1 - xx.08.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v2.7.1)
+* NEW: Slovak translation thanks to Zdenko Podobny
+* CHANGED: removed translation .po files from plugin to reduce file size
+* BUGFIX: manual language selection for Chinese and Yiddish was broken
+
+= v2.7 - 21.07.2012 =
+* "Special Collectors Edition" :-)
 
 = v2.6.1 - 20.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.6.1)

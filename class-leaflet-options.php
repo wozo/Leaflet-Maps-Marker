@@ -5479,7 +5479,7 @@ class Leafletmapsmarker_options {
 				'automatic' => __('automatic (use WordPress default)','lmm'),
 				'bg_BG' => __('Bulgarian','lmm') . ' (bg_BG)',
 				'ca' => __('Catalan','lmm') . ' (ca)',
-				'zn_CH' => __('Chinese','lmm') . ' (zn_CH)',
+				'zh_CN' => __('Chinese','lmm') . ' (zh_CN)',
 				'nl_NL' => __('Dutch','lmm') . ' (nl_NL)',
 				'en_US' => __('English','lmm') . ' (en_US)',
 				'fr_FR' => __('French','lmm') . ' (fr_FR)',
@@ -5489,8 +5489,9 @@ class Leafletmapsmarker_options {
 				'ja' => __('Japanese','lmm') . ' (ja)',
 				'pl_PL' => __('Polish','lmm') . ' (pl_PL)',
 				'ru_RU' => __('Russian','lmm') . ' (ru_RU)',
+				'sk_SK' => __('Slovak','lmm') . ' (es_ES)',
 				'es_ES' => __('Spanish','lmm') . ' (es_ES)',
-				'tr_TR' => __('Yiddish','lmm') . ' (yi)',
+				'yi' => __('Yiddish','lmm') . ' (yi)',
 				'tr_TR' => __('Turkish','lmm') . ' (tr_TR)'
 			)
 		);
@@ -6429,13 +6430,13 @@ class Leafletmapsmarker_options {
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
 		/* template for plugin updates 
-		//info:  set defaults for options introduced in v2.7
-		if (get_option('leafletmapsmarker_version') == '2.6.1' )
+		//info:  set defaults for options introduced in v2.7.1
+		if (get_option('leafletmapsmarker_version') == '2.7' )
 		{
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.7')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.7.1')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
