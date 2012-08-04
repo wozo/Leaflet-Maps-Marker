@@ -941,38 +941,38 @@ function __construct() {
   function lmm_frontend_enqueue_scripts() {
 	$lmm_options = get_option( 'leafletmapsmarker_options' );
 	$plugin_version = get_option('leafletmapsmarker_version');
+	if ( is_admin() ) { $gmaps_libraries = '&libraries=places'; } else { $gmaps_libraries =  ''; }
+	if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
 	wp_enqueue_script( array ( 'jquery' ) );
-	wp_enqueue_script( 'leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js', array(), $plugin_version); 
-	wp_localize_script ( 'leafletmapsmarker', 'leafletmapsmarker_L10n', array(
-		'lmm_zoom_in' => __( 'Zoom in', 'lmm' ),
-		'lmm_zoom_out' => __( 'Zoom out', 'lmm' )
-		) );
     //info: google maps
-    if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
     if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
-    wp_enqueue_script( 'leafletmapsmarker-googlemaps-loader', 'http://www.google.com/jsapi?key='.$google_maps_api_key);
-    wp_enqueue_script( 'leafletmapsmarker-googlemaps-frontend', LEAFLET_PLUGIN_URL . 'js/gmaps-frontend.js', array('leafletmapsmarker','leafletmapsmarker-googlemaps-loader'), $plugin_version); 
-    wp_localize_script ( 'leafletmapsmarker-googlemaps-frontend', 'leafletmapsmarker_gmaps_L10n', array(
-    'lmm_googlemaps_language' => $lang
-    ) );
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps-loader', 'http://www.google.com/jsapi?key='.$google_maps_api_key, array(), NULL);
+	//info: load leaflet.js + plugins
+	wp_enqueue_script( 'leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js', array('leafletmapsmarker-googlemaps-loader'), $plugin_version); 
+	wp_localize_script('leafletmapsmarker', 'leafletmapsmarker_L10n', array(
+		'lmm_zoom_in' => __( 'Zoom in', 'lmm' ),
+		'lmm_zoom_out' => __( 'Zoom out', 'lmm' ),
+		'lmm_googlemaps_language' => $lang,
+		'lmm_googlemaps_libraries' => $gmaps_libraries
+		) );
   }
   function lmm_admin_enqueue_scripts() {
 	$lmm_options = get_option( 'leafletmapsmarker_options' );
 	$plugin_version = get_option('leafletmapsmarker_version');
+	if ( is_admin() ) { $gmaps_libraries = '&libraries=places'; } else { $gmaps_libraries =  ''; }	
+	if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
 	wp_enqueue_script( array ( 'jquery' ) );
-	wp_enqueue_script( 'leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js', array(), $plugin_version); 
-	wp_localize_script ( 'leafletmapsmarker', 'leafletmapsmarker_L10n', array(
-		'lmm_zoom_in' => __( 'Zoom in', 'lmm' ),
-		'lmm_zoom_out' => __( 'Zoom out', 'lmm' )
-		) );
     //info: google maps
-    if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
     if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
-    wp_enqueue_script( 'leafletmapsmarker-googlemaps-loader', 'http://www.google.com/jsapi?key='.$google_maps_api_key);
-    wp_enqueue_script( 'leafletmapsmarker-googlemaps-backend', LEAFLET_PLUGIN_URL . 'js/gmaps-backend.js', array('leafletmapsmarker','leafletmapsmarker-googlemaps-loader'), $plugin_version); 
-    wp_localize_script ( 'leafletmapsmarker-googlemaps-backend', 'leafletmapsmarker_gmaps_L10n', array(
-    'lmm_googlemaps_language' => $lang
-    ) );
+    wp_enqueue_script( 'leafletmapsmarker-googlemaps-loader', 'http://www.google.com/jsapi?key='.$google_maps_api_key, array(), NULL);
+	//info: load leaflet.js + plugins
+	wp_enqueue_script( 'leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js', array('leafletmapsmarker-googlemaps-loader'), $plugin_version); 
+	wp_localize_script('leafletmapsmarker', 'leafletmapsmarker_L10n', array(
+		'lmm_zoom_in' => __( 'Zoom in', 'lmm' ),
+		'lmm_zoom_out' => __( 'Zoom out', 'lmm' ),
+		'lmm_googlemaps_language' => $lang,
+		'lmm_googlemaps_libraries' => $gmaps_libraries
+		) );
   }
   function lmm_admin_enqueue_scripts_jquerydatepicker() {
 	wp_enqueue_script( array ( 'jquery', 'jquery-ui-tabs','jquery-ui-datepicker','jquery-ui-slider' ) );

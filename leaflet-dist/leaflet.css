@@ -127,6 +127,7 @@
 	background:no-repeat !important;
 	padding:0px;
 	margin:0px;
+	box-shadow:none !important;
 	}
 .leaflet-objects-pane { z-index: 3; }
 .leaflet-overlay-pane { z-index: 4; }
@@ -396,4 +397,5 @@ a.leaflet-active {
 	height:auto;
 	margin: 0px !important;
 	padding: 0px !important;	
+	box-shadow:none !important;
 }

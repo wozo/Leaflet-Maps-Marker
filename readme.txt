@@ -266,8 +266,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.7.1)
 * NEW: Slovak translation thanks to Zdenko Podobny
 * CHANGED: removed translation .po files from plugin to reduce file size
-* CHANGED: merged & compressed bing.js into leaflet.js to save 1 http request
+* CHANGED: merged & compressed google-maps.js, bing.js into leaflet.js to save http requests
 * BUGFIX: manual language selection for Chinese and Yiddish was broken
+* BUGFIX: overwrite box-shadow attribute from style.css to remove border on some themes
 
 = v2.7 - 21.07.2012 =
 * "Special Collectors Edition" :-)
