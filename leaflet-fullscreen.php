@@ -28,6 +28,7 @@ global $wpdb;
 $table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
 $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
 $lmm_options = get_option( 'leafletmapsmarker_options' );
+$plugin_version = get_option('leafletmapsmarker_version');
 if (isset($_GET['layer'])) {
 	$layer = intval($_GET['layer']);
 	$uid = substr(md5(''.rand()), 0, 8);
@@ -99,7 +100,7 @@ if (isset($_GET['layer'])) {
 	$lmm_out .= '/* ]]> */'.PHP_EOL;
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<style>form { margin: 0 ; } </style>'.PHP_EOL; //info: for layer controlbox
-	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js" type="text/css" media="all"></script>'.PHP_EOL;
+	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js?ver=' . $plugin_version . '" type="text/css" media="all"></script>'.PHP_EOL;
 	//info: google maps
 	if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
 	if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
@@ -110,15 +111,6 @@ if (isset($_GET['layer'])) {
 	$lmm_out .= '/* ]]> */'.PHP_EOL;
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'js/gmaps-frontend.js"></script>'.PHP_EOL;
-	//info: bing maps
-	if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad')) 
-		|| ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) 
-		|| ((isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 )) 
-		|| ((isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 )) 
-		) && ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) 
-		)) {
-		$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'js/bing.js"></script>'.PHP_EOL;
-	}
 	$lmm_out .= '</head>'.PHP_EOL;
 	$lmm_out .= '<body style="margin:0;padding:0;height:100%;background: ' . addslashes($lmm_options[ 'defaults_layer_panel_background_color' ]) . ';overflow:hidden;">'.PHP_EOL;
 	//info: panel for layer/marker name and API URLs
@@ -527,7 +519,7 @@ elseif (isset($_GET['marker'])) {
 	$lmm_out .= '/* ]]> */'.PHP_EOL;
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<style>form { margin: 0 ; } </style>'.PHP_EOL; //info: for layer controlbox
-	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js" type="text/css" media="all"></script>'.PHP_EOL;
+	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js?ver=' . $plugin_version . '" type="text/css" media="all"></script>'.PHP_EOL;
 	//info: google maps
 	if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
 	if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
@@ -538,15 +530,6 @@ elseif (isset($_GET['marker'])) {
 	$lmm_out .= '/* ]]> */'.PHP_EOL;
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'js/gmaps-frontend.js"></script>'.PHP_EOL;
-	//info: bing maps
-	if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad')) 
-		|| ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) 
-		|| ((isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 )) 
-		|| ((isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 )) 
-		) && ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) 
-		)) {
-		$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'js/bing.js"></script>'.PHP_EOL;
-	}
 	$lmm_out .= '</head>'.PHP_EOL;
 	$lmm_out .= '<body style="margin:0;padding:0;height:100%;background: ' . addslashes($lmm_options[ 'defaults_marker_panel_background_color' ]) . ';overflow:hidden;">'.PHP_EOL;
 	//info: panel for layer/marker name and API URLs

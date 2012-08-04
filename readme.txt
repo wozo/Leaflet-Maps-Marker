@@ -266,6 +266,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.7.1)
 * NEW: Slovak translation thanks to Zdenko Podobny
 * CHANGED: removed translation .po files from plugin to reduce file size
+* CHANGED: merged & compressed bing.js into leaflet.js to save 1 http request
 * BUGFIX: manual language selection for Chinese and Yiddish was broken
 
 = v2.7 - 21.07.2012 =

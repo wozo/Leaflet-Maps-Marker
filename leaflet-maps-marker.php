@@ -955,15 +955,6 @@ function __construct() {
     wp_localize_script ( 'leafletmapsmarker-googlemaps-frontend', 'leafletmapsmarker_gmaps_L10n', array(
     'lmm_googlemaps_language' => $lang
     ) );
-    //info: bing maps
-    if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad')) 
-        || ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) 
-        || ((isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 )) 
-        || ((isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 )) 
-        ) && ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) 
-        )) {
-        wp_enqueue_script( 'leafletmapsmarker-bingmaps', LEAFLET_PLUGIN_URL . 'js/bing.js', array('leafletmapsmarker'), $plugin_version); 
-    }
   }
   function lmm_admin_enqueue_scripts() {
 	$lmm_options = get_option( 'leafletmapsmarker_options' );
@@ -982,15 +973,6 @@ function __construct() {
     wp_localize_script ( 'leafletmapsmarker-googlemaps-backend', 'leafletmapsmarker_gmaps_L10n', array(
     'lmm_googlemaps_language' => $lang
     ) );
-    //info: bing maps
-    if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['standard_basemap'] == 'bingaerialwithlabels') || ($lmm_options['standard_basemap'] == 'bingroad')) 
-        || ((isset($lmm_options[ 'controlbox_bingaerial' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerial' ] == 1 )) 
-        || ((isset($lmm_options[ 'controlbox_bingaerialwithlabels' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingaerialwithlabels' ] == 1 )) 
-        || ((isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 )) 
-        ) && ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] != NULL ) 
-        )) {
-        wp_enqueue_script( 'leafletmapsmarker-bingmaps', LEAFLET_PLUGIN_URL . 'js/bing.js', array('leafletmapsmarker'), $plugin_version); 
-    }
   }
   function lmm_admin_enqueue_scripts_jquerydatepicker() {
 	wp_enqueue_script( array ( 'jquery', 'jquery-ui-tabs','jquery-ui-datepicker','jquery-ui-slider' ) );

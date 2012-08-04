@@ -52,6 +52,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			removed translation .po files from plugin to reduce file size
 			</td></tr>
 			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			merged &amp; compressed bing.js into leaflet.js to save 1 http request
+			</td></tr>
+			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
 			manual language selection for Chinese and Yiddish was broken
