@@ -267,6 +267,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: Slovak translation thanks to Zdenko Podobny
 * CHANGED: removed translation .po files from plugin to reduce file size
 * CHANGED: merged & compressed google-maps.js, bing.js into leaflet.js to save http requests
+* CHANGED: changed default color for panel text to #373737 for new installations
 * BUGFIX: manual language selection for Chinese and Yiddish was broken
 * BUGFIX: overwrite box-shadow attribute from style.css to remove border on some themes
 

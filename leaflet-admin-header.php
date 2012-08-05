@@ -57,6 +57,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			merged &amp; compressed google-maps.js, bing.js &amp;  into leaflet.js to save http requests
 			</td></tr>
 			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			changed default color for panel text to #373737 for new installations
+			</td></tr>
+			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
 			manual language selection for Chinese and Yiddish was broken

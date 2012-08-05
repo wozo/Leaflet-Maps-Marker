@@ -4044,7 +4044,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.0',
 			'title'   => __( 'Panel text css', 'lmm' ),
 			'desc'    => '',
-			'std'     => 'font-weight:bold;',
+			'std'     => 'font-weight:bold;color:#373737;',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
 		);
