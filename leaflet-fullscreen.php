@@ -104,7 +104,7 @@ if (isset($_GET['layer'])) {
 	//info: google maps
 	if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
 	if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
-	$lmm_out .= '<script type="text/javascript" src="http://www.google.com/jsapi?key=' .$google_maps_api_key . '"></script>'.PHP_EOL;
+	$lmm_out .= '<script type="text/javascript" src="https://www.google.com/jsapi?key=' .$google_maps_api_key . '"></script>'.PHP_EOL;
 	$lmm_out .= '<script type="text/javascript">'.PHP_EOL;
 	$lmm_out .= '/* <![CDATA[ */'.PHP_EOL;
 	$lmm_out .= 'var leafletmapsmarker_gmaps_L10n = {"lmm_googlemaps_language":"' . $lang . '"};'.PHP_EOL;
@@ -175,7 +175,6 @@ if (isset($_GET['layer'])) {
 	$lmm_out .= $mapname.' = new L.Map("'.$mapname.'", { dragging: ' . $lmm_options['misc_map_dragging'] . ', touchZoom: ' . $lmm_options['misc_map_touchzoom'] . ', scrollWheelZoom: ' . $lmm_options['misc_map_scrollwheelzoom'] . ', doubleClickZoom: ' . $lmm_options['misc_map_doubleclickzoom'] . ', zoomControl: ' . $lmm_options['misc_map_zoomcontrol'] . ', trackResize: ' . $lmm_options['misc_map_trackresize'] . ', closePopupOnClick: ' . $lmm_options['misc_map_closepopuponclick'] . ', crs: ' . $lmm_options['misc_projections'] . ' });'.PHP_EOL;
 	$lmm_out .= $mapname.'.attributionControl.setPrefix("' . $attrib_prefix . '");'.PHP_EOL;
 	//info: add with leaflet v0.4 - $lmm_out .= $mapname.'.attributionControl.setPosition("bottomleft");
-
 	//info: define basemaps
 	$lmm_out .= 'var osm_mapnik = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 18, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_osm_mapnik . '"});'.PHP_EOL;
 	$lmm_out .= 'var mapquest_osm = new L.TileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {maxZoom: 18, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_mapquest_osm . '", subdomains: ["otile1","otile2","otile3","otile4"]});'.PHP_EOL;
@@ -523,7 +522,7 @@ elseif (isset($_GET['marker'])) {
 	//info: google maps
 	if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
 	if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
-	$lmm_out .= '<script type="text/javascript" src="http://www.google.com/jsapi?key=' .$google_maps_api_key . '"></script>'.PHP_EOL;
+	$lmm_out .= '<script type="text/javascript" src="https://www.google.com/jsapi?key=' .$google_maps_api_key . '"></script>'.PHP_EOL;
 	$lmm_out .= '<script type="text/javascript">'.PHP_EOL;
 	$lmm_out .= '/* <![CDATA[ */'.PHP_EOL;
 	$lmm_out .= 'var leafletmapsmarker_gmaps_L10n = {"lmm_googlemaps_language":"' . $lang . '"};'.PHP_EOL;

@@ -214,7 +214,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 			<?php if ($isedit === true) { ?>
 			<tr>
 				<td><label for="shortcode"><strong><?php _e('Shortcode and API URLs','lmm') ?>:</strong></label></td>
-				<td><input style="width:200px;background:#f3efef;" type="text" value="[<?php echo $lmm_options[ 'shortcode' ]; ?> marker=&quot;<?php echo $id?>&quot;]" readonly> <a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-kml.php?marker=' . $id . '&name=' . $lmm_options[ 'misc_kml' ] . '' ?>"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-kml.png" width="14" height="14" alt="KML-Logo" /> KML</a> <a href="http://www.mapsmarker.com/kml" target="_blank" title="<?php esc_attr_e('Click here for more information on how to use as KML in Google Earth or Google Maps','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-fullscreen.php?marker=' . $id . '' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-fullscreen.png" width="14" height="14" alt="Fullscreen-Logo" /> <?php _e('Fullscreen','lmm'); ?></a> <span title="<?php esc_attr_e('Open standalone map in fullscreen mode','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://chart.googleapis.com/chart?chs=<?php echo $lmm_options[ 'misc_qrcode_size' ]; ?>x<?php echo $lmm_options[ 'misc_qrcode_size' ]; ?>&cht=qr&chl=<?php echo LEAFLET_PLUGIN_URL ?>'/leaflet-fullscreen.php?marker=<?php echo $id ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-qr-code.png" width="14" height="14" alt="QR-code-Logo" /> <?php _e('QR code','lmm'); ?></a> <span title="<?php esc_attr_e('Create QR code image for standalone map in fullscreen mode','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?marker=' . $id . '&callback=jsonp&full=yes' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-json.png" width="14" height="14" alt="GeoJSON-Logo" /> GeoJSON</a> <a href="http://www.mapsmarker.com/geojson" target="_blank" title="<?php esc_attr_e('Click here for more information on how to integrate GeoJSON into external websites or apps','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-georss.php?marker=' . $id . '' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-georss.png" width="14" height="14" alt="GeoJSON-Logo" /> GeoRSS</a> <a href="http://www.mapsmarker.com/georss" target="_blank" title="<?php esc_attr_e('Click here for more information on how to subscribe to new markers via GeoRSS','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-wikitude.php?marker=' . $id . '' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-wikitude.png" width="14" height="14" alt="Wikitude-Logo" /> Wikitude</a> <a href="http://www.mapsmarker.com/wikitude" target="_blank" title="<?php esc_attr_e('Click here for more information on how to display in Wikitude Augmented-Reality browser','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></a><br><small><?php _e('Use this shortcode in posts or pages on your website or one of the API URLs for embedding in external websites or apps','lmm') ?></small>
+				<td><input id="shortcode" style="width:200px;background:#f3efef;" type="text" value="[<?php echo $lmm_options[ 'shortcode' ]; ?> marker=&quot;<?php echo $id?>&quot;]" readonly> <a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-kml.php?marker=' . $id . '&name=' . $lmm_options[ 'misc_kml' ] . '' ?>"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-kml.png" width="14" height="14" alt="KML-Logo" /> KML</a> <a href="http://www.mapsmarker.com/kml" target="_blank" title="<?php esc_attr_e('Click here for more information on how to use as KML in Google Earth or Google Maps','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-fullscreen.php?marker=' . $id . '' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-fullscreen.png" width="14" height="14" alt="Fullscreen-Logo" /> <?php _e('Fullscreen','lmm'); ?></a> <span title="<?php esc_attr_e('Open standalone map in fullscreen mode','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://chart.googleapis.com/chart?chs=<?php echo $lmm_options[ 'misc_qrcode_size' ]; ?>x<?php echo $lmm_options[ 'misc_qrcode_size' ]; ?>&cht=qr&chl=<?php echo LEAFLET_PLUGIN_URL ?>'/leaflet-fullscreen.php?marker=<?php echo $id ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-qr-code.png" width="14" height="14" alt="QR-code-Logo" /> <?php _e('QR code','lmm'); ?></a> <span title="<?php esc_attr_e('Create QR code image for standalone map in fullscreen mode','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?marker=' . $id . '&callback=jsonp&full=yes' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-json.png" width="14" height="14" alt="GeoJSON-Logo" /> GeoJSON</a> <a href="http://www.mapsmarker.com/geojson" target="_blank" title="<?php esc_attr_e('Click here for more information on how to integrate GeoJSON into external websites or apps','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-georss.php?marker=' . $id . '' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-georss.png" width="14" height="14" alt="GeoJSON-Logo" /> GeoRSS</a> <a href="http://www.mapsmarker.com/georss" target="_blank" title="<?php esc_attr_e('Click here for more information on how to subscribe to new markers via GeoRSS','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-wikitude.php?marker=' . $id . '' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-wikitude.png" width="14" height="14" alt="Wikitude-Logo" /> Wikitude</a> <a href="http://www.mapsmarker.com/wikitude" target="_blank" title="<?php esc_attr_e('Click here for more information on how to display in Wikitude Augmented-Reality browser','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>img/icon-question-mark.png" width="12" height="12" border="0"/></a><br><small><?php _e('Use this shortcode in posts or pages on your website or one of the API URLs for embedding in external websites or apps','lmm') ?></small>
 					</td>
 			</tr>
 			<?php } ?>
@@ -244,7 +244,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					<?php } //info: addtoLayer part3/3 ?></td>
 			</tr>
 			<tr>
-				<td><label for="coords"><strong><?php _e('Coordinates','lmm') ?>:</strong></label></td>
+				<td><label for="placesearch"><strong><?php _e('Coordinates','lmm') ?>:</strong></label></td>
 				<td><p><label for="placesearch"><?php _e('Please select a place or an address','lmm') ?></label> <?php if (current_user_can('activate_plugins')) { echo '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings#google_places">' . __('(Settings)','lmm') . '</a>'; } ?>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/powered-by-google.png" /></a><br/>
 					<input style="width: 640px;" type="text" id="placesearch" name="placesearch" value="<?php $placesearch = ''; echo $placesearch ?>" />
@@ -259,30 +259,30 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 				<td><p><label for="mapwidth"><strong><?php _e('Map size','lmm') ?>:</strong></label><br/>
 					<?php _e('Width','lmm') ?>:
 					<input size="2" maxlength="4" type="text" id="mapwidth" name="mapwidth" value="<?php echo $mapwidth ?>" />
-					<input type="radio" name="mapwidthunit" value="px" <?php checked($mapwidthunit, 'px'); ?>>
-					px&nbsp;&nbsp;&nbsp;
-					<input type="radio" name="mapwidthunit" value="%" <?php checked($mapwidthunit, '%'); ?>>%<br/>
+					<input id="mapwidthunit_px" type="radio" name="mapwidthunit" value="px" <?php checked($mapwidthunit, 'px'); ?>>
+					<label for="mapwidthunit_px">px</label>&nbsp;&nbsp;&nbsp;
+					<input id="mapwidthunit_percent" type="radio" name="mapwidthunit" value="%" <?php checked($mapwidthunit, '%'); ?>><label for="mapwidthunit_percent">%</label><br/>
 					<?php _e('Height','lmm') ?>:
 					<input size="2" maxlength="4" type="text" id="mapheight" name="mapheight" value="<?php echo $mapheight ?>" />px
 					<br/><br/>
 					<label for="zoom"><strong><?php _e('Zoom','lmm') ?>:</strong></label><br/>
-					<input style="width: 30px;" type="text" id="zoom" name="zoom" value="<?php echo $zoom ?>" readonly />
+					<input style="width: 30px;" type="text" id="zoom" name="zoom" value="<?php echo $zoom ?>" />
 					<br>
 					<small>
-					<?php _e('Please change zoom level by clicking on + or - symbols or using your mouse wheel on preview map','lmm') ?>
+					<?php _e('You can also change zoom level by clicking on + or - on preview map or using your mouse wheel','lmm') ?>
 					</small>
 					<br/><br/>
-					<label for="controlbox"><strong><?php _e('Basemap/overlay controlbox on frontend','lmm') ?>:</strong></label><br/>
-					<input type="radio" name="controlbox" value="0" <?php checked($controlbox, 0); ?>><?php _e('hidden','lmm') ?><br/>
-					<input type="radio" name="controlbox" value="1" <?php checked($controlbox, 1); ?>><?php _e('collapsed (except on mobiles)','lmm') ?><br/>
-					<input type="radio" name="controlbox" value="2" <?php checked($controlbox, 2); ?>><?php _e('expanded','lmm') ?><br/>
+					<strong><?php _e('Basemap/overlay controlbox on frontend','lmm') ?>:</strong></label><br/>
+					<input id="controlbox_hidden" type="radio" name="controlbox" value="0" <?php checked($controlbox, 0); ?>><label for="controlbox_hidden"><?php _e('hidden','lmm') ?></label><br/>
+					<input id="controlbox_collapsed" type="radio" name="controlbox" value="1" <?php checked($controlbox, 1); ?>><label for="controlbox_collapsed"><?php _e('collapsed (except on mobiles)','lmm') ?></label><br/>
+					<input id="controlbox_expanded" type="radio" name="controlbox" value="2" <?php checked($controlbox, 2); ?>><label for="controlbox_expanded"><?php _e('expanded','lmm') ?></label><br/>
 					<small><?php _e('Controlbox on backend is always expanded','lmm') ?></small>
 					<br/><br/>
-					<label for="panel"><strong><?php _e('Panel for displaying marker name and API URLs on top of map','lmm') ?>:</strong></label><br/>
-					<input type="radio" name="panel" value="1" <?php checked($panel, 1 ); ?>>
-					<?php _e('show','lmm') ?><br/>
-					<input type="radio" name="panel" value="0" <?php checked($panel, 0 ); ?>>
-					<?php _e('hide','lmm') ?>
+					<strong><?php _e('Panel for displaying marker name and API URLs on top of map','lmm') ?>:</strong><br/>
+					<input id="panel_show" type="radio" name="panel" value="1" <?php checked($panel, 1 ); ?>>
+					<label for="panel_show"><?php _e('show','lmm') ?></label><br/>
+					<input id="panel_hide" type="radio" name="panel" value="0" <?php checked($panel, 0 ); ?>>
+					<label for="panel_hide"><?php _e('hide','lmm') ?></label>
 					<br/><br/>				
 					<script type="text/javascript">
 						var $j = jQuery.noConflict();
@@ -301,7 +301,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 							showSecond: true,
 						});});
 					</script>
-					<label for="kml_datetime"><strong><?php _e('Timestamp for KML animation','lmm') ?>:</strong></label> <a href="http://www.mapsmarker.com/kml-timestamp" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>img/icon-question-mark.png" title="<?php esc_attr_e('Click here for more information on animations in KML/Google Earth','lmm'); ?>" width="12" height="12" border="0"/></a><br/>
+					<label for="kml_timestamp"><strong><?php _e('Timestamp for KML animation','lmm') ?>:</strong></label> <a href="http://www.mapsmarker.com/kml-timestamp" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>img/icon-question-mark.png" title="<?php esc_attr_e('Click here for more information on animations in KML/Google Earth','lmm'); ?>" width="12" height="12" border="0"/></a><br/>
 					<input type="text" id="kml_timestamp" name="kml_timestamp" value="<?php echo $kml_timestamp ; ?>" style="width:145px;background-image:url(<?php echo LEAFLET_PLUGIN_URL; ?>img/icon-calendar.png);background-position:123px center;background-repeat:no-repeat;" /><br/>
 					<small><?php _e('If empty, marker creation date will be used','lmm') ?><br/></small></p>
 				</td>
@@ -411,7 +411,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 			</tr>
 			
 			<tr>
-				<td><label for="icon"><strong><?php _e('Icon', 'lmm') ?>:</strong></label>
+				<td><label for="default_icon"><strong><?php _e('Icon', 'lmm') ?>:</strong></label>
 					<br/>
 					<br/>
 					<a title="Maps Icons Collection - http://mapicons.nicolasmollet.com" href="http://mapicons.nicolasmollet.com" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>img/logo-mapicons.gif" width="88" heigh="31" /></a><br/>
@@ -423,22 +423,21 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					?>
 					</small>
 				</td>
-				<td><div style="text-align:center;float:left;"><img src="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' ?>" width="32" height="37" /><br/>
-						<input onchange="updateicon(this.value);" type="radio" name="icon" value="" <?php echo ($icon == NULL ? ' checked' : '')?>>
+				<td><div style="text-align:center;float:left;line-height:0px;margin-bottom:3px;"><label for="default_icon"><img src="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' ?>" width="32" height="37" /></label><br/><input id="default_icon" style="margin:1px 0 0 1px;" onchange="updateicon(this.value);" type="radio" name="icon" value="" <?php echo ($icon == NULL ? ' checked' : '')?>>
 					</div>
-					<?php
-foreach ($iconlist as $row)
-  echo '<div style="text-align:center;float:left;"><img id="iconpreview" src="' . LEAFLET_PLUGIN_ICONS_URL . '/' . $row . '" title="' . $row . '" alt="' . $row . '" width="32" height="37" /><br/><input onchange="updateicon(this.value);" type="radio" name="icon" value="'.$row.'"'.($row == $icon ? ' checked' : '').'></div>';
+					<?php 
+					foreach ($iconlist as $row)
+					  echo '<div style="text-align:center;float:left;line-height:0px;margin-bottom:3px;"><label for="'.$row.'"><img src="' . LEAFLET_PLUGIN_ICONS_URL . '/' . $row . '" title="' . $row . '" alt="' . $row . '" width="32" height="37" /></label><br/><input id="'.$row.'" style="margin:1px 0 0 1px;" onchange="updateicon(this.value);" type="radio" name="icon" value="'.$row.'"'.($row == $icon ? ' checked' : '').'></div>';
 ?></td>
 			</tr>
 			<tr>
 				<td><label for="popuptext"><strong><?php _e('Popup text','lmm') ?>:</strong></label>
 				<br /><br />
 				<?php _e('open by default?','lmm') ?><br/>
-				<input type="radio" name="openpopup" value="0" <?php checked($openpopup, 0 ); ?>>
-				<?php _e('no','lmm') ?>&nbsp;&nbsp;&nbsp;
-				<input type="radio" name="openpopup" value="1" <?php checked($openpopup, 1); ?>>
-				<?php _e('yes','lmm') ?><br/>
+				<input id="openpopup_no" type="radio" name="openpopup" value="0" <?php checked($openpopup, 0 ); ?>>
+				<label for="openpopup_no"><?php _e('no','lmm') ?></label>&nbsp;&nbsp;&nbsp;
+				<input id="openpopup_yes" type="radio" name="openpopup" value="1" <?php checked($openpopup, 1); ?>>
+				<label for="openpopup_yes"><?php _e('yes','lmm') ?></label><br/>
 				<small>
 				<?php _e('If no is selected, the popup will only be visible after clicking on the marker on marker- or layer-maps. If yes is selected, the popup is shown by default on marker-maps but not on layer-maps, where this feature is not supported','lmm') ?>
 				</small></p>
@@ -841,7 +840,15 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
       marker.bindPopup('<?php echo preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$popuptext) ?>')<?php  if ($openpopup == 1) { echo '.openPopup()'; } ?>;
       <?php }?>
   });
-  var mapElement = $('#selectlayer'), mapWidth = $('#mapwidth'), mapHeight = $('#mapheight'), popupText = $('#popuptext'), lat = $('#lat'), lon = $('#lon'), panel = $('#lmm-panel'), lmm = $('#lmm'), markername = $('#markername');
+  var mapElement = $('#selectlayer'), mapWidth = $('#mapwidth'), mapHeight = $('#mapheight'), popupText = $('#popuptext'), lat = $('#lat'), lon = $('#lon'), panel = $('#lmm-panel'), lmm = $('#lmm'), markername = $('#markername'), zoom = $('#zoom');
+	//info: change zoom level when changing form field
+	zoom.on('blur', function(e) {
+		if(isNaN(zoom.val())) {
+                alert('<?php esc_attr_e('Invalid format! Please only use numbers!','lmm') ?>');
+		} else {
+		selectlayer.setZoom(zoom.val());
+		}
+	});
 	//info: bugfix causing maps not to show up in WP 3.0 and errors in WP <3.3
 	<?php if ( version_compare( $wp_version, '3.3', '>=' ) ) { ?>
 	markername.on('blur', function(e) { 
