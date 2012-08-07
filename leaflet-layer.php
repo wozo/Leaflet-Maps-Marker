@@ -695,8 +695,8 @@ var markers = {};
 	<?php 
 		$attrib_prefix = '<a href=\"http://mapsmarker.com/go\" target=\"_blank\" title=\"powered by \'Leaflet Maps Marker\'-Plugin for WordPress\">MapsMarker.com</a> (<a href=\"http://leaflet.cloudmade.com\" target=\"_blank\" title=\"\'Leaflet Maps Marker\' uses the JavaScript library \'Leaflet\' for interactive maps by CloudMade\">Leaflet</a>, <a href=\"http://mapicons.nicolasmollet.com\" target=\"_blank\" title=\"\'Leaflet Maps Marker\' uses icons from the \'Maps Icons Collection\'\">Icons</a>)';
 		$attrib_osm_mapnik = __("Map",'lmm').': &copy; ' . date("Y") . ' <a href=\"http://www.openstreetmap.org\" target=\"_blank\">OpenStreetMap contributors</a>, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">CC-BY-SA</a>';
-		$attrib_mapquest_osm = __("Map",'lmm').': Tiles Courtesy of <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"' . LEAFLET_PLUGIN_URL . 'img/logo-mapquest.png\" style=\"\" />';
-		$attrib_mapquest_aerial = __("Map",'lmm').': <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"' . LEAFLET_PLUGIN_URL . 'img/logo-mapquest.png\" />, Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency';
+		$attrib_mapquest_osm = __("Map",'lmm').': Tiles Courtesy of <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"' . LEAFLET_PLUGIN_URL . 'img/logo-mapquest.png\" style=\"display:inline;\" />';
+		$attrib_mapquest_aerial = __("Map",'lmm').': <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"' . LEAFLET_PLUGIN_URL . 'img/logo-mapquest.png\" style=\"display:inline;\" />, Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency';
 		$attrib_ogdwien_basemap = __("Map",'lmm').': ' . __("City of Vienna","lmm") . ' (<a href=\"http://data.wien.gv.at\" target=\"_blank\" style=\"\">data.wien.gv.at</a>)';
 		$attrib_ogdwien_satellite = __("Map",'lmm').': ' . __("City of Vienna","lmm") . ' (<a href=\"http://data.wien.gv.at\" target=\"_blank\">data.wien.gv.at</a>)';
 		$attrib_cloudmade = __("Map",'lmm').': &copy; ' . date("Y") . ' <a href=\"http://www.openstreetmap.org\" target=\"_blank\" style=\"\">OpenStreetMap contributors</a>, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\" target=\"_blank\">CC-BY-SA</a>, Imagery &copy; <a href=\"http://cloudmade.com\" target=\"_blank\">CloudMade</a>';
@@ -1078,127 +1078,112 @@ var markers = {};
 		selectlayer.setView(mapcentermarker_new, selectlayer.getZoom());
 	});
 })(jQuery)
-	gLoader = function(){
-		var script;
-		var init = false;
-		var loaded = false;
-		function check(){
-			if(loaded) {
-			} else {
-				if(!init) {
-					init = true;
-					load();
-				}
-			}
-		}
-		function setup(){
-			//info: disabled with v2.5/Google Maps
-			//check(gLoader.loadMap);
-			return true;
-			}
-		function load(){
-		script = document.createElement("script");
-		script.type = "text/javascript";
-			script.src = ('https:' == document.location.protocol ? 'https://www.google.com/jsapi?' : 'http://www.google.com/jsapi?') + 'callback=gLoader.loadMap';
-		script.setAttribute("id", "googleloader");
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(script, s);
-		}
-		function loadMap() {
-			/*
-			info: if you in-comment this, Google Adress search won´t work anymore because of GoogleMaps basemap integration
-			google.load("maps", "3",  {callback: gLoader.autocomplete, other_params:"sensor=false&libraries=places&language=<?php if ( defined('WPLANG') ) { echo substr(WPLANG, 0, 2); } else { echo 'en'; } ?>"});  //info: get locale from wp-config with fallback if not set
-			return true;
-			*/
-			return true;
-		}
-		function initAutocomplete() {
-			var input = document.getElementById('placesearch');
-			<?php if ($lmm_options[ 'google_places_bounds_status' ] == 'enabled') { ?>
-			var defaultBounds = new google.maps.LatLngBounds(
-				new google.maps.LatLng(<?php echo floatval($lmm_options[ 'google_places_bounds_lat1' ]) ?>, <?php echo floatval($lmm_options[ 'google_places_bounds_lon1' ]) ?>),
-				new google.maps.LatLng(<?php echo floatval($lmm_options[ 'google_places_bounds_lat2' ]) ?>, <?php echo floatval($lmm_options[ 'google_places_bounds_lon2' ]) ?>));
+//info: Google address autocomplete
+gLoader = function(){
+	function initAutocomplete() {
+		var input = document.getElementById('placesearch');
+		<?php if ($lmm_options[ 'google_places_bounds_status' ] == 'enabled') { ?>
+		var defaultBounds = new google.maps.LatLngBounds(
+			new google.maps.LatLng(<?php echo floatval($lmm_options[ 'google_places_bounds_lat1' ]) ?>, <?php echo floatval($lmm_options[ 'google_places_bounds_lon1' ]) ?>),
+			new google.maps.LatLng(<?php echo floatval($lmm_options[ 'google_places_bounds_lat2' ]) ?>, <?php echo floatval($lmm_options[ 'google_places_bounds_lon2' ]) ?>));
+		<?php }?>
+		var autocomplete = new google.maps.places.Autocomplete(input<?php if ($lmm_options[ 'google_places_bounds_status' ] == 'enabled') { echo ', {bounds: defaultBounds}'; } ?>);
+		input.onfocus = function(){
+			<?php if ($lmm_options[ 'google_places_search_prefix_status' ] == 'enabled' ) { ?>
+			input.value = "<?php echo addslashes($lmm_options[ 'google_places_search_prefix' ]); ?>";
+			<?php } ?>
+		};
+		google.maps.event.addListener(autocomplete, 'place_changed', function() {
+			var place = autocomplete.getPlace();
+			var map = selectlayer;
+			var markerLocation = new L.LatLng(place.geometry.location.lat(), place.geometry.location.lng());
+			mapcentermarker.setLatLng(markerLocation);
+			map.setView(markerLocation, selectlayer.getZoom());
+			document.getElementById('layerviewlat').value = place.geometry.location.lat().toFixed(6);
+			document.getElementById('layerviewlon').value = place.geometry.location.lng().toFixed(6);
+			<?php if ($lmm_options[ 'ogdvienna_selector' ] != 'disabled') { ?>
+			//info: set OGD Vienna basemap if position between 48.321560/16.182175 and 48.116142/16.579056
+			if ( ('<?php echo $basemap ?>' != 'ogdwien_basemap') && ('<?php echo $basemap ?>' != 'ogdwien_satellite') && (place.geometry.location.lat().toFixed(6) <= 48.321560) && (place.geometry.location.lat().toFixed(6) >= 48.116142) && (place.geometry.location.lng().toFixed(6) >= 16.182175) && (place.geometry.location.lng().toFixed(6) <= 16.579056) ) {
+			selectlayer.attributionControl._attributions = [];
+			selectlayer.removeControl(layersControl).addLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>);
+			<?php if ( (isset($lmm_options[ 'ogdvienna_selector_addresses' ]) == TRUE) && ($lmm_options[ 'ogdvienna_selector_addresses' ] == 1) ) { ?>
+				selectlayer.addLayer(overlays_custom);
 			<?php }?>
-			var autocomplete = new google.maps.places.Autocomplete(input<?php if ($lmm_options[ 'google_places_bounds_status' ] == 'enabled') { echo ', {bounds: defaultBounds}'; } ?>);
-			input.onfocus = function(){
-				<?php if ($lmm_options[ 'google_places_search_prefix_status' ] == 'enabled' ) { ?>
-				input.value = "<?php echo addslashes($lmm_options[ 'google_places_search_prefix' ]); ?>";
-				<?php } ?>
-			};
-			google.maps.event.addListener(autocomplete, 'place_changed', function() {
-				var place = autocomplete.getPlace();
-				var map = selectlayer;
-				var markerLocation = new L.LatLng(place.geometry.location.lat(), place.geometry.location.lng());
-				mapcentermarker.setLatLng(markerLocation);
-				map.setView(markerLocation, selectlayer.getZoom());
-				document.getElementById('layerviewlat').value = place.geometry.location.lat().toFixed(6);
-				document.getElementById('layerviewlon').value = place.geometry.location.lng().toFixed(6);
-				<?php if ($lmm_options[ 'ogdvienna_selector' ] != 'disabled') { ?>
-				//info: set OGD Vienna basemap if position between 48.321560/16.182175 and 48.116142/16.579056
-				if ( ('<?php echo $basemap ?>' != 'ogdwien_basemap') && ('<?php echo $basemap ?>' != 'ogdwien_satellite') && (place.geometry.location.lat().toFixed(6) <= 48.321560) && (place.geometry.location.lat().toFixed(6) >= 48.116142) && (place.geometry.location.lng().toFixed(6) >= 16.182175) && (place.geometry.location.lng().toFixed(6) <= 16.579056) ) {
+			selectlayer.addControl(layersControl);
+			}
+			//info: set basemap back to OSM if marker outside of Vienna boundaries
+			if( (place.geometry.location.lat().toFixed(6) > 48.321560) || (place.geometry.location.lat().toFixed(6) < 48.116142) || (place.geometry.location.lng().toFixed(6) < 16.182175) || (place.geometry.location.lng().toFixed(6) > 16.579056) ) 
+			{
 				selectlayer.attributionControl._attributions = [];
-				selectlayer.removeControl(layersControl).addLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>);
-				<?php if ( (isset($lmm_options[ 'ogdvienna_selector_addresses' ]) == TRUE) && ($lmm_options[ 'ogdvienna_selector_addresses' ] == 1) ) { ?>
-					selectlayer.addLayer(overlays_custom);
-				<?php }?>
-				selectlayer.addControl(layersControl);
+				if ('<?php echo $basemap ?>' == 'osm_mapnik') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(osm_mapnik);
+				} else if ('<?php echo $basemap ?>' == 'mapquest_osm') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(mapquest_osm);
+				} else if ('<?php echo $basemap ?>' == 'mapquest_aerial') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(mapquest_aerial);
+				} else if ('<?php echo $basemap ?>' == 'googleLayer_roadmap') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(googleLayer_roadmap);
+				} else if ('<?php echo $basemap ?>' == 'googleLayer_satellite') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(googleLayer_satellite);
+				} else if ('<?php echo $basemap ?>' == 'googleLayer_hybrid') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(googleLayer_hybrid);
+				} else if ('<?php echo $basemap ?>' == 'googleLayer_terrain') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(googleLayer_terrain);
+				} else if ('<?php echo $basemap ?>' == 'bingaerial') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(bingaerial);
+				} else if ('<?php echo $basemap ?>' == 'bingaerialwithlabels') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(bingaerialwithlabels);
+				} else if ('<?php echo $basemap ?>' == 'bingroad') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(bingroad);
+				} else if ('<?php echo $basemap ?>' == 'cloudmade') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(cloudmade);
+				} else if ('<?php echo $basemap ?>' == 'cloudmade2') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(cloudmade2);
+				} else if ('<?php echo $basemap ?>' == 'cloudmade3') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(cloudmade3);
+				} else if ('<?php echo $basemap ?>' == 'mapbox') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(mapbox);
+				} else if ('<?php echo $basemap ?>' == 'mapbox2') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(mapbox2);
+				} else if ('<?php echo $basemap ?>' == 'mapbox3') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(mapbox3);
+				} else if ('<?php echo $basemap ?>' == 'custom_basemap') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(custom_basemap);
+				} else if ('<?php echo $basemap ?>' == 'custom_basemap2') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(custom_basemap2);
+				} else if ('<?php echo $basemap ?>' == 'custom_basemap3') {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(custom_basemap3);
+				} else  {
+					selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(osm_mapnik);
 				}
-				//info: set basemap back to OSM if marker outside of Vienna boundaries
-				if( (place.geometry.location.lat().toFixed(6) > 48.321560) || (place.geometry.location.lat().toFixed(6) < 48.116142) || (place.geometry.location.lng().toFixed(6) < 16.182175) || (place.geometry.location.lng().toFixed(6) > 16.579056) ) 
+				if (('<?php echo $basemap ?>' == 'ogdwien_basemap') || ('<?php echo $basemap ?>' == 'ogdwien_satellite'))
 				{
-					selectlayer.attributionControl._attributions = [];
-					if ('<?php echo $basemap ?>' == 'googleLayer_roadmap') {
-						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(googleLayer_roadmap);
-					} else if ('<?php echo $basemap ?>' == 'googleLayer_satellite') {
-						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(googleLayer_satellite);
-					} else if ('<?php echo $basemap ?>' == 'googleLayer_hybrid') {
-						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(googleLayer_hybrid);
-					} else if ('<?php echo $basemap ?>' == 'osm_mapnik') {
-						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(osm_mapnik);
-					} else if ('<?php echo $basemap ?>' == 'mapquest_osm') {
-						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(mapquest_osm);
-					} else if ('<?php echo $basemap ?>' == 'mapquest_aerial') {
-						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(mapquest_aerial);
-					} else  {
-						selectlayer.removeLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>).removeControl(layersControl).addLayer(osm_mapnik);
-					}
-					if (('<?php echo $basemap ?>' == 'ogdwien_basemap') || ('<?php echo $basemap ?>' == 'ogdwien_satellite'))
-					{
-					selectlayer.removeLayer(overlays_custom);
-					}
-					selectlayer.addControl(layersControl);					
-					selectlayer.attributionControl.addAttribution("<?php echo $attrib_osm_mapnik ?>");
+				selectlayer.removeLayer(overlays_custom);
 				}
-				<?php }?>
-				
-			 });
-			var input = document.getElementById('placesearch');
-			google.maps.event.addDomListener(input, 'keydown', 
-			function(e) {
-							if (e.keyCode == 13)
-							{
-											if (e.preventDefault)
-											{
+				selectlayer.addControl(layersControl);					
+				//2do - delete? selectlayer.attributionControl.addAttribution("<?php echo $attrib_osm_mapnik ?>");
+			}
+			<?php }?>
+			
+		 });
+		var input = document.getElementById('placesearch');
+		google.maps.event.addDomListener(input, 'keydown', 
+		function(e) {
+							if (e.keyCode == 13) {
+											if (e.preventDefault) {
 															e.preventDefault();
-											}
-											else
-											{
-															//info: Since the google event handler framework does not handle	early IE versions, we have to do it by our self. :-(
+											} else { //info:  Since the google event handler framework does not handle early IE versions, we have to do it by our self. :-(
 															e.cancelBubble = true;
 															e.returnValue = false;
 											}
 							}
 			});			
-		}				
-		return{
-		//info: disabled with v2.5/Google Maps - delete? 
-		//setup:setup,
-		//check:check,
-		//loadMap:loadMap,
-		autocomplete:initAutocomplete
-		}
-	}();
-	gLoader.autocomplete();
+	}				
+	return{
+	autocomplete:initAutocomplete
+	}
+}();
+gLoader.autocomplete();
 /* //]]> */
 </script>
 <?php //info: check if marker exists - part 2 

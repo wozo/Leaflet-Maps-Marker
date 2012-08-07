@@ -275,6 +275,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: fixed broken links in multi-layer-maps-list and default state controlbox on layer maps on backend 
 * BUGFIX: manual language selection for Chinese and Yiddish was broken
 * BUGFIX: overwrite box-shadow attribute from style.css to remove border on some themes
+* BUGFIX: linebreak was added to mapquest logo in attribution box on some templates
+* BUGFIX: Google API key was not loaded on backend
+* BUGFIX: Marker/layer repositioning via Google address search did not changed basemap to Bing/Google
 
 = v2.7 - 21.07.2012 =
 * "Special Collectors Edition" :-)
