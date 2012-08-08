@@ -57,6 +57,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			Slovak translation thanks to Zdenko Podobny
 			</td></tr>
 			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			marker icons filename gets added as css classname to each marker
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			better aligned marker shadow image with marker image
+			</td></tr>
+			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
 			secure loading of Google API via https instead of http
@@ -64,7 +74,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
-			optimized usability for forms on backend
+			optimized usability for forms and marker icon selection on backend
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">

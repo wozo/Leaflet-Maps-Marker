@@ -267,8 +267,10 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: zoom level can now also be edited directly on marker/layer maps on backend
 * NEW: added bing/google/mapbox/cloudmad basemaps to mass actions on tools page
 * NEW: Slovak translation thanks to Zdenko Podobny
+* NEW: marker icons filename gets added as css classname to each marker
+* CHANGED: better aligned marker shadow image with marker image
 * CHANGED: secure loading of Google API via https instead of http
-* CHANGED: optimized usability for forms on backend
+* CHANGED: optimized usability for forms and marker icon selection on backend
 * CHANGED: removed translation .po files from plugin to reduce file size
 * CHANGED: merged & compressed google-maps.js, bing.js into leaflet.js to save http requests
 * CHANGED: changed default color for panel text to #373737 for new installations

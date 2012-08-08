@@ -742,9 +742,12 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
 	?>
   .addControl(layersControl);
   marker = new L.Marker(new L.LatLng(<?php echo $lat . ", " . $lon; ?>));
-  <?php if ($icon != NULL) { ?>
-  marker.options.icon = new L.Icon('<?php echo LEAFLET_PLUGIN_ICONS_URL . '/'.$icon ?>');
-  <?php }?>
+//RH
+  <?php if ($icon == NULL) { 
+  	echo "marker.options.icon = new L.Icon({iconUrl: '" . LEAFLET_PLUGIN_URL . "leaflet-dist/images/marker.png',iconSize: [32, 37],iconAnchor: [17, 36],popupAnchor: [-3, -76],shadowUrl: '" . LEAFLET_PLUGIN_URL . "/leaflet-dist/images/marker-shadow.png',shadowSize: [41, 41],shadowAnchor: [16, 43],className: 'lmm_marker_icon_default'});".PHP_EOL;
+  } else {
+  	echo "marker.options.icon = new L.Icon({iconUrl: '" . LEAFLET_PLUGIN_ICONS_URL . "/" . $icon . "',iconSize: [32, 37],iconAnchor: [17, 36],popupAnchor: [-3, -76],shadowUrl: '" . LEAFLET_PLUGIN_URL . "/leaflet-dist/images/marker-shadow.png',shadowSize: [41, 41],shadowAnchor: [16, 43],className: 'lmm_marker_icon_" . substr($icon, 0, -4) . "'});".PHP_EOL;
+  } ?>
   <?php if ( ($popuptext == NULL) && ($lmm_options['directions_popuptext_panel'] == 'no') ) { ?>
   marker.options.clickable = false;
   <?php }?>
@@ -911,12 +914,13 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
 	});
 })(jQuery)
 //info: update marker icon upon click
+//RH 
 function updateicon(newicon) {
   if(newicon) {
-  marker.setIcon(new L.Icon('<?php echo LEAFLET_PLUGIN_ICONS_URL . '/' ?>' + newicon));
+  marker.setIcon(new L.Icon({iconUrl: '<?php echo LEAFLET_PLUGIN_ICONS_URL . '/' ?>' + newicon,iconSize: [32, 37],iconAnchor: [17, 36],popupAnchor: [-3, -76],shadowUrl: '<?php echo LEAFLET_PLUGIN_URL ?>/leaflet-dist/images/marker-shadow.png',shadowSize: [41, 41],shadowAnchor: [16, 43],className: 'lmm_marker_icon_default'}));
   }
   if(!newicon) {
-  marker.setIcon(new L.Icon('<?php echo LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' ?>'));
+  marker.setIcon(new L.Icon({iconUrl: '<?php echo LEAFLET_PLUGIN_URL . '/leaflet-dist/images/marker.png' ?>',iconSize: [32, 37],iconAnchor: [17, 36],popupAnchor: [-3, -76],shadowUrl: '<?php echo LEAFLET_PLUGIN_URL ?>/leaflet-dist/images/marker-shadow.png',shadowSize: [41, 41],shadowAnchor: [16, 43],className: 'lmm_marker_icon_<?php echo substr($icon, 0, -4); ?>'}));
   }
 }
 //info: Google address autocomplete
