@@ -94,23 +94,25 @@ if (isset($_GET['layer'])) {
 	$lmm_out .= '<link rel="stylesheet" id="leafletmapsmarker-ie-only-css" href="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.ie.css" type="text/css" media="all" / >'.PHP_EOL;
 	$lmm_out .= '<![endif]-->'.PHP_EOL;
 	$lmm_out .= '<script type="text/javascript" src="' . site_url() . '/wp-includes/js/jquery/jquery.js"></script>'.PHP_EOL;
+	//info: Google API key
+	if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
+	$lmm_out .= '<script type="text/javascript" src="https://www.google.com/jsapi?key=' .$google_maps_api_key . '"></script>'.PHP_EOL;
+	//info: Google language localization (JSON API)
+	if ($lmm_options['google_maps_language_localization'] == 'browser_setting') {
+		$google_language = '';
+	} else if ($lmm_options['google_maps_language_localization'] == 'wordpress_setting') {
+		if ( defined('WPLANG') ) { $google_language = substr(WPLANG, 0, 2); } else { $google_language =  'en'; }
+	} else {
+		$google_language = $lmm_options['google_maps_language_localization'];
+	}
+	if ( is_admin() ) { $gmaps_libraries = '&libraries=places'; } else { $gmaps_libraries =  ''; }
 	$lmm_out .= '<script type="text/javascript">'.PHP_EOL;
 	$lmm_out .= '/* <![CDATA[ */'.PHP_EOL;
-	$lmm_out .= 'var leafletmapsmarker_L10n = {"lmm_zoom_in":"' . __('Zoom in','lmm') . '","lmm_zoom_out":"' . __('Zoom out','lmm') . '"};'.PHP_EOL;
+	$lmm_out .= 'var leafletmapsmarker_L10n = {"lmm_zoom_in":"' . __('Zoom in','lmm') . '","lmm_zoom_out":"' . __('Zoom out','lmm') . '","lmm_googlemaps_language":"' . $google_language . '","lmm_googlemaps_libraries":"' . $gmaps_libraries . '"};'.PHP_EOL;
 	$lmm_out .= '/* ]]> */'.PHP_EOL;
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<style>form { margin: 0 ; } </style>'.PHP_EOL; //info: for layer controlbox
 	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js?ver=' . $plugin_version . '" type="text/css" media="all"></script>'.PHP_EOL;
-	//info: google maps
-	if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
-	if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
-	$lmm_out .= '<script type="text/javascript" src="https://www.google.com/jsapi?key=' .$google_maps_api_key . '"></script>'.PHP_EOL;
-	$lmm_out .= '<script type="text/javascript">'.PHP_EOL;
-	$lmm_out .= '/* <![CDATA[ */'.PHP_EOL;
-	$lmm_out .= 'var leafletmapsmarker_gmaps_L10n = {"lmm_googlemaps_language":"' . $lang . '"};'.PHP_EOL;
-	$lmm_out .= '/* ]]> */'.PHP_EOL;
-	$lmm_out .= '</script>'.PHP_EOL;
-	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'js/gmaps-frontend.js"></script>'.PHP_EOL;
 	$lmm_out .= '</head>'.PHP_EOL;
 	$lmm_out .= '<body style="margin:0;padding:0;height:100%;background: ' . addslashes($lmm_options[ 'defaults_layer_panel_background_color' ]) . ';overflow:hidden;">'.PHP_EOL;
 	//info: panel for layer/marker name and API URLs
@@ -174,7 +176,10 @@ if (isset($_GET['layer'])) {
 	$lmm_out .= '(function($) {'.PHP_EOL;
 	$lmm_out .= $mapname.' = new L.Map("'.$mapname.'", { dragging: ' . $lmm_options['misc_map_dragging'] . ', touchZoom: ' . $lmm_options['misc_map_touchzoom'] . ', scrollWheelZoom: ' . $lmm_options['misc_map_scrollwheelzoom'] . ', doubleClickZoom: ' . $lmm_options['misc_map_doubleclickzoom'] . ', zoomControl: ' . $lmm_options['misc_map_zoomcontrol'] . ', trackResize: ' . $lmm_options['misc_map_trackresize'] . ', closePopupOnClick: ' . $lmm_options['misc_map_closepopuponclick'] . ', crs: ' . $lmm_options['misc_projections'] . ' });'.PHP_EOL;
 	$lmm_out .= $mapname.'.attributionControl.setPrefix("' . $attrib_prefix . '");'.PHP_EOL;
-	//info: add with leaflet v0.4 - $lmm_out .= $mapname.'.attributionControl.setPosition("bottomleft");
+	//info: move attribution control to bottom left when using Google Maps
+	if ( ($basemap == 'googleLayer_roadmap' ) || ($basemap == 'googleLayer_satellite' ) || ($basemap == 'googleLayer_hybrid' ) || ($basemap == 'googleLayer_terrain' ) ) {
+		$lmm_out .= $mapname.'.attributionControl.setPosition("bottomleft");'.PHP_EOL;
+	}
 	//info: define basemaps
 	$lmm_out .= 'var osm_mapnik = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 18, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_osm_mapnik . '"});'.PHP_EOL;
 	$lmm_out .= 'var mapquest_osm = new L.TileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {maxZoom: 18, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_mapquest_osm . '", subdomains: ["otile1","otile2","otile3","otile4"]});'.PHP_EOL;
@@ -512,23 +517,25 @@ elseif (isset($_GET['marker'])) {
 	$lmm_out .= '<link rel="stylesheet" id="leafletmapsmarker-ie-only-css" href="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.ie.css" type="text/css" media="all" / >'.PHP_EOL;
 	$lmm_out .= '<![endif]-->'.PHP_EOL;
 	$lmm_out .= '<script type="text/javascript" src="' . site_url() . '/wp-includes/js/jquery/jquery.js"></script>'.PHP_EOL;
+	//info: Google API key
+	if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
+	$lmm_out .= '<script type="text/javascript" src="https://www.google.com/jsapi?key=' .$google_maps_api_key . '"></script>'.PHP_EOL;
+	//info: Google language localization (JSON API)
+	if ($lmm_options['google_maps_language_localization'] == 'browser_setting') {
+		$google_language = '';
+	} else if ($lmm_options['google_maps_language_localization'] == 'wordpress_setting') {
+		if ( defined('WPLANG') ) { $google_language = substr(WPLANG, 0, 2); } else { $google_language =  'en'; }
+	} else {
+		$google_language = $lmm_options['google_maps_language_localization'];
+	}
+	if ( is_admin() ) { $gmaps_libraries = '&libraries=places'; } else { $gmaps_libraries =  ''; }
 	$lmm_out .= '<script type="text/javascript">'.PHP_EOL;
 	$lmm_out .= '/* <![CDATA[ */'.PHP_EOL;
-	$lmm_out .= 'var leafletmapsmarker_L10n = {"lmm_zoom_in":"' . __('Zoom in','lmm') . '","lmm_zoom_out":"' . __('Zoom out','lmm') . '"};'.PHP_EOL;
+	$lmm_out .= 'var leafletmapsmarker_L10n = {"lmm_zoom_in":"' . __('Zoom in','lmm') . '","lmm_zoom_out":"' . __('Zoom out','lmm') . '","lmm_googlemaps_language":"' . $google_language . '","lmm_googlemaps_libraries":"' . $gmaps_libraries . '"};'.PHP_EOL;
 	$lmm_out .= '/* ]]> */'.PHP_EOL;
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<style>form { margin: 0 ; } </style>'.PHP_EOL; //info: for layer controlbox
 	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js?ver=' . $plugin_version . '" type="text/css" media="all"></script>'.PHP_EOL;
-	//info: google maps
-	if ( defined('WPLANG') ) { $lang = substr(WPLANG, 0, 2); } else { $lang =  'en'; }
-	if ( isset($lmm_options['google_maps_api_key']) && ($lmm_options['google_maps_api_key'] != NULL) ) { $google_maps_api_key = $lmm_options['google_maps_api_key']; } else { $google_maps_api_key = ''; }
-	$lmm_out .= '<script type="text/javascript" src="https://www.google.com/jsapi?key=' .$google_maps_api_key . '"></script>'.PHP_EOL;
-	$lmm_out .= '<script type="text/javascript">'.PHP_EOL;
-	$lmm_out .= '/* <![CDATA[ */'.PHP_EOL;
-	$lmm_out .= 'var leafletmapsmarker_gmaps_L10n = {"lmm_googlemaps_language":"' . $lang . '"};'.PHP_EOL;
-	$lmm_out .= '/* ]]> */'.PHP_EOL;
-	$lmm_out .= '</script>'.PHP_EOL;
-	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'js/gmaps-frontend.js"></script>'.PHP_EOL;
 	$lmm_out .= '</head>'.PHP_EOL;
 	$lmm_out .= '<body style="margin:0;padding:0;height:100%;background: ' . addslashes($lmm_options[ 'defaults_marker_panel_background_color' ]) . ';overflow:hidden;">'.PHP_EOL;
 	//info: panel for layer/marker name and API URLs
@@ -536,13 +543,22 @@ elseif (isset($_GET['marker'])) {
 		$lmm_out .= '<div id="panel_top_' . $uid . '" style="background: ' . addslashes($lmm_options[ 'defaults_marker_panel_background_color' ]) . '; width:99%; padding:5px;">'.PHP_EOL;
 		$lmm_out .= '<span style="' . addslashes($lmm_options[ 'defaults_marker_panel_paneltext_css' ]) . '">' . $paneltext . '</span><span class="lmm-panel-api-fullscreen">';
 		if ( (isset($lmm_options[ 'defaults_marker_panel_directions' ] ) == TRUE ) && ( $lmm_options[ 'defaults_marker_panel_directions' ] == 1 ) ) {
+				//info: Google language localization (directions)
+				if ($lmm_options['google_maps_language_localization'] == 'browser_setting') {
+					$google_language = '';
+				} else if ($lmm_options['google_maps_language_localization'] == 'wordpress_setting') {
+					if ( defined('WPLANG') ) { $google_language = '&hl=' . substr(WPLANG, 0, 2); } else { $google_language =  '&hl=en'; }
+				} else {
+					$google_language = '&hl=' . $lmm_options['google_maps_language_localization'];
+				}
+				//info: build directions provider links
 				if ($lmm_options['directions_provider'] == 'googlemaps') {
 					if ((isset($lmm_options[ 'directions_googlemaps_route_type_walking' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_walking' ] == 1 )) { $yours_transport_type_icon = 'icon-walk.png'; } else { $yours_transport_type_icon = 'icon-car.png'; }
 					$avoidhighways = (isset($lmm_options[ 'directions_googlemaps_route_type_highways' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_highways' ] == 1 ) ? '&dirflg=h' : '';
 					$avoidtolls = (isset($lmm_options[ 'directions_googlemaps_route_type_tolls' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_tolls' ] == 1 ) ? '&dirflg=t' : '';
 					$publictransport = (isset($lmm_options[ 'directions_googlemaps_route_type_public_transport' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_public_transport' ] == 1 ) ? '&dirflg=r' : '';
 					$walking = (isset($lmm_options[ 'directions_googlemaps_route_type_walking' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_walking' ] == 1 ) ? '&dirflg=w' : '';
-					$lmm_out .= '<a href="http://maps.google.com/maps?daddr=' . $lat . ',' . $lon . '&t=' . $lmm_options[ 'directions_googlemaps_map_type' ] . '&layer=' . $lmm_options[ 'directions_googlemaps_traffic' ] . '&doflg=' . $lmm_options[ 'directions_googlemaps_distance_units' ] . $avoidhighways . $avoidtolls . $publictransport . $walking . '&hl=' . $lmm_options[ 'directions_googlemaps_host_language' ] . '&om=' . $lmm_options[ 'directions_googlemaps_overview_map' ] . '" target="_blank" title="' . esc_attr__('Get directions','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'img/' . $yours_transport_type_icon . '" width="14" height="14" class="lmm-panel-api-images" /></a>';
+					$lmm_out .= '<a href="http://maps.google.com/maps?daddr=' . $lat . ',' . $lon . '&t=' . $lmm_options[ 'directions_googlemaps_map_type' ] . '&layer=' . $lmm_options[ 'directions_googlemaps_traffic' ] . '&doflg=' . $lmm_options[ 'directions_googlemaps_distance_units' ] . $avoidhighways . $avoidtolls . $publictransport . $walking . $google_language . '&om=' . $lmm_options[ 'directions_googlemaps_overview_map' ] . '" target="_blank" title="' . esc_attr__('Get directions','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'img/' . $yours_transport_type_icon . '" width="14" height="14" class="lmm-panel-api-images" /></a>';
 				} else if ($lmm_options['directions_provider'] == 'yours') {
 					if ($lmm_options[ 'directions_yours_type_of_transport' ] == 'motorcar') { $yours_transport_type_icon = 'icon-car.png'; } else if ($lmm_options[ 'directions_yours_type_of_transport' ] == 'bicycle') { $yours_transport_type_icon = 'icon-bicycle.png'; } else if ($lmm_options[ 'directions_yours_type_of_transport' ] == 'foot') { $yours_transport_type_icon = 'icon-walk.png'; }
 					$lmm_out .= '<a href="http://www.yournavigation.org/?tlat=' . $lat . '&tlon=' . $lon . '&v=' . $lmm_options[ 'directions_yours_type_of_transport' ] . '&fast=' . $lmm_options[ 'directions_yours_route_type' ] . '&layer=' . $lmm_options[ 'directions_yours_layer' ] . '" target="_blank" title="' . esc_attr__('Get directions','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'img/' . $yours_transport_type_icon . '" width="14" height="14" class="lmm-panel-api-images" /></a>';
@@ -601,8 +617,10 @@ elseif (isset($_GET['marker'])) {
 	$lmm_out .= '(function($) {'.PHP_EOL;
 	$lmm_out .= $mapname.' = new L.Map("'.$mapname.'", { dragging: ' . $lmm_options['misc_map_dragging'] . ', touchZoom: ' . $lmm_options['misc_map_touchzoom'] . ', scrollWheelZoom: ' . $lmm_options['misc_map_scrollwheelzoom'] . ', doubleClickZoom: ' . $lmm_options['misc_map_doubleclickzoom'] . ', zoomControl: ' . $lmm_options['misc_map_zoomcontrol'] . ', trackResize: ' . $lmm_options['misc_map_trackresize'] . ', closePopupOnClick: ' . $lmm_options['misc_map_closepopuponclick'] . ', crs: ' . $lmm_options['misc_projections'] . ' });'.PHP_EOL;
 	$lmm_out .= $mapname.'.attributionControl.setPrefix("' . $attrib_prefix . '");'.PHP_EOL;
-	//info: add with leaflet v0.4 - $lmm_out .= $mapname.'.attributionControl.setPosition("bottomleft");
-	
+	//info: move attribution control to bottom left when using Google Maps
+	if ( ($basemap == 'googleLayer_roadmap' ) || ($basemap == 'googleLayer_satellite' ) || ($basemap == 'googleLayer_hybrid' ) || ($basemap == 'googleLayer_terrain' ) ) {
+		$lmm_out .= $mapname.'.attributionControl.setPosition("bottomleft");'.PHP_EOL;
+	}	
 	//info: define basemaps
 	$lmm_out .= 'var osm_mapnik = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 18, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_osm_mapnik . '"});'.PHP_EOL;
 	$lmm_out .= 'var mapquest_osm = new L.TileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {maxZoom: 18, minZoom: 1, errorTileUrl: "' . LEAFLET_PLUGIN_URL . 'img/error-tile-image.png", attribution: "' . $attrib_mapquest_osm . '", subdomains: ["otile1","otile2","otile3","otile4"]});'.PHP_EOL;
@@ -833,7 +851,15 @@ elseif (isset($_GET['marker'])) {
 	$publictransport = (isset($lmm_options[ 'directions_googlemaps_route_type_public_transport' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_public_transport' ] == 1 ) ? '&dirflg=r' : '';
 	$walking = (isset($lmm_options[ 'directions_googlemaps_route_type_walking' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_walking' ] == 1 ) ? '&dirflg=w' : '';
 	$mpopuptext_css = ($mpopuptext != NULL) ? "border-top:1px solid #f0f0e7;padding-top:5px;margin-top:5px;" : "";
-	$mpopuptext = $mpopuptext . "<div style='" . $mpopuptext_css . "'><a href='http://maps.google.com/maps?daddr=" . $lat . "," . $lon . "&t=" . $lmm_options[ 'directions_googlemaps_map_type' ] . "&layer=" . $lmm_options[ 'directions_googlemaps_traffic' ] . "&doflg=" . $lmm_options[ 'directions_googlemaps_distance_units' ] . $avoidhighways . $avoidtolls . $publictransport . $walking . "&hl=" . $lmm_options[ 'directions_googlemaps_host_language' ] . "&om=" . $lmm_options[ 'directions_googlemaps_overview_map' ] . "' target='_blank' title='" . esc_attr__('Get directions','lmm') . "'>" . __('Directions','lmm') . "</a></div>"; 
+	//info: Google language localization (directions)
+	if ($lmm_options['google_maps_language_localization'] == 'browser_setting') {
+		$google_language = '';
+	} else if ($lmm_options['google_maps_language_localization'] == 'wordpress_setting') {
+		if ( defined('WPLANG') ) { $google_language = '&hl=' . substr(WPLANG, 0, 2); } else { $google_language =  '&hl=en'; }
+	} else {
+		$google_language = '&hl=' . $lmm_options['google_maps_language_localization'];
+	}
+	$mpopuptext = $mpopuptext . "<div style='" . $mpopuptext_css . "'><a href='http://maps.google.com/maps?daddr=" . $lat . "," . $lon . "&t=" . $lmm_options[ 'directions_googlemaps_map_type' ] . "&layer=" . $lmm_options[ 'directions_googlemaps_traffic' ] . "&doflg=" . $lmm_options[ 'directions_googlemaps_distance_units' ] . $avoidhighways . $avoidtolls . $publictransport . $walking . $google_language . "&om=" . $lmm_options[ 'directions_googlemaps_overview_map' ] . "' target='_blank' title='" . esc_attr__('Get directions','lmm') . "'>" . __('Directions','lmm') . "</a></div>"; 
 	} else if ( ($lmm_options['directions_popuptext_panel'] == 'yes') && ($lmm_options['directions_provider'] == 'yours') ) {
 	$mpopuptext_css = ($mpopuptext != NULL) ? "border-top:1px solid #f0f0e7;padding-top:5px;margin-top:5px;" : "";
 	$mpopuptext = $mpopuptext . "<div style='" . $mpopuptext_css . "'><a href='http://www.yournavigation.org/?tlat=" . $lat . "&tlon=" . $lon . "&v=" . $lmm_options[ 'directions_yours_type_of_transport' ] . "&fast=" . $lmm_options[ 'directions_yours_route_type' ] . "&layer=" . $lmm_options[ 'directions_yours_layer' ] . "' target='_blank' title='" . esc_attr__('Get directions','lmm') . "'>" . __('Directions','lmm') . "</a></div>"; 

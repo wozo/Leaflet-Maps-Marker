@@ -269,6 +269,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: Slovak translation thanks to Zdenko Podobny
 * NEW: added config options for marker icons and shadow image in settings (size, offset...)
 * CHANGED: secure loading of Google API via https instead of http
+* CHANGED: enhanced Google Maps language localization options (for maps, directions and autocomplete)
 * CHANGED: optimized usability for forms and marker icon selection on backend
 * CHANGED: removed translation .po files from plugin to reduce file size
 * CHANGED: merged & compressed google-maps.js, bing.js into leaflet.js to save http requests

@@ -236,6 +236,7 @@ class Leafletmapsmarker_options {
 	public function display_google_section() {
 		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;margin-left:24px;">
 			<li>' . __('Google Maps API key','lmm') . '</li>
+			<li>' . __('Google language localization','lmm') . '</li>
 			<li>' . __('Google Places bounds','lmm') . '</li>
 			<li>' . __('Google Places search prefix','lmm') . '</li></ul></span>';
 	}	
@@ -334,6 +335,12 @@ class Leafletmapsmarker_options {
 			case 'text-readonly':
 			default:
 		 		echo '<input readonly="readonly" class="regular-text' . $field_class . '" style="width:60em;" type="text" id="' . $id . '" name="leafletmapsmarker_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
+	 		if ( $desc != '' )
+		 			echo '<br /><span class="description">' . $desc . '</span>';
+		 		break;
+			case 'text-deletable':
+			default:
+		 		echo '<input class="regular-text' . $field_class . '" style="width:60em;" type="text" id="' . $id . '" name="leafletmapsmarker_options[' . $id . ']" value="' . esc_attr( $options[$id] ) . '" />';
 	 		if ( $desc != '' )
 		 			echo '<br /><span class="description">' . $desc . '</span>';
 		 		break;
@@ -4210,7 +4217,7 @@ class Leafletmapsmarker_options {
 			'title'   => __( 'Shadow URL', 'lmm' ),
 			'desc'    => __( 'The URL to the icon shadow image. If not specified, no shadow image will be created. Default shadow icon:', 'lmm' ) . '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker-shadow.png">',
 			'std'     => LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker-shadow.png',
-			'type'    => 'text',
+			'type'    => 'text-deletable',
 			'section' => 'defaults_marker'
 		);
 		$this->settings['defaults_marker_icon_shadowsize_x'] = array(
@@ -4907,6 +4914,88 @@ class Leafletmapsmarker_options {
 			'section' => 'google'
 		);
 		/*
+		* Google language localization
+		* https://spreadsheets.google.com/spreadsheet/pub?key=0Ah0xU81penP1cDlwZHdzYWkyaERNc0xrWHNvTTA1S1E&gid=1
+		*/
+		$this->settings['google_maps_language_localization_heading'] = array(
+			'version' => '2.7.1',
+			'section' => 'google',
+			'title'   => '', 
+			'desc'    => __( 'Google language localization', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['google_maps_language_localization_helptext'] = array(
+			'version' => '2.7.1',
+			'section' => 'google',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'Language used when displaying textual information such as the names for controls, copyright notices, driving directions and labels on Google maps, direction links and autocomplete for address search.', 'lmm'),
+			'type'    => 'helptext'
+		);
+		$this->settings['google_maps_language_localization'] = array(
+			'version' => '2.7.1',
+			'section' => 'google',
+			'title'   => __('Default language','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => 'browser_setting',
+			'choices' => array(
+				'browser_setting' => __('automatic 1 (distinct language for each user - detects the users browser language setting, preferred method by Google)','lmm'),
+				'wordpress_setting' => sprintf(__('automatic 2 (same language for each user - uses the first two letters from the constant WPLANG defined in wp-config.php = %s)','lmm'),substr(WPLANG,0,2)),
+				'ar' => __('Arabic','lmm') . ' (' . __('language code','lmm') . ': ar)',
+				'bg' => __('Bulgarian','lmm') . ' (' . __('language code','lmm') . ': bg)',
+				'ca' => __('Catalan','lmm') . ' (' . __('language code','lmm') . ': ca)',
+				'cs' => __('Czech','lmm') . ' (' . __('language code','lmm') . ': cs)',
+				'da' => __('Danish','lmm') . ' (' . __('language code','lmm') . ': da)',
+				'de' => __('German','lmm') . ' (' . __('language code','lmm') . ': de)',
+				'el' => __('Greek','lmm') . ' (' . __('language code','lmm') . ': el)',
+				'en' => __('English','lmm') . ' (' . __('language code','lmm') . ': en)',
+				'en-AU' => __('English (Australian)','lmm') . ' (' . __('language code','lmm') . ': en-AU)',
+				'en-GB' => __('English (Great Britain)','lmm') . ' (' . __('language code','lmm') . ': en-GB)',
+				'es' => __('Spanish','lmm') . ' (' . __('language code','lmm') . ': es)',
+				'eu' => __('Basque','lmm') . ' (' . __('language code','lmm') . ': eu)',
+				'fa' => __('Farsi','lmm') . ' (' . __('language code','lmm') . ': fa)',
+				'fi' => __('Finnish','lmm') . ' (' . __('language code','lmm') . ': fi)',
+				'fil' => __('Filipino','lmm') . ' (' . __('language code','lmm') . ': fil)',
+				'fr' => __('French','lmm') . ' (' . __('language code','lmm') . ': fr)',
+				'gl' => __('Galician','lmm') . ' (' . __('language code','lmm') . ': gl)',
+				'gu' => __('Gujarati','lmm') . ' (' . __('language code','lmm') . ': gu)',
+				'hi' => __('Hindi','lmm') . ' (' . __('language code','lmm') . ': hi)',
+				'hr' => __('Croatian','lmm') . ' (' . __('language code','lmm') . ': hr)',
+				'hu' => __('Hungarian','lmm') . ' (' . __('language code','lmm') . ': hu)',
+				'id' => __('Indonesian','lmm') . ' (' . __('language code','lmm') . ': id)',
+				'it' => __('Italian','lmm') . ' (' . __('language code','lmm') . ': it)',
+				'iw' => __('Hebrew','lmm') . ' (' . __('language code','lmm') . ': iw)',
+				'ja' => __('Japanese','lmm') . ' (' . __('language code','lmm') . ': ja)',
+				'kn' => __('Kannada','lmm') . ' (' . __('language code','lmm') . ': kn)',
+				'ko' => __('Korean','lmm') . ' (' . __('language code','lmm') . ': ko)',
+				'lt' => __('Lithuanian','lmm') . ' (' . __('language code','lmm') . ': lt)',
+				'lv' => __('Latvian','lmm') . ' (' . __('language code','lmm') . ': lv)',
+				'ml' => __('Malayalam','lmm') . ' (' . __('language code','lmm') . ': ml)',
+				'mr' => __('Marathi','lmm') . ' (' . __('language code','lmm') . ': mr)',
+				'nl' => __('Dutch','lmm') . ' (' . __('language code','lmm') . ': nl)',
+				'no' => __('Norwegian','lmm') . ' (' . __('language code','lmm') . ': no)',
+				'pl' => __('Polish','lmm') . ' (' . __('language code','lmm') . ': pl)',
+				'pt' => __('Portuguese','lmm') . ' (' . __('language code','lmm') . ': pt)',
+				'pt-BR' => __('Portuguese (Brazil)','lmm') . ' (' . __('language code','lmm') . ': pt-BR)',
+				'pt-PT' => __('Portuguese (Portugal)','lmm') . ' (' . __('language code','lmm') . ': pt-PT)',
+				'ro' => __('Romanian','lmm') . ' (' . __('language code','lmm') . ': ro)',
+				'ru' => __('Russian','lmm') . ' (' . __('language code','lmm') . ': ru)',
+				'sk' => __('Slovak','lmm') . ' (' . __('language code','lmm') . ': sk)',
+				'sl' => __('Slovenian','lmm') . ' (' . __('language code','lmm') . ': sl)',
+				'sr' => __('Serbian','lmm') . ' (' . __('language code','lmm') . ': sr)',
+				'sv' => __('Swedish','lmm') . ' (' . __('language code','lmm') . ': sv)',
+				'tl' => __('Tagalog','lmm') . ' (' . __('language code','lmm') . ': tl)',
+				'ta' => __('Tamil','lmm') . ' (' . __('language code','lmm') . ': ta)',
+				'te' => __('Telugu','lmm') . ' (' . __('language code','lmm') . ': te)',
+				'th' => __('Thai','lmm') . ' (' . __('language code','lmm') . ': th)',
+				'uk' => __('Ukrainian','lmm') . ' (' . __('language code','lmm') . ': uk)',
+				'vi' => __('Vietnamese','lmm') . ' (' . __('language code','lmm') . ': vi)',
+				'zh-CN' => __('Chinese (simplified)','lmm') . ' (' . __('language code','lmm') . ': zh-CN)',
+				'zh-TW' => __('Chinese (traditional)','lmm') . ' (' . __('language code','lmm') . ': zh-TW)',
+			)
+		);
+		/*
 		* Google Places Bounds
 		*/
 		$this->settings['google_places_bounds_heading'] = array(
@@ -5159,27 +5248,6 @@ class Leafletmapsmarker_options {
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);					
-		$this->settings['directions_googlemaps_host_language'] = array(
-			'version' => '1.4',
-			'section' => 'directions',
-			'title'   => __('Language','lmm'),
-			'desc'    => '',
-			'type'    => 'radio',
-			'std'     => 'en',
-			'choices' => array(
-				'en' => __('English','lmm'),
-				'de' => __('German','lmm'),
-				'it' => __('Italian','lmm'),
-				'fr' => __('French','lmm'),
-				'es' => __('Spanish','lmm'),
-				'cn' => __('Chinese (simplified)','lmm'),
-				'nl' => __('Dutch','lmm'),
-				'ja' => __('Japanese','lmm'),
-				'ca' => __('Catalan','lmm'),
-				'gl' => __('Galego','lmm'),
-				'eu' => __('Euskara','lmm')
-			)
-		);
 		$this->settings['directions_googlemaps_overview_map'] = array(
 			'version' => '1.4',
 			'section' => 'directions',

@@ -69,6 +69,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
+			enhanced Google Maps language localization options (for maps, directions and autocomplete)
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
 			optimized usability for forms and marker icon selection on backend
 			</td></tr>
 			<tr><td>
