@@ -264,6 +264,10 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.7.1 - xx.08.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.7.1)
+* NEW: boxzoom option (whether the map can be zoomed to a rectangular area specified by dragging the mouse while pressing shift)
+* NEW: worldCopyJump option (the map tracks when you pan to another "copy" of the world and moves all overlays like markers and vector layers there)
+* NEW: keyboard navigation support for maps
+* NEW: add support for maps that don't reflect the real world (e.g. game, indoor or photo maps)
 * NEW: zoom level can now also be edited directly on marker/layer maps on backend
 * NEW: added bing/google/mapbox/cloudmad basemaps to mass actions on tools page
 * NEW: Slovak translation thanks to Zdenko Podobny
@@ -274,6 +278,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: removed translation .po files from plugin to reduce file size
 * CHANGED: merged & compressed google-maps.js, bing.js into leaflet.js to save http requests
 * CHANGED: changed default color for panel text to #373737 for new installations
+* CHANGED: moved "General Map settings" from tab "Misc" to "Basemaps"
 * BUGFIX: fixed broken links in multi-layer-maps-list and default state controlbox on layer maps on backend 
 * BUGFIX: manual language selection for Chinese and Yiddish was broken
 * BUGFIX: overwrite box-shadow attribute from style.css to remove border on some themes

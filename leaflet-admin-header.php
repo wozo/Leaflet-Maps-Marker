@@ -44,6 +44,26 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
+			boxzoom option (whether the map can be zoomed to a rectangular area specified by dragging the mouse while pressing shift)
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			worldCopyJump option (the map tracks when you pan to another "copy" of the world and moves all overlays like markers and vector layers there)
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			keyboard navigation support for maps
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			add support for maps that do not reflect the real world (e.g. game, indoor or photo maps)
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
 			zoom level can now also be edited directly on marker/layer maps on backend
 			</td></tr>
 			<tr><td>
@@ -90,6 +110,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
 			changed default color for panel text to #373737 for new installations
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			moved "General Map settings" from tab "Misc" to "Basemaps"
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
@@ -221,6 +246,6 @@ if (is_plugin_active('bwp-minify/bwp-minify.php') ) {
         <!--End support table-->
       </div>
 	<p><strong><?php _e('A message from the plugin´s author','lmm') ?> <a href="http://www.harm.co.at" target="_blank" title="<?php esc_attr_e('Show website of plugin author','lmm') ?>" style="text-decoration:none;">Robert Harm</a>:</strong><br/>
-			<?php _e('It is hard to continue development and support for Leaflet Maps Marker-plugin without contributions from users like you.','lmm') ?> <?php _e('If you enjoy using the plugin - <strong>particularly within a commercial context</strong> - please consider making a donation.','lmm') ?> <?php _e('Your donation help keeping the plugin free for everyone and allow me to spend more time on developing, maintaining and support.','lmm') ?> <?php _e('I´d be happy to accept your donation! Thanks!','lmm') ?> <?php _e('For more information on how to donate, please visit','lmm') ?>  <a href="http://mapsmarker.com/donations" style="text-decoration:none;" target="_blank">http://mapsmarker.com/donations</a><br/><br/>Web: <a href="http://www.mapsmarker.com"  style="text-decoration:none;" target="_blank">MapsMarker.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://twitter.com/mapsmarker" style="text-decoration:none;" target="_blank">Twitter</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.facebook.com/mapsmarker" style="text-decoration:none;" target="_blank">Facebook</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/robertharm/Leaflet-Maps-Marker" style="text-decoration:none;" target="_blank">Github</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://translate.mapsmarker.com/projects/lmm"  style="text-decoration:none;" target="_blank" title="<?php esc_attr_e('please help translating this plugin','lmm') ?>"><?php _e('Translations','lmm') ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/"  style="text-decoration:none;" target="_blank" title="<?php esc_attr_e('please rate this plugin on wordpress.org','lmm') ?>"><?php _e('Rate plugin','lmm') ?></a></p></td>
+			<?php _e('It is hard to continue development and support for Leaflet Maps Marker-plugin without contributions from users like you.','lmm') ?> <?php _e('If you enjoy using the plugin - <strong>particularly within a commercial context</strong> - please consider making a donation.','lmm') ?> <?php _e('Your donation help keeping the plugin free for everyone and allow me to spend more time on developing, maintaining and support.','lmm') ?> <?php _e('I´d be happy to accept your donation! Thanks!','lmm') ?> <?php _e('For more information on how to donate, please visit','lmm') ?>  <a href="http://mapsmarker.com/donations" style="text-decoration:none;" target="_blank">http://mapsmarker.com/donations</a><br/><br/>Web: <a href="http://www.mapsmarker.com"  style="text-decoration:none;" target="_blank">MapsMarker.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://twitter.com/mapsmarker" style="text-decoration:none;" target="_blank">Twitter</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.facebook.com/mapsmarker" style="text-decoration:none;" target="_blank">Facebook</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.mapsmarker.com/changelog" style="text-decoration:none;" target="_blank"><?php _e('Changelog','lmm') ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/robertharm/Leaflet-Maps-Marker" style="text-decoration:none;" target="_blank">Github</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://translate.mapsmarker.com/projects/lmm"  style="text-decoration:none;" target="_blank" title="<?php esc_attr_e('please help translating this plugin','lmm') ?>"><?php _e('Translations','lmm') ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/"  style="text-decoration:none;" target="_blank" title="<?php esc_attr_e('please rate this plugin on wordpress.org','lmm') ?>"><?php _e('Rate plugin','lmm') ?></a></p></td>
   </tr>
 </table>

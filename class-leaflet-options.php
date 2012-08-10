@@ -180,6 +180,10 @@ class Leafletmapsmarker_options {
 			<li>' . __('Default basemap for new markers/layers','lmm') . '</li>
 			<li>' . __('Names for default basemaps','lmm') . '</li>
 			<li>' . __('Available basemaps in control box','lmm') . '</li>
+			<li>' . __('Interaction options','lmm') . '</li>
+			<li>' . __('Keyboard navigation options','lmm') . '</li>
+			<li>' . __('Panning inertia options','lmm') . '</li>
+			<li>' . __('Control options','lmm') . '</li>
 			<li>' . __('Bing Maps API key','lmm') . '</li>
 			<li>' . __('OGD Vienna Selector','lmm') . '</li>
 			<li>' . __('Cloudmade 1 settings','lmm') . '</li>
@@ -257,7 +261,6 @@ class Leafletmapsmarker_options {
 		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;margin-left:24px;">
 			<li>' . __('General settings','lmm') . '</li>
 			<li>' . __('KML settings','lmm') . '</li>
-			<li>' . __('General Map settings','lmm') . '</li>
 			<li>' . __('Available columns for marker listing page','lmm') . '</li>
 			<li>' . __('Sort order for marker listing page','lmm') . '</li>
 			<li>' . __('Available columns for layer listing page','lmm') . '</li>
@@ -781,6 +784,243 @@ class Leafletmapsmarker_options {
 			'std'     => 0 
 		);	
 		/*
+		* Interaction options 
+		* formerly "General map settings" and moved to "Basemaps" from "Misc" tab
+		*/
+		$this->settings['map_interaction_options_heading'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'Interaction options', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['map_interaction_options_helptext'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'The following settings will be used for all marker and layer maps', 'lmm'),
+			'type'    => 'helptext'
+		);
+		$this->settings['misc_map_dragging'] = array(
+			'version' => '2.2',
+			'section' => 'basemaps',
+			'title'   => 'dragging',
+			'desc'    => __('Whether the map be draggable with mouse/touch or not.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);			
+		$this->settings['misc_map_touchzoom'] = array(
+			'version' => '2.2',
+			'section' => 'basemaps',
+			'title'   => 'touchZoom',
+			'desc'    => __('Whether the map can be zoomed by touch-dragging with two fingers.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);			
+		$this->settings['misc_map_scrollwheelzoom'] = array(
+			'version' => '2.2',
+			'section' => 'basemaps',
+			'title'   => 'scrollWheelZoom',
+			'desc'    => __('Whether the map can be zoomed by using the mouse wheel.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);	
+		$this->settings['misc_map_doubleclickzoom'] = array(
+			'version' => '2.2',
+			'section' => 'basemaps',
+			'title'   => 'doubleClickZoom',
+			'desc'    => __('Whether the map can be zoomed in by double clicking on it.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);					
+		$this->settings['map_interaction_options_boxzoom'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => 'boxzoom',
+			'desc'    => __('Whether the map can be zoomed to a rectangular area specified by dragging the mouse while pressing shift.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);		
+		$this->settings['misc_map_trackresize'] = array(
+			'version' => '2.2',
+			'section' => 'basemaps',
+			'title'   => 'trackResize',
+			'desc'    => __('Whether the map automatically handles browser window resize to update itself.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);	
+		$this->settings['map_interaction_options_worldcopyjump'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => 'worldCopyJump',
+			'desc'    => __('With this option enabled, the map tracks when you pan to another "copy" of the world and moves all overlays like markers and vector layers there.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);		
+		$this->settings['misc_map_closepopuponclick'] = array(
+			'version' => '2.2',
+			'section' => 'basemaps',
+			'title'   => 'closePopupOnClick',
+			'desc'    => __('Set it to false if you do not want popups to close when user clicks the map.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);					
+		/*
+		* Keyboard navigation options 
+		*/
+		$this->settings['map_keyboard_navigation_options_heading'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'Keyboard navigation options', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['map_keyboard_navigation_options_helptext'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'The following settings will be used for all marker and layer maps', 'lmm'),
+			'type'    => 'helptext'
+		);		
+		$this->settings['map_keyboard_navigation_options_keyboard'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => 'keyboard',
+			'desc'    => __('Makes the map focusable and allows users to navigate the map with keyboard arrows and +/- keys','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);			
+		$this->settings['map_keyboard_navigation_options_keyboardpanoffset'] = array(
+			'version' => '2.7.1',
+			'title'   => 'keyboardPanOffset',
+			'desc'    => __('Amount of pixels to pan when pressing an arrow key','lmm'),
+			'std'     => '80',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['map_keyboard_navigation_options_keyboardzoomoffset'] = array(
+			'version' => '2.7.1',
+			'title'   => 'keyboardZoomOffset',
+			'desc'    => __( 'Number of zoom levels to change when pressing + or - key.', 'lmm' ),
+			'std'     => '1',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		/*
+		* Panning inertia options
+		*/
+		$this->settings['map_panning_inertia_options_heading'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'Panning inertia options', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['map_panning_inertia_options_helptext'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'The following settings will be used for all marker and layer maps', 'lmm'),
+			'type'    => 'helptext'
+		);		
+		$this->settings['map_panning_inertia_options_inertia'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => 'inertia',
+			'desc'    => __('If enabled, panning of the map will have an inertia effect where the map builds momentum while dragging and continues moving in the same direction for some time. Feels especially nice on touch devices.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);			
+		$this->settings['map_panning_inertia_options_inertiadeceleration'] = array(
+			'version' => '2.7.1',
+			'title'   => 'inertiaDeceleration',
+			'desc'    => __('The rate with which the inertial movement slows down, in pixels/second','lmm'),
+			'std'     => '3000',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		$this->settings['map_panning_inertia_options_inertiamaxspeed'] = array(
+			'version' => '2.7.1',
+			'title'   => 'inertiaMaxSpeed',
+			'desc'    => __('Max speed of the inertial movement, in pixels/second.','lmm'),
+			'std'     => '1500',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);
+		/*
+		* Control options
+		*/
+		$this->settings['map_control_options_heading'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'Control options', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['map_control_options_helptext'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'The following settings will be used for all marker and layer maps', 'lmm'),
+			'type'    => 'helptext'
+		);	
+		$this->settings['misc_map_zoomcontrol'] = array(
+			'version' => '2.2',
+			'section' => 'basemaps',
+			'title'   => 'zoomControl',
+			'desc'    => __('Whether the zoom control is added to the map by default.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);
+		/*
 		* Bing Maps API Key
 		*/
 		$this->settings['bingmaps_api_key_heading'] = array(
@@ -1227,6 +1467,30 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'basemaps'
 		);		
+		$this->settings['custom_basemap_continuousworld_enabled'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => __('Enable continuousWorld?','lmm'),
+			'desc'    => __('If set to true, the tile coordinates will not be wrapped by world width (-180 to 180 longitude) or clamped to lie within world height (-90 to 90). Use this if you use Leaflet for maps that do not reflect the real world (e.g. game, indoor or photo maps).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);
+		$this->settings['custom_basemap_nowrap_enabled'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => __('Enable nowrap?','lmm'),
+			'desc'    => __('If set to true, the tiles just will not load outside the world width (-180 to 180 longitude) instead of repeating.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);
 		/*
 		* Custom basemap 2 settings
 		*/
@@ -1296,6 +1560,30 @@ class Leafletmapsmarker_options {
 			'std'     => '&quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;',
 			'type'    => 'text',
 			'section' => 'basemaps'
+		);
+		$this->settings['custom_basemap2_continuousworld_enabled'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => __('Enable continuousWorld?','lmm'),
+			'desc'    => __('If set to true, the tile coordinates will not be wrapped by world width (-180 to 180 longitude) or clamped to lie within world height (-90 to 90). Use this if you use Leaflet for maps that do not reflect the real world (e.g. game, indoor or photo maps).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);
+		$this->settings['custom_basemap2_nowrap_enabled'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => __('Enable nowrap?','lmm'),
+			'desc'    => __('If set to true, the tiles just will not load outside the world width (-180 to 180 longitude) instead of repeating.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
 		);
 		/*
 		* Custom basemap 3 settings
@@ -1367,7 +1655,30 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'basemaps'
 		);
-		
+		$this->settings['custom_basemap3_continuousworld_enabled'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => __('Enable continuousWorld?','lmm'),
+			'desc'    => __('If set to true, the tile coordinates will not be wrapped by world width (-180 to 180 longitude) or clamped to lie within world height (-90 to 90). Use this if you use Leaflet for maps that do not reflect the real world (e.g. game, indoor or photo maps).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);
+		$this->settings['custom_basemap3_nowrap_enabled'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => __('Enable nowrap?','lmm'),
+			'desc'    => __('If set to true, the tiles just will not load outside the world width (-180 to 180 longitude) instead of repeating.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);		
 		/*===========================================
 		*
 		*
@@ -5633,6 +5944,19 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'misc'
 		);
+		$this->settings['misc_projections'] = array(
+			'version' => '1.0',
+			'section' => 'misc',
+			'title'   => __( 'Coordinate Reference System', 'lmm' ),
+			'desc'    => __( 'Used for created maps - do not change this if you are not sure what it means!', 'lmm'),
+			'type'    => 'radio',
+			'std'     => 'L.CRS.EPSG3857',
+			'choices' => array(
+				'L.CRS.EPSG3857' => __('EPSG:3857 (Spherical Mercator), used by most of commercial map providers (CloudMade, Google, Yahoo, Bing, etc.)', 'lmm'),
+				'L.CRS.EPSG4326' => __('EPSG:4326 (Plate Carree), very popular among GIS enthusiasts', 'lmm'),
+				'L.CRS.EPSG3395' => __('EPSG:4326 (Mercator), used by some map providers.', 'lmm')
+			)
+		);
 		/*
 		* Language Settings
 		*/
@@ -5648,7 +5972,7 @@ class Leafletmapsmarker_options {
 			'section' => 'misc',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => '',
+			'desc'    => __('The language used on plugin pages on backend and/or on maps on frontend. Please note that the language for Google Services can be set seperately via Settings / tab "Google", section "Google language localization".','lmm'),
 			'type'    => 'helptext'
 		);
 		$this->settings['misc_plugin_language'] = array(
@@ -5720,121 +6044,6 @@ class Leafletmapsmarker_options {
 				'show' => __('show', 'lmm'),
 				'hide' => __('hide', 'lmm'),
 				'popup' => __('put in front of popup-text', 'lmm')
-			)
-		);
-		/*
-		* General map settings
-		*/
-		$this->settings['misc_projections_heading'] = array(
-			'version' => '1.0',
-			'section' => 'misc',
-			'title'   => '', 
-			'desc'    => __( 'General Map settings', 'lmm'),
-			'type'    => 'heading'
-		);
-		$this->settings['misc_projections_helptext'] = array(
-			'version' => '1.0',
-			'section' => 'misc',
-			'std'     => '', 
-			'title'   => '',
-			'desc'    => __( 'The following settings will be used for all marker and layer maps', 'lmm'),
-			'type'    => 'helptext'
-		);
-		$this->settings['misc_map_dragging'] = array(
-			'version' => '2.2',
-			'section' => 'misc',
-			'title'   => 'dragging',
-			'desc'    => __('Whether the map be draggable with mouse/touch or not.','lmm'),
-			'type'    => 'radio',
-			'std'     => 'true',
-			'choices' => array(
-				'true' => __('true','lmm'),
-				'false' => 'false'
-			)
-		);			
-		$this->settings['misc_map_touchzoom'] = array(
-			'version' => '2.2',
-			'section' => 'misc',
-			'title'   => 'touchZoom',
-			'desc'    => __('Whether the map can be zoomed by touch-dragging with two fingers.','lmm'),
-			'type'    => 'radio',
-			'std'     => 'true',
-			'choices' => array(
-				'true' => __('true','lmm'),
-				'false' => 'false'
-			)
-		);			
-		$this->settings['misc_map_scrollwheelzoom'] = array(
-			'version' => '2.2',
-			'section' => 'misc',
-			'title'   => 'scrollWheelZoom',
-			'desc'    => __('Whether the map can be zoomed by using the mouse wheel.','lmm'),
-			'type'    => 'radio',
-			'std'     => 'true',
-			'choices' => array(
-				'true' => __('true','lmm'),
-				'false' => 'false'
-			)
-		);	
-		$this->settings['misc_map_doubleclickzoom'] = array(
-			'version' => '2.2',
-			'section' => 'misc',
-			'title'   => 'doubleClickZoom',
-			'desc'    => __('Whether the map can be zoomed in by double clicking on it.','lmm'),
-			'type'    => 'radio',
-			'std'     => 'true',
-			'choices' => array(
-				'true' => __('true','lmm'),
-				'false' => 'false'
-			)
-		);					
-		$this->settings['misc_map_zoomcontrol'] = array(
-			'version' => '2.2',
-			'section' => 'misc',
-			'title'   => 'zoomControl',
-			'desc'    => __('Whether the zoom control is added to the map by default.','lmm'),
-			'type'    => 'radio',
-			'std'     => 'true',
-			'choices' => array(
-				'true' => __('true','lmm'),
-				'false' => 'false'
-			)
-		);			
-		$this->settings['misc_map_trackresize'] = array(
-			'version' => '2.2',
-			'section' => 'misc',
-			'title'   => 'trackResize',
-			'desc'    => __('Whether the map automatically handles browser window resize to update itself.','lmm'),
-			'type'    => 'radio',
-			'std'     => 'true',
-			'choices' => array(
-				'true' => __('true','lmm'),
-				'false' => 'false'
-			)
-		);	
-		$this->settings['misc_map_closepopuponclick'] = array(
-			'version' => '2.2',
-			'section' => 'misc',
-			'title'   => 'closePopupOnClick',
-			'desc'    => __('Set it to false if you do not want popups to close when user clicks the map.','lmm'),
-			'type'    => 'radio',
-			'std'     => 'true',
-			'choices' => array(
-				'true' => __('true','lmm'),
-				'false' => 'false'
-			)
-		);					
-		$this->settings['misc_projections'] = array(
-			'version' => '1.0',
-			'section' => 'misc',
-			'title'   => __( 'Coordinate Reference System', 'lmm' ),
-			'desc'    => __( 'Used for created maps - do not change this if you are not sure what it means!', 'lmm'),
-			'type'    => 'radio',
-			'std'     => 'L.CRS.EPSG3857',
-			'choices' => array(
-				'L.CRS.EPSG3857' => __('EPSG:3857 (Spherical Mercator), used by most of commercial map providers (CloudMade, Google, Yahoo, Bing, etc.)', 'lmm'),
-				'L.CRS.EPSG4326' => __('EPSG:4326 (Plate Carree), very popular among GIS enthusiasts', 'lmm'),
-				'L.CRS.EPSG3395' => __('EPSG:4326 (Mercator), used by some map providers.', 'lmm')
 			)
 		);
 		/*
