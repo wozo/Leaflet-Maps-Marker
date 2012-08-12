@@ -107,6 +107,7 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * Slovak (sk_SK) thanks to Zdenko Podobny
 * Spanish (es_ES) thanks to David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com) and Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 * Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
+* Ukrainian (uk_UK) thanks to Andrexj, [http://all3d.com.ua](http://all3d.com.ua)
 * Yiddish (yi) thanks to Raphael Finkel, [http://www.cs.uky.edu/~raphael/yiddish.html](http://www.cs.uky.edu/~raphael/yiddish.html)
 
 Leaflet Maps Marker also supports easy switching between translations through a specific plugin setting.
@@ -264,12 +265,14 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.7.1 - xx.08.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.7.1)
+* NEW: upgrade to leaflet.js v0.4.4  - [changelog](http://leaflet.cloudmade.com/2012/07/30/leaflet-0-4-released.html)
 * NEW: boxzoom option (whether the map can be zoomed to a rectangular area specified by dragging the mouse while pressing shift)
 * NEW: worldCopyJump option (the map tracks when you pan to another "copy" of the world and moves all overlays like markers and vector layers there)
 * NEW: keyboard navigation support for maps
 * NEW: add support for maps that don't reflect the real world (e.g. game, indoor or photo maps)
 * NEW: zoom level can now also be edited directly on marker/layer maps on backend
 * NEW: added bing/google/mapbox/cloudmad basemaps to mass actions on tools page
+* NEW: Ukrainian translation thanks to Andrexj, [http://all3d.com.ua](http://all3d.com.ua)
 * NEW: Slovak translation thanks to Zdenko Podobny
 * NEW: added config options for marker icons and shadow image in settings (size, offset...)
 * CHANGED: secure loading of Google API via https instead of http

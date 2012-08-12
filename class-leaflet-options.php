@@ -5996,10 +5996,12 @@ class Leafletmapsmarker_options {
 				'ja' => __('Japanese','lmm') . ' (ja)',
 				'pl_PL' => __('Polish','lmm') . ' (pl_PL)',
 				'ru_RU' => __('Russian','lmm') . ' (ru_RU)',
-				'sk_SK' => __('Slovak','lmm') . ' (es_ES)',
+				'sk_SK' => __('Slovak','lmm') . ' (sk_SK)',
 				'es_ES' => __('Spanish','lmm') . ' (es_ES)',
-				'yi' => __('Yiddish','lmm') . ' (yi)',
-				'tr_TR' => __('Turkish','lmm') . ' (tr_TR)'
+				'tr_TR' => __('Turkish','lmm') . ' (tr_TR)',
+				'uk_UK' => __('Ukrainian','lmm') . ' (uk_UK)',
+				'yi' => __('Yiddish','lmm') . ' (yi)'
+
 			)
 		);
 		$this->settings['misc_plugin_language_area'] = array(
