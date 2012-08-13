@@ -49,6 +49,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
+			option to add an unobtrusive scale control to maps
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			support for Retina displays to display maps in a higher resolution
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
 			boxzoom option (whether the map can be zoomed to a rectangular area specified by dragging the mouse while pressing shift)
 			</td></tr>
 			<tr><td>
@@ -56,10 +66,15 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			</td><td>
 			worldCopyJump option (the map tracks when you pan to another "copy" of the world and moves all overlays like markers and vector layers there)
 			</td></tr>
-			<tr><td>
+    		<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
 			keyboard navigation support for maps
+			</td></tr>
+    		<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			options to customize marker popups (min/max width, scrollbar...)
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
@@ -90,6 +105,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
 			added config options for marker icons and shadow image in settings (size, offset...)
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
+			</td><td>
+			show marker icons directory (especially needed for blogs on WordPress Multisite installations)
 			</td></tr>
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">

@@ -184,6 +184,8 @@ class Leafletmapsmarker_options {
 			<li>' . __('Keyboard navigation options','lmm') . '</li>
 			<li>' . __('Panning inertia options','lmm') . '</li>
 			<li>' . __('Control options','lmm') . '</li>
+			<li>' . __('Scale control','lmm') . '</li>
+			<li>' . __('Retina display detection','lmm') . '</li>
 			<li>' . __('Bing Maps API key','lmm') . '</li>
 			<li>' . __('OGD Vienna Selector','lmm') . '</li>
 			<li>' . __('Cloudmade 1 settings','lmm') . '</li>
@@ -232,6 +234,7 @@ class Leafletmapsmarker_options {
 		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;margin-left:24px;">
 			<li>' . __('Default values for new marker maps','lmm') . '</li>
 			<li>' . __('Default values for marker icons','lmm') . '</li>			
+			<li>' . __('Default values for marker popups','lmm') . '</li>			
 			<li>' . __('Default values for markers added directly','lmm') . '</li></ul></span>';
 	}	
 	/**
@@ -1020,6 +1023,124 @@ class Leafletmapsmarker_options {
 				'false' => __('false','lmm')
 			)
 		);
+		/*
+		* Scale control options
+		*/
+		$this->settings['map_scale_control_heading'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'Scale control options', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['map_scale_control_helptext'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'A simple scale control that shows the scale of the current center of screen in metric (m/km) and/or imerial (mi/ft) systems. The following settings will be used for all marker and layer maps.', 'lmm').'<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'img/help-basemap-scale-control.jpg" />',
+			'type'    => 'helptext'
+		);	
+		$this->settings['map_scale_control'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => __('Scale Control','lmm'),
+			'desc'    => __('Whether the scale control is added to the map by default.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'enabled',
+			'choices' => array(
+				'enabled' => __('enabled','lmm'),
+				'disabled' => __('disabled','lmm')
+			)
+		);
+		$this->settings['map_scale_control_position'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => __('Position','lmm'),
+			'desc'    => __('The position of the control (one of the map corners).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'bottomleft',
+			'choices' => array(
+				'bottomleft' => __('Bottom left of the map','lmm'),
+				'bottomright' => __('Bottom right of the map','lmm'),
+				'topright' => __('Top right of the map','lmm'),
+				'topleft' => __('Top left of the map','lmm')
+			)
+		);
+		$this->settings['map_scale_control_maxwidth'] = array(
+			'version' => '2.7.1',
+			'title'   => 'maxWidth',
+			'desc'    => __('Maximum width of the control in pixels. The width is set dynamically to show round values (e.g. 100, 200, 500).','lmm'),
+			'std'     => '100',
+			'type'    => 'text',
+			'section' => 'basemaps'
+		);		
+		$this->settings['map_scale_control_metric'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => 'metric',
+			'desc'    => __('Whether to show the metric scale line (m/km).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);		
+		$this->settings['map_scale_control_imperial'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => 'imperial',
+			'desc'    => __('Whether to show the imerial scale line (mi/ft).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);			
+		$this->settings['map_scale_control_updatewhenidle'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => 'updateWhenIdle',
+			'desc'    => __('If true, the control is updated on moveend, otherwise it is always up-to-date (updated on move).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);	
+		/*
+		* Retina display detection
+		*/
+		$this->settings['map_retina_detection_heading'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => '', 
+			'desc'    => __( 'Retina display detection', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['map_retina_detection_helptext'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'The following settings will be used for all marker and layer maps', 'lmm'),
+			'type'    => 'helptext'
+		);	
+		$this->settings['map_retina_detection'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => 'detectRetina',
+			'desc'    => __('If true and user is on a retina display (= iPhone 4/4S/5, iPad 3, MacBook Pro 3rd Generation), it will request four tiles of half the specified size and a bigger zoom level in place of one to utilize the high resolution.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);										
 		/*
 		* Bing Maps API Key
 		*/
@@ -4459,6 +4580,14 @@ class Leafletmapsmarker_options {
 			'type'    => 'text-readonly',
 			'section' => 'defaults_marker'
 		);		
+		$this->settings['defaults_marker_icon_dir'] = array(
+			'version' => '2.7.1',
+			'title'   => __( 'Icons directory', 'lmm' ),
+			'desc'    => __( 'Directory on server where icons are stored - needed especially for WordPress Multisite blogs (cannot be changed)', 'lmm' ),
+			'std'     => LEAFLET_PLUGIN_ICONS_DIR,
+			'type'    => 'text-readonly',
+			'section' => 'defaults_marker'
+		);	
 		$this->settings['defaults_marker_icon'] = array(
 			'version' => '1.8',
 			'title'   => __( 'Default icon', 'lmm' ),
@@ -4563,6 +4692,88 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'defaults_marker'
 		);
+		/*
+		* Default values for marker popups
+		*/
+		$this->settings['defaults_marker_popups_heading'] = array(
+			'version' => '2.7.1',
+			'section' => 'defaults_marker',
+			'title'   => '', 
+			'desc'    => __( 'Default values for marker popups', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['defaults_marker_popups_helptext1'] = array(
+			'version' => '2.7.1',
+			'section' => 'defaults_marker',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '',
+			'type'    => 'helptext'
+		);
+		$this->settings['defaults_marker_popups_maxwidth'] = array(
+			'version' => '2.7.1',
+			'title'   => 'maxWidth (px)',
+			'desc'    => __( 'Maximum width of the popup in pixel', 'lmm' ),
+			'std'     => '300',
+			'type'    => 'text',
+			'section' => 'defaults_marker'
+		);
+		$this->settings['defaults_marker_popups_minwidth'] = array(
+			'version' => '2.7.1',
+			'title'   => 'minWidth (px)',
+			'desc'    => __( 'Minimum width of the popup in pixel', 'lmm' ),
+			'std'     => '50',
+			'type'    => 'text',
+			'section' => 'defaults_marker'
+		);
+		$this->settings['defaults_marker_popups_maxheight'] = array(
+			'version' => '2.7.1',
+			'title'   => 'maxHeight (px)',
+			'desc'    => __( 'If set, creates a scrollable container of the given height in pixel inside a popup if its content exceeds it.', 'lmm' ),
+			'std'     => '160',
+			'type'    => 'text-deletable',
+			'section' => 'defaults_marker'
+		);
+		$this->settings['defaults_marker_popups_autopan'] = array(
+			'version' => '2.7.1',
+			'section' => 'defaults_marker',
+			'title'   => 'autoPan',
+			'desc'    => __('Set it to false if you do not want the map to do panning animation to fit the opened popup.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);
+		$this->settings['defaults_marker_popups_closebutton'] = array(
+			'version' => '2.7.1',
+			'section' => 'defaults_marker',
+			'title'   => 'closeButton',
+			'desc'    => __('Controls the presense of a close button in the popup.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);
+		$this->settings['defaults_marker_popups_autoPanPadding_x'] = array(
+			'version' => '2.7.1',
+			'title'   => 'autoPanPadding (x)',
+			'desc'    => __( 'The x-coordinates of the margin between the popup and the edges of the map view after autopanning was performed.', 'lmm' ),
+			'std'     => '5',
+			'type'    => 'text',
+			'section' => 'defaults_marker'
+		);
+		$this->settings['defaults_marker_popups_autoPanPadding_y'] = array(
+			'version' => '2.7.1',
+			'title'   => 'autoPanPadding (y)',
+			'desc'    => __( 'The y-coordinates of the margin between the popup and the edges of the map view after autopanning was performed.', 'lmm' ),
+			'std'     => '5',
+			'type'    => 'text',
+			'section' => 'defaults_marker'
+		);		
 		/*
 		* Default values for markers added directly
 		*/
@@ -6001,7 +6212,6 @@ class Leafletmapsmarker_options {
 				'tr_TR' => __('Turkish','lmm') . ' (tr_TR)',
 				'uk_UK' => __('Ukrainian','lmm') . ' (uk_UK)',
 				'yi' => __('Yiddish','lmm') . ' (yi)'
-
 			)
 		);
 		$this->settings['misc_plugin_language_area'] = array(
