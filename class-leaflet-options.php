@@ -23,7 +23,7 @@ class Leafletmapsmarker_options {
 		$this->sections['basemaps']      = 'Basemaps';
 		$this->sections['overlays']      = 'Overlays';
 		$this->sections['wms']      = 'WMS';
-		$this->sections['defaults_marker']   = 'Marker defaults';
+		$this->sections['defaults_marker']   = 'Marker/Icon/Popup defaults';
 		$this->sections['defaults_layer']   = 'Layer defaults';
 		$this->sections['google']   = 'Google';
 		$this->sections['directions']   = 'Directions';
@@ -244,6 +244,7 @@ class Leafletmapsmarker_options {
 		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;margin-left:24px;">
 			<li>' . __('Google Maps API key','lmm') . '</li>
 			<li>' . __('Google language localization','lmm') . '</li>
+			<li>' . __('Google Maps base domain','lmm') . '</li>
 			<li>' . __('Google Places bounds','lmm') . '</li>
 			<li>' . __('Google Places search prefix','lmm') . '</li></ul></span>';
 	}	
@@ -255,6 +256,7 @@ class Leafletmapsmarker_options {
 			<li>' . __('General settings','lmm') . '</li>
 			<li>Google Maps</li>
 			<li>yournavigation.org</li>
+			<li>map.project-osrm.org</li>
 			<li>openrouteservice.org</li></ul></span>';
 	}		
 	/**
@@ -4596,6 +4598,26 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'defaults_marker'
 		);
+		$this->settings['defaults_marker_icon_title'] = array(
+			'version' => '2.7.1',
+			'section' => 'defaults_marker',
+			'title'   => 'title' . '<br/><img src="' . LEAFLET_PLUGIN_URL . 'img/help-marker-title.jpg">',
+			'desc'    => __('Show marker name for the browser tooltip that appear on marker hover (tooltip is always hidden if marker name is empty).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'show',
+			'choices' => array(
+				'show' => __('show','lmm'),
+				'hide' => __('hide','lmm')
+			)
+		);
+		$this->settings['defaults_marker_icon_opacity'] = array(
+			'version' => '2.7.1',
+			'title'   => __( 'Opacity', 'lmm' ),
+			'desc'    => __( 'The opacity of the marker.', 'lmm' ),
+			'std'     => '1.0',
+			'type'    => 'text',
+			'section' => 'defaults_marker'
+		);
 		$this->settings['defaults_marker_icon_helptext2'] = array(
 			'version' => '2.7.1',
 			'section' => 'defaults_marker',
@@ -5518,6 +5540,71 @@ class Leafletmapsmarker_options {
 			)
 		);
 		/*
+		* Google Maps base domain
+		*/
+		$this->settings['google_maps_base_domain_heading'] = array(
+			'version' => '2.7.1',
+			'section' => 'google',
+			'title'   => '', 
+			'desc'    => __( 'Google Maps base domain', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['google_maps_base_domain_helptext'] = array(
+			'version' => '2.7.1',
+			'section' => 'google',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'The base domain from which to load the API. For example, you could load from "ditu.google.cn" to get the Chinese version of the Maps API.', 'lmm'),
+			'type'    => 'helptext'
+		);
+		$this->settings['google_maps_base_domain'] = array(
+			'version' => '2.7.1',
+			'section' => 'google',
+			'title'   => __('Google Maps base domain','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => 'maps.google.com',
+			'choices' => array(
+				'maps.google.com' => 'maps.google.com',
+				'maps.google.at' => 'maps.google.at',
+				'maps.google.com.au' => 'maps.google.com.au',
+				'maps.google.com.ba' => 'maps.google.com.ba',
+				'maps.google.be' => 'maps.google.be',
+				'maps.google.bg' => 'maps.google.bg',
+				'maps.google.com.br' => 'maps.google.com.br',
+				'maps.google.ca' => 'maps.google.ca',
+				'maps.google.ch' => 'maps.google.ch',
+				'maps.google.cm' => 'maps.google.cm',
+				'ditu.google.cn' => 'ditu.google.cn',
+				'maps.google.cz' => 'maps.google.cz',
+				'maps.google.de' => 'maps.google.de',
+				'maps.google.dk' => 'maps.google.dk',
+				'maps.google.es' => 'maps.google.es',
+				'maps.google.fi' => 'maps.google.fi',
+				'maps.google.fr' => 'maps.google.fr',
+				'maps.google.it' => 'maps.google.it',
+				'maps.google.lk' => 'maps.google.lk',
+				'maps.google.jp' => 'maps.google.jp',
+				'maps.google.nl' => 'maps.google.nl',
+				'maps.google.no' => 'maps.google.no',
+				'maps.google.co.nz' => 'maps.google.co.nz',
+				'maps.google.pl' => 'maps.google.pl',
+				'maps.google.ru' => 'maps.google.ru',
+				'maps.google.se' => 'maps.google.se',
+				'maps.google.tw' => 'maps.google.tw',
+				'maps.google.co.uk' => 'maps.google.co.uk',
+				'maps.google.co.ve' => 'maps.google.co.ve',
+			)
+		);
+		$this->settings['google_maps_base_domain_custom'] = array(
+			'version' => '2.7.1',
+			'title'   => __( 'Custom base domain', 'lmm'),
+			'desc'    => __( 'If your localized Google Maps basedomain is not available in the list above, please enter the domain name here (without http://)', 'lmm' ),
+			'std'     => 'maps.google.com',
+			'type'    => 'text',
+			'section' => 'google'
+		);		
+		/*
 		* Google Places Bounds
 		*/
 		$this->settings['google_places_bounds_heading'] = array(
@@ -5660,6 +5747,7 @@ class Leafletmapsmarker_options {
 			'choices' => array(
 				'googlemaps' => __('Google Maps (worldwide)','lmm') . ' - <a href="http://maps.google.com/maps?saddr=Vienna&daddr=Linz&hl=de&sll=37.0625,-95.677068&sspn=59.986788,135.263672&geocode=FS6Z3wIdO9j5ACmfyjZRngdtRzFGW6JRiuXC_Q%3BFfwa4QIdBvzZAClNhZn6lZVzRzHEdXlXLClTfA&vpsrc=0&mra=ls&t=m&z=9&layer=t" style="text-decoration:none;" target="_blank">Demo</a>',
 				'yours' => __('yournavigation.org (based on OpenStreetMap, worldwide)','lmm') . ' - <a href="http://www.yournavigation.org/?flat=52.215636&flon=6.963946&tlat=52.2573&tlon=6.1799&v=motorcar&fast=1&layer=mapnik" style="text-decoration:none;" target="_blank">Demo</a>',
+				'osrm' => __('map.project-osrm.org (based on OpenStreetMap, worldwide)','lmm') . ' - <a href="http://map.project-osrm.org/?hl=en&loc=48.242330,16.433030&loc=48.219069,16.380959" style="text-decoration:none;" target="_blank">Demo</a>',
 				'ors' => __('openrouteservice.org (based on OpenStreetMap, Europe only)','lmm') . ' - <a href="http://openrouteservice.org/index.php?start=7.0892567,50.7265543&end=7.0986258,50.7323634&lat=50.72905&lon=7.09574&zoom=15&pref=Fastest&lang=de" style="text-decoration:none;" target="_blank">Demo</a>'
 			)
 		);	
@@ -5908,6 +5996,56 @@ class Leafletmapsmarker_options {
 			'choices' => array(
 				'false' => __('false','lmm'),
 				'true' => __('true','lmm')							
+			)
+		);	
+		/*
+		* map.project-osrm.org
+		*/
+		$this->settings['directions_osrm_heading'] = array(
+			'version' => '2.7.1',
+			'section' => 'directions',
+			'title'   => '', 
+			'desc'    => __( 'map.project-osrm.org settings', 'lmm'),
+			'type'    => 'heading'
+		);
+		$this->settings['directions_osrm_helptext1'] = array(
+			'version' => '2.7.1',
+			'section' => 'directions',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '',
+			'type'    => 'helptext'
+		);			
+		$this->settings['directions_osrm_language'] = array(
+			'version' => '2.7.1',
+			'section' => 'directions',
+			'title'   => __('Language of route instructions','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => 'en',
+			'choices' => array(
+				'en' => __('English','lmm'),
+				'de' => __('German','lmm'),
+				'dk' => __('Danish','lmm'),
+				'es' => __('Spanish','lmm'),
+				'fi' => __('Finnish','lmm'),
+				'fr' => __('French','lmm'),
+				'it' => __('Italian','lmm'),
+				'lv' => __('Latvian','lmm'),
+				'pl' => __('Polish','lmm'),
+				'ru' => __('Russian','lmm')								
+			)
+		);	
+		$this->settings['directions_osrm_units'] = array(
+			'version' => '2.7.1',
+			'section' => 'directions',
+			'title'   => __('Units','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => '0',
+			'choices' => array(
+				'0' => __('metric (kilometer)','lmm'),
+				'1' => __('imperial (miles)','lmm')
 			)
 		);	
 		/*===========================================

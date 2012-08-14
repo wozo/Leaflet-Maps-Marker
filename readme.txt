@@ -14,12 +14,9 @@ Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Go
 == Description ==
 = Plugin's Official Site =
 http://mapsmarker.com
-
 * [Demo](http://www.mapsmarker.com/demo/) - [FAQ](http://www.mapsmarker.com/faq/) - [Docs](http://www.mapsmarker.com/docs/) - [Support](http://mapsmarker.com/support/) - [Github](https://github.com/robertharm/Leaflet-Maps-Marker) - [Donations](http://mapsmarker.com/donations) - [Twitter](http://twitter.com/mapsmarker) - [Facebook](http://facebook.com/mapsmarker) - [Translations](http://translate.mapsmarker.com/projects/lmm)
-
 = Main features = 
 Leaflet Maps Marker allows you to
-
 * pin your favorites places with markers,
 * use integrated address search (Google Places API) for quickly finding your places,
 * choose from up to 700 custom free map icons from [Maps Icons Collection](http://mapicons.nicolasmollet.com),
@@ -223,6 +220,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: Slovak translation thanks to Zdenko Podobny
 * NEW: added config options for marker icons and shadow image in settings (size, offset...)
 * NEW: show marker icons directory (especially needed for blogs on WordPress Multisite installations)
+* NEW: option to show marker name as icon tooltip (enabled by default)
+* NEW: added routing provider OSRM - [http://map.project-osrm.org](http://map.project-osrm.org)
+* NEW: option to customize Google Maps base domain
 * CHANGED: secure loading of Google API via https instead of http
 * CHANGED: enhanced Google Maps language localization options (for maps, directions and autocomplete)
 * CHANGED: optimized usability for forms and marker icon selection on backend
@@ -235,7 +235,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: overwrite box-shadow attribute from style.css to remove border on some themes
 * BUGFIX: linebreak was added to mapquest logo in attribution box on some templates
 * BUGFIX: Google API key was not loaded on backend
+* BUGFIX: attribution text for Google Maps provider was hidden
 * BUGFIX: Marker/layer repositioning via Google address search did not changed basemap to Bing/Google
+* BUGFIX: switching basemaps caused attribution text not to clear first
 = v2.7 - 21.07.2012 =
 * "Special Collectors Edition" :-)
 = v2.6.1 - 20.07.2012 =

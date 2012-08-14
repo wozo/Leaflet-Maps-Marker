@@ -72,7 +72,6 @@
 }
 .leaflet-popup-content {
 	word-wrap: break-word; 
-	min-width:245px;
 }
 .leaflet-popup-content a:hover {
 	text-decoration:underline;
