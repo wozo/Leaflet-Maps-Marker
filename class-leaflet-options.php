@@ -5554,7 +5554,7 @@ class Leafletmapsmarker_options {
 			'section' => 'google',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'The base domain from which to load the API. For example, you could load from "ditu.google.cn" to get the Chinese version of the Maps API.', 'lmm'),
+			'desc'    => __( 'The base domain from which to load the Google Maps API (used for geocoding for example). If you want to change the language of the Google Maps interface (buttons etc) only, please change the option "Google language localization" above.', 'lmm'),
 			'type'    => 'helptext'
 		);
 		$this->settings['google_maps_base_domain'] = array(
@@ -5599,8 +5599,8 @@ class Leafletmapsmarker_options {
 		$this->settings['google_maps_base_domain_custom'] = array(
 			'version' => '2.7.1',
 			'title'   => __( 'Custom base domain', 'lmm'),
-			'desc'    => __( 'If your localized Google Maps basedomain is not available in the list above, please enter the domain name here (without http://)', 'lmm' ),
-			'std'     => 'maps.google.com',
+			'desc'    => __( 'If your localized Google Maps basedomain is not available in the list above, please enter the domain name here (without http://, for example maps.google.com). If a domain name is entered, the setting "Google Maps base domain" from above gets overwritten.', 'lmm' ),
+			'std'     => '',
 			'type'    => 'text',
 			'section' => 'google'
 		);		

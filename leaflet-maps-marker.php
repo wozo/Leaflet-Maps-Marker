@@ -985,7 +985,7 @@ function __construct() {
 	} else {
 		$google_language = "&language=" . $lmm_options['google_maps_language_localization'];
 	}
-	if ($lmm_options['google_maps_base_domain_custom'] == 'maps.google.com') {
+	if ($lmm_options['google_maps_base_domain_custom'] == '') {
 		$gmaps_base_domain = "&base_domain=" . $lmm_options['google_maps_base_domain'];
 	} else {
 		$gmaps_base_domain = "&base_domain=" . $lmm_options['google_maps_base_domain_custom'];
@@ -1017,7 +1017,7 @@ function __construct() {
 	} else {
 		$google_language = "&language=" . $lmm_options['google_maps_language_localization'];
 	}
-	if ($lmm_options['google_maps_base_domain_custom'] == 'maps.google.com') {
+	if ($lmm_options['google_maps_base_domain_custom'] != '') {
 		$gmaps_base_domain = "&base_domain=" . $lmm_options['google_maps_base_domain'];
 	} else {
 		$gmaps_base_domain = "&base_domain=" . $lmm_options['google_maps_base_domain_custom'];
