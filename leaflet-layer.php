@@ -910,30 +910,47 @@ var markers = {};
   <?php if ( $lmm_options['map_scale_control'] == 'enabled' ) { ?>
   L.control.scale({position:'<?php echo $lmm_options['map_scale_control_position'] ?>', maxWidth: <?php echo intval($lmm_options['map_scale_control_maxwidth']) ?>, metric: <?php echo $lmm_options['map_scale_control_metric'] ?>, imperial: <?php echo $lmm_options['map_scale_control_imperial'] ?>, updateWhenIdle: <?php echo $lmm_options['map_scale_control_updatewhenidle'] ?>}).addTo(selectlayer);
   <?php }; ?>
-  mapcentermarker = new L.Marker(new L.LatLng(<?php echo $layerviewlat . ', ' . $layerviewlon; ?>));
-  mapcentermarker.options.icon = new L.Icon('<?php echo LEAFLET_PLUGIN_URL . 'img/icon-layer-center.png' ?>');
-  
+  mapcentermarker = new L.Marker(new L.LatLng(<?php echo $layerviewlat . ', ' . $layerviewlon; ?>),{ title: '<?php esc_attr_e('use this marker to center the layer','lmm'); ?>', clickable: false });
+  mapcentermarker.options.icon = new L.Icon({iconUrl:'<?php echo LEAFLET_PLUGIN_URL . 'img/icon-layer-center.png' ?>',iconSize: [32, 37],iconAnchor: [17, 37],shadowUrl: ''});
+  mapcentermarker.addTo(selectlayer);
   var layers = {};
-  var geojson = new L.GeoJSON();
-  geojson.on("featureparse",  function(e) {
-  		if (typeof e.properties.text != 'undefined') e.layer.bindPopup(e.properties.text);
-  		//RH 2do: popup-code checken
-  		//if (typeof e.properties.text != 'undefined') e.layer.bindPopup(e.properties.text,{maxWidth: <?php echo intval($lmm_options['defaults_marker_popups_maxwidth']) ?>, minWidth: <?php echo intval($lmm_options['defaults_marker_popups_minwidth']) ?>, maxHeight: <?php echo intval($lmm_options['defaults_marker_popups_maxheight']) ?>, autoPan: <?php echo $lmm_options['defaults_marker_popups_autopan'] ?>, closeButton: <?php echo $lmm_options['defaults_marker_popups_closebutton'] ?>, autoPanPadding: [<?php echo intval($lmm_options['defaults_marker_popups_autopanpadding_x']) ?>, <?php echo intval($lmm_options['defaults_marker_popups_autopanpadding_y']) ?>]});
-  		if (e.properties.icon != '') e.layer.options.icon = new L.Icon("<?php echo LEAFLET_PLUGIN_ICONS_URL ?>/" + e.properties.icon);
-  		if (e.properties.icon == '') e.layer.options.icon = new L.Icon("<?php echo LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' ?>");
-		if (e.properties.text == '') e.layer.options.clickable = false;
-  layers[e.properties.layer] = e.properties.layername;
-  if (typeof markers[e.properties.layer] == 'undefined') markers[e.properties.layer] = [];
-  markers[e.properties.layer].push(e.layer);
-  });
-  var geojsonObj;
+  var geojsonObj, mapIcon, marker_clickable, marker_title;
   <?php if ($multi_layer_map == 0) { 
-	  echo 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?layer=' . $id . '", async: false}).responseText + ")");';
+	  echo 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?layer=' . $id . '", async: false, cache: false}).responseText + ")");';
   } else if ($multi_layer_map == 1) {
-	  echo 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?layer=' . $multi_layer_map_list . '", async: false}).responseText + ")");';
+	  echo 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?layer=' . $multi_layer_map_list . '", async: false, cache: false}).responseText + ")");';
   };?>
-  geojson.addGeoJSON(geojsonObj);
-  selectlayer.addLayer(mapcentermarker).addLayer(geojson);
+	L.geoJson(geojsonObj, {
+		onEachFeature: function(feature, marker) {
+			if (feature.properties.text != '') {
+					marker.bindPopup(feature.properties.text, {
+					maxWidth: <?php echo intval($lmm_options['defaults_marker_popups_maxwidth']) ?>, 
+					minWidth: <?php echo intval($lmm_options['defaults_marker_popups_minwidth']) ?>, 
+					maxHeight: <?php echo intval($lmm_options['defaults_marker_popups_maxheight']) ?>, 
+					autoPan: <?php echo $lmm_options['defaults_marker_popups_autopan'] ?>, 
+					closeButton: <?php echo $lmm_options['defaults_marker_popups_closebutton'] ?>, 
+					autoPanPadding: [<?php echo intval($lmm_options['defaults_marker_popups_autopanpadding_x']) ?>, <?php echo intval($lmm_options['defaults_marker_popups_autopanpadding_y']) ?>]
+				});
+			}
+		},
+		pointToLayer: function (feature, latlng) {
+			mapIcon = L.icon({ 
+				iconUrl: (feature.properties.icon != '') ? "<?php echo LEAFLET_PLUGIN_ICONS_URL ?>/" + feature.properties.icon : "<?php echo LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' ?>",
+				iconSize: [<?php echo intval($lmm_options[ 'defaults_marker_icon_iconsize_x' ]); ?>, <?php echo intval($lmm_options[ 'defaults_marker_icon_iconsize_y' ]); ?>],
+				iconAnchor: [<?php echo intval($lmm_options[ 'defaults_marker_icon_iconanchor_x' ]); ?>, <?php echo intval($lmm_options[ 'defaults_marker_icon_iconanchor_y' ]); ?>],
+				popupAnchor: [<?php echo intval($lmm_options[ 'defaults_marker_icon_popupanchor_x' ]); ?>, <?php echo intval($lmm_options[ 'defaults_marker_icon_popupanchor_y' ]); ?>],
+				shadowUrl: '<?php echo htmlspecialchars($lmm_options[ 'defaults_marker_icon_shadow_url' ]); ?>',
+				shadowSize: [<?php echo intval($lmm_options[ 'defaults_marker_icon_shadowsize_x' ]); ?>, <?php echo intval($lmm_options[ 'defaults_marker_icon_shadowsize_y' ]); ?>],
+				shadowAnchor: [<?php echo intval($lmm_options[ 'defaults_marker_icon_shadowanchor_x' ]); ?>, <?php echo intval($lmm_options[ 'defaults_marker_icon_shadowanchor_y' ]); ?>],
+				className: (feature.properties.icon == '') ? "lmm_marker_icon_default" : "lmm_marker_icon_"+ feature.properties.icon.slice(0,-4)
+			});
+			if (feature.properties.text == '') { marker_clickable = false } else { marker_clickable = true };
+			<?php if ($lmm_options[ 'defaults_marker_icon_title' ] == 'show') { ?>
+				if (feature.properties.markername == '') { marker_title = '' } else { marker_title = feature.properties.markername };
+			<?php }; ?>
+			return L.marker(latlng, {icon: mapIcon, clickable: marker_clickable, title: marker_title, opacity: <?php echo intval($lmm_options[ 'defaults_marker_icon_opacity' ]) ?>});
+		}
+	}).addTo(selectlayer);
   
   <?php if ($lmm_options[ 'ogdvienna_selector' ] != 'disabled') { ?>
   //info: set OGD Vienna basemap if position between 48.321560/16.182175 and 48.116142/16.579056
@@ -942,7 +959,7 @@ var markers = {};
 		if( ('<?php echo $basemap ?>' != 'ogdwien_basemap') && ('<?php echo $basemap ?>' != 'ogdwien_satellite') && (e.latlng.lat.toFixed(6) <= 48.321560) && (e.latlng.lat.toFixed(6) >= 48.116142) && (e.latlng.lng.toFixed(6) >= 16.182175) && (e.latlng.lng.toFixed(6) <= 16.579056) ) 
 		{
 			selectlayer.attributionControl._attributions = [];
-			selectlayer.removeLayer($('#basemap').val()).removeControl(layersControl).addLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>);
+			selectlayer.removeControl(layersControl).addLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>);
 				<?php if ( (isset($lmm_options[ 'ogdvienna_selector_addresses' ]) == TRUE) && ($lmm_options[ 'ogdvienna_selector_addresses' ] == 1) ) { ?>
 				selectlayer.addLayer(overlays_custom);
 				<?php }?>

@@ -162,6 +162,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			moved "General Map settings" from tab "Misc" to "Basemaps"
 			</td></tr>
 			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			GeoJSON AJAX calls for layer maps are not cached anymore to deliver more current results
+			</td></tr>
+			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
 			fixed broken links in multi-layer-maps-list and default state controlbox on layer maps on backend 

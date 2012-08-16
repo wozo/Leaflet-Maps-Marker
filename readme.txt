@@ -230,6 +230,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: merged & compressed google-maps.js, bing.js into leaflet.js to save http requests
 * CHANGED: changed default color for panel text to #373737 for new installations
 * CHANGED: moved "General Map settings" from tab "Misc" to "Basemaps"
+* CHANGED: GeoJSON AJAX calls for layer maps are not cached anymore to deliver more current results
 * BUGFIX: fixed broken links in multi-layer-maps-list and default state controlbox on layer maps on backend 
 * BUGFIX: manual language selection for Chinese and Yiddish was broken
 * BUGFIX: overwrite box-shadow attribute from style.css to remove border on some themes
