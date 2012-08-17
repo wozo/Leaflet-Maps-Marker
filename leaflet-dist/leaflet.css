@@ -451,9 +451,9 @@
 	color:#000000 !important;
 	}
 	
-/*RH leave on updates to override .leaflet-container img */
+/*RH leave on updates to set max image width in popups. Gets overriden by extra css with set value if theme supports wp_head()  */
 .leaflet-popup-content img {
-	max-width:245px !important;
+	max-width:250px !important;
 	height:auto;
 	margin: 0px !important;
 	padding: 0px !important;	

@@ -4744,7 +4744,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.7.1',
 			'title'   => 'minWidth (px)',
 			'desc'    => __( 'Minimum width of the popup in pixel', 'lmm' ),
-			'std'     => '50',
+			'std'     => '250',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
 		);
@@ -4754,6 +4754,14 @@ class Leafletmapsmarker_options {
 			'desc'    => __( 'If set, creates a scrollable container of the given height in pixel inside a popup if its content exceeds it.', 'lmm' ),
 			'std'     => '160',
 			'type'    => 'text-deletable',
+			'section' => 'defaults_marker'
+		);
+		$this->settings['defaults_marker_popups_image_max_width'] = array(
+			'version' => '2.7.1',
+			'title'   => __('maximum image width (px)','lmm'),
+			'desc'    => __( 'Reduce image width in popups automatically to the given value in pixel (only if is wider). The height of the images gets reduced by the according ratio automatically (this feature only works if your theme supports the wp_head()-hook).', 'lmm' ),
+			'std'     => '230',
+			'type'    => 'text',
 			'section' => 'defaults_marker'
 		);
 		$this->settings['defaults_marker_popups_autopan'] = array(
@@ -5301,7 +5309,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.5',
 			'section' => 'defaults_layer',
 			'title'   => __('Display a list of markers under the map','lmm'),
-			'desc'    => __('(not available on multi layer maps)','lmm'),
+			'desc'    => '',
 			'type'    => 'radio',
 			'std'     => '1',
 			'choices' => array(
@@ -5337,7 +5345,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.5',
 			'section' => 'defaults_layer',
 			'title'   => __('Order list of markers by','lmm'),
-			'desc'    => '',
+			'desc'    =>  __('(not available on multi layer maps)','lmm'),
 			'type'    => 'radio',
 			'std'     => 'm.id',
 			'choices' => array(
@@ -5351,7 +5359,7 @@ class Leafletmapsmarker_options {
 			'version' => '1.5',
 			'section' => 'defaults_layer',
 			'title'   => __('Sort order','lmm'),
-			'desc'    => '',
+			'desc'    =>  __('(not available on multi layer maps)','lmm'),
 			'type'    => 'radio',
 			'std'     => 'ASC',
 			'choices' => array(
@@ -5362,7 +5370,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_layer_listmarkers_limit'] = array(
 			'version' => '1.7',
 			'title'   => __( 'Limit', 'lmm' ),
-			'desc'    => __( 'maximum number of markers to display in the list', 'lmm' ),
+			'desc'    => __( 'maximum number of markers to display in the list', 'lmm' ) . ' ' .  __('(not available on multi layer maps)','lmm'),
 			'std'     => '100',
 			'type'    => 'text',
 			'section' => 'defaults_layer'
@@ -6445,7 +6453,15 @@ class Leafletmapsmarker_options {
 			'desc'    => __('Popup text','lmm'),
 			'type'    => 'checkbox',
 			'std'     => 1 
-		);		
+		);	
+		$this->settings['misc_marker_listing_columns_layername'] = array(
+			'version' => '2.7.1',
+			'section' => 'misc',
+			'title'    => '',
+			'desc'    => __('Layer name','lmm') . ' ' . __('(for marker listings below multi-layer maps only)','lmm'),
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);			
 		$this->settings['misc_marker_listing_columns_basemap'] = array(
 			'version' => '1.0',
 			'section' => 'misc',
@@ -7171,7 +7187,6 @@ class Leafletmapsmarker_options {
 		$options_new = array_merge($options_current, $new_options_defaults);
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
-		/* template for plugin updates 
 		//info:  set defaults for options introduced in v2.7.1
 		if (get_option('leafletmapsmarker_version') == '2.7' )
 		{
@@ -7179,6 +7194,22 @@ class Leafletmapsmarker_options {
 			foreach ( $this->settings as $id => $setting ) 
 			{
 				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.7.1')
+				{
+				$new_options_defaults[$id] = $setting['std'];
+				}
+			}
+		$options_current = get_option( 'leafletmapsmarker_options' );
+		$options_new = array_merge($options_current, $new_options_defaults);
+		update_option( 'leafletmapsmarker_options', $options_new );
+		}
+		/* template for plugin updates 
+		//info:  set defaults for options introduced in v2.8
+		if (get_option('leafletmapsmarker_version') == '2.7.1' )
+		{
+			$new_options_defaults = array();
+			foreach ( $this->settings as $id => $setting ) 
+			{
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.8')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}

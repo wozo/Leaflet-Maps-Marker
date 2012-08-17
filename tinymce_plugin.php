@@ -4,16 +4,13 @@ Hook into WordPress
 */
 //info prevent file from being accessed directly
 if (basename($_SERVER['SCRIPT_FILENAME']) == 'tinymce_plugin.php') { die ("Please do not access this file directly. Thanks!<br/><a href='http://www.mapsmarker.com/go'>www.mapsmarker.com</a>"); }
-
 add_action('admin_print_styles-post.php', 'marker_select_box_css');
 add_action('admin_print_styles-post-new.php', 'marker_select_box_css');
-
 function marker_select_box_css() {
 	wp_register_style( 'lmm-tinymce-css', LEAFLET_PLUGIN_URL . 'css/marker_select_box.css', array(), NULL );
 	wp_enqueue_style( 'lmm-tinymce-css' );	
 }
 add_action('init', 'mm_shortcode_button');
-
 /**
 Create Our Initialization Function
 */
@@ -26,7 +23,6 @@ function mm_shortcode_button() {
      add_filter( 'mce_buttons', 'lmm_register_button' );
    }
 }
-
 /**
 Register Button
 */
@@ -34,7 +30,6 @@ function lmm_register_button( $buttons ) {
 	array_push( $buttons, "|", "mm_shortcode" );
 	return $buttons;
 }
-
 /**
 Register TinyMCE Plugin
 */
@@ -44,10 +39,8 @@ function lmm_add_plugin( $plugin_array ) {
 	return $plugin_array;
 }
 add_action('wp_ajax_get_mm_list',  'get_mm_list');
-
 function get_mm_list(){
     global $wpdb;
-
     $table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
     $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
     
@@ -59,13 +52,11 @@ function get_mm_list(){
             UNION
             (SELECT m.id, m.markername as 'name', m.createdon, 'marker' as 'type' FROM $table_name_markers as m WHERE  m.id != '0' $m_condition)
             order by createdon DESC LIMIT 15", ARRAY_A);
-
     if(isset($_GET['q']) ){
         buildMarkersList($marklist);
         exit();
     }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,13 +73,10 @@ function get_mm_list(){
 	<div id="msb_listHint" ><?php _e('Please select the map you would like to add','lmm'); ?></div>
 	<?php buildMarkersList($marklist); ?>
 </div>
-
 <input class="button-primary" type="button" href="#" id="msb_insertMarkerSC" value="<?php esc_attr_e('Add shortcode','lmm'); ?>" />       
-
 <a href="#" id="msb_cancel"><?php _e('Cancel','lmm'); ?></a>
 <br/><br/>
 <span id="msb_attribution">powered by <a href="http://www.mapsmarker.com" target"_blank">MapsMarker.com</a></span>
-
 <script type="text/javascript">
 (function($){
     var selectMarkerBox = {

@@ -28,6 +28,11 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-help-credits.php') { die (
 	<p>
 		<?php _e('Good news, this plugin is free for everyone! Since it is released under the GPL2, you can use it free of charge on your personal or commercial blog.<br/>But if you enjoy this plugin, you can thank me and leave a small donation for the time I have spent writing and supporting this plugin.<br/>Please see <a href="http://www.mapsmarker.com/donations" target="_blank">http://www.mapsmarker.com/donations</a> for details.','lmm') ?>
 	</p>
+	<h3><?php _e('Trademarks and copyright','lmm') ?></h3>
+	<p>
+	MapsMarker<sup style="font-size:75%;">&reg;</sup> - registration pending<br/>
+	Copyright &copy; 2011-2012, Robert Harm, All Rights Reserved
+	</p>
 	<h3><?php _e('Licenses for used libraries, services and images','lmm') ?></h3>
 	<ul>
 		<li>- Leaflet by Cloudmade, <a href="http://leaflet.cloudmade.com" target="_blank">http://leaflet.cloudmade.com</a>, Copyright (c) 2010-2012, CloudMade, Vladimir Agafonkin</li>

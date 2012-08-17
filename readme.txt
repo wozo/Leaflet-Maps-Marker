@@ -152,6 +152,9 @@ This program is free software; you can redistribute it and/or modify it under th
 * [Hind](http://www.nanodesu.ru) who originally release a basic Leaflet plugin (not available anymore) which I used partly as a basis for Leaflet Maps Marker plugin
 * [shramov](http://psha.org.ru/b/leaflet-plugins.html) for bing and google maps plugins for leaflet
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
+= Trademark and copyright =
+MapsMarker &reg; - registration pending
+Copyright 2011-2012, Robert Harm, All Rights Reserved
 == Upgrade Notice ==
 = v2.7.1 =
 = v2.6.1 =
@@ -223,6 +226,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: option to show marker name as icon tooltip (enabled by default)
 * NEW: added routing provider OSRM - [http://map.project-osrm.org](http://map.project-osrm.org)
 * NEW: option to customize Google Maps base domain
+* NEW: marker/layer name gets added as <title> on fullscreen maps
+* NEW: list of markers can now also be displayed below multi-layer-maps
 * CHANGED: secure loading of Google API via https instead of http
 * CHANGED: enhanced Google Maps language localization options (for maps, directions and autocomplete)
 * CHANGED: optimized usability for forms and marker icon selection on backend
@@ -231,6 +236,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: changed default color for panel text to #373737 for new installations
 * CHANGED: moved "General Map settings" from tab "Misc" to "Basemaps"
 * CHANGED: GeoJSON AJAX calls for layer maps are not cached anymore to deliver more current results
+* CHANGED: optimized OGD Vienna selector (considers switch to other default basemaps)
 * BUGFIX: fixed broken links in multi-layer-maps-list and default state controlbox on layer maps on backend 
 * BUGFIX: manual language selection for Chinese and Yiddish was broken
 * BUGFIX: overwrite box-shadow attribute from style.css to remove border on some themes
@@ -239,6 +245,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: attribution text for Google Maps provider was hidden
 * BUGFIX: Marker/layer repositioning via Google address search did not changed basemap to Bing/Google
 * BUGFIX: switching basemaps caused attribution text not to clear first
+* BUGFIX: <html>-tags in geotags are now stripped as they caused 404 messages
 = v2.7 - 21.07.2012 =
 * "Special Collectors Edition" :-)
 = v2.6.1 - 20.07.2012 =
