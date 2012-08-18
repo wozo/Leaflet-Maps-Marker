@@ -242,7 +242,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 <?php
 //info: check if other scripts enqueue Google Maps API
 global $wp_scripts;
-if ( (!in_array("googlemaps", (array) $wp_scripts)) || (in_array("google-maps", (array) $wp_scripts)) || (in_array("gmaps", (array) $wp_scripts)) ){
+if ( (in_array("googlemaps", (array) $wp_scripts)) || (in_array("google-maps", (array) $wp_scripts)) || (in_array("gmaps", (array) $wp_scripts)) ){
     echo '<p><div class="updated" style="padding:10px;">' . __('<strong>Warning: possible Google Maps API script collusion detected!</strong><br/>Another plugin or your theme is also calling the Google Maps API. This might cause problems on basemaps using Google Maps. Please deactivate this script if you are experiencing problems with Google Maps created with Leaflet Maps Marker.','lmm') . '</div></p>';
 } 
 //info: check if bing maps api key is defined
