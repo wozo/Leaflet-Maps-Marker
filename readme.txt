@@ -228,6 +228,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: option to customize Google Maps base domain
 * NEW: marker/layer name gets added as <title> on fullscreen maps
 * NEW: list of markers can now also be displayed below multi-layer-maps
+* NEW: added check for possible Google Maps API collusions
 * CHANGED: secure loading of Google API via https instead of http
 * CHANGED: enhanced Google Maps language localization options (for maps, directions and autocomplete)
 * CHANGED: optimized usability for forms and marker icon selection on backend
