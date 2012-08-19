@@ -1040,7 +1040,7 @@ class Leafletmapsmarker_options {
 			'section' => 'basemaps',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'A simple scale control that shows the scale of the current center of screen in metric (m/km) and/or imerial (mi/ft) systems. The following settings will be used for all marker and layer maps.', 'lmm').'<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'img/help-basemap-scale-control.jpg" />',
+			'desc'    => __( 'A simple scale control that shows the scale of the current center of screen in metric (m/km) and/or imperial (mi/ft) systems. The following settings will be used for all marker and layer maps.', 'lmm').'<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'img/help-basemap-scale-control.jpg" />',
 			'type'    => 'helptext'
 		);	
 		$this->settings['map_scale_control'] = array(
@@ -1093,7 +1093,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.7.1',
 			'section' => 'basemaps',
 			'title'   => 'imperial',
-			'desc'    => __('Whether to show the imerial scale line (mi/ft).','lmm'),
+			'desc'    => __('Whether to show the imperial scale line (mi/ft).','lmm'),
 			'type'    => 'radio',
 			'std'     => 'true',
 			'choices' => array(
@@ -4613,7 +4613,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_icon_opacity'] = array(
 			'version' => '2.7.1',
 			'title'   => __( 'Opacity', 'lmm' ),
-			'desc'    => __( 'The opacity of the marker.', 'lmm' ),
+			'desc'    => __( 'The opacity of the markers.', 'lmm' ),
 			'std'     => '1.0',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4629,7 +4629,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_icon_iconsize_x'] = array(
 			'version' => '2.7.1',
 			'title'   => __( 'Icon size', 'lmm' ) . ' (x)',
-			'desc'    => __( 'Width of the icon in pixel', 'lmm' ),
+			'desc'    => __( 'Width of the icons in pixel', 'lmm' ),
 			'std'     => '32',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4637,7 +4637,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_icon_iconsize_y'] = array(
 			'version' => '2.7.1',
 			'title'   => __( 'Icon size', 'lmm' ) . ' (y)',
-			'desc'    => __( 'Height of the icon in pixel', 'lmm' ),
+			'desc'    => __( 'Height of the icons in pixel', 'lmm' ),
 			'std'     => '37',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4645,7 +4645,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_icon_iconanchor_x'] = array(
 			'version' => '2.7.1',
 			'title'   => __( 'Icon anchor', 'lmm' ) . ' (x)',
-			'desc'    => __( 'The x-coordinates of the "tip" of the icon (relative to its top left corner).', 'lmm' ),
+			'desc'    => __( 'The x-coordinates of the "tip" of the icons (relative to its top left corner).', 'lmm' ),
 			'std'     => '17',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4653,7 +4653,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_icon_iconanchor_y'] = array(
 			'version' => '2.7.1',
 			'title'   => __( 'Icon anchor', 'lmm' ) . ' (y)',
-			'desc'    => __( 'The y-coordinates of the "tip" of the icon (relative to its top left corner).', 'lmm' ),
+			'desc'    => __( 'The y-coordinates of the "tip" of the icons (relative to its top left corner).', 'lmm' ),
 			'std'     => '36',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4677,7 +4677,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_icon_shadow_url'] = array(
 			'version' => '2.7.1',
 			'title'   => __( 'Shadow URL', 'lmm' ),
-			'desc'    => __( 'The URL to the icon shadow image. If not specified, no shadow image will be created. Default shadow icon:', 'lmm' ) . '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker-shadow.png">',
+			'desc'    => __( 'The URL to the icons shadow image. If not specified, no shadow image will be created. Default shadow icon:', 'lmm' ) . '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker-shadow.png">',
 			'std'     => LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker-shadow.png',
 			'type'    => 'text-deletable',
 			'section' => 'defaults_marker'
@@ -4685,7 +4685,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_icon_shadowsize_x'] = array(
 			'version' => '2.7.1',
 			'title'   => __( 'Shadow size', 'lmm' ) . ' (x)',
-			'desc'    => __( 'Width of the icon in pixel', 'lmm' ),
+			'desc'    => __( 'Width of the shadow icon in pixel', 'lmm' ),
 			'std'     => '41',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4693,7 +4693,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_icon_shadowsize_y'] = array(
 			'version' => '2.7.1',
 			'title'   => __( 'Shadow size', 'lmm' ) . ' (y)',
-			'desc'    => __( 'Height of the icon in pixel', 'lmm' ),
+			'desc'    => __( 'Height of the shadow icon in pixel', 'lmm' ),
 			'std'     => '41',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4701,7 +4701,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_icon_shadowanchor_x'] = array(
 			'version' => '2.7.1',
 			'title'   => __( 'Shadow anchor', 'lmm' ) . ' (x)',
-			'desc'    => __( 'The x-coordinates of the "tip" of the shadow (relative to its top left corner)', 'lmm' ),
+			'desc'    => __( 'The x-coordinates of the "tip" of the shadow icon (relative to its top left corner)', 'lmm' ),
 			'std'     => '16',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4709,7 +4709,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_icon_shadowanchor_y'] = array(
 			'version' => '2.7.1',
 			'title'   => __( 'Shadow anchor', 'lmm' ) . ' (y)',
-			'desc'    => __( 'The y-coordinates of the "tip" of the shadow (relative to its top left corner)', 'lmm' ),
+			'desc'    => __( 'The y-coordinates of the "tip" of the shadow icon (relative to its top left corner)', 'lmm' ),
 			'std'     => '43',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4735,7 +4735,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_popups_maxwidth'] = array(
 			'version' => '2.7.1',
 			'title'   => 'maxWidth (px)',
-			'desc'    => __( 'Maximum width of the popup in pixel', 'lmm' ),
+			'desc'    => __( 'Maximum width of popups in pixel', 'lmm' ),
 			'std'     => '300',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4743,7 +4743,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_popups_minwidth'] = array(
 			'version' => '2.7.1',
 			'title'   => 'minWidth (px)',
-			'desc'    => __( 'Minimum width of the popup in pixel', 'lmm' ),
+			'desc'    => __( 'Minimum width of popups in pixel', 'lmm' ),
 			'std'     => '250',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4751,7 +4751,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_popups_maxheight'] = array(
 			'version' => '2.7.1',
 			'title'   => 'maxHeight (px)',
-			'desc'    => __( 'If set, creates a scrollable container of the given height in pixel inside a popup if its content exceeds it.', 'lmm' ),
+			'desc'    => __( 'If set, creates a scrollable container of the given height in pixel inside popups if its content exceeds it.', 'lmm' ),
 			'std'     => '160',
 			'type'    => 'text-deletable',
 			'section' => 'defaults_marker'
@@ -4780,7 +4780,7 @@ class Leafletmapsmarker_options {
 			'version' => '2.7.1',
 			'section' => 'defaults_marker',
 			'title'   => 'closeButton',
-			'desc'    => __('Controls the presense of a close button in the popup.','lmm'),
+			'desc'    => __('Controls the presence of a close button in popups.','lmm'),
 			'type'    => 'radio',
 			'std'     => 'true',
 			'choices' => array(
@@ -4791,7 +4791,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_popups_autoPanPadding_x'] = array(
 			'version' => '2.7.1',
 			'title'   => 'autoPanPadding (x)',
-			'desc'    => __( 'The x-coordinates of the margin between the popup and the edges of the map view after autopanning was performed.', 'lmm' ),
+			'desc'    => __( 'The x-coordinates of the margin between popups and the edges of the map view after autopanning was performed.', 'lmm' ),
 			'std'     => '5',
 			'type'    => 'text',
 			'section' => 'defaults_marker'
@@ -4799,7 +4799,7 @@ class Leafletmapsmarker_options {
 		$this->settings['defaults_marker_popups_autoPanPadding_y'] = array(
 			'version' => '2.7.1',
 			'title'   => 'autoPanPadding (y)',
-			'desc'    => __( 'The y-coordinates of the margin between the popup and the edges of the map view after autopanning was performed.', 'lmm' ),
+			'desc'    => __( 'The y-coordinates of the margin between popups and the edges of the map view after autopanning was performed.', 'lmm' ),
 			'std'     => '5',
 			'type'    => 'text',
 			'section' => 'defaults_marker'

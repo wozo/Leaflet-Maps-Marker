@@ -182,6 +182,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			optimized OGD Vienna selector (considers switch to other default basemaps)
 			</td></tr>
 			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			updated German translation
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			updated French translation thanks to Vincèn Pujol, <a href="http://www.skivr.com" target="_blank">http://www.skivr.com</a> and Rodolphe Quiedeville, <a href="http://rodolphe.quiedeville.org/" target="_blank">http://rodolphe.quiedeville.org/</a>
+			</td></tr>
+			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
 			fixed broken links in multi-layer-maps-list and default state controlbox on layer maps on backend 

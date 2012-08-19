@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MapsMarker.com\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-18 21:18+0100\n"
-"PO-Revision-Date: 2012-08-18 21:18+0100\n"
+"POT-Creation-Date: 2012-08-19 21:09+0100\n"
+"PO-Revision-Date: 2012-08-19 21:10+0100\n"
 "Last-Translator: Robert Harm <info@mapsmarker.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -659,7 +659,7 @@ msgid "Scale control options"
 msgstr ""
 
 #: ../class-leaflet-options.php:1043
-msgid "A simple scale control that shows the scale of the current center of screen in metric (m/km) and/or imerial (mi/ft) systems. The following settings will be used for all marker and layer maps."
+msgid "A simple scale control that shows the scale of the current center of screen in metric (m/km) and/or imperial (mi/ft) systems. The following settings will be used for all marker and layer maps."
 msgstr ""
 
 #: ../class-leaflet-options.php:1049
@@ -733,7 +733,7 @@ msgid "Whether to show the metric scale line (m/km)."
 msgstr ""
 
 #: ../class-leaflet-options.php:1096
-msgid "Whether to show the imerial scale line (mi/ft)."
+msgid "Whether to show the imperial scale line (mi/ft)."
 msgstr ""
 
 #: ../class-leaflet-options.php:1108
@@ -1926,7 +1926,7 @@ msgid "Opacity"
 msgstr ""
 
 #: ../class-leaflet-options.php:4616
-msgid "The opacity of the marker."
+msgid "The opacity of the markers."
 msgstr ""
 
 #: ../class-leaflet-options.php:4626
@@ -1939,13 +1939,11 @@ msgid "Icon size"
 msgstr ""
 
 #: ../class-leaflet-options.php:4632
-#: ../class-leaflet-options.php:4688
-msgid "Width of the icon in pixel"
+msgid "Width of the icons in pixel"
 msgstr ""
 
 #: ../class-leaflet-options.php:4640
-#: ../class-leaflet-options.php:4696
-msgid "Height of the icon in pixel"
+msgid "Height of the icons in pixel"
 msgstr ""
 
 #: ../class-leaflet-options.php:4647
@@ -1954,11 +1952,11 @@ msgid "Icon anchor"
 msgstr ""
 
 #: ../class-leaflet-options.php:4648
-msgid "The x-coordinates of the \"tip\" of the icon (relative to its top left corner)."
+msgid "The x-coordinates of the \"tip\" of the icons (relative to its top left corner)."
 msgstr ""
 
 #: ../class-leaflet-options.php:4656
-msgid "The y-coordinates of the \"tip\" of the icon (relative to its top left corner)."
+msgid "The y-coordinates of the \"tip\" of the icons (relative to its top left corner)."
 msgstr ""
 
 #: ../class-leaflet-options.php:4663
@@ -1979,12 +1977,20 @@ msgid "Shadow URL"
 msgstr ""
 
 #: ../class-leaflet-options.php:4680
-msgid "The URL to the icon shadow image. If not specified, no shadow image will be created. Default shadow icon:"
+msgid "The URL to the icons shadow image. If not specified, no shadow image will be created. Default shadow icon:"
 msgstr ""
 
 #: ../class-leaflet-options.php:4687
 #: ../class-leaflet-options.php:4695
 msgid "Shadow size"
+msgstr ""
+
+#: ../class-leaflet-options.php:4688
+msgid "Width of the shadow icon in pixel"
+msgstr ""
+
+#: ../class-leaflet-options.php:4696
+msgid "Height of the shadow icon in pixel"
 msgstr ""
 
 #: ../class-leaflet-options.php:4703
@@ -1993,23 +1999,23 @@ msgid "Shadow anchor"
 msgstr ""
 
 #: ../class-leaflet-options.php:4704
-msgid "The x-coordinates of the \"tip\" of the shadow (relative to its top left corner)"
+msgid "The x-coordinates of the \"tip\" of the shadow icon (relative to its top left corner)"
 msgstr ""
 
 #: ../class-leaflet-options.php:4712
-msgid "The y-coordinates of the \"tip\" of the shadow (relative to its top left corner)"
+msgid "The y-coordinates of the \"tip\" of the shadow icon (relative to its top left corner)"
 msgstr ""
 
 #: ../class-leaflet-options.php:4738
-msgid "Maximum width of the popup in pixel"
+msgid "Maximum width of popups in pixel"
 msgstr ""
 
 #: ../class-leaflet-options.php:4746
-msgid "Minimum width of the popup in pixel"
+msgid "Minimum width of popups in pixel"
 msgstr ""
 
 #: ../class-leaflet-options.php:4754
-msgid "If set, creates a scrollable container of the given height in pixel inside a popup if its content exceeds it."
+msgid "If set, creates a scrollable container of the given height in pixel inside popups if its content exceeds it."
 msgstr ""
 
 #: ../class-leaflet-options.php:4761
@@ -2025,15 +2031,15 @@ msgid "Set it to false if you do not want the map to do panning animation to fit
 msgstr ""
 
 #: ../class-leaflet-options.php:4783
-msgid "Controls the presense of a close button in the popup."
+msgid "Controls the presence of a close button in popups."
 msgstr ""
 
 #: ../class-leaflet-options.php:4794
-msgid "The x-coordinates of the margin between the popup and the edges of the map view after autopanning was performed."
+msgid "The x-coordinates of the margin between popups and the edges of the map view after autopanning was performed."
 msgstr ""
 
 #: ../class-leaflet-options.php:4802
-msgid "The y-coordinates of the margin between the popup and the edges of the map view after autopanning was performed."
+msgid "The y-coordinates of the margin between popups and the edges of the map view after autopanning was performed."
 msgstr ""
 
 #: ../class-leaflet-options.php:4822
@@ -3267,106 +3273,106 @@ msgstr ""
 msgid "Changelog for version %s:"
 msgstr ""
 
-#: ../leaflet-admin-header.php:230
+#: ../leaflet-admin-header.php:240
 #, php-format
 msgid "If you upgraded from a version <%s, please visit %s for a complete list of changes."
 msgstr ""
 
-#: ../leaflet-admin-header.php:231
+#: ../leaflet-admin-header.php:241
 msgid "If you like using the plugin, please consider <a href=\"http://www.mapsmarker.com/donations\" target=\"_blank\">making a donation</a> and <a href=\"http://wordpress.org/extend/plugins/leaflet-maps-marker/\" target=\"_blank\">rate the plugin on wordpress.org</a> - thanks!"
 msgstr ""
 
-#: ../leaflet-admin-header.php:234
+#: ../leaflet-admin-header.php:244
 msgid "remove message"
 msgstr ""
 
-#: ../leaflet-admin-header.php:245
+#: ../leaflet-admin-header.php:255
 msgid "<strong>Warning: you enabled support for bing maps but did not provide an API key. Please visit <a href=\"http://www.mapsmarker.com/bing-maps\" target=\"_blank\">http://www.mapsmarker.com/bing-maps</a> for info on how to get a free bing maps API key!"
 msgstr ""
 
-#: ../leaflet-admin-header.php:251
+#: ../leaflet-admin-header.php:261
 msgid "<strong>Warning: you are using the plugin jQuery Colorbox which is causing maps to break!</strong><br/><br/>Here is how to fix this:<br/>1. click on to \"Settings\" / \"jQuery Colorbox\" in your WordPress admin menu<br/>2. Uncheck the setting \"Automate jQuery Colorbox for all images in pages, posts and galleries:\"<br/>3. check the setting \"Automate jQuery Colorbox for images in WordPress galleries only:\" instead<br/>4. save changes<br/><br/>This message will disappear automatically when the jQuery Colorbox option was updated."
 msgstr ""
 
-#: ../leaflet-admin-header.php:257
+#: ../leaflet-admin-header.php:267
 msgid "<strong>Warning: you are using the plugin cformsII which is causing the TinyMCE editor to break when creating new maps!</strong><br/><br/>Here is how to fix this:<br/>1. click on to \"cformsII\" / \"Global Settings\" in your WordPress admin menu<br/>2. open the tab \"WP Editor Button support\"<br/>3. check the option \"Fix TinyMCE error\"<br/>4. save changes<br/><br/>If you do not see this option in your settings, please upgrade to the latest version first (this has to be done manually - see plugin website http://www.deliciousdays.com/cforms-plugin/ for details)<br/><br/>This message will disappear automatically when the cformsII option \"Fix TinyMCE error\" is checked."
 msgstr ""
 
-#: ../leaflet-admin-header.php:261
+#: ../leaflet-admin-header.php:271
 msgid "<strong>Warning: you are using the outdated plugin WP Google Analytics which is incompatible with Leaflet Maps Marker. Please update to a more current Google analytics plugin like http://wordpress.org/extend/plugins/google-analytics-for-wordpress/"
 msgstr ""
 
-#: ../leaflet-admin-header.php:267
+#: ../leaflet-admin-header.php:277
 msgid "<strong>Warning: you are using the plugin \"Better WordPress Minify\" which can cause Leaflet Maps Marker to break if the option \"Minify JS files automatically?\" is active. Please disable this option (Settings / BWP Minify) or add <strong>leafletmapsmarker</strong> to the form field \"Scripts to be ignored (not minified)\""
 msgstr ""
 
-#: ../leaflet-admin-header.php:315
+#: ../leaflet-admin-header.php:325
 msgid "Message"
 msgstr ""
 
-#: ../leaflet-admin-header.php:318
+#: ../leaflet-admin-header.php:328
 msgid "If you like to donate a certain amount of money to show your support, you can also use Paypal. If you don´t have a Paypal account, you can use your credit card or bank account (where available). Please click on the paypal image to proceed to the donation form."
 msgstr ""
 
-#: ../leaflet-admin-header.php:321
+#: ../leaflet-admin-header.php:331
 msgid "The easiest way to support this plugin is to buy something from Amazon by using this referrer link. Note: this doesn´t cost you anything as your purchase volume won´t be increased, but I will receive 6 per cent of your purchase volume as a referral fee."
 msgstr ""
 
-#: ../leaflet-admin-header.php:322
+#: ../leaflet-admin-header.php:332
 msgid "Another way to show your support for this plugin is to buy something from my Amazon wishlist, respectively sending me a greeting card worth from 15 to 500 $ with a personal note, which I would very much appreciate."
 msgstr ""
 
-#: ../leaflet-admin-header.php:328
+#: ../leaflet-admin-header.php:338
 msgid "A message from the plugin´s author"
 msgstr ""
 
-#: ../leaflet-admin-header.php:328
+#: ../leaflet-admin-header.php:338
 msgid "Show website of plugin author"
 msgstr ""
 
-#: ../leaflet-admin-header.php:329
+#: ../leaflet-admin-header.php:339
 msgid "It is hard to continue development and support for Leaflet Maps Marker-plugin without contributions from users like you."
 msgstr ""
 
-#: ../leaflet-admin-header.php:329
+#: ../leaflet-admin-header.php:339
 msgid "If you enjoy using the plugin - <strong>particularly within a commercial context</strong> - please consider making a donation."
 msgstr ""
 
-#: ../leaflet-admin-header.php:329
+#: ../leaflet-admin-header.php:339
 msgid "Your donation help keeping the plugin free for everyone and allow me to spend more time on developing, maintaining and support."
 msgstr ""
 
-#: ../leaflet-admin-header.php:329
+#: ../leaflet-admin-header.php:339
 msgid "I´d be happy to accept your donation! Thanks!"
 msgstr ""
 
-#: ../leaflet-admin-header.php:329
+#: ../leaflet-admin-header.php:339
 msgid "For more information on how to donate, please visit"
 msgstr ""
 
-#: ../leaflet-admin-header.php:329
+#: ../leaflet-admin-header.php:339
 msgid "Legal"
 msgstr ""
 
-#: ../leaflet-admin-header.php:329
+#: ../leaflet-admin-header.php:339
 #: ../leaflet-help-credits.php:19
 msgid "Changelog"
 msgstr ""
 
-#: ../leaflet-admin-header.php:329
+#: ../leaflet-admin-header.php:339
 msgid "please help translating this plugin"
 msgstr ""
 
-#: ../leaflet-admin-header.php:329
+#: ../leaflet-admin-header.php:339
 #: ../leaflet-help-credits.php:50
 msgid "Translations"
 msgstr ""
 
-#: ../leaflet-admin-header.php:329
+#: ../leaflet-admin-header.php:339
 msgid "please rate this plugin on wordpress.org"
 msgstr ""
 
-#: ../leaflet-admin-header.php:329
+#: ../leaflet-admin-header.php:339
 msgid "Rate plugin"
 msgstr ""
 

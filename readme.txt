@@ -237,6 +237,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: moved "General Map settings" from tab "Misc" to "Basemaps"
 * CHANGED: GeoJSON AJAX calls for layer maps are not cached anymore to deliver more current results
 * CHANGED: optimized OGD Vienna selector (considers switch to other default basemaps)
+* CHANGED: updated German translation
+* CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * BUGFIX: fixed broken links in multi-layer-maps-list and default state controlbox on layer maps on backend 
 * BUGFIX: manual language selection for Chinese and Yiddish was broken
 * BUGFIX: overwrite box-shadow attribute from style.css to remove border on some themes
