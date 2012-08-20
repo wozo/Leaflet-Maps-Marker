@@ -192,6 +192,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			updated French translation thanks to Vincèn Pujol, <a href="http://www.skivr.com" target="_blank">http://www.skivr.com</a> and Rodolphe Quiedeville, <a href="http://rodolphe.quiedeville.org/" target="_blank">http://rodolphe.quiedeville.org/</a>
 			</td></tr>
 			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
+			</td><td>
+			updated Spanish translation thanks to Alvaro Lara, <a href="http://www.alvarolara.com" target="_blank">http://www.alvarolara.com</a>
+			</td></tr>			
+			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
 			fixed broken links in multi-layer-maps-list and default state controlbox on layer maps on backend 
