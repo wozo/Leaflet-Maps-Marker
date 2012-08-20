@@ -121,7 +121,7 @@ if (isset($_GET['layer'])) {
 	$lmm_out .= '/* ]]> */'.PHP_EOL;
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<style>form { margin: 0 ; } </style>'.PHP_EOL; //info: for layer controlbox
-	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js?ver=' . $plugin_version . '" type="text/css" media="all"></script>'.PHP_EOL;
+	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js?ver=' . $plugin_version . '"></script>'.PHP_EOL;
 	$lmm_out .= '</head>'.PHP_EOL;
 	$lmm_out .= '<body style="margin:0;padding:0;height:100%;background: ' . addslashes($lmm_options[ 'defaults_layer_panel_background_color' ]) . ';overflow:hidden;">'.PHP_EOL;
 	//info: panel for layer/marker name and API URLs
@@ -582,7 +582,7 @@ elseif (isset($_GET['marker'])) {
 	$lmm_out .= '/* ]]> */'.PHP_EOL;
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<style>form { margin: 0 ; } </style>'.PHP_EOL; //info: for layer controlbox
-	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js?ver=' . $plugin_version . '" type="text/css" media="all"></script>'.PHP_EOL;
+	$lmm_out .= '<script type="text/javascript" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js?ver=' . $plugin_version . '"></script>'.PHP_EOL;
 	$lmm_out .= '</head>'.PHP_EOL;
 	$lmm_out .= '<body style="margin:0;padding:0;height:100%;background: ' . addslashes($lmm_options[ 'defaults_marker_panel_background_color' ]) . ';overflow:hidden;">'.PHP_EOL;
 	//info: panel for layer/marker name and API URLs

@@ -252,7 +252,6 @@ else {
 		$layer_marker_list_table = $wpdb->get_results($mlm_query_table, ARRAY_A);
 	} //info: end else if ($multi_layer_map_list == 'all')
     } //info: end main - else if ($multi_layer_map == 1)
-
 //info: check if layer exists - part 1
 if ($layerviewlat == NULL) {
 $error_layer_not_exists = sprintf( esc_attr__('Error: a layer with the ID %1$s does not exist!','lmm'), htmlspecialchars($_GET['id'])); 
