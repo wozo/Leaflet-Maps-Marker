@@ -207,7 +207,7 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 = 1.0 =
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
-= v2.7.1 - xx.08.2012 =
+= v2.7.1 - 24.08.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.7.1)
 * NEW: upgrade to leaflet.js v0.4.4  - [changelog](http://leaflet.cloudmade.com/2012/07/30/leaflet-0-4-released.html)
 * NEW: option to add an unobtrusive scale control to maps
@@ -240,6 +240,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated German translation
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
+* CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * BUGFIX: fixed broken links in multi-layer-maps-list and default state controlbox on layer maps on backend 
 * BUGFIX: manual language selection for Chinese and Yiddish was broken
 * BUGFIX: overwrite box-shadow attribute from style.css to remove border on some themes

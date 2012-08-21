@@ -167,7 +167,7 @@ if (isset($_GET['layer'])) {
 	$plugin_version = get_option('leafletmapsmarker_version');
 	$lmm_out .= '<script type="text/javascript">'.PHP_EOL;
 	$lmm_out .= '/* <![CDATA[ */'.PHP_EOL;
-	$lmm_out .= '/* Maps created with MapsMarker.com (WordPress Plugin powered by Leaflet from Cloudmade) - version '.$plugin_version.' */'.PHP_EOL;
+	$lmm_out .= '/* Maps created with MapsMarker.com WordPress plugin - version '.$plugin_version.' */'.PHP_EOL;
 	$lmm_out .= 'var layers = {};'.PHP_EOL;
 	$lmm_out .= 'var markers = {};'.PHP_EOL;
 	$lmm_out .= 'var mapsmarker_'.$uid.' = {};'.PHP_EOL;
@@ -648,7 +648,7 @@ elseif (isset($_GET['marker'])) {
 	$plugin_version = get_option('leafletmapsmarker_version');
 	$lmm_out .= '<script type="text/javascript">'.PHP_EOL;
 	$lmm_out .= '/* <![CDATA[ */'.PHP_EOL;
-	$lmm_out .= '/* Maps created with MapsMarker.com (WordPress Plugin powered by Leaflet from Cloudmade) - version '.$plugin_version.' */'.PHP_EOL;
+	$lmm_out .= '/* Maps created with MapsMarker.com WordPress plugin - version '.$plugin_version.' */'.PHP_EOL;
 	$lmm_out .= 'var layers = {};'.PHP_EOL;
 	$lmm_out .= 'var markers = {};'.PHP_EOL;
 	$lmm_out .= 'var mapsmarker_'.$uid.' = {};'.PHP_EOL;
