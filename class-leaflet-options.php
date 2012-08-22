@@ -1570,6 +1570,18 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'basemaps'
 		);		
+		$this->settings['custom_basemap_tms'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => 'tms',
+			'desc'    => __('If true, inverses Y axis numbering for tiles (turn this on for TMS services).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);	
 		$this->settings['custom_basemap_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'section' => 'basemaps',
@@ -1664,6 +1676,18 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'basemaps'
 		);		
+		$this->settings['custom_basemap2_tms'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => 'tms',
+			'desc'    => __('If true, inverses Y axis numbering for tiles (turn this on for TMS services).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);			
 		$this->settings['custom_basemap2_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'section' => 'basemaps',
@@ -1758,6 +1782,18 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'basemaps'
 		);		
+		$this->settings['custom_basemap3_tms'] = array(
+			'version' => '2.7.1',
+			'section' => 'basemaps',
+			'title'   => 'tms',
+			'desc'    => __('If true, inverses Y axis numbering for tiles (turn this on for TMS services).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);			
 		$this->settings['custom_basemap3_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'section' => 'basemaps',
