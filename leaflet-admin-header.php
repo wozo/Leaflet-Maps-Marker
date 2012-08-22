@@ -204,6 +204,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
+			the selection of shortcodes via tinymce popup on posts/pages editor was broken on iOS devices
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
 			fixed broken links in multi-layer-maps-list and default state controlbox on layer maps on backend 
 			</td></tr>
 			<tr><td>
