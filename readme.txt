@@ -228,6 +228,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: option to customize Google Maps base domain
 * NEW: marker/layer name gets added as <title> on fullscreen maps
 * NEW: list of markers can now also be displayed below multi-layer-maps
+* NEW: added option to set opacity for overlays
 * CHANGED: secure loading of Google API via https instead of http
 * CHANGED: enhanced Google Maps language localization options (for maps, directions and autocomplete)
 * CHANGED: optimized usability for forms and marker icon selection on backend
@@ -241,6 +242,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
+* CHANGED: updated Catalan translation thanks to Vicent Cubells, [http://vcubells.net](http://vcubells.net)
 * BUGFIX: the selection of shortcodes via tinymce popup on posts/pages editor was broken on iOS devices
 * BUGFIX: fixed broken links in multi-layer-maps-list and default state controlbox on layer maps on backend 
 * BUGFIX: manual language selection for Chinese and Yiddish was broken

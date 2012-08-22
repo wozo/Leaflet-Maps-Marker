@@ -1921,6 +1921,14 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'overlays'
 		);		
+		$this->settings['overlays_custom_opacity'] = array(
+			'version' => '2.7.1',
+			'title'   => __( 'Opacity', 'lmm' ),
+			'desc'    => __('The opacity of the tile layer.','lmm'),
+			'std'     => '1.0',
+			'type'    => 'text',
+			'section' => 'overlays'
+		);		
 		$this->settings['overlays_custom_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'section' => 'overlays',
@@ -1997,6 +2005,14 @@ class Leafletmapsmarker_options {
 			'title'   => __( 'Maximum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '17',
+			'type'    => 'text',
+			'section' => 'overlays'
+		);		
+		$this->settings['overlays_custom2_opacity'] = array(
+			'version' => '2.7.1',
+			'title'   => __( 'Opacity', 'lmm' ),
+			'desc'    => __('The opacity of the tile layer.','lmm'),
+			'std'     => '1.0',
 			'type'    => 'text',
 			'section' => 'overlays'
 		);		
@@ -2078,6 +2094,14 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'overlays'
 		);		
+		$this->settings['overlays_custom3_opacity'] = array(
+			'version' => '2.7.1',
+			'title'   => __( 'Opacity', 'lmm' ),
+			'desc'    => __('The opacity of the tile layer.','lmm'),
+			'std'     => '1.0',
+			'type'    => 'text',
+			'section' => 'overlays'
+		);		
 		$this->settings['overlays_custom3_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'section' => 'overlays',
@@ -2154,6 +2178,14 @@ class Leafletmapsmarker_options {
 			'title'   => __( 'Maximum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '17',
+			'type'    => 'text',
+			'section' => 'overlays'
+		);		
+		$this->settings['overlays_custom4_opacity'] = array(
+			'version' => '2.7.1',
+			'title'   => __( 'Opacity', 'lmm' ),
+			'desc'    => __('The opacity of the tile layer.','lmm'),
+			'std'     => '1.0',
 			'type'    => 'text',
 			'section' => 'overlays'
 		);		
