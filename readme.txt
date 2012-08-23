@@ -19,17 +19,22 @@ http://mapsmarker.com
 Leaflet Maps Marker allows you to
 * pin your favorites places with markers,
 * use integrated address search (Google Places API) for quickly finding your places,
-* choose from up to 700 custom free map icons from [Maps Icons Collection](http://mapicons.nicolasmollet.com),
+* choose from up to 800 custom free map icons from [Maps Icons Collection](http://mapicons.nicolasmollet.com),
 * add popup description text or images for each marker,
 * choose individual basemap, size and zoom level for each marker/layer map,
 * organize your markers in layers and
-* show them thanks to the [Leaflet library from Cloudmade](http://leaflet.cloudmade.com/)
-* by adding a shortcode (e.g. mapsmarker marker="1")] to posts or pages
-* through OSM/OpenStreetMap, Google Maps, Bing Maps, MapQuest, Cloudmade, [OGD Vienna Maps](http://data.wien.gv.at)
+* show them thanks to the [Leaflet library from Cloudmade](http://leaflet.cloudmade.com/) 
+* by adding a shortcode (e.g. mapsmarker marker="1")] to posts, pages, widgets or template
+on basemaps from
+* OpenStreetMap,
+* Google Maps (Road, Satellite, Hybrid, Terrain),
+* Bing Maps (Aerial, Aerials+Labels, Road),
+* MapQuest (Road, Satellite),
+* [OGD Vienna Maps](http://data.wien.gv.at) (Road, Aerial, Addresses)
 * or any custom WMTS-map
 to the visitors of your website.
 = Additional features =
-* show directions for your locations using Google Maps, yournavigation.org or openrouteservice.org
+* show directions for your locations using Google Maps, yournavigation.org, openrouteservice.org or map.project-osrm.org
 * support for Google Maps API key which is required for commercial users
 * configure up to 10 WMS servers to display additional information from external geodata providers (like the European Environment Agency) on your maps
 * organize markers from different layers in multi-layer-maps
@@ -40,6 +45,8 @@ to the visitors of your website.
 * export your markers as csv-file
 * option to add widgets showing recent marker entries
 * configure up to 3 basemaps from Cloudmade with custom styles
+* option to add an unobtrusive scale control to maps
+* keyboard navigation support for maps
 * TinyMCE button for easily searching and adding maps on post/pages edit screen
 * display a list of markers below layer maps
 * show standalone maps in fullscreen mode
@@ -49,6 +56,7 @@ to the visitors of your website.
 * create QR code images for standalone maps in fullscreen mode
 * automatically add meta-tags with location information to maps
 * automatically add microformat geo-markup to maps
+* support for maps that do not reflect the real world (e.g. game, indoor or photo maps)
 * option to set Wordpress roles (administrator, editor, author, contributor) which are allowed to add/edit/delete markers and layers
 * option to add marker directly to posts or pages without saving them to your database
 * audit log for changes on markers & layers (saving first created by/on and last updated by/on info)
@@ -61,12 +69,16 @@ to the visitors of your website.
 * WordPress Admin Bar integration to quickly access plugins features (can be disabled)
 * global stats for marker/layer count on mapsmarker.com (can be disabled)
 * "OGD Vienna selector": if a place within boundaries of Vienna/Austria is chosen, OGD Vienna basemaps are automatically selected
+* admin dashboard widget showing latest markers and blog posts from mapsmarker.com
 * integrated [donation links](http://www.mapsmarker.com/donations) to show your support for this plugin :-)
 = Technical details =
 * Wordpress Multisite compatibility
 * plugin was successfully tested to ÖNORM 7700 and OWASP TOP 10 for security issues
 * full UTF8-support for cyrillic, chinese or other alphabets on marker/layername and marker popup text
+* integrated check for known incompatible plugins (and instructions on how to fix)
 * support for other languages through .po/.mo-files (please see http://mapsmarker.com/languages for details if you want to contribute a new translation)
+* option to select plugin default language in settings for backend and frontend (separately from language set in wp-config.php)
+* support for Retina displays to display maps in a higher resolution
 * GeoJSON feeds for every marker and layer with [JSONP support](http://www.mapsmarker.com/geojson)
 * use of Wordpress settings API for storing options
 * TinyMCE editor on backend for editing popuptext
@@ -229,6 +241,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: marker/layer name gets added as <title> on fullscreen maps
 * NEW: list of markers can now also be displayed below multi-layer-maps
 * NEW: added option to set opacity for overlays
+* NEW: support for TMS services for custom basemaps (inversed Y axis numbering for tiles)
 * CHANGED: secure loading of Google API via https instead of http
 * CHANGED: enhanced Google Maps language localization options (for maps, directions and autocomplete)
 * CHANGED: optimized usability for forms and marker icon selection on backend

@@ -1130,7 +1130,7 @@ function __construct() {
 	global $wpdb;
 	//info: 2 options not managed by Settings API (class-leaflet-options.php) 
 	add_option('leafletmapsmarker_version', 'init');
-	add_option('leafletmapsmarker_redirect', 'true'); //redirect to plugin settings page after first activation only
+	add_option('leafletmapsmarker_redirect', 'true'); //redirect to marker creation page page after first activation only
 	if (get_option('leafletmapsmarker_version') == 'init') {
 		//info: copy map icons to wp-content/uploads
 		WP_Filesystem();
@@ -1377,7 +1377,7 @@ function __construct() {
 		if (get_option('leafletmapsmarker_redirect') == 'true') 
 		{
 			update_option('leafletmapsmarker_redirect', 'false');
-			wp_redirect(LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings&display=install_note');
+			wp_redirect(LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&display=install_note');
 		} else {
 			update_option('leafletmapsmarker_update_info', 'show');
 		}
