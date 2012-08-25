@@ -4844,7 +4844,7 @@ class Leafletmapsmarker_options {
 				'false' => __('false','lmm')
 			)
 		);
-		$this->settings['defaults_marker_popups_autoPanPadding_x'] = array(
+		$this->settings['defaults_marker_popups_autopanpadding_x'] = array(
 			'version' => '2.7.1',
 			'title'   => 'autoPanPadding (x)',
 			'desc'    => __( 'The x-coordinates of the margin between popups and the edges of the map view after autopanning was performed.', 'lmm' ),
@@ -4852,7 +4852,7 @@ class Leafletmapsmarker_options {
 			'type'    => 'text',
 			'section' => 'defaults_marker'
 		);
-		$this->settings['defaults_marker_popups_autoPanPadding_y'] = array(
+		$this->settings['defaults_marker_popups_autopanpadding_y'] = array(
 			'version' => '2.7.1',
 			'title'   => 'autoPanPadding (y)',
 			'desc'    => __( 'The y-coordinates of the margin between popups and the edges of the map view after autopanning was performed.', 'lmm' ),
