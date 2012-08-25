@@ -8,6 +8,19 @@ if (is_multisite())
 	global $wpdb;
 	$blogs = $wpdb->get_results("SELECT blog_id FROM {$wpdb->blogs}", ARRAY_A);
 	$lmm_pro_readme = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'leaflet-maps-marker-pro' . DIRECTORY_SEPARATOR . 'readme.txt';
+		if (!file_exists($lmm_pro_readme))
+			{
+		/*remove map icons directory for main site */
+		$lmm_upload_dir = wp_upload_dir();
+		$icons_directory = $lmm_upload_dir['basedir'] . DIRECTORY_SEPARATOR . "leaflet-maps-marker-icons" . DIRECTORY_SEPARATOR;
+		if (is_dir($icons_directory)) 
+		{
+		foreach(glob($icons_directory.'*.*') as $v){
+		unlink($v);
+		}
+		rmdir($icons_directory);
+		}
+	}
 	if ($blogs) 
 		{
 		foreach($blogs as $blog) 
@@ -28,7 +41,7 @@ if (is_multisite())
 		restore_current_blog();
 		if (!file_exists($lmm_pro_readme))
 			{
-				/*remove map icons directory*/
+				/*remove map icons directory for subsites*/
 				$lmm_upload_dir = wp_upload_dir();
 				$icons_directory = $lmm_upload_dir['basedir'] . DIRECTORY_SEPARATOR . "leaflet-maps-marker-icons" . DIRECTORY_SEPARATOR;
 				if (is_dir($icons_directory)) 
