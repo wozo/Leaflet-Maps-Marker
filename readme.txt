@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.5-alpha-21273
-Stable tag:        2.7.1
+Stable tag:        2.8
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
@@ -210,6 +210,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
+= v2.8 =
+
 = v2.7.1 =
 upgrade to leaflet 0.4.4 and the longest changelog ever - see http://www.mapsmarker.com/v2.7.1 for more details
 = v2.6.1 =
@@ -262,6 +264,9 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v2.8 - xx.xx.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v2.8)
+
 = v2.7.1 - 24.08.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.7.1)
 * NEW: upgrade to leaflet.js v0.4.4  - [changelog](http://leaflet.cloudmade.com/2012/07/30/leaflet-0-4-released.html)
