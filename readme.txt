@@ -1,4 +1,4 @@
-=== Leaflet Maps Marker ===
+=== Leaflet Maps Marker - OpenStreetMap, Google Maps, Bing Maps - easy mapping for everyone ===
 Contributors:      harmr
 Plugin Name:       Leaflet Maps Marker
 Plugin URI:        http://www.mapsmarker.com
@@ -7,7 +7,7 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.5-alpha-21273
+Tested up to:      3.5-alpha-21589
 Stable tag:        2.8
 License:           GPLv2
 
@@ -266,6 +266,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.8 - xx.xx.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.8)
+* BUGFIX: fixed broken zoom for Google Maps with tilt (github issue #31)
+* BUGFIX: autoPanPadding for popups was broken
 
 = v2.7.1 - 24.08.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.7.1)
