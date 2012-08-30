@@ -43,8 +43,8 @@ if ( ($update_info_action == 'hide') && ($new_install == 'false') ) {
 	update_option('leafletmapsmarker_update_info', 'hide');
 }
 if (get_option('leafletmapsmarker_update_info') == 'show') {
-	$lmm_version_old = '2.6.1';
-	$lmm_version_new = '2.7.1';
+	$lmm_version_old = '2.7.1';
+	$lmm_version_new = '2.8';
 	$lmm_changelog_new_version = '<a href="http://www.mapsmarker.com/v' . $lmm_version_new . '" target="_blank">http://www.mapsmarker.com/v' . $lmm_version_new . '</a>';
 	$lmm_full_changelog = '<a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a>';
 	echo '<div class="updated" style="padding:10px;"><p><strong>' . __('Leaflet Maps Marker has been updated successfully!','lmm') . '</strong></p>
@@ -54,9 +54,8 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-new.png">
 			</td><td>
-			
+			added subnavigations in settings for higher usability
 			</td></tr>
-
 			<tr><td>
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-changed.png">
 			</td><td>
@@ -71,6 +70,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
 			</td><td>
 			autoPanPadding for popups was broken
+			</td></tr>
+			<tr><td>
+			<img src="' . LEAFLET_PLUGIN_URL .'img/icon-changelog-fixed.png">
+			</td><td>
+			widget width was not 100% of sidebar on some templates
 			</td></tr>
 			</table>
 			<p>' . sprintf(__('If you upgraded from a version <%s, please visit %s for a complete list of changes.','lmm'), $lmm_version_old, $lmm_full_changelog) . '</p>
