@@ -223,6 +223,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 = v2.8 - xx.xx.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.8)
 * NEW: added subnavigations in settings for higher usability
+* CHANGED: updated jQuery-Timepicker-Addon by Trent Richardson to v1.0.1
+* CHANGED: started code refactoring for better readability and extensability
 * BUGFIX: fixed broken zoom for Google Maps with tilt (github issue #31)
 * BUGFIX: autoPanPadding for popups was broken
 * BUGFIX: widget width was not 100% of sidebar on some templates
