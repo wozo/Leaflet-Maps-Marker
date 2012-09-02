@@ -1,21 +1,5 @@
 <?php
 /*
-$download_counter = get_transient( 'lmm_download_counter' );
-if ( false === $download_counter || '' === $download_counter ){
-	$regexp = '/<strong>Downloads: <\/strong>(.*?)<br \/>/';
-	$c = curl_init();
-	curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($c, CURLOPT_URL, "http://wordpress.org/extend/plugins/leaflet-maps-marker/");
-	$contents = curl_exec($c);
-	curl_close($c);
-	$pattern = $regexp;
-	preg_match($pattern, $contents, $matches);
-	$download_counter = $matches[1];
-	set_transient( 'lmm_download_counter', $download_counter, 60*60 );
-
-}
-*/
-/*
     Admin Header - Leaflet Maps Marker Plugin
 */
 //info prevent file from being accessed directly
@@ -57,56 +41,7 @@ if ( ($update_info_action == 'hide') && ($new_install == 'false') ) {
 	update_option('leafletmapsmarker_update_info', 'hide');
 }
 if (get_option('leafletmapsmarker_update_info') == 'show') {
-	$lmm_version_old = '2.7.1';
-	$lmm_version_new = '2.8';
-	$lmm_changelog_new_version = '<a href="http://www.mapsmarker.com/v' . $lmm_version_new . '" target="_blank">http://www.mapsmarker.com/v' . $lmm_version_new . '</a>';
-	$lmm_full_changelog = '<a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a>';
-	echo '<div class="updated" style="padding:10px;">
-		<p><span style="font-weight:bold;font-size:125%;">' . sprintf(__('Leaflet Maps Marker has been successfully updated from version %1s to %2s!','lmm'), '2.7.1', '2.8') . '</span></p>
-		<p>' . sprintf(__('For more details about this release, please visit %s','lmm'), $lmm_changelog_new_version) . '</p>
-		<p>' . __('If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">rate the plugin on wordpress.org</a> - thanks!','lmm') . '</p>
-		<hr noshade size="1">
-		<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.8') . ' - ' . __('released on','lmm') . ' xx.xx.2012:</strong></p>
-		<table style="line-height:0.7em;">
-		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
-		</td><td>
-		added subnavigations in settings for higher usability
-		</td></tr>
-		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
-		</td><td>
-		updated jQuery-Timepicker-Addon by Trent Richardson to v1.0.1
-		</td></tr>
-		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
-		</td><td>
-		started code refactoring for better readability and extensability
-		</td></tr>
-		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
-		</td><td>
-		markers and layers with lat = 0 could not be created
-		</td></tr>
-		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
-		</td><td>
-		fixed broken zoom for Google Maps with tilt (github issue #31)
-		</td></tr>
-		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
-		</td><td>
-		autoPanPadding for popups was broken
-		</td></tr>
-		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
-		</td><td>
-		widget width was not 100% of sidebar on some templates
-		</td></tr>
-		</table>
-		<form method="post" style="margin-top:10px;">
-		<input type="hidden" name="update_info_action" value="hide" />
-		<input class="button-secondary" type="submit" value="' . __('remove message', 'lmm') . '"/></form></div>'.PHP_EOL;
+	include(LEAFLET_PLUGIN_DIR . 'inc' . DIRECTORY_SEPARATOR . 'changelog.php');
 }
 ?>
 <?php

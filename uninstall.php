@@ -8,6 +8,11 @@ if (is_multisite())
 	global $wpdb;
 	$blogs = $wpdb->get_results("SELECT blog_id FROM {$wpdb->blogs}", ARRAY_A);
 	$lmm_pro_readme = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'leaflet-maps-marker-pro' . DIRECTORY_SEPARATOR . 'readme.txt';
+		delete_option('leafletmapsmarker_version');
+		delete_option('leafletmapsmarker_version_before_update');
+		delete_option('leafletmapsmarker_options');
+		delete_option('leafletmapsmarker_redirect');
+		delete_option('leafletmapsmarker_update_info');
 		if (!file_exists($lmm_pro_readme))
 			{
 		/*remove map icons directory for main site */
@@ -27,6 +32,7 @@ if (is_multisite())
 			{
 			switch_to_blog($blog['blog_id']);
 			delete_option('leafletmapsmarker_version');
+			delete_option('leafletmapsmarker_version_before_update');
 			delete_option('leafletmapsmarker_options');
 			delete_option('leafletmapsmarker_redirect');
 			delete_option('leafletmapsmarker_update_info');
@@ -57,6 +63,7 @@ if (is_multisite())
 else
 {
 	delete_option('leafletmapsmarker_version');
+	delete_option('leafletmapsmarker_version_before_update');
 	delete_option('leafletmapsmarker_options');
 	delete_option('leafletmapsmarker_redirect');
 	delete_option('leafletmapsmarker_update_info');
