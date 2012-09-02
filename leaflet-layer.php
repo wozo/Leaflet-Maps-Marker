@@ -255,7 +255,7 @@ else {
 	} //info: end else if ($multi_layer_map_list == 'all')
     } //info: end main - else if ($multi_layer_map == 1)
 //info: check if layer exists - part 1
-if ($layerviewlat == NULL) {
+if ($layerviewlat === NULL) {
 $error_layer_not_exists = sprintf( esc_attr__('Error: a layer with the ID %1$s does not exist!','lmm'), htmlspecialchars($_GET['id'])); 
 echo '<p><div class="error" style="padding:10px;">' . $error_layer_not_exists . '</div></p>';
 echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layers\'>' . __('show all layers','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layer\'>' . __('add new layer','lmm') . '</a></p>';

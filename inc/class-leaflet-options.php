@@ -81,7 +81,8 @@ class Class_leaflet_options {
 		echo '<div style="float:left;" class="icon32" id="icon-options-general"></div><h3>'.__('Settings','lmm').'</h3><div class="wrap lmmsettings">';
 		if ( isset( $_GET['settings-updated'] ) )
 			echo '<div class="updated fade"><p>' . __( 'Plugin options updated.','lmm' ) . '</p></div>';
-		include('admin-header.php');
+		include(LEAFLET_PLUGIN_DIR . 'inc' . DIRECTORY_SEPARATOR . 'admin-header.php');
+
 		echo '<form action="options.php" method="post">';
 		settings_fields( 'leafletmapsmarker_options' );
 		echo '<div class="ui-tabs">

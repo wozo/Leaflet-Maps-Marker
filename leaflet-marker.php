@@ -188,7 +188,7 @@ else {
   }
 ?>
 <?php //info: check if marker exists - part 1
-if ($lat == NULL) {
+if ($lat === NULL) {
 $error_marker_not_exists = sprintf( esc_attr__('Error: a marker with the ID %1$s does not exist!','lmm'), htmlspecialchars($_GET['id'])); 
 echo '<p><div class="error" style="padding:10px;">' . $error_marker_not_exists . '</div></p>';
 echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers\'>' . __('show all markers','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker\'>' . __('add new marker','lmm') . '</a></p>';

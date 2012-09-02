@@ -40,6 +40,8 @@ if ( ! defined( 'LEAFLET_WP_ADMIN_URL' ) )
 	define( 'LEAFLET_WP_ADMIN_URL', get_admin_url() );
 if ( ! defined( 'LEAFLET_PLUGIN_URL' ) )
 define ("LEAFLET_PLUGIN_URL", plugin_dir_url(__FILE__));
+if ( ! defined( 'LEAFLET_PLUGIN_DIR' ) )
+define ("LEAFLET_PLUGIN_DIR", plugin_dir_path(__FILE__));
 $lmm_upload_dir = wp_upload_dir();
 if ( ! defined( 'LEAFLET_PLUGIN_ICONS_URL' ) )
 	define ("LEAFLET_PLUGIN_ICONS_URL", $lmm_upload_dir['baseurl'] . "/leaflet-maps-marker-icons");
@@ -185,58 +187,58 @@ function __construct() {
     $lmm_options = get_option( 'leafletmapsmarker_options' );
     $uid = substr(md5(''.rand()), 0, 8);
     extract(shortcode_atts(array(
-    'lat' => '', 'lon' => '',
-    'mlat' => '', 'mlon' => '',
-    'basemap' => $lmm_options[ 'defaults_marker_shortcode_basemap'],
-    'mpopuptext' => '',
-    'micon' => '',
-    'zoom' => intval($lmm_options[ 'defaults_marker_shortcode_zoom' ]),
-    'openpopup' => '',
-    'geojson' => '',
-    'geojsonurl' => '',
-    'layer' => '',
-    'marker' => '',
-    'markername' => '',
-    'panel' => '0',
-    'mapwidth' => intval($lmm_options[ 'defaults_marker_shortcode_mapwidth' ]),
-    'mapwidthunit' => $lmm_options[ 'defaults_marker_shortcode_mapwidthunit' ],
-    'mapheight' => intval($lmm_options[ 'defaults_marker_shortcode_mapheight' ]),
-    'mapname' => 'lmm_map_'.$uid
+		'lat' => '', 'lon' => '',
+		'mlat' => '', 'mlon' => '',
+		'basemap' => $lmm_options[ 'defaults_marker_shortcode_basemap'],
+		'mpopuptext' => '',
+		'micon' => '',
+		'zoom' => intval($lmm_options[ 'defaults_marker_shortcode_zoom' ]),
+		'openpopup' => '',
+		'geojson' => '',
+		'geojsonurl' => '',
+		'layer' => '',
+		'marker' => '',
+		'markername' => '',
+		'panel' => '0',
+		'mapwidth' => intval($lmm_options[ 'defaults_marker_shortcode_mapwidth' ]),
+		'mapwidthunit' => $lmm_options[ 'defaults_marker_shortcode_mapwidthunit' ],
+		'mapheight' => intval($lmm_options[ 'defaults_marker_shortcode_mapheight' ]),
+		'mapname' => 'lmm_map_'.$uid
     ), $atts));
     $pname = 'pa'.$uid;
 	//info: prepare layers
 	if (!empty($layer)) {
-	  $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
-	  $row = $wpdb->get_row('SELECT id,name,basemap,mapwidth,mapheight,mapwidthunit,panel,layerzoom,layerviewlat,layerviewlon,controlbox,overlays_custom,overlays_custom2,overlays_custom3,overlays_custom4,wms,wms2,wms3,wms4,wms5,wms6,wms7,wms8,wms9,wms10,listmarkers,multi_layer_map,multi_layer_map_list FROM '.$table_name_layers.' WHERE id='.$layer, ARRAY_A);
-	  $id = $row['id'];
-	  $basemap = $row['basemap'];
-	  $lat = $row['layerviewlat'];
-	  $lon = $row['layerviewlon'];
-	  $zoom = $row['layerzoom'];
-	  $mapwidth = $row['mapwidth'];
-	  $mapheight = $row['mapheight'];
-	  $mapwidthunit = $row['mapwidthunit'];
-	  $panel = $row['panel'];
-	  $paneltext = ($row['name'] == NULL) ? '&nbsp;' : htmlspecialchars($row['name']);
-	  $controlbox = $row['controlbox'];
-	  $overlays_custom = $row['overlays_custom'];
-	  $overlays_custom2 = $row['overlays_custom2'];
-	  $overlays_custom3 = $row['overlays_custom3'];
-	  $overlays_custom4 = $row['overlays_custom4'];
-	  $wms = $row['wms'];
-	  $wms2 = $row['wms2'];
-	  $wms3 = $row['wms3'];
-	  $wms4 = $row['wms4'];
-	  $wms5 = $row['wms5'];
-	  $wms6 = $row['wms6'];
-	  $wms7 = $row['wms7'];
-	  $wms8 = $row['wms8'];
-	  $wms9 = $row['wms9'];
-	  $wms10 = $row['wms10'];
-	  $listmarkers = $row['listmarkers'];
-      $multi_layer_map = $row['multi_layer_map'];
-	  $multi_layer_map_list = $row['multi_layer_map_list'];
-      $multi_layer_map_list_exploded = explode(",", $multi_layer_map_list);
+		$table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
+		$row = $wpdb->get_row('SELECT id,name,basemap,mapwidth,mapheight,mapwidthunit,panel,layerzoom,layerviewlat,layerviewlon,controlbox,overlays_custom,overlays_custom2,overlays_custom3,overlays_custom4,wms,wms2,wms3,wms4,wms5,wms6,wms7,wms8,wms9,wms10,listmarkers,multi_layer_map,multi_layer_map_list FROM '.$table_name_layers.' WHERE id='.$layer, ARRAY_A);
+		$id = $row['id'];
+		$basemap = $row['basemap'];
+		$lat = $row['layerviewlat'];
+		$lon = $row['layerviewlon'];
+		$zoom = $row['layerzoom'];
+		$mapwidth = $row['mapwidth'];
+		$mapheight = $row['mapheight'];
+		$mapwidthunit = $row['mapwidthunit'];
+		$panel = $row['panel'];
+		$paneltext = ($row['name'] == NULL) ? '&nbsp;' : htmlspecialchars($row['name']);
+		$controlbox = $row['controlbox'];
+		$overlays_custom = $row['overlays_custom'];
+		$overlays_custom2 = $row['overlays_custom2'];
+		$overlays_custom3 = $row['overlays_custom3'];
+		$overlays_custom4 = $row['overlays_custom4'];
+		$wms = $row['wms'];
+		$wms2 = $row['wms2'];
+		$wms3 = $row['wms3'];
+		$wms4 = $row['wms4'];
+		$wms5 = $row['wms5'];
+		$wms6 = $row['wms6'];
+		$wms7 = $row['wms7'];
+		$wms8 = $row['wms8'];
+		$wms9 = $row['wms9'];
+		$wms10 = $row['wms10'];
+		$listmarkers = $row['listmarkers'];
+    	$multi_layer_map = $row['multi_layer_map'];
+		$multi_layer_map_list = $row['multi_layer_map_list'];
+    	$multi_layer_map_list_exploded = explode(",", $multi_layer_map_list);
 	}
 	//info: prepare markers
     if (!empty($marker))  {

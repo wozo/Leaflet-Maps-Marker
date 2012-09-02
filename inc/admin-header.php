@@ -18,8 +18,6 @@ if ( false === $download_counter || '' === $download_counter ){
 /*
     Admin Header - Leaflet Maps Marker Plugin
 */
-?>
-<?php 
 //info prevent file from being accessed directly
 if (basename($_SERVER['SCRIPT_FILENAME']) == 'admin-header.php') { die ("Please do not access this file directly. Thanks!<br/><a href='http://www.mapsmarker.com/go'>www.mapsmarker.com</a>"); }
 require_once(ABSPATH . DIRECTORY_SEPARATOR . "wp-includes" . DIRECTORY_SEPARATOR . "pluggable.php");
@@ -84,6 +82,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		started code refactoring for better readability and extensability
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		markers and layers with lat = 0 could not be created
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
