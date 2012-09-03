@@ -1024,7 +1024,7 @@ function __construct() {
 	{
         $screen = get_current_screen();
 		$screen->add_help_tab( array( 'id' => 'lmm_help_tab', 'title' => __('Help & Support','lmm'), 'content' => $helptext ));
-	}
+	}	
   }
   function lmm_admin_jquery_ui() {
     wp_enqueue_script( array ( 'jquery', 'jquery-ui-tabs' ) );

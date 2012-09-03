@@ -222,6 +222,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.8 - xx.xx.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.8)
+* NEW: added dynamic changelog to show all changes since your last plugin update
 * NEW: added subnavigations in settings for higher usability
 * CHANGED: updated jQuery-Timepicker-Addon by Trent Richardson to v1.0.1
 * CHANGED: started code refactoring for better readability and extensability
