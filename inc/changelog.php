@@ -69,6 +69,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		started code refactoring for better readability and extensability
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		Slovak translation thanks to Zdenko Podobny
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		AJAX GeoJSON-calls from other (sub)domains were not allowed (same origin policy)
