@@ -224,12 +224,15 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.8)
 * NEW: added dynamic changelog to show all changes since your last plugin update
 * NEW: added subnavigations in settings for higher usability
+* CHANGED: revamped admin dashboard widget (cache RSS feeds, show post text)
 * CHANGED: updated jQuery-Timepicker-Addon by Trent Richardson to v1.0.1
 * CHANGED: started code refactoring for better readability and extensability
+* BUGFIX: AJAX GeoJSON-calls from other (sub)domains were not allowed (same origin policy)
 * BUGFIX: markers and layers with lat = 0 could not be created
 * BUGFIX: fixed broken zoom for Google Maps with tilt (github issue #31)
 * BUGFIX: autoPanPadding for popups was broken
 * BUGFIX: widget width was not 100% of sidebar on some templates
+* BUGFIX: Google language localization broke GeoJSON output when debug was enabled
 = v2.7.1 - 24.08.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.7.1)
 * NEW: upgrade to leaflet.js v0.4.4  - [changelog](http://leaflet.cloudmade.com/2012/07/30/leaflet-0-4-released.html)

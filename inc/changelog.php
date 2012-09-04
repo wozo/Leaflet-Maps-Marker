@@ -56,12 +56,22 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
+		revamped admin dashboard widget (cache RSS feeds, show post text)
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
 		updated jQuery-Timepicker-Addon by Trent Richardson to v1.0.1
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		started code refactoring for better readability and extensability
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		AJAX GeoJSON-calls from other (sub)domains were not allowed (same origin policy)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
@@ -83,7 +93,12 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td><td>
 		widget width was not 100% of sidebar on some templates
 		</td></tr>
-		</table>'.PHP_EOL;		
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		Google language localization broke GeoJSON output when debug was enabled
+		</td></tr>
+		</table>'.PHP_EOL;
 
 	if ( ($lmm_version_old < '2.7.1' ) ){
 		echo '<hr noshade size="1"><p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.7.1') . '</strong> - ' . __('released on','lmm') . ' 24.08.2012 (<a href="http://www.mapsmarker.com/v2.7.1" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
