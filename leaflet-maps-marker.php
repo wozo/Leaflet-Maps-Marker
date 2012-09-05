@@ -75,9 +75,60 @@ function __construct() {
 	if ( isset($lmm_options['misc_admin_dashboard_widget']) && ($lmm_options['misc_admin_dashboard_widget'] == 'enabled') ){
 		add_action('wp_dashboard_setup', array( &$this,'lmm_register_widgets' ));
 	}
+	if ( isset($lmm_options['misc_pointers'] ) && ($lmm_options['misc_pointers'] == 'enabled') ) {
+		add_action( 'admin_enqueue_scripts', array( $this, 'lmm_pointer_admin_scripts' ),1001);
+	}
+  }
+  function lmm_pointer_admin_scripts() {
+	$lmm_version_new = get_option( 'leafletmapsmarker_version' );
+	$seen_it = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
+	$do_add_script = false;
+	$version_without_dots = "lmmv" . str_replace('.', '', $lmm_version_new);
+	if ( ! in_array( $version_without_dots, $seen_it ) ) {
+		$do_add_script = true;
+		add_action( 'admin_print_footer_scripts', array( $this, 'lmm_pointer_footer_script' ) );
+	}
+	if ( $do_add_script ) {
+		wp_enqueue_script( 'wp-pointer' );
+		wp_enqueue_style( 'wp-pointer' );
+	}
+  }
+  function lmm_pointer_footer_script() {
+	$lmm_version_new = get_option( 'leafletmapsmarker_version' );
+	$version_without_dots = "lmmv" . str_replace('.', '', $lmm_version_new);
+	$pointer_content = '<h3>' . sprintf(__('Update to v%1s was successful','lmm'), $lmm_version_new)
+ . '</h3>'; 
+	if (!is_multisite()) {
+		$changelog_url = '<a href="' . admin_url('/admin.php?page=leafletmapsmarker_markers') .'" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
+	} else {
+		$changelog_url = '<a href="' . network_admin_url('/admin.php?page=leafletmapsmarker_markers') .'" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
+	}
+	$blogpost_url = '<a href="http://www.mapsmarker.com/v' . $lmm_version_new . '" target="_blank" style="text-decoration:none;">mapsmarker.com</a>';
+	$pointer_content .= '<p>' . sprintf(__('Please see the %1s for new features or the blog post on %2s for more details','lmm'), $changelog_url, $blogpost_url) . '</p>';
+  ?>
+	<script type="text/javascript">// <![CDATA[
+	jQuery(document).ready(function($) {
+	    if(typeof(jQuery().pointer) != 'undefined') {
+	        $('#toplevel_page_leafletmapsmarker_markers').pointer({
+        	    content: '<?php echo $pointer_content; ?>',
+	            position: {
+        	        edge: 'left',
+	                align: 'center'
+        	    },
+	            close: function() {
+        	        $.post( ajaxurl, {
+                	    pointer: '<?php echo $version_without_dots; ?>',
+	                    action: 'dismiss-wp-pointer'
+        	        });
+	            }
+	        }).pointer('open');
+	    }
+	});
+	// ]]></script>
+  <?php
   }
   function lmm_register_widgets(){
-    wp_add_dashboard_widget( 'lmm-admin-dashboard-widget', __('Leaflet Maps Marker - recent markers','lmm'), array( &$this,'lmm_dashboard_widget'), array( &$this,'lmm_dashboard_widget_control'));
+	wp_add_dashboard_widget( 'lmm-admin-dashboard-widget', __('Leaflet Maps Marker - recent markers','lmm'), array( &$this,'lmm_dashboard_widget'), array( &$this,'lmm_dashboard_widget_control'));
   }
   function lmm_dashboard_widget(){
 	global $wpdb;
@@ -103,9 +154,12 @@ function __construct() {
 	{
 			require_once(ABSPATH . WPINC . DIRECTORY_SEPARATOR . 'class-simplepie.php');  
 			$feed = new SimplePie();
-			$lmm_upload_dir = wp_upload_dir();
-			$feed->enable_cache(true);
-			$feed->set_cache_location($location = $lmm_upload_dir['basedir']); 
+			if ( file_exists(LEAFLET_PLUGIN_ICONS_DIR . DIRECTORY_SEPARATOR . 'information.png') ) {
+				$feed->enable_cache(true);
+				$feed->set_cache_location($location = LEAFLET_PLUGIN_ICONS_DIR); 
+			} else {
+				$feed->enable_cache(false);
+			}
 			$feed->set_feed_url('http://feeds.feedburner.com/MapsMarker');
 			$feed->init();
 			$feed->handle_content_type();
@@ -705,9 +759,9 @@ function __construct() {
 		if ( (isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 ) )
 			$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_bingroad' ]) . "': bingroad,";
 	};
-	if ( (isset($lmm_options[ 'controlbox_ogdwien_basemap' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_basemap' ] == 1 ) )
+	if (((isset($lmm_options[ 'controlbox_ogdwien_basemap' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_basemap' ] == 1 )) && ((($lat <= '48.326583')  && ($lat >= '48.114308')) && (($lon <= '16.55056')  && ($lon >= '16.187325')) ))
 		$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_ogdwien_basemap' ]) . "': ogdwien_basemap,";
-	if ( (isset($lmm_options[ 'controlbox_ogdwien_satellite' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_satellite' ] == 1 ) )
+	if (((isset($lmm_options[ 'controlbox_ogdwien_satellite' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_satellite' ] == 1 )) && ((($lat <= '48.326583')  && ($lat >= '48.114308')) && (($lon <= '16.55056')  && ($lon >= '16.187325')) ))
 		$basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_ogdwien_satellite' ]) . "': ogdwien_satellite,";
 	if ( (isset($lmm_options[ 'controlbox_cloudmade' ]) == TRUE ) && ($lmm_options[ 'controlbox_cloudmade' ] == 1 ) )
 		$basemaps_available .= "'".addslashes($lmm_options[ 'cloudmade_name' ])."': cloudmade,";
@@ -1132,10 +1186,17 @@ function __construct() {
 	wp_enqueue_style( 'jquery-ui-timepicker-addon' );	
    }   
   function lmm_install_and_updates() {
-	include('inc' . DIRECTORY_SEPARATOR . 'install-and-updates.php');
+	//info: set transient to execute install & update-routine only once a day
+	$schedule_transient = 'leafletmapsmarker_install_update_cache_' . date('d');
+	$install_update_schedule = get_transient( $schedule_transient );
+	if ( $install_update_schedule === FALSE ) {
+		$schedule_transient = 'leafletmapsmarker_install_update_cache_' . date('d');
+		set_transient( $schedule_transient, 'execute install and update-routine only once a day', 60*60*24 );
+		include('inc' . DIRECTORY_SEPARATOR . 'install-and-updates.php');
+	}
   }
   function lmm_plugin_meta_links() {
-	define( 'FB_BASENAME', plugin_basename( __FILE__ ) );
+	define( 'FB_BASENAME', plugin_basename( __FILE__ ) ); 
 	define( 'FB_BASEFOLDER', plugin_basename( dirname( __FILE__ ) ) );
 	define( 'FB_FILENAME', str_replace( FB_BASEFOLDER.'/', '', plugin_basename(__FILE__) ) );
 	function leafletmapsmarker_filter_plugin_meta($links, $file) {

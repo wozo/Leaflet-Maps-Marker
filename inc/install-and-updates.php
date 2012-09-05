@@ -387,7 +387,6 @@ if (get_option('leafletmapsmarker_version') == '2.7' ) {
 		update_option('leafletmapsmarker_update_info', 'show');
 	}
 }
-
 /* template for plugin updates 
 if (get_option('leafletmapsmarker_version') == '2.7.1' ) {
 	//optional: add code for sql ddl updates

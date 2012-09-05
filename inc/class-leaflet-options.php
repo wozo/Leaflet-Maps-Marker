@@ -702,7 +702,7 @@ class Class_leaflet_options {
 			'version' => '1.0',
 			'section' => 'basemaps',
 			'title'   => '',
-			'desc'    => __('OGD Vienna basemap','lmm'),
+			'desc'    => __('OGD Vienna basemap','lmm') . '<br/><span class="description">' . __('Info: gets removed from control box automatically if location of marker or layer is outside Vienna','lmm') . '</span>',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -710,7 +710,7 @@ class Class_leaflet_options {
 			'version' => '1.0',
 			'section' => 'basemaps',
 			'title'   => '',
-			'desc'    => __('OGD Vienna satellite','lmm'),
+			'desc'    => __('OGD Vienna satellite','lmm') . '<br/><span class="description">' . __('Info: gets removed from control box automatically if location of marker or layer is outside Vienna','lmm') . '</span>',
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
@@ -6349,6 +6349,18 @@ class Class_leaflet_options {
 				'disabled' => __('disabled','lmm')
 			)
 		);
+		$this->settings['misc_pointers'] = array(
+			'version' => '2.8',
+			'section' => 'misc',
+			'title'   => __('WordPress Pointers','lmm'),
+			'desc'    => __('display WordPress pointers on plugin updates','lmm'),
+			'type'    => 'radio',
+			'std'     => 'enabled',
+			'choices' => array(
+				'enabled' => __('enabled','lmm'),
+				'disabled' => __('disabled','lmm')
+			)
+		);
 		$this->settings['misc_global_stats'] = array(
 			'version' => '1.1',
 			'section' => 'misc',
@@ -7270,7 +7282,6 @@ class Class_leaflet_options {
 		$options_new = array_merge($options_current, $new_options_defaults);
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
-		/* template for plugin updates 
 		//info:  set defaults for options introduced in v2.8
 		if (get_option('leafletmapsmarker_version') == '2.7.1' )
 		{
@@ -7278,6 +7289,22 @@ class Class_leaflet_options {
 			foreach ( $this->settings as $id => $setting ) 
 			{
 				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.8')
+				{
+				$new_options_defaults[$id] = $setting['std'];
+				}
+			}
+		$options_current = get_option( 'leafletmapsmarker_options' );
+		$options_new = array_merge($options_current, $new_options_defaults);
+		update_option( 'leafletmapsmarker_options', $options_new );
+		}
+		/* template for plugin updates 
+		//info:  set defaults for options introduced in v2.9
+		if (get_option('leafletmapsmarker_version') == '2.8' )
+		{
+			$new_options_defaults = array();
+			foreach ( $this->settings as $id => $setting ) 
+			{
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.9')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
