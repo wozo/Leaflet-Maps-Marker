@@ -48,7 +48,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 	$lmm_full_changelog = '<a href="http://www.mapsmarker.com/changelog" target="_blank">http://www.mapsmarker.com/changelog</a>';
 	echo '<div class="updated">
 		<p><span style="font-weight:bold;font-size:125%;">' . sprintf(__('Leaflet Maps Marker has been successfully updated from version %1s to %2s!','lmm'), $lmm_version_old, $lmm_version_new) . '</span></p>
-		<p>' . sprintf(__('For more details about version %1s, please visit %s','lmm'), $lmm_version_new, $lmm_changelog_new_version) . '</p>'.PHP_EOL;
+		<p>' . sprintf(__('For more details about version %1s, please visit %2s','lmm'), $lmm_version_new, $lmm_changelog_new_version) . '</p>'.PHP_EOL;
 	echo '<iframe name="changelog" src="' . LEAFLET_PLUGIN_URL . 'inc/changelog.php" width="98%" height="285" marginwidth="0" marginheight="0" style="border:thin dashed #E6DB55;"></iframe>'.PHP_EOL;
 	echo '<p>' . __('If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">rate the plugin on wordpress.org</a> - thanks!','lmm') . '</p>'.PHP_EOL;
 	echo '<form method="post" style="padding:2px 0 6px 0;">
