@@ -260,6 +260,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated jQuery-Timepicker-Addon by Trent Richardson to v1.0.1
 * CHANGED: started code refactoring for better readability and extensability
 * CHANGED: updated Slovak translation thanks to Zdenko Podobny
+* CHANGED: updated Catalan translation thanks to Vicent Cubells, [http://vcubells.net](http://vcubells.net)
+* CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
+* CHANGED: removed global stats to comply with WordPress plugin repository policies
 * BUGFIX: AJAX GeoJSON-calls from other (sub)domains were not allowed (same origin policy)
 * BUGFIX: maximum popup width and popup image width were ignored on TinyMCE editor
 * BUGFIX: invalid geojson output when \ in marker name or popup text (now replaced with /)

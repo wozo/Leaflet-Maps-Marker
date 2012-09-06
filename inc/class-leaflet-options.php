@@ -6361,18 +6361,6 @@ class Class_leaflet_options {
 				'disabled' => __('disabled','lmm')
 			)
 		);
-		$this->settings['misc_global_stats'] = array(
-			'version' => '1.1',
-			'section' => 'misc',
-			'title'   => __('Global statistics','lmm'),
-			'desc'    => __('Anonymous marker/layer hit counter','lmm') . ' <a href="http://www.mapsmarker.com/legal#global-stats" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
-			'type'    => 'radio',
-			'std'     => 'enabled',
-			'choices' => array(
-				'enabled' => __('enabled','lmm'),
-				'disabled' => __('disabled','lmm')
-			)
-		);		
 		$this->settings['misc_qrcode_size'] = array(
 			'version' => '1.1',
 			'title'   => __( 'QR code image size', 'lmm' ),
