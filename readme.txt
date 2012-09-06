@@ -77,7 +77,6 @@ to the visitors of your website.
 * dynamic preview of maps in backend (no need to reload)
 * option to select plugin default language in settings for backend and frontend
 * WordPress Admin Bar integration to quickly access plugins features (can be disabled)
-* global stats for marker/layer count on mapsmarker.com (can be disabled)
 * "OGD Vienna selector": if a place within boundaries of Vienna/Austria is chosen, OGD Vienna basemaps are automatically selected
 * admin dashboard widget showing latest markers and blog posts from mapsmarker.com
 * integrated [donation links](http://www.mapsmarker.com/donations) to show your support for this plugin :-)
