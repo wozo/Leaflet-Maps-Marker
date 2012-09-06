@@ -9,6 +9,7 @@ $lmm_options = get_option( 'leafletmapsmarker_options' );
 echo "
 /* TinyMCE specific rules for Leaflet Maps Marker */
 html .mcecontentbody {
+	font: 12px/1.4 'Helvetica Neue',Arial,Helvetica,sans-serif;
 	max-width:" . intval($lmm_options['defaults_marker_popups_maxwidth'] + 1) . "px;
 	word-wrap: break-word; 
 }

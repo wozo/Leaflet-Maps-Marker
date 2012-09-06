@@ -2,7 +2,7 @@
 //info prevent file from being accessed directly
 if (basename($_SERVER['SCRIPT_FILENAME']) == 'install-and-updates.php') { die ("Please do not access this file directly. Thanks!<br/><a href='http://www.mapsmarker.com/go'>www.mapsmarker.com</a>"); }
 global $wpdb;
-//info: 2 options not managed by Settings API (class-leaflet-options.php) 
+//info: options not managed by Settings API
 add_option('leafletmapsmarker_version', 'init');
 add_option('leafletmapsmarker_version_before_update', '0');
 add_option('leafletmapsmarker_redirect', 'true'); //redirect to marker creation page page after first activation only
@@ -377,6 +377,16 @@ if (get_option('leafletmapsmarker_version') == '2.7' ) {
 		update_option('leafletmapsmarker_version_before_update', '2.7');
 	}
 	update_option('leafletmapsmarker_version', '2.7.1');
+}
+if (get_option('leafletmapsmarker_version') == '2.7.1' ) {
+	$save_defaults_for_new_options = new Class_leaflet_options();
+	$save_defaults_for_new_options->save_defaults_for_new_options();
+	$version_before_update = get_transient( 'leafletmapsmarker_version_before_update' );
+	if ( $version_before_update === FALSE ) {
+		set_transient( 'leafletmapsmarker_version_before_update', 'deleted-in-1-hour', 60*60 );
+		update_option('leafletmapsmarker_version_before_update', '2.7.1');
+	}
+	update_option('leafletmapsmarker_version', '2.8');
 	update_option('leafletmapsmarker_update_info', 'show');
 	//info: redirect to settings page only on first plugin activation, otherwise redirect is also done on bulk plugin activations
 	if (get_option('leafletmapsmarker_redirect') == 'true') 
@@ -388,7 +398,7 @@ if (get_option('leafletmapsmarker_version') == '2.7' ) {
 	}
 }
 /* template for plugin updates 
-if (get_option('leafletmapsmarker_version') == '2.7.1' ) {
+if (get_option('leafletmapsmarker_version') == '2.8' ) {
 	//optional: add code for sql ddl updates
 	//mandatory if new options in class-leaflet-options.php were added
 	$save_defaults_for_new_options = new Class_leaflet_options();
@@ -398,7 +408,7 @@ if (get_option('leafletmapsmarker_version') == '2.7.1' ) {
 		set_transient( 'leafletmapsmarker_version_before_update', 'deleted-in-1-hour', 60*60 );
 		update_option('leafletmapsmarker_version_before_update', '2.8');
 	}
-	update_option('leafletmapsmarker_version', '2.8');
+	update_option('leafletmapsmarker_version', '2.9');
 	//mandatory: remove update_option('leafletmapsmarker_update_info', 'show'); from last version
 	update_option('leafletmapsmarker_update_info', 'show');
 	//mandatory: move code for redirect-on-first-activation-check to here

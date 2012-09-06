@@ -7,16 +7,21 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.5-alpha-21589
+Tested up to:      3.5-alpha-21751
 Stable tag:        2.8
 License:           GPLv2
+
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
+
 == Description ==
 = Plugin's Official Site =
 http://mapsmarker.com
+
 * [Demo](http://www.mapsmarker.com/demo/) - [FAQ](http://www.mapsmarker.com/faq/) - [Docs](http://www.mapsmarker.com/docs/) - [Support](http://mapsmarker.com/support/) - [Github](https://github.com/robertharm/Leaflet-Maps-Marker) - [Donations](http://mapsmarker.com/donations) - [Twitter](http://twitter.com/mapsmarker) - [Facebook](http://facebook.com/mapsmarker) - [Translations](http://translate.mapsmarker.com/projects/lmm)
+
 = Main features = 
 Leaflet Maps Marker allows you to
+
 * pin your favorites places with markers,
 * use integrated address search (Google Places API) for quickly finding your places,
 * choose from up to 800 custom free map icons from [Maps Icons Collection](http://mapicons.nicolasmollet.com),
@@ -25,15 +30,20 @@ Leaflet Maps Marker allows you to
 * organize your markers in layers and
 * show them thanks to the [Leaflet library from Cloudmade](http://leaflet.cloudmade.com/) 
 * by adding a shortcode (e.g. mapsmarker marker="1")] to posts, pages, widgets or template
+
 on basemaps from
+
 * OpenStreetMap,
 * Google Maps (Road, Satellite, Hybrid, Terrain),
 * Bing Maps (Aerial, Aerials+Labels, Road),
 * MapQuest (Road, Satellite),
 * [OGD Vienna Maps](http://data.wien.gv.at) (Road, Aerial, Addresses)
 * or any custom WMTS-map
+
 to the visitors of your website.
+
 = Additional features =
+
 * show directions for your locations using Google Maps, yournavigation.org, openrouteservice.org or map.project-osrm.org
 * support for Google Maps API key which is required for commercial users
 * configure up to 10 WMS servers to display additional information from external geodata providers (like the European Environment Agency) on your maps
@@ -71,6 +81,7 @@ to the visitors of your website.
 * "OGD Vienna selector": if a place within boundaries of Vienna/Austria is chosen, OGD Vienna basemaps are automatically selected
 * admin dashboard widget showing latest markers and blog posts from mapsmarker.com
 * integrated [donation links](http://www.mapsmarker.com/donations) to show your support for this plugin :-)
+
 = Technical details =
 * Wordpress Multisite compatibility
 * plugin was successfully tested to ÖNORM 7700 and OWASP TOP 10 for security issues
@@ -88,47 +99,58 @@ to the visitors of your website.
 * use of custom function names and enque plugin scripts/css only on plugin pages to prevent conflicts with other plugins
 * update functions implemented for smooth updates of the plugin
 * uninstall function to completely remove the plugin and its data (also on WordPress Multisite installations)
+
 Please let me know which feature you think is missing by adding your ideas at [http://www.mapsmarker.com/ideas](http://www.mapsmarker.com/ideas)
+
 = Available translations =
-* Bulgarian (bg_BG) thanks to Andon Ivanov
-* Catalan (ca) thanks to Vicent Cubells
-* Chinese (zh_CN) thanks to John Shen
-* Dutch (nl_NL) thanks to Marijke Metz
+* Bulgarian (bg_BG) thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
+* Catalan (ca) thanks to Vicent Cubells, [http://vcubells.net](http://vcubells.net)
+* Chinese (zh_CN) thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* Dutch (nl_NL) thanks to Marijke Metz, [http://www.mergenmetz.nl](http://www.mergenmetz.nl)
 * English (en_US)
-* French (fr_FR) thanks to Vincèn Pujol and Rodolphe Quiedeville
+* French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * German (de_DE)
-* Hindi (hi_IN) thanks to by Outshine Solutions and Guntupalli Karunakar
-* Italian (it_IT) thanks to Luca Barbetti
-* Japanese (ja) thanks to Shu Higashi
-* Polish (pl_PL) translation thanks to Pawel Wyszynski
-* Russian (ru_RU) thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies
+* Hindi (hi_IN) thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
+* Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
+* Japanese (ja) thanks to [Shu Higashi](http://twitter.com/higa4)
+* Polish (pl_PL) translation thanks to Pawel Wyszynski, [http://injit.pl](http://injit.pl)
+* Russian (ru_RU) thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
 * Slovak (sk_SK) thanks to Zdenko Podobny
-* Spanish (es_ES) thanks to David Ramirez and Alvaro Lara
-* Turkish (tr_TR) thanks to Emre Erkan
+* Spanish (es_ES) thanks to David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com) and Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
+* Turkish (tr_TR) thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
 * Ukrainian (uk_UK) thanks to Andrexj
-* Yiddish (yi) thanks to Raphael Finkel
+* Yiddish (yi) thanks to Raphael Finkel, [http://www.cs.uky.edu/~raphael/yiddish.html](http://www.cs.uky.edu/~raphael/yiddish.html)
+
 Leaflet Maps Marker also supports easy switching between translations through a specific plugin setting.
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
+
 = Leaflet Maps Marker Needs Your Support =
 It is hard to continue development and support for this plugin without contributions from users like you. If you enjoy using Leaflet Maps Marker - particularly within a commercial context - please consider [__making a donation__](http://www.mapsmarker.com/donations). Your donation will help keeping the plugin free for everyone and allow me to spend more time on developing, maintaining and support. I´d be happy to accept your donation! Thanks! [Robert Harm](http://www.harm.co.at)
+
 == Installation ==
 Note: plugin requires at least PHP 5.2 and Wordpress 3.0!
+
 1. Upload leaflet-maps-marker folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Optional: change default settings (you are getting redirected to plugin settings page automatically on first activation)
+
 After installation you will find a 'Leaflet Maps Marker' menu in your WordPress admin panel and in WordPress Admin Bar.
 For basic usage and tutorials, you can also have a look at [http://www.mapsmarker.com/docs](http://www.mapsmarker.com/docs "Docs").
+
 == Frequently Asked Questions ==
 Do you have questions or issues with Leaflet Maps Marker? Please use these support channels appropriately:
+
 1. [FAQ](www.mapsmarker.com/faq/)
 2. [Docs](http://www.mapsmarker.com/docs/)
 3. [Ideas (for feature requests)](www.mapsmarker.com/ideas/)
 4. [Wordpress Support Forum](http://wordpress.org/tags/leaflet-maps-marker?forum_id=10) (free community support)
 5. [WP Questions](http://wpquestions.com/affiliates/register/name/robertharm) (paid community support)
 6. [WordPress HelpCenter](http://wphelpcenter.com/) (paid professional support)
+
 [More info on support](http://mapsmarker.com/support/)
 == Screenshots ==
 For demo maps please visit [http://www.mapsmarker.com/demo](http://www.mapsmarker.com/demo).
+
 1. Frontend: marker map (with open popup and image, basemap: OGD Vienna satellite, overlay: OGD Vienna addresses, controlbox: expanded)
 2. Frontend: layer map (5 marker, different icons, basemap: OpenStreetMap, controlbox: collapsed)
 3. Frontend: map with WMS layer enabled and additional marker
@@ -147,6 +169,7 @@ For demo maps please visit [http://www.mapsmarker.com/demo](http://www.mapsmarke
 = Licence =
 Good news, this plugin is free for everyone! Since it's released under the GPL, you can use it free of charge on your personal or commercial blog. But if you enjoy this plugin, you can thank me and leave a small donation for the time I've spent writing and supporting this plugin. Please see [http://www.mapsmarker.com/donations](http://www.mapsmarker.com/donations) for details.
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License included with this plugin for more details. 
+
 = Licenses for used libraries, services and images =
 * Leaflet - Copyright (c) 2010-2012, CloudMade, Vladimir Agafonkin [http://leaflet.cloudmade.com](http://leaflet.cloudmade.com)
 * OpenStreetMap - The Free Wiki World Map: [OpenStreetMap License](http://wiki.openstreetmap.org/wiki/OpenStreetMap_License) 
@@ -157,18 +180,23 @@ This program is free software; you can redistribute it and/or modify it under th
 * Map center icon [Joseph Wain](http://glyphish.com/) - Creative Commons Attribution (by)
 * Plus, json & csv-export icon by [Yusuke Kamiyamane](http://www.pinvoke.com/) - Creative Commons Attribution (by)
 * Question Mark Icon by [RandomJabber](http://www.randomjabber.com/)
+
 = Credits & special thanks to =
 * Sindre Wimberger ([http://www.sindre.at](http://www.sindre.at)) for help with bugfixing & geo-consulting
 * Susanne Mandl ([http://www.greenflamingomedia.com](http://www.greenflamingomedia.com)) for plugin logo
 * Wordpress-Settings-API-Class by Aliso the geek ([http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/](http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/))
 * [Hind](http://www.nanodesu.ru) who originally release a basic Leaflet plugin (not available anymore) which I used partly as a basis for Leaflet Maps Marker plugin
 * [shramov](http://psha.org.ru/b/leaflet-plugins.html) for bing and google maps plugins for leaflet
+
 For more information on translations of the plugin and how to contribute a new translation, please visit [http://www.mapsmarker.com/languages](http://www.mapsmarker.com/languages).
+
 = Trademark and copyright =
 MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
+
 == Upgrade Notice ==
 = v2.8 =
+focus on improvements "under-the-hood" (dynamic changelog, bugfixes etc) - see http://www.mapsmarker.com/v2.8 for more details
 = v2.7.1 =
 upgrade to leaflet 0.4.4 and the longest changelog ever - see http://www.mapsmarker.com/v2.7.1 for more details
 = v2.6.1 =
@@ -219,8 +247,9 @@ Important bugfixes and new feature: GeoRSS-Support - see http://www.mapsmarker.c
 Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more details
 = 1.0 =
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
+
 == Changelog ==
-= v2.8 - xx.xx.2012 =
+= v2.8 - 08.09.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.8)
 * NEW: added dynamic changelog to show all changes since your last plugin update
 * NEW: added WordPress pointers which show after plugin updates (can be disabled)
@@ -238,7 +267,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: fixed broken zoom for Google Maps with tilt (github issue #31)
 * BUGFIX: autoPanPadding for popups was broken
 * BUGFIX: widget width was not 100% of sidebar on some templates
+* BUGFIX: text for popups was not as wide in TinyMCE editor as wide in popups
 * BUGFIX: Google language localization broke GeoJSON output when debug was enabled
+
 = v2.7.1 - 24.08.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.7.1)
 * NEW: upgrade to leaflet.js v0.4.4  - [changelog](http://leaflet.cloudmade.com/2012/07/30/leaflet-0-4-released.html)
@@ -287,11 +318,14 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: Marker/layer repositioning via Google address search did not changed basemap to Bing/Google
 * BUGFIX: switching basemaps caused attribution text not to clear first
 * BUGFIX: <html>-tags in geotags are now stripped as they caused 404 messages
+
 = v2.7 - 21.07.2012 =
 * "Special Collectors Edition" :-)
+
 = v2.6.1 - 20.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.6.1)
 * BUGFIX: bing maps should now work as designed - thank to Pavel Shramov!
+
 = v2.6 - 19.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.6)
 * NEW: support for bing maps as basemaps - [API key required](http://www.mapsmarker.com/bing-maps)
@@ -310,6 +344,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
 * BUGFIX: maps using Google Maps Satellite as basemaps were broken
 * BUGFIX: fixed vertical alignment of basemaps in layer control box in backend
+
 = v2.5 - 06.07.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.5)
 * NEW: support for Google Maps as basemaps
@@ -330,6 +365,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: v2.4 was broken on Wordpress 3.0-3.1.3
 * BUGFIX: WMS layer legend links were broken on marker/layer maps in admin area
 * BUGFIX: \" in popup text caused layer maps to break (now " gets replaced with ')
+
 = v2.4 - 07.06.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.4)
 * NEW: option to add widgets showing recent marker entries
@@ -339,6 +375,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: CSS bugfix for wrong sized leaflet attribution links on several templates
 * BUGFIX: direction link on popuptext was not shown if popuptext was empty
 * CHANGED: removed geo tags from Google (geo) sitemap as they are not supported anymore
+
 = v2.3 - 26.04.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.3)
 * NEW: added sort options for marker and layer listing pages in backend
@@ -348,11 +385,13 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: TinyMCE button error on certain installations (function redeclaration, different wp-admin-directory)
 * BUGFIX: list of markers below layer maps was not as wide as the map on some templates
 * BUGFIX: changed constant WP_ADMIN_URL to LEAFLET_WP_ADMIN_URL due to problems on some blogs
+
 = v2.2 - 24.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.2)
 * NEW: support for new map options (dragging, touchzoom, scrollWheelZoom...)
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * BUGFIX: TinyMCE button did not work when WordPress was installed in custom directory
+
 = v2.1 - 18.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.1)
 * NEW: added changelog info box after each plugin update
@@ -366,12 +405,14 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
 * BUGFIX: attribution text is not cleared on backend maps if basemap is changed
 * BUGFIX: removed double slashes from image urls in settings
+
 = v2.0 - 13.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.0)
 * NEW: added support for geo sitemaps for all marker and layer maps
 * NEW: added mass actions (delete+assign to layer) for selected markers only
 * BUGFIX: maps didnt show up on French installations on backend
 * UPDATED French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com)
+
 = v1.9 - 05.03.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.9)
 * NEW: added TinyMCE-button for easily searching and inserting maps on post/pages-edit screen
@@ -379,6 +420,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * UPDATED Dutch translation thanks to [Marijke](http://www.mergenmetz.nl)
 * UPDATED Japanes translations thanks to [Shu Higashi](http://twitter.com/higa4)
 * REMOVED support for OSM Osmarender basemaps (service has been discontinued)
+
 = v1.8 - 29.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.8)
 * NEW: added option to add a timestamp for each marker for more precise KML animations
@@ -396,6 +438,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: output of multiple markers as ARML did not work (leaflet-wikitude.php?marker/layer=1,2,3)
 * BUGFIX: if single layer was changed into multi layer map, list of markers was still displayed below map
 * BUGFIX: button "add to layer" did not work on new layers
+
 = v1.7 - 22.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.7)
 * NEW: added multi-layer support allowing you to combine markers from different layer maps
@@ -404,6 +447,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: Spanish translation thanks to David Ramírez, [http://www.hiperterminal.com](http://www.hiperterminal.com)
 * OPTIMIZED: added with & height attributes to custom marker-image-tags on marker edit page to speed up page load time
 * CHANGED: default font color in popups to black due to incompabilities with several themes
+
 = v1.6 - 14.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.6)
 * NEW: added support for Cloudmade maps with styles as basemaps
@@ -412,6 +456,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: lat/lon values for layer and marker maps were rounded on some installations
 * CHANGED: added updated Japanese translation (thanks to Shu Higashi, @higa4)
 * CHANGED: added updated German translation
+
 = v1.5.1 - 12.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.5.1)
 * BUGFIX: layer maps and API links did not work on multisite installations
@@ -421,6 +466,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: uninstall didnt remove marker-icon-directory on some installations
 * BUGFIX: admin pages for map/layer edit screens broken on WordPress 3.0 installations
 * OPTIMIZED: javascript variable definitions for wms layers and custom overlays get added to sourcecode only when they are active on the current map
+
 = v1.5 - 09.02.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.5)
 * NEW: added option to display a list of markers below layer maps (enabled for new layer maps, disabled for existing layer maps)
@@ -428,19 +474,23 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: add mass actions for layer maps
 * CHANGED: database structure for boolean values from tinyint(4) to tinyint(1)
 * BUGFIX: overlay status for layer maps wasnt displayed in backend preview
+
 = v1.4.3 - 29.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.4.3)
 * NEW: added WMS support for KML-files via networklink
 * BUGFIX: routing link attached to popup text did not work
 * BUGFIX: missing KML schema declaration causing KML file not to work with scribblemaps.com
+
 = v1.4.2 - 25.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.4.2)
 * BUGFIX: custom marker icons not showing up on maps on certain hosts (using directory separators different to / ) 
 * BUGFIX: css styling for <label>-tag in controlbox got overriden by some templates
+
 = v1.4.1 - 24.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.4.1)
 * BUGFIX: markers & layers could not be added on some hosting providers (changed updatedby & updatedon column on both tables to NULL instead of NOT NULL)
 * CHANGED: added updated Japanese translation (thanks to Shu Higashi, @higa4)
+
 = v1.4 - 23.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.4)
 * NEW: added support for routing service from Google Maps
@@ -455,6 +505,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: text width in tinymce editor was not the same as in popup text
 * BUGFIX: several German translation text strings
 * BUGFIX: markers added directly with shortcode caused error on frontend
+
 = v1.3 - 17.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.3)
 * NEW: add mass actions for makers (assign markers to layer, delete markers)
@@ -470,9 +521,11 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * REMOVED: global stats for plugin installs, marker/layer edits and deletions
 * REMOVED: featured sponsor in admin header
 * REMOVED: developers comments from css- and js-files
+
 = v1.2.2 - 14.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.2.2)
 * BUGFIX: custom marker icons were not shown on certain hosts due to different wp-upload-directories
+
 = v1.2.1 - 13.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.2.1)
 * BUGFIX: plugin installation failed on certain hosting providers due to path/directory issues
@@ -480,6 +533,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: removed redundant slashes from paths
 * BUGFIX: fullscreen maps did not get loaded if WordPress is installed in subdirectory
 * BUGFIX: API images in panel did show a border on some templates
+
 = v1.2 - 11.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.2)
 * NEW: added [GeoRSS-feeds for marker- and layer maps](http://www.mapsmarker.com/georss) (RSS 2.0 & ATOM 1.0)
@@ -496,6 +550,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: attribution box on standalone maps did not show up if windows size is too small
 * BUGFIX: slashes were not stripped from marker/layer name on frontend maps
 * BUGFIX: quotes were not shown on marker/layer names (note: double quotes are replaced with single quotes automatically due to compatibility reasons)
+
 = v1.1 - 08.01.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.1)
 * NEW: [show standalone maps in fullscreen mode](http://www.mapsmarker.com/wp-content/plugins/leaflet-maps-marker/leaflet-fullscreen.php?marker=1)
@@ -513,6 +568,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: dynamic preview of marker/layer panel in backend not working as designed
 * BUGFIX: language pot-file didn´t include all text strings for translations
 * BUGFIX: active translations made setting tabs unaccessible
+
 = v1.0 - 01.01.2012 = 
 * [Blog post with more details about this release](http://www.mapsmarker.com/v1.0)
 * NEW: Initial release
