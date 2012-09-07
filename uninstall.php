@@ -19,7 +19,7 @@ if (is_multisite()) {
 		}
 		$version_before_update = get_transient( 'leafletmapsmarker_version_before_update' );
 		if ( $version_before_update != FALSE ) {
-			delete_transient( $version_before_update );
+			delete_transient( 'leafletmapsmarker_version_before_update' );
 		}
 		//info: dont remove files if pro version exists
 		if (!file_exists($lmm_pro_readme)) {
@@ -49,7 +49,7 @@ if (is_multisite()) {
 			}
 			$version_before_update = get_transient( 'leafletmapsmarker_version_before_update' );
 			if ( $version_before_update != FALSE ) {
-				delete_transient( $version_before_update );
+				delete_transient( 'leafletmapsmarker_version_before_update' );
 			}
 			//info: dont remove files if pro version exists
 			if (!file_exists($lmm_pro_readme)) {
@@ -88,7 +88,7 @@ else
 	}
 	$version_before_update = get_transient( 'leafletmapsmarker_version_before_update' );
 	if ( $version_before_update != FALSE ) {
-		delete_transient( $version_before_update );
+		delete_transient( 'leafletmapsmarker_version_before_update' );
 	}
 	//info: dont remove files if pro version exists
 	$lmm_pro_readme = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'leaflet-maps-marker-pro' . DIRECTORY_SEPARATOR . 'readme.txt';
