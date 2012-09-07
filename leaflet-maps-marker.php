@@ -155,14 +155,7 @@ function __construct() {
 	} else {
 		echo '<p style="margin-bottom:5px;">' . __('No marker created yet','lmm') . '</p>';
 	}  
-	if  ( !isset($widgets[$widget_id]['blogposts']) ) {
-		$show_rss = 1;
-	} else if ( isset($widgets[$widget_id]['blogposts']) && ($widgets[$widget_id]['blogposts'] == 1) ) {
-		$show_rss = 0;
-	} else {
-		$show_rss = 1;
-	}
-	if ($show_rss == 1)
+	if ($widgets[$widget_id]['blogposts'] == 0)
 	{
 			require_once(ABSPATH . WPINC . DIRECTORY_SEPARATOR . 'class-simplepie.php');  
 			$feed = new SimplePie();
@@ -186,27 +179,31 @@ function __construct() {
   function lmm_dashboard_widget_control(){
 	$widget_id = 'lmm-admin-dashboard-widget';
 	$form_id = 'lmm-admin-dashboard-widget-control';
+	$update = false;
     if ( !$widget_options = get_option( 'dashboard_widget_options' ) )
       $widget_options = array(); 
-    if ( !isset($widget_options[$widget_id]) )
-      $widget_options[$widget_id] = array(); 
+    if ( !isset($widget_options[$widget_id]) ) {
+	//info: set default value
+      $widget_options[$widget_id] = array(
+			'blogposts' => 0,
+			'items' => 5
+	  ); 
+	  $update = true;
+	}
     if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST[$form_id]) ) {
-	  $number = ($_POST[$form_id]['items'] == NULL) ? '4' : absint( $_POST[$form_id]['items'] );
+	  $number = ($_POST[$form_id]['items'] == NULL) ? '3' : absint( $_POST[$form_id]['items'] );
+      //$number = absint( $_POST[$form_id]['items'] );
 	  $blogposts = isset($_POST[$form_id]['blogposts']) ? '1' : '0';
       $widget_options[$widget_id]['items'] = $number; 
       $widget_options[$widget_id]['blogposts'] = $blogposts; 
-      update_option( 'dashboard_widget_options', $widget_options ); 
+      $update = true;
     }
+	if($update) update_option( 'dashboard_widget_options', $widget_options ); 
     $number = isset( $widget_options[$widget_id]['items'] ) ? (int) $widget_options[$widget_id]['items'] : '';
     echo '<p><label for="lmm-admin-dashboard-widget-number">' . __('Number of markers to show:') . ' </label>';
     echo '<input id="lmm-admin-dashboard-widget-number" name="'.$form_id.'[items]" type="text" value="' . $number . '" size="2" /></p>';
     echo '<p><label for="lmm-admin-dashboard-widget-blogposts">' . __('Hide blog posts and link section:') . ' </label>';
-	if (isset($widget_options[$widget_id]['blogposts']) && ($widget_options[$widget_id]['blogposts'] == 1) ) {
-		$index_check = 1;
-	} else {
-		$index_check = 0;
-	}
-    echo '<input id="lmm-admin-dashboard-widget-blogposts" name="'.$form_id.'[blogposts]" type="checkbox" ' . checked($index_check,1,false) . '/></p>';
+    echo '<input id="lmm-admin-dashboard-widget-blogposts" name="'.$form_id.'[blogposts]" type="checkbox" ' . checked($widget_options[$widget_id]['blogposts'],1,false) . '/></p>';
   }
   function lmm_load_translation_files() {
 	load_plugin_textdomain('lmm', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
