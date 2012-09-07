@@ -281,6 +281,9 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					<input id="panel_hide" type="radio" name="panel" value="0" <?php checked($panel, 0 ); ?>>
 					<label for="panel_hide"><?php _e('hide','lmm') ?></label>
 					<br/><br/>				
+					<?php 
+					global $wp_version;
+					if ( version_compare( $wp_version, '3.3', '>=' ) ) { ?>
 					<script type="text/javascript">
 						var $j = jQuery.noConflict();
 						$j(function() {
@@ -298,6 +301,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 							showSecond: true,
 						});});
 					</script>
+					<?php }; ?>
 					<label for="kml_timestamp"><strong><?php _e('Timestamp for KML animation','lmm') ?>:</strong></label> <a href="http://www.mapsmarker.com/kml-timestamp" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-question-mark.png" title="<?php esc_attr_e('Click here for more information on animations in KML/Google Earth','lmm'); ?>" width="12" height="12" border="0"/></a><br/>
 					<input type="text" id="kml_timestamp" name="kml_timestamp" value="<?php echo $kml_timestamp ; ?>" style="width:145px;background-image:url(<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-calendar.png);background-position:123px center;background-repeat:no-repeat;" /><br/>
 					<small><?php _e('If empty, marker creation date will be used','lmm') ?><br/></small></p>
@@ -456,7 +460,6 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 				</td>
 				<td>
 				<?php 
-					global $wp_version;
 					if ( version_compare( $wp_version, '3.3', '>=' ) ) 
 					{
 						$settings = array( 
@@ -870,6 +873,8 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
       <?php }?>
   });
   var mapElement = $('#selectlayer'), mapWidth = $('#mapwidth'), mapHeight = $('#mapheight'), popupText = $('#popuptext'), lat = $('#lat'), lon = $('#lon'), panel = $('#lmm-panel'), lmm = $('#lmm'), markername = $('#markername'), zoom = $('#zoom');
+	//info: bugfix causing maps not to show up in WP 3.0 and errors in WP <3.3
+	<?php if ( version_compare( $wp_version, '3.3', '>=' ) ) { ?>
 	//info: change zoom level when changing form field
 	zoom.on('blur', function(e) {
 		if(isNaN(zoom.val())) {
@@ -878,8 +883,6 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
 		selectlayer.setZoom(zoom.val());
 		}
 	});
-	//info: bugfix causing maps not to show up in WP 3.0 and errors in WP <3.3
-	<?php if ( version_compare( $wp_version, '3.3', '>=' ) ) { ?>
 	markername.on('blur', function(e) { 
 		document.getElementById('lmm-panel-text').innerHTML = markername.val();
 	});
