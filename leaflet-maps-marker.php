@@ -155,7 +155,14 @@ function __construct() {
 	} else {
 		echo '<p style="margin-bottom:5px;">' . __('No marker created yet','lmm') . '</p>';
 	}  
-	if ($widgets[$widget_id]['blogposts'] == 0)
+	if  ( !isset($widgets[$widget_id]['blogposts']) ) {
+		$show_rss = 1;
+	} else if ( isset($widgets[$widget_id]['blogposts']) && ($widgets[$widget_id]['blogposts'] == 1) ) {
+		$show_rss = 0;
+	} else {
+		$show_rss = 1;
+	}
+	if ($show_rss == 1)
 	{
 			require_once(ABSPATH . WPINC . DIRECTORY_SEPARATOR . 'class-simplepie.php');  
 			$feed = new SimplePie();
