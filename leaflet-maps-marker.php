@@ -181,7 +181,6 @@ function __construct() {
 			$feed->set_feed_url('http://feeds.feedburner.com/MapsMarker');
 			$feed->init();
 			$feed->handle_content_type();
-			if ( $feed == NULL ) { echo 'not null'; }
 			echo '<hr style="border:0;height:1px;background-color:#d8d8d8;"><strong><p>' . __('Latest blog posts from www.mapsmarker.com','lmm') . '</p></strong>';
 			if ($feed->get_items() == NULL) { 
 				$blogpost_url = '<a href="http://www.mapsmarker.com/news" target="_blank">http://www.mapsmarker.com/news</a>';
