@@ -73,7 +73,12 @@ function __construct() {
 	}
 	add_action('widgets_init', create_function('', 'return register_widget("Class_leaflet_recent_marker_widget");'));
 	if ( isset($lmm_options['misc_admin_dashboard_widget']) && ($lmm_options['misc_admin_dashboard_widget'] == 'enabled') ){
-		add_action('wp_dashboard_setup', array( &$this,'lmm_register_widgets' ));
+		if ( !is_multisite() ) {
+			add_action('wp_dashboard_setup', array( &$this,'lmm_register_widgets' ));
+		} else {
+			add_action('wp_network_dashboard_setup', array( &$this,'lmm_register_widgets' ));
+			add_action('wp_dashboard_setup', array( &$this,'lmm_register_widgets' ));
+		}
 	}
 	if ( isset($lmm_options['misc_pointers'] ) && ($lmm_options['misc_pointers'] == 'enabled') ) {
 		add_action( 'admin_enqueue_scripts', array( $this, 'lmm_pointer_admin_scripts' ),1001);
