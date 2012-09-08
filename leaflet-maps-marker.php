@@ -174,6 +174,7 @@ function __construct() {
 			if ( file_exists(LEAFLET_PLUGIN_ICONS_DIR . DIRECTORY_SEPARATOR . 'information.png') ) {
 				$feed->enable_cache(true);
 				$feed->set_cache_location($location = LEAFLET_PLUGIN_ICONS_DIR); 
+				$feed->set_cache_duration(86400);
 			} else {
 				$feed->enable_cache(false);
 			}
@@ -182,6 +183,10 @@ function __construct() {
 			$feed->handle_content_type();
 			if ( $feed == NULL ) { echo 'not null'; }
 			echo '<hr style="border:0;height:1px;background-color:#d8d8d8;"><strong><p>' . __('Latest blog posts from www.mapsmarker.com','lmm') . '</p></strong>';
+			if ($feed->get_items() == NULL) { 
+				$blogpost_url = '<a href="http://www.mapsmarker.com/news" target="_blank">http://www.mapsmarker.com/news</a>';
+				echo sprintf(__('Feed could not be retrieved, please try again later or read the latest blog posts at %s','lmm'),$blogpost_url); 
+			}
 			foreach (array_slice($feed->get_items(), 0, 3) as $item) {
 				echo '<p>' . $item->get_date('j F Y') . ': <strong><a href="' . $item->get_permalink() . '">' . $item->get_title() . '</a></strong><br/>' . $item->get_description() . '</p>'.PHP_EOL;
 			}
