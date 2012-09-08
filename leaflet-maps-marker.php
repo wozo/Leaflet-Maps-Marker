@@ -103,14 +103,14 @@ function __construct() {
 	$version_without_dots = "lmmv" . str_replace('.', '', $lmm_version_new);
 	$install_note = (isset($_GET['display']) ? $_GET['display'] : '');
 	if ( $install_note == NULL) {
-		$pointer_content = '<h3>' . sprintf(__('Update to v%1s was successful','lmm'), $lmm_version_new) . '</h3>'; 
+		$pointer_content = '<h3>' . sprintf(__('Leaflet Maps Marker plugin update to v%1s was successful','lmm'), $lmm_version_new) . '</h3>'; 
 		if ( !is_multisite() ) {
 			$changelog_url = '<a href="' . admin_url('/admin.php?page=leafletmapsmarker_markers') .'" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
 		} else {
 			$changelog_url = '<a href="' . network_admin_url('/admin.php?page=leafletmapsmarker_markers') .'" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
 		}
 	} else {
-		$pointer_content = '<h3>' . __('Plugin was successfully installed','lmm') . '</h3>'; 
+		$pointer_content = '<h3>' . __('Leaflet Maps Marker plugin was successfully installed','lmm') . '</h3>'; 
 		$changelog_url = '<a href="http://www.mapsmarker.com/changelog" target="_blank" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
 	}
 	$blogpost_url = '<a href="http://www.mapsmarker.com/v' . $lmm_version_new . '" target="_blank" style="text-decoration:none;">mapsmarker.com</a>';

@@ -252,6 +252,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.8.1 - 09.09.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.8.1)
+* CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * BUGFIX: images and links in layer maps were broken
 
 = v2.8 - 08.09.2012 =
