@@ -104,11 +104,7 @@ function __construct() {
 	$install_note = (isset($_GET['display']) ? $_GET['display'] : '');
 	if ( $install_note == NULL) {
 		$pointer_content = '<h3>' . sprintf(__('Leaflet Maps Marker plugin update to v%1s was successful','lmm'), $lmm_version_new) . '</h3>'; 
-		if ( !is_multisite() ) {
-			$changelog_url = '<a href="' . admin_url('/admin.php?page=leafletmapsmarker_markers') .'" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
-		} else {
-			$changelog_url = '<a href="' . network_admin_url('/admin.php?page=leafletmapsmarker_markers') .'" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
-		}
+		$changelog_url = '<a href="' . admin_url('/admin.php?page=leafletmapsmarker_markers') .'" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
 	} else {
 		$pointer_content = '<h3>' . __('Leaflet Maps Marker plugin was successfully installed','lmm') . '</h3>'; 
 		$changelog_url = '<a href="http://www.mapsmarker.com/changelog" target="_blank" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
