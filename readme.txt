@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.4.2
-Stable tag:        2.8.1
+Stable tag:        2.9
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
@@ -194,6 +194,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
+= v2.9 =
+
 = v2.8.1 =
 images and links in layer maps were broken
 = v2.8 =
@@ -250,6 +252,10 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v2.9 - xx.09.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v2.9)
+
+
 = v2.8.1 - 09.09.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.8.1)
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
