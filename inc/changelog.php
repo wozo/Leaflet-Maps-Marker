@@ -57,7 +57,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		
+		database tables &amp; marker icon directory did not get removed on multisite blogs when blog was deleted through network admin
 		</td></tr>
 		</table>'.PHP_EOL;
 */
