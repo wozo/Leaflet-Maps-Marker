@@ -34,8 +34,7 @@ function lmm_register_button( $buttons ) {
 Register TinyMCE Plugin
 */
 function lmm_add_plugin( $plugin_array ) {
-	if (!is_multisite()) { $adminurl = admin_url(); } else { $adminurl = get_admin_url(); }
-	$plugin_array['mm_shortcode'] = LEAFLET_PLUGIN_URL . 'inc/js/lmm_tinymce_shortcode.php?adminurl='.$adminurl.'&leafletpluginurl='.LEAFLET_PLUGIN_URL;
+	$plugin_array['mm_shortcode'] = LEAFLET_PLUGIN_URL . 'inc/js/lmm_tinymce_shortcode.php?leafletpluginurl='.LEAFLET_PLUGIN_URL;
 	return $plugin_array;
 }
 add_action('wp_ajax_get_mm_list',  'get_mm_list');
