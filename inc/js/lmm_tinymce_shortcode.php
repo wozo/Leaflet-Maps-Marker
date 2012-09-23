@@ -13,36 +13,37 @@ $LEAFLET_PLUGIN_URL = isset($_GET['leafletpluginurl']) ? $_GET['leafletpluginurl
 if ( isset($lmm_options['misc_tinymce_button']) && ($lmm_options['misc_tinymce_button'] == 'enabled') ) {
 	echo "
 	(function($) {
+        $('#ed_insertMap, #globe, #modal-content').remove();
+        var visual_active = true;
+        if($('#wp-content-wrap').is('.tmce-active')){
 		tinymce.create('tinymce.plugins.mm_shortcode', {
 			init : function(ed, url) {
 				function open_map() {
-									ed.windowManager.open({
-											title : 'Insert map',
-						file : '".$adminurl."admin-ajax.php?action=get_mm_list',
+					ed.windowManager.open({
+						title : '" . esc_attr__('Insert map','lmm') . "',
+						file : '" . $adminurl . "admin-ajax.php?action=get_mm_list',
 						width : 450 + parseInt(ed.getLang('example.delta_width', 0)),
 						height : 440 + parseInt(ed.getLang('example.delta_height', 0)),
-											inline: 1
-					})
+						inline: 1
+					});
 				}
-				$('#globe').live('click', function(){
-			   
-				  open_map();
-				   return false;
+				$('#globe, #ed_insertMap').live('click', function(){
+				    open_map();
+				    return false;
 				});
-			  
 				ed.addCommand('mm_shortcode', function(){
 				open_map();
 				});
-				ed.addButton('mm_shortcode', {title : '" . __('Insert map','lmm') . "', cmd : 'mm_shortcode', image: '".$LEAFLET_PLUGIN_URL."inc/img/icon-menu-page.png' });
+				ed.addButton('mm_shortcode', {title : '" . esc_attr__('Insert map','lmm') . "', cmd : 'mm_shortcode', image: '".$LEAFLET_PLUGIN_URL."inc/img/icon-menu-page.png' });
 			},
 			createControl : function(n, cm) {
 				return null;
 			}
 		});
 		tinymce.PluginManager.add('mm_shortcode', tinymce.plugins.mm_shortcode); 
-		$('#wp-content-media-buttons').append('<a id = globe href=#><img src=".$LEAFLET_PLUGIN_URL."inc/img/icon-menu-page.png></a>');
-	
-		})(jQuery);
+		$('#wp-content-media-buttons').append('<a title=\'" . esc_attr__('Insert map','lmm') . "\' id = globe href=#><img src=".$LEAFLET_PLUGIN_URL."inc/img/icon-menu-page.png></a>');
+	    $('#ed_toolbar').append('<input type=button value=\'" . esc_attr__('Insert map','lmm') . "\' id=ed_insertMap class=ed_button title=\'" . esc_attr__('Insert map','lmm') . "\' />');	
+		}})(jQuery);
 	"; 
 }
 ?>

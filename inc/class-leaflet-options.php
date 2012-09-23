@@ -7287,7 +7287,7 @@ class Class_leaflet_options {
 		}
 		/* template for plugin updates 
 		//info:  set defaults for options introduced in v2.9
-		if (get_option('leafletmapsmarker_version') == '2.8' )
+		if (get_option('leafletmapsmarker_version') == '2.8.2' )
 		{
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 

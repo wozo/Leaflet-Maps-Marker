@@ -416,7 +416,7 @@ if (get_option('leafletmapsmarker_version') == '2.8.1' ) {
 		set_transient( 'leafletmapsmarker_version_before_update', 'deleted-in-1-hour', 60*3 );
 		update_option('leafletmapsmarker_version_before_update', '2.8');
 	}
-	update_option('leafletmapsmarker_version', '2.9');
+	update_option('leafletmapsmarker_version', '2.8.2');
 	//2do - mandatory: remove update_option('leafletmapsmarker_update_info', 'show'); from last version
 	update_option('leafletmapsmarker_update_info', 'show');
 	//mandatory: move code for redirect-on-first-activation-check to here
