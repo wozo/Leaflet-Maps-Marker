@@ -228,8 +228,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v2.9 =
-
+= v2.8.2 =
+better integration of the TinyMCE button, bugfixes for KML and multisite blogs
 = v2.8.1 =
 images and links in layer maps were broken
 = v2.8 =

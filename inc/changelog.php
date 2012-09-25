@@ -91,7 +91,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		plugin incompatibility with "<a href="http://wordpress.org/support/topic/plugin-seo-friendly-images-plugin-conflict-seo-friendly-images-breaks-leaflet-maps-marker" target="_blank">SEO Friendly Images</a>" plugin
+		plugin incompatibility with "<a href="http://wordpress.org/extend/plugins/seo-image/" target="_blank">SEO Friendly Images</a>" plugin
 		</td></tr>
 		</table>'.PHP_EOL;
 	if ( ($lmm_version_old < '2.8.1' ) ){

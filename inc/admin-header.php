@@ -66,13 +66,6 @@ if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['stan
 	echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you enabled support for bing maps but did not provide an API key. Please visit <a href="http://www.mapsmarker.com/bing-maps" target="_blank">http://www.mapsmarker.com/bing-maps</a> for info on how to get a free bing maps API key!','lmm') . '</strong></div></p>';
 }
 //info: check for incompabilities with other plugins
-
-if (is_plugin_active('seo-image/seo-friendly-images.php') ) {
-	$seo_friendly_image_metadata = get_plugin_data(WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'seo-image' . DIRECTORY_SEPARATOR . 'seo-friendly-images.php');
-	if ($seo_friendly_image_metadata['Version'] <= '2.7.1') {
-		echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you are not using the latest version of the plugin "SEO Friendly Images" - this is causing maps to break!</strong><br/>Please update the plugin "SEO Friendly Images" to the latest version which fixes this problem.','lmm') . '</div></p>';
-	}
-}
 if (is_plugin_active('jquery-colorbox/jquery-colorbox.php') ) {
 	$lmm_jquery_colorbox_options = get_option( 'jquery-colorbox_settings' );
 	if ($lmm_jquery_colorbox_options['autoColorbox'] == TRUE) { 
