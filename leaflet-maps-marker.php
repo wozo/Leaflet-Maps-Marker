@@ -285,6 +285,13 @@ function __construct() {
 	echo $georss_to_head;
   }
   function lmm_showmap($atts) {
+	//info: remove filter from SEO Friendly Images for compatibility reasons
+	include_once( ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'plugin.php' );
+	if (is_plugin_active('seo-image/seo-friendly-images.php') ) {
+		if ( function_exists( 'seo_friendly_images_install' ) ) {
+			remove_filter('the_content', 'seo_friendly_images', 100);
+		}
+	}
     global $wpdb;
     $lmm_options = get_option( 'leafletmapsmarker_options' );
     $uid = substr(md5(''.rand()), 0, 8);
