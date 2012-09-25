@@ -69,11 +69,6 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		added media button to TinyMCE editor and support for HTML editing mode
 		</td></tr>
 		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
-		</td><td>
-		added plugin compatibility check for "<a href="http://wordpress.org/support/topic/plugin-seo-friendly-images-plugin-conflict-seo-friendly-images-breaks-leaflet-maps-marker" target="_blank">SEO Friendly Images</a>"
-		</td></tr>
-		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		updated Spanish translation thanks to Alvaro Lara, <a href="http://www.alvarolara.com" target="_blank">http://www.alvarolara.com</a>
@@ -87,6 +82,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		database tables &amp; marker icon directory did not get removed on multisite blogs when blog was deleted through network admin
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		KML output was broken if marker or layer name contained &amp;-characters
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		plugin incompatibility with "<a href="http://wordpress.org/support/topic/plugin-seo-friendly-images-plugin-conflict-seo-friendly-images-breaks-leaflet-maps-marker" target="_blank">SEO Friendly Images</a>" plugin
 		</td></tr>
 		</table>'.PHP_EOL;
 	if ( ($lmm_version_old < '2.8.1' ) ){

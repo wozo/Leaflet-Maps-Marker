@@ -985,7 +985,7 @@ function __construct() {
   $lmm_out .= '</div>'; //info: end leaflet_maps_marker_$uid
   } //info: end (!is_feed())
   return $lmm_out;
-  	} //info: end check if marker/layer exists
+	} //info: end check if marker/layer exists
   } //info: end lmm_showmap()
   function lmm_admin_menu() {
 	$lmm_options = get_option( 'leafletmapsmarker_options' );

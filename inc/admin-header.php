@@ -41,7 +41,6 @@ if ( ($update_info_action == 'hide') && ($new_install == 'false') ) {
 	update_option('leafletmapsmarker_update_info', 'hide');
 }
 if (get_option('leafletmapsmarker_update_info') == 'show') {
-
 	$lmm_version_old = get_option( 'leafletmapsmarker_version_before_update' );
 	$lmm_version_new = get_option( 'leafletmapsmarker_version' );
 	$lmm_changelog_new_version = '<a href="http://www.mapsmarker.com/v' . $lmm_version_new . '" target="_blank">http://www.mapsmarker.com/v' . $lmm_version_new . '</a>';
@@ -67,6 +66,7 @@ if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['stan
 	echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you enabled support for bing maps but did not provide an API key. Please visit <a href="http://www.mapsmarker.com/bing-maps" target="_blank">http://www.mapsmarker.com/bing-maps</a> for info on how to get a free bing maps API key!','lmm') . '</strong></div></p>';
 }
 //info: check for incompabilities with other plugins
+
 if (is_plugin_active('seo-image/seo-friendly-images.php') ) {
 	$seo_friendly_image_metadata = get_plugin_data(WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'seo-image' . DIRECTORY_SEPARATOR . 'seo-friendly-images.php');
 	if ($seo_friendly_image_metadata['Version'] <= '2.7.1') {

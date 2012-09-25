@@ -289,10 +289,11 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 = v2.8.2 - xx.09.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.8.2)
 * NEW: added media button to TinyMCE editor and support for HTML editing mode
-* NEW: added plugin compatibility check for "SEO Friendly Images"
 * CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * BUGFIX: database tables &amp; marker icon directory did not get removed on multisite blogs when blog was deleted through network admin
+* BUGFIX: KML output was broken if marker or layer name contained &amp;-characters
+* BUGFIX: plugin incompatibility with "SEO Friendly Images" plugin
 
 = v2.8.1 - 09.09.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.8.1)

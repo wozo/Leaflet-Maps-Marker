@@ -22,6 +22,8 @@ function mm_shortcode_button() {
      add_filter( 'mce_external_plugins', 'lmm_add_plugin' );
      add_filter( 'mce_buttons', 'lmm_register_button' );
      add_filter( 'mce_external_plugins', 'mm_qt' ); 
+   } else{
+     add_action('admin_footer', 'mm_qt');  
    }
 }
 function mm_qt($plugin_array) {
