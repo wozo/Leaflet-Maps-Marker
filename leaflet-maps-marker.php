@@ -1239,7 +1239,7 @@ function __construct() {
    }   
   function lmm_install_and_updates() {
 	//info: set transient to execute install & update-routine only once a day
-	$current_version = "v281"; //2do - mandatory: change on each update!
+	$current_version = "v282"; //2do - mandatory: change on each update!
 	$schedule_transient = 'leafletmapsmarker_install_update_cache_' . $current_version . '_' . date('d');
 	$install_update_schedule = get_transient( $schedule_transient );
 	if ( $install_update_schedule === FALSE ) {

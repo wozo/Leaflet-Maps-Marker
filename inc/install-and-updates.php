@@ -429,6 +429,8 @@ if (get_option('leafletmapsmarker_version') == '2.8.2' ) {
 	update_option('leafletmapsmarker_update_info', 'show');
 	//mandatory: move code for redirect-on-first-activation-check to here
 	//2do - mandatory: set $current_version in leaflet-maps-marker.php/install-uninstall-transient & uninstall.php!
+	//2do - mandatory: set current version in leaflet-maps-marker.php / function lmm_install_and_updates()
+	
 }
 */
 ?>
