@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.4.2
-Stable tag:        2.8.2
+Stable tag:        2.9
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
@@ -228,6 +228,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
+= v2.9 =
+revamped settings panel - see http://www.mapsmarker.com/v2.9 for more details
 = v2.8.2 =
 better integration of the TinyMCE button, bugfixes for KML and multisite blogs - see http://www.mapsmarker.com/v2.8.2 for more details
 = v2.8.1 =
@@ -286,6 +288,13 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v2.9 - xx.10.2012 =
+* CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
+* CHANGED: updated Slovak translation thanks to Zdenko Podobny
+* BUGFIX: table for list of markers below layer maps was not as with as map if map with was set in %
+* BUGFIX: Bing tiles fails to load when p.x or p.y was -ve (bug [#31](https://github.com/shramov/leaflet-plugins/issues/31))
+* BUGFIX: Revert function wrapper for Google Maps (broke deferred loading and compiled version of plugins)
+
 = v2.8.2 - 26.09.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.8.2)
 * NEW: added media button to TinyMCE editor and support for HTML editing mode
