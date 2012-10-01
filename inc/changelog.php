@@ -71,6 +71,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
+		show link "add new map" in TinyMCE popup if no maps have been created yet
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
 		updated Spanish translation thanks to Alvaro Lara, <a href="http://www.alvarolara.com" target="_blank">http://www.alvarolara.com</a>
 		</td></tr>
 		<tr><td>
@@ -92,6 +97,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		Revert function wrapper for Google Maps (broke deferred loading and compiled version of plugins)
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		Compatibility with WordPress 3.5beta1
 		</td></tr>
 		</table>'.PHP_EOL;
 	if ( ($lmm_version_old < '2.8.2' ) ){
