@@ -66,6 +66,9 @@ if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['stan
 	echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you enabled support for bing maps but did not provide an API key. Please visit <a href="http://www.mapsmarker.com/bing-maps" target="_blank">http://www.mapsmarker.com/bing-maps</a> for info on how to get a free bing maps API key!','lmm') . '</strong></div></p>';
 }
 //info: check for incompabilities with other plugins
+if (is_plugin_active('lazy-load/lazy-load.php') ) {
+	echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you are using the plugin Lazy Load which is incompatible with Leaflet Maps Marker and causing maps to break. Please deactivate this plugin in order to be able to use Leaflet Maps Marker.','lmm') . '</strong></div></p>';
+}
 if (is_plugin_active('jquery-colorbox/jquery-colorbox.php') ) {
 	$lmm_jquery_colorbox_options = get_option( 'jquery-colorbox_settings' );
 	if ($lmm_jquery_colorbox_options['autoColorbox'] == TRUE) { 

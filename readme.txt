@@ -289,11 +289,15 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
 = v2.9 - xx.10.2012 =
+* NEW: added compatibility check for plugin [Lazy Load]([http://wordpress.org/extend/plugins/lazy-load/)
 * CHANGED: show link "add new map" in TinyMCE popup if no maps have been created yet
 * CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 * CHANGED: updated Slovak translation thanks to Zdenko Podobny
-* BUGFIX: table for list of markers below layer maps was not as with as map if map with was set in %
-* BUGFIX: Bing tiles fails to load when p.x or p.y was -ve (bug [#31](https://github.com/shramov/leaflet-plugins/issues/31))
+* CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
+* CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* CHANGED: optimized internal code structure
+* BUGFIX: table for list of markers below layer maps was not as wide as map if map with was set in %
+* BUGFIX: Bing tiles failed to load when p.x or p.y was -ve (bug [#31](https://github.com/shramov/leaflet-plugins/issues/31))
 * BUGFIX: Revert function wrapper for Google Maps (broke deferred loading and compiled version of plugins)
 * BUGFIX: Compatibility with WordPress 3.5beta1
 

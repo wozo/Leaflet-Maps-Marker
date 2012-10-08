@@ -69,6 +69,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
+		added compatibility check for plugin <a href="http://wordpress.org/extend/plugins/lazy-load/" target="_blank">Lazy Load</a>
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		show link "add new map" in TinyMCE popup if no maps have been created yet
@@ -84,14 +89,29 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		updated Slovak translation thanks to Zdenko Podobny
 		</td></tr>
 		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
-		table for list of markers below layer maps was not as with as map if map with was set in %
+		updated Italian translation thanks to Luca Barbetti, <a href="http://twitter.com/okibone" target="_blank">http://twitter.com/okibone</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		updated Chinese translation thanks to John Shen, <a href="http://www.synyan.net" target="_blank">http://www.synyan.net</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		optimized internal code structure
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		Bing tiles fails to load when p.x or p.y was -ve (<a href="https://github.com/shramov/leaflet-plugins/issues/31" target="_blank">bug #31</a>)
+		table for list of markers below layer maps was not as wide as map if map with was set in %
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		Bing tiles failed to load when p.x or p.y was -ve (<a href="https://github.com/shramov/leaflet-plugins/issues/31" target="_blank">bug #31</a>)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
