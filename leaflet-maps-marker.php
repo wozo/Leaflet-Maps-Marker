@@ -62,6 +62,7 @@ function __construct() {
 	add_action('wp_head', array(&$this, 'lmm_image_css_override'),1000);
 	add_action('admin_bar_menu', array(&$this, 'lmm_add_admin_bar_menu'),149);
 	add_shortcode($lmm_options['shortcode'], array(&$this, 'lmm_showmap'));
+	add_action('admin_notices', array(&$this, 'lmm_compatibility_checks'));
 	if ($lmm_options['misc_add_georss_to_head'] == 'enabled') {
 		add_action( 'wp_head', array( &$this, 'lmm_add_georss_to_head' ) );
 	}
@@ -251,6 +252,10 @@ function __construct() {
 	} else {
 		return $locale;
 	}
+  }
+  function lmm_compatibility_checks()
+  {
+	include('inc' . DIRECTORY_SEPARATOR . 'compatibility-checks.php');
   }
   function lmm_help()
   {

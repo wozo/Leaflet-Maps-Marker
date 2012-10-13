@@ -289,7 +289,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
 = v2.9 - xx.10.2012 =
-* NEW: added compatibility check for plugin [Lazy Load]([http://wordpress.org/extend/plugins/lazy-load/)
+* NEW: compatibilty check notices are now shown globally on each admin page
+* NEW: added compatibility check for incompatible plugin [Lazy Load]([http://wordpress.org/extend/plugins/lazy-load/)
+* NEW: added compatibility check for incompatible plugin [Contact Form 7 Map Field]([http://wordpress.org/extend/plugins/contact-form-7-map-field/)
 * CHANGED: show link "add new map" in TinyMCE popup if no maps have been created yet
 * CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 * CHANGED: updated Slovak translation thanks to Zdenko Podobny
