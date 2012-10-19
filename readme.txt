@@ -297,6 +297,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated Slovak translation thanks to Zdenko Podobny
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* CHANGED: updated German translation
 * CHANGED: optimized internal code structure
 * BUGFIX: table for list of markers below layer maps was not as wide as map if map with was set in %
 * BUGFIX: Bing tiles failed to load when p.x or p.y was -ve (bug [#31](https://github.com/shramov/leaflet-plugins/issues/31))
