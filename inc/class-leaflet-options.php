@@ -24,29 +24,76 @@ class Class_leaflet_options {
 		$this->panes['basemaps'] 		= __('Basemaps','lmm');
 		$this->panes['overlays']		= __('Overlays','lmm');
 		$this->panes['wms']				= __('WMS','lmm');
-		$this->panes['defaults_marker']	= __('Marker/Icon/Popup defaults','lmm');
-		$this->panes['defaults_layer']	= __('Layer defaults','lmm');
-		$this->panes['google']			= __('Google','lmm');
+		$this->panes['defaults_marker']	= __('Map defaults','lmm');
+		$this->panes['google']			= __('Google Maps','lmm');
+		$this->panes['bing']			= __('Bing Maps','lmm');
 		$this->panes['directions']		= __('Directions','lmm');
 		$this->panes['ar']				= __('Augmented-Reality','lmm');
 		$this->panes['misc']			= __('Misc','lmm');
 		$this->panes['reset']			= __('Reset','lmm');
 
-		$this->sections['basemaps-section1']		= __('Basemaps Section 1','lmm');
-		$this->sections['basemaps-section2']		= __('Basemaps Section 2','lmm');
-        $this->sections['basemaps-section3']        = __('Basemaps Section 3','lmm');
-        $this->sections['basemaps-section4']        = __('Basemaps Section 4','lmm');
-        $this->sections['basemaps-section5']        = __('Basemaps Section 5','lmm');//no options available yet for this section
-		$this->sections['overlays-section1']		= __('Overlays Section 1','lmm');
-		$this->sections['overlays-section2']		= __('Overlays Section 2','lmm');//no options available yet for this section
-		$this->sections['wms-sections1']			= __('WMS Section 1 ','lmm');
-		$this->sections['defaults_marker-section1']	= __('Marker/Icon/Popup defaults Section 1','lmm');
+		$this->sections['basemaps-section1']		= __('Default basemap for new markers/layers','lmm');
+		$this->sections['basemaps-section2']		= __('Names for default basemaps','lmm');
+		$this->sections['basemaps-section3']		= __('Available basemaps in control box','lmm');
+		$this->sections['basemaps-section4']		= __('Interaction options','lmm');
+		$this->sections['basemaps-section5']		= __('Keyboard navigation options','lmm');
+		$this->sections['basemaps-section6']		= __('Panning inertia options','lmm');
+		$this->sections['basemaps-section7']		= __('Control options','lmm');
+		$this->sections['basemaps-section8']		= __('Scale control','lmm');
+		$this->sections['basemaps-section9']		= __('Retina display detection','lmm');
+		$this->sections['basemaps-section10']		= __('OGD Vienna Selector','lmm');
+		$this->sections['basemaps-section11']		= __('Cloudmade 1 settings','lmm');
+		$this->sections['basemaps-section12']		= __('Cloudmade 2 settings','lmm');
+		$this->sections['basemaps-section13']		= __('Cloudmade 3 settings','lmm');
+		$this->sections['basemaps-section14']		= __('MapBox 1 settings','lmm');
+		$this->sections['basemaps-section15']		= __('MapBox 2 settings','lmm');
+		$this->sections['basemaps-section16']		= __('MapBox 3 settings','lmm');
+		$this->sections['basemaps-section17']		= __('Custom basemap 1 settings','lmm');
+		$this->sections['basemaps-section18']		= __('Custom basemap 2 settings','lmm');
+		$this->sections['basemaps-section19']		= __('Custom basemap 3 settings','lmm');
+		$this->sections['overlays-section1']		= __('Available overlays for new markers/layers','lmm');
+		$this->sections['overlays-section2']		= __('Custom overlay settings','lmm');
+		$this->sections['overlays-section3']		= __('Custom overlay 2 settings','lmm');
+		$this->sections['overlays-section4']		= __('Custom overlay 3 settings','lmm');
+		$this->sections['overlays-section5']		= __('Custom overlay 4 settings','lmm');
+		$this->sections['wms-sections1']			= __('Available WMS layers for new markers/layers','lmm');
+		$this->sections['wms-sections2']			= __('WMS layer 1 settings','lmm');
+		$this->sections['wms-sections3']			= __('WMS layer 2 settings','lmm');
+		$this->sections['wms-sections4']			= __('WMS layer 3 settings','lmm');
+		$this->sections['wms-sections5']			= __('WMS layer 4 settings','lmm');
+		$this->sections['wms-sections6']			= __('WMS layer 5 settings','lmm');
+		$this->sections['wms-sections7']			= __('WMS layer 6 settings','lmm');
+		$this->sections['wms-sections8']			= __('WMS layer 7 settings','lmm');
+		$this->sections['wms-sections9']			= __('WMS layer 8 settings','lmm');
+		$this->sections['wms-sections10']			= __('WMS layer 9 settings','lmm');
+		$this->sections['wms-sections11']			= __('WMS layer 10 settings','lmm');
+		$this->sections['defaults_marker-section1']	= __('Default values for new marker maps','lmm');
+		$this->sections['defaults_marker-section2']	= __('Default values for marker icons','lmm');
+		$this->sections['defaults_marker-section3']	= __('Default values for marker popups','lmm');
+		$this->sections['defaults_marker-section4']	= __('Default values for markers added directly','lmm');
+		$this->sections['defaults_marker-section5']	= __('Default values for new layer maps','lmm');
+		$this->sections['defaults_marker-section6']	= __('List marker settings','lmm');
 		$this->sections['defaults_layer-section1']	= __('Layer defaults Section 1 ','lmm');
-		$this->sections['google-section1']			= __('Google Section 1 ','lmm');
-		$this->sections['directions-section1']		= __('Directions','lmm');
-		$this->sections['ar-section1']				= __('AR Section 1','lmm');
-		$this->sections['misc-section1']			= __('Misc Section 1','lmm');
-		$this->sections['reset-section1']			= __('Reset Section 1 ','lmm');
+		$this->sections['google-section1']			= __('Google Maps API key','lmm');
+		$this->sections['google-section2']			= __('Google language localization','lmm');
+		$this->sections['google-section3']			= __('Google Maps base domain','lmm');
+		$this->sections['google-section4']			= __('Google Places bounds','lmm');
+		$this->sections['google-section5']			= __('Google Places search prefix','lmm');
+		$this->sections['bing-section1']			= __('Bing Maps API Key','lmm');
+		$this->sections['directions-section1']		= __('General directions settings','lmm');
+		$this->sections['directions-section2']		= __('Google Maps directions','lmm');
+		$this->sections['directions-section3']		= 'yournavigation.org';
+		$this->sections['directions-section4']		= 'map.project-osrm.org';
+		$this->sections['directions-section5']		= 'openrouteservice.org';
+		$this->sections['ar-section1']				= __('Wikitude settings','lmm');
+		$this->sections['misc-section1']			= __('General settings','lmm');
+		$this->sections['misc-section2']			= __('Language Settings','lmm');
+		$this->sections['misc-section3']			= __('KML settings','lmm');
+		$this->sections['misc-section4']			= __('Available columns for marker listing page','lmm');
+		$this->sections['misc-section5']			= __('Sort order for marker listing page','lmm');
+		$this->sections['misc-section6']			= __('Available columns for layer listing page','lmm');
+		$this->sections['misc-section7']			= __('Sort order for layer listing page','lmm');
+		$this->sections['reset-section1']			= __('Reset Settings','lmm');
 
 		add_action( 'admin_init', array( &$this, 'register_settings' ) );
 		if ( ! get_option( 'leafletmapsmarker_options' ) )
@@ -162,9 +209,9 @@ class Class_leaflet_options {
 					$(this).addClass("ui-tabs-hide"); 
 			});
 			$(".ui-tabs").tabs({
-				//fx: { opacity: "toggle", duration: "fast" }
+				//fx: { opacity: "toogle", duration: "fast"}
 			});
-    		$("input[type=text], textarea").each(function() {
+  		$("input[type=text], textarea").each(function() {
 				if ($(this).val() == $(this).attr("placeholder") || $(this).val() == "")
 					$(this).css("color", "#999");
 			});
@@ -197,123 +244,7 @@ class Class_leaflet_options {
 		});  
 	</script></div>';
 	}
-	
-	/**
-	 * Description for section
-	 */
-	public function display_section() {
-		//Standard - nothing to add 
-	}
-	
-	/**
-	 * Listing for basemaps section
-	 */
-	public function display_basemaps_section() {
-		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;padding-left:50px;">
-			<li><a href="#basemaps1">' . __('Default basemap for new markers/layers','lmm') . '</a></li>
-			<li><a href="#basemaps2">' . __('Names for default basemaps','lmm') . '</a></li>
-			<li><a href="#basemaps3">' . __('Available basemaps in control box','lmm') . '</a></li>
-			<li><a href="#basemaps4">' . __('Interaction options','lmm') . '</a></li>
-			<li><a href="#basemaps5">' . __('Keyboard navigation options','lmm') . '</a></li>
-			<li><a href="#basemaps6">' . __('Panning inertia options','lmm') . '</a></li>
-			<li><a href="#basemaps7">' . __('Control options','lmm') . '</a></li>
-			<li><a href="#basemaps8">' . __('Scale control','lmm') . '</a></li>
-			<li><a href="#basemaps9">' . __('Retina display detection','lmm') . '</a></li>
-			<li><a href="#basemaps10">' . __('Bing Maps API key','lmm') . '</a></li>
-			<li><a href="#basemaps11">' . __('OGD Vienna Selector','lmm') . '</a></li>
-			<li><a href="#basemaps12">' . __('Cloudmade 1 settings','lmm') . '</a></li>
-			<li><a href="#basemaps13">' . __('Cloudmade 2 settings','lmm') . '</a></li>
-			<li><a href="#basemaps14">' . __('Cloudmade 3 settings','lmm') . '</a></li>
-			<li><a href="#basemaps15">' . __('MapBox 1 settings','lmm') . '</a></li>
-			<li><a href="#basemaps16">' . __('MapBox 2 settings','lmm') . '</a></li>
-			<li><a href="#basemaps17">' . __('MapBox 3 settings','lmm') . '</a></li>
-			<li><a href="#basemaps18">' . __('Custom basemap 1 settings','lmm') . '</a></li>
-			<li><a href="#basemaps19">' . __('Custom basemap 2 settings','lmm') . '</a></li>
-			<li><a href="#basemaps20">' . __('Custom basemap 3 settings','lmm') . '</a></li></ul></span>';
-	} 
-              
-	/**
-	 * Listing for overlays section
-	 */     
-	public function display_overlays_section() {
-		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;padding-left:50px;">
-			<li><a href="#overlays1">' . __('Available overlays for new markers/layers','lmm') . '</li>
-			<li><a href="#overlays2">' . __('Custom overlay settings','lmm') . '</a></li>
-			<li><a href="#overlays3">' . __('Custom overlay 2 settings','lmm') . '</a></li>			
-			<li><a href="#overlays4">' . __('Custom overlay 3 settings','lmm') . '</a></li>
-			<li><a href="#overlays5">' . __('Custom overlay 4 settings','lmm') . '</a></li></ul></span>';
-	}	
-	/**
-	 * Listing for wms section
-	 */
-	public function display_wms_section() {
-		
-		echo '<span class="leafletmapsmarker-listings"><p>' . __( 'WMS stands for <a href="http://www.opengeospatial.org/standards/wms" target="_blank">Web Map Service</a> and is a standard protocol for serving georeferenced map images over the Internet that are generated by a map server using data from a GIS database.<br/>With Leaflet Maps Marker you can configure up to 10 WMS layers which can be enabled for each map. As default, 10 WMS layers from <a href="http://data.wien.gv.at" target="_blank">OGD Vienna</a> and from the <a href="http://www.eea.europa.eu/code/gis" target="_blank">European Environment Agency</a> have been predefined for you.<br/>A selection of further possible WMS layers can be found at <a href="http://www.mapsmarker.com/wms" target="_blank">http://www.mapsmarker.com/wms</a>', 'lmm') . '</p><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;padding-left:50px;">
-			<li><a href="#wms1">' . __('Available WMS layers for new markers/layers','lmm') . '</a></li>
-			<li><a href="#wms2">' . __('WMS layer 1 settings','lmm') . '</a></li>
-			<li><a href="#wms3">' . __('WMS layer 2 settings','lmm') . '</a></li>
-			<li><a href="#wms4">' . __('WMS layer 3 settings','lmm') . '</a></li>
-			<li><a href="#wms5">' . __('WMS layer 4 settings','lmm') . '</a></li>
-			<li><a href="#wms6">' . __('WMS layer 5 settings','lmm') . '</a></li>
-			<li><a href="#wms7">' . __('WMS layer 6 settings','lmm') . '</a></li>
-			<li><a href="#wms8">' . __('WMS layer 7 settings','lmm') . '</a></li>
-			<li><a href="#wms9">' . __('WMS layer 8 settings','lmm') . '</a></li>
-			<li><a href="#wms10">' . __('WMS layer 9 settings','lmm') . '</a></li>
-			<li><a href="#wms11">' . __('WMS layer 10 settings','lmm') . '</a></li></ul></span>';
-	}
-	/**
-	 * Listing for marker defaults section
-	 */
-	public function display_defaults_marker_section() {
-		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;padding-left:50px;">
-			<li><a href="#defaults_marker1">' . __('Default values for new marker maps','lmm') . '</a></li>
-			<li><a href="#defaults_marker2">' . __('Default values for marker icons','lmm') . '</a></li>			
-			<li><a href="#defaults_marker3">' . __('Default values for marker popups','lmm') . '</a></li>			
-			<li><a href="#defaults_marker4">' . __('Default values for markers added directly','lmm') . '</a></li></ul></span>';
-	}	
-	/**
-	 * Listing for layer defaults section
-	 */
-	public function display_defaults_layer_section() {
-		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;padding-left:50px;">
-			<li><a href="#defaults_layer1">' . __('Default values for new layer maps','lmm') . '</a></li>
-			<li><a href="#defaults_layer2">' . __('List marker settings','lmm') . '</a></li></ul></span>';
-	}	
-	/**
-	 * Listing for google section
-	 */
-	public function display_google_section() {
-		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;padding-left:50px;">
-			<li><a href="#google1">' . __('Google Maps API key','lmm') . '</a></li>
-			<li><a href="#google2">' . __('Google language localization','lmm') . '</a></li>
-			<li><a href="#google3">' . __('Google Maps base domain','lmm') . '</a></li>
-			<li><a href="#google4">' . __('Google Places bounds','lmm') . '</a></li>
-			<li><a href="#google5">' . __('Google Places search prefix','lmm') . '</a></li></ul></span>';
-	}	
-	/**
-	 * Listing for directions section
-	 */
-	public function display_directions_section() {
-		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;padding-left:50px;">
-			<li><a href="#directions1">' . __('General settings','lmm') . '</a></li>
-			<li><a href="#directions2">Google Maps</a></li>
-			<li><a href="#directions3">yournavigation.org</a></li>
-			<li><a href="#directions4">map.project-osrm.org</a></li>
-			<li><a href="#directions5">openrouteservice.org</a></li></ul></span>';
-	}		
-	/**
-	 * Listing for misc section
-	 */
-	public function display_misc_section() {
-		echo '<span class="leafletmapsmarker-listings"><p><strong>' . __('Index','lmm') . '</strong></p><ul style="list-style-type:disc;padding-left:50px;">
-			<li><a href="#misc1">' . __('General settings','lmm') . '</a></li>
-			<li><a href="#misc2">' . __('Language settings','lmm') . '</a></li>
-			<li><a href="#misc3">' . __('KML settings','lmm') . '</a></li>
-			<li><a href="#misc4">' . __('Available columns for marker listing page','lmm') . '</a></li>
-			<li><a href="#misc5">' . __('Sort order for marker listing page','lmm') . '</a></li>
-			<li><a href="#misc6">' . __('Available columns for layer listing page','lmm') . '</a></li>
-			<li><a href="#misc7">' . __('Sort order for layer listing page','lmm') . '</a></li></ul></span>';
-	}	
+
 	/**
 	 * HTML output for text field
 	 */
@@ -413,14 +344,6 @@ class Class_leaflet_options {
 		/*
 		* Default basemap for new markers/layers
 		*/   
-		$this->settings['default_basemap_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps1" class="lmm-index-links"></a>' . __( 'Default basemap for new markers/layers', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);    
 		$this->settings['default_basemap_helptext1'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
@@ -464,18 +387,10 @@ class Class_leaflet_options {
 		/*
 		* Names for default basemaps
 		*/
-		$this->settings['default_basemap_heading2'] = array(
-			'version' => '1.0',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps2" class="lmm-index-links"></a>' . __( 'Names for default basemaps', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['default_basemap_helptext2'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Optionally you can also change the name of the predefined basemaps in the controlbox.', 'lmm').'<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-names.jpg" />',
@@ -484,7 +399,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_osm_mapnik'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => 'OpenStreetMap (Mapnik)',
 			'desc'    => '',
 			'std'     => 'OSM Mapnik',
@@ -493,7 +408,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_mapquest_osm'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => 'Mapquest',
 			'desc'    => '',
 			'std'     => 'Mapquest OSM',
@@ -502,7 +417,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_mapquest_aerial'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => 'Mapquest (Aerial)',
 			'desc'    => '',
 			'std'     => 'Mapquest (Aerial)',
@@ -511,7 +426,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_googleLayer_roadmap'] = array(
 			'version' => '2.5',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => __('Google Maps (Roadmap)','lmm'),
 			'desc'    => '',
 			'std'   => __('Google Maps (Roadmap)','lmm'),
@@ -520,7 +435,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_googleLayer_satellite'] = array(
 			'version' => '2.5',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => __('Google Maps (Satellite)','lmm'),
 			'desc'    => '',
 			'std'   => __('Google Maps (Satellite)','lmm'),
@@ -529,7 +444,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_googleLayer_hybrid'] = array(
 			'version' => '2.5',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => __('Google Maps (Hybrid)','lmm'),
 			'desc'    => '',
 			'std'   => __('Google Maps (Hybrid)','lmm'),
@@ -538,7 +453,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_googleLayer_terrain'] = array(
 			'version' => '2.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',			
+			'section' => 'basemaps-section2',			
 			'title'   => __('Google Maps (Terrain)','lmm'),
 			'desc'    => '',
 			'std'   => __('Google Maps (Terrain)','lmm'),
@@ -547,7 +462,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_bingaerial'] = array(
 			'version' => '2.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => __('Bing Maps (Aerial)','lmm'),
 			'desc'    => '',
 			'std'   => __('Bing Maps (Aerial)','lmm'),
@@ -556,7 +471,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_bingaerialwithlabels'] = array(
 			'version' => '2.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => __('Bing Maps (Aerial+Labels)','lmm'),
 			'desc'    => '',
 			'std'   => __('Bing Maps (Aerial+Labels)','lmm'),
@@ -565,7 +480,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_bingroad'] = array(
 			'version' => '2.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => __('Bing Maps (Road)','lmm'),
 			'desc'    => '',
 			'std'   => __('Bing Maps (Road)','lmm'),
@@ -574,7 +489,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_ogdwien_basemap'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => 'OGD Vienna basemap',
 			'desc'    => '',
 			'std'     => 'OGD Vienna basemap',
@@ -583,7 +498,7 @@ class Class_leaflet_options {
 		$this->settings['default_basemap_name_ogdwien_satellite'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => 'OGD Vienna satellite',
 			'desc'    => '',
 			'std'     => 'OGD Vienna satellite',
@@ -592,7 +507,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade_name'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => 'Cloudmade',
 			'desc'    => '',
 			'std'     => 'Cloudmade',
@@ -601,7 +516,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade2_name'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => 'Cloudmade 2',
 			'desc'    => '',
 			'std'     => 'Cloudmade 2',
@@ -610,7 +525,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade3_name'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => 'Cloudmade 3',
 			'desc'    => '',
 			'std'     => 'Cloudmade 3',
@@ -619,7 +534,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox_name'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => 'MapBox',
 			'desc'    => '',
 			'std'     => 'Blue Marble Topography',
@@ -628,7 +543,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox2_name'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => 'MapBox 2',
 			'desc'    => '',
 			'std'     => 'Geography Class',
@@ -637,7 +552,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox3_name'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => 'MapBox 3',
 			'desc'    => '',
 			'std'     => 'MapBox Streets',
@@ -646,7 +561,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => __( 'Custom Basemap', 'lmm' ),
 			'desc'    => '',
 			'std'     => 'Custom1',
@@ -655,7 +570,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap2_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => __( 'Custom Basemap 2', 'lmm' ),
 			'desc'    => '',
 			'std'     => 'Custom2',
@@ -664,7 +579,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap3_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section2',
 			'title'   => __( 'Custom Basemap 3', 'lmm' ),
 			'desc'    => '',
 			'std'     => 'Custom3',
@@ -674,18 +589,10 @@ class Class_leaflet_options {
 		/*
 		* Available basemaps in control box
 		*/
-		$this->settings['layer_controlbox_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps3" class="lmm-index-links"></a>' . __( 'Available basemaps in control box', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['default_basemap_helptext3'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'std'     => '', 
 			'title'    => '',
 			'desc'    => __( 'Please select the basemaps which should be available in the control box.', 'lmm').'<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-available-basemaps.jpg" />',
@@ -694,7 +601,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_osm_mapnik'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => __( 'Basemaps available in control box', 'lmm' ),
 			'desc'    => __( 'OpenStreetMap (Mapnik)', 'lmm' ),
 			'type'    => 'checkbox',
@@ -703,7 +610,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_mapquest_osm'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('MapQuest (OSM)','lmm'),
 			'type'    => 'checkbox',
@@ -712,7 +619,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_mapquest_aerial'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('MapQuest (Aerial)','lmm'),
 			'type'    => 'checkbox',
@@ -721,7 +628,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_googleLayer_roadmap'] = array(
 			'version' => '2.5',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('Google Maps (Roadmap)','lmm')  . ' - <strong>' . __('API key required for commercial usage!','lmm') . '</strong> <a href="http://www.mapsmarker.com/google-maps-api-key" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
@@ -730,7 +637,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_googleLayer_satellite'] = array(
 			'version' => '2.5',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('Google Maps (Satellite)','lmm')  . ' - <strong>' . __('API key required for commercial usage!','lmm') . '</strong> <a href="http://www.mapsmarker.com/google-maps-api-key" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
@@ -739,7 +646,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_googleLayer_hybrid'] = array(
 			'version' => '2.5',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('Google Maps (Hybrid)','lmm')  . ' - <strong>' . __('API key required for commercial usage!','lmm') . '</strong> <a href="http://www.mapsmarker.com/google-maps-api-key" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
@@ -748,7 +655,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_googleLayer_terrain'] = array(
 			'version' => '2.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('Google Maps (Terrain)','lmm')  . ' - <strong>' . __('API key required for commercial usage!','lmm') . '</strong> <a href="http://www.mapsmarker.com/google-maps-api-key" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
@@ -757,7 +664,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_bingaerial'] = array(
 			'version' => '2.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('Bing Maps (Aerial)','lmm') . ' - <strong>' . __('API key required!','lmm'). '</strong> <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
@@ -766,7 +673,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_bingaerialwithlabels'] = array(
 			'version' => '2.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('Bing Maps (Aerial+Labels)','lmm') . ' - <strong>' . __('API key required!','lmm'). '</strong> <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
@@ -775,7 +682,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_bingroad'] = array(
 			'version' => '2.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('Bing Maps (Road)','lmm') . ' - <strong>' . __('API key required!','lmm'). '</strong> <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 			'type'    => 'checkbox',
@@ -784,7 +691,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_ogdwien_basemap'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('OGD Vienna basemap','lmm') . '<br/><span class="description">' . __('Info: gets removed from control box automatically if location of marker or layer is outside Vienna','lmm') . '</span>',
 			'type'    => 'checkbox',
@@ -793,7 +700,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_ogdwien_satellite'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('OGD Vienna satellite','lmm') . '<br/><span class="description">' . __('Info: gets removed from control box automatically if location of marker or layer is outside Vienna','lmm') . '</span>',
 			'type'    => 'checkbox',
@@ -802,7 +709,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_cloudmade'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => 'Cloudmade',
 			'type'    => 'checkbox',
@@ -811,7 +718,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_cloudmade2'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => 'Cloudmade 2',
 			'type'    => 'checkbox',
@@ -820,7 +727,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_cloudmade3'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => 'Cloudmade 3',
 			'type'    => 'checkbox',
@@ -829,7 +736,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_mapbox'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => 'MapBox',
 			'type'    => 'checkbox',
@@ -838,7 +745,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_mapbox2'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => 'MapBox 2',
 			'type'    => 'checkbox',
@@ -847,7 +754,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_mapbox3'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => 'MapBox 3',
 			'type'    => 'checkbox',
@@ -856,7 +763,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_custom_basemap'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('Custom basemap','lmm'),
 			'type'    => 'checkbox',
@@ -865,7 +772,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_custom_basemap2'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('Custom basemap 2','lmm'),
 			'type'    => 'checkbox',
@@ -874,7 +781,7 @@ class Class_leaflet_options {
 		$this->settings['controlbox_custom_basemap3'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section3',
 			'title'   => '',
 			'desc'    => __('Custom basemap 3','lmm'),
 			'type'    => 'checkbox',
@@ -884,18 +791,10 @@ class Class_leaflet_options {
 		* Interaction options 
 		* formerly "General map settings" and moved to "Basemaps" from "Misc" tab
 		*/
-		$this->settings['map_interaction_options_heading'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps4" class="lmm-index-links"></a>' . __( 'Interaction options', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['map_interaction_options_helptext'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section4',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'The following settings will be used for all marker and layer maps', 'lmm'),
@@ -904,7 +803,7 @@ class Class_leaflet_options {
 		$this->settings['misc_map_dragging'] = array(
 			'version' => '2.2',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section4',
 			'title'   => 'dragging',
 			'desc'    => __('Whether the map be draggable with mouse/touch or not.','lmm'),
 			'type'    => 'radio',
@@ -917,7 +816,7 @@ class Class_leaflet_options {
 		$this->settings['misc_map_touchzoom'] = array(
 			'version' => '2.2',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section4',
 			'title'   => 'touchZoom',
 			'desc'    => __('Whether the map can be zoomed by touch-dragging with two fingers.','lmm'),
 			'type'    => 'radio',
@@ -930,7 +829,7 @@ class Class_leaflet_options {
 		$this->settings['misc_map_scrollwheelzoom'] = array(
 			'version' => '2.2',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section4',
 			'title'   => 'scrollWheelZoom',
 			'desc'    => __('Whether the map can be zoomed by using the mouse wheel.','lmm'),
 			'type'    => 'radio',
@@ -943,7 +842,7 @@ class Class_leaflet_options {
 		$this->settings['misc_map_doubleclickzoom'] = array(
 			'version' => '2.2',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section4',
 			'title'   => 'doubleClickZoom',
 			'desc'    => __('Whether the map can be zoomed in by double clicking on it.','lmm'),
 			'type'    => 'radio',
@@ -956,7 +855,7 @@ class Class_leaflet_options {
 		$this->settings['map_interaction_options_boxzoom'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section4',
 			'title'   => 'boxzoom',
 			'desc'    => __('Whether the map can be zoomed to a rectangular area specified by dragging the mouse while pressing shift.','lmm'),
 			'type'    => 'radio',
@@ -969,7 +868,7 @@ class Class_leaflet_options {
 		$this->settings['misc_map_trackresize'] = array(
 			'version' => '2.2',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section4',
 			'title'   => 'trackResize',
 			'desc'    => __('Whether the map automatically handles browser window resize to update itself.','lmm'),
 			'type'    => 'radio',
@@ -982,7 +881,7 @@ class Class_leaflet_options {
 		$this->settings['map_interaction_options_worldcopyjump'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section4',
 			'title'   => 'worldCopyJump',
 			'desc'    => __('With this option enabled, the map tracks when you pan to another "copy" of the world and moves all overlays like markers and vector layers there.','lmm'),
 			'type'    => 'radio',
@@ -995,7 +894,7 @@ class Class_leaflet_options {
 		$this->settings['misc_map_closepopuponclick'] = array(
 			'version' => '2.2',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section4',
 			'title'   => 'closePopupOnClick',
 			'desc'    => __('Set it to false if you do not want popups to close when user clicks the map.','lmm'),
 			'type'    => 'radio',
@@ -1004,22 +903,23 @@ class Class_leaflet_options {
 				'true' => __('true','lmm'),
 				'false' => __('false','lmm')
 			)
-		);					
+		);			
+		$this->settings['map_interaction_options_helptext2'] = array(
+			'version' => '2.7.1',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section4',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:45px;"></div>',
+			'type'    => 'helptext'
+		);
 		/*
 		* Keyboard navigation options 
 		*/
-		$this->settings['map_keyboard_navigation_options_heading'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps5" class="lmm-index-links"></a>' . __( 'Keyboard navigation options', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['map_keyboard_navigation_options_helptext'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section5',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'The following settings will be used for all marker and layer maps', 'lmm'),
@@ -1028,7 +928,7 @@ class Class_leaflet_options {
 		$this->settings['map_keyboard_navigation_options_keyboard'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section5',
 			'title'   => 'keyboard',
 			'desc'    => __('Makes the map focusable and allows users to navigate the map with keyboard arrows and +/- keys','lmm'),
 			'type'    => 'radio',
@@ -1041,7 +941,7 @@ class Class_leaflet_options {
 		$this->settings['map_keyboard_navigation_options_keyboardpanoffset'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section5',
 			'title'   => 'keyboardPanOffset',
 			'desc'    => __('Amount of pixels to pan when pressing an arrow key','lmm'),
 			'std'     => '80',
@@ -1050,27 +950,28 @@ class Class_leaflet_options {
 		$this->settings['map_keyboard_navigation_options_keyboardzoomoffset'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section5',
 			'title'   => 'keyboardZoomOffset',
 			'desc'    => __( 'Number of zoom levels to change when pressing + or - key.', 'lmm' ),
 			'std'     => '1',
 			'type'    => 'text'
 		);
+		$this->settings['map_keyboard_navigation_options_helptext2'] = array(
+			'version' => '2.7.1',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section5',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:455px;"></div>',
+			'type'    => 'helptext'
+		);			
 		/*
 		* Panning inertia options
 		*/
-		$this->settings['map_panning_inertia_options_heading'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps6" class="lmm-index-links"></a>' . __( 'Panning inertia options', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['map_panning_inertia_options_helptext'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section6',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'The following settings will be used for all marker and layer maps', 'lmm'),
@@ -1079,7 +980,7 @@ class Class_leaflet_options {
 		$this->settings['map_panning_inertia_options_inertia'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section6',
 			'title'   => 'inertia',
 			'desc'    => __('If enabled, panning of the map will have an inertia effect where the map builds momentum while dragging and continues moving in the same direction for some time. Feels especially nice on touch devices.','lmm'),
 			'type'    => 'radio',
@@ -1092,7 +993,7 @@ class Class_leaflet_options {
 		$this->settings['map_panning_inertia_options_inertiadeceleration'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section6',
 			'title'   => 'inertiaDeceleration',
 			'desc'    => __('The rate with which the inertial movement slows down, in pixels/second','lmm'),
 			'std'     => '3000',
@@ -1101,27 +1002,28 @@ class Class_leaflet_options {
 		$this->settings['map_panning_inertia_options_inertiamaxspeed'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section6',
 			'title'   => 'inertiaMaxSpeed',
 			'desc'    => __('Max speed of the inertial movement, in pixels/second.','lmm'),
 			'std'     => '1500',
 			'type'    => 'text'
 		);
+		$this->settings['map_panning_inertia_options_helptext2'] = array(
+			'version' => '2.7.1',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section6',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:455px;"></div>',
+			'type'    => 'helptext'
+		);			
 		/*
 		* Control options
 		*/
-		$this->settings['map_control_options_heading'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps7" class="lmm-index-links"></a>' . __( 'Control options', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['map_control_options_helptext'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section7',
 			'title'   => '',
 			'desc'    => __( 'The following settings will be used for all marker and layer maps', 'lmm'),
 			'std'     => '', 
@@ -1130,7 +1032,7 @@ class Class_leaflet_options {
 		$this->settings['misc_map_zoomcontrol'] = array(
 			'version' => '2.2',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section7',
 			'title'   => 'zoomControl',
 			'desc'    => __('Whether the zoom control is added to the map by default.','lmm'),
 			'type'    => 'radio',
@@ -1140,21 +1042,22 @@ class Class_leaflet_options {
 				'false' => __('false','lmm')
 			)
 		);
+		$this->settings['map_control_options_helptext2'] = array(
+			'version' => '2.7.1',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section7',
+			'title'   => '',
+			'desc'    => '<div style="height:575px;"></div>',
+			'std'     => '', 
+			'type'    => 'helptext'
+		);			
 		/*
 		* Scale control options
 		*/
-		$this->settings['map_scale_control_heading'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps8" class="lmm-index-links"></a>' . __( 'Scale control options', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['map_scale_control_helptext'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section8',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'A simple scale control that shows the scale of the current center of screen in metric (m/km) and/or imperial (mi/ft) systems. The following settings will be used for all marker and layer maps.', 'lmm').'<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-basemap-scale-control.jpg" />',
@@ -1163,7 +1066,7 @@ class Class_leaflet_options {
 		$this->settings['map_scale_control'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section8',
 			'title'   => __('Scale Control','lmm'),
 			'desc'    => __('Whether the scale control is added to the map by default.','lmm'),
 			'type'    => 'radio',
@@ -1176,7 +1079,7 @@ class Class_leaflet_options {
 		$this->settings['map_scale_control_position'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section8',
 			'title'   => __('Position','lmm'),
 			'desc'    => __('The position of the control (one of the map corners).','lmm'),
 			'type'    => 'radio',
@@ -1191,7 +1094,7 @@ class Class_leaflet_options {
 		$this->settings['map_scale_control_maxwidth'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section8',
 			'title'   => 'maxWidth',
 			'desc'    => __('Maximum width of the control in pixels. The width is set dynamically to show round values (e.g. 100, 200, 500).','lmm'),
 			'std'     => '100',
@@ -1200,7 +1103,7 @@ class Class_leaflet_options {
 		$this->settings['map_scale_control_metric'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section8',
 			'title'   => 'metric',
 			'desc'    => __('Whether to show the metric scale line (m/km).','lmm'),
 			'type'    => 'radio',
@@ -1213,7 +1116,7 @@ class Class_leaflet_options {
 		$this->settings['map_scale_control_imperial'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section8',
 			'title'   => 'imperial',
 			'desc'    => __('Whether to show the imperial scale line (mi/ft).','lmm'),
 			'type'    => 'radio',
@@ -1226,7 +1129,7 @@ class Class_leaflet_options {
 		$this->settings['map_scale_control_updatewhenidle'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section8',
 			'title'   => 'updateWhenIdle',
 			'desc'    => __('If true, the control is updated on moveend, otherwise it is always up-to-date (updated on move).','lmm'),
 			'type'    => 'radio',
@@ -1236,21 +1139,22 @@ class Class_leaflet_options {
 				'false' => __('false','lmm')
 			)
 		);	
+		$this->settings['map_scale_control_helptext2'] = array(
+			'version' => '2.7.1',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section8',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:90px;"></div>',
+			'type'    => 'helptext'
+		);			
 		/*
 		* Retina display detection
 		*/
-		$this->settings['map_retina_detection_heading'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps9" class="lmm-index-links"></a>' . __( 'Retina display detection', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['map_retina_detection_helptext'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section9',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'The following settings will be used for all marker and layer maps', 'lmm'),
@@ -1259,7 +1163,7 @@ class Class_leaflet_options {
 		$this->settings['map_retina_detection'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section9',
 			'title'   => 'detectRetina',
 			'desc'    => __('If true and user is on a retina display (= iPhone 4/4S/5, iPad 3, MacBook Pro 3rd Generation), it will request four tiles of half the specified size and a bigger zoom level in place of one to utilize the high resolution.','lmm'),
 			'type'    => 'radio',
@@ -1268,51 +1172,23 @@ class Class_leaflet_options {
 				'true' => __('true','lmm'),
 				'false' => __('false','lmm')
 			)
-		);										
-		/*
-		* Bing Maps API Key
-		*/
-		$this->settings['bingmaps_api_key_heading'] = array(
-			'version' => '2.6',
+		);	
+		$this->settings['map_retina_detection_helptext2'] = array(
+			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps10" class="lmm-index-links"></a>' . __( 'Bing Maps API Key', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
-		$this->settings['bingmaps_api_key_helptext'] = array(
-			'version' => '2.6',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section9',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'An API key is required if you want to use Bing Maps as basemap for marker or layer maps. Please click on the question mark for more info on how to get your API key.', 'lmm') . ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+			'desc'    => '<div style="height:570px;"></div>',
 			'type'    => 'helptext'
-		);		
-		$this->settings['bingmaps_api_key'] = array(
-			'version' => '2.6',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => __( 'Bing Maps API key', 'lmm' ),
-			'desc'    => '',
-			'std'     => '',
-			'type'    => 'text'
-		);		
+		);												
 		/*
 		* OGD Vienna Selector
 		*/
-		$this->settings['ogdvienna_selector_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps11" class="lmm-index-links"></a>' . __( 'OGD Vienna Selector', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['ogdvienna_selector_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section10',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'If coordinates within boundaries of Vienna/Austria are selected for a marker or layer, the basemap automatically switches to OGD Vienna basemap and the overlay OGD Vienna addresses gets checked.', 'lmm').'<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-ogdvienna-selector.jpg" />',
@@ -1321,7 +1197,7 @@ class Class_leaflet_options {
 		$this->settings['ogdvienna_selector'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section10',
 			'title'   => __('OGD Vienna Selector','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -1335,27 +1211,28 @@ class Class_leaflet_options {
 		$this->settings['ogdvienna_selector_addresses'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section10',
 			'title'   => '',
 			'desc'    => __( 'enable OGD Vienna addresses overlay', 'lmm' ),
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
+		$this->settings['ogdvienna_selector_helptext2'] = array(
+			'version' => '1.0',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section10',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:245px;"></div>',
+			'type'    => 'helptext'
+		);
 		/*
 		* Cloudmade settings
 		*/
-		$this->settings['cloudmade_heading'] = array(
-			'version' => '1.6',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps12" class="lmm-index-links"></a>' . __( 'Cloudmade settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['cloudmade_helptext'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section11',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-cloudmade.jpg" />',
@@ -1364,7 +1241,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade_api_key'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section11',
 			'title'   => __( 'API key', 'lmm' ),
 			'desc'    => '',
 			'std'     => '',
@@ -1373,7 +1250,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade_styleid'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section11',
 			'title'   => 'styleID',
 			'desc'    => '',
 			'std'     => '',
@@ -1382,7 +1259,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade_double_resolution'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section11',
 			'title'   => __('Double resolution','lmm'),
 			'desc'    => __('This will improve map look for iPhone 4, Motorola Milestone, etc.','lmm'),
 			'type'    => 'radio',
@@ -1391,22 +1268,23 @@ class Class_leaflet_options {
 				'enabled' => __('enabled','lmm'),
 				'disabled' => __('disabled','lmm')
 			)
-		);		
+		);	
+		$this->settings['cloudmade_helptext2'] = array(
+			'version' => '1.6',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section11',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:200px;"></div>',
+			'type'    => 'helptext'
+		);			
 		/*
 		* Cloudmade 2 settings
 		*/
-		$this->settings['cloudmade2_heading'] = array(
-			'version' => '1.6',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps13" class="lmm-index-links"></a>' . __( 'Cloudmade 2 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['cloudmade2_helptext'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section12',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-cloudmade.jpg" />',
@@ -1415,7 +1293,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade2_api_key'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section12',
 			'title'   => __( 'API key', 'lmm' ),
 			'desc'    => '',
 			'std'     => '',
@@ -1424,7 +1302,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade2_styleid'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section12',
 			'title'   => 'styleID',
 			'desc'    => '',
 			'std'     => '',
@@ -1433,7 +1311,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade2_double_resolution'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section12',
 			'title'   => __('Double resolution','lmm'),
 			'desc'    => __('This will improve map look for iPhone 4, Motorola Milestone, etc.','lmm'),
 			'type'    => 'radio',
@@ -1442,22 +1320,23 @@ class Class_leaflet_options {
 				'enabled' => __('enabled','lmm'),
 				'disabled' => __('disabled','lmm')
 			)
+		);		
+		$this->settings['cloudmade2_helptext2'] = array(
+			'version' => '1.6',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section12',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:200px;"></div>',
+			'type'    => 'helptext'
 		);				
 		/*
 		* Cloudmade 3 settings
 		*/
-		$this->settings['cloudmade3_heading'] = array(
-			'version' => '1.6',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps14" class="lmm-index-links"></a>' . __( 'Cloudmade 3 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['cloudmade3_helptext'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section13',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-cloudmade.jpg" />',
@@ -1466,7 +1345,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade3_api_key'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section13',
 			'title'   => __( 'API key', 'lmm' ),
 			'desc'    => '',
 			'std'     => '',
@@ -1475,7 +1354,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade3_styleid'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section13',
 			'title'   => 'styleID',
 			'desc'    => '',
 			'std'     => '',
@@ -1484,7 +1363,7 @@ class Class_leaflet_options {
 		$this->settings['cloudmade3_double_resolution'] = array(
 			'version' => '1.6',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section13',
 			'title'   => __('Double resolution','lmm'),
 			'desc'    => __('This will improve map look for iPhone 4, Motorola Milestone, etc.','lmm'),
 			'type'    => 'radio',
@@ -1494,21 +1373,22 @@ class Class_leaflet_options {
 				'disabled' => __('disabled','lmm')
 			)
 		);	
+		$this->settings['cloudmade3_helptext3'] = array(
+			'version' => '1.6',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section13',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:200px;"></div>',
+			'type'    => 'helptext'
+		);		
 		/*
 		* MapBox settings
 		*/
-		$this->settings['mapbox_heading'] = array(
-			'version' => '2.1',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps15" class="lmm-index-links"></a>' . __( 'MapBox settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['mapbox_helptext'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section14',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '<img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-mapbox.jpg" />',
@@ -1517,7 +1397,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox_user'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section14',
 			'title'   => __( 'User', 'lmm' ),
 			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/<strong>mapbox</strong>/map/blue-marble-topo-jul',
 			'std'     => 'mapbox',
@@ -1526,7 +1406,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox_map'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section14',
 			'title'   => __('map','lmm'),
 			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/mapbox/map/<strong>blue-marble-topo-jul</strong>',
 			'std'     => 'blue-marble-topo-jul',
@@ -1535,7 +1415,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox_minzoom'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section14',
 			'title'   => __('Minimum zoom level','lmm'),
 			'desc'    => '',
 			'std'     => '0',
@@ -1544,7 +1424,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox_maxzoom'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section14',
 			'title'   => __('Maximum zoom level','lmm'),
 			'desc'    => '',
 			'std'     => '8',
@@ -1553,27 +1433,28 @@ class Class_leaflet_options {
 		$this->settings['mapbox_attribution'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section14',
 			'title'   => __('Attribution','lmm'),
 			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider X&lt;/a&gt;",
 			'std'     => "MapBox/NASA, <a href=&quot;http://www.mapbox.com&quot; target=&quot;_blank&quot;>http://www.mapbox.com</a>",
 			'type'    => 'text'
 		);
+		$this->settings['mapbox_helptext2'] = array(
+			'version' => '2.1',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section14',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:165px;"></div>',
+			'type'    => 'helptext'
+		);		
 		/*
 		* MapBox 2 settings
 		*/
-		$this->settings['mapbox2_heading'] = array(
-			'version' => '2.1',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps16" class="lmm-index-links"></a>' . __( 'MapBox 2 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['mapbox2_helptext'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section15',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '<img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-mapbox.jpg" />',
@@ -1582,7 +1463,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox2_user'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section15',
 			'title'   => __( 'User', 'lmm' ),
 			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/<strong>mapbox</strong>/map/geography-class',
 			'std'     => 'mapbox',
@@ -1591,7 +1472,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox2_map'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section15',
 			'title'   => __('map','lmm'),
 			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/mapbox/map/<strong>geography-class</strong>',
 			'std'     => 'geography-class',
@@ -1600,7 +1481,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox2_minzoom'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section15',
 			'title'   => __('Minimum zoom level','lmm'),
 			'desc'    => '',
 			'std'     => '0',
@@ -1609,7 +1490,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox2_maxzoom'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section15',
 			'title'   => __('Maximum zoom level','lmm'),
 			'desc'    => '',
 			'std'     => '8',
@@ -1618,27 +1499,29 @@ class Class_leaflet_options {
 		$this->settings['mapbox2_attribution'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section15',
 			'title'   => __('Attribution','lmm'),
 			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider X&lt;/a&gt;",
 			'std'     => "MapBox, <a href=&quot;http://www.mapbox.com&quot; target=&quot;_blank&quot;>http://www.mapbox.com</a>",
 			'type'    => 'text'
 		);
+		$this->settings['mapbox2_helptext2'] = array(
+			'version' => '2.1',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section15',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:165px;"></div>',
+			'type'    => 'helptext'
+		);		
+		
 		/*
 		* MapBox 3 settings
 		*/
-		$this->settings['mapbox3_heading'] = array(
-			'version' => '2.1',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps17" class="lmm-index-links"></a>' . __( 'MapBox 3 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['mapbox3_helptext'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section16',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '<img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-mapbox.jpg" />',
@@ -1647,7 +1530,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox3_user'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section16',
 			'title'   => __( 'User', 'lmm' ),
 			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/<strong>mapbox</strong>/map/mapbox-streets',
 			'std'     => 'mapbox',
@@ -1656,7 +1539,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox3_map'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section16',
 			'title'   => __('map','lmm'),
 			'desc'    => __('e.g.','lmm') . 'http://tiles.mapbox.com/mapbox/map/<strong>mapbox-streets</strong>',
 			'std'     => 'mapbox-streets',
@@ -1665,7 +1548,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox3_minzoom'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section16',
 			'title'   => __('Minimum zoom level','lmm'),
 			'desc'    => '',
 			'std'     => '0',
@@ -1674,7 +1557,7 @@ class Class_leaflet_options {
 		$this->settings['mapbox3_maxzoom'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section16',
 			'title'   => __('Maximum zoom level','lmm'),
 			'desc'    => '',
 			'std'     => '17',
@@ -1683,27 +1566,29 @@ class Class_leaflet_options {
 		$this->settings['mapbox3_attribution'] = array(
 			'version' => '2.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section16',
 			'title'   => __('Attribution','lmm'),
 			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider X&lt;/a&gt;",
 			'std'     => "MapBox, <a href=&quot;http://www.mapbox.com&quot; target=&quot;_blank&quot;>http://www.mapbox.com</a>",
 			'type'    => 'text'
 		);
+		$this->settings['mapbox3_helptext2'] = array(
+			'version' => '2.1',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section16',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:165px;"></div>',
+			'type'    => 'helptext'
+		);		
+		
 		/*
 		* Custom basemap 1 settings
 		*/
-		$this->settings['custom_basemap_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps18" class="lmm-index-links"></a>' . __( 'Custom basemap 1 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['custom_basemap_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section17',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 1):<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-custom-basemaps.jpg" />',
@@ -1712,7 +1597,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap_tileurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section17',
 			'title'   => __( 'Tiles URL', 'lmm' ),
 			'desc'    => __("For example","lmm"). ": http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png",
 			'std'     => 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
@@ -1721,7 +1606,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section17',
 			'title'   => __( 'Attribution', 'lmm' ),
 			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider X&lt;/a&gt;",
 			'std'     => "Copyright ".date('Y')." <a href=&quot;http://xy.com&quot;>Provider X</a>",
@@ -1730,7 +1615,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap_minzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section17',
 			'title'   => __( 'Minimum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '1',
@@ -1739,7 +1624,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap_maxzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section17',
 			'title'   => __( 'Maximum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '18',
@@ -1748,7 +1633,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap_tms'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section17',
 			'title'   => 'tms',
 			'desc'    => __('If true, inverses Y axis numbering for tiles (turn this on for TMS services).','lmm'),
 			'type'    => 'radio',
@@ -1761,7 +1646,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section17',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from tiles url if available','lmm'),
 			'type'    => 'radio',
@@ -1774,7 +1659,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section17',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;",
 			'std'     => '&quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;',
@@ -1783,7 +1668,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap_continuousworld_enabled'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section17',
 			'title'   => __('Enable continuousWorld?','lmm'),
 			'desc'    => __('If set to true, the tile coordinates will not be wrapped by world width (-180 to 180 longitude) or clamped to lie within world height (-90 to 90). Use this if you use Leaflet for maps that do not reflect the real world (e.g. game, indoor or photo maps).','lmm'),
 			'type'    => 'radio',
@@ -1796,7 +1681,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap_nowrap_enabled'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section17',
 			'title'   => __('Enable nowrap?','lmm'),
 			'desc'    => __('If set to true, the tiles just will not load outside the world width (-180 to 180 longitude) instead of repeating.','lmm'),
 			'type'    => 'radio',
@@ -1809,18 +1694,10 @@ class Class_leaflet_options {
 		/*
 		* Custom basemap 2 settings
 		*/
-		$this->settings['custom_basemap2_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps19" class="lmm-index-links"></a>' . __( 'Custom basemap 2 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['custom_basemap2_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section18',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 2):<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-custom-basemaps.jpg" />',
@@ -1829,7 +1706,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap2_tileurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section18',
 			'title'   => __( 'Tiles URL', 'lmm' ),
 			'desc'    => __("For example","lmm"). ": http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png",
 			'std'     => 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
@@ -1838,7 +1715,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap2_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section18',
 			'title'   => __( 'Attribution', 'lmm' ),
 			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider X&lt;/a&gt;",
 			'std'     => "Copyright ".date('Y')." <a href=&quot;http://xy.com&quot;>Provider Y</a>",
@@ -1847,7 +1724,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap2_minzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section18',
 			'title'   => __( 'Minimum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '1',
@@ -1856,7 +1733,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap2_maxzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section18',
 			'title'   => __( 'Maximum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '18',
@@ -1865,7 +1742,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap2_tms'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section18',
 			'title'   => 'tms',
 			'desc'    => __('If true, inverses Y axis numbering for tiles (turn this on for TMS services).','lmm'),
 			'type'    => 'radio',
@@ -1878,7 +1755,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap2_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section18',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from tiles url if available','lmm'),
 			'type'    => 'radio',
@@ -1891,7 +1768,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap2_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section18',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;",
 			'std'     => '&quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;',
@@ -1900,7 +1777,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap2_continuousworld_enabled'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section18',
 			'title'   => __('Enable continuousWorld?','lmm'),
 			'desc'    => __('If set to true, the tile coordinates will not be wrapped by world width (-180 to 180 longitude) or clamped to lie within world height (-90 to 90). Use this if you use Leaflet for maps that do not reflect the real world (e.g. game, indoor or photo maps).','lmm'),
 			'type'    => 'radio',
@@ -1913,7 +1790,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap2_nowrap_enabled'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section18',
 			'title'   => __('Enable nowrap?','lmm'),
 			'desc'    => __('If set to true, the tiles just will not load outside the world width (-180 to 180 longitude) instead of repeating.','lmm'),
 			'type'    => 'radio',
@@ -1926,18 +1803,10 @@ class Class_leaflet_options {
 		/*
 		* Custom basemap 3 settings
 		*/
-		$this->settings['custom_basemap3_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
-			'title'   => '', 
-			'desc'    => '<a name="basemaps20" class="lmm-index-links"></a>' . __( 'Custom basemap 3 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['custom_basemap3_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section19',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Please enter settings for custom basemap', 'lmm').' (custom 3):<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-custom-basemaps.jpg" />',
@@ -1946,7 +1815,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap3_tileurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section19',
 			'title'   => __( 'Tiles URL', 'lmm' ),
 			'desc'    => __("For example","lmm"). ": http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png",
 			'std'     => 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
@@ -1955,7 +1824,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap3_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section19',
 			'title'   => __( 'Attribution', 'lmm' ),
 			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider XY&lt;/a&gt;",
 			'std'     => "Copyright ".date('Y')." <a href=&quot;http://xy.com&quot;>Provider Z</a>",
@@ -1964,7 +1833,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap3_minzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section19',
 			'title'   => __( 'Minimum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '1',
@@ -1973,7 +1842,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap3_maxzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section19',
 			'title'   => __( 'Maximum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '18',
@@ -1982,7 +1851,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap3_tms'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section19',
 			'title'   => 'tms',
 			'desc'    => __('If true, inverses Y axis numbering for tiles (turn this on for TMS services).','lmm'),
 			'type'    => 'radio',
@@ -1995,7 +1864,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap3_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section19',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from tiles url if available','lmm'),
 			'type'    => 'radio',
@@ -2008,7 +1877,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap3_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section19',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;",
 			'std'     => '&quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;',
@@ -2017,7 +1886,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap3_continuousworld_enabled'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section19',
 			'title'   => __('Enable continuousWorld?','lmm'),
 			'desc'    => __('If set to true, the tile coordinates will not be wrapped by world width (-180 to 180 longitude) or clamped to lie within world height (-90 to 90). Use this if you use Leaflet for maps that do not reflect the real world (e.g. game, indoor or photo maps).','lmm'),
 			'type'    => 'radio',
@@ -2030,7 +1899,7 @@ class Class_leaflet_options {
 		$this->settings['custom_basemap3_nowrap_enabled'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'basemaps',
-			'section' => 'basemaps-section1',
+			'section' => 'basemaps-section19',
 			'title'   => __('Enable nowrap?','lmm'),
 			'desc'    => __('If set to true, the tiles just will not load outside the world width (-180 to 180 longitude) instead of repeating.','lmm'),
 			'type'    => 'radio',
@@ -2040,6 +1909,7 @@ class Class_leaflet_options {
 				'true' => __('true','lmm')
 			)
 		);		
+	
 		/*===========================================
 		*
 		*
@@ -2050,14 +1920,6 @@ class Class_leaflet_options {
 		/*
 		* Available overlays for new markers/layers
 		*/
-		$this->settings['overlays_available_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
-			'title'   => '', 
-			'desc'    => '<a name="overlays1" class="lmm-index-links"></a>' . __( 'Available overlays for new markers/layers', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['overlays_available_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
@@ -2105,22 +1967,13 @@ class Class_leaflet_options {
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);		
-		
 		/*
 		* Custom overlay settings
 		*/
-		$this->settings['overlays_heading_custom'] = array(
-			'version' => '1.0',
-			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
-			'title'   => '', 
-			'desc'    => '<a name="overlays2" class="lmm-index-links"></a>' . __( 'Custom overlay settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['overlays_custom_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section2',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').':<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-overlays-custom.jpg" />',
@@ -2129,7 +1982,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section2',
 			'title'   => __( 'Name', 'lmm' ),
 			'desc'   => __( 'Will be displayed in controlbox if selected', 'lmm' ),
 			'std'     => __('OGD Vienna addresses','lmm'),
@@ -2139,7 +1992,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom_tileurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section2',
 			'title'   => __( 'Tiles URL', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": http://{s}.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png",
 			'std'     => 'http://{s}.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png',
@@ -2148,7 +2001,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom_attribution'] = array(
 			'version' => '1.1',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section2',
 			'title'   => __( 'Attribution', 'lmm' ),
 			'desc'    => '',
 			'std'     => 'Addresses: City of Vienna (<a href=&quot;http://data.wien.gv.at&quot; target=&quot;_blank&quot;>data.wien.gv.at</a>)',
@@ -2157,7 +2010,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom_minzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section2',
 			'title'   => __( 'Minimum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '1',
@@ -2166,7 +2019,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom_maxzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section2',
 			'title'   => __( 'Maximum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '19',
@@ -2175,7 +2028,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom_opacity'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section2',
 			'title'   => __( 'Opacity', 'lmm' ),
 			'desc'    => __('The opacity of the tile layer.','lmm'),
 			'std'     => '1.0',
@@ -2184,7 +2037,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section2',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from tiles url if available','lmm'),
 			'type'    => 'radio',
@@ -2197,7 +2050,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section2',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;",
 			'std'     => '&quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;',
@@ -2206,18 +2059,10 @@ class Class_leaflet_options {
 		/*
 		* Custom overlay 2 settings
 		*/
-		$this->settings['overlays_heading_custom2'] = array(
-			'version' => '1.0',
-			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
-			'title'   => '', 
-			'desc'    => '<a name="overlays3" class="lmm-index-links"></a>' . __( 'Custom overlay 2 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['overlays_custom2_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section3',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 2:<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-overlays-custom2.jpg" />',
@@ -2226,7 +2071,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom2_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section3',
 			'title'   => __( 'Name', 'lmm' ),
 			'desc'   => __( 'Will be displayed in controlbox if selected', 'lmm' ),
 			'std'     => 'Custom2',
@@ -2236,7 +2081,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom2_tileurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section3',
 			'title'   => __( 'Tiles URL', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": http://{s}.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png",
 			'std'     => 'http://{s}.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png',
@@ -2245,7 +2090,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom2_attribution'] = array(
 			'version' => '1.1',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section3',
 			'title'   => __( 'Attribution', 'lmm' ),
 			'desc'    => '',
 			'std'     => 'Addresses: City of Vienna (<a href=&quot;http://data.wien.gv.at&quot; target=&quot;_blank&quot;>data.wien.gv.at</a>)',
@@ -2254,7 +2099,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom2_minzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section3',
 			'title'   => __( 'Minimum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '1',
@@ -2263,7 +2108,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom2_maxzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section3',
 			'title'   => __( 'Maximum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '17',
@@ -2272,7 +2117,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom2_opacity'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section3',
 			'title'   => __( 'Opacity', 'lmm' ),
 			'desc'    => __('The opacity of the tile layer.','lmm'),
 			'std'     => '1.0',
@@ -2281,7 +2126,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom2_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section3',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from tiles url if available','lmm'),
 			'type'    => 'radio',
@@ -2294,7 +2139,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom2_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section3',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;",
 			'std'     => '&quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;',
@@ -2303,18 +2148,10 @@ class Class_leaflet_options {
 		/*
 		* Custom overlay 3 settings
 		*/
-		$this->settings['overlays_heading_custom3'] = array(
-			'version' => '1.0',
-			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
-			'title'   => '', 
-			'desc'    => '<a name="overlays4" class="lmm-index-links"></a>' . __( 'Custom overlay 3 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['overlays_custom3_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section4',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 3:<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-overlays-custom3.jpg" />',
@@ -2323,7 +2160,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom3_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section4',
 			'title'   => __( 'Name', 'lmm' ),
 			'desc'   => __( 'Will be displayed in controlbox if selected', 'lmm' ),
 			'std'     => 'Custom3',
@@ -2332,7 +2169,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom3_tileurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section4',
 			'title'   => __( 'Tiles URL', 'lmm' ),
 			'desc'    => __("For example","lmm"). ": http://maps.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png",
 			'std'     => 'http://maps.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png',
@@ -2341,7 +2178,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom3_attribution'] = array(
 			'version' => '1.1',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section4',
 			'title'   => __( 'Attribution', 'lmm' ),
 			'desc'    => '',
 			'std'     => 'Addresses: City of Vienna (<a href=&quot;http://data.wien.gv.at&quot; target=&quot;_blank&quot;>data.wien.gv.at</a>)',
@@ -2350,7 +2187,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom3_minzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section4',
 			'title'   => __( 'Minimum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '1',
@@ -2359,7 +2196,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom3_maxzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section4',
 			'title'   => __( 'Maximum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '17',
@@ -2368,7 +2205,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom3_opacity'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section4',
 			'title'   => __( 'Opacity', 'lmm' ),
 			'desc'    => __('The opacity of the tile layer.','lmm'),
 			'std'     => '1.0',
@@ -2377,7 +2214,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom3_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section4',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from tiles url if available','lmm'),
 			'type'    => 'radio',
@@ -2390,7 +2227,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom3_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section4',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;",
 			'std'     => '&quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;',
@@ -2399,18 +2236,10 @@ class Class_leaflet_options {
 		/*
 		* Custom overlay 4 settings
 		*/
-		$this->settings['overlays_heading_custom4'] = array(
-			'version' => '1.0',
-			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
-			'title'   => '', 
-			'desc'    => '<a name="overlays5" class="lmm-index-links"></a>' . __( 'Custom overlay 4 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['overlays_custom4_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section5',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 4:<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-overlays-custom4.jpg" />',
@@ -2419,7 +2248,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom4_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section5',
 			'title'   => __( 'Name', 'lmm' ),
 			'desc'   => __( 'Will be displayed in controlbox if selected', 'lmm' ),
 			'std'     => 'Custom4',
@@ -2429,7 +2258,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom4_tileurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section5',
 			'title'   => __( 'Tiles URL', 'lmm' ),
 			'desc'    => __("For example","lmm"). ": http://maps.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png",
 			'std'     => 'http://maps.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png',
@@ -2438,7 +2267,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom4_attribution'] = array(
 			'version' => '1.1',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section5',
 			'title'   => __( 'Attribution', 'lmm' ),
 			'desc'    => '',
 			'std'     => 'Addresses: City of Vienna (<a href=&quot;http://data.wien.gv.at&quot; target=&quot;_blank&quot;>data.wien.gv.at</a>)',
@@ -2447,7 +2276,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom4_minzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section5',
 			'title'   => __( 'Minimum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '1',
@@ -2456,7 +2285,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom4_maxzoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section5',
 			'title'   => __( 'Maximum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
 			'std'     => '17',
@@ -2465,7 +2294,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom4_opacity'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section5',
 			'title'   => __( 'Opacity', 'lmm' ),
 			'desc'    => __('The opacity of the tile layer.','lmm'),
 			'std'     => '1.0',
@@ -2474,7 +2303,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom4_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section5',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from tiles url if available','lmm'),
 			'type'    => 'radio',
@@ -2487,7 +2316,7 @@ class Class_leaflet_options {
 		$this->settings['overlays_custom4_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
-			'section' => 'overlays-section1',
+			'section' => 'overlays-section5',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;",
 			'std'     => '&quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;',
@@ -2504,12 +2333,21 @@ class Class_leaflet_options {
 		/*
 		* Available WMS layers for new markers/layers
 		*/
+		$this->settings['wms_available_helptext2'] = array(
+			'version' => '1.0',
+			'pane'    => 'wms',
+			'section' => 'wms-sections1',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __('WMS stands for <a href="http://www.opengeospatial.org/standards/wms" target="_blank">Web Map Service</a> and is a standard protocol for serving georeferenced map images over the Internet that are generated by a map server using data from a GIS database.<br/>With Leaflet Maps Marker you can configure up to 10 WMS layers which can be enabled for each map. As default, 10 WMS layers from <a href="http://data.wien.gv.at" target="_blank">OGD Vienna</a> and from the <a href="http://www.eea.europa.eu/code/gis" target="_blank">European Environment Agency</a> have been predefined for you.<br/>A selection of further possible WMS layers can be found at <a href="http://www.mapsmarker.com/wms" target="_blank">http://www.mapsmarker.com/wms</a>', 'lmm'),
+			'type'    => 'helptext'
+		);		
 		$this->settings['wms_available_heading'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
 			'section' => 'wms-sections1',
 			'title'   => '', 
-			'desc'    => '<a name="wms1" class="lmm-index-links"></a>' . __( 'Available WMS layers for new markers/layers', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
+			'desc'    => '<a name="wms1" class="lmm-index-links"></a>' . __( 'Available WMS layers for new markers/layers', 'lmm'),
 			'type'    => 'heading'
 		);
 		$this->settings['wms_available_helptext'] = array(
@@ -2614,18 +2452,10 @@ class Class_leaflet_options {
 		/*
 		* WMS layer settings
 		*/
-		$this->settings['wms_wms_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'wms',
-			'section' => 'wms-sections1',
-			'title'   => '', 
-			'desc'    => '<a name="wms2" class="lmm-index-links"></a>' . __( 'WMS layer 1 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['wms_wms_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '', //empty for not breaking settings layout
@@ -2634,7 +2464,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'    => __('Name','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -2643,7 +2473,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_baseurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'    => __('baseURL','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -2652,7 +2482,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_layers'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'    => __('Layers','lmm'),
 			'desc'    => __('(required) Comma-separated list of WMS layers to show','lmm'),
 			'type'    => 'text',
@@ -2661,7 +2491,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_styles'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'    => __('Styles','lmm'),
 			'desc'    => __('Comma-separated list of WMS styles','lmm'),
 			'type'    => 'text',
@@ -2670,7 +2500,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_format'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'    => __('Format','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -2679,7 +2509,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_transparent'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'   => __('Transparent','lmm'),
 			'desc'    => __('If yes, the WMS service will return images with transparency','lmm'),
 			'type'    => 'radio',
@@ -2692,7 +2522,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_version'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'    => __('Version','lmm'),
 			'desc'    => __('Version of the WMS service to use','lmm'),
 			'type'    => 'text',
@@ -2701,7 +2531,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'    => __('Attribution','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -2710,7 +2540,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_legend_enabled'] = array(
 			'version' => '1.1',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'   => __('Display legend?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -2723,7 +2553,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_legend'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'    => __('Legend','lmm'),
 			'desc'    => __('URL of image which gets show when hovering the text "(Legend)" next to WMS attribution text','lmm'),
 			'type'    => 'text',
@@ -2732,7 +2562,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from base url if available','lmm'),
 			'type'    => 'radio',
@@ -2745,7 +2575,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;",
 			'std'     => '&quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;',
@@ -2754,7 +2584,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_kml_helptext'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'std'     => '', 
 			'title'   => '<strong>' . __('KML settings','lmm') . '</strong>',
 			'desc'    => __('If the WMS server supports KML output of the WMS layer, the settings below will be used when a marker or layer map with this active WMS layer is exported as KML.','lmm'),
@@ -2763,7 +2593,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_kml_support'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'   => __('Does the WMS server support KML output?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -2776,7 +2606,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_kml_href'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#href" target="_blank">href</a>',
 			'desc'    => __('http-address of the KML-webservice of the WMS layer','lmm'),
 			'type'    => 'text',
@@ -2785,7 +2615,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_kml_refreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshmode" target="_blank">refreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -2800,7 +2630,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_kml_refreshInterval'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshinterval" target="_blank">refreshInterval</a>',
 			'desc'    => __('Indicates to refresh the file every n seconds','lmm'),
 			'type'    => 'text',
@@ -2809,7 +2639,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_kml_viewRefreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshmode" target="_blank">viewrefreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -2823,7 +2653,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms_kml_viewRefreshTime'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections2',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshtime" target="_blank">viewRefreshTime</a>',
 			'desc'    => __('After camera movement stops, specifies the number of seconds to wait before refreshing the view (is used when viewRefreshMode is set to onStop)','lmm'),
 			'type'    => 'text',
@@ -2833,18 +2663,10 @@ class Class_leaflet_options {
 		/*
 		* WMS layer 2 settings
 		*/
-		$this->settings['wms_wms2_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'wms',
-			'section' => 'wms-sections1',
-			'title'   => '', 
-			'desc'    => '<a name="wms3" class="lmm-index-links"></a>' . __( 'WMS layer 2 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['wms_wms2_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '', //empty for not breaking settings layout
@@ -2853,7 +2675,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'    => __('Name','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -2862,7 +2684,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_baseurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'    => __('baseURL','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -2871,7 +2693,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_layers'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'    => __('Layers','lmm'),
 			'desc'    => __('(required) Comma-separated list of WMS layers to show','lmm'),
 			'type'    => 'text',
@@ -2880,7 +2702,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_styles'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'    => __('Styles','lmm'),
 			'desc'    => __('Comma-separated list of WMS styles','lmm'),
 			'type'    => 'text',
@@ -2889,7 +2711,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_format'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'    => __('Format','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -2898,7 +2720,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_transparent'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'   => __('Transparent','lmm'),
 			'desc'    => __('If yes, the WMS service will return images with transparency','lmm'),
 			'type'    => 'radio',
@@ -2911,7 +2733,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_version'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'    => __('Version','lmm'),
 			'desc'    => __('Version of the WMS service to use','lmm'),
 			'type'    => 'text',
@@ -2920,7 +2742,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'    => __('Attribution','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -2929,7 +2751,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_legend_enabled'] = array(
 			'version' => '1.1',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'   => __('Display legend?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -2942,7 +2764,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_legend'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'    => __('Legend','lmm'),
 			'desc'    => __('URL of image which gets show when hovering the text "(Legend)" next to WMS attribution text','lmm'),
 			'type'    => 'text',
@@ -2951,7 +2773,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from base url if available','lmm'),
 			'type'    => 'radio',
@@ -2964,7 +2786,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;",
 			'std'     => '&quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;',
@@ -2973,7 +2795,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_kml_helptext'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'std'     => '', 
 			'title'   => '<strong>' . __('KML settings','lmm') . '</strong>',
 			'desc'    => __('If the WMS server supports KML output of the WMS layer, the settings below will be used when a marker or layer map with this active WMS layer is exported as KML.','lmm'),
@@ -2982,7 +2804,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_kml_support'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'   => __('Does the WMS server support KML output?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -2995,7 +2817,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_kml_href'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#href" target="_blank">href</a>',
 			'desc'    => __('http-address of the KML-webservice of the WMS layer','lmm'),
 			'type'    => 'text',
@@ -3004,7 +2826,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_kml_refreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshmode" target="_blank">refreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3019,7 +2841,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_kml_refreshInterval'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshinterval" target="_blank">refreshInterval</a>',
 			'desc'    => __('Indicates to refresh the file every n seconds','lmm'),
 			'type'    => 'text',
@@ -3028,7 +2850,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_kml_viewRefreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshmode" target="_blank">viewrefreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3042,7 +2864,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms2_kml_viewRefreshTime'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections3',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshtime" target="_blank">viewRefreshTime</a>',
 			'desc'    => __('After camera movement stops, specifies the number of seconds to wait before refreshing the view (is used when viewRefreshMode is set to onStop)','lmm'),
 			'type'    => 'text',
@@ -3051,18 +2873,10 @@ class Class_leaflet_options {
 		/*
 		* WMS layer 3 settings
 		*/
-		$this->settings['wms_wms3_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'wms',
-			'section' => 'wms-sections1',
-			'title'   => '', 
-			'desc'    => '<a name="wms4" class="lmm-index-links"></a>' . __( 'WMS layer 3 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['wms_wms3_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '', //empty for not breaking settings layout
@@ -3071,7 +2885,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'    => __('Name','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3080,7 +2894,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_baseurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'    => __('baseURL','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3089,7 +2903,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_layers'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'    => __('Layers','lmm'),
 			'desc'    => __('(required) Comma-separated list of WMS layers to show','lmm'),
 			'type'    => 'text',
@@ -3098,7 +2912,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_styles'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'    => __('Styles','lmm'),
 			'desc'    => __('Comma-separated list of WMS styles','lmm'),
 			'type'    => 'text',
@@ -3107,7 +2921,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_format'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'    => __('Format','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3116,7 +2930,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_transparent'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'   => __('Transparent','lmm'),
 			'desc'    => __('If yes, the WMS service will return images with transparency','lmm'),
 			'type'    => 'radio',
@@ -3129,7 +2943,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'    => __('Attribution','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3138,7 +2952,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_legend_enabled'] = array(
 			'version' => '1.1',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'   => __('Display legend?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3151,7 +2965,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_legend'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'    => __('Legend','lmm'),
 			'desc'    => __('URL of image which gets show when hovering the text "(Legend)" next to WMS attribution text','lmm'),
 			'type'    => 'text',
@@ -3160,7 +2974,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_version'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'    => __('Version','lmm'),
 			'desc'    => __('Version of the WMS service to use','lmm'),
 			'type'    => 'text',
@@ -3169,7 +2983,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from base url if available','lmm'),
 			'type'    => 'radio',
@@ -3182,7 +2996,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;",
 			'std'     => '&quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;',
@@ -3191,7 +3005,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_kml_helptext'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'std'     => '', 
 			'title'   => '<strong>' . __('KML settings','lmm') . '</strong>',
 			'desc'    => __('If the WMS server supports KML output of the WMS layer, the settings below will be used when a marker or layer map with this active WMS layer is exported as KML.','lmm'),
@@ -3200,7 +3014,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_kml_support'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'   => __('Does the WMS server support KML output?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3213,7 +3027,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_kml_href'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#href" target="_blank">href</a>',
 			'desc'    => __('http-address of the KML-webservice of the WMS layer','lmm'),
 			'type'    => 'text',
@@ -3222,7 +3036,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_kml_refreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshmode" target="_blank">refreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3237,7 +3051,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_kml_refreshInterval'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshinterval" target="_blank">refreshInterval</a>',
 			'desc'    => __('Indicates to refresh the file every n seconds','lmm'),
 			'type'    => 'text',
@@ -3246,7 +3060,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_kml_viewRefreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshmode" target="_blank">viewrefreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3260,7 +3074,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms3_kml_viewRefreshTime'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections4',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshtime" target="_blank">viewRefreshTime</a>',
 			'desc'    => __('After camera movement stops, specifies the number of seconds to wait before refreshing the view (is used when viewRefreshMode is set to onStop)','lmm'),
 			'type'    => 'text',
@@ -3269,18 +3083,10 @@ class Class_leaflet_options {
 		/*
 		* WMS layer 4 settings
 		*/
-		$this->settings['wms_wms4_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'wms',
-			'section' => 'wms-sections1',
-			'title'   => '', 
-			'desc'    => '<a name="wms5" class="lmm-index-links"></a>' . __( 'WMS layer 4 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['wms_wms4_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '', //empty for not breaking settings layout
@@ -3289,7 +3095,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'    => __('Name','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3298,7 +3104,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_baseurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'    => __('baseURL','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3307,7 +3113,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_layers'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'    => __('Layers','lmm'),
 			'desc'    => __('(required) Comma-separated list of WMS layers to show','lmm'),
 			'type'    => 'text',
@@ -3316,7 +3122,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_styles'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'    => __('Styles','lmm'),
 			'desc'    => __('Comma-separated list of WMS styles','lmm'),
 			'type'    => 'text',
@@ -3325,7 +3131,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_format'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'    => __('Format','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3334,7 +3140,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_transparent'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'   => __('Transparent','lmm'),
 			'desc'    => __('If yes, the WMS service will return images with transparency','lmm'),
 			'type'    => 'radio',
@@ -3347,7 +3153,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_version'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'    => __('Version','lmm'),
 			'desc'    => __('Version of the WMS service to use','lmm'),
 			'type'    => 'text',
@@ -3356,7 +3162,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'    => __('Attribution','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3365,7 +3171,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_legend_enabled'] = array(
 			'version' => '1.1',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'   => __('Display legend?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3378,7 +3184,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_legend'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'    => __('Legend','lmm'),
 			'desc'    => __('URL of image which gets show when hovering the text "(Legend)" next to WMS attribution text','lmm'),
 			'type'    => 'text',
@@ -3387,7 +3193,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from base url if available','lmm'),
 			'type'    => 'radio',
@@ -3400,7 +3206,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;",
 			'std'     => '&quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;',
@@ -3409,7 +3215,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_kml_helptext'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'std'     => '', 
 			'title'   => '<strong>' . __('KML settings','lmm') . '</strong>',
 			'desc'    => __('If the WMS server supports KML output of the WMS layer, the settings below will be used when a marker or layer map with this active WMS layer is exported as KML.','lmm'),
@@ -3418,7 +3224,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_kml_support'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'   => __('Does the WMS server support KML output?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3431,7 +3237,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_kml_href'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#href" target="_blank">href</a>',
 			'desc'    => __('http-address of the KML-webservice of the WMS layer','lmm'),
 			'type'    => 'text',
@@ -3440,7 +3246,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_kml_refreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshmode" target="_blank">refreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3455,7 +3261,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_kml_refreshInterval'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshinterval" target="_blank">refreshInterval</a>',
 			'desc'    => __('Indicates to refresh the file every n seconds','lmm'),
 			'type'    => 'text',
@@ -3464,7 +3270,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_kml_viewRefreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshmode" target="_blank">viewrefreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3478,7 +3284,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms4_kml_viewRefreshTime'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections5',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshtime" target="_blank">viewRefreshTime</a>',
 			'desc'    => __('After camera movement stops, specifies the number of seconds to wait before refreshing the view (is used when viewRefreshMode is set to onStop)','lmm'),
 			'type'    => 'text',
@@ -3487,18 +3293,10 @@ class Class_leaflet_options {
 		/*
 		* WMS layer 5 settings
 		*/
-		$this->settings['wms_wms5_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'wms',
-			'section' => 'wms-sections1',
-			'title'   => '', 
-			'desc'    => '<a name="wms6" class="lmm-index-links"></a>' . __( 'WMS layer 5 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['wms_wms5_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '', //empty for not breaking settings layout
@@ -3507,7 +3305,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'    => __('Name','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3516,7 +3314,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_baseurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'    => __('baseURL','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3525,7 +3323,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_layers'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'    => __('Layers','lmm'),
 			'desc'    => __('(required) Comma-separated list of WMS layers to show','lmm'),
 			'type'    => 'text',
@@ -3534,7 +3332,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_styles'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'    => __('Styles','lmm'),
 			'desc'    => __('Comma-separated list of WMS styles','lmm'),
 			'type'    => 'text',
@@ -3543,7 +3341,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_format'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'    => __('Format','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3552,7 +3350,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_transparent'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'   => __('Transparent','lmm'),
 			'desc'    => __('If yes, the WMS service will return images with transparency','lmm'),
 			'type'    => 'radio',
@@ -3565,7 +3363,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_version'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'    => __('Version','lmm'),
 			'desc'    => __('Version of the WMS service to use','lmm'),
 			'type'    => 'text',
@@ -3574,7 +3372,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'    => __('Attribution','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3583,7 +3381,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_legend_enabled'] = array(
 			'version' => '1.1',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'   => __('Display legend?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3596,7 +3394,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_legend'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'    => __('Legend','lmm'),
 			'desc'    => __('URL of image which gets show when hovering the text "(Legend)" next to WMS attribution text','lmm'),
 			'type'    => 'text',
@@ -3605,7 +3403,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from base url if available','lmm'),
 			'type'    => 'radio',
@@ -3618,7 +3416,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;",
 			'std'     => '&quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;',
@@ -3627,7 +3425,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_kml_helptext'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'std'     => '', 
 			'title'   => '<strong>' . __('KML settings','lmm') . '</strong>',
 			'desc'    => __('If the WMS server supports KML output of the WMS layer, the settings below will be used when a marker or layer map with this active WMS layer is exported as KML.','lmm'),
@@ -3636,7 +3434,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_kml_support'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'   => __('Does the WMS server support KML output?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3649,7 +3447,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_kml_href'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#href" target="_blank">href</a>',
 			'desc'    => __('http-address of the KML-webservice of the WMS layer','lmm'),
 			'type'    => 'text',
@@ -3658,7 +3456,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_kml_refreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshmode" target="_blank">refreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3673,7 +3471,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_kml_refreshInterval'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshinterval" target="_blank">refreshInterval</a>',
 			'desc'    => __('Indicates to refresh the file every n seconds','lmm'),
 			'type'    => 'text',
@@ -3682,7 +3480,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_kml_viewRefreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshmode" target="_blank">viewrefreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3696,7 +3494,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms5_kml_viewRefreshTime'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections6',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshtime" target="_blank">viewRefreshTime</a>',
 			'desc'    => __('After camera movement stops, specifies the number of seconds to wait before refreshing the view (is used when viewRefreshMode is set to onStop)','lmm'),
 			'type'    => 'text',
@@ -3705,18 +3503,10 @@ class Class_leaflet_options {
 		/*
 		* WMS layer 6 settings
 		*/
-		$this->settings['wms_wms6_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'wms',
-			'section' => 'wms-sections1',
-			'title'   => '', 
-			'desc'    => '<a name="wms7" class="lmm-index-links"></a>' . __( 'WMS layer 6 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['wms_wms6_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '', //empty for not breaking settings layout
@@ -3725,7 +3515,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'    => __('Name','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3734,7 +3524,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_baseurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'    => __('baseURL','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3743,7 +3533,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_layers'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'    => __('Layers','lmm'),
 			'desc'    => __('(required) Comma-separated list of WMS layers to show','lmm'),
 			'type'    => 'text',
@@ -3752,7 +3542,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_styles'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'    => __('Styles','lmm'),
 			'desc'    => __('Comma-separated list of WMS styles','lmm'),
 			'type'    => 'text',
@@ -3761,7 +3551,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_format'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'    => __('Format','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3770,7 +3560,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_transparent'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'   => __('Transparent','lmm'),
 			'desc'    => __('If yes, the WMS service will return images with transparency','lmm'),
 			'type'    => 'radio',
@@ -3783,7 +3573,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_version'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'    => __('Version','lmm'),
 			'desc'    => __('Version of the WMS service to use','lmm'),
 			'type'    => 'text',
@@ -3792,7 +3582,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'    => __('Attribution','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3801,7 +3591,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_legend_enabled'] = array(
 			'version' => '1.1',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'   => __('Display legend?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3814,7 +3604,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_legend'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'    => __('Legend','lmm'),
 			'desc'    => __('URL of image which gets show when hovering the text "(Legend)" next to WMS attribution text','lmm'),
 			'type'    => 'text',
@@ -3823,7 +3613,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from base url if available','lmm'),
 			'type'    => 'radio',
@@ -3836,7 +3626,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;",
 			'std'     => '&quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;',
@@ -3845,7 +3635,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_kml_helptext'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'std'     => '', 
 			'title'   => '<strong>' . __('KML settings','lmm') . '</strong>',
 			'desc'    => __('If the WMS server supports KML output of the WMS layer, the settings below will be used when a marker or layer map with this active WMS layer is exported as KML.','lmm'),
@@ -3854,7 +3644,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_kml_support'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'   => __('Does the WMS server support KML output?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3867,7 +3657,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_kml_href'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#href" target="_blank">href</a>',
 			'desc'    => __('http-address of the KML-webservice of the WMS layer','lmm'),
 			'type'    => 'text',
@@ -3876,7 +3666,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_kml_refreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshmode" target="_blank">refreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3891,7 +3681,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_kml_refreshInterval'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshinterval" target="_blank">refreshInterval</a>',
 			'desc'    => __('Indicates to refresh the file every n seconds','lmm'),
 			'type'    => 'text',
@@ -3900,7 +3690,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_kml_viewRefreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshmode" target="_blank">viewrefreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -3914,7 +3704,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms6_kml_viewRefreshTime'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections7',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshtime" target="_blank">viewRefreshTime</a>',
 			'desc'    => __('After camera movement stops, specifies the number of seconds to wait before refreshing the view (is used when viewRefreshMode is set to onStop)','lmm'),
 			'type'    => 'text',
@@ -3923,18 +3713,10 @@ class Class_leaflet_options {
 		/*
 		* WMS layer 7 settings
 		*/
-		$this->settings['wms_wms7_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'wms',
-			'section' => 'wms-sections1',
-			'title'   => '', 
-			'desc'    => '<a name="wms8" class="lmm-index-links"></a>' . __( 'WMS layer 7 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['wms_wms7_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '', //empty for not breaking settings layout
@@ -3943,7 +3725,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'    => __('Name','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3952,7 +3734,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_baseurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'    => __('baseURL','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3961,7 +3743,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_layers'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'    => __('Layers','lmm'),
 			'desc'    => __('(required) Comma-separated list of WMS layers to show','lmm'),
 			'type'    => 'text',
@@ -3970,7 +3752,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_styles'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'    => __('Styles','lmm'),
 			'desc'    => __('Comma-separated list of WMS styles','lmm'),
 			'type'    => 'text',
@@ -3979,7 +3761,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_format'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'    => __('Format','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -3988,7 +3770,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_transparent'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'   => __('Transparent','lmm'),
 			'desc'    => __('If yes, the WMS service will return images with transparency','lmm'),
 			'type'    => 'radio',
@@ -4001,7 +3783,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_version'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'    => __('Version','lmm'),
 			'desc'    => __('Version of the WMS service to use','lmm'),
 			'type'    => 'text',
@@ -4010,7 +3792,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'    => __('Attribution','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4019,7 +3801,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_legend_enabled'] = array(
 			'version' => '1.1',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'   => __('Display legend?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4032,7 +3814,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_legend'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'    => __('Legend','lmm'),
 			'desc'    => __('URL of image which gets show when hovering the text "(Legend)" next to WMS attribution text','lmm'),
 			'type'    => 'text',
@@ -4041,7 +3823,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from base url if available','lmm'),
 			'type'    => 'radio',
@@ -4054,7 +3836,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;",
 			'std'     => '&quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;',
@@ -4063,7 +3845,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_kml_helptext'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'std'     => '', 
 			'title'   => '<strong>' . __('KML settings','lmm') . '</strong>',
 			'desc'    => __('If the WMS server supports KML output of the WMS layer, the settings below will be used when a marker or layer map with this active WMS layer is exported as KML.','lmm'),
@@ -4072,7 +3854,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_kml_support'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'   => __('Does the WMS server support KML output?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4085,7 +3867,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_kml_href'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#href" target="_blank">href</a>',
 			'desc'    => __('http-address of the KML-webservice of the WMS layer','lmm'),
 			'type'    => 'text',
@@ -4094,7 +3876,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_kml_refreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshmode" target="_blank">refreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4109,7 +3891,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_kml_refreshInterval'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshinterval" target="_blank">refreshInterval</a>',
 			'desc'    => __('Indicates to refresh the file every n seconds','lmm'),
 			'type'    => 'text',
@@ -4118,7 +3900,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_kml_viewRefreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshmode" target="_blank">viewrefreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4132,7 +3914,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms7_kml_viewRefreshTime'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections8',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshtime" target="_blank">viewRefreshTime</a>',
 			'desc'    => __('After camera movement stops, specifies the number of seconds to wait before refreshing the view (is used when viewRefreshMode is set to onStop)','lmm'),
 			'type'    => 'text',
@@ -4141,18 +3923,10 @@ class Class_leaflet_options {
 		/*
 		* WMS layer 8 settings
 		*/
-		$this->settings['wms_wms8_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'wms',
-			'section' => 'wms-sections1',
-			'title'   => '', 
-			'desc'    => '<a name="wms9" class="lmm-index-links"></a>' . __( 'WMS layer 8 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['wms_wms8_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '', //empty for not breaking settings layout
@@ -4161,7 +3935,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'    => __('Name','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4170,7 +3944,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_baseurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'    => __('baseURL','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4179,7 +3953,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_layers'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'    => __('Layers','lmm'),
 			'desc'    => __('(required) Comma-separated list of WMS layers to show','lmm'),
 			'type'    => 'text',
@@ -4188,7 +3962,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_styles'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'    => __('Styles','lmm'),
 			'desc'    => __('Comma-separated list of WMS styles','lmm'),
 			'type'    => 'text',
@@ -4197,7 +3971,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_format'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'    => __('Format','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4206,7 +3980,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_transparent'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'   => __('Transparent','lmm'),
 			'desc'    => __('If yes, the WMS service will return images with transparency','lmm'),
 			'type'    => 'radio',
@@ -4219,7 +3993,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_version'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'    => __('Version','lmm'),
 			'desc'    => __('Version of the WMS service to use','lmm'),
 			'type'    => 'text',
@@ -4228,7 +4002,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'    => __('Attribution','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4237,7 +4011,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_legend_enabled'] = array(
 			'version' => '1.1',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'   => __('Display legend?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4250,7 +4024,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_legend'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'    => __('Legend','lmm'),
 			'desc'    => __('URL of image which gets show when hovering the text "(Legend)" next to WMS attribution text','lmm'),
 			'type'    => 'text',
@@ -4259,7 +4033,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from base url if available','lmm'),
 			'type'    => 'radio',
@@ -4272,7 +4046,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;",
 			'std'     => '&quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;',
@@ -4281,7 +4055,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_kml_helptext'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'std'     => '', 
 			'title'   => '<strong>' . __('KML settings','lmm') . '</strong>',
 			'desc'    => __('If the WMS server supports KML output of the WMS layer, the settings below will be used when a marker or layer map with this active WMS layer is exported as KML.','lmm'),
@@ -4290,7 +4064,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_kml_support'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'   => __('Does the WMS server support KML output?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4303,7 +4077,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_kml_href'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#href" target="_blank">href</a>',
 			'desc'    => __('http-address of the KML-webservice of the WMS layer','lmm'),
 			'type'    => 'text',
@@ -4312,7 +4086,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_kml_refreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshmode" target="_blank">refreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4327,7 +4101,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_kml_refreshInterval'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshinterval" target="_blank">refreshInterval</a>',
 			'desc'    => __('Indicates to refresh the file every n seconds','lmm'),
 			'type'    => 'text',
@@ -4336,7 +4110,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_kml_viewRefreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshmode" target="_blank">viewrefreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4350,7 +4124,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms8_kml_viewRefreshTime'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections9',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshtime" target="_blank">viewRefreshTime</a>',
 			'desc'    => __('After camera movement stops, specifies the number of seconds to wait before refreshing the view (is used when viewRefreshMode is set to onStop)','lmm'),
 			'type'    => 'text',
@@ -4359,18 +4133,10 @@ class Class_leaflet_options {
 		/*
 		* WMS layer 9 settings
 		*/
-		$this->settings['wms_wms9_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'wms',
-			'section' => 'wms-sections1',
-			'title'   => '', 
-			'desc'    => '<a name="wms10" class="lmm-index-links"></a>' . __( 'WMS layer 9 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['wms_wms9_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '', //empty for not breaking settings layout
@@ -4379,7 +4145,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'    => __('Name','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4388,7 +4154,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_baseurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'    => __('baseURL','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4397,7 +4163,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_layers'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'    => __('Layers','lmm'),
 			'desc'    => __('(required) Comma-separated list of WMS layers to show','lmm'),
 			'type'    => 'text',
@@ -4406,7 +4172,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_styles'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'    => __('Styles','lmm'),
 			'desc'    => __('Comma-separated list of WMS styles','lmm'),
 			'type'    => 'text',
@@ -4415,7 +4181,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_format'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'    => __('Format','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4424,7 +4190,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_transparent'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'   => __('Transparent','lmm'),
 			'desc'    => __('If yes, the WMS service will return images with transparency','lmm'),
 			'type'    => 'radio',
@@ -4437,7 +4203,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_version'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'    => __('Version','lmm'),
 			'desc'    => __('Version of the WMS service to use','lmm'),
 			'type'    => 'text',
@@ -4446,7 +4212,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'    => __('Attribution','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4455,7 +4221,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_legend_enabled'] = array(
 			'version' => '1.1',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'   => __('Display legend?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4468,7 +4234,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_legend'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'    => __('Legend','lmm'),
 			'desc'    => __('URL of image which gets show when hovering the text "(Legend)" next to WMS attribution text','lmm'),
 			'type'    => 'text',
@@ -4477,7 +4243,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from base url if available','lmm'),
 			'type'    => 'radio',
@@ -4490,7 +4256,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;",
 			'std'     => '&quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;',
@@ -4499,7 +4265,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_kml_helptext'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'std'     => '', 
 			'title'   => '<strong>' . __('KML settings','lmm') . '</strong>',
 			'desc'    => __('If the WMS server supports KML output of the WMS layer, the settings below will be used when a marker or layer map with this active WMS layer is exported as KML.','lmm'),
@@ -4508,7 +4274,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_kml_support'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'   => __('Does the WMS server support KML output?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4521,7 +4287,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_kml_href'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#href" target="_blank">href</a>',
 			'desc'    => __('http-address of the KML-webservice of the WMS layer','lmm'),
 			'type'    => 'text',
@@ -4530,7 +4296,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_kml_refreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshmode" target="_blank">refreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4545,7 +4311,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_kml_refreshInterval'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshinterval" target="_blank">refreshInterval</a>',
 			'desc'    => __('Indicates to refresh the file every n seconds','lmm'),
 			'type'    => 'text',
@@ -4554,7 +4320,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_kml_viewRefreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshmode" target="_blank">viewrefreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4568,7 +4334,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms9_kml_viewRefreshTime'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections10',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshtime" target="_blank">viewRefreshTime</a>',
 			'desc'    => __('After camera movement stops, specifies the number of seconds to wait before refreshing the view (is used when viewRefreshMode is set to onStop)','lmm'),
 			'type'    => 'text',
@@ -4577,18 +4343,10 @@ class Class_leaflet_options {
 		/*
 		* WMS layer 10 settings
 		*/
-		$this->settings['wms_wms10_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'wms',
-			'section' => 'wms-sections1',
-			'title'   => '', 
-			'desc'    => '<a name="wms11" class="lmm-index-links"></a>' . __( 'WMS layer 10 settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['wms_wms10_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '', //empty for not breaking settings layout
@@ -4597,7 +4355,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_name'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'    => __('Name','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4606,7 +4364,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_baseurl'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'    => __('baseURL','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4615,7 +4373,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_layers'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'    => __('Layers','lmm'),
 			'desc'    => __('(required) Comma-separated list of WMS layers to show','lmm'),
 			'type'    => 'text',
@@ -4624,7 +4382,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_styles'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'    => __('Styles','lmm'),
 			'desc'    => __('Comma-separated list of WMS styles','lmm'),
 			'type'    => 'text',
@@ -4633,7 +4391,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_format'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'    => __('Format','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4642,7 +4400,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_transparent'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'   => __('Transparent','lmm'),
 			'desc'    => __('If yes, the WMS service will return images with transparency','lmm'),
 			'type'    => 'radio',
@@ -4655,7 +4413,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_version'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'    => __('Version','lmm'),
 			'desc'    => __('Version of the WMS service to use','lmm'),
 			'type'    => 'text',
@@ -4664,7 +4422,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_attribution'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'    => __('Attribution','lmm'),
 			'desc'    => '',
 			'type'    => 'text',
@@ -4673,7 +4431,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_legend_enabled'] = array(
 			'version' => '1.1',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'   => __('Display legend?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4686,7 +4444,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_legend'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'    => __('Legend','lmm'),
 			'desc'    => __('URL of image which gets show when hovering the text "(Legend)" next to WMS attribution text','lmm'),
 			'type'    => 'text',
@@ -4695,7 +4453,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from base url if available','lmm'),
 			'type'    => 'radio',
@@ -4708,7 +4466,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_subdomains_names'] = array(
 			'version' => '1.0',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'   => __( 'Subdomain names', 'lmm' ),
 			'desc'    => __('For example','lmm'). ": &quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;",
 			'std'     => '&quot;subdomain1&quot;, &quot;subdomain2&quot;, &quot;subdomain3&quot;',
@@ -4717,7 +4475,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_kml_helptext'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'std'     => '', 
 			'title'   => '<strong>' . __('KML settings','lmm') . '</strong>',
 			'desc'    => __('If the WMS server supports KML output of the WMS layer, the settings below will be used when a marker or layer map with this active WMS layer is exported as KML.','lmm'),
@@ -4726,7 +4484,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_kml_support'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'   => __('Does the WMS server support KML output?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4739,7 +4497,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_kml_href'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#href" target="_blank">href</a>',
 			'desc'    => __('http-address of the KML-webservice of the WMS layer','lmm'),
 			'type'    => 'text',
@@ -4748,7 +4506,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_kml_refreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshmode" target="_blank">refreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4763,7 +4521,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_kml_refreshInterval'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#refreshinterval" target="_blank">refreshInterval</a>',
 			'desc'    => __('Indicates to refresh the file every n seconds','lmm'),
 			'type'    => 'text',
@@ -4772,7 +4530,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_kml_viewRefreshMode'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshmode" target="_blank">viewrefreshMode</a>',
 			'desc'    => '',
 			'type'    => 'radio',
@@ -4786,7 +4544,7 @@ class Class_leaflet_options {
 		$this->settings['wms_wms10_kml_viewRefreshTime'] = array(
 			'version' => '1.4.3',
 			'pane'    => 'wms',
-			'section' => 'wms-sections1',
+			'section' => 'wms-sections11',
 			'title'   => '<a href="http://code.google.com/apis/kml/documentation/kmlreference.html#viewrefreshtime" target="_blank">viewRefreshTime</a>',
 			'desc'    => __('After camera movement stops, specifies the number of seconds to wait before refreshing the view (is used when viewRefreshMode is set to onStop)','lmm'),
 			'type'    => 'text',
@@ -4802,14 +4560,6 @@ class Class_leaflet_options {
 		/*
 		* Default values for new marker maps
 		*/
-		$this->settings['defaults_marker_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
-			'title'   => '', 
-			'desc'    =>  '<a name="defaults_marker1" class="lmm-index-links"></a>' . __( 'Default values for new marker maps', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['defaults_marker_helptext1'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
@@ -5131,18 +4881,10 @@ class Class_leaflet_options {
 		/*
 		* Default values for marker icons
 		*/
-		$this->settings['defaults_marker_icon_heading'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
-			'title'   => '', 
-			'desc'    => '<a name="defaults_marker2" class="lmm-index-links"></a>' . __( 'Default values for marker icons', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['defaults_marker_icon_helptext1'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '',
@@ -5151,7 +4893,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_url'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Icons URL', 'lmm' ),
 			'desc'    => __( 'Icons copied to this directory will automatically be available when creating or editing marker maps (cannot be changed)', 'lmm' ),
 			'std'     => LEAFLET_PLUGIN_ICONS_URL,
@@ -5160,7 +4902,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_dir'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Icons directory', 'lmm' ),
 			'desc'    => __( 'Directory on server where icons are stored - needed especially for WordPress Multisite blogs (cannot be changed)', 'lmm' ),
 			'std'     => LEAFLET_PLUGIN_ICONS_DIR,
@@ -5169,7 +4911,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon'] = array(
 			'version' => '1.8',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Default icon', 'lmm' ),
 			'desc'    => sprintf(__( 'If you want to use another icon than the blue pin (<img src="%sleaflet-dist/images/marker.png">), please enter the file name of the icon (located in the directory %s) in the form field - e.g. smiley_happy.png', 'lmm' ),LEAFLET_PLUGIN_URL,LEAFLET_PLUGIN_ICONS_URL),
 			'std'     => '',
@@ -5178,7 +4920,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_title'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => 'title' . '<br/><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-marker-title.jpg">',
 			'desc'    => __('Show marker name for the browser tooltip that appear on marker hover (tooltip is always hidden if marker name is empty).','lmm'),
 			'type'    => 'radio',
@@ -5191,7 +4933,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_opacity'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Opacity', 'lmm' ),
 			'desc'    => __( 'The opacity of the markers.', 'lmm' ),
 			'std'     => '1.0',
@@ -5200,7 +4942,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_helptext2'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'std'     => '', 
 			'title'   => '', 
 			'desc'    => '<strong>' . __('Only change the values below if you are not using marker or shadow icons from the <a href="http://mapicons.nicolasmollet.com" target="_blank">Map Icons Collection</a>!','lmm') . '</strong>',
@@ -5209,7 +4951,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_iconsize_x'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Icon size', 'lmm' ) . ' (x)',
 			'desc'    => __( 'Width of the icons in pixel', 'lmm' ),
 			'std'     => '32',
@@ -5218,7 +4960,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_iconsize_y'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Icon size', 'lmm' ) . ' (y)',
 			'desc'    => __( 'Height of the icons in pixel', 'lmm' ),
 			'std'     => '37',
@@ -5227,7 +4969,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_iconanchor_x'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Icon anchor', 'lmm' ) . ' (x)',
 			'desc'    => __( 'The x-coordinates of the "tip" of the icons (relative to its top left corner).', 'lmm' ),
 			'std'     => '17',
@@ -5236,7 +4978,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_iconanchor_y'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Icon anchor', 'lmm' ) . ' (y)',
 			'desc'    => __( 'The y-coordinates of the "tip" of the icons (relative to its top left corner).', 'lmm' ),
 			'std'     => '36',
@@ -5245,7 +4987,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_popupanchor_x'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Popup anchor', 'lmm' ) . ' (x)',
 			'desc'    => __( 'The x-coordinates of the popup anchor (relative to its top left corner)', 'lmm' ),
 			'std'     => '-1',
@@ -5254,7 +4996,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_popupanchor_y'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Popup anchor', 'lmm' ) . ' (y)',
 			'desc'    => __( 'The y-coordinates of the popup anchor (relative to its top left corner)', 'lmm' ),
 			'std'     => '-32',
@@ -5263,7 +5005,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_shadow_url'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Shadow URL', 'lmm' ),
 			'desc'    => __( 'The URL to the icons shadow image. If not specified, no shadow image will be created. Default shadow icon:', 'lmm' ) . '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker-shadow.png">',
 			'std'     => LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker-shadow.png',
@@ -5272,7 +5014,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_shadowsize_x'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Shadow size', 'lmm' ) . ' (x)',
 			'desc'    => __( 'Width of the shadow icon in pixel', 'lmm' ),
 			'std'     => '41',
@@ -5281,7 +5023,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_shadowsize_y'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Shadow size', 'lmm' ) . ' (y)',
 			'desc'    => __( 'Height of the shadow icon in pixel', 'lmm' ),
 			'std'     => '41',
@@ -5290,7 +5032,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_shadowanchor_x'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Shadow anchor', 'lmm' ) . ' (x)',
 			'desc'    => __( 'The x-coordinates of the "tip" of the shadow icon (relative to its top left corner)', 'lmm' ),
 			'std'     => '16',
@@ -5299,7 +5041,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_icon_shadowanchor_y'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section2',
 			'title'   => __( 'Shadow anchor', 'lmm' ) . ' (y)',
 			'desc'    => __( 'The y-coordinates of the "tip" of the shadow icon (relative to its top left corner)', 'lmm' ),
 			'std'     => '43',
@@ -5308,18 +5050,10 @@ class Class_leaflet_options {
 		/*
 		* Default values for marker popups
 		*/
-		$this->settings['defaults_marker_popups_heading'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
-			'title'   => '', 
-			'desc'    => '<a name="defaults_marker3" class="lmm-index-links"></a>' . __( 'Default values for marker popups', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['defaults_marker_popups_helptext1'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section3',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '',
@@ -5328,7 +5062,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_popups_maxwidth'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section3',
 			'title'   => 'maxWidth (px)',
 			'desc'    => __( 'Maximum width of popups in pixel', 'lmm' ),
 			'std'     => '300',
@@ -5337,7 +5071,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_popups_minwidth'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section3',
 			'title'   => 'minWidth (px)',
 			'desc'    => __( 'Minimum width of popups in pixel', 'lmm' ),
 			'std'     => '250',
@@ -5346,7 +5080,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_popups_maxheight'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section3',
 			'title'   => 'maxHeight (px)',
 			'desc'    => __( 'If set, creates a scrollable container of the given height in pixel inside popups if its content exceeds it.', 'lmm' ),
 			'std'     => '160',
@@ -5355,7 +5089,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_popups_image_max_width'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section3',
 			'title'   => __('maximum image width (px)','lmm'),
 			'desc'    => __( 'Reduce image width in popups automatically to the given value in pixel (only if is wider). The height of the images gets reduced by the according ratio automatically (this feature only works if your theme supports the wp_head()-hook).', 'lmm' ),
 			'std'     => '230',
@@ -5364,7 +5098,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_popups_autopan'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section3',
 			'title'   => 'autoPan',
 			'desc'    => __('Set it to false if you do not want the map to do panning animation to fit the opened popup.','lmm'),
 			'type'    => 'radio',
@@ -5377,7 +5111,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_popups_closebutton'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section3',
 			'title'   => 'closeButton',
 			'desc'    => __('Controls the presence of a close button in popups.','lmm'),
 			'type'    => 'radio',
@@ -5390,7 +5124,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_popups_autopanpadding_x'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section3',
 			'title'   => 'autoPanPadding (x)',
 			'desc'    => __( 'The x-coordinates of the margin between popups and the edges of the map view after autopanning was performed.', 'lmm' ),
 			'std'     => '5',
@@ -5399,7 +5133,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_popups_autopanpadding_y'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section3',
 			'title'   => 'autoPanPadding (y)',
 			'desc'    => __( 'The y-coordinates of the margin between popups and the edges of the map view after autopanning was performed.', 'lmm' ),
 			'std'     => '5',
@@ -5408,18 +5142,10 @@ class Class_leaflet_options {
 		/*
 		* Default values for markers added directly
 		*/
-		$this->settings['defaults_marker_shortcode_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
-			'title'   => '', 
-			'desc'    => '<a name="defaults_marker4" class="lmm-index-links"></a>' . __( 'Default values for markers added directly', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['defaults_marker_shortcode_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'You can also add markers directly to posts or pages without having to save them to your database previously. You just have to use the shortcode with the attributes mlat and mlon (e.g. <strong>[mapsmarker mlat="48.216038" mlon="16.378984"]</strong>).', 'lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-marker-direct.jpg" /><br/><br/>' . __('Defaults values for markers added directly:','lmm'),
@@ -5428,7 +5154,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_basemap'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => __('Default basemap','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -5457,7 +5183,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_zoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => __( 'Zoom', 'lmm' ),
 			'desc'    => '',
 			'std'     => '11',
@@ -5466,7 +5192,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_mapwidth'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => __( 'Map width', 'lmm' ),
 			'desc'    => '',
 			'std'     => '640',
@@ -5475,7 +5201,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_mapwidthunit'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => __('Map width unit','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -5488,7 +5214,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_mapheight'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => __( 'Map height', 'lmm' ) . ' (px)',
 			'desc'    => '',
 			'std'     => '480',
@@ -5497,7 +5223,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_controlbox'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => __('Basemap/layer controlbox on frontend','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -5512,7 +5238,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_overlays_custom_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'    => __('Checked overlays in control box','lmm'),
 			'desc'    => __('Custom overlay','lmm'),
 			'type'    => 'checkbox',
@@ -5521,7 +5247,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_overlays_custom2_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('Custom overlay 2','lmm'),
 			'type'    => 'checkbox',
@@ -5531,7 +5257,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_overlays_custom3_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('Custom overlay 3','lmm'),
 			'type'    => 'checkbox',
@@ -5541,7 +5267,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_overlays_custom4_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('Custom overlay 4','lmm'),
 			'type'    => 'checkbox',
@@ -5551,7 +5277,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_wms_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'    => __('Checked WMS layers','lmm'),
 			'desc'    => __('WMS 1','lmm'),
 			'type'    => 'checkbox',
@@ -5560,7 +5286,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_wms2_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('WMS 2','lmm'),
 			'type'    => 'checkbox',
@@ -5569,7 +5295,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_wms3_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('WMS 3','lmm'),
 			'type'    => 'checkbox',
@@ -5578,7 +5304,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_wms4_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('WMS 4','lmm'),
 			'type'    => 'checkbox',
@@ -5587,7 +5313,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_wms5_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('WMS 5','lmm'),
 			'type'    => 'checkbox',
@@ -5596,7 +5322,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_wms6_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('WMS 6','lmm'),
 			'type'    => 'checkbox',
@@ -5605,7 +5331,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_wms7_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('WMS 7','lmm'),
 			'type'    => 'checkbox',
@@ -5614,7 +5340,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_wms8_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('WMS 8','lmm'),
 			'type'    => 'checkbox',
@@ -5623,7 +5349,7 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_wms9_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('WMS 9','lmm'),
 			'type'    => 'checkbox',
@@ -5632,35 +5358,19 @@ class Class_leaflet_options {
 		$this->settings['defaults_marker_shortcode_wms10_active'] = array(
 			'version' => '1.0',
 			'pane'    => 'defaults_marker',
-			'section' => 'defaults_marker-section1',
+			'section' => 'defaults_marker-section4',
 			'title'   => '',
 			'desc'    => __('WMS 10','lmm'),
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);	
-		
-		/*===========================================
-		*
-		*
-		* pane layer defaults
-		*
-		*
-		===========================================*/		
 		/*
 		* Default values for new layer maps
 		*/
-		$this->settings['defaults_layer_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
-			'title'   => '', 
-			'desc'    => '<a name="defaults_layer1" class="lmm-index-links"></a>' . __( 'Default values for new layer maps', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['defaults_layer_helptext1'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Will be used when creating a new layer. All values can be changed afterwards on each layer.', 'lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-layer-defaults.jpg" />',
@@ -5668,8 +5378,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_lat'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => __( 'Latitude', 'lmm' ),
 			'desc'    => __( 'Please use a dot instead of a coma as decimal delimiter!', 'lmm' ),
 			'std'     => '48.216038',
@@ -5677,8 +5387,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_lon'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => __( 'Longitude', 'lmm' ),
 			'desc'    => __( 'Please use a dot instead of a coma as decimal delimiter!', 'lmm' ),
 			'std'     => '16.378984',
@@ -5686,8 +5396,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_zoom'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => __( 'Zoom', 'lmm' ),
 			'desc'    => '',
 			'std'     => '11',
@@ -5695,8 +5405,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_mapwidth'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => __( 'Map width', 'lmm' ),
 			'desc'    => '',
 			'std'     => '640',
@@ -5704,8 +5414,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_mapwidthunit'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => __('Map width unit','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -5717,8 +5427,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_mapheight'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => __( 'Map height', 'lmm' ) . ' (px)',
 			'desc'    => '',
 			'std'     => '480',
@@ -5726,8 +5436,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_controlbox'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => __('Basemap/layer controlbox on frontend','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -5741,8 +5451,8 @@ class Class_leaflet_options {
 		// defaults_layer - which overlays are active by default?
 		$this->settings['defaults_layer_overlays_custom_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'    => __('Checked overlays in control box','lmm'),
 			'desc'    => __('Custom overlay','lmm'),
 			'type'    => 'checkbox',
@@ -5750,8 +5460,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_overlays_custom2_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('Custom overlay 2','lmm'),
 			'type'    => 'checkbox',
@@ -5759,8 +5469,8 @@ class Class_leaflet_options {
 		);		
 		$this->settings['defaults_layer_overlays_custom3_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('Custom overlay 3','lmm'),
 			'type'    => 'checkbox',
@@ -5768,8 +5478,8 @@ class Class_leaflet_options {
 		);		
 		$this->settings['defaults_layer_overlays_custom4_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('Custom overlay 4','lmm'),
 			'type'    => 'checkbox',
@@ -5777,8 +5487,8 @@ class Class_leaflet_options {
 		);		
 		$this->settings['defaults_layer_panel'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => __('Panel for displaying layer name and API URLs on top of map','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -5791,8 +5501,8 @@ class Class_leaflet_options {
 		// defaults_layer - active API links in panel
 		$this->settings['defaults_layer_panel_kml'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'    => __('Visible API links in panel','lmm'),
 			'desc'    => 'KML <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-kml.png">',
 			'type'    => 'checkbox',
@@ -5800,8 +5510,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_panel_fullscreen'] = array(
 			'version' => '1.1',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'    => '',
 			'desc'    => __('Fullscreen','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-fullscreen.png">',
 			'type'    => 'checkbox',
@@ -5809,8 +5519,8 @@ class Class_leaflet_options {
 		);		
 		$this->settings['defaults_layer_panel_qr_code'] = array(
 			'version' => '1.1',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'    => '',
 			'desc'    => __('QR code','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-qr-code.png">',
 			'type'    => 'checkbox',
@@ -5818,8 +5528,8 @@ class Class_leaflet_options {
 		);		
 		$this->settings['defaults_layer_panel_geojson'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => 'GeoJSON <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-json.png"> (' . __('not available on multi layer maps','lmm') . ')',
 			'type'    => 'checkbox',
@@ -5827,8 +5537,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_panel_georss'] = array(
 			'version' => '1.2',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => 'GeoRSS <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-georss.png">',
 			'type'    => 'checkbox',
@@ -5836,8 +5546,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_panel_wikitude'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => 'Wikitude <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-wikitude.png">',
 			'type'    => 'checkbox',
@@ -5845,8 +5555,8 @@ class Class_leaflet_options {
 		);		
 		$this->settings['defaults_layer_panel_background_color'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => __( 'Panel background color', 'lmm' ),
 			'desc'    => 'Please use hexadecimal color values',
 			'std'     => '#efefef',
@@ -5854,8 +5564,8 @@ class Class_leaflet_options {
 		);		
 		$this->settings['defaults_layer_panel_paneltext_css'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => __( 'Panel text css', 'lmm' ),
 			'desc'    => '',
 			'std'     => 'font-weight:bold;color:#373737;',
@@ -5864,8 +5574,8 @@ class Class_leaflet_options {
 		// defaults_layer - which WMS layers are active by default?
 		$this->settings['defaults_layer_wms_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'    => __('Checked WMS layers','lmm'),
 			'desc'    => __('WMS 1','lmm'),
 			'type'    => 'checkbox',
@@ -5873,8 +5583,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_wms2_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('WMS 2','lmm'),
 			'type'    => 'checkbox',
@@ -5882,8 +5592,8 @@ class Class_leaflet_options {
 		);		
 		$this->settings['defaults_layer_wms3_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('WMS 3','lmm'),
 			'type'    => 'checkbox',
@@ -5891,8 +5601,8 @@ class Class_leaflet_options {
 		);	
 		$this->settings['defaults_layer_wms4_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('WMS 4','lmm'),
 			'type'    => 'checkbox',
@@ -5900,8 +5610,8 @@ class Class_leaflet_options {
 		);	
 		$this->settings['defaults_layer_wms5_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('WMS 5','lmm'),
 			'type'    => 'checkbox',
@@ -5909,8 +5619,8 @@ class Class_leaflet_options {
 		);	
 		$this->settings['defaults_layer_wms6_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('WMS 6','lmm'),
 			'type'    => 'checkbox',
@@ -5918,8 +5628,8 @@ class Class_leaflet_options {
 		);	
 		$this->settings['defaults_layer_wms7_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('WMS 7','lmm'),
 			'type'    => 'checkbox',
@@ -5927,8 +5637,8 @@ class Class_leaflet_options {
 		);	
 		$this->settings['defaults_layer_wms8_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('WMS 8','lmm'),
 			'type'    => 'checkbox',
@@ -5936,8 +5646,8 @@ class Class_leaflet_options {
 		);	
 		$this->settings['defaults_layer_wms9_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('WMS 9','lmm'),
 			'type'    => 'checkbox',
@@ -5945,8 +5655,8 @@ class Class_leaflet_options {
 		);	
 		$this->settings['defaults_layer_wms10_active'] = array(
 			'version' => '1.0',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section5',
 			'title'   => '',
 			'desc'    => __('WMS 10','lmm'),
 			'type'    => 'checkbox',
@@ -5955,19 +5665,10 @@ class Class_leaflet_options {
 		/*
 		* List marker settings
 		*/
-		$this->settings['defaults_layer_listmarkers_helptext'] = array(
-			'version' => '1.5',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
-			'title'   => '<a name="defaults_layer2" class="lmm-index-links"></a>' . '<strong>' . __('List marker settings','lmm') . '</strong>' . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'desc'    => '',
-			'type'    => 'helptext',
-			'std'     => ''
-		);
 		$this->settings['defaults_layer_listmarkers'] = array(
 			'version' => '1.5',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'   => __('Display a list of markers under the map','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -5979,8 +5680,8 @@ class Class_leaflet_options {
 		);			
 		$this->settings['defaults_layer_listmarkers_show_icon'] = array(
 			'version' => '2.6',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'    => __('Marker attributes to display in list','lmm'),
 			'desc'    => __('Icon','lmm'),
 			'type'    => 'checkbox',
@@ -5988,8 +5689,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_listmarkers_show_markername'] = array(
 			'version' => '2.6',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'    => '',
 			'desc'    => __('Marker name','lmm'),
 			'type'    => 'checkbox',
@@ -5997,8 +5698,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_listmarkers_show_popuptext'] = array(
 			'version' => '2.6',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'    => '',
 			'desc'    => __('Popup text','lmm'),
 			'type'    => 'checkbox',
@@ -6006,8 +5707,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_listmarkers_order_by'] = array(
 			'version' => '1.5',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'   => __('Order list of markers by','lmm'),
 			'desc'    =>  __('(not available on multi layer maps)','lmm'),
 			'type'    => 'radio',
@@ -6021,8 +5722,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_listmarkers_sort_order'] = array(
 			'version' => '1.5',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'   => __('Sort order','lmm'),
 			'desc'    =>  __('(not available on multi layer maps)','lmm'),
 			'type'    => 'radio',
@@ -6034,8 +5735,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_listmarkers_limit'] = array(
 			'version' => '1.7',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'   => __( 'Limit', 'lmm' ),
 			'desc'    => __( 'maximum number of markers to display in the list', 'lmm' ) . ' ' .  __('(not available on multi layer maps)','lmm'),
 			'std'     => '100',
@@ -6044,8 +5745,8 @@ class Class_leaflet_options {
 		// defaults_layer - active API links in markers list
 		$this->settings['defaults_layer_listmarkers_api_directions'] = array(
 			'version' => '2.1',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'    => __('Visible API links for each marker','lmm'),
 			'desc'    => __('Directions','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-car.png">',
 			'type'    => 'checkbox',
@@ -6053,8 +5754,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_listmarkers_api_kml'] = array(
 			'version' => '2.1',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'    => '',
 			'desc'    => 'KML <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-kml.png">',
 			'type'    => 'checkbox',
@@ -6062,8 +5763,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_listmarkers_api_fullscreen'] = array(
 			'version' => '2.1',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'    => '',
 			'desc'    => __('Fullscreen','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-fullscreen.png">',
 			'type'    => 'checkbox',
@@ -6071,8 +5772,8 @@ class Class_leaflet_options {
 		);		
 		$this->settings['defaults_layer_listmarkers_api_qr_code'] = array(
 			'version' => '2.1',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'    => '',
 			'desc'    => __('QR code','lmm') .  ' <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-qr-code.png">',
 			'type'    => 'checkbox',
@@ -6080,8 +5781,8 @@ class Class_leaflet_options {
 		);		
 		$this->settings['defaults_layer_listmarkers_api_geojson'] = array(
 			'version' => '2.1',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'   => '',
 			'desc'    => 'GeoJSON <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-json.png">',
 			'type'    => 'checkbox',
@@ -6089,8 +5790,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_listmarkers_api_georss'] = array(
 			'version' => '2.1',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'   => '',
 			'desc'    => 'GeoRSS <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-georss.png">',
 			'type'    => 'checkbox',
@@ -6098,8 +5799,8 @@ class Class_leaflet_options {
 		);
 		$this->settings['defaults_layer_listmarkers_api_wikitude'] = array(
 			'version' => '2.1',
-			'pane'    => 'defaults_layer',
-			'section' => 'defaults_layer-section1',
+			'pane'    => 'defaults_marker',
+			'section' => 'defaults_marker-section6',
 			'title'   => '',
 			'desc'    => 'Wikitude <img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-wikitude.png">',
 			'type'    => 'checkbox',
@@ -6115,14 +5816,6 @@ class Class_leaflet_options {
 		/*
 		* Google Maps API Key
 		*/
-		$this->settings['google_maps_api_key_heading'] = array(
-			'version' => '2.6',
-			'pane'    => 'google',
-			'section' => 'google-section1',
-			'title'   => '', 
-			'desc'    => '<a name="google1" class="lmm-index-links"></a>' . __( 'Google Maps API key', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['google_maps_api_key_helptext'] = array(
 			'version' => '2.6',
 			'pane'    => 'google',
@@ -6145,18 +5838,10 @@ class Class_leaflet_options {
 		* Google language localization
 		* https://spreadsheets.google.com/spreadsheet/pub?key=0Ah0xU81penP1cDlwZHdzYWkyaERNc0xrWHNvTTA1S1E&gid=1
 		*/
-		$this->settings['google_maps_language_localization_heading'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'google',
-			'section' => 'google-section1',
-			'title'   => '', 
-			'desc'    => '<a name="google2" class="lmm-index-links"></a>' . __( 'Google language localization', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['google_maps_language_localization_helptext'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section2',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Language used when displaying textual information such as the names for controls, copyright notices, driving directions and labels on Google maps, direction links and autocomplete for address search.', 'lmm'),
@@ -6165,7 +5850,7 @@ class Class_leaflet_options {
 		$this->settings['google_maps_language_localization'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section2',
 			'title'   => __('Default language','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6229,18 +5914,10 @@ class Class_leaflet_options {
 		/*
 		* Google Maps base domain
 		*/
-		$this->settings['google_maps_base_domain_heading'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'google',
-			'section' => 'google-section1',
-			'title'   => '', 
-			'desc'    => '<a name="google3" class="lmm-index-links"></a>' . __( 'Google Maps base domain', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['google_maps_base_domain_helptext'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section3',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'The base domain from which to load the Google Maps API (used for geocoding for example). If you want to change the language of the Google Maps interface (buttons etc) only, please change the option "Google language localization" above.', 'lmm'),
@@ -6249,7 +5926,7 @@ class Class_leaflet_options {
 		$this->settings['google_maps_base_domain'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section3',
 			'title'   => __('Google Maps base domain','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6289,7 +5966,7 @@ class Class_leaflet_options {
 		$this->settings['google_maps_base_domain_custom'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section3',
 			'title'   => __( 'Custom base domain', 'lmm'),
 			'desc'    => __( 'If your localized Google Maps basedomain is not available in the list above, please enter the domain name here (without http://, for example maps.google.com). If a domain name is entered, the setting "Google Maps base domain" from above gets overwritten.', 'lmm' ),
 			'std'     => '',
@@ -6298,18 +5975,10 @@ class Class_leaflet_options {
 		/*
 		* Google Places Bounds
 		*/
-		$this->settings['google_places_bounds_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'google',
-			'section' => 'google-section1',
-			'title'   => '', 
-			'desc'    => '<a name="google4" class="lmm-index-links"></a>' . __( 'Google Places bounds', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['google_places_bounds_helptext2'] = array(
 			'version' => '1.0',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section4',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Leaflet Maps Marker uses the <a href="http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html" target="_blank">Google Places Autocomplete API</a> to easily find coordinates for places or addresses. This feature is enabled by default. Preview:', 'lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-google-places-preview.png" /><br/>' . __( 'You can get better search results if you enable the bounds feature. This allows you to specify the area in which to primarily search for places or addresses. Please note: the results are biased towards, but not restricted to places or addresses contained within these bounds.', 'lmm'),
@@ -6318,7 +5987,7 @@ class Class_leaflet_options {
 		$this->settings['google_places_bounds_status'] = array(
 			'version' => '1.0',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section4',
 			'title'   => __('Google Places bounds','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6331,7 +6000,7 @@ class Class_leaflet_options {
 		$this->settings['google_places_bounds_helptext3'] = array(
 			'version' => '1.0',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section4',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'If enabled, please enter longitude and latitude values below for the corner points of the prefered search area. Below you find an example for Vienna/Austria:', 'lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-google-places-bounds.jpg" />',
@@ -6340,7 +6009,7 @@ class Class_leaflet_options {
 		$this->settings['google_places_bounds_lat1'] = array(
 			'version' => '1.0',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section4',
 			'title'   => __( 'Latitude', 'lmm' ) . ' 1',
 			'desc'    => __( 'Please use a dot instead of a coma as decimal delimiter!', 'lmm' ),
 			'std'     => '48.326583',
@@ -6349,7 +6018,7 @@ class Class_leaflet_options {
 		$this->settings['google_places_bounds_lon1'] = array(
 			'version' => '1.0',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section4',
 			'title'   => __( 'Longitude', 'lmm' ) . ' 1',
 			'desc'    => __( 'Please use a dot instead of a coma as decimal delimiter!', 'lmm' ),
 			'std'     => '16.55056',
@@ -6358,7 +6027,7 @@ class Class_leaflet_options {
 		$this->settings['google_places_bounds_lat2'] = array(
 			'version' => '1.0',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section4',
 			'title'   => __( 'Latitude', 'lmm' ) . ' 2',
 			'desc'    => __( 'Please use a dot instead of a coma as decimal delimiter!', 'lmm' ),
 			'std'     => '48.114308',
@@ -6367,7 +6036,7 @@ class Class_leaflet_options {
 		$this->settings['google_places_bounds_lon2'] = array(
 			'version' => '1.0',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section4',
 			'title'   => __( 'Longitude', 'lmm' ) . ' 2',
 			'desc'    => __( 'Please use a dot instead of a coma as decimal delimiter!', 'lmm' ),
 			'std'     => '16.187325',
@@ -6376,18 +6045,10 @@ class Class_leaflet_options {
 		/*
 		* Google Places Search Prefix
 		*/
-		$this->settings['google_places_search_prefix_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'google',
-			'section' => 'google-section1',
-			'title'   => '', 
-			'desc'    => '<a name="google5" class="lmm-index-links"></a>' . __( 'Google Places search prefix', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['google_places_search_prefix_helptext1'] = array(
 			'version' => '1.0',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section5',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'You can also select a search prefix, which automatically gets added to search form when creating a new marker or layer.', 'lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-google-places-prefix.png" />',
@@ -6396,7 +6057,7 @@ class Class_leaflet_options {
 		$this->settings['google_places_search_prefix_status'] = array(
 			'version' => '1.0',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section5',
 			'title'   => __('Google Places search prefix','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6409,12 +6070,42 @@ class Class_leaflet_options {
 		$this->settings['google_places_search_prefix'] = array(
 			'version' => '1.0',
 			'pane'    => 'google',
-			'section' => 'google-section1',
+			'section' => 'google-section5',
 			'title'   => __( 'Prefix to use', 'lmm' ),
 			'desc'    => '',
 			'std'     => 'Wien, ',
 			'type'    => 'text'
 		);	
+		
+		/*===========================================
+		*
+		*
+		* pane Bing
+		*
+		*
+		===========================================*/	
+		/*
+		* Bing Maps API Key
+		*/
+		$this->settings['bingmaps_api_key_helptext'] = array(
+			'version' => '2.6',
+			'pane'    => 'bing',
+			'section' => 'bing-section1',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'An API key is required if you want to use Bing Maps as basemap for marker or layer maps. Please click on the question mark for more info on how to get your API key.', 'lmm') . ' <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+			'type'    => 'helptext'
+		);		
+		$this->settings['bingmaps_api_key'] = array(
+			'version' => '2.6',
+			'pane'    => 'bing',
+			'section' => 'bing-section1',
+			'title'   => __( 'Bing Maps API key', 'lmm' ),
+			'desc'    => '',
+			'std'     => '',
+			'type'    => 'text'
+		);				
+		
 		/*===========================================
 		*
 		*
@@ -6425,14 +6116,6 @@ class Class_leaflet_options {
 		/*
 		* Directions General
 		*/
-		$this->settings['directions_general_heading'] = array(
-			'version' => '1.4',
-			'pane'    => 'directions',
-			'section' => 'directions-section1',
-			'title'   => '', 
-			'desc'    => '<a name="directions1" class="lmm-index-links"></a>' . __( 'General settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);		
 		$this->settings['directions_general_helptext1'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
@@ -6481,18 +6164,10 @@ class Class_leaflet_options {
 		/*
 		* Google Maps
 		*/
-		$this->settings['directions_googlemaps_heading'] = array(
-			'version' => '1.4',
-			'pane'    => 'directions',
-			'section' => 'directions-section1',
-			'title'   => '', 
-			'desc'    => '<a name="directions2" class="lmm-index-links"></a>' . __( 'Google Maps directions settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['directions_googlemaps_helptext1'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section2',
 			'title'   => '',
 			'desc'    => '',
 			'type'    => 'helptext',
@@ -6501,7 +6176,7 @@ class Class_leaflet_options {
 		$this->settings['directions_googlemaps_map_type'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section2',
 			'title'   => __('Map type','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6516,7 +6191,7 @@ class Class_leaflet_options {
 		$this->settings['directions_googlemaps_traffic'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section2',
 			'title'   => __('Show traffic layer?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6529,7 +6204,7 @@ class Class_leaflet_options {
 		$this->settings['directions_googlemaps_distance_units'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section2',
 			'title'   => __('Distance units','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6542,7 +6217,7 @@ class Class_leaflet_options {
 		$this->settings['directions_googlemaps_route_type_highways'] = array(
 			'version' => '1.0',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section2',
 			'title'    => __('Route type','lmm'),
 			'desc'    => __('Avoid highways','lmm'),
 			'type'    => 'checkbox',
@@ -6551,7 +6226,7 @@ class Class_leaflet_options {
 		$this->settings['directions_googlemaps_route_type_tolls'] = array(
 			'version' => '1.0',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section2',
 			'title'    => '',
 			'desc'    => __('Avoid tolls','lmm'),
 			'type'    => 'checkbox',
@@ -6560,7 +6235,7 @@ class Class_leaflet_options {
 		$this->settings['directions_googlemaps_route_type_public_transport'] = array(
 			'version' => '1.0',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section2',
 			'title'    => '',
 			'desc'    => __('Public transport (works only in some areas)','lmm'),
 			'type'    => 'checkbox',
@@ -6569,7 +6244,7 @@ class Class_leaflet_options {
 		$this->settings['directions_googlemaps_route_type_walking'] = array(
 			'version' => '1.0',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section2',
 			'title'    => '',
 			'desc'    => __('Walking directions','lmm'),
 			'type'    => 'checkbox',
@@ -6578,7 +6253,7 @@ class Class_leaflet_options {
 		$this->settings['directions_googlemaps_overview_map'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section2',
 			'title'   => __('Overview map','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6592,18 +6267,10 @@ class Class_leaflet_options {
 		/*
 		* yournavigation.org
 		*/
-		$this->settings['directions_yours_heading'] = array(
-			'version' => '1.4',
-			'pane'    => 'directions',
-			'section' => 'directions-section1',
-			'title'   => '', 
-			'desc'    => '<a name="directions3" class="lmm-index-links"></a>' . __( 'yournavigation.org settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['directions_yours_helptext1'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section3',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '',
@@ -6612,7 +6279,7 @@ class Class_leaflet_options {
 		$this->settings['directions_yours_type_of_transport'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section3',
 			'title'   => __('Type of transport','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6626,7 +6293,7 @@ class Class_leaflet_options {
 		$this->settings['directions_yours_route_type'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section3',
 			'title'   => __('Route type','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6639,7 +6306,7 @@ class Class_leaflet_options {
 		$this->settings['directions_yours_layer'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section3',
 			'title'   => __('Gosmore instance to calculate the route','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6652,18 +6319,10 @@ class Class_leaflet_options {
 		/*
 		* map.project-osrm.org
 		*/
-		$this->settings['directions_osrm_heading'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'directions',
-			'section' => 'directions-section1',
-			'title'   => '', 
-			'desc'    => '<a name="directions4" class="lmm-index-links"></a>' . __( 'map.project-osrm.org settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['directions_osrm_helptext1'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section4',
 			'title'   => '',
 			'desc'    => '',
 			'type'    => 'helptext',
@@ -6672,7 +6331,7 @@ class Class_leaflet_options {
 		$this->settings['directions_osrm_language'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section4',
 			'title'   => __('Language of route instructions','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6693,7 +6352,7 @@ class Class_leaflet_options {
 		$this->settings['directions_osrm_units'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section4',
 			'title'   => __('Units','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6706,18 +6365,10 @@ class Class_leaflet_options {
 		/*
 		* openrouteservice.org
 		*/
-		$this->settings['directions_ors_heading'] = array(
-			'version' => '1.4',
-			'pane'    => 'directions',
-			'section' => 'directions-section1',
-			'title'   => '', 
-			'desc'    => '<a name="directions5" class="lmm-index-links"></a>' . __( 'openrouteservice.org settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['directions_ors_helptext1'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section5',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => '',
@@ -6726,7 +6377,7 @@ class Class_leaflet_options {
 		$this->settings['directions_ors_route_preferences'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section5',
 			'title'   => __('Route preferences','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6741,7 +6392,7 @@ class Class_leaflet_options {
 		$this->settings['directions_ors_language'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section5',
 			'title'   => __('Language of route instructions','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6757,7 +6408,7 @@ class Class_leaflet_options {
 		$this->settings['directions_ors_no_motorways'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section5',
 			'title'   => __('No motorways?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6770,7 +6421,7 @@ class Class_leaflet_options {
 		$this->settings['directions_ors_no_tollways'] = array(
 			'version' => '1.4',
 			'pane'    => 'directions',
-			'section' => 'directions-section1',
+			'section' => 'directions-section5',
 			'title'   => __('No tollways?','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -6802,14 +6453,6 @@ class Class_leaflet_options {
 		/*
 		* AR Wikitude
 		*/
-		$this->settings['ar_wikitude_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'ar',
-			'section' => 'ar-section1',
-			'title'   => '', 
-			'desc'    => '<a name="ar1" class="lmm-index-links"></a>' . __( 'Wikitude settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['ar_wikitude_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'ar',
@@ -6908,14 +6551,6 @@ class Class_leaflet_options {
 		*
 		*
 		===========================================*/
-		$this->settings['misc_general_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'misc',
-			'section' => 'misc-section1',
-			'title'   => '', 
-			'desc'    => '<a name="misc1" class="lmm-index-links"></a>' . __( 'General settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['misc_general_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
@@ -7066,18 +6701,10 @@ class Class_leaflet_options {
 		/*
 		* Language Settings
 		*/
-		$this->settings['misc_language_heading'] = array(
-			'version' => '2.4',
-			'pane'    => 'misc',
-			'section' => 'misc-section1',
-			'title'   => '', 
-			'desc'    => '<a name="misc2" class="lmm-index-links"></a>' . __( 'Language settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['misc_language_helptext'] = array(
 			'version' => '2.4',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section2',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __('The language used on plugin pages on backend and/or on maps on frontend. Please note that the language for Google Services can be set seperately via Settings / tab "Google", section "Google language localization".','lmm'),
@@ -7086,7 +6713,7 @@ class Class_leaflet_options {
 		$this->settings['misc_plugin_language'] = array(
 			'version' => '2.4',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section2',
 			'title'   => __('Default language','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -7115,7 +6742,7 @@ class Class_leaflet_options {
 		$this->settings['misc_plugin_language_area'] = array(
 			'version' => '2.4',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section2',
 			'title'   => __('Where to change the default language','lmm'),
 			'desc'    => __('This setting will only be used when the plugin language is not selected automatically','lmm'),
 			'type'    => 'radio',
@@ -7129,18 +6756,10 @@ class Class_leaflet_options {
 		/*
 		* KML Settings
 		*/
-		$this->settings['misc_kml_heading'] = array(
-			'version' => '1.8',
-			'pane'    => 'misc',
-			'section' => 'misc-section1',
-			'title'   => '', 
-			'desc'    => '<a name="misc3" class="lmm-index-links"></a>' . __( 'KML settings', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['misc_kml_helptext'] = array(
 			'version' => '1.8',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section3',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Choose how marker names should be displayed in KML files', 'lmm') . ' <a href="http://www.mapsmarker.com/kml-names" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
@@ -7149,7 +6768,7 @@ class Class_leaflet_options {
 		$this->settings['misc_kml'] = array(
 			'version' => '1.8',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section3',
 			'title'   => __( 'Marker names in KML', 'lmm' ),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -7160,21 +6779,23 @@ class Class_leaflet_options {
 				'popup' => __('put in front of popup-text', 'lmm')
 			)
 		);
+		$this->settings['misc_kml_helptext2'] = array(
+			'version' => '1.8',
+			'pane'    => 'misc',
+			'section' => 'misc-section3',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:65px;"></div>',
+			'type'    => 'helptext'
+		);
+		
 		/*
 		* Available columns for marker listing page
 		*/
-		$this->settings['misc_marker_listing_columns_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'misc',
-			'section' => 'misc-section1',
-			'title'   => '', 
-			'desc'    => '<a name="misc4" class="lmm-index-links"></a>' . __( 'Available columns for marker listing page', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['misc_marker_listing_columns_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Please select the columns which should be available on the page "List all markers"', 'lmm'),
@@ -7183,7 +6804,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_id'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => __('Columns to show','lmm'),
 			'desc'    => 'ID',
 			'type'    => 'checkbox-readonly',
@@ -7192,7 +6813,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_icon'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Icon','lmm'),
 			'type'    => 'checkbox-readonly',
@@ -7201,7 +6822,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_markername'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Marker name','lmm'),
 			'type'    => 'checkbox-readonly',
@@ -7210,7 +6831,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_popuptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Popup text','lmm'),
 			'type'    => 'checkbox',
@@ -7219,7 +6840,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_layername'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Layer name','lmm') . ' ' . __('(for marker listings below multi-layer maps only)','lmm'),
 			'type'    => 'checkbox',
@@ -7228,7 +6849,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_basemap'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Basemap','lmm'),
 			'type'    => 'checkbox',
@@ -7237,7 +6858,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_layer'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Layer','lmm'),
 			'type'    => 'checkbox',
@@ -7246,7 +6867,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_coordinates'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Coordinates','lmm'),
 			'type'    => 'checkbox',
@@ -7255,7 +6876,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_zoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Zoom','lmm'),
 			'type'    => 'checkbox',
@@ -7264,7 +6885,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_openpopup'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Popup status','lmm'),
 			'type'    => 'checkbox',
@@ -7273,7 +6894,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_panelstatus'] = array(
 			'version' => '1.4',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Panel status','lmm'),
 			'type'    => 'checkbox',
@@ -7282,7 +6903,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_mapsize'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Map size','lmm'),
 			'type'    => 'checkbox',
@@ -7291,7 +6912,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_createdby'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Created by','lmm'),
 			'type'    => 'checkbox',
@@ -7300,7 +6921,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_createdon'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Created on','lmm'),
 			'type'    => 'checkbox',
@@ -7309,7 +6930,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_updatedby'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Updated by','lmm'),
 			'type'    => 'checkbox',
@@ -7318,7 +6939,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_updatedon'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Updated on','lmm'),
 			'type'    => 'checkbox',
@@ -7327,7 +6948,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_controlbox'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Controlbox status','lmm'),
 			'type'    => 'checkbox',
@@ -7336,7 +6957,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_shortcode'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Shortcode','lmm'),
 			'type'    => 'checkbox',
@@ -7345,7 +6966,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_kml'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => 'KML',
 			'type'    => 'checkbox',
@@ -7354,7 +6975,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_fullscreen'] = array(
 			'version' => '1.1',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Fullscreen','lmm'),
 			'type'    => 'checkbox',
@@ -7363,7 +6984,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_qr_code'] = array(
 			'version' => '1.1',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('QR code','lmm'),
 			'type'    => 'checkbox',
@@ -7372,7 +6993,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_geojson'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => 'GeoJSON',
 			'type'    => 'checkbox',
@@ -7381,7 +7002,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_georss'] = array(
 			'version' => '1.2',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => 'GeoRSS',
 			'type'    => 'checkbox',
@@ -7390,7 +7011,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_columns_wikitude'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => 'Wikitude',
 			'type'    => 'checkbox',
@@ -7399,18 +7020,10 @@ class Class_leaflet_options {
 		/*
 		* Sort order for marker listing page
 		*/
-		$this->settings['misc_marker_listing_sort_heading'] = array(
-			'version' => '2.3',
-			'pane'    => 'misc',
-			'section' => 'misc-section1',
-			'title'   => '', 
-			'desc'    => '<a name="misc5" class="lmm-index-links"></a>' . __( 'Sort order for marker listing page', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['misc_marker_listing_sort_helptext'] = array(
 			'version' => '2.3',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section5',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Please select order by and sort order for "List all markers" page', 'lmm'),
@@ -7419,7 +7032,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_sort_order_by'] = array(
 			'version' => '2.3',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section5',
 			'title'   => __('Order list of markers by','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -7437,7 +7050,7 @@ class Class_leaflet_options {
 		$this->settings['misc_marker_listing_sort_sort_order'] = array(
 			'version' => '2.3',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section5',
 			'title'   => __('Sort order','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -7447,21 +7060,22 @@ class Class_leaflet_options {
 				'DESC' => __('descending','lmm')
 			)
 		);
+		$this->settings['misc_marker_listing_sort_helptext2'] = array(
+			'version' => '2.3',
+			'pane'    => 'misc',
+			'section' => 'misc-section5',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:0px;"></div>',
+			'type'    => 'helptext'
+		);		
 		/*
 		* Available columns for layer listing page
 		*/
-		$this->settings['misc_layer_listing_columns_heading'] = array(
-			'version' => '1.0',
-			'pane'    => 'misc',
-			'section' => 'misc-section1',
-			'title'   => '', 
-			'desc'    => '<a name="misc6" class="lmm-index-links"></a>' . __( 'Available columns for layer listing page', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['misc_layer_listing_columns_helptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Please select the columns which should be available on the page "List all layers"', 'lmm'),
@@ -7470,7 +7084,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_id'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => __('Columns to show','lmm'),
 			'desc'    => 'ID',
 			'type'    => 'checkbox-readonly',
@@ -7479,7 +7093,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_type'] = array(
 			'version' => '1.7',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Type','lmm'),
 			'type'    => 'checkbox-readonly',
@@ -7488,7 +7102,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_layername'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Layer name','lmm'),
 			'type'    => 'checkbox-readonly',
@@ -7497,7 +7111,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_markercount'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Number of markers','lmm'),
 			'type'    => 'checkbox-readonly',
@@ -7506,7 +7120,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_basemap'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Basemap','lmm'),
 			'type'    => 'checkbox',
@@ -7515,7 +7129,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_layercenter'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Layer center','lmm'),
 			'type'    => 'checkbox',
@@ -7524,7 +7138,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_zoom'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Zoom','lmm'),
 			'type'    => 'checkbox',
@@ -7533,7 +7147,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_mapsize'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Map size','lmm'),
 			'type'    => 'checkbox',
@@ -7542,7 +7156,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_panelstatus'] = array(
 			'version' => '1.4',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Panel status','lmm'),
 			'type'    => 'checkbox',
@@ -7551,7 +7165,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_createdby'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Created by','lmm'),
 			'type'    => 'checkbox',
@@ -7560,7 +7174,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_createdon'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Created on','lmm'),
 			'type'    => 'checkbox',
@@ -7569,7 +7183,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_updatedby'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Updated by','lmm'),
 			'type'    => 'checkbox',
@@ -7578,7 +7192,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_updatedon'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Updated on','lmm'),
 			'type'    => 'checkbox',
@@ -7587,7 +7201,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_controlbox'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Controlbox status','lmm'),
 			'type'    => 'checkbox',
@@ -7596,7 +7210,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_shortcode'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Shortcode','lmm'),
 			'type'    => 'checkbox',
@@ -7605,7 +7219,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_kml'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => 'KML',
 			'type'    => 'checkbox',
@@ -7614,7 +7228,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_fullscreen'] = array(
 			'version' => '1.1',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Fullscreen','lmm'),
 			'type'    => 'checkbox',
@@ -7623,7 +7237,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_qr_code'] = array(
 			'version' => '1.1',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('QR code','lmm'),
 			'type'    => 'checkbox',
@@ -7632,7 +7246,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_geojson'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => 'GeoJSON',
 			'type'    => 'checkbox',
@@ -7641,7 +7255,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_georss'] = array(
 			'version' => '1.2',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => 'GeoRSS',
 			'type'    => 'checkbox',
@@ -7650,7 +7264,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_columns_wikitude'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => 'Wikitude',
 			'type'    => 'checkbox',
@@ -7659,18 +7273,10 @@ class Class_leaflet_options {
 		/*
 		* Sort order for layer listing page
 		*/
-		$this->settings['misc_layer_listing_sort_heading'] = array(
-			'version' => '2.3',
-			'pane'    => 'misc',
-			'section' => 'misc-section1',
-			'title'   => '', 
-			'desc'    => '<a name="misc7" class="lmm-index-links"></a>' . __( 'Sort order for layer listing page', 'lmm') . ' <a href="#" title="' . esc_attr__('Scroll to top','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/icon-scroll-to-top.png" /></a>',
-			'type'    => 'heading'
-		);
 		$this->settings['misc_layer_listing_sort_helptext'] = array(
 			'version' => '2.3',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section7',
 			'std'     => '', 
 			'title'   => '',
 			'desc'    => __( 'Please select order by and sort order for "List all layers" page', 'lmm'),
@@ -7679,7 +7285,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_sort_order_by'] = array(
 			'version' => '2.3',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section7',
 			'title'   => __('Order list of markers by','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -7696,7 +7302,7 @@ class Class_leaflet_options {
 		$this->settings['misc_layer_listing_sort_sort_order'] = array(
 			'version' => '2.3',
 			'pane'    => 'misc',
-			'section' => 'misc-section1',
+			'section' => 'misc-section7',
 			'title'   => __('Sort order','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
@@ -7706,18 +7312,27 @@ class Class_leaflet_options {
 				'DESC' => __('descending','lmm')
 			)
 		);		
+		$this->settings['misc_layer_listing_sort_helptext2'] = array(
+			'version' => '2.3',
+			'pane'    => 'misc',
+			'section' => 'misc-section7',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<div style="height:0px;"></div>',
+			'type'    => 'helptext'
+		);
 		/*===========================================
 		*
 		*
 		* pane reset
 		*
 		*
-		===========================================*/
+		===========================================*/	
 		$this->settings['reset_settings'] = array(
 			'version' => '1.0',
 			'pane'    => 'reset',
 			'section' => 'reset-section1',
-			'title'   => __( 'Reset Settings','lmm' ),
+			'title'   => __('Warning - cannot be undone!','lmm'),
 			'type'    => 'checkbox',
 			'std'     => 0,
 			'class'   => 'warning', // Custom class for CSS
@@ -7744,31 +7359,6 @@ class Class_leaflet_options {
 	public function register_settings() {
 		
 		register_setting( 'leafletmapsmarker_options', 'leafletmapsmarker_options', array ( &$this, 'validate_settings' ) );
-		
-        foreach ( $this->sections as $slugs => $titles ) {
-            if ( $slugs == 'basemaps-section1' )
-                add_settings_section( $slugs, $titles, array( &$this, 'display_basemaps_section' ), 'leafletmapsmarker_settings' );
-            else if ( $slugs == 'basemaps-section2' )
-                add_settings_section( $slugs, $titles, array( &$this, 'display_basemaps_section' ), 'leafletmapsmarker_settings' );
-            else if ( $slugs == 'overlays-section1' )
-                add_settings_section( $slugs, $titles, array( &$this, 'display_overlays_section' ), 'leafletmapsmarker_settings' );
-            else if ( $slugs == 'overlays-section2' )
-                add_settings_section( $slugs, $titles, array( &$this, 'display_overlays_section' ), 'leafletmapsmarker_settings' );
-            else if ( $slugs == 'wms-sections1' )
-                add_settings_section( $slugs, $titles, array( &$this, 'display_wms_section' ), 'leafletmapsmarker_settings' );
-            else if ( $slugs == 'defaults_marker-section1' )
-                add_settings_section( $slugs, $titles, array( &$this, 'display_defaults_marker_section' ), 'leafletmapsmarker_settings' );
-            else if ( $slugs == 'defaults_layer-section1' )
-                add_settings_section( $slugs, $titles, array( &$this, 'display_defaults_layer_section' ), 'leafletmapsmarker_settings' );
-            else if ( $slugs == 'google-section1' )
-                add_settings_section( $slugs, $titles, array( &$this, 'display_google_section' ), 'leafletmapsmarker_settings' );
-            else if ( $slugs == 'directions-section1' )
-                add_settings_section( $slugs, $titles, array( &$this, 'display_directions_section' ), 'leafletmapsmarker_settings' );
-            else if ( $slugs == 'misc-section1' )
-                add_settings_section( $slugs, $titles, array( &$this, 'display_misc_section' ), 'leafletmapsmarker_settings' );
-            else
-                add_settings_section( $slugs, $titles, array( &$this, 'display_section' ), 'leafletmapsmarker_settings' );
-        } 
 		
 		$this->get_settings();
 

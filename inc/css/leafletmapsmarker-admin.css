@@ -132,7 +132,7 @@ ul.ui-tabs-navleft{
 }
 ul.ui-tabs-navleft li{
 	margin: 0px 0 0 10px;
-	padding: 5px 0 5px 0;
+	padding: 0px;
 	font-weight: bold;
 	border-top:1px solid #E9E9E9;
 	border-left:1px solid #F5F5F5;
@@ -140,13 +140,13 @@ ul.ui-tabs-navleft li{
 ul.ui-tabs-navleft li a{
 	display: block;
 	margin: 0px 0 0 10px;
-	padding: 5px 0 5px 0;
+	padding: 5px 5px 5px 0;
 	text-decoration: none;
 }
 ul.ui-tabs-navleft li.ui-state-active{
 	display: block;
 	margin: 0px 0 0 10px;
-	padding: 5px 0 5px 0;
+	padding: 0px;
 	background: #fff !important;
 	color: #DB724F;
 	border-left:1px solid #E9E9E9;
@@ -166,6 +166,6 @@ h3.titl{
 	color: #444444;
 	background: #ffffff;
 	margin: 17px 0 -18px 0;
-	padding: 10px 0 20px 25px;
+	padding: 10px 0 10px 10px;
 	border-top:1px solid #E9E9E9;
 }
