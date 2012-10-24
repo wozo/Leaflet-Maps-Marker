@@ -46,6 +46,7 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-help-credits.php') { die (
 		<li>- Question Mark Icon by <a href="http://www.randomjabber.com/" target="_blank">RandomJabber</a></li>
 		<li>- Images for changelog from <a href="http://www.mozilla.org/en-US/firefox/11.0/releasenotes/">Firefox release notes</a>, licence: Creative Commons Attribution ShareAlike (CC BY-SA 3.0)</li> 
 		<li>- Plus-, json-, language- &amp; csv-export-icon from <a href="http://p.yusukekamiyamane.com/" target="_blank">Yusuke Kamiyamane</a>, licence: Creative Commons Attribution (by)</li>
+		<li>- Home-Icon from <a href="http://prothemedesign.com/" target="_blank">Pro Theme Design</a>, licence: Creative Commons Attribution (by)</li>
 	</ul>
 	<h3><?php _e('Translations','lmm') ?></h3>
 	<p>
@@ -77,7 +78,7 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-help-credits.php') { die (
 	<h3><?php _e('Credits & special thanks','lmm') ?></h3>
 	<ul>
 		<li>- Sindre Wimberger (<a href="http://www.sindre.at" target="_blank">http://www.sindre.at</a>) - bugfixing &amp; geo-consulting</li>
-		<li>- Susanne Mandl (<a href="http://www.greenflamingomedia.com" target="_blank">http://www.greenflamingomedia.com</a>) - plugin logo</li>
+		<li>- Julia Loew (<a href="http://www.weiderand.net" target="_blank">http://www.weiderand.net</a>) - logo &amp; corporate design</li>
 		<li>- <a href="http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/" target="_blank">WordPress-Settings-API-Class</a> by Aliso the geek</li>
 		<li>- <a href="http://www.nanodesu.ru" target="_blank">Hind</a> who originally release a basic Leaflet plugin (not available anymore) which I used partly as a basis for Leaflet Maps Marker plugin</li>
 		<li>- <a href="http://psha.org.ru/b/leaflet-plugins.html" target="_blank">shramov</a> for bing and google maps plugins for leaflet</li>

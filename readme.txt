@@ -212,11 +212,12 @@ This program is free software; you can redistribute it and/or modify it under th
 * Adress autocompletion powered by [Google Places API](http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html)
 * Map center icon [Joseph Wain](http://glyphish.com/) - Creative Commons Attribution (by)
 * Plus, json & csv-export icon by [Yusuke Kamiyamane](http://www.pinvoke.com/) - Creative Commons Attribution (by)
-* Question Mark Icon by [RandomJabber](http://www.randomjabber.com/)
+* Question Mark icon by [RandomJabber](http://www.randomjabber.com/)
+* Home icon by [ Pro Theme Design](http://prothemedesign.com/) - Creative Commons Attribution (by)
 
 = Credits & special thanks to =
 * Sindre Wimberger ([http://www.sindre.at](http://www.sindre.at)) for help with bugfixing & geo-consulting
-* Susanne Mandl ([http://www.greenflamingomedia.com](http://www.greenflamingomedia.com)) for plugin logo
+* Julia Loew ([http://www.weiderand.net](http://www.weiderand.net)) for logo and corporate design
 * Wordpress-Settings-API-Class by Aliso the geek ([http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/](http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/))
 * [Hind](http://www.nanodesu.ru) who originally release a basic Leaflet plugin (not available anymore) which I used partly as a basis for Leaflet Maps Marker plugin
 * [shramov](http://psha.org.ru/b/leaflet-plugins.html) for bing and google maps plugins for leaflet

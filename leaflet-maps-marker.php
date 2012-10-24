@@ -206,7 +206,8 @@ function __construct() {
 			foreach ($feed->get_items(0,3) as $item) {
 				echo '<p>' . $item->get_date('j F Y') . ': <strong><a href="' . $item->get_permalink() . '">' . $item->get_title() . '</a></strong><br/>' . $item->get_description() . '</p>'.PHP_EOL;
 			}
-			echo '<p><a href="http://feeds.feedburner.com/MapsMarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss.png" width="16" height="16" alt="rss"> RSS</a>&nbsp;&nbsp;&nbsp;<a href="http://feedburner.google.com/fb/a/mailverify?uri=MapsMarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss-email.png" width="16" height="16" alt="rss-email"> ' . __('E-Mail','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/mapsmarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-twitter.png" width="16" height="16" alt="twitter"> Twitter</a>&nbsp;&nbsp;&nbsp;<a href="http://facebook.com/mapsmarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-facebook.png" width="16" height="16" alt="facebook"> Facebook</a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/robertharm/Leaflet-Maps-Marker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-github.png" width="16" height="16" alt="github"> github</a>&nbsp;&nbsp;&nbsp;<a href="http://translate.mapsmarker.com/projects/lmm" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-translations.png" width="16" height="16" alt="translations"> ' . __('translations','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="http://www.mapsmarker.com/donations" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-donations.png" width="16" height="16" alt="donations"> ' . __('donations','lmm') . '</a></p>';		
+			echo '<p><a style="text-decoration:none;" href="http://www.mapsmarker.com" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-website-home.png" width="16" height="16" alt="mapsmarker.com"> MapsMarker.com</a>&nbsp;&nbsp;&nbsp;
+			<a href="http://www.mapsmarker.com/donations" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-donations.png" width="16" height="16" alt="donations"> ' . __('donations','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a style="text-decoration:none;" href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank" title="' . esc_attr__('please rate this plugin on wordpress.org','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-star.png" width="16" height="16" alt="ratings"> ' . __('rate plugin','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="http://translate.mapsmarker.com/projects/lmm" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-translations.png" width="16" height="16" alt="translations"> ' . __('translations','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/robertharm/Leaflet-Maps-Marker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-github.png" width="16" height="16" alt="github"> github</a>&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/mapsmarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-twitter.png" width="16" height="16" alt="twitter"> Twitter</a>&nbsp;&nbsp;&nbsp;<a href="http://facebook.com/mapsmarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-facebook.png" width="16" height="16" alt="facebook"> Facebook</a>&nbsp;&nbsp;&nbsp;<a style="text-decoration:none;" href="http://www.mapsmarker.com/changelog" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-changelog-header.png" width="16" height="16" alt="changelog"> ' . __('Changelog','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="http://feeds.feedburner.com/MapsMarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss.png" width="16" height="16" alt="rss"> RSS</a>&nbsp;&nbsp;&nbsp;<a href="http://feedburner.google.com/fb/a/mailverify?uri=MapsMarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss-email.png" width="16" height="16" alt="rss-email"> ' . __('E-Mail','lmm') . '</a>&nbsp;&nbsp;&nbsp;</p>';		
 	}
   }
   function lmm_dashboard_widget_control(){
@@ -295,14 +296,16 @@ function __construct() {
   }
   function lmm_admin_menu() {
 	$lmm_options = get_option( 'leafletmapsmarker_options' );
-	$page = add_object_page('Leaflet Maps Marker', 'Leaflet Maps Marker', $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_markers', array(&$this, 'lmm_list_markers'), LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-page.png' );
-	$page2 = add_submenu_page('leafletmapsmarker_markers', 'Leaflet Maps Marker - ' . __('List all markers', 'lmm'), __('List all markers', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_markers', array(&$this, 'lmm_list_markers') );
-	$page3 = add_submenu_page('leafletmapsmarker_markers', 'Leaflet Maps Marker - ' . __('add/edit marker', 'lmm'), __('Add new marker', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_marker', array(&$this, 'lmm_marker') );
-	$page4 = add_submenu_page('leafletmapsmarker_markers', 'Leaflet Maps Marker - ' . __('List all layers', 'lmm'), __('List all layers', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_layers', array(&$this, 'lmm_list_layers') );
-	$page5 = add_submenu_page('leafletmapsmarker_markers', 'Leaflet Maps Marker - ' . __('add/edit layer', 'lmm'), __('Add new layer', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_layer', array(&$this, 'lmm_layer') );
-	$page6 = add_submenu_page('leafletmapsmarker_markers', 'Leaflet Maps Marker - ' . __('Tools', 'lmm'), __('Tools', 'lmm'), 'activate_plugins','leafletmapsmarker_tools', array(&$this, 'lmm_tools') );
-	$page7 = add_submenu_page('leafletmapsmarker_markers', 'Leaflet Maps Marker - ' . __('Settings', 'lmm'), __('Settings', 'lmm'), 'activate_plugins','leafletmapsmarker_settings', array(&$this, 'lmm_settings') );
-	$page8 = add_submenu_page('leafletmapsmarker_markers', 'Leaflet Maps Marker - ' . __('Help & Credits', 'lmm'), __('Help & Credits', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_help', array(&$this, 'lmm_help') );
+	$page = add_object_page('Maps Marker', 'Maps Marker', $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_markers', array(&$this, 'lmm_list_markers'), LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-page.png' );
+	$page2 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('List all markers', 'lmm'), __('List all markers', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_markers', array(&$this, 'lmm_list_markers') );
+	$page3 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('add/edit marker', 'lmm'), __('Add new marker', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_marker', array(&$this, 'lmm_marker') );
+	$page4 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('List all layers', 'lmm'), __('List all layers', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_layers', array(&$this, 'lmm_list_layers') );
+	$page5 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('add/edit layer', 'lmm'), __('Add new layer', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_layer', array(&$this, 'lmm_layer') );
+	$page6 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Tools', 'lmm'), __('Tools', 'lmm'), 'activate_plugins','leafletmapsmarker_tools', array(&$this, 'lmm_tools') );
+	$page7 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Settings', 'lmm'), __('Settings', 'lmm'), 'activate_plugins','leafletmapsmarker_settings', array(&$this, 'lmm_settings') );
+	$page8 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Help & Credits', 'lmm'), __('Help & Credits', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_help', array(&$this, 'lmm_help') );
+	$page9 = add_submenu_page('leafletmapsmarker_markers', 'www.mapsmarker.com', 'www.mapsmarker.com', $lmm_options[ 'capabilities_edit' ], 'www_mapsmarker_com', array(&$this, 'lmm_mapsmarker_com') );
+
 	//info: add javascript - leaflet.js - for admin area
 	add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_admin_enqueue_scripts'),7);
 	add_action('admin_print_scripts-'.$page5, array(&$this, 'lmm_admin_enqueue_scripts'),8);
@@ -333,6 +336,9 @@ function __construct() {
 	add_action( 'admin_head-'. $page3, array(&$this, 'lmm_image_css_override'),1000);
 	add_action( 'admin_head-'. $page5, array(&$this, 'lmm_image_css_override'),1000);
   }
+  function lmm_mapsmarker_com(){
+	 echo '<script type="text/javascript">window.location.href = "http://www.mapsmarker.com";</script>  ';
+  }
   function lmm_add_admin_bar_menu() {
 	global $wp_version;
 	if ( version_compare( $wp_version, '3.1', '>=' ) ) 
@@ -344,7 +350,7 @@ function __construct() {
 			$menu_items = array(
 				array(
 					'id' => 'lmm',
-					'title' => '<img style="float:left;margin:5px 5px 0 0;" src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-page.png"/></span> Leaflet Maps Marker',
+					'title' => '<img style="float:left;margin:3px 5px 0 0;" src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-tinymce.png"/></span> Maps Marker',
 					'href' => admin_url('admin.php?page=leafletmapsmarker_markers'),
 					'meta' => array( 'title' => 'Wordpress-Plugin ' . __('by','lmm') . ' www.mapsmarker.com' )
 				),
@@ -399,7 +405,7 @@ function __construct() {
 					array(
 						'id' => 'lmm-plugin-website',
 						'parent' => 'lmm',
-						'title' => 'mapsmarker.com',
+						'title' => 'www.mapsmarker.com',
 						'href' => 'http://www.mapsmarker.com',
 						'meta' => array( 'target' => '_blank', 'title' => __('Open plugin website','lmm') )
 					)	
