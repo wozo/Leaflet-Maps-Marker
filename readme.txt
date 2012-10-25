@@ -112,7 +112,7 @@ Please let me know which feature you think is missing by adding your ideas at [h
 * Hindi (hi_IN) thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
 * Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
 * Japanese (ja) thanks to [Shu Higashi](http://twitter.com/higa4)
-* Polish (pl_PL) translation thanks to Pawel Wyszynski, [http://injit.pl](http://injit.pl)
+* Polish (pl_PL) translation thanks to Pawel Wyszynski, [http://injit.pl](http://injit.pl) and Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
 * Russian (ru_RU) thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
 * Slovak (sk_SK) thanks to Zdenko Podobny
 * Spanish (es_ES) thanks to David Ramirez, [http://www.hiperterminal.com](http://www.hiperterminal.com) and Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
@@ -290,6 +290,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
 = v2.9 - xx.10.2012 =
+* NEW: new logo and updated [mapsmarker.com](http://www.mapsmarker.com) website
+* NEW: revamped settings panel for better usability
 * NEW: compatibilty check notices are now shown globally on each admin page
 * NEW: added compatibility check for incompatible plugin [Lazy Load]([http://wordpress.org/extend/plugins/lazy-load/)
 * NEW: added compatibility check for incompatible plugin [Contact Form 7 Map Field]([http://wordpress.org/extend/plugins/contact-form-7-map-field/)
@@ -298,6 +300,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated Slovak translation thanks to Zdenko Podobny
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* CHANGED: Polish transation thanks to Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
 * CHANGED: updated German translation
 * CHANGED: optimized internal code structure
 * BUGFIX: table for list of markers below layer maps was not as wide as map if map with was set in %
