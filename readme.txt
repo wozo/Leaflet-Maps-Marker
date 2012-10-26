@@ -11,9 +11,14 @@ Tested up to:      3.5beta1
 Stable tag:        2.9
 License:           GPLv2
 
-Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
+We are working hard on delivering the best mapping solution available for WordPress - helping you to share your favorite spots
 
 == Description ==
+Maps Marker allows you to pin, organize and share your favorite spots through your WordPress powered site easily. You can use maps from OpenStreetMap, Google Maps, Google Earth, Bing Maps or custom maps and additionally display your spots in innovative ways like through augmented-reality browsers.
+
+= Mission Statement =
+[Maps Marker](http://www.mapsmarker.com) helps you to share your favorite spots easily. The plugin is based on the famous [leaflet.js library](http://www.leaflet.js) from [CloudMade](http://www.cloudmade.com) which also powers maps on sites like [Flickr](http://www.flickr.com/map), [Foursquare](http://readwrite.com/2012/02/29/foursquare_dumps_google_goes_open-source_for_maps), [Craigslist](http://www.theverge.com/2012/10/4/3452526/craigslist-map-view-apartment-listings-roll-out), [Wikipedia](https://play.google.com/store/apps/details?id=org.wikipedia.wlm) and [Washington Post](http://www.washingtonpost.com/wp-srv/special/politics/election-map-2012/senate/). We use this library as the basis for our plugin and have integrated several other libraries for enhancing its functionality. Our main goal is to provide you with an intuitive and user-friendly interface for organizing your spots within your WordPress powered site. Furthermore we are constantly working on improving our plugin by adding new and innovative ways for managing and showing your spots. Our roadmap for new releases gets aligned to our users' needs - so giving support and talking to our users is essential. 
+
 = Plugin's Official Site =
 http://mapsmarker.com
 
@@ -291,6 +296,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v2.9 - xx.10.2012 =
 * NEW: new logo and updated [mapsmarker.com](http://www.mapsmarker.com) website
+* NEW: update to [leaflet.js](http://www.leafletjs.com) v0.45 (fixing issues with Internet Explorer 10 and Chrome 23)
 * NEW: revamped settings panel for better usability
 * NEW: compatibilty check notices are now shown globally on each admin page
 * NEW: added compatibility check for incompatible plugin [Lazy Load]([http://wordpress.org/extend/plugins/lazy-load/)

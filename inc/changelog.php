@@ -76,6 +76,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
+		update to <a href="http://www.leafletjs.com" target="_blank">leaflet.js</a> v0.45 (fixing issues with Internet Explorer 10 and Chrome 23)
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
 		revamped settings panel for better usability
 		</td></tr>
 		<tr><td>
