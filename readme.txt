@@ -17,7 +17,7 @@ We are working hard on delivering the best mapping solution available for WordPr
 Maps Marker allows you to pin, organize and share your favorite spots through your WordPress powered site easily. You can use maps from OpenStreetMap, Google Maps, Google Earth, Bing Maps or custom maps and additionally display your spots in innovative ways like through augmented-reality browsers.
 
 = Mission Statement =
-[Maps Marker](http://www.mapsmarker.com) helps you to share your favorite spots easily. The plugin is based on the famous [leaflet.js library](http://www.leaflet.js) from [CloudMade](http://www.cloudmade.com) which also powers maps on sites like [Flickr](http://www.flickr.com/map), [Foursquare](http://readwrite.com/2012/02/29/foursquare_dumps_google_goes_open-source_for_maps), [Craigslist](http://www.theverge.com/2012/10/4/3452526/craigslist-map-view-apartment-listings-roll-out), [Wikipedia](https://play.google.com/store/apps/details?id=org.wikipedia.wlm) and [Washington Post](http://www.washingtonpost.com/wp-srv/special/politics/election-map-2012/senate/). We use this library as the basis for our plugin and have integrated several other libraries for enhancing its functionality. Our main goal is to provide you with an intuitive and user-friendly interface for organizing your spots within your WordPress powered site. Furthermore we are constantly working on improving our plugin by adding new and innovative ways for managing and showing your spots. Our roadmap for new releases gets aligned to our users' needs - so giving support and talking to our users is essential. 
+[Maps Marker](http://www.mapsmarker.com) helps you to share your favorite spots easily. The plugin is based on the famous [leaflet.js library](http://www.leaflet.js) from [CloudMade](http://www.cloudmade.com) which also powers maps on sites like [Flickr](http://www.flickr.com/map), [Foursquare](http://readwrite.com/2012/02/29/foursquare_dumps_google_goes_open-source_for_maps), [Craigslist](http://www.theverge.com/2012/10/4/3452526/craigslist-map-view-apartment-listings-roll-out), [Wikipedia](http://en.wikipedia.org/wiki/Wikipedia_App) and [Washington Post](http://www.washingtonpost.com/wp-srv/special/politics/election-map-2012/senate/). We use this library as the basis for our plugin and have integrated several other libraries for enhancing its functionality. Our main goal is to provide you with an intuitive and user-friendly interface for organizing your spots within your WordPress powered site. Furthermore we are constantly working on improving our plugin by adding new and innovative ways for managing and showing your spots. Our roadmap for new releases gets aligned to our users' needs - so giving support and talking to our users is essential. 
 
 = Plugin's Official Site =
 http://mapsmarker.com
@@ -33,7 +33,7 @@ Leaflet Maps Marker allows you to
 * add popup description text or images for each marker,
 * choose individual basemap, size and zoom level for each marker/layer map,
 * organize your markers in layers and
-* show them thanks to the [Leaflet library from Cloudmade](http://leaflet.cloudmade.com/) 
+* show them thanks to the [Leaflet library from Cloudmade](http://www.leafletjs.com) 
 * by adding a shortcode (e.g. mapsmarker marker="1")] to posts, pages, widgets or template
 
 on basemaps from
@@ -209,7 +209,7 @@ Good news, this plugin is free for everyone! Since it's released under the GPL, 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License included with this plugin for more details. 
 
 = Licenses for used libraries, services and images =
-* Leaflet - Copyright (c) 2010-2012, CloudMade, Vladimir Agafonkin [http://leaflet.cloudmade.com](http://leaflet.cloudmade.com)
+* Leaflet - Copyright (c) 2010-2012, CloudMade, Vladimir Agafonkin [http://www.leafletjs.com](http://www.leafletjs.com)
 * OpenStreetMap - The Free Wiki World Map: [OpenStreetMap License](http://wiki.openstreetmap.org/wiki/OpenStreetMap_License) 
 * Map Icons Collection by Nicolas Mollet - [http://mapicons.nicolasmollet.com](http://mapicons.nicolasmollet.com)
 * Datasource OGD Vienna maps: Stadt Wien, Creative Commons Attribution (by) [http://data.wien.gv.at](http://data.wien.gv.at)
@@ -301,12 +301,15 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: compatibilty check notices are now shown globally on each admin page
 * NEW: added compatibility check for incompatible plugin [Lazy Load]([http://wordpress.org/extend/plugins/lazy-load/)
 * NEW: added compatibility check for incompatible plugin [Contact Form 7 Map Field]([http://wordpress.org/extend/plugins/contact-form-7-map-field/)
+* NEW: added fallback for installation on hosts where unzip of default marker icons did not work with default method
 * CHANGED: show link "add new map" in TinyMCE popup if no maps have been created yet
 * CHANGED: updated Spanish translation thanks to Alvaro Lara, [http://www.alvarolara.com](http://www.alvarolara.com)
 * CHANGED: updated Slovak translation thanks to Zdenko Podobny
 * CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
-* CHANGED: Polish transation thanks to Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
+* CHANGED: updated Polish transation thanks to Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
+* CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
+* CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
 * CHANGED: updated German translation
 * CHANGED: optimized internal code structure
 * BUGFIX: table for list of markers below layer maps was not as wide as map if map with was set in %
@@ -356,7 +359,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 = v2.7.1 - 24.08.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.7.1)
-* NEW: upgrade to leaflet.js v0.4.4  - [changelog](http://leaflet.cloudmade.com/2012/07/30/leaflet-0-4-released.html)
+* NEW: upgrade to leaflet.js v0.4.4  - [changelog](http://www.leafletjs.com/2012/07/30/leaflet-0-4-released.html)
 * NEW: option to add an unobtrusive scale control to maps
 * NEW: support for Retina displays to display maps in a higher resolution
 * NEW: boxzoom option (whether the map can be zoomed to a rectangular area specified by dragging the mouse while pressing shift)

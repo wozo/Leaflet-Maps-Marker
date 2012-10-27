@@ -17,6 +17,17 @@ if (get_option('leafletmapsmarker_version') == 'init') {
 		copy_dir($source, $target, $skip_list = array() );
 		$zipfile = LEAFLET_PLUGIN_ICONS_DIR . DIRECTORY_SEPARATOR . 'mapicons.zip';
 		unzip_file( $zipfile, $target );
+		//info: fallback for hosts where copying zipfile to LEAFLET_PLUGIN_ICON_DIR doesnt work
+		if ( !file_exists(LEAFLET_PLUGIN_ICONS_DIR . DIRECTORY_SEPARATOR . 'information.png') ) {
+			if (class_exists('ZipArchive')) {
+				$zip = new ZipArchive;
+				$res = $zip->open( LEAFLET_PLUGIN_DIR . 'inc' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'mapicons' . DIRECTORY_SEPARATOR . 'mapicons.zip');
+			    if ($res === TRUE) {
+					$zip->extractTo(LEAFLET_PLUGIN_ICONS_DIR);
+					$zip->close();
+				}		
+			}
+		}
 	}
 	//info: create tables for markers & layers
 	$table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';

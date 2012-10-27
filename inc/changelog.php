@@ -99,6 +99,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		added compatibility check for incompatible plugin <a href="http://wordpress.org/extend/plugins/contact-form-7-map-field/" target="_blank">Contact Form 7 Map Field</a>
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
+		added fallback for installation on hosts where unzip of default marker icons did not work with default method
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		show link "add new map" in TinyMCE popup if no maps have been created yet
@@ -127,6 +132,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		updated Polish translation thanks to Tomasz Rudnicki, <a href="http://www.kochambieszczady.pl" target="_blank">http://www.kochambieszczady.pl</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		updated French translation thanks to Vincèn Pujol, <a href="http://www.skivr.com" target="_blank">http://www.skivr.com</a> and Rodolphe Quiedeville, <a href="http://rodolphe.quiedeville.org/" target="_blank">http://rodolphe.quiedeville.org/</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		updated Japanese translations thanks to <a href="http://twitter.com/higa4" target="_blank">Shu Higash</a>
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
@@ -330,7 +345,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
-		upgrade to leaflet.js v0.4.4 (<a href="http://leaflet.cloudmade.com/2012/07/30/leaflet-0-4-released.html" target=_blank">changelog</a>)
+		upgrade to leaflet.js v0.4.4 (<a href="http://www.leafletjs.com/2012/07/30/leaflet-0-4-released.html" target=_blank">changelog</a>)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">

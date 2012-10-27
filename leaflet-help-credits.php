@@ -35,7 +35,7 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-help-credits.php') { die (
 	</p>
 	<h3><?php _e('Licenses for used libraries, services and images','lmm') ?></h3>
 	<ul>
-		<li>- Leaflet by Cloudmade, <a href="http://leaflet.cloudmade.com" target="_blank">http://leaflet.cloudmade.com</a>, Copyright (c) 2010-2012, CloudMade, Vladimir Agafonkin</li>
+		<li>- Leaflet by Cloudmade, <a href="http://www.leafletjs.com" target="_blank">http://www.leafletjs.com</a>, Copyright (c) 2010-2012, CloudMade, Vladimir Agafonkin</li>
 		<li>- OpenStreetMap: <a href="http://wiki.openstreetmap.org/wiki/OpenStreetMap_License" target="_blank">OpenStreetMap License</a></li>
 		<li>- Datasource OGD Vienna maps: Stadt Wien - <a href="http://data.wien.gv.at" target="_blank">http://data.wien.gv.at</a></li>
 		<li>- Address autocompletion powered by <a href="http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html" target="_blank">Google Places API</a></li>
