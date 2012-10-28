@@ -7,7 +7,7 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.5beta1
+Tested up to:      3.5beta2
 Stable tag:        2.9
 License:           GPLv2
 
@@ -311,7 +311,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
 * CHANGED: updated German translation
-* CHANGED: optimized internal code structure
+* CHANGED: optimized internal code structure (moved some functions to /inc/-directory)
+* CHANGED: optimized database install- and update routine (use of dbdelta()-function)
 * BUGFIX: table for list of markers below layer maps was not as wide as map if map with was set in %
 * BUGFIX: Bing tiles failed to load when p.x or p.y was -ve (bug [#31](https://github.com/shramov/leaflet-plugins/issues/31))
 * BUGFIX: Revert function wrapper for Google Maps (broke deferred loading and compiled version of plugins)

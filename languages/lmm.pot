@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MapsMarker.com\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-27 10:30+0100\n"
-"PO-Revision-Date: 2012-10-27 10:30+0100\n"
+"POT-Creation-Date: 2012-10-28 10:56+0100\n"
+"PO-Revision-Date: 2012-10-28 10:56+0100\n"
 "Last-Translator: Robert Harm <info@mapsmarker.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -2003,98 +2003,98 @@ msgid "RSS via E-Mail"
 msgstr ""
 
 #: ../inc/changelog.php:69
-#: ../inc/changelog.php:163
-#: ../inc/changelog.php:208
+#: ../inc/changelog.php:178
 #: ../inc/changelog.php:223
-#: ../inc/changelog.php:328
-#: ../inc/changelog.php:563
-#: ../inc/changelog.php:571
-#: ../inc/changelog.php:581
-#: ../inc/changelog.php:671
-#: ../inc/changelog.php:766
-#: ../inc/changelog.php:806
-#: ../inc/changelog.php:846
-#: ../inc/changelog.php:866
-#: ../inc/changelog.php:926
-#: ../inc/changelog.php:951
-#: ../inc/changelog.php:981
-#: ../inc/changelog.php:1061
-#: ../inc/changelog.php:1096
-#: ../inc/changelog.php:1131
-#: ../inc/changelog.php:1171
-#: ../inc/changelog.php:1201
-#: ../inc/changelog.php:1221
+#: ../inc/changelog.php:238
+#: ../inc/changelog.php:343
+#: ../inc/changelog.php:578
+#: ../inc/changelog.php:586
+#: ../inc/changelog.php:596
+#: ../inc/changelog.php:686
+#: ../inc/changelog.php:781
+#: ../inc/changelog.php:821
+#: ../inc/changelog.php:861
+#: ../inc/changelog.php:881
+#: ../inc/changelog.php:941
+#: ../inc/changelog.php:966
+#: ../inc/changelog.php:996
+#: ../inc/changelog.php:1076
+#: ../inc/changelog.php:1111
+#: ../inc/changelog.php:1146
+#: ../inc/changelog.php:1186
+#: ../inc/changelog.php:1216
 #: ../inc/changelog.php:1236
 #: ../inc/changelog.php:1251
-#: ../inc/changelog.php:1316
-#: ../inc/changelog.php:1386
-#: ../inc/changelog.php:1396
-#: ../inc/changelog.php:1426
-#: ../inc/changelog.php:1501
+#: ../inc/changelog.php:1266
+#: ../inc/changelog.php:1331
+#: ../inc/changelog.php:1401
+#: ../inc/changelog.php:1411
+#: ../inc/changelog.php:1441
+#: ../inc/changelog.php:1516
 #, php-format
 msgid "Changelog for version %s"
 msgstr ""
 
 #: ../inc/changelog.php:69
-#: ../inc/changelog.php:163
-#: ../inc/changelog.php:208
+#: ../inc/changelog.php:178
 #: ../inc/changelog.php:223
-#: ../inc/changelog.php:328
-#: ../inc/changelog.php:563
-#: ../inc/changelog.php:571
-#: ../inc/changelog.php:581
-#: ../inc/changelog.php:671
-#: ../inc/changelog.php:766
-#: ../inc/changelog.php:806
-#: ../inc/changelog.php:846
-#: ../inc/changelog.php:866
-#: ../inc/changelog.php:926
-#: ../inc/changelog.php:951
-#: ../inc/changelog.php:981
-#: ../inc/changelog.php:1061
-#: ../inc/changelog.php:1096
-#: ../inc/changelog.php:1131
-#: ../inc/changelog.php:1171
-#: ../inc/changelog.php:1201
-#: ../inc/changelog.php:1221
+#: ../inc/changelog.php:238
+#: ../inc/changelog.php:343
+#: ../inc/changelog.php:578
+#: ../inc/changelog.php:586
+#: ../inc/changelog.php:596
+#: ../inc/changelog.php:686
+#: ../inc/changelog.php:781
+#: ../inc/changelog.php:821
+#: ../inc/changelog.php:861
+#: ../inc/changelog.php:881
+#: ../inc/changelog.php:941
+#: ../inc/changelog.php:966
+#: ../inc/changelog.php:996
+#: ../inc/changelog.php:1076
+#: ../inc/changelog.php:1111
+#: ../inc/changelog.php:1146
+#: ../inc/changelog.php:1186
+#: ../inc/changelog.php:1216
 #: ../inc/changelog.php:1236
 #: ../inc/changelog.php:1251
-#: ../inc/changelog.php:1316
-#: ../inc/changelog.php:1386
-#: ../inc/changelog.php:1396
-#: ../inc/changelog.php:1426
-#: ../inc/changelog.php:1501
+#: ../inc/changelog.php:1266
+#: ../inc/changelog.php:1331
+#: ../inc/changelog.php:1401
+#: ../inc/changelog.php:1411
+#: ../inc/changelog.php:1441
+#: ../inc/changelog.php:1516
 msgid "released on"
 msgstr ""
 
 #: ../inc/changelog.php:69
-#: ../inc/changelog.php:163
-#: ../inc/changelog.php:208
+#: ../inc/changelog.php:178
 #: ../inc/changelog.php:223
-#: ../inc/changelog.php:328
-#: ../inc/changelog.php:571
-#: ../inc/changelog.php:581
-#: ../inc/changelog.php:671
-#: ../inc/changelog.php:766
-#: ../inc/changelog.php:806
-#: ../inc/changelog.php:846
-#: ../inc/changelog.php:866
-#: ../inc/changelog.php:926
-#: ../inc/changelog.php:951
-#: ../inc/changelog.php:981
-#: ../inc/changelog.php:1061
-#: ../inc/changelog.php:1096
-#: ../inc/changelog.php:1131
-#: ../inc/changelog.php:1171
-#: ../inc/changelog.php:1201
-#: ../inc/changelog.php:1221
+#: ../inc/changelog.php:238
+#: ../inc/changelog.php:343
+#: ../inc/changelog.php:586
+#: ../inc/changelog.php:596
+#: ../inc/changelog.php:686
+#: ../inc/changelog.php:781
+#: ../inc/changelog.php:821
+#: ../inc/changelog.php:861
+#: ../inc/changelog.php:881
+#: ../inc/changelog.php:941
+#: ../inc/changelog.php:966
+#: ../inc/changelog.php:996
+#: ../inc/changelog.php:1076
+#: ../inc/changelog.php:1111
+#: ../inc/changelog.php:1146
+#: ../inc/changelog.php:1186
+#: ../inc/changelog.php:1216
 #: ../inc/changelog.php:1236
 #: ../inc/changelog.php:1251
-#: ../inc/changelog.php:1316
-#: ../inc/changelog.php:1386
-#: ../inc/changelog.php:1396
-#: ../inc/changelog.php:1426
-#: ../inc/changelog.php:1501
+#: ../inc/changelog.php:1266
+#: ../inc/changelog.php:1331
+#: ../inc/changelog.php:1401
+#: ../inc/changelog.php:1411
+#: ../inc/changelog.php:1441
+#: ../inc/changelog.php:1516
 msgid "blog post with more details about this release"
 msgstr ""
 
@@ -4763,7 +4763,7 @@ msgid "Subscribe to markers"
 msgstr ""
 
 #: ../inc/compatibility-checks.php:17
-msgid "<strong>Warning: you enabled support for bing maps but did not provide an API key. Please visit <a href=\"http://www.mapsmarker.com/bing-maps\" target=\"_blank\">http://www.mapsmarker.com/bing-maps</a> for info on how to get a free bing maps API key!"
+msgid "Warning: you enabled support for bing maps but did not provide an API key. Please visit <a href=\"http://www.mapsmarker.com/bing-maps\" target=\"_blank\">http://www.mapsmarker.com/bing-maps</a> for info on how to get a free bing maps API key!"
 msgstr ""
 
 #: ../inc/compatibility-checks.php:22
@@ -4779,15 +4779,15 @@ msgid "<strong>Warning: you are using the plugin cformsII which is causing the T
 msgstr ""
 
 #: ../inc/compatibility-checks.php:40
-msgid "<strong>Warning: you are using the outdated plugin WP Google Analytics which is incompatible with Leaflet Maps Marker. Please update to a more current Google analytics plugin like http://wordpress.org/extend/plugins/google-analytics-for-wordpress/"
+msgid "Warning: you are using the outdated plugin WP Google Analytics which is incompatible with Leaflet Maps Marker. Please update to a more current Google analytics plugin like http://wordpress.org/extend/plugins/google-analytics-for-wordpress/"
 msgstr ""
 
 #: ../inc/compatibility-checks.php:47
-msgid "<strong>Warning: you are using the plugin \"Better WordPress Minify\" which can cause Leaflet Maps Marker to break if the option \"Minify JS files automatically?\" is active. Please disable this option (Settings / BWP Minify) or add <strong>leafletmapsmarker</strong> to the form field \"Scripts to be ignored (not minified)\""
+msgid "Warning: you are using the plugin \"Better WordPress Minify\" which can cause Leaflet Maps Marker to break if the option \"Minify JS files automatically?\" is active. Please disable this option (Settings / BWP Minify) or add <strong>leafletmapsmarker</strong> to the form field \"Scripts to be ignored (not minified)\""
 msgstr ""
 
 #: ../inc/compatibility-checks.php:53
-msgid "<strong>Warning: you are using the plugin \"Contact Form 7 Map Field\" which is incompatible with Leaflet Maps Marker. Please deactivate this plugin if you want to use maps from Leaflet Maps Marker."
+msgid "Warning: you are using the plugin \"Contact Form 7 Map Field\" which is incompatible with Leaflet Maps Marker. Please deactivate this plugin if you want to use maps from Leaflet Maps Marker."
 msgstr ""
 
 #: ../inc/showmap.php:135

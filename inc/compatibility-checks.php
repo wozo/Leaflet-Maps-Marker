@@ -14,7 +14,7 @@ if (( (($lmm_options['standard_basemap'] == 'bingaerial') || ($lmm_options['stan
 || ((isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 )) 
 ) && ( isset($lmm_options['bingmaps_api_key']) && ($lmm_options['bingmaps_api_key'] == NULL ) 
 )) {
-	echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you enabled support for bing maps but did not provide an API key. Please visit <a href="http://www.mapsmarker.com/bing-maps" target="_blank">http://www.mapsmarker.com/bing-maps</a> for info on how to get a free bing maps API key!','lmm') . '</strong></div></p>';
+	echo '<p><div class="error" style="padding:10px;"><strong>' . __('Warning: you enabled support for bing maps but did not provide an API key. Please visit <a href="http://www.mapsmarker.com/bing-maps" target="_blank">http://www.mapsmarker.com/bing-maps</a> for info on how to get a free bing maps API key!','lmm') . '</strong></div></p>';
 }
 
 //info: plugin Lazy Load
@@ -37,19 +37,19 @@ if (is_plugin_active('cforms/cforms.php') ) {
 }
 //info: plugin WP Google Analytics
 if (is_plugin_active('wp-google-analytics/wp-google-analytics.php') ) {
-	echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you are using the outdated plugin WP Google Analytics which is incompatible with Leaflet Maps Marker. Please update to a more current Google analytics plugin like http://wordpress.org/extend/plugins/google-analytics-for-wordpress/','lmm') . '</strong></div></p>';
+	echo '<p><div class="error" style="padding:10px;"><strong>' . __('Warning: you are using the outdated plugin WP Google Analytics which is incompatible with Leaflet Maps Marker. Please update to a more current Google analytics plugin like http://wordpress.org/extend/plugins/google-analytics-for-wordpress/','lmm') . '</strong></div></p>';
 }
 //info: plugin Better WordPress Minify
 if (is_plugin_active('bwp-minify/bwp-minify.php') ) {
 	$lmm_bwpminify_options = get_option( 'bwp_minify_general' );
 	if ($lmm_bwpminify_options['enable_min_js'] == 'yes') { 
 		if (strpos($lmm_bwpminify_options['input_ignore'], 'leafletmapsmarker') === false)  { 
-			echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you are using the plugin "Better WordPress Minify" which can cause Leaflet Maps Marker to break if the option "Minify JS files automatically?" is active. Please disable this option (Settings / BWP Minify) or add <strong>leafletmapsmarker</strong> to the form field "Scripts to be ignored (not minified)"','lmm') . '</strong></div></p>';
+			echo '<p><div class="error" style="padding:10px;"><strong>' . __('Warning: you are using the plugin "Better WordPress Minify" which can cause Leaflet Maps Marker to break if the option "Minify JS files automatically?" is active. Please disable this option (Settings / BWP Minify) or add <strong>leafletmapsmarker</strong> to the form field "Scripts to be ignored (not minified)"','lmm') . '</strong></div></p>';
 		}
 	}
 }
 //info: plugin Contact Form 7 Map Field
 if (is_plugin_active('contact-form-7-map-field/contact-form-7-map-field.php') ) {
-	echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: you are using the plugin "Contact Form 7 Map Field" which is incompatible with Leaflet Maps Marker. Please deactivate this plugin if you want to use maps from Leaflet Maps Marker.') . '</strong></div></p>';
+	echo '<p><div class="error" style="padding:10px;"><strong>' . __('Warning: you are using the plugin "Contact Form 7 Map Field" which is incompatible with Leaflet Maps Marker. Please deactivate this plugin if you want to use maps from Leaflet Maps Marker.') . '</strong></div></p>';
 }
 ?>
