@@ -298,6 +298,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: new logo and updated [mapsmarker.com](http://www.mapsmarker.com) website
 * NEW: update to [leaflet.js](http://www.leafletjs.com) v0.45 (fixing issues with Internet Explorer 10 and Chrome 23)
 * NEW: revamped settings panel for better usability
+* NEW: add support for bing map localization (cultures)
 * NEW: compatibilty check notices are now shown globally on each admin page
 * NEW: added compatibility check for incompatible plugin [Lazy Load]([http://wordpress.org/extend/plugins/lazy-load/)
 * NEW: added compatibility check for incompatible plugin [Contact Form 7 Map Field]([http://wordpress.org/extend/plugins/contact-form-7-map-field/)

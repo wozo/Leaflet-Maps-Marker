@@ -84,6 +84,7 @@ class Class_leaflet_options {
 		$this->sections['google-section5']			= __('Google Places search prefix','lmm');
 
 		$this->sections['bing-section1']			= __('Bing Maps API Key','lmm');
+		$this->sections['bing-section2']			= __('Bing Culture Parameter','lmm');
 
 		$this->sections['directions-section1']		= __('General directions settings','lmm');
 		$this->sections['directions-section2']		= __('Google Maps directions','lmm');
@@ -5887,7 +5888,7 @@ class Class_leaflet_options {
 				'maps.google.se' => 'maps.google.se',
 				'maps.google.tw' => 'maps.google.tw',
 				'maps.google.co.uk' => 'maps.google.co.uk',
-				'maps.google.co.ve' => 'maps.google.co.ve',
+				'maps.google.co.ve' => 'maps.google.co.ve'
 			)
 		);
 		$this->settings['google_maps_base_domain_custom'] = array(
@@ -6032,7 +6033,145 @@ class Class_leaflet_options {
 			'std'     => '',
 			'type'    => 'text'
 		);				
-		
+		/*
+		* Bing culture parameter
+		* http://msdn.microsoft.com/en-us/library/hh441729.aspx
+		*/
+		$this->settings['bingmaps_culture_helptext'] = array(
+			'version' => '2.9',
+			'pane'    => 'bing',
+			'section' => 'bing-section2',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'The culture parameter allows you to select the language of the culture for geographic entities, place names and map labels on bing map images. For supported cultures, street names are localized to the local culture. For example, if you request a location in France, the street names are localized in French. For other localized data such as country names, the level of localization will vary for each culture. For example, there may not be a localized name for the "United States" for every culture code. See <a href="http://msdn.microsoft.com/en-us/library/hh441729.aspx" target="_blank">this page</a> for more details.', 'lmm'),
+			'type'    => 'helptext'
+		);
+		$this->settings['bingmaps_culture'] = array(
+			'version' => '2.9',
+			'pane'    => 'bing',
+			'section' => 'bing-section2',
+			'title'   => __('Default culture','lmm'),
+			'desc'    => '',
+			'type'    => 'radio',
+			'std'     => 'automatic',
+			'choices' => array(
+				'automatic' => sprintf(__('automatic (uses constant WPLANG defined in wp-config.php = %s - fallback to en_US if not supported by bing)','lmm'),WPLANG),
+				'af' => __('Afrikaans','lmm') . ' (' . __('culture code','lmm') . ': af)',
+				'am' => __('Amharic','lmm') . ' (' . __('culture code','lmm') . ': am)',
+				'ar-sa' => __('Arabic (Saudi Arabia)','lmm') . ' (' . __('culture code','lmm') . ': ar-sa)',
+				'as' => __('Assamese','lmm') . ' (' . __('culture code','lmm') . ': as)',
+				'az-Latn' => __('Azerbaijani (Latin)','lmm') . ' (' . __('culture code','lmm') . ': az-Latn)',
+				'be' => __('Belarusian','lmm') . ' (' . __('culture code','lmm') . ': be)',
+				'bg' => __('Bulgarian','lmm') . ' (' . __('culture code','lmm') . ': bg)',
+				'bn-BD' => __('Bangla (Bangladesh)','lmm') . ' (' . __('culture code','lmm') . ': bn-BD)',
+				'bn-IN' => __('Bangla (India)','lmm') . ' (' . __('culture code','lmm') . ': bn-IN)',
+				'bs' => __('Bosnian (Latin)','lmm') . ' (' . __('culture code','lmm') . ': bs)',
+				'ca' => __('Catalan Spanish','lmm') . ' (' . __('culture code','lmm') . ': ca)',
+				'ca-ES-valencia' => __('Valencian','lmm') . ' (' . __('culture code','lmm') . ': ca-ES-valencia)',
+				'cs' => __('Czech','lmm') . ' (' . __('culture code','lmm') . ': cs)',
+				'cy' => __('Welsh','lmm') . ' (' . __('culture code','lmm') . ': cy)',
+				'da' => __('Danish','lmm') . ' (' . __('culture code','lmm') . ': da)',
+				'de' => __('German (Germany)','lmm') . ' (' . __('culture code','lmm') . ': de)',
+				'de-de' => __('German (Germany)','lmm') . ' (' . __('culture code','lmm') . ': de-de)',
+				'el' => __('Greek','lmm') . ' (' . __('culture code','lmm') . ': el)',
+				'en-GB' => __('English (United Kingdom)','lmm') . ' (' . __('culture code','lmm') . ': en-GB)',
+				'en-US' => __('English (United States)','lmm') . ' (' . __('culture code','lmm') . ': en-US)',
+				'es' => __('Spanish (Spain)','lmm') . ' (' . __('culture code','lmm') . ': es)',
+				'es-ES' => __('Spanish (Spain)','lmm') . ' (' . __('culture code','lmm') . ': es-ES)',
+				'es-US' => __('Spanish (United States)','lmm') . ' (' . __('culture code','lmm') . ': es-US)',
+				'es-MX' => __('Spanish (Mexico)','lmm') . ' (' . __('culture code','lmm') . ': es-MX)',
+				'et' => __('Estonian','lmm') . ' (' . __('culture code','lmm') . ': et)',
+				'eu' => __('Basque','lmm') . ' (' . __('culture code','lmm') . ': eu)',
+				'fa' => __('Persian','lmm') . ' (' . __('culture code','lmm') . ': fa)',
+				'fi' => __('Finnish','lmm') . ' (' . __('culture code','lmm') . ': fi)',
+				'fil-Latn' => __('Filipino','lmm') . ' (' . __('culture code','lmm') . ': fil-Latn)',
+				'fr' => __('French (France)','lmm') . ' (' . __('culture code','lmm') . ': fr)',
+				'fr-FR' => __('French (France)','lmm') . ' (' . __('culture code','lmm') . ': fr-FR)',
+				'fr-CA' => __('French (Canada)','lmm') . ' (' . __('culture code','lmm') . ': fr-CA)',
+				'ga' => __('Irish','lmm') . ' (' . __('culture code','lmm') . ': ga)',
+				'gd-Latn' => __('Scottish Gaelic','lmm') . ' (' . __('culture code','lmm') . ': gd-Latn)',
+				'gl' => __('Galician','lmm') . ' (' . __('culture code','lmm') . ': gl)',
+				'gu' => __('Gujarati','lmm') . ' (' . __('culture code','lmm') . ': gu)',
+				'ha-Latn' => __('Hausa (Latin)','lmm') . ' (' . __('culture code','lmm') . ': ha-Latn)',
+				'he' => __('Hebrew','lmm') . ' (' . __('culture code','lmm') . ': he)',
+				'hi' => __('Hindi','lmm') . ' (' . __('culture code','lmm') . ': hi)',
+				'hr' => __('Croatian','lmm') . ' (' . __('culture code','lmm') . ': hr)',
+				'hu' => __('Hungarian','lmm') . ' (' . __('culture code','lmm') . ': hu)',
+				'hy' => __('Armenian','lmm') . ' (' . __('culture code','lmm') . ': hy)',
+				'id' => __('Indonesian','lmm') . ' (' . __('culture code','lmm') . ': id)',
+				'ig-Latn' => __('Igbo','lmm') . ' (' . __('culture code','lmm') . ': ig-Latn)',
+				'is' => __('Icelandic','lmm') . ' (' . __('culture code','lmm') . ': )',
+				'it' => __('Italian (Italy)','lmm') . ' (' . __('culture code','lmm') . ': it)',
+				'it-it' => __('Italian (Italy)','lmm') . ' (' . __('culture code','lmm') . ': it-it)',
+				'ja' => __('Japanese','lmm') . ' (' . __('culture code','lmm') . ': ja)',
+				'ka' => __('Georgian','lmm') . ' (' . __('culture code','lmm') . ': ka)',
+				'kk' => __('Kazakh','lmm') . ' (' . __('culture code','lmm') . ': kk)',
+				'km' => __('Khmer','lmm') . ' (' . __('culture code','lmm') . ': km)',
+				'kn' => __('Kannada','lmm') . ' (' . __('culture code','lmm') . ': kn)',
+				'ko' => __('Korean','lmm') . ' (' . __('culture code','lmm') . ': ko)',
+				'kok' => __('Konkani','lmm') . ' (' . __('culture code','lmm') . ': kok)',
+				'ku-Arab' => __('Central Curdish','lmm') . ' (' . __('culture code','lmm') . ': ku-Arab)',
+				'ky-Cyrl' => __('Kyrgyz','lmm') . ' (' . __('culture code','lmm') . ': ky-Cyrl)',
+				'lb' => __('Luxembourgish','lmm') . ' (' . __('culture code','lmm') . ': lb)',
+				'lt' => __('Lithuanian','lmm') . ' (' . __('culture code','lmm') . ': lt)',
+				'lv' => __('Latvian','lmm') . ' (' . __('culture code','lmm') . ': lv)',
+				'mi-Latn' => __('Maori','lmm') . ' (' . __('culture code','lmm') . ': mi-Latn)',
+				'mk' => __('Macedonian','lmm') . ' (' . __('culture code','lmm') . ': mk)',
+				'ml' => __('Malayalam','lmm') . ' (' . __('culture code','lmm') . ': ml)',
+				'mn-Cyrl' => __('Mongolian (Cyrillic)','lmm') . ' (' . __('culture code','lmm') . ': mn-Cyrl)',
+				'mr' => __('Marathi','lmm') . ' (' . __('culture code','lmm') . ': mr)',
+				'ms' => __('Malay (Malaysia)','lmm') . ' (' . __('culture code','lmm') . ': ms)',
+				'mt' => __('Maltese','lmm') . ' (' . __('culture code','lmm') . ': mt)',
+				'nb' => __('Norwegian (Bokmal)','lmm') . ' (' . __('culture code','lmm') . ': nb)',
+				'ne' => __('Nepali (Nepal)','lmm') . ' (' . __('culture code','lmm') . ': ne)',
+				'nl' => __('Dutch (Netherlands)','lmm') . ' (' . __('culture code','lmm') . ': nl)',
+				'nl-BE' => __('Dutch (Netherlands)','lmm') . ' (' . __('culture code','lmm') . ': nl-BE)',
+				'nn' => __('Norwegian (Nynorsk)','lmm') . ' (' . __('culture code','lmm') . ': nn)',
+				'nso' => __('Sesotho sa Leboa','lmm') . ' (' . __('culture code','lmm') . ': nso)',
+				'or' => __('Odia','lmm') . ' (' . __('culture code','lmm') . ': or)',
+				'pa' => __('Punjabi (Gurmukhi)','lmm') . ' (' . __('culture code','lmm') . ': pa)',
+				'pa-Arab' => __('Punjabi (Arabic)','lmm') . ' (' . __('culture code','lmm') . ': pa-Arab)',
+				'pl' => __('Polish','lmm') . ' (' . __('culture code','lmm') . ': pl)',
+				'prs-Arab' => __('Dari','lmm') . ' (' . __('culture code','lmm') . ': prs-Arab)',
+				'pt-BR' => __('Portuguese (Brazil)','lmm') . ' (' . __('culture code','lmm') . ': pt-BR)',
+				'pt-PT' => __('Portuguese (Portugal)','lmm') . ' (' . __('culture code','lmm') . ': pt-PT)',
+				'qut-Latn' => __('Kiche','lmm') . ' (' . __('culture code','lmm') . ': qut-Latn)',
+				'quz' => __('Quechua (Peru)','lmm') . ' (' . __('culture code','lmm') . ': quz)',
+				'ro' => __('Romanian (Romania)','lmm') . ' (' . __('culture code','lmm') . ': ro)',
+				'ru' => __('Russian','lmm') . ' (' . __('culture code','lmm') . ': ru)',
+				'rw' => __('Kinyarwanda','lmm') . ' (' . __('culture code','lmm') . ': rw)',
+				'sd-Arab' => __('Sindhi (Arabic)','lmm') . ' (' . __('culture code','lmm') . ': sd-Arab)',
+				'si' => __('Sinhala','lmm') . ' (' . __('culture code','lmm') . ': si)',
+				'sk' => __('Slovak','lmm') . ' (' . __('culture code','lmm') . ': sk)',
+				'sl' => __('Slovenian','lmm') . ' (' . __('culture code','lmm') . ': sl)',
+				'sq' => __('Albanian','lmm') . ' (' . __('culture code','lmm') . ': sq)',
+				'sr-Cyrl-BA' => __('Serbian (Cyrillic, Bosnia and Herzegovina)','lmm') . ' (' . __('culture code','lmm') . ': sr-Cyrl-BA)',
+				'sr-Cyrl-RS' => __('Serbian (Cyrillic, Serbia)','lmm') . ' (' . __('culture code','lmm') . ': sr-Cyrl-RS)',
+				'sr-Latn-RS' => __('Serbian (Latin, Serbia)','lmm') . ' (' . __('culture code','lmm') . ': sr-Latn-RS)',
+				'sv' => __('Swedish (Sweden)','lmm') . ' (' . __('culture code','lmm') . ': sv)',
+				'sw' => __('Kiswahili','lmm') . ' (' . __('culture code','lmm') . ': sw)',
+				'ta' => __('Tamil','lmm') . ' (' . __('culture code','lmm') . ': ta)',
+				'te' => __('Telugu','lmm') . ' (' . __('culture code','lmm') . ': te)',
+				'tg-Cyrl' => __('Tajik (Cyrillic)','lmm') . ' (' . __('culture code','lmm') . ': tg-Cyrl)',
+				'th' => __('Thai','lmm') . ' (' . __('culture code','lmm') . ': th)',
+				'ti' => __('Tigrinya','lmm') . ' (' . __('culture code','lmm') . ': ti)',
+				'tk-Latn' => __('Turkmen (Latin)','lmm') . ' (' . __('culture code','lmm') . ': tk-Latn)',
+				'tn' => __('Setswana','lmm') . ' (' . __('culture code','lmm') . ': tn)',
+				'tr' => __('Turkish','lmm') . ' (' . __('culture code','lmm') . ': tr)',
+				'tt-Cyrl' => __('Tatar (Cyrillic)','lmm') . ' (' . __('culture code','lmm') . ': tt-Cyrl)',
+				'ug-Arab' => __('Uyghur','lmm') . ' (' . __('culture code','lmm') . ': ug-Arab)',
+				'uk' => __('Ukrainian','lmm') . ' (' . __('culture code','lmm') . ': uk)',
+				'ur' => __('Urdu','lmm') . ' (' . __('culture code','lmm') . ': ur)',
+				'uz-Latn' => __('Uzbek (Latin)','lmm') . ' (' . __('culture code','lmm') . ': uz-Latn)',
+				'vi' => __('Vietnamese','lmm') . ' (' . __('culture code','lmm') . ': vi)',
+				'wo' => __('Wolof','lmm') . ' (' . __('culture code','lmm') . ': wo)',
+				'xh' => __('isiXhosa','lmm') . ' (' . __('culture code','lmm') . ': xh)',
+				'yo-Latn' => __('Yoruba','lmm') . ' (' . __('culture code','lmm') . ': yo-Latn)',
+				'zh-Hans' => __('Chinese (Simplified)','lmm') . ' (' . __('culture code','lmm') . ': zh-Hans)',
+				'zh-Hant' => __('Chinese (Traditional)','lmm') . ' (' . __('culture code','lmm') . ': zh-Hant)',
+				'zu' => __('isiZulu','lmm') . ' (' . __('culture code','lmm') . ': zu)'
+			)
+		);		
 		/*===========================================
 		*
 		*

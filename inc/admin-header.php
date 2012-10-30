@@ -49,7 +49,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<p><span style="font-weight:bold;font-size:125%;">' . sprintf(__('Leaflet Maps Marker has been successfully updated from version %1s to %2s!','lmm'), $lmm_version_old, $lmm_version_new) . '</span></p>
 		<p>' . sprintf(__('For more details about version %1s, please visit %2s','lmm'), $lmm_version_new, $lmm_changelog_new_version) . '</p>'.PHP_EOL;
 	echo '<iframe name="changelog" src="' . LEAFLET_PLUGIN_URL . 'inc/changelog.php" width="98%" height="285" marginwidth="0" marginheight="0" style="border:thin dashed #E6DB55;"></iframe>'.PHP_EOL;
-	echo '<p>' . __('If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and <a href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank">rate the plugin on wordpress.org</a> - thanks!','lmm') . '</p>'.PHP_EOL;
+	echo '<p>' . __('If you like using the plugin, please consider <a href="http://www.mapsmarker.com/donations" target="_blank">making a donation</a> and <a href="http://wordpress.org/support/view/plugin-reviews/leaflet-maps-marker" target="_blank">rate the plugin on wordpress.org</a> - thanks!','lmm') . '</p>'.PHP_EOL;
 	echo '<form method="post" style="padding:2px 0 6px 0;">
 		<input type="hidden" name="update_info_action" value="hide" />
 		<input class="button-secondary" type="submit" value="' . __('remove message', 'lmm') . '"/></form></div>';
@@ -117,7 +117,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 			<br/><br/>
 			<a style="text-decoration:none;" href="http://www.mapsmarker.com" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-website-home.png" width="16" height="16" alt="mapsmarker.com"> MapsMarker.com</a>&nbsp;&nbsp;&nbsp;
 			<a style="text-decoration:none;" href="http://www.mapsmarker.com/donations" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-donations.png" width="16" height="16" alt="donations"> <?php echo __('donations','lmm'); ?></a>&nbsp;&nbsp;&nbsp;
-			<a style="text-decoration:none;" href="http://wordpress.org/extend/plugins/leaflet-maps-marker/" target="_blank" title="<?php esc_attr_e('please rate this plugin on wordpress.org','lmm') ?>"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-star.png" width="16" height="16" alt="ratings"> <?php _e('Rate plugin','lmm') ?></a>&nbsp;&nbsp;&nbsp;
+			<a style="text-decoration:none;" href="http://wordpress.org/support/view/plugin-reviews/leaflet-maps-marker" target="_blank" title="<?php esc_attr_e('please review this plugin on wordpress.org','lmm') ?>"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-star.png" width="16" height="16" alt="ratings"> <?php _e('Rate plugin','lmm') ?></a>&nbsp;&nbsp;&nbsp;
 			<a style="text-decoration:none;" href="http://translate.mapsmarker.com/projects/lmm" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-translations.png" width="16" height="16" alt="translations"> <?php echo __('translations','lmm'); ?></a>&nbsp;&nbsp;&nbsp;
 			<a style="text-decoration:none;" href="https://github.com/robertharm/Leaflet-Maps-Marker" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-github.png" width="16" height="16" alt="github"> github</a>&nbsp;&nbsp;&nbsp;
 			<a style="text-decoration:none;" href="http://twitter.com/mapsmarker" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-twitter.png" width="16" height="16" alt="twitter"> Twitter</a>&nbsp;&nbsp;&nbsp;
