@@ -311,13 +311,14 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated Polish transation thanks to Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
+* CHANGED: updated Turkish translation thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
 * CHANGED: updated German translation
 * CHANGED: optimized internal code structure (moved some functions to /inc/-directory)
 * CHANGED: optimized database install- and update routine (use of dbdelta()-function)
 * BUGFIX: table for list of markers below layer maps was not as wide as map if map with was set in %
 * BUGFIX: Bing tiles failed to load when p.x or p.y was -ve (bug [#31](https://github.com/shramov/leaflet-plugins/issues/31))
 * BUGFIX: Revert function wrapper for Google Maps (broke deferred loading and compiled version of plugins)
-* BUGFIX: Compatibility with WordPress 3.5beta1
+* BUGFIX: Compatibility with WordPress 3.5beta2
 
 = v2.8.2 - 26.09.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.8.2)

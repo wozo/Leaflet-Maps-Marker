@@ -151,6 +151,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
+		updated Turkish translation thanks to Emre Erkan, <a href="http://www.karalamalar.net" target="_blank">http://www.karalamalar.net</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
 		updated German translation
 		</td></tr>
 		<tr><td>
@@ -181,7 +186,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		Compatibility with WordPress 3.5beta1
+		Compatibility with WordPress 3.5beta2
 		</td></tr>
 		</table>'.PHP_EOL;
 	if ( ($lmm_version_old < '2.8.2' ) ){
