@@ -156,6 +156,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
+		updated Catalan translation thanks to Vicent Cubells, <a href="http://vcubells.net" target="_blank">http://vcubells.net</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
 		updated German translation
 		</td></tr>
 		<tr><td>

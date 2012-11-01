@@ -312,6 +312,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
 * CHANGED: updated Turkish translation thanks to Emre Erkan, [http://www.karalamalar.net](http://www.karalamalar.net)
+* CHANGED: updated Catalan translation thanks to Vicent Cubells, [http://vcubells.net](http://vcubells.net)
 * CHANGED: updated German translation
 * CHANGED: optimized internal code structure (moved some functions to /inc/-directory)
 * CHANGED: optimized database install- and update routine (use of dbdelta()-function)
