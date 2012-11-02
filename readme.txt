@@ -234,6 +234,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
+= v3.0 =
+
 = v2.9 =
 revamped settings panel, new logo and design, WordPress 3.5 compatiblity fixes - see http://www.mapsmarker.com/v2.9 for more details
 = v2.8.2 =
@@ -294,6 +296,8 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v3.0 - xx.11.2012 =
+
 = v2.9 - 02.11.2012 =
 * NEW: new logo and updated [mapsmarker.com](http://www.mapsmarker.com) website
 * NEW: update to [leaflet.js](http://www.leafletjs.com) v0.45 (fixing issues with Internet Explorer 10 and Chrome 23)
