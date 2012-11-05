@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.5beta2
-Stable tag:        2.9
+Stable tag:        2.9.1
 License:           GPLv2
 
 We are working hard on delivering the best mapping solution available for WordPress - helping you to share your favorite spots
@@ -234,8 +234,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v3.0 =
-
+= v2.9.1 =
+improved backend usability and refreshed backend design
 = v2.9 =
 revamped settings panel, new logo and design, WordPress 3.5 compatiblity fixes - see http://www.mapsmarker.com/v2.9 for more details
 = v2.8.2 =
@@ -296,7 +296,9 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v3.0 - xx.11.2012 =
+= v2.9.1 - 05.11.2012 =
+* CHANGED: improved backend usability
+* CHANGED: refreshed backend design
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * CHANGED: updated Catalan translation thanks to Vicent Cubells, [http://vcubells.net](http://vcubells.net)
 * CHANGED: updated Polish transation thanks to Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
