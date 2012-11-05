@@ -98,7 +98,7 @@ if ($mcount > intval($lmm_options[ 'markers_per_page' ])) {
 		echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers\'>' . __('show all markers','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker\'>' . __('add new maker','lmm') . '</a></p>';
 	} else {
 	?>
-	<h2><?php _e('List all markers','lmm') ?></h2>
+	<h3 style="font-size:23px;"><?php _e('List all markers','lmm') ?></h3>
 	<?php 
 $noncelink= wp_create_nonce('exportcsv-nonce');
 $csvexportlink = LEAFLET_PLUGIN_URL . 'leaflet-exportcsv.php?_wpnonce=' . $noncelink; ?>

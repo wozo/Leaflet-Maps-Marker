@@ -7,7 +7,7 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-list-layers.php') { die ("
 ?>
 <div class="wrap">
 <?php include('inc' . DIRECTORY_SEPARATOR . 'admin-header.php'); ?>
-<h2><?php _e('List all layers','lmm') ?></h2>
+<h3 style="font-size:23px;"><?php _e('List all layers','lmm') ?></h3>
 <?php 
 global $wpdb;
 $lmm_options = get_option( 'leafletmapsmarker_options' );

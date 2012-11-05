@@ -268,8 +268,8 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 		<input type="hidden" id="overlays_custom2" name="overlays_custom2" value="<?php echo $loverlays_custom2 ?>" />
 		<input type="hidden" id="overlays_custom3" name="overlays_custom3" value="<?php echo $loverlays_custom3 ?>" />
 		<input type="hidden" id="overlays_custom4" name="overlays_custom4" value="<?php echo $loverlays_custom4 ?>" />	
-		<h2><?php ($isedit === true) ? _e('Edit layer','lmm') : _e('Add new layer','lmm') ?>
-			<?php echo ($isedit === true) ? '(ID '.$id.')' : '' ?></h2>
+		<h3 style="font-size:23px;"><?php ($isedit === true) ? _e('Edit layer','lmm') : _e('Add new layer','lmm') ?>
+			<?php echo ($isedit === true) ? '(ID '.$id.')' : '' ?></h3>
 		<table class="widefat fixed">
 			<?php if ($isedit === true) { ?>
 			<tr>
@@ -556,7 +556,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 	<?php } ?>
 	
 	<?php if ($isedit) { ?>
-	<h2 id="assigned_markers">
+	<h3 style="font-size:23px;" id="assigned_markers">
 		<?php 
 		if ($multi_layer_map == 0) {		
 			_e('Marker assigned to this layer','lmm');
@@ -564,7 +564,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 			_e('Marker assigned to this multi layer map','lmm');
 		}
 		?>
-	</h2>
+	</h3>
 	<p>
 		<?php _e('Total','lmm') ?>: <?php echo $markercount; ?> <?php _e('marker','lmm') ?>
 	</p>

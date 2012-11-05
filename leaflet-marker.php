@@ -200,8 +200,8 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 		<input type="hidden" id="overlays_custom2" name="overlays_custom2" value="<?php echo $overlays_custom2 ?>" />
 		<input type="hidden" id="overlays_custom3" name="overlays_custom3" value="<?php echo $overlays_custom3 ?>" />
 		<input type="hidden" id="overlays_custom4" name="overlays_custom4" value="<?php echo $overlays_custom4 ?>" />		
-		<h2><?php ($isedit === true) ? _e('Edit marker','lmm') : _e('Add new marker','lmm') ?>
-			<?php echo ($isedit === true) ? '(ID '.$id.')' : '' ?></h2>
+		<h3 style="font-size:23px;"><?php ($isedit === true) ? _e('Edit marker','lmm') : _e('Add new marker','lmm') ?>
+			<?php echo ($isedit === true) ? '(ID '.$id.')' : '' ?></h3>
 		
 		<table class="widefat fixed">
 			<?php if ($isedit === true) { ?>
