@@ -299,6 +299,11 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
 = v3.0 - xx.11.2012 =
+* NEW: compatibility with 1st WordPress NFC plugin from pingeb.org
+* CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* CHANGED: updated Dutch translation thanks to Patrick Ruers, [http://www.stationskwartiersittard.nl](http://www.stationskwartiersittard.nl)
+* CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
+* CHANGED: updated Ukrainian translation thanks to Andrexj, [http://all3d.com.ua](http://all3d.com.ua)
 
 = v2.9.1 - 05.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.9.1)
