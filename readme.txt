@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.5beta2
-Stable tag:        2.9.1
+Stable tag:        2.9.2
 License:           GPLv2
 
 We are working hard on delivering the best mapping solution available for WordPress - helping you to share your favorite spots
@@ -234,8 +234,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v3.0 =
-
+= v2.9.2 =
+fix for broken settings panel when certain translations were loaded
 = v2.9.1 =
 improved backend usability and refreshed backend design
 = v2.9 =
@@ -298,12 +298,13 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v3.0 - xx.11.2012 =
-* NEW: compatibility with 1st WordPress NFC plugin from pingeb.org
+= v2.9.2 - 11.11.2012 =
+* NEW: compatibility with 1st WordPress NFC plugin from pingeb.org - [read more](http://www.mapsmarker.com/pingeb)
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * CHANGED: updated Dutch translation thanks to Patrick Ruers, [http://www.stationskwartiersittard.nl](http://www.stationskwartiersittard.nl)
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * CHANGED: updated Ukrainian translation thanks to Andrexj, [http://all3d.com.ua](http://all3d.com.ua)
+* FIXED: new settings panel was broken when certain translations were loaded
 
 = v2.9.1 - 05.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.9.1)

@@ -66,17 +66,12 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 */
-		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), 'x.x') . '</strong> - ' . __('released on','lmm') . ' xx.xx.2012 (<a href="http://www.mapsmarker.com/vx.x" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
+		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.9.2') . '</strong> - ' . __('released on','lmm') . ' 11.11.2012 (<a href="http://www.mapsmarker.com/v2.9.2" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
-		compatibility with 1st WordPress NFC plugin from pingeb.org
-		</td></tr>
-		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
-		</td><td>
-		
+		compatibility with 1st WordPress NFC plugin from pingeb.org - <a href="http://www.mapsmarker.com/pingeb" target="_blank">read more</a>
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
@@ -106,7 +101,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		
+		new settings panel was broken when certain translations were loaded
 		</td></tr>
 		</table>'.PHP_EOL;
 
