@@ -234,6 +234,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
+= v3.0 =
+
 = v2.9.2 =
 fix for broken settings panel when certain translations were loaded
 = v2.9.1 =
@@ -298,6 +300,9 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v3.0 - xx.11.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)
+
 = v2.9.2 - 11.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.9.2)
 * NEW: compatibility with 1st WordPress NFC plugin from pingeb.org - [read more](http://www.mapsmarker.com/pingeb)
