@@ -41,7 +41,6 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'admin-footer.php') { die ("Please 
 <tr><td><input type="hidden" name="on0" value="Sponsorship Level">
 	<select name="os0" style="width:210px;">
 	<option value="Supporter 2">Please select sponsorship level</option>
-	<option value="Contributor">Contributor €1,00 EUR</option>
 	<option value="Contributor 2">Contributor €5,00 EUR</option>
 	<option value="Supporter">Supporter €10,00 EUR</option>
 	<option value="Supporter 2">Supporter €25,00 EUR</option>

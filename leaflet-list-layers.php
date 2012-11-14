@@ -21,7 +21,7 @@ $columnsortorder_input = isset($_GET['order']) ? mysql_real_escape_string($_GET[
 $columnsortorder = (in_array($columnsortorder_input, $columnsortorder_values)) ? $columnsortorder_input : $lmm_options[ 'misc_layer_listing_sort_sort_order' ];
 $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
 $table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
-$layerlist = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $table_name_layers WHERE id>0 order by $columnsort $columnsortorder" ), ARRAY_A );
+$layerlist = $wpdb->get_results( "SELECT * FROM $table_name_layers WHERE id>0 order by $columnsort $columnsortorder", ARRAY_A );
 $lcount = intval($wpdb->get_var('SELECT COUNT(*)-1 FROM '.$table_name_layers));
 $noncelink= wp_create_nonce('exportcsv-nonce');
 $csvexportlink = LEAFLET_PLUGIN_URL . 'leaflet-exportcsv.php?_wpnonce=' . $noncelink; ?>

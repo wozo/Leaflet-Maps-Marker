@@ -89,7 +89,7 @@ if (! wp_verify_nonce($markernonce, 'marker-nonce') ) die('<br/>'.__('Security c
 		$result = $wpdb->prepare( "DELETE FROM $table_name_markers WHERE id = %d", $oid );
 		$wpdb->query( $result );
 		$wpdb->query( "OPTIMIZE TABLE $table_name_markers" );
-        echo '<p><div class="updated" style="padding:10px;">' . __('Marker has been successfully deleted','lmm') . '</div><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers\'>' . __('show all markers','lmm') . '</a><br/><br/><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker\'>' . __('add new marker','lmm') . '</a></p>';
+        echo '<p><div class="updated" style="padding:10px;">' . __('Marker has been successfully deleted','lmm') . '</div><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers\'>' . __('show all markers','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker\'>' . __('add new marker','lmm') . '</a></p>';
     }
   }
 }
@@ -524,21 +524,27 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 			</tr>
 			<?php }; ?>
 		</table>
-	<div style="margin:20px 0 0 0;"><input style="font-weight:bold;" type="submit" name="marker" class="submit button-primary" value="<?php ($isedit === true) ? _e('update marker','lmm') : _e('add marker','lmm') ?> &raquo;" /></div>
+		
+	<table><tr><td>
+	<input style="font-weight:bold;" type="submit" name="marker" class="submit button-primary" value="<?php ($isedit === true) ? _e('update marker','lmm') : _e('add marker','lmm') ?> &raquo;" />
 	</form>
+	</td>
 	
 	<?php if ( ($isedit) && (current_user_can( $lmm_options[ 'capabilities_delete' ]) )) { ?>
+	<td>
 		<form method="post">
 			<?php wp_nonce_field('marker-nonce'); ?>
 			<input type="hidden" name="id" value="<?php echo $id ?>" />
 			<input type="hidden" name="action" value="delete" />
 				<?php $confirm = sprintf( esc_attr__('Do you really want to delete marker %1$s (ID %2$s)?','lmm'), $markername, $id) ?>
-				<div class="submit" style="margin:15px 0 0 0;">
-				<input style="color:#FF0000;" type="submit" name="marker" value="<?php _e('delete marker', 'lmm') ?> &raquo;" onclick="return confirm('<?php echo $confirm ?>')" />
+				<div class="submit" style="margin:0 0 0 40px;">
+				<input class="submit button-secondary" style="color:#FF0000;" type="submit" name="marker" value="<?php _e('delete marker', 'lmm') ?> &raquo;" onclick="return confirm('<?php echo $confirm ?>')" />
 				</div>
 		</form>
+	</td>
 	<?php } ?>
 </div>
+	</tr></table>
 <!--wrap--> 
 <script type="text/javascript">
 /* //<![CDATA[ */

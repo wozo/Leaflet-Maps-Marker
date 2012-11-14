@@ -7,7 +7,7 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.5beta2
+Tested up to:      3.5beta3
 Stable tag:        2.9.2
 License:           GPLv2
 
@@ -302,6 +302,10 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v3.0 - xx.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)
+* NEW: show WordPress admin notice if plugin update is available
+* CHANGED: changed position of delete marker and layer buttons
+* CHANGED: optimized TinyMCE popup (new with links to add new marker and layer maps)
+* FIXED: warning messages for WordPress 3.5beta3 when debug was enabled
 
 = v2.9.2 - 11.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.9.2)

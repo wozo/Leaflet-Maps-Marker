@@ -86,10 +86,12 @@ function get_mm_list(){
 </head>
 <body>
 <table style="width:100%;"><tr>
-<td id="msb_header_description"><?php echo __('If no search term is entered, the latest 15 maps will be shown.','lmm'); ?></td></tr>
-<tr><td style="font-size:11px;">
-<div id="msb_serchContainer"><?php _e('Search','lmm'); ?> <input type="text" name="q" id="msb_serch"/></div>
-</td></tr>
+<td id="msb_header_description" colspan="3"><?php echo __('If no search term is entered, the latest 15 maps will be shown.','lmm'); ?></td></tr>
+<tr>
+<td style="width:40%;"><div id="msb_serchContainer"><?php _e('Search','lmm'); ?> <input type="text" name="q" id="msb_serch"/></div></td>
+<td><a href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_marker" target="_blank" title="<?php esc_attr_e('create a new marker map','lmm'); ?>"><?php _e("Add new marker", "lmm") ?></a></td>
+<td><a href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layer" target="_blank" title="<?php esc_attr_e('create a new layer map','lmm'); ?>"><?php _e("Add new layer", "lmm") ?></a></td>
+</tr>
 </table>
 <div id="msb_listContainer">
 	<?php 
@@ -101,10 +103,9 @@ function get_mm_list(){
 		echo '<table style="width:100%;border-top: 1px solid #CCCCCC;"><tr><td style="width:55px;">' . $no_marker_created_yet . '</td></tr></table>';
 	} ?>
 </div>
-<input class="button-primary" type="button" href="#" id="msb_insertMarkerSC" value="<?php esc_attr_e('Add shortcode','lmm'); ?>" />       
-<a href="#" class="button-secondary" id="msb_cancel"><?php _e('Cancel','lmm'); ?></a>
 <table style="width:100%;"><tr>
-<td style="font-size:11px;"><div id="msb_attribution">powered by <a href="http://www.mapsmarker.com" target"_blank">MapsMarker.com</a></div></td></tr>
+<td style="padding-top:13px;"><div id="msb_attribution">powered by <a href="http://www.mapsmarker.com" target"_blank">MapsMarker.com</a></div></td>
+<td><input class="button-primary" type="button" href="#" id="msb_insertMarkerSC" value="<?php esc_attr_e('Add shortcode','lmm'); ?>" /></td></tr>
 </table>
 <script type="text/javascript">
 (function($){

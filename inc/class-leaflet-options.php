@@ -1907,7 +1907,7 @@ class Class_leaflet_options {
 			'version' => '1.5',
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section9',
-			'title'   => __('Display a list of markers under the map','lmm'),
+			'title'   => __('Display a list of markers under layer maps','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
 			'std'     => '1',
@@ -6787,7 +6787,7 @@ class Class_leaflet_options {
 			'section' => 'misc-section2',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __('The language used on plugin pages on backend and/or on maps on frontend. Please note that the language for Google Services can be set seperately via Settings / tab "Google", section "Google language localization".','lmm'),
+			'desc'    => __('The language used on plugin pages on backend and/or on maps on frontend. Please note that the language for Google and Bing Services can be set seperately via Settings / tab "Google Maps" / "Google language localization" respectively tab "Bing Maps" / "Cultures"','lmm'),
 			'type'    => 'helptext'
 		);
 		$this->settings['misc_plugin_language'] = array(

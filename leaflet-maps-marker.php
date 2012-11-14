@@ -9,7 +9,7 @@ Author: Robert Harm
 Author URI: http://www.harm.co.at
 Donate link: http://www.mapsmarker.com/donations
 Requires at least: 3.0
-Tested up to: 3.5beta2
+Tested up to: 3.5beta3
 Requires at least PHP 5.2
 Copyright 2011-2012 - @RobertHarm - All rights reserved
 MapsMarker &reg; - registration pending
@@ -159,7 +159,7 @@ function __construct() {
 	$widgets = get_option( 'dashboard_widget_options' );
 	$widget_id = 'lmm-admin-dashboard-widget'; 
 	$number_of_markers =  isset( $widgets[$widget_id] ) && isset( $widgets[$widget_id]['items'] ) ? absint( $widgets[$widget_id]['items'] ) : 4;
-	$result = $wpdb->get_results($wpdb->prepare("SELECT ID,markername,icon,createdon,createdby FROM $table_name_markers ORDER BY createdon desc LIMIT $number_of_markers"), ARRAY_A);
+	$result = $wpdb->get_results($wpdb->prepare("SELECT ID,markername,icon,createdon,createdby FROM $table_name_markers ORDER BY createdon desc LIMIT %d", $number_of_markers), ARRAY_A);
 	if ($result != NULL) {
 		echo '<table style="margin-bottom:5px;"><tr>';
 		foreach ($result as $row ) {
