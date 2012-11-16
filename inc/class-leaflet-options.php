@@ -6755,6 +6755,19 @@ class Class_leaflet_options {
 				'disabled' => __('disabled','lmm')
 			)
 		);
+		$this->settings['misc_plugin_update_info'] = array(
+			'version' => '3.0',
+			'pane'    => 'misc',
+			'section' => 'misc-section1',
+			'title'   => __('Plugin update info','lmm'),
+			'desc'    => __('display update info if a new version is available','lmm'),
+			'type'    => 'radio',
+			'std'     => 'enabled',
+			'choices' => array(
+				'enabled' => __('enabled','lmm'),
+				'disabled' => __('disabled','lmm')
+			)
+		);		
 		$this->settings['misc_qrcode_size'] = array(
 			'version' => '1.1',
 			'pane'    => 'misc',

@@ -305,6 +305,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: show WordPress admin notice if plugin update is available
 * CHANGED: changed position of delete marker and layer buttons
 * CHANGED: optimized TinyMCE popup (new with links to add new marker and layer maps)
+* CHANGED: updated Polish transation thanks to Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
+* CHANGED: updated German translation
+* FIXED: marker count on layers lists was wrong for multi-layer-maps (thanks photocoen!)
 * FIXED: warning messages for WordPress 3.5beta3 when debug was enabled
 
 = v2.9.2 - 11.11.2012 =

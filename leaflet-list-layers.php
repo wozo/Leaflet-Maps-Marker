@@ -128,21 +128,22 @@ if ($getorder == 'asc') { $sortordericon = 'asc'; } else { $sortordericon = 'des
   else
     foreach ($layerlist as $row) 
 		{
+		$markercount = 0; //info: needed for multi-layer-map count-bug	
 		if (current_user_can( $lmm_options[ 'capabilities_delete' ])) {
 			$delete_link_layer = ' | <span class="delete"><a onclick="if ( confirm( \'' . esc_attr__('Do you really want to delete this layer?','lmm') . ' (ID ' . $row['id'] . ')\' ) ) { return true;}return false;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layer&action=delete&id=' . $row['id'] . '&_wpnonce=' . $layernonce . '" class="submit delete">' . __('delete','lmm') . '</a></span>';
 		} else {
 			$delete_link_layer = '';
 		}
-		$multi_layer_map_list_exploded = explode(",", $wpdb->get_var('SELECT l.multi_layer_map_list FROM '.$table_name_layers.' as l WHERE l.id='.$row['id']));
 		if ($row['multi_layer_map'] == 0) {
 			$markercount = $wpdb->get_var('SELECT count(*) FROM '.$table_name_layers.' as l INNER JOIN '.$table_name_markers.' AS m ON l.id=m.layer WHERE l.id='.$row['id']);
 		} else 	if ( ($row['multi_layer_map'] == 1) && ( $row['multi_layer_map_list'] == 'all' ) ) {
 			$markercount = intval($wpdb->get_var('SELECT COUNT(*) FROM '.$table_name_markers));
 		} else 	if ( ($row['multi_layer_map'] == 1) && ( $row['multi_layer_map_list'] != NULL ) && ($row['multi_layer_map_list'] != 'all') ) {
+			$multi_layer_map_list_exploded = explode(",", $wpdb->get_var('SELECT l.multi_layer_map_list FROM '.$table_name_layers.' as l WHERE l.id='.$row['id']));
 			foreach ($multi_layer_map_list_exploded as $mlmrowcount){
-			$mlm_count_temp{$mlmrowcount} = $wpdb->get_var('SELECT count(*) FROM '.$table_name_layers.' as l INNER JOIN '.$table_name_markers.' AS m ON l.id=m.layer WHERE l.id='.$mlmrowcount);
+				$mlm_count_temp{$mlmrowcount} = $wpdb->get_var('SELECT count(*) FROM '.$table_name_layers.' as l INNER JOIN '.$table_name_markers.' AS m ON l.id=m.layer WHERE m.layer='.$mlmrowcount);
+				$markercount = $markercount + $mlm_count_temp{$mlmrowcount};
 			}
-			$markercount = array_sum($mlm_count_temp); 
 		} else 	if ( ($row['multi_layer_map'] == 1) && ( $row['multi_layer_map_list'] == NULL ) ) {
 			$markercount = 0;
 		}
