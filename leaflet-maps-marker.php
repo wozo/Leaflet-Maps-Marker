@@ -82,12 +82,15 @@ function __construct() {
 		}
 	}
 	if ( isset($lmm_options['misc_pointers'] ) && ($lmm_options['misc_pointers'] == 'enabled') ) {
-		//info: dont show pointers on new installs
+		//info: dont show update pointers on new installs
 		$version_before_update = get_option('leafletmapsmarker_version_before_update');
 		if ($version_before_update != '0') {
-			add_action( 'admin_enqueue_scripts', array( $this, 'lmm_pointer_admin_scripts' ),1001);
+			add_action( 'admin_enqueue_scripts', array( $this, 'lmm_update_pointer_admin_scripts' ),1001);
 		}
 	}
+	//info: add features pointers
+	add_action( 'admin_enqueue_scripts', array( $this, 'lmm_feature_pointer_admin_scripts' ),1002);
+	//info: multisite only - delete tables+options+files if blog deleted from network admin
 	if ( is_multisite() ) {
 		add_action('delete_blog', array( &$this,'lmm_delete_multisite_blog' ));
 	} 
@@ -107,21 +110,21 @@ function __construct() {
 		rmdir($icons_directory);
 	}
   }
-  function lmm_pointer_admin_scripts() {
+  function lmm_update_pointer_admin_scripts() {
 	$lmm_version_new = get_option( 'leafletmapsmarker_version' );
 	$seen_it = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
 	$do_add_script = false;
 	$version_without_dots = "lmmv" . str_replace('.', '', $lmm_version_new);
 	if ( ! in_array( $version_without_dots, $seen_it ) ) {
 		$do_add_script = true;
-		add_action( 'admin_print_footer_scripts', array( $this, 'lmm_pointer_footer_script' ) );
+		add_action( 'admin_print_footer_scripts', array( $this, 'lmm_update_pointer_footer_script' ) );
 	}
 	if ( $do_add_script ) {
 		wp_enqueue_script( 'wp-pointer' );
 		wp_enqueue_style( 'wp-pointer' );
 	}
   }
-  function lmm_pointer_footer_script() {
+  function lmm_update_pointer_footer_script() {
 	$lmm_version_new = get_option( 'leafletmapsmarker_version' );
 	$version_without_dots = "lmmv" . str_replace('.', '', $lmm_version_new);
 	$pointer_content = '<h3>' . sprintf(__('Leaflet Maps Marker plugin update to v%1s was successful','lmm'), $lmm_version_new) . '</h3>'; 
@@ -148,7 +151,24 @@ function __construct() {
 	    }
 	});
 	// ]]></script>
-  <?php
+	<?php
+
+  }
+  function lmm_feature_pointer_admin_scripts() {
+	$seen_it = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
+	$do_add_script = false;
+	$version_without_dots = "lmmv" . str_replace('.', '', $lmm_version_new);
+	if ( ! in_array( $version_without_dots, $seen_it ) ) {
+		$do_add_script = true;
+		add_action( 'admin_print_footer_scripts', array( $this, 'lmm_feature_pointer_footer_script' ) );
+	}
+	if ( $do_add_script ) {
+		wp_enqueue_script( 'wp-pointer' );
+		wp_enqueue_style( 'wp-pointer' );
+	}
+  }
+  function lmm_feature_pointer_footer_script() {
+    include('inc' . DIRECTORY_SEPARATOR . 'feature-pointers.php'); 
   }
   function lmm_register_widgets(){
 	wp_add_dashboard_widget( 'lmm-admin-dashboard-widget', __('Leaflet Maps Marker - recent markers','lmm'), array( &$this,'lmm_dashboard_widget'), array( &$this,'lmm_dashboard_widget_control'));
@@ -555,11 +575,11 @@ function __construct() {
    }   
   function lmm_install_and_updates() {
 	//info: set transient to execute install & update-routine only once a day
-	$current_version = "v292"; //2do - mandatory: change on each update!
-	$schedule_transient = 'leafletmapsmarker_install_update_cache_' . $current_version . '_' . date('d');
+	$current_version = "v292"; //2do - mandatory: change on each update to new version!
+	$schedule_transient = 'leafletmapsmarker_install_update_cache_' . $current_version;
 	$install_update_schedule = get_transient( $schedule_transient );
 	if ( $install_update_schedule === FALSE ) {
-		$schedule_transient = 'leafletmapsmarker_install_update_cache_' . $current_version . '_' . date('d');
+		$schedule_transient = 'leafletmapsmarker_install_update_cache_' . $current_version;
 		set_transient( $schedule_transient, 'execute install and update-routine only once a day', 60*60*24 );
 		include('inc' . DIRECTORY_SEPARATOR . 'install-and-updates.php');
 	}

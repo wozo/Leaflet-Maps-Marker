@@ -130,7 +130,7 @@ if ($getorder == 'asc') { $sortordericon = 'asc'; } else { $sortordericon = 'des
 		{
 		$markercount = 0; //info: needed for multi-layer-map count-bug	
 		if (current_user_can( $lmm_options[ 'capabilities_delete' ])) {
-			$delete_link_layer = ' | <span class="delete"><a onclick="if ( confirm( \'' . esc_attr__('Do you really want to delete this layer?','lmm') . ' (ID ' . $row['id'] . ')\' ) ) { return true;}return false;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layer&action=delete&id=' . $row['id'] . '&_wpnonce=' . $layernonce . '" class="submit delete">' . __('delete','lmm') . '</a></span>';
+			$delete_link_layer = '<div style="float:right;"><a onclick="if ( confirm( \'' . esc_attr__('Do you really want to delete this layer?','lmm') . ' (ID ' . $row['id'] . ')\' ) ) { return true;}return false;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layer&action=delete&id=' . $row['id'] . '&_wpnonce=' . $layernonce . '" class="submit delete">' . __('delete layer','lmm') . '</a></div>';
 		} else {
 			$delete_link_layer = '';
 		}
@@ -174,11 +174,11 @@ if ($getorder == 'asc') { $sortordericon = 'asc'; } else { $sortordericon = 'des
 		 $column_createdon = ((isset($lmm_options[ 'misc_layer_listing_columns_createdon' ] ) == TRUE ) && ( $lmm_options[ 'misc_layer_listing_columns_createdon' ] == 1 )) ? '<td >' . $row['createdon'] . '</td>' : '';
 		 $column_updatedby = ((isset($lmm_options[ 'misc_layer_listing_columns_updatedby' ] ) == TRUE ) && ( $lmm_options[ 'misc_layer_listing_columns_updatedby' ] == 1 )) ? '<td >' . $row['updatedby'] . '</td>' : '';
 		 $column_updatedon = ((isset($lmm_options[ 'misc_layer_listing_columns_updatedon' ] ) == TRUE ) && ( $lmm_options[ 'misc_layer_listing_columns_updatedon' ] == 1 )) ? '<td >' . $row['updatedon'] . '</td>' : '';		
-		 $add_new_marker_to_layer = ( $row['multi_layer_map'] == 0 ) ? ' | <a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&addtoLayer=' . $row['id'] . '&Layername=' . urlencode(stripslashes($row['name'])) . '" style="text-decoration:none;">' . __('add new marker to this layer','lmm') . '</a>' : '';
+		 $add_new_marker_to_layer = ( $row['multi_layer_map'] == 0 ) ? '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&addtoLayer=' . $row['id'] . '&Layername=' . urlencode(stripslashes($row['name'])) . '" style="text-decoration:none;">' . __('add new marker to this layer','lmm') . '</a>' : '';
 		echo '<tr valign="middle" class="alternate" id="link-' . $row['id'] . '">
 		<td>'.$row['id'].'</td>
 		<td>'.$multi_layer_map_type.'</td>
-		<td><strong><a title="' . esc_attr__('Edit', 'lmm') . ' &laquo;' . htmlspecialchars($row['name']) . '&raquo;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layer&id=' . $row['id'] . '" class="row-title">' . stripslashes(htmlspecialchars($row['name'])) . '</a></strong><br><div class="row-actions"><span class="edit"><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layer&id=' . $row['id'] . '">' . __('edit','lmm') . '</a></span>'. $delete_link_layer . $add_new_marker_to_layer . '</div></td>
+		<td><strong><a title="' . esc_attr__('Edit', 'lmm') . ' &laquo;' . htmlspecialchars($row['name']) . '&raquo;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layer&id=' . $row['id'] . '" class="row-title">' . stripslashes(htmlspecialchars($row['name'])) . '</a></strong><br><div class="row-actions"><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layer&id=' . $row['id'] . '">' . __('edit layer','lmm') . '</a></span>'. $add_new_marker_to_layer . $delete_link_layer . '</div></td>
 		<td style="text-align:center;"><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layer&id=' . $row['id'] . '#assigned_markers" title="' . esc_attr__('show markers assigned to this layer','lmm') . '">'.$markercount.'</a></td>
 		  ' . $column_layercenter . '
 		  ' . $column_mapsize . '

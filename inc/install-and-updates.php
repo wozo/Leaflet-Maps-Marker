@@ -434,8 +434,19 @@ if (get_option('leafletmapsmarker_version') == '2.9.1' ) {
 		update_option('leafletmapsmarker_update_info', 'show');
 	}
 }
+/*
+2do: sql add for v3.0 update
+	$table_options = $wpdb->prefix.'options';
+	$update30_1 = "DELETE FROM `" . $table_options . "` WHERE `" . $table_options . "`.`option_name` LIKE '_transient_leafletmapsmarker_install_update_cache%';";
+	echo $update30_1.'<br>';
+	$wpdb->query($update30_1);
+	$update30_2 = "DELETE FROM `" . $table_options . "` WHERE `" . $table_options . "`.`option_name` LIKE '_transient_timeout_leafletmapsmarker_install_update_cache%';";
+	$wpdb->query($update30_2);
+*/
+
 /* template for plugin updates 
 if (get_option('leafletmapsmarker_version') == '2.9.2' ) {
+	delete_transient( 'leafletmapsmarker_install_update_cache_v292'); //2do: update to version before update
 	//2do - optional: add code for sql updates (no ddl - done by dbdelta!)
 	//2do - mandatory if new options in class-leaflet-options.php were added & update /inc/class-leaflet-options.php update routine
 	$save_defaults_for_new_options = new Class_leaflet_options();
@@ -449,7 +460,7 @@ if (get_option('leafletmapsmarker_version') == '2.9.2' ) {
 	//2do - mandatory: remove update_option('leafletmapsmarker_update_info', 'show'); from last version
 	update_option('leafletmapsmarker_update_info', 'show');
 	//mandatory: move code for redirect-on-first-activation-check to here
-	//2do - mandatory: set current version in leaflet-maps-marker.php / function lmm_install_and_updates()
+	//2do - mandatory: set $current_version in leaflet-maps-marker.php / function lmm_install_and_updates()
 	//2do - mandatory: set $current_version in uninstall.php
 }
 */

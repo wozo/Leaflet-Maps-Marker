@@ -225,7 +225,7 @@ $csvexportlink = LEAFLET_PLUGIN_URL . 'leaflet-exportcsv.php?_wpnonce=' . $nonce
     foreach ($marklist as $row)
 	{
 		if (current_user_can( $lmm_options[ 'capabilities_delete' ])) {
-			$delete_link_marker = ' | </span><span class="delete"><a onclick="if ( confirm( \'' . __('Do you really want to delete this marker?', 'lmm') . ' (' . $row['markername'] . ' - ID ' . $row['id'] . ')\' ) ) { return true;}return false;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&action=delete&id=' . $row['id'] . '&_wpnonce=' . $markernonce . '" class="submitdelete">' . __('delete','lmm') . '</a></span>';
+			$delete_link_marker = '<div style="float:right;"><a onclick="if ( confirm( \'' . __('Do you really want to delete this marker?', 'lmm') . ' (' . $row['markername'] . ' - ID ' . $row['id'] . ')\' ) ) { return true;}return false;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&action=delete&id=' . $row['id'] . '&_wpnonce=' . $markernonce . '" class="submitdelete">' . __('delete marker','lmm') . '</a></div>';
 		} else {
 			$delete_link_marker = '';
 		}
@@ -269,7 +269,7 @@ $csvexportlink = LEAFLET_PLUGIN_URL . 'leaflet-exportcsv.php?_wpnonce=' . $nonce
          } else { 
          echo '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png" title="' . esc_attr__('standard icon','lmm') . '" />';};
       echo '</td>
-		  <td><strong><a title="' . esc_attr__('Edit marker','lmm') . ' (' . $row['id'].')" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['id'] . '" class="row-title">' . stripslashes(htmlspecialchars($row['markername'])) . '</a></strong><br/><div class="row-actions"><span class="edit"><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['id'] . '">' . __('edit','lmm') . '</a>' . $delete_link_marker . '</div></td>	  
+		  <td><strong><a title="' . esc_attr__('Edit marker','lmm') . ' (' . $row['id'].')" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['id'] . '" class="row-title">' . stripslashes(htmlspecialchars($row['markername'])) . '</a></strong><br/><div class="row-actions"><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['id'] . '">' . __('edit marker','lmm') . '</a>' . $delete_link_marker . '</div></td>	  
 		  ' . $column_popuptext . '
 		  ' . $column_layer . '
 		  ' . $column_openpopup . '
