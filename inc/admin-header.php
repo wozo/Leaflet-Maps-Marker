@@ -17,8 +17,7 @@ if ( $install_note != NULL ) {
 	}
 	update_option('leafletmapsmarker_update_info', 'hide');
 } 
-?>
-<?php
+//info: make to menu buttons active depended on page you´re on
 $page = (isset($_GET['page']) ? $_GET['page'] : '');
 if ($page == 'leafletmapsmarker_markers') {
 	$buttonclass1 = 'button-primary';

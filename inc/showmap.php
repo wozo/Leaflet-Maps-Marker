@@ -654,19 +654,19 @@
         $lmm_out .= 'geojsonObj = eval("'.$geojson.'");'.PHP_EOL;
         }
         if (!empty($geojsonurl)) {
-        $lmm_out .= 'geojsonObj = eval("(" + jQuery.ajax({url: "'.$geojsonurl.'", async: false, cache: false}).responseText + ")");'.PHP_EOL;
+        $lmm_out .= 'geojsonObj = eval("(" + jQuery.ajax({url: "'.$geojsonurl.'", async: false, cache: true}).responseText + ")");'.PHP_EOL;
         }
         //2do: check if loading marker via GeoJSON has advantages 
         /*
         if ( !empty($marker) ) {
-        $lmm_out .= 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?marker='.$marker.'", async: false, cache: false}).responseText + ")");'.PHP_EOL;
+        $lmm_out .= 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?marker='.$marker.'", async: false, cache: true}).responseText + ")");'.PHP_EOL;
         } 
         */        
         //info: load GeoJSON for layer maps
         if (!empty($layer) && ($multi_layer_map == 0) ) {
-            $lmm_out .= 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?layer=' . $id . '", async: false, cache: false}).responseText + ")");'.PHP_EOL;
+            $lmm_out .= 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?layer=' . $id . '", async: false, cache: true}).responseText + ")");'.PHP_EOL;
         } else if (!empty($layer) && ($multi_layer_map == 1) ) {
-            $lmm_out .= 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?layer=' . $multi_layer_map_list . '", async: false, cache: false}).responseText + ")");'.PHP_EOL;
+            $lmm_out .= 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?layer=' . $multi_layer_map_list . '", async: false, cache: true}).responseText + ")");'.PHP_EOL;
         }
         $lmm_out .= 'L.geoJson(geojsonObj, {'.PHP_EOL;
         $lmm_out .= '        onEachFeature: function(feature, marker) {'.PHP_EOL;

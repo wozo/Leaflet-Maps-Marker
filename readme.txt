@@ -11,9 +11,11 @@ Tested up to:      3.5beta3
 Stable tag:        2.9.2
 License:           GPLv2
 
-We are working hard on delivering the best mapping solution available for WordPress - helping you to share your favorite spots
+Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
 
 == Description ==
+We are working hard on delivering the best mapping solution available for WordPress - helping you to share your favorite spots
+
 Maps Marker allows you to pin, organize and share your favorite spots through your WordPress powered site easily. You can use maps from OpenStreetMap, Google Maps, Google Earth, Bing Maps or custom maps and additionally display your spots in innovative ways like through augmented-reality browsers.
 
 = Mission Statement =
@@ -307,8 +309,11 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: optimized TinyMCE popup (new with links to add new marker and layer maps)
 * CHANGED: updated Polish transation thanks to Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
 * CHANGED: updated German translation
-* FIXED: marker count on layers lists was wrong for multi-layer-maps (thanks photocoen!)
-* FIXED: warning messages for WordPress 3.5beta3 when debug was enabled
+* CHANGED: optimized use of WordPress Transients API (saving less rows to wp_options-table)
+* CHANGED: optimized plugin active check for higher performance (use of isset() instead of in_array())
+* CHANGED: set jQuery cache for layers to true again for higher performance
+* BUGFIX: marker count on layers lists was wrong for multi-layer-maps (thanks photocoen!)
+* BUGFIX: warning messages for WordPress 3.5beta3 when debug was enabled
 
 = v2.9.2 - 11.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.9.2)
@@ -317,7 +322,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated Dutch translation thanks to Patrick Ruers, [http://www.stationskwartiersittard.nl](http://www.stationskwartiersittard.nl)
 * CHANGED: updated French translation thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * CHANGED: updated Ukrainian translation thanks to Andrexj, [http://all3d.com.ua](http://all3d.com.ua)
-* FIXED: new settings panel was broken when certain translations were loaded
+* BUGFIX: new settings panel was broken when certain translations were loaded
 
 = v2.9.1 - 05.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.9.1)

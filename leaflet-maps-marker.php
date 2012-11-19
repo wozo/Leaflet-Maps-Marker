@@ -111,11 +111,13 @@ function __construct() {
 	}
   }
   function lmm_update_pointer_admin_scripts() {
-	$lmm_version_new = get_option( 'leafletmapsmarker_version' );
-	$seen_it = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
+	$dismissed_pointers = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
+	$dismissed_pointers = array_flip($dismissed_pointers);
 	$do_add_script = false;
+	$lmm_version_new = get_option( 'leafletmapsmarker_version' );
 	$version_without_dots = "lmmv" . str_replace('.', '', $lmm_version_new);
-	if ( ! in_array( $version_without_dots, $seen_it ) ) {
+
+	if ( !isset($dismissed_pointers[$version_without_dots]) ) { 
 		$do_add_script = true;
 		add_action( 'admin_print_footer_scripts', array( $this, 'lmm_update_pointer_footer_script' ) );
 	}
@@ -152,13 +154,13 @@ function __construct() {
 	});
 	// ]]></script>
 	<?php
-
   }
   function lmm_feature_pointer_admin_scripts() {
-	$seen_it = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
+	$dismissed_pointers = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
+	$dismissed_pointers = array_flip($dismissed_pointers);
 	$do_add_script = false;
-	$version_without_dots = "lmmv" . str_replace('.', '', $lmm_version_new);
-	if ( ! in_array( $version_without_dots, $seen_it ) ) {
+	//info: add new feature pointer IDs below
+	if ( !isset($dismissed_pointers["lmmesw"]) ) { 
 		$do_add_script = true;
 		add_action( 'admin_print_footer_scripts', array( $this, 'lmm_feature_pointer_footer_script' ) );
 	}

@@ -6640,6 +6640,19 @@ class Class_leaflet_options {
 			'desc'    => '', //empty for not breaking settings layout
 			'type'    => 'helptext'
 		);
+		$this->settings['misc_map_editor'] = array(
+			'version' => '3.0',
+			'pane'    => 'misc',
+			'section' => 'misc-section1',
+			'title'   => __('Map editor to use on backend','lmm'),
+			'desc'    => __('The advanced editor allows you to set all available options on marker and layer maps while the simplified editor only shows the most common options.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'simplified',
+			'choices' => array(
+				'simplified' => __('simplified editor','lmm'),
+				'advanced' => __('advanced editor','lmm')
+			)
+		);
 		$this->settings['capabilities_edit'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',

@@ -94,6 +94,21 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		updated German translation
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		optimized use of WordPress Transients API (saving less rows to wp_options-table)
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		optimized plugin active check for higher performance (use of isset() instead of in_array())
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		set jQuery cache for layers to true again for higher performance	
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		marker count on layers lists was wrong for multi-layer-maps (thanks photocoen!)
