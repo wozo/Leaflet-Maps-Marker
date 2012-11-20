@@ -14,9 +14,10 @@ License:           GPLv2
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
 
 == Description ==
-We are working hard on delivering the best mapping solution available for WordPress - helping you to share your favorite spots
-
 Maps Marker allows you to pin, organize and share your favorite spots through your WordPress powered site easily. You can use maps from OpenStreetMap, Google Maps, Google Earth, Bing Maps or custom maps and additionally display your spots in innovative ways like through augmented-reality browsers.
+
+= Vision =
+We are working hard on delivering the best mapping solution available for WordPress - helping you to share your favorite spots
 
 = Mission Statement =
 [Maps Marker](http://www.mapsmarker.com) helps you to share your favorite spots easily. The plugin is based on the famous [leaflet.js library](http://www.leaflet.js) from [CloudMade](http://www.cloudmade.com) which also powers maps on sites like [Flickr](http://www.flickr.com/map), [Foursquare](http://readwrite.com/2012/02/29/foursquare_dumps_google_goes_open-source_for_maps), [Craigslist](http://www.theverge.com/2012/10/4/3452526/craigslist-map-view-apartment-listings-roll-out), [Wikipedia](http://en.wikipedia.org/wiki/Wikipedia_App) and [Washington Post](http://www.washingtonpost.com/wp-srv/special/politics/election-map-2012/senate/). We use this library as the basis for our plugin and have integrated several other libraries for enhancing its functionality. Our main goal is to provide you with an intuitive and user-friendly interface for organizing your spots within your WordPress powered site. Furthermore we are constantly working on improving our plugin by adding new and innovative ways for managing and showing your spots. Our roadmap for new releases gets aligned to our users' needs - so giving support and talking to our users is essential. 
@@ -105,8 +106,6 @@ to the visitors of your website.
 * use of custom function names and enque plugin scripts/css only on plugin pages to prevent conflicts with other plugins
 * update functions implemented for smooth updates of the plugin
 * uninstall function to completely remove the plugin and its data (also on WordPress Multisite installations)
-
-Please let me know which feature you think is missing by adding your ideas at [http://www.mapsmarker.com/ideas](http://www.mapsmarker.com/ideas)
 
 = Available translations =
 * Bulgarian (bg_BG) thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
@@ -312,6 +311,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: optimized use of WordPress Transients API (saving less rows to wp_options-table)
 * CHANGED: optimized plugin active check for higher performance (use of isset() instead of in_array())
 * CHANGED: set jQuery cache for layers to true again for higher performance
+* CHANGED: shrinked plugin´s total size by 700kb by moving screenshots to assets-directory on wordpress.org
 * BUGFIX: marker count on layers lists was wrong for multi-layer-maps (thanks photocoen!)
 * BUGFIX: warning messages for WordPress 3.5beta3 when debug was enabled
 

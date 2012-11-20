@@ -109,6 +109,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		set jQuery cache for layers to true again for higher performance	
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		shrinked plugin´s total size by 700kb by moving screenshots to assets-directory on wordpress.org
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		marker count on layers lists was wrong for multi-layer-maps (thanks photocoen!)

@@ -10,6 +10,9 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-marker.php') { die ("Pleas
 <?php
 global $wpdb;
 $lmm_options = get_option( 'leafletmapsmarker_options' );
+$current_editor = $lmm_options['misc_map_editor'];
+$new_editor = isset($_GET['new_editor']) ? $_GET['new_editor'] : '';
+$current_editor_css = ($current_editor == 'simplified') ? 'display:none;' : '';
 $table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
 $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
 $action = isset($_POST['action']) ? $_POST['action'] : (isset($_GET['action']) ? $_GET['action'] : ''); 
@@ -39,11 +42,13 @@ if (! wp_verify_nonce($markernonce, 'marker-nonce') ) die('<br/>'.__('Security c
 		$wms8_checkbox = isset($_POST['wms8']) ? '1' : '0';
 		$wms9_checkbox = isset($_POST['wms9']) ? '1' : '0';
 		$wms10_checkbox = isset($_POST['wms10']) ? '1' : '0';
+		$openpopup_checkbox = isset($_POST['openpopup']) ? '1' : '0';
+		$panel_checkbox = isset($_POST['panel']) ? '1' : '0';
 		$markername_quotes = str_replace("\"", "'", $_POST['markername']);
 		if ($_POST['kml_timestamp'] == NULL) {	
-			$result = $wpdb->prepare( "INSERT INTO $table_name_markers (markername, basemap, layer, lat, lon, icon, popuptext, zoom, openpopup, mapwidth, mapwidthunit, mapheight, panel, createdby, createdon, controlbox, overlays_custom, overlays_custom2, overlays_custom3, overlays_custom4, wms, wms2, wms3, wms4, wms5, wms6, wms7, wms8, wms9, wms10) VALUES (%s, %s, %d, %s, %s, %s, %s, %d, %d, %d, %s, %d, %d, %s, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d )", $markername_quotes, $_POST['basemap'], $layer, str_replace(',', '.', $_POST['lat']), str_replace(',', '.', $_POST['lon']), $_POST['icon'], $_POST['popuptext'], $_POST['zoom'], $_POST['openpopup'], $_POST['mapwidth'], $_POST['mapwidthunit'], $_POST['mapheight'], $_POST['panel'], $current_user->user_login, current_time('mysql',0), $_POST['controlbox'], $_POST['overlays_custom'], $_POST['overlays_custom2'], $_POST['overlays_custom3'], $_POST['overlays_custom4'], $wms_checkbox, $wms2_checkbox, $wms3_checkbox, $wms4_checkbox, $wms5_checkbox, $wms6_checkbox, $wms7_checkbox, $wms8_checkbox, $wms9_checkbox, $wms10_checkbox ); 
+			$result = $wpdb->prepare( "INSERT INTO $table_name_markers (markername, basemap, layer, lat, lon, icon, popuptext, zoom, openpopup, mapwidth, mapwidthunit, mapheight, panel, createdby, createdon, controlbox, overlays_custom, overlays_custom2, overlays_custom3, overlays_custom4, wms, wms2, wms3, wms4, wms5, wms6, wms7, wms8, wms9, wms10) VALUES (%s, %s, %d, %s, %s, %s, %s, %d, %d, %d, %s, %d, %d, %s, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d )", $markername_quotes, $_POST['basemap'], $layer, str_replace(',', '.', $_POST['lat']), str_replace(',', '.', $_POST['lon']), $_POST['icon'], $_POST['popuptext'], $_POST['zoom'], $openpopup_checkbox, $_POST['mapwidth'], $_POST['mapwidthunit'], $_POST['mapheight'], $panel_checkbox, $current_user->user_login, current_time('mysql',0), $_POST['controlbox'], $_POST['overlays_custom'], $_POST['overlays_custom2'], $_POST['overlays_custom3'], $_POST['overlays_custom4'], $wms_checkbox, $wms2_checkbox, $wms3_checkbox, $wms4_checkbox, $wms5_checkbox, $wms6_checkbox, $wms7_checkbox, $wms8_checkbox, $wms9_checkbox, $wms10_checkbox ); 
 		} else if ($_POST['kml_timestamp'] != NULL) {
-			$result = $wpdb->prepare( "INSERT INTO $table_name_markers (markername, basemap, layer, lat, lon, icon, popuptext, zoom, openpopup, mapwidth, mapwidthunit, mapheight, panel, createdby, createdon, controlbox, overlays_custom, overlays_custom2, overlays_custom3, overlays_custom4, wms, wms2, wms3, wms4, wms5, wms6, wms7, wms8, wms9, wms10, kml_timestamp) VALUES (%s, %s, %d, %s, %s, %s, %s, %d, %d, %d, %s, %d, %d, %s, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %s )", $markername_quotes, $_POST['basemap'], $layer, str_replace(',', '.', $_POST['lat']), str_replace(',', '.', $_POST['lon']), $_POST['icon'], $_POST['popuptext'], $_POST['zoom'], $_POST['openpopup'], $_POST['mapwidth'], $_POST['mapwidthunit'], $_POST['mapheight'], $_POST['panel'], $current_user->user_login, current_time('mysql',0), $_POST['controlbox'], $_POST['overlays_custom'], $_POST['overlays_custom2'], $_POST['overlays_custom3'], $_POST['overlays_custom4'], $wms_checkbox, $wms2_checkbox, $wms3_checkbox, $wms4_checkbox, $wms5_checkbox, $wms6_checkbox, $wms7_checkbox, $wms8_checkbox, $wms9_checkbox, $wms10_checkbox, $_POST['kml_timestamp'] ); 
+			$result = $wpdb->prepare( "INSERT INTO $table_name_markers (markername, basemap, layer, lat, lon, icon, popuptext, zoom, openpopup, mapwidth, mapwidthunit, mapheight, panel, createdby, createdon, controlbox, overlays_custom, overlays_custom2, overlays_custom3, overlays_custom4, wms, wms2, wms3, wms4, wms5, wms6, wms7, wms8, wms9, wms10, kml_timestamp) VALUES (%s, %s, %d, %s, %s, %s, %s, %d, %d, %d, %s, %d, %d, %s, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %s )", $markername_quotes, $_POST['basemap'], $layer, str_replace(',', '.', $_POST['lat']), str_replace(',', '.', $_POST['lon']), $_POST['icon'], $_POST['popuptext'], $_POST['zoom'], $openpopup_checkbox, $_POST['mapwidth'], $_POST['mapwidthunit'], $_POST['mapheight'], $panel_checkbox, $current_user->user_login, current_time('mysql',0), $_POST['controlbox'], $_POST['overlays_custom'], $_POST['overlays_custom2'], $_POST['overlays_custom3'], $_POST['overlays_custom4'], $wms_checkbox, $wms2_checkbox, $wms3_checkbox, $wms4_checkbox, $wms5_checkbox, $wms6_checkbox, $wms7_checkbox, $wms8_checkbox, $wms9_checkbox, $wms10_checkbox, $_POST['kml_timestamp'] ); 
 		}
 		$wpdb->query( $result );
 		$wpdb->query( "OPTIMIZE TABLE $table_name_markers" );
@@ -69,11 +74,13 @@ if (! wp_verify_nonce($markernonce, 'marker-nonce') ) die('<br/>'.__('Security c
 		$wms8_checkbox = isset($_POST['wms8']) ? '1' : '0';
 		$wms9_checkbox = isset($_POST['wms9']) ? '1' : '0';
 		$wms10_checkbox = isset($_POST['wms10']) ? '1' : '0';
+		$openpopup_checkbox = isset($_POST['openpopup']) ? '1' : '0';
+		$panel_checkbox = isset($_POST['panel']) ? '1' : '0';
 		$markername_quotes = str_replace("\"", "'", $_POST['markername']);	
 		if ($_POST['kml_timestamp'] == NULL) {	
-			$result = $wpdb->prepare( "UPDATE $table_name_markers SET markername = %s, basemap = %s, layer = %d, lat = %s, lon = %s, icon = %s, popuptext = %s, zoom = %d, openpopup = %d, mapwidth = %d, mapwidthunit = %s, mapheight = %d, panel = %d, updatedby = %s, updatedon = %s, controlbox = %d, overlays_custom = %s, overlays_custom2 = %s, overlays_custom3 = %s, overlays_custom4 = %s, wms = %d, wms2 = %d, wms3 = %d, wms4 = %d, wms5 = %d, wms6 = %d, wms7 = %d, wms8 = %d, wms9 = %d, wms10 = %d WHERE id = %d", $markername_quotes, $_POST['basemap'], $layer, str_replace(',', '.', $_POST['lat']), str_replace(',', '.', $_POST['lon']), $_POST['icon'], $_POST['popuptext'], $_POST['zoom'], $_POST['openpopup'], $_POST['mapwidth'], $_POST['mapwidthunit'], $_POST['mapheight'], $_POST['panel'], $current_user->user_login, current_time('mysql',0), $_POST['controlbox'], $_POST['overlays_custom'], $_POST['overlays_custom2'], $_POST['overlays_custom3'], $_POST['overlays_custom4'], $wms_checkbox, $wms2_checkbox, $wms3_checkbox, $wms4_checkbox, $wms5_checkbox, $wms6_checkbox, $wms7_checkbox, $wms8_checkbox, $wms9_checkbox, $wms10_checkbox, $oid );
+			$result = $wpdb->prepare( "UPDATE $table_name_markers SET markername = %s, basemap = %s, layer = %d, lat = %s, lon = %s, icon = %s, popuptext = %s, zoom = %d, openpopup = %d, mapwidth = %d, mapwidthunit = %s, mapheight = %d, panel = %d, updatedby = %s, updatedon = %s, controlbox = %d, overlays_custom = %s, overlays_custom2 = %s, overlays_custom3 = %s, overlays_custom4 = %s, wms = %d, wms2 = %d, wms3 = %d, wms4 = %d, wms5 = %d, wms6 = %d, wms7 = %d, wms8 = %d, wms9 = %d, wms10 = %d WHERE id = %d", $markername_quotes, $_POST['basemap'], $layer, str_replace(',', '.', $_POST['lat']), str_replace(',', '.', $_POST['lon']), $_POST['icon'], $_POST['popuptext'], $_POST['zoom'], $openpopup_checkbox, $_POST['mapwidth'], $_POST['mapwidthunit'], $_POST['mapheight'], $panel_checkbox, $current_user->user_login, current_time('mysql',0), $_POST['controlbox'], $_POST['overlays_custom'], $_POST['overlays_custom2'], $_POST['overlays_custom3'], $_POST['overlays_custom4'], $wms_checkbox, $wms2_checkbox, $wms3_checkbox, $wms4_checkbox, $wms5_checkbox, $wms6_checkbox, $wms7_checkbox, $wms8_checkbox, $wms9_checkbox, $wms10_checkbox, $oid );
 		} else if ($_POST['kml_timestamp'] != NULL) {
-			$result = $wpdb->prepare( "UPDATE $table_name_markers SET markername = %s, basemap = %s, layer = %d, lat = %s, lon = %s, icon = %s, popuptext = %s, zoom = %d, openpopup = %d, mapwidth = %d, mapwidthunit = %s, mapheight = %d, panel = %d, updatedby = %s, updatedon = %s, controlbox = %d, overlays_custom = %s, overlays_custom2 = %s, overlays_custom3 = %s, overlays_custom4 = %s, wms = %d, wms2 = %d, wms3 = %d, wms4 = %d, wms5 = %d, wms6 = %d, wms7 = %d, wms8 = %d, wms9 = %d, wms10 = %d, kml_timestamp = %s WHERE id = %d", $markername_quotes, $_POST['basemap'], $layer, str_replace(',', '.', $_POST['lat']), str_replace(',', '.', $_POST['lon']), $_POST['icon'], $_POST['popuptext'], $_POST['zoom'], $_POST['openpopup'], $_POST['mapwidth'], $_POST['mapwidthunit'], $_POST['mapheight'], $_POST['panel'], $current_user->user_login, current_time('mysql',0), $_POST['controlbox'], $_POST['overlays_custom'], $_POST['overlays_custom2'], $_POST['overlays_custom3'], $_POST['overlays_custom4'], $wms_checkbox, $wms2_checkbox, $wms3_checkbox, $wms4_checkbox, $wms5_checkbox, $wms6_checkbox, $wms7_checkbox, $wms8_checkbox, $wms9_checkbox, $wms10_checkbox, $_POST['kml_timestamp'], $oid );
+			$result = $wpdb->prepare( "UPDATE $table_name_markers SET markername = %s, basemap = %s, layer = %d, lat = %s, lon = %s, icon = %s, popuptext = %s, zoom = %d, openpopup = %d, mapwidth = %d, mapwidthunit = %s, mapheight = %d, panel = %d, updatedby = %s, updatedon = %s, controlbox = %d, overlays_custom = %s, overlays_custom2 = %s, overlays_custom3 = %s, overlays_custom4 = %s, wms = %d, wms2 = %d, wms3 = %d, wms4 = %d, wms5 = %d, wms6 = %d, wms7 = %d, wms8 = %d, wms9 = %d, wms10 = %d, kml_timestamp = %s WHERE id = %d", $markername_quotes, $_POST['basemap'], $layer, str_replace(',', '.', $_POST['lat']), str_replace(',', '.', $_POST['lon']), $_POST['icon'], $_POST['popuptext'], $_POST['zoom'], $openpopup_checkbox, $_POST['mapwidth'], $_POST['mapwidthunit'], $_POST['mapheight'], $panel_checkbox, $current_user->user_login, current_time('mysql',0), $_POST['controlbox'], $_POST['overlays_custom'], $_POST['overlays_custom2'], $_POST['overlays_custom3'], $_POST['overlays_custom4'], $wms_checkbox, $wms2_checkbox, $wms3_checkbox, $wms4_checkbox, $wms5_checkbox, $wms6_checkbox, $wms7_checkbox, $wms8_checkbox, $wms9_checkbox, $wms10_checkbox, $_POST['kml_timestamp'], $oid );
 		}
 		$wpdb->query( $result );
 		$wpdb->query( "OPTIMIZE TABLE $table_name_markers" );
@@ -93,11 +100,19 @@ if (! wp_verify_nonce($markernonce, 'marker-nonce') ) die('<br/>'.__('Security c
     }
   }
   elseif ($action == 'switcheditor') {
-		$new_options_defaults = array('misc_map_editor' => 'advanced');
-		$options_current = get_option( 'leafletmapsmarker_options' );
-		$options_new = array_merge($options_current, $new_options_defaults);
-		update_option( 'leafletmapsmarker_options', $options_new );
-        echo '<p><div class="updated" style="padding:10px;">' . __('xxxxxxxx','lmm') . '</div><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers\'>' . __('list all markers','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker\'>' . __('add new marker','lmm') . '</a></p>';
+		if ($new_editor == 'advanced') {
+			$new_options_defaults = array('misc_map_editor' => 'advanced');
+			$options_current = get_option( 'leafletmapsmarker_options' );
+			$options_new = array_merge($options_current, $new_options_defaults);
+			update_option( 'leafletmapsmarker_options', $options_new );
+			echo '<p><div class="updated" style="padding:10px;">' . __('You successfully switched to the advanced editor.','lmm') . '</div><a class=\'button-primary\' href=\'javascript:history.back();\'>' . __('back to editor','lmm') . '</a></p>';
+		} else if ($new_editor == 'simplified') {
+			$new_options_defaults = array('misc_map_editor' => 'simplified');
+			$options_current = get_option( 'leafletmapsmarker_options' );
+			$options_new = array_merge($options_current, $new_options_defaults);
+			update_option( 'leafletmapsmarker_options', $options_new );
+			echo '<p><div class="updated" style="padding:10px;">' . __('You successfully switched to the simplified editor.','lmm') . '</div><a class=\'button-primary\' href=\'javascript:history.back();\'>' . __('back to editor','lmm') . '</a></p>';
+		}
   }
 }
 else {
@@ -207,7 +222,16 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 		<input type="hidden" id="overlays_custom2" name="overlays_custom2" value="<?php echo $overlays_custom2 ?>" />
 		<input type="hidden" id="overlays_custom3" name="overlays_custom3" value="<?php echo $overlays_custom3 ?>" />
 		<input type="hidden" id="overlays_custom4" name="overlays_custom4" value="<?php echo $overlays_custom4 ?>" />		
-		<div id="editmodeswitch" style="float:right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch to advanced editor</div>
+		<?php
+		$noncelink = wp_create_nonce('marker-nonce');
+		if ($current_editor == 'simplified') {
+			echo '<div id="editmodeswitch" style="float:right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<div style="float:right;"><a style="text-decoration:none;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&action=switcheditor&new_editor=advanced&_wpnonce=' . $noncelink . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-editorswitch.png" width="24" height="24" alt="Editor-Switch-Icon" style="margin:-2px 0 0 5px;" /></div>' . __('switch to advanced editor','lmm') . '</a></div>';
+		} else if ($current_editor == 'advanced') {
+			echo '<div id="editmodeswitch" style="float:right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<div style="float:right;"><a style="text-decoration:none;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&action=switcheditor&new_editor=simplified&_wpnonce=' . $noncelink . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-editorswitch.png" width="24" height="24" alt="Editor-Switch-Icon" style="margin:-2px 0 0 5px;" /></div>' . __('switch to simplified editor','lmm') . '</a></div>';
+		} 
+		?>
          <h3 style="font-size:23px;"><?php ($isedit === true) ? _e('Edit marker','lmm') : _e('Add new marker','lmm') ?>
 		<?php echo ($isedit === true) ? '(ID '.$id.')' : '' ?></h3>       
         
@@ -246,18 +270,19 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 			</tr>
 			<tr>
 				<td><label for="placesearch"><strong><?php _e('Coordinates','lmm') ?>:</strong></label></td>
-				<td><p><label for="placesearch"><?php _e('Please select a place or an address','lmm') ?></label> <?php if (current_user_can('activate_plugins')) { echo '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings#google_places">' . __('(Settings)','lmm') . '</a>'; } ?>
+				<td><p><label for="placesearch"><?php _e('Please select a place or an address','lmm') ?></label> <?php if (current_user_can('activate_plugins')) { echo '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings#google">' . __('(Settings)','lmm') . '</a>'; } ?>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/powered-by-google.png" /></a><br/>
 					<input style="width: 640px;" type="text" id="placesearch" name="placesearch" value="<?php $placesearch = ''; echo $placesearch ?>" />
-					<br>
+					<div style="<?php echo $current_editor_css; ?>">
 					<?php _e('or paste coordinates here','lmm') ?> -  
 					<?php _e('latitude','lmm') ?>: <input style="width: 100px;" type="text" id="lat" name="lat" value="<?php echo $lat; ?>" />
 					<?php _e('longitude','lmm') ?>: <input style="width: 100px;" type="text" id="lon" name="lon" value="<?php echo $lon; ?>" />
 					<br>
 					<?php _e('or set marker coordinates by clicking on the preview map','lmm') ?>:</small></p></td>
+					</div>
 			</tr>
 			<tr>
-				<td><p><label for="mapwidth"><strong><?php _e('Map size','lmm') ?>:</strong></label><br/>
+				<td><p style="margin-bottom:0px;"><label for="mapwidth"><strong><?php _e('Map size','lmm') ?>:</strong></label><br/>
 					<?php _e('Width','lmm') ?>:
 					<input size="2" maxlength="4" type="text" id="mapwidth" name="mapwidth" value="<?php echo $mapwidth ?>" />
 					<input id="mapwidthunit_px" type="radio" name="mapwidthunit" value="px" <?php checked($mapwidthunit, 'px'); ?>>
@@ -266,24 +291,22 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					<?php _e('Height','lmm') ?>:
 					<input size="2" maxlength="4" type="text" id="mapheight" name="mapheight" value="<?php echo $mapheight ?>" />px
 					<br/><br/>
-					<label for="zoom"><strong><?php _e('Zoom','lmm') ?>:</strong></label><br/>
-					<input style="width: 30px;" type="text" id="zoom" name="zoom" value="<?php echo $zoom ?>" />
+					<label for="zoom"><strong><?php _e('Zoom','lmm') ?></strong></label>&nbsp;<input style="width: 30px;" type="text" id="zoom" name="zoom" value="<?php echo $zoom ?>" />
 					<br>
 					<small>
 					<?php _e('You can also change zoom level by clicking on + or - on preview map or using your mouse wheel','lmm') ?>
 					</small>
-					<br/><br/>
+					</p>
+					<div style="<?php echo $current_editor_css; ?>">
+					<p><br/>
 					<strong><?php _e('Basemap/overlay controlbox on frontend','lmm') ?>:</strong></label><br/>
 					<input id="controlbox_hidden" type="radio" name="controlbox" value="0" <?php checked($controlbox, 0); ?>><label for="controlbox_hidden"><?php _e('hidden','lmm') ?></label><br/>
 					<input id="controlbox_collapsed" type="radio" name="controlbox" value="1" <?php checked($controlbox, 1); ?>><label for="controlbox_collapsed"><?php _e('collapsed (except on mobiles)','lmm') ?></label><br/>
 					<input id="controlbox_expanded" type="radio" name="controlbox" value="2" <?php checked($controlbox, 2); ?>><label for="controlbox_expanded"><?php _e('expanded','lmm') ?></label><br/>
 					<small><?php _e('Controlbox on backend is always expanded','lmm') ?></small>
 					<br/><br/>
-					<strong><?php _e('Panel for displaying marker name and API URLs on top of map','lmm') ?>:</strong><br/>
-					<input id="panel_show" type="radio" name="panel" value="1" <?php checked($panel, 1 ); ?>>
-					<label for="panel_show"><?php _e('show','lmm') ?></label><br/>
-					<input id="panel_hide" type="radio" name="panel" value="0" <?php checked($panel, 0 ); ?>>
-					<label for="panel_hide"><?php _e('hide','lmm') ?></label>
+					<strong><?php _e('Display panel','lmm') ?></strong>&nbsp;&nbsp;<input type="checkbox" name="panel" id="panel" <?php checked($panel, 1 ); ?>><br/>
+					<small><?php _e('If checked, panel on top of map is displayed','lmm') ?></small>
 					<br/><br/>				
 					<?php 
 					global $wp_version;
@@ -308,7 +331,9 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					<?php }; ?>
 					<label for="kml_timestamp"><strong><?php _e('Timestamp for KML animation','lmm') ?>:</strong></label> <a href="http://www.mapsmarker.com/kml-timestamp" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-question-mark.png" title="<?php esc_attr_e('Click here for more information on animations in KML/Google Earth','lmm'); ?>" width="12" height="12" border="0"/></a><br/>
 					<input type="text" id="kml_timestamp" name="kml_timestamp" value="<?php echo $kml_timestamp ; ?>" style="width:145px;background-image:url(<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-calendar.png);background-position:123px center;background-repeat:no-repeat;" /><br/>
-					<small><?php _e('If empty, marker creation date will be used','lmm') ?><br/></small></p>
+					<small><?php _e('If empty, marker creation date will be used','lmm') ?><br/></small>
+					</div>
+					</p>
 				</td>
 				<td id="wmscheckboxes">
 					<?php 
@@ -368,7 +393,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					</div> <!--end lmm-panel-->
 					<div id="selectlayer" style="height:<?php echo $mapheight; ?>px;"></div>
 					</div><!--end mapsmarker div-->
-					<div style="float:right;margin-top:10px;"><p><strong><?php _e('WMS layers','lmm') ?></strong> <?php if (current_user_can('activate_plugins')) { echo '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings#wms">' . __('(Settings)','lmm') . '</a>'; } ?></p>
+					<div style="float:right;margin-top:10px;<?php echo $current_editor_css; ?>"><p><strong><?php _e('WMS layers','lmm') ?></strong> <?php if (current_user_can('activate_plugins')) { echo '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings#wms">' . __('(Settings)','lmm') . '</a>'; } ?></p>
 					<?php 
 					//info: define available wms layers (for markers and layers) 
 					if ( (isset($lmm_options[ 'wms_wms_available' ] ) == TRUE ) && ( $lmm_options[ 'wms_wms_available' ] == 1 ) ) {
@@ -430,6 +455,10 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 				<td><label for="default_icon"><strong><?php _e('Icon', 'lmm') ?>:</strong></label>
 					<br/>
 					<br/>
+					<?php 
+					if ($current_editor == 'simplified') {
+						echo '<div id="mapiconscollection" style="display:none;">';
+					} ?>
 					<a title="Maps Icons Collection - http://mapicons.nicolasmollet.com" href="http://mapicons.nicolasmollet.com" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/logo-mapicons.gif" width="88" heigh="31" /></a><br/>
 					<small>
 					<?php	
@@ -441,25 +470,35 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					echo '<br/><br/>' . $mapicons_directory;
 					}
 					?>
+					<?php 
+					if ($current_editor == 'simplified') {
+						echo '</div>';
+					} ?>					
 					</small>
 				</td>
 				<td><div style="text-align:center;float:left;line-height:0px;margin-bottom:3px;"><label for="default_icon"><img src="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' ?>" width="32" height="37" title="<?php esc_attr_e('filename','lmm') ?>: marker.png, <?php esc_attr_e('CSS classname','lmm'); ?>: lmm_marker_icon_default" alt="default.png" /></label><br/><input id="default_icon" style="margin:1px 0 0 1px;" onchange="updateicon(this.value);" type="radio" name="icon" value="" <?php echo ($icon == NULL ? ' checked' : '')?>>
 					</div>
 					<?php 
+					if ($current_editor == 'simplified') {
+						echo '<div id="moreiconslink" style="display:block;margin:15px 0 0 45px;"><a href="javascript:();">show more icons</a></div>';
+						echo '<div id="moreicons" style="display:none;">';
+					} ?>
+					<?php 
 					foreach ($iconlist as $row)
-					  echo '<div style="text-align:center;float:left;line-height:0px;margin-bottom:3px;"><label for="'.$row.'"><img src="' . LEAFLET_PLUGIN_ICONS_URL . '/' . $row . '" title="' . esc_attr__('filename','lmm') . ': ' . $row . ', ' . esc_attr__('CSS classname','lmm') . ': lmm_marker_icon_' . substr($row, 0, -4) . '" alt="' . $row . '" width="32" height="37" /></label><br/><input id="'.$row.'" style="margin:1px 0 0 1px;" onchange="updateicon(this.value);" type="radio" name="icon" value="'.$row.'"'.($row == $icon ? ' checked' : '').'></div>';
-?></td>
+					  echo '<div style="text-align:center;float:left;line-height:0px;margin-bottom:3px;"><label for="'.$row.'"><img src="' . LEAFLET_PLUGIN_ICONS_URL . '/' . $row . '" title="' . esc_attr__('filename','lmm') . ': ' . $row . ', ' . esc_attr__('CSS classname','lmm') . ': lmm_marker_icon_' . substr($row, 0, -4) . '" alt="' . $row . '" width="32" height="37" /></label><br/><input id="'.$row.'" style="margin:1px 0 0 1px;" onchange="updateicon(this.value);" type="radio" name="icon" value="'.$row.'"'.($row == $icon ? ' checked' : '').'></div>'; 
+					?>
+					<?php 
+					if ($current_editor == 'simplified') {
+						echo '</div>';
+					} ?>
+				</td>
 			</tr>
 			<tr>
 				<td><label for="popuptext"><strong><?php _e('Popup text','lmm') ?>:</strong></label>
 				<br /><br />
-				<?php _e('open by default?','lmm') ?><br/>
-				<input id="openpopup_no" type="radio" name="openpopup" value="0" <?php checked($openpopup, 0 ); ?>>
-				<label for="openpopup_no"><?php _e('no','lmm') ?></label>&nbsp;&nbsp;&nbsp;
-				<input id="openpopup_yes" type="radio" name="openpopup" value="1" <?php checked($openpopup, 1); ?>>
-				<label for="openpopup_yes"><?php _e('yes','lmm') ?></label><br/>
-				<small>
-				<?php _e('If no is selected, the popup will only be visible after clicking on the marker on marker- or layer-maps. If yes is selected, the popup is shown by default on marker-maps but not on layer-maps, where this feature is not supported','lmm') ?>
+				<?php _e('open popup','lmm') ?>&nbsp;&nbsp;<input type="checkbox" name="openpopup" id="openpopup" <?php checked($openpopup, 1 ); ?>>
+				<br/><small>
+				<?php _e('If unchecked, the popup will only be visible after clicking on the marker on marker- or layer-maps.','lmm') ?>
 				</small></p>
 				</td>
 				<td>
@@ -513,13 +552,13 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					<?php 
 					$max_popup_image_size_note = sprintf( esc_attr__('Note: if you add an image, its width gets reduced to %1$spx to fit in popup - its height gets reduced by the according ratio automatically!','lmm'), intval($lmm_options['defaults_marker_popups_image_max_width'])); 
 					echo $max_popup_image_size_note;
-					if (current_user_can('activate_plugins')) { echo ' <a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings#defaults_marker" title="' . esc_attr__('can be changed at section "Default values for marker popups"','lmm') . '">' . __('(Settings)','lmm') . '</a>'; } 
+					if (current_user_can('activate_plugins')) { echo ' <a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings#mapdefaults-section6" title="' . esc_attr__('can be changed at section "Default values for marker popups"','lmm') . '">' . __('(Settings)','lmm') . '</a>'; } 
 					?>
 					</small>
 				</td>
 			</tr>
 			<?php if ($mcreatedby != NULL) {?>
-			<tr>
+			<tr style="<?php echo $current_editor_css; ?>">
 				<td><small><strong><?php _e('Audit','lmm') ?>:</strong></small></td>
 				<td><small>
 					<?php _e('Marker added by','lmm') ?>
@@ -917,19 +956,18 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
 		}
 	});
 	//info: show/hide panel for markername & API URLs
-	$('input:radio[name=panel]').click(function() {
-		if($('input:radio[name=panel]:checked').val() == 1) {
+	$('input:checkbox[name=panel]').click(function() {
+		if($('input:checkbox[name=panel]').is(':checked')) {
 			panel.css("display",'block');
-		}
-		if($('input:radio[name=panel]:checked').val() == 0) {
+		} else {
 			panel.css("display",'none');
 		}
 	});
-	$('input:radio[name=openpopup]').click(function() {
-		if($('input:radio[name=openpopup]:checked').val() == 0) {
-			marker.closePopup();
-		} else {
+	$('input:checkbox[name=openpopup]').click(function() {
+		if($('input:checkbox[name=openpopup]').is(':checked')) {
 			marker.openPopup();
+		} else {
+			marker.closePopup();
 		}
 	});
 	//info: check if lat is a number
@@ -943,6 +981,12 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
 		if(isNaN(lon.val())) {
                 alert('<?php esc_attr_e('Invalid format! Please only use numbers and a . instead of a , as decimal separator!','lmm') ?>');
 		}
+	});
+	//info: show all icons on click on simplified editor
+	$('#moreiconslink').click(function(e) {
+			$('#moreicons').show('fast');
+			$('#moreiconslink').hide();
+			$('#mapiconscollection').show('fast');
 	});
 	//info: sets map center to new marker position when entering lat/lon manually
 	$('input:text[name=lat],input:text[name=lon]').blur(function(e) {

@@ -45,7 +45,7 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'admin-footer.php') { die ("Please 
 	<option value="Supporter">Supporter €10,00 EUR</option>
 	<option value="Supporter 2">Supporter €25,00 EUR</option>
 	<option value="Donor">Donor €50,00 EUR</option>
-	<option value="Sponsor">Sponsor €100,00 EUR</option>
+	<option SELECTED value="Sponsor">Sponsor €100,00 EUR</option>
 	<option value="Benefactor">Benefactor €250,00 EUR</option>
 	<option value="Patron">Patron €500,00 EUR</option>
 	<option value="Open Source Angel">Open Source Angel €1.000,00 EUR</option>
