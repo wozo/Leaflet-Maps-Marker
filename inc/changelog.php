@@ -114,6 +114,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		shrinked plugin´s total size by 700kb by moving screenshots to assets-directory on wordpress.org
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		top menu now displays correctly if you are on add new or edit-marker or layer page
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		marker count on layers lists was wrong for multi-layer-maps (thanks photocoen!)

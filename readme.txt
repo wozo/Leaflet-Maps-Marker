@@ -312,6 +312,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: optimized plugin active check for higher performance (use of isset() instead of in_array())
 * CHANGED: set jQuery cache for layers to true again for higher performance
 * CHANGED: shrinked plugin´s total size by 700kb by moving screenshots to assets-directory on wordpress.org
+* CHANGED: top menu now displays correctly if you are on add new or edit-marker or layer page
 * BUGFIX: marker count on layers lists was wrong for multi-layer-maps (thanks photocoen!)
 * BUGFIX: warning messages for WordPress 3.5beta3 when debug was enabled
 
