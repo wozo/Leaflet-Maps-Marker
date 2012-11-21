@@ -13,6 +13,19 @@ $lmm_options = get_option( 'leafletmapsmarker_options' );
 $current_editor = $lmm_options['misc_map_editor'];
 $new_editor = isset($_GET['new_editor']) ? $_GET['new_editor'] : '';
 $current_editor_css = ($current_editor == 'simplified') ? 'display:none;' : '';
+//info: needed for backlink on edit switch
+function curPageURL() {
+	$pageURL = 'http';
+	if ($_SERVER["HTTPS"] == "on") { $pageURL .= "s"; }
+	$pageURL .= "://";
+	if ($_SERVER["SERVER_PORT"] != "80") {
+		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+	} else {
+		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+	}
+	return urlencode($pageURL);
+}
+$back_reload_url = isset($_GET['back_reload_url']) ? $_GET['back_reload_url'] : '';
 $table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
 $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
 $action = isset($_POST['action']) ? $_POST['action'] : (isset($_GET['action']) ? $_GET['action'] : ''); 
@@ -105,13 +118,13 @@ if (! wp_verify_nonce($markernonce, 'marker-nonce') ) die('<br/>'.__('Security c
 			$options_current = get_option( 'leafletmapsmarker_options' );
 			$options_new = array_merge($options_current, $new_options_defaults);
 			update_option( 'leafletmapsmarker_options', $options_new );
-			echo '<p><div class="updated" style="padding:10px;">' . __('You successfully switched to the advanced editor.','lmm') . '</div><a class=\'button-primary\' href=\'javascript:history.back();\'>' . __('back to editor','lmm') . '</a></p>';
+			echo '<p><div class="updated" style="padding:10px;">' . __('You successfully switched to the advanced editor.','lmm') . '</div><a class="button-primary" href="' . $back_reload_url . '">' . __('back to editor','lmm') . '</a></p>';
 		} else if ($new_editor == 'simplified') {
 			$new_options_defaults = array('misc_map_editor' => 'simplified');
 			$options_current = get_option( 'leafletmapsmarker_options' );
 			$options_new = array_merge($options_current, $new_options_defaults);
 			update_option( 'leafletmapsmarker_options', $options_new );
-			echo '<p><div class="updated" style="padding:10px;">' . __('You successfully switched to the simplified editor.','lmm') . '</div><a class=\'button-primary\' href=\'javascript:history.back();\'>' . __('back to editor','lmm') . '</a></p>';
+			echo '<p><div class="updated" style="padding:10px;">' . __('You successfully switched to the simplified editor.','lmm') . '</div><a class="button-primary" href="' . $back_reload_url . '">' . __('back to editor','lmm') . '</a></p>';
 		}
   }
 }
@@ -226,10 +239,10 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 		$noncelink = wp_create_nonce('marker-nonce');
 		if ($current_editor == 'simplified') {
 			echo '<div id="editmodeswitch" style="float:right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<div style="float:right;"><a style="text-decoration:none;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&action=switcheditor&new_editor=advanced&_wpnonce=' . $noncelink . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-editorswitch.png" width="24" height="24" alt="Editor-Switch-Icon" style="margin:-2px 0 0 5px;" /></div>' . __('switch to advanced editor','lmm') . '</a></div>';
+			<div style="float:right;"><a style="text-decoration:none;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&action=switcheditor&new_editor=advanced&_wpnonce=' . $noncelink . '&back_reload_url=' . curPageURL() . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-editorswitch.png" width="24" height="24" alt="Editor-Switch-Icon" style="margin:-2px 0 0 5px;" /></div>' . __('switch to advanced editor','lmm') . '</a></div>';
 		} else if ($current_editor == 'advanced') {
 			echo '<div id="editmodeswitch" style="float:right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<div style="float:right;"><a style="text-decoration:none;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&action=switcheditor&new_editor=simplified&_wpnonce=' . $noncelink . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-editorswitch.png" width="24" height="24" alt="Editor-Switch-Icon" style="margin:-2px 0 0 5px;" /></div>' . __('switch to simplified editor','lmm') . '</a></div>';
+			<div style="float:right;"><a style="text-decoration:none;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&action=switcheditor&new_editor=simplified&_wpnonce=' . $noncelink . '&back_reload_url=' . curPageURL() . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-editorswitch.png" width="24" height="24" alt="Editor-Switch-Icon" style="margin:-2px 0 0 5px;" /></div>' . __('switch to simplified editor','lmm') . '</a></div>';
 		} 
 		?>
          <h3 style="font-size:23px;"><?php ($isedit === true) ? _e('Edit marker','lmm') : _e('Add new marker','lmm') ?>
@@ -238,17 +251,17 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 		<table class="widefat fixed">
 			<?php if ($isedit === true) { ?>
 			<tr>
-				<td style="width:15%;"><label for="shortcode"><strong><?php _e('Shortcode and API URLs','lmm') ?>:</strong></label></td>
+				<td style="width:15%;"><label for="shortcode"><strong><?php _e('Shortcode and API URLs','lmm') ?></strong></label></td>
 				<td style="width:85%;"><input id="shortcode" style="width:200px;background:#f3efef;" type="text" value="[<?php echo $lmm_options[ 'shortcode' ]; ?> marker=&quot;<?php echo $id?>&quot;]" onfocus="this.select()" readonly> <a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-kml.php?marker=' . $id . '&name=' . $lmm_options[ 'misc_kml' ] . '' ?>"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-kml.png" width="14" height="14" alt="KML-Logo" /> KML</a> <a href="http://www.mapsmarker.com/kml" target="_blank" title="<?php esc_attr_e('Click here for more information on how to use as KML in Google Earth or Google Maps','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-fullscreen.php?marker=' . $id . '' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-fullscreen.png" width="14" height="14" alt="Fullscreen-Logo" /> <?php _e('Fullscreen','lmm'); ?></a> <span title="<?php esc_attr_e('Open standalone map in fullscreen mode','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-question-mark.png" width="12" height="12" border="0"/></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://chart.googleapis.com/chart?chs=<?php echo $lmm_options[ 'misc_qrcode_size' ]; ?>x<?php echo $lmm_options[ 'misc_qrcode_size' ]; ?>&cht=qr&chl=<?php echo LEAFLET_PLUGIN_URL ?>'/leaflet-fullscreen.php?marker=<?php echo $id ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-qr-code.png" width="14" height="14" alt="QR-code-Logo" /> <?php _e('QR code','lmm'); ?></a> <span title="<?php esc_attr_e('Create QR code image for standalone map in fullscreen mode','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-question-mark.png" width="12" height="12" border="0"/></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?marker=' . $id . '&callback=jsonp&full=yes' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-json.png" width="14" height="14" alt="GeoJSON-Logo" /> GeoJSON</a> <a href="http://www.mapsmarker.com/geojson" target="_blank" title="<?php esc_attr_e('Click here for more information on how to integrate GeoJSON into external websites or apps','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-georss.php?marker=' . $id . '' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-georss.png" width="14" height="14" alt="GeoJSON-Logo" /> GeoRSS</a> <a href="http://www.mapsmarker.com/georss" target="_blank" title="<?php esc_attr_e('Click here for more information on how to subscribe to new markers via GeoRSS','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo LEAFLET_PLUGIN_URL . 'leaflet-wikitude.php?marker=' . $id . '' ?>" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-wikitude.png" width="14" height="14" alt="Wikitude-Logo" /> Wikitude</a> <a href="http://www.mapsmarker.com/wikitude" target="_blank" title="<?php esc_attr_e('Click here for more information on how to display in Wikitude Augmented-Reality browser','lmm') ?>"> <img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a><br><small><?php _e('Use this shortcode in posts or pages on your website or one of the API URLs for embedding in external websites or apps','lmm') ?></small>
 					</td>
 			</tr>
 			<?php } ?>
 			<tr>
-				<td style="width:15%;"><label for="markername"><strong><?php _e('Marker name','lmm') ?>:</strong></label></td>
+				<td style="width:15%;"><label for="markername"><strong><?php _e('Marker name','lmm') ?></strong></label></td>
 				<td style="width:85%;"><input style="width:640px;" type="text" id="markername" name="markername" value="<?php echo stripslashes($markername) ?>" /></td>
 			</tr>
 			<tr>
-				<td><label for="layer"><strong><?php _e('Layer','lmm') ?>:</strong></label></td>
+				<td><label for="layer"><strong><?php _e('Layer','lmm') ?></strong></label></td>
 				<td><?php if ($addtoLayer == NULL) { //info: addtoLayer part1/3 ?>
 					<select id="layer" name="layer">
 						<option value="0">
@@ -269,7 +282,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					<?php } //info: addtoLayer part3/3 ?></td>
 			</tr>
 			<tr>
-				<td><label for="placesearch"><strong><?php _e('Coordinates','lmm') ?>:</strong></label></td>
+				<td><label for="placesearch"><strong><?php _e('Coordinates','lmm') ?></strong></label></td>
 				<td><p><label for="placesearch"><?php _e('Please select a place or an address','lmm') ?></label> <?php if (current_user_can('activate_plugins')) { echo '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings#google">' . __('(Settings)','lmm') . '</a>'; } ?>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/powered-by-google.png" /></a><br/>
 					<input style="width: 640px;" type="text" id="placesearch" name="placesearch" value="<?php $placesearch = ''; echo $placesearch ?>" />
@@ -278,11 +291,12 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					<?php _e('latitude','lmm') ?>: <input style="width: 100px;" type="text" id="lat" name="lat" value="<?php echo $lat; ?>" />
 					<?php _e('longitude','lmm') ?>: <input style="width: 100px;" type="text" id="lon" name="lon" value="<?php echo $lon; ?>" />
 					<br>
-					<?php _e('or set marker coordinates by clicking on the preview map','lmm') ?>:</small></p></td>
+					<?php _e('or set marker coordinates by clicking on the preview map','lmm') ?>:</small></p>
 					</div>
+				</td>
 			</tr>
 			<tr>
-				<td><p style="margin-bottom:0px;"><label for="mapwidth"><strong><?php _e('Map size','lmm') ?>:</strong></label><br/>
+				<td><p style="margin-bottom:0px;"><label for="mapwidth"><strong><?php _e('Map size','lmm') ?></strong></label><br/>
 					<?php _e('Width','lmm') ?>:
 					<input size="2" maxlength="4" type="text" id="mapwidth" name="mapwidth" value="<?php echo $mapwidth ?>" />
 					<input id="mapwidthunit_px" type="radio" name="mapwidthunit" value="px" <?php checked($mapwidthunit, 'px'); ?>>
@@ -332,10 +346,10 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					<label for="kml_timestamp"><strong><?php _e('Timestamp for KML animation','lmm') ?>:</strong></label> <a href="http://www.mapsmarker.com/kml-timestamp" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-question-mark.png" title="<?php esc_attr_e('Click here for more information on animations in KML/Google Earth','lmm'); ?>" width="12" height="12" border="0"/></a><br/>
 					<input type="text" id="kml_timestamp" name="kml_timestamp" value="<?php echo $kml_timestamp ; ?>" style="width:145px;background-image:url(<?php echo LEAFLET_PLUGIN_URL; ?>inc/img/icon-calendar.png);background-position:123px center;background-repeat:no-repeat;" /><br/>
 					<small><?php _e('If empty, marker creation date will be used','lmm') ?><br/></small>
-					</div>
 					</p>
+					</div>
 				</td>
-				<td id="wmscheckboxes">
+				<td id="wmscheckboxes" style="padding-bottom:5px;">
 					<?php 
 					echo '<div id="lmm" style="float:left;width:' . $mapwidth.$mapwidthunit . ';">'.PHP_EOL;
 					//info: panel for marker name and API URLs
@@ -452,7 +466,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 			</tr>
 			
 			<tr>
-				<td><label for="default_icon"><strong><?php _e('Icon', 'lmm') ?>:</strong></label>
+				<td><label for="default_icon"><strong><?php _e('Icon', 'lmm') ?></strong></label>
 					<br/>
 					<br/>
 					<?php 
@@ -494,7 +508,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 				</td>
 			</tr>
 			<tr>
-				<td><label for="popuptext"><strong><?php _e('Popup text','lmm') ?>:</strong></label>
+				<td><label for="popuptext"><strong><?php _e('Popup text','lmm') ?></strong></label>
 				<br /><br />
 				<?php _e('open popup','lmm') ?>&nbsp;&nbsp;<input type="checkbox" name="openpopup" id="openpopup" <?php checked($openpopup, 1 ); ?>>
 				<br/><small>
@@ -559,7 +573,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 			</tr>
 			<?php if ($mcreatedby != NULL) {?>
 			<tr style="<?php echo $current_editor_css; ?>">
-				<td><small><strong><?php _e('Audit','lmm') ?>:</strong></small></td>
+				<td><small><strong><?php _e('Audit','lmm') ?></strong></small></td>
 				<td><small>
 					<?php _e('Marker added by','lmm') ?>
 					<?php echo $mcreatedby ; ?> - <?php echo $mcreatedon ; ?>
@@ -936,7 +950,11 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
 		}
 	});
 	markername.on('blur', function(e) { 
-		document.getElementById('lmm-panel-text').innerHTML = markername.val();
+		if( markername.val() ){
+			document.getElementById('lmm-panel-text').innerHTML = markername.val();
+		} else {
+			document.getElementById('lmm-panel-text').innerHTML = '&nbsp;';
+		};
 	});
 	<?php } ?>
 	mapWidth.blur(function() {

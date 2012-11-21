@@ -1294,7 +1294,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section6',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => '',
+			'desc'    => '<img src="'. LEAFLET_PLUGIN_URL .'/inc/img/help-popup.jpg" />',
 			'type'    => 'helptext'
 		);
 		$this->settings['defaults_marker_popups_maxwidth'] = array(
@@ -1903,12 +1903,21 @@ class Class_leaflet_options {
 		/*
 		* List marker settings
 		*/
+		$this->settings['defaults_layer_listmarkers_helptext'] = array(
+			'version' => '3.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section9',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => '<img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-list-markers.jpg" />',
+			'type'    => 'helptext'
+		);	
 		$this->settings['defaults_layer_listmarkers'] = array(
 			'version' => '1.5',
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section9',
 			'title'   => __('Display a list of markers under layer maps','lmm'),
-			'desc'    => '',
+			'desc'    => __('Can be changed for each layer map','lmm'),
 			'type'    => 'radio',
 			'std'     => '1',
 			'choices' => array(
@@ -2282,7 +2291,7 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section13',
 			'title'   => 'zoomControl',
-			'desc'    => __('Whether the zoom control is added to the map by default.','lmm'),
+			'desc'    => __('Whether the zoom control is added to the map by default.','lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-zoomcontrol.jpg" />',
 			'type'    => 'radio',
 			'std'     => 'true',
 			'choices' => array(
@@ -3108,7 +3117,7 @@ class Class_leaflet_options {
 			'section' => 'overlays-section1',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please select the overlays which should be available in the control box.', 'lmm').'<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-custom-overlays-available-overlays.jpg" />',
+			'desc'    => __( 'Please select the overlays which should be available in the control box.', 'lmm').'<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-overlays-custom.jpg" />',
 			'type'    => 'helptext'
 		);
 		$this->settings['overlays_custom'] = array(
@@ -3247,7 +3256,7 @@ class Class_leaflet_options {
 			'section' => 'overlays-section3',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 2:<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-overlays-custom2.jpg" />',
+			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 2:<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-overlays-custom.jpg" />',
 			'type'    => 'helptext'
 		);
 		$this->settings['overlays_custom2_name'] = array(
@@ -3336,7 +3345,7 @@ class Class_leaflet_options {
 			'section' => 'overlays-section4',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 3:<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-overlays-custom3.jpg" />',
+			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 3:<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-overlays-custom.jpg" />',
 			'type'    => 'helptext'
 		);
 		$this->settings['overlays_custom3_name'] = array(
@@ -3424,7 +3433,7 @@ class Class_leaflet_options {
 			'section' => 'overlays-section5',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 4:<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-overlays-custom4.jpg" />',
+			'desc'    => __( 'Please enter settings for custom overlay', 'lmm').' 4:<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-overlays-custom.jpg" />',
 			'type'    => 'helptext'
 		);
 		$this->settings['overlays_custom4_name'] = array(
@@ -6527,7 +6536,7 @@ class Class_leaflet_options {
 			'section' => 'ar-section1',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Markers created with Leaflet Maps Marker can also be displayed via <a href="http://en.wikipedia.org/wiki/Augmented_reality" target="_blank">Augmented-Reality technology</a> on mobile devices. As a first steps, an API to <a href="http://www.wikitude.com" target="_blank">Wikitude</a> has been implemented. APIs to other Augmented-Reality-Providers (like <a href="http://www.layar.com" target="_blank">Layar</a> or <a href="http://www.junaio.de" target="_blank">Junaio</a>) will probably follow in one of the next versions. Sample screenshots:', 'lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'/screenshot-6.jpg" />',
+			'desc'    => __( 'Markers created with Leaflet Maps Marker can also be displayed via <a href="http://en.wikipedia.org/wiki/Augmented_reality" target="_blank">Augmented-Reality technology</a> on mobile devices. As a first steps, an API to <a href="http://www.wikitude.com" target="_blank">Wikitude</a> has been implemented. APIs to other Augmented-Reality-Providers (like <a href="http://www.layar.com" target="_blank">Layar</a> or <a href="http://www.junaio.de" target="_blank">Junaio</a>) will probably follow in one of the next versions. Sample screenshots:', 'lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'/inc/img/help-wikitude.jpg" />',
 			'type'    => 'helptext'
 		);
 		/*

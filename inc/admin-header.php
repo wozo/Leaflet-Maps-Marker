@@ -82,11 +82,11 @@ $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ?
 ?>
 <table cellpadding="5" cellspacing="0" class="widefat fixed">
   <tr>
-    <td><div style="float:left;margin:5px 10px 0 5px;"><a href="http://www.mapsmarker.com/go" target="_blank" title="www.mapsmarker.com"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/logo-mapsmarker.png" width="72" height="72" alt="Leaflet Maps Marker Plugin Logo by Julia Loew, www.weiderand.net" /></a></div>
+    <td><div style="float:left;margin:2px 10px 0 0;"><a href="http://www.mapsmarker.com/go" target="_blank" title="www.mapsmarker.com"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/logo-mapsmarker.png" width="65" height="65" alt="Leaflet Maps Marker Plugin Logo by Julia Loew, www.weiderand.net" /></a></div>
 
-<div style="font-size:1.5em;margin-bottom:5px;padding:5px 0 0 0;"><span style="font-weight:bold;">Maps Marker<sup style="font-size:75%;">&reg;</sup> v<?php echo get_option("leafletmapsmarker_version") ?> - <?php _e('Free Edition','lmm'); ?></span></div>
+<div style="font-size:1.5em;margin-bottom:5px;padding:2px 0 0 0;"><span style="font-weight:bold;">Maps Marker<sup style="font-size:75%;">&reg;</sup> v<?php echo get_option("leafletmapsmarker_version") ?> - <?php _e('Free Edition','lmm'); ?></span></div>
   <p style="margin:1.4em 0 0 0;">
-  <a class="<?php echo $buttonclass1; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_markers"><?php _e("List all markers", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="<?php echo $buttonclass1; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_markers"><?php _e("List all markers", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a class="<?php echo $buttonclass2; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_marker">
     <?php 
   if ( ($oid == NULL) && ($page == 'leafletmapsmarker_marker') ) { 
@@ -96,8 +96,8 @@ $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ?
   } else {
   		_e("Add new marker", "lmm"); 
   }?>
-  </a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-  <a class="<?php echo $buttonclass3; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layers"><?php _e("List all layers", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+  <a class="<?php echo $buttonclass3; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layers"><?php _e("List all layers", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a class="<?php echo $buttonclass4; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layer">
   <?php 
   if ( ($oid == NULL) && ($page == 'leafletmapsmarker_layer') ) { 
@@ -107,10 +107,10 @@ $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ?
   } else {
   		_e("Add new layer", "lmm"); 
   }?>
-  </a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+  </a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
   <?php echo $admin_quicklink_tools_buttons ?>
   <?php echo $admin_quicklink_settings_buttons ?>
-  <a class="<?php echo $buttonclass7; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_help"><?php _e("Help & Credits", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="<?php echo $buttonclass7; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_help"><?php _e("Help", "lmm") ?></a>
   </p>
 </td></tr></table>
 

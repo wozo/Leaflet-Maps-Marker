@@ -236,7 +236,7 @@ Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
 = v3.0 =
-
+new option to switch between simplified and advanced map editor and lots of usability improvements
 = v2.9.2 =
 fix for broken settings panel when certain translations were loaded
 = v2.9.1 =
@@ -303,6 +303,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v3.0 - xx.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)
+* NEW: option to switch between simplified and advanced editor
 * NEW: show WordPress admin notice if plugin update is available
 * CHANGED: changed position of delete marker and layer buttons
 * CHANGED: optimized TinyMCE popup (new with links to add new marker and layer maps)
@@ -313,8 +314,13 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: set jQuery cache for layers to true again for higher performance
 * CHANGED: shrinked plugin´s total size by 700kb by moving screenshots to assets-directory on wordpress.org
 * CHANGED: top menu now displays correctly if you are on add new or edit-marker or layer page
+* CHANGED: use of checkboxes instead of radio boxes if only one option is available (yes/no)
+* CHANGED: updated screenshots for settings panel
 * BUGFIX: marker count on layers lists was wrong for multi-layer-maps (thanks photocoen!)
 * BUGFIX: warning messages for WordPress 3.5beta3 when debug was enabled
+* BUGFIX: layout of the preview of list markers on layer maps in backend was broken
+* BUGFIX: some links to the new settings panel from backend were broken
+* BUGFIX: layout of map panel was broken on preview if empty marker/layer name was entered
 
 = v2.9.2 - 11.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.9.2)

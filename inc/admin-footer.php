@@ -11,11 +11,18 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'admin-footer.php') { die ("Please 
 
 <table cellpadding="5" cellspacing="0" style="margin-top:20px;border:1px solid #ccc;width:100%;background:#F9F9F9;">
   <tr>
-    <td valign="center"><div style="float:left;"><a href="http://www.harm.co.at/en" target="_blank" title="www.harm.co.at/en"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/donate-robertharm.jpg" width="128" height="128" alt="Robert Harm" style="padding:10px 10px 0 10px;" /></a></div>
+    <td valign="center"><div style="float:left;"><a href="http://www.harm.co.at/en" target="_blank" title="www.harm.co.at/en"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/donate-robertharm.jpg" width="100" height="100" alt="Robert Harm" style="padding:10px 10px 0 10px;" /></a></div>
 <div style="float:right;"> 
         <!--Begin support table-->
         <table cellspacing="5">
           <tr>
+		  
+		   <td style="background:#fff;width:115px;text-align:center;">
+		<a href="http://www.amazon.de/registry/wishlist/3P6LQRP11V1AF" target="_blank" title="<?php esc_attr_e('Another way to show your support for this plugin is to buy something from my Amazon wishlist, respectively sending me a greeting card worth from 15 to 500 $ with a personal note, which I would very much appreciate.','lmm') ?>"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/donate-amazon.jpg" width="100" height="50" border="0"/></a>
+			<br/>
+			<a href="http://www.amazon.com/exec/obidos/redirect-home?tag=leafletmapsmarker-21&site=home" target="_blank" title="<?php esc_attr_e('The easiest way to support this plugin is to buy something from Amazon by using this referrer link. Note: this doesn´t cost you anything as your purchase volume won´t be increased, but I will receive 6 per cent of your purchase volume as a referral fee.','lmm') ?>"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/donate-amazon-partnernet.jpg" style="border:1px solid #ccc;padding:4px;" width="84" height="40" border="0"/></a><br/><a href="http://flattr.com/thing/447395/MapsMarker-com" target="_blank">
+<img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/donate-flattr.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+			</td>
            <td style="background:#fff;text-align:center;">
 <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -37,7 +44,7 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'admin-footer.php') { die ("Please 
 	} else { 
 		echo '<input type="hidden" name="LC" value="EN">';
 	} ?>
-<table>
+<table style="border:1px solid #ccc;">
 <tr><td><input type="hidden" name="on0" value="Sponsorship Level">
 	<select name="os0" style="width:210px;">
 	<option value="Supporter 2">Please select sponsorship level</option>
@@ -54,12 +61,9 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'admin-footer.php') { die ("Please 
 <tr><td colspan="2"><input type="hidden" name="on1" value="Message"><?php _e('Message','lmm') ?> <input type="text" name="os1" maxlength="200"></td></tr>
 </table>
 <input type="hidden" name="currency_code" value="EUR">
-<input type="image" src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/donate-paypal.jpg" width="130" height="89" border="0" name="submit" alt="" title="<?php esc_attr_e('If you like to donate a certain amount of money to show your support, you can also use Paypal. If you don´t have a Paypal account, you can use your credit card or bank account (where available). Please click on the paypal image to proceed to the donation form.','lmm') ?>">
+<input type="image" src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/donate-paypal.jpg" width="126" height="50" border="0" name="submit" alt="" title="<?php esc_attr_e('If you like to donate a certain amount of money to show your support, you can also use Paypal. If you don´t have a Paypal account, you can use your credit card or bank account (where available). Please click on the paypal image to proceed to the donation form.','lmm') ?>">
 </form>
             </td>
-            <td style="background:#fff;width:115px;text-align:center;"><a href="http://www.amazon.com/exec/obidos/redirect-home?tag=leafletmapsmarker-21&site=home" target="_blank" title="<?php esc_attr_e('The easiest way to support this plugin is to buy something from Amazon by using this referrer link. Note: this doesn´t cost you anything as your purchase volume won´t be increased, but I will receive 6 per cent of your purchase volume as a referral fee.','lmm') ?>"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/donate-amazon-partnernet.jpg" style="border:1px solid #ccc;padding:4px;" width="84" height="40" border="0"/></a>
-		<br/><a href="http://www.amazon.de/registry/wishlist/3P6LQRP11V1AF" target="_blank" title="<?php esc_attr_e('Another way to show your support for this plugin is to buy something from my Amazon wishlist, respectively sending me a greeting card worth from 15 to 500 $ with a personal note, which I would very much appreciate.','lmm') ?>"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/donate-amazon.jpg" width="100" height="50" border="0"/></a><br/><a href="http://flattr.com/thing/447395/MapsMarker-com" target="_blank">
-<img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/donate-flattr.png" alt="Flattr this" title="Flattr this" border="0" /></a></td>
           </tr>
         </table>
         <!--End support table-->

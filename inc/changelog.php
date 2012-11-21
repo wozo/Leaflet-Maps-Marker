@@ -71,6 +71,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
+		option to switch between simplified and advanced editor
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
 		show WordPress admin notice if plugin update is available
 		</td></tr>
 		<tr><td>
@@ -119,6 +124,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		top menu now displays correctly if you are on add new or edit-marker or layer page
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		use of checkboxes instead of radio boxes if only one option is available (yes/no)
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		updated screenshots for settings panel
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		marker count on layers lists was wrong for multi-layer-maps (thanks photocoen!)
@@ -127,6 +142,21 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		warning messages for WordPress 3.5beta3 when debug was enabled
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		layout of the preview of list markers on layer maps in backend was broken
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		some links to the new settings panel from backend were broken	
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		layout of map panel was broken on preview if empty marker/layer name was entered	
 		</td></tr>
 		</table>'.PHP_EOL;
 
