@@ -65,7 +65,7 @@ if (isset($_GET['layer'])) {
 	      $q = ''; //info: removed limit 5000
     }
   }
-  $sql = 'SELECT m.id as mid, m.markername as mmarkername, m.layer as mlayer, CONCAT(m.lon,\',\',m.lat) AS mcoords, m.icon as micon, m.createdby as mcreatedby, m.createdon as mcreatedon, m.updatedby as mupdatedby, m.updatedon as mupdatedon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext, l.id as lid, l.createdby as lcreatedby, l.createdon as lcreatedon, l.updatedby as lupdatedby, l.updatedon as lupdatedon, l.name AS lname FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
+  $sql = 'SELECT m.id as mid, m.markername as mmarkername, m.layer as mlayer, CONCAT(m.lon,\',\',m.lat) AS mcoords, m.icon as micon, m.createdby as mcreatedby, m.createdon as mcreatedon, m.updatedby as mupdatedby, m.updatedon as mupdatedon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext, m.address as maddress, l.id as lid, l.createdby as lcreatedby, l.createdon as lcreatedon, l.updatedby as lupdatedby, l.updatedon as lupdatedon, l.name AS lname FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
   $markers = $wpdb->get_results($sql, ARRAY_A);
   //info: output as atom - part 1
   if ($format == 'atom') { 
@@ -119,6 +119,7 @@ if (isset($_GET['layer'])) {
 		echo '<logo>' . $micon_url . '</logo>'.PHP_EOL;
 		echo '<icon>' . $micon_url . '</icon>'.PHP_EOL;
 		echo '<source>' . home_url() . '</source>'.PHP_EOL;
+		echo '<where>' . $marker['maddress'] . '</where>'.PHP_EOL;
 		echo '<georss:where>'.PHP_EOL;
 		//info: add if srsnames are verified - <gml:Point srsName="' . $srsname . '">
 		echo '<gml:Point>'.PHP_EOL;
@@ -181,6 +182,7 @@ if (isset($_GET['layer'])) {
 		echo '<description><![CDATA[' . stripslashes(preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])) . ']]></description>'.PHP_EOL;
 		echo '<image>' . $micon_url . '</image>'.PHP_EOL;
 		echo '<source>' . home_url() . '</source>'.PHP_EOL;
+		echo '<where>' . $marker['maddress'] . '</where>'.PHP_EOL;
 		echo '<georss:where>'.PHP_EOL;
 		echo '<gml:Point>'.PHP_EOL;
 		echo '<gml:pos>'.$marker['mlat'].' '.$marker['mlon'].'</gml:pos>'.PHP_EOL;
@@ -205,7 +207,7 @@ elseif (isset($_GET['marker'])) {
   else
     die();
   //info: added left outer join to also show markers without a layer
-  $sql = 'SELECT m.layer as mlayer,m.icon as micon,m.popuptext as mpopuptext,m.id as mid,m.markername as mmarkername,m.createdby as mcreatedby, m.createdon as mcreatedon, m.lat as mlat, m.lon as mlon FROM '.$table_name_markers.' AS m LEFT OUTER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
+  $sql = 'SELECT m.layer as mlayer,m.icon as micon,m.popuptext as mpopuptext,m.id as mid,m.markername as mmarkername,m.createdby as mcreatedby, m.createdon as mcreatedon, m.lat as mlat, m.lon as mlon, m.address as maddress FROM '.$table_name_markers.' AS m LEFT OUTER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
   $markers = $wpdb->get_results($sql, ARRAY_A);
   //info: output as atom - part 1
   if ($format == 'atom') { 
@@ -251,6 +253,7 @@ elseif (isset($_GET['marker'])) {
 		echo '<logo>' . $micon_url . '</logo>'.PHP_EOL;
 		echo '<icon>' . $micon_url . '</icon>'.PHP_EOL;
 		echo '<source>' . home_url() . '</source>'.PHP_EOL;
+		echo '<where>' . $marker['maddress'] . '</where>'.PHP_EOL;
 		echo '<georss:where>'.PHP_EOL;
 		//info: add if srsnames are verified - <gml:Point srsName="' . $srsname . '">
 		echo '<gml:Point>'.PHP_EOL;
@@ -304,6 +307,7 @@ elseif (isset($_GET['marker'])) {
 		echo '<description><![CDATA[' . stripslashes(preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])) . ']]></description>'.PHP_EOL;
 		echo '<image>' . $micon_url . '</image>'.PHP_EOL;
 		echo '<source>' . home_url() . '</source>'.PHP_EOL;
+		echo '<where>' . $marker['maddress'] . '</where>'.PHP_EOL;
 		echo '<georss:where>'.PHP_EOL;
 		echo '<gml:Point>'.PHP_EOL;
 		echo '<gml:pos>'.$marker['mlat'].' '.$marker['mlon'].'</gml:pos>'.PHP_EOL;

@@ -570,7 +570,7 @@
     if ( (isset($controlbox) == TRUE ) && ( $controlbox == 0 ) )
         $lmm_out .= '{ } );'.PHP_EOL;
     if ( (isset($controlbox) == TRUE ) && ( $controlbox == 1 ) )
-        $lmm_out .= '{ collapsed: !L.Browser.touch } );'.PHP_EOL;
+        $lmm_out .= '{ collapsed: true } );'.PHP_EOL;
     if ( (isset($controlbox) == TRUE ) && ( $controlbox == 2 ) )
         $lmm_out .= '{ collapsed: false } );'.PHP_EOL;
     $lmm_out .= $mapname.'.setView(new L.LatLng('.$lat.', '.$lon.'), '.$zoom.');'.PHP_EOL;

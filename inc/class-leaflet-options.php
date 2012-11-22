@@ -6943,6 +6943,15 @@ class Class_leaflet_options {
 			'type'    => 'checkbox-readonly',
 			'std'     => 1 
 		);
+		$this->settings['misc_marker_listing_columns_address'] = array(
+			'version' => '3.0',
+			'pane'    => 'misc',
+			'section' => 'misc-section4',
+			'title'    => '',
+			'desc'    => __('Address','lmm'),
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);
 		$this->settings['misc_marker_listing_columns_popuptext'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
@@ -7221,6 +7230,15 @@ class Class_leaflet_options {
 			'title'    => '',
 			'desc'    => __('Layer name','lmm'),
 			'type'    => 'checkbox-readonly',
+			'std'     => 1 
+		);
+		$this->settings['misc_layer_listing_columns_address'] = array(
+			'version' => '3.0',
+			'pane'    => 'misc',
+			'section' => 'misc-section6',
+			'title'    => '',
+			'desc'    => __('Address','lmm'),
+			'type'    => 'checkbox',
 			'std'     => 1 
 		);
 		$this->settings['misc_layer_listing_columns_markercount'] = array(

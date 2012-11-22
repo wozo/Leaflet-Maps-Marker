@@ -305,8 +305,9 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)
 * NEW: option to switch between simplified and advanced editor
 * NEW: show WordPress admin notice if plugin update is available
-* CHANGED: changed position of delete marker and layer buttons
+* CHANGED: layer control box is not opened by default on mobile devices anymore
 * CHANGED: optimized TinyMCE popup (new with links to add new marker and layer maps)
+* CHANGED: changed position of delete marker and layer buttons
 * CHANGED: updated Polish transation thanks to Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
 * CHANGED: updated German translation
 * CHANGED: optimized use of WordPress Transients API (saving less rows to wp_options-table)

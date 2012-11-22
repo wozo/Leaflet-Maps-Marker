@@ -3,7 +3,9 @@
 /*Marker-Tabelle*/
 .fixed .column-id { width: 45px; }
 .fixed .column-type { width: 65px; }
+.fixed .column-markername { width: 240px; }
 .fixed .column-layername { width: 240px; }
+.fixed .column-address { width: 150px; }
 .fixed .column-coords { width: 105px; }
 .fixed .column-count { width: 65px; }
 .fixed .column-mapsize { width: 90px; }

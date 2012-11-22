@@ -93,7 +93,7 @@ if (isset($_GET['layer'])) {
 				$q = ''; //info: removed limit 5000
 			} 
 		}
-		$sql = 'SELECT m.id as mid, m.layer as mlayer, m.markername as mmarkername, m.icon as micon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
+		$sql = 'SELECT m.id as mid, m.layer as mlayer, m.markername as mmarkername, m.icon as micon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext, m.address as maddress FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
 		$markers = $wpdb->get_results($sql, ARRAY_A);
 		header('Cache-Control: no-cache, must-revalidate');
 		header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -133,7 +133,7 @@ if (isset($_GET['layer'])) {
 		echo '<wikitude:phone><![CDATA[' . $lmm_options[ 'ar_wikitude_phone' ] . ']]></wikitude:phone>'.PHP_EOL;
 		//echo '<wikitude:url><![CDATA[]]></wikitude:url>'.PHP_EOL;
 		echo '<wikitude:email><![CDATA[' . $lmm_options[ 'ar_wikitude_email' ] . ']]></wikitude:email>'.PHP_EOL;
-		//echo '<wikitude:address><![CDATA[]]></wikitude:address>'.PHP_EOL;
+		echo '<wikitude:address><![CDATA[' . $marker['maddress'] . ']]></wikitude:address>'.PHP_EOL;
 		echo '<wikitude:attachment><![CDATA[' . $lmm_options[ 'ar_wikitude_attachment' ] . ']]></wikitude:attachment>'.PHP_EOL;
 		echo '</wikitude:info>'.PHP_EOL;
 		echo '<Point>'.PHP_EOL;
@@ -172,7 +172,7 @@ if (isset($_GET['layer'])) {
 				$q = ''; //info: removed limit 5000
 			} 
 		}
-		$sql = 'SELECT m.id as mid, m.layer as mlayer, m.markername as mmarkername, m.icon as micon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
+		$sql = 'SELECT m.id as mid, m.layer as mlayer, m.markername as mmarkername, m.icon as micon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext, m.address as maddress FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
 		$markers = $wpdb->get_results($sql, ARRAY_A);
 		header('Cache-Control: no-cache, must-revalidate');
 		header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -212,7 +212,7 @@ if (isset($_GET['layer'])) {
 		echo '<wikitude:phone><![CDATA[' . $lmm_options[ 'ar_wikitude_phone' ] . ']]></wikitude:phone>'.PHP_EOL;
 		//echo '<wikitude:url><![CDATA[]]></wikitude:url>'.PHP_EOL;
 		echo '<wikitude:email><![CDATA[' . $lmm_options[ 'ar_wikitude_email' ] . ']]></wikitude:email>'.PHP_EOL;
-		//echo '<wikitude:address><![CDATA[]]></wikitude:address>'.PHP_EOL;
+		echo '<wikitude:address><![CDATA[' . $marker['maddress'] . ']]></wikitude:address>'.PHP_EOL;
 		echo '<wikitude:attachment><![CDATA[' . $lmm_options[ 'ar_wikitude_attachment' ] . ']]></wikitude:attachment>'.PHP_EOL;
 		echo '</wikitude:info>'.PHP_EOL;
 		echo '<Point>'.PHP_EOL;
@@ -254,7 +254,7 @@ elseif (isset($_GET['marker'])) {
 			die();
 		  }
 		  //info: added left outer join to also show markers without a layer
-		  $sql = 'SELECT m.icon as micon, m.popuptext as mpopuptext, m.id as mid, m.markername as mmarkername, m.lat as mlat, m.lon as mlon FROM '.$table_name_markers.' AS m LEFT OUTER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
+		  $sql = 'SELECT m.icon as micon, m.popuptext as mpopuptext, m.id as mid, m.markername as mmarkername, m.lat as mlat, m.lon as mlon, m.address as maddress FROM '.$table_name_markers.' AS m LEFT OUTER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
 		  $markers = $wpdb->get_results($sql, ARRAY_A);
 		  header('Cache-Control: no-cache, must-revalidate');
 		  header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -301,7 +301,7 @@ elseif (isset($_GET['marker'])) {
 			  echo '<wikitude:phone><![CDATA[' . $lmm_options[ 'ar_wikitude_phone' ] . ']]></wikitude:phone>'.PHP_EOL;
 			  //echo '<wikitude:url><![CDATA[]]></wikitude:url>'.PHP_EOL;
 			  echo '<wikitude:email><![CDATA[' . $lmm_options[ 'ar_wikitude_email' ] . ']]></wikitude:email>'.PHP_EOL;
-			  //echo '<wikitude:address><![CDATA[]]></wikitude:address>'.PHP_EOL;
+			  echo '<wikitude:address><![CDATA[' . $marker['maddress'] . ']]></wikitude:address>'.PHP_EOL;
 			  echo '<wikitude:attachment><![CDATA[' . $lmm_options[ 'ar_wikitude_attachment' ] . ']]></wikitude:attachment>'.PHP_EOL;
 			  echo '</wikitude:info>'.PHP_EOL;
 			  echo '<Point>'.PHP_EOL;
@@ -324,7 +324,7 @@ elseif (isset($_GET['marker'])) {
 		  else
 			die();
 		  //info: added left outer join to also show markers without a layer
-		  $sql = 'SELECT m.icon as micon, m.popuptext as mpopuptext, m.id as mid, m.markername as mmarkername, m.lat as mlat, m.lon as mlon FROM '.$table_name_markers.' AS m LEFT OUTER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
+		  $sql = 'SELECT m.icon as micon, m.popuptext as mpopuptext, m.id as mid, m.markername as mmarkername, m.lat as mlat, m.lon as mlon, m.address as maddress FROM '.$table_name_markers.' AS m LEFT OUTER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
 		  $markers = $wpdb->get_results($sql, ARRAY_A);
 		  header('Cache-Control: no-cache, must-revalidate');
 		  header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -371,7 +371,7 @@ elseif (isset($_GET['marker'])) {
 			  echo '<wikitude:phone><![CDATA[' . $lmm_options[ 'ar_wikitude_phone' ] . ']]></wikitude:phone>'.PHP_EOL;
 			  //echo '<wikitude:url><![CDATA[]]></wikitude:url>'.PHP_EOL;
 			  echo '<wikitude:email><![CDATA[' . $lmm_options[ 'ar_wikitude_email' ] . ']]></wikitude:email>'.PHP_EOL;
-			  //echo '<wikitude:address><![CDATA[]]></wikitude:address>'.PHP_EOL;
+			  echo '<wikitude:address><![CDATA[' . $marker['maddress'] . ']]></wikitude:address>'.PHP_EOL;
 			  echo '<wikitude:attachment><![CDATA[' . $lmm_options[ 'ar_wikitude_attachment' ] . ']]></wikitude:attachment>'.PHP_EOL;
 			  echo '</wikitude:info>'.PHP_EOL;
 			  echo '<Point>'.PHP_EOL;

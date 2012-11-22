@@ -81,6 +81,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
+		layer control box is not opened by default on mobile devices anymore
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
 		optimized TinyMCE popup (new with links to add new marker and layer maps)
 		</td></tr>
 		<tr><td>

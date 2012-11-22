@@ -8,86 +8,88 @@ add_option('leafletmapsmarker_version_before_update', '0');
 add_option('leafletmapsmarker_redirect', 'true'); //redirect to marker creation page page after first activation only
 
 //info: check and update db-structure for markers and layers table - not done in 'init' as needed for switches between free and pro edition
-	require_once(ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'upgrade.php');
-	//info: create/update marker table
-	$table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
-	$sql_markers_table = "CREATE TABLE " . $table_name_markers . " (
-		id int(6) unsigned NOT NULL AUTO_INCREMENT,
-		markername varchar(255) NOT NULL,
-		basemap varchar(25) NOT NULL,
-		layer int(6) unsigned NOT NULL,
-		lat decimal(9,6) NOT NULL,
-		lon decimal(9,6) NOT NULL,
-		icon varchar(255) NOT NULL,
-		popuptext text NOT NULL,
-		zoom int(2) NOT NULL,
-		openpopup tinyint(1) NOT NULL,
-		mapwidth int(4) NOT NULL,
-		mapwidthunit varchar(2) NOT NULL,
-		mapheight int(4) NOT NULL,
-		panel tinyint(1) NOT NULL,
-		createdby varchar(30) NOT NULL,
-		createdon datetime NOT NULL,
-		updatedby varchar(30) DEFAULT NULL,
-		updatedon datetime DEFAULT NULL,
-		controlbox int(1) NOT NULL,
-		overlays_custom int(1) NOT NULL,
-		overlays_custom2 int(1) NOT NULL,
-		overlays_custom3 int(1) NOT NULL,
-		overlays_custom4 int(1) NOT NULL,
-		wms tinyint(1) NOT NULL,
-		wms2 tinyint(1) NOT NULL,
-		wms3 tinyint(1) NOT NULL,
-		wms4 tinyint(1) NOT NULL,
-		wms5 tinyint(1) NOT NULL,
-		wms6 tinyint(1) NOT NULL,
-		wms7 tinyint(1) NOT NULL,
-		wms8 tinyint(1) NOT NULL,
-		wms9 tinyint(1) NOT NULL,
-		wms10 tinyint(1) NOT NULL,
-		kml_timestamp datetime DEFAULT NULL,
-		PRIMARY KEY  (id)
-	) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
-	dbDelta($sql_markers_table);
-	
-	//info: create/update layer table
-	$table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
-	$sql_layers_table = "CREATE TABLE " . $table_name_layers . " (
-		id int(6) unsigned NOT NULL AUTO_INCREMENT,
-		name varchar(255) NOT NULL,
-		basemap varchar(25) NOT NULL,
-		layerzoom int(2) NOT NULL,
-		mapwidth int(4) NOT NULL,
-		mapwidthunit varchar(2) NOT NULL,
-		mapheight int(4) NOT NULL,
-		panel tinyint(1) NOT NULL,
-		layerviewlat decimal(9,6) NOT NULL,
-		layerviewlon decimal(9,6) NOT NULL,
-		createdby varchar(30) NOT NULL,
-		createdon datetime NOT NULL,
-		updatedby varchar(30) DEFAULT NULL,
-		updatedon datetime DEFAULT NULL,
-		controlbox int(1) NOT NULL,
-		overlays_custom int(1) NOT NULL,
-		overlays_custom2 int(1) NOT NULL,
-		overlays_custom3 int(1) NOT NULL,
-		overlays_custom4 int(1) NOT NULL,
-		wms tinyint(1) NOT NULL,
-		wms2 tinyint(1) NOT NULL,
-		wms3 tinyint(1) NOT NULL,
-		wms4 tinyint(1) NOT NULL,
-		wms5 tinyint(1) NOT NULL,
-		wms6 tinyint(1) NOT NULL,
-		wms7 tinyint(1) NOT NULL,
-		wms8 tinyint(1) NOT NULL,
-		wms9 tinyint(1) NOT NULL,
-		wms10 tinyint(1) NOT NULL,
-		listmarkers tinyint(1) NOT NULL,
-		multi_layer_map tinyint(1) NOT NULL,
-		multi_layer_map_list varchar(255) DEFAULT NULL,
-		PRIMARY KEY  (id)
-	) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
-	dbDelta($sql_layers_table);
+require_once(ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'upgrade.php');
+//info: create/update marker table
+$table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
+$sql_markers_table = "CREATE TABLE " . $table_name_markers . " (
+	id int(6) unsigned NOT NULL AUTO_INCREMENT,
+	markername varchar(255) NOT NULL,
+	basemap varchar(25) NOT NULL,
+	layer int(6) unsigned NOT NULL,
+	lat decimal(9,6) NOT NULL,
+	lon decimal(9,6) NOT NULL,
+	icon varchar(255) NOT NULL,
+	popuptext text NOT NULL,
+	zoom int(2) NOT NULL,
+	openpopup tinyint(1) NOT NULL,
+	mapwidth int(4) NOT NULL,
+	mapwidthunit varchar(2) NOT NULL,
+	mapheight int(4) NOT NULL,
+	panel tinyint(1) NOT NULL,
+	createdby varchar(30) NOT NULL,
+	createdon datetime NOT NULL,
+	updatedby varchar(30) DEFAULT NULL,
+	updatedon datetime DEFAULT NULL,
+	controlbox int(1) NOT NULL,
+	overlays_custom int(1) NOT NULL,
+	overlays_custom2 int(1) NOT NULL,
+	overlays_custom3 int(1) NOT NULL,
+	overlays_custom4 int(1) NOT NULL,
+	wms tinyint(1) NOT NULL,
+	wms2 tinyint(1) NOT NULL,
+	wms3 tinyint(1) NOT NULL,
+	wms4 tinyint(1) NOT NULL,
+	wms5 tinyint(1) NOT NULL,
+	wms6 tinyint(1) NOT NULL,
+	wms7 tinyint(1) NOT NULL,
+	wms8 tinyint(1) NOT NULL,
+	wms9 tinyint(1) NOT NULL,
+	wms10 tinyint(1) NOT NULL,
+	kml_timestamp datetime DEFAULT NULL,
+	address varchar(255) NOT NULL,
+	PRIMARY KEY  (id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
+dbDelta($sql_markers_table);
+
+//info: create/update layer table
+$table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
+$sql_layers_table = "CREATE TABLE " . $table_name_layers . " (
+	id int(6) unsigned NOT NULL AUTO_INCREMENT,
+	name varchar(255) NOT NULL,
+	basemap varchar(25) NOT NULL,
+	layerzoom int(2) NOT NULL,
+	mapwidth int(4) NOT NULL,
+	mapwidthunit varchar(2) NOT NULL,
+	mapheight int(4) NOT NULL,
+	panel tinyint(1) NOT NULL,
+	layerviewlat decimal(9,6) NOT NULL,
+	layerviewlon decimal(9,6) NOT NULL,
+	createdby varchar(30) NOT NULL,
+	createdon datetime NOT NULL,
+	updatedby varchar(30) DEFAULT NULL,
+	updatedon datetime DEFAULT NULL,
+	controlbox int(1) NOT NULL,
+	overlays_custom int(1) NOT NULL,
+	overlays_custom2 int(1) NOT NULL,
+	overlays_custom3 int(1) NOT NULL,
+	overlays_custom4 int(1) NOT NULL,
+	wms tinyint(1) NOT NULL,
+	wms2 tinyint(1) NOT NULL,
+	wms3 tinyint(1) NOT NULL,
+	wms4 tinyint(1) NOT NULL,
+	wms5 tinyint(1) NOT NULL,
+	wms6 tinyint(1) NOT NULL,
+	wms7 tinyint(1) NOT NULL,
+	wms8 tinyint(1) NOT NULL,
+	wms9 tinyint(1) NOT NULL,
+	wms10 tinyint(1) NOT NULL,
+	listmarkers tinyint(1) NOT NULL,
+	multi_layer_map tinyint(1) NOT NULL,
+	multi_layer_map_list varchar(255) DEFAULT NULL,
+	address varchar(255) NOT NULL,
+	PRIMARY KEY  (id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
+dbDelta($sql_layers_table);
 
 //info: begin update routine based on plugin version
 if (get_option('leafletmapsmarker_version') == 'init') {

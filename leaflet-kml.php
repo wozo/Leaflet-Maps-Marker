@@ -75,7 +75,7 @@ if (isset($_GET['layer'])) {
 	      $q = ''; //info: removed limit 5000
     }
   }
-  $sql = 'SELECT m.id as mid, m.markername as mmarkername, m.layer as mlayer, m.icon as micon, m.createdby as mcreatedby, m.createdon as mcreatedon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext, m.kml_timestamp as mkml_timestamp, l.createdby as lcreatedby, l.createdon as lcreatedon, l.name as lname, l.wms as lwms, l.wms2 as lwms2, l.wms3 as lwms3, l.wms4 as lwms4, l.wms5 as lwms5, l.wms6 as lwms6, l.wms7 as lwms7, l.wms8 as lwms8, l.wms9 as lwms9, l.wms10 as lwms10 FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
+  $sql = 'SELECT m.id as mid, m.markername as mmarkername, m.layer as mlayer, m.icon as micon, m.createdby as mcreatedby, m.createdon as mcreatedon, m.lat as mlat, m.lon as mlon, m.popuptext as mpopuptext, m.kml_timestamp as mkml_timestamp, m.address as maddress, l.createdby as lcreatedby, l.createdon as lcreatedon, l.name as lname, l.wms as lwms, l.wms2 as lwms2, l.wms3 as lwms3, l.wms4 as lwms4, l.wms5 as lwms5, l.wms6 as lwms6, l.wms7 as lwms7, l.wms8 as lwms8, l.wms9 as lwms9, l.wms10 as lwms10 FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
   $markers = $wpdb->get_results($sql, ARRAY_A);
   $sql_distinct = 'SELECT DISTINCT m.icon as micon FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
   $styles_distinct = $wpdb->get_results($sql_distinct, ARRAY_A);
@@ -153,6 +153,7 @@ if (isset($_GET['layer'])) {
 	$home_url = home_url();
 	echo '<atom:link href="' . $home_url . '" />'.PHP_EOL;
 	echo '<description><![CDATA[' .  $name_popup . stripslashes(preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])) . ']]></description>'.PHP_EOL;
+	echo '<address>' . $marker['maddress'] . '</address>'.PHP_EOL;
 	echo '<Point>'.PHP_EOL;
 	echo '<coordinates>' . $marker['mlon'] . ',' . $marker['mlat'] . '</coordinates>'.PHP_EOL;
 	echo '</Point>'.PHP_EOL;
@@ -204,7 +205,7 @@ elseif (isset($_GET['marker'])) {
   else
     die();
   //info: added left outer join to also show markers without a layer
-  $sql = 'SELECT m.layer as mlayer,m.icon as micon,m.popuptext as mpopuptext,m.id as mid,m.markername as mmarkername,m.createdby as mcreatedby, m.createdon as mcreatedon, m.wms as mwms, m.wms2 as mwms2, m.wms3 as mwms3, m.wms4 as mwms4, m.wms5 as mwms5, m.wms6 as mwms6, m.wms7 as mwms7, m.wms8 as mwms8, m.wms9 as mwms9, m.wms10 as mwms10, m.lat as mlat, m.lon as mlon, m.kml_timestamp as mkml_timestamp FROM '.$table_name_markers.' AS m LEFT OUTER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
+  $sql = 'SELECT m.layer as mlayer,m.icon as micon,m.popuptext as mpopuptext,m.id as mid,m.markername as mmarkername,m.createdby as mcreatedby, m.createdon as mcreatedon, m.wms as mwms, m.wms2 as mwms2, m.wms3 as mwms3, m.wms4 as mwms4, m.wms5 as mwms5, m.wms6 as mwms6, m.wms7 as mwms7, m.wms8 as mwms8, m.wms9 as mwms9, m.wms10 as mwms10, m.lat as mlat, m.lon as mlon, m.kml_timestamp as mkml_timestamp, m.address as maddress FROM '.$table_name_markers.' AS m LEFT OUTER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
   $markers = $wpdb->get_results($sql, ARRAY_A);
   $sql_distinct = 'SELECT DISTINCT m.icon as micon FROM '.$table_name_markers.' AS m INNER JOIN '.$table_name_layers.' AS l ON m.layer=l.id '.$q;
   $styles_distinct = $wpdb->get_results($sql_distinct, ARRAY_A);
@@ -275,6 +276,7 @@ elseif (isset($_GET['marker'])) {
 	$home_url = home_url();
 	echo '<atom:link href="' . $home_url . '" />'.PHP_EOL;
 	echo '<description><![CDATA[' .  $name_popup . stripslashes(preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])) . ']]></description>'.PHP_EOL;
+	echo '<address>' . $marker['maddress'] . '</address>'.PHP_EOL;
 	echo '<Point>'.PHP_EOL;
 	echo '<coordinates>' . $marker['mlon'] . ',' . $marker['mlat'] . '</coordinates>'.PHP_EOL;
 	echo '</Point>'.PHP_EOL;
