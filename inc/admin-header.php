@@ -79,6 +79,22 @@ if ($page == 'leafletmapsmarker_markers') {
 }
 $admin_quicklink_tools_buttons = ( current_user_can( "activate_plugins" ) ) ? "<a class='" . $buttonclass5 ."' href='" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_tools'>".__('Tools','lmm')."</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" : "";
 $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ? "<a class='" . $buttonclass6 ."' href='" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_settings'>".__('Settings','lmm')."</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" : "";
+
+//info: admin notices which only show on LMM pages
+//info: check if newer plugin version is available
+if ( isset($lmm_options['misc_plugin_update_info'] ) && ($lmm_options['misc_plugin_update_info'] == 'enabled') ) {
+	$plugin_updates = get_site_transient( 'update_plugins' );
+	if (isset($plugin_updates->response['leaflet-maps-marker/leaflet-maps-marker.php']->new_version)) { 
+		$plugin_updates_lmm_installed = $plugin_updates->checked['leaflet-maps-marker/leaflet-maps-marker.php'];
+		$plugin_updates_lmm_new_version = $plugin_updates->response['leaflet-maps-marker/leaflet-maps-marker.php']->new_version;
+		echo '<p><div class="updated" style="padding:5px;"><strong>' . __('Leaflet Maps Marker - plugin update available!','lmm') . '</strong><br/>' . sprintf(__('You are currently using v%1s and the plugin author highly recommends updating to v%2s for new features, bugfixes and updated translations (please see <a href="http://mapsmarker.com/v%3s" target="_blank">this blog post</a> for more details about the latest release).','lmm'), $plugin_updates_lmm_installed, $plugin_updates_lmm_new_version, $plugin_updates_lmm_new_version) . '<br/>';
+		if ( current_user_can( 'update_plugins' ) ) { 
+			echo sprintf(__('Update instruction: please start the update from the <a href="%1s">Updates-page</a>.','lmm'), get_admin_url() . 'update-core.php' ) . '</div></p>'; 
+		} else {
+			echo sprintf(__('Update instruction: as your user does not have the right to update plugins, please contact your <a href="mailto:%1s?subject=Please update plugin -Leaflet Maps Marker- on %2s">administrator</a>','lmm'), get_settings('admin_email'), site_url() ) . '</div></p>'; 
+		}
+	}
+}
 ?>
 <table cellpadding="5" cellspacing="0" class="widefat fixed">
   <tr>

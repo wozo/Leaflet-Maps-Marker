@@ -304,7 +304,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 = v3.0 - xx.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)
 * NEW: option to switch between simplified and advanced editor
-* NEW: show WordPress admin notice if plugin update is available
+* NEW: show info on top of Maps Marker pages if plugin update is available
 * CHANGED: layer control box is not opened by default on mobile devices anymore
 * CHANGED: optimized TinyMCE popup (new with links to add new marker and layer maps)
 * CHANGED: changed position of delete marker and layer buttons
@@ -317,11 +317,15 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: top menu now displays correctly if you are on add new or edit-marker or layer page
 * CHANGED: use of checkboxes instead of radio boxes if only one option is available (yes/no)
 * CHANGED: updated screenshots for settings panel
+* CHANGED: optimized backend pages for iOS devices
+* CHANGED: optimized marker and layer list tables on backend
 * BUGFIX: marker count on layers lists was wrong for multi-layer-maps (thanks photocoen!)
 * BUGFIX: warning messages for WordPress 3.5beta3 when debug was enabled
 * BUGFIX: layout of the preview of list markers on layer maps in backend was broken
 * BUGFIX: some links to the new settings panel from backend were broken
 * BUGFIX: layout of map panel was broken on preview if empty marker/layer name was entered
+* BUGFIX: shortcode form field could not be focused on iOS
+* BUGFIX: list of assigned markers to multi-layer-maps was broken when more than 1 layer was checked
 
 = v2.9.2 - 11.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.9.2)

@@ -7088,58 +7088,58 @@ class Class_leaflet_options {
 			'std'     => 1 
 		);	
 		$this->settings['misc_marker_listing_columns_kml'] = array(
-			'version' => '1.0',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => 'KML',
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);	
 		$this->settings['misc_marker_listing_columns_fullscreen'] = array(
-			'version' => '1.1',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('Fullscreen','lmm'),
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);	
 		$this->settings['misc_marker_listing_columns_qr_code'] = array(
-			'version' => '1.1',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => __('QR code','lmm'),
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);	
 		$this->settings['misc_marker_listing_columns_geojson'] = array(
-			'version' => '1.0',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => 'GeoJSON',
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);	
 		$this->settings['misc_marker_listing_columns_georss'] = array(
-			'version' => '1.2',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => 'GeoRSS',
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);	
 		$this->settings['misc_marker_listing_columns_wikitude'] = array(
-			'version' => '1.0',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section4',
 			'title'    => '',
 			'desc'    => 'Wikitude',
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0
 		);		
 		/*
 		* Sort order for marker listing page
@@ -7350,58 +7350,58 @@ class Class_leaflet_options {
 			'std'     => 1 
 		);	
 		$this->settings['misc_layer_listing_columns_kml'] = array(
-			'version' => '1.0',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => 'KML',
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);	
 		$this->settings['misc_layer_listing_columns_fullscreen'] = array(
-			'version' => '1.1',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('Fullscreen','lmm'),
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);	
 		$this->settings['misc_layer_listing_columns_qr_code'] = array(
-			'version' => '1.1',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => __('QR code','lmm'),
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);	
 		$this->settings['misc_layer_listing_columns_geojson'] = array(
-			'version' => '1.0',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => 'GeoJSON',
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);	
 		$this->settings['misc_layer_listing_columns_georss'] = array(
-			'version' => '1.2',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => 'GeoRSS',
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);	
 		$this->settings['misc_layer_listing_columns_wikitude'] = array(
-			'version' => '1.0',
+			'version' => '3.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section6',
 			'title'    => '',
 			'desc'    => 'Wikitude',
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);	
 		/*
 		* Sort order for layer listing page
