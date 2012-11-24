@@ -7,7 +7,7 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.5beta3
+Tested up to:      3.5RC1
 Stable tag:        2.9.2
 License:           GPLv2
 
@@ -116,6 +116,7 @@ to the visitors of your website.
 * French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * German (de_DE)
 * Hindi (hi_IN) thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
+* Hungarian (hu_HU) thanks to István Pintér
 * Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
 * Japanese (ja) thanks to [Shu Higashi](http://twitter.com/higa4)
 * Polish (pl_PL) translation thanks to Pawel Wyszynski, [http://injit.pl](http://injit.pl) and Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
@@ -304,6 +305,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 = v3.0 - xx.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)
 * NEW: option to switch between simplified and advanced editor
+* NEW: address now also gets saved to database and displayed on maps
+* NEW: Hungarian translation thanks to István Pintér
 * NEW: show info on top of Maps Marker pages if plugin update is available
 * CHANGED: layer control box is not opened by default on mobile devices anymore
 * CHANGED: optimized TinyMCE popup (new with links to add new marker and layer maps)
