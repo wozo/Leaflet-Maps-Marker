@@ -286,9 +286,8 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					<?php _e('or paste coordinates here','lmm') ?> -  
 					<?php _e('latitude','lmm') ?>: <input style="width: 100px;" type="text" id="lat" name="lat" value="<?php echo $lat; ?>" />
 					<?php _e('longitude','lmm') ?>: <input style="width: 100px;" type="text" id="lon" name="lon" value="<?php echo $lon; ?>" />
-					<br>
-					<?php _e('or set marker coordinates by clicking on the preview map','lmm') ?>:</small></p>
 					</div>
+					</p>
 				</td>
 			</tr>
 			<tr>

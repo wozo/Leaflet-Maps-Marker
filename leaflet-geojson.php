@@ -103,11 +103,10 @@ if (isset($_GET['layer'])) {
 		} else if ($full == 1) {
 			echo '"address":"'.$maddress.'",'.PHP_EOL;
 		}	
-
+		$mpopuptext = stripslashes(str_replace('"', '\'', preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])));
 		if ($lmm_options['directions_popuptext_panel'] == 'yes') {
 
 			$mpopuptext_css = ($marker['mpopuptext'] != NULL) ? "border-top:1px solid #f0f0e7;padding-top:5px;margin-top:5px;" : "";
-			$mpopuptext = stripslashes(str_replace('"', '\'', preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])));
 			$mpopuptext = $mpopuptext . "<div style='" . $mpopuptext_css . "'>" . $maddress . " (";
 		
 			if ($lmm_options['directions_provider'] == 'googlemaps') { 
@@ -124,9 +123,7 @@ if (isset($_GET['layer'])) {
 				$mpopuptext = $mpopuptext . "<a href='http://openrouteservice.org/index.php?end=" . $marker['mlon'] . "," . $marker['mlat'] . "&pref=" . $lmm_options[ 'directions_ors_route_preferences' ] . "&lang=" . $lmm_options[ 'directions_ors_language' ] . "&noMotorways=" . $lmm_options[ 'directions_ors_no_motorways' ] . "&noTollways=" . $lmm_options[ 'directions_ors_no_tollways' ] . "' target='_blank' title='" . esc_attr__('Get directions','lmm') . "'>" . __('Directions','lmm') . "</a>"; 
 			}
 			$mpopuptext = $mpopuptext . ')</div>';
-		} else {
-			$mpopuptext = stripslashes(str_replace('"', '\'', preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$marker['mpopuptext'])));
-		}
+		} 
 		echo '"text":"' . $mpopuptext . '"';
 		if ($full == 1) {
 			echo ','.PHP_EOL.'"zoom":"' . $marker['mzoom'] . '",'.PHP_EOL;

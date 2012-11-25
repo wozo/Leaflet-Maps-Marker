@@ -365,10 +365,14 @@
         }
         if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_popuptext' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_popuptext' ] == 1 ) ) {
             $lmm_out .= '<br/>' . stripslashes($row['mpopuptext']);
-			if ($lmm_options['directions_popuptext_panel'] == 'yes') {
-					$lmm_out .= stripslashes(htmlspecialchars($row['maddress']));
-			}
         }
+		if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_address' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_address' ] == 1 ) ) {
+			if ( $row['mpopuptext'] == NULL ) {
+				$lmm_out .= stripslashes(htmlspecialchars($row['maddress']));
+			} else if ( ($row['mpopuptext'] != NULL) && ($row['maddress'] != NULL) ) {
+				$lmm_out .= '<br/><div style="border-top:1px solid #f0f0e7;padding-top:5px;margin-top:5px;">' . stripslashes(htmlspecialchars($row['maddress'])) . '</div>';
+			}
+		}
         $lmm_out .= '</td></tr>';
     } //info: end foreach
     $lmm_out .= '</table></div>';

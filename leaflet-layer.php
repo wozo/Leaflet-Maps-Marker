@@ -362,9 +362,8 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					<?php _e('or paste coordinates here','lmm') ?> -  
 					<?php _e('latitude','lmm') ?>: <input style="width: 100px;" type="text" id="layerviewlat" name="layerviewlat" value="<?php echo $layerviewlat; ?>" />
 					<?php _e('longitude','lmm') ?>: <input style="width: 100px;" type="text" id="layerviewlon" name="layerviewlon" value="<?php echo $layerviewlon; ?>" />
-					<br>
-					<?php _e('or set layer center by clicking on the preview map','lmm') ?>:</small></p>
 					</div>
+					</p>
 				</td>
 			</tr>
 			<tr>
@@ -500,8 +499,12 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 					}
 					if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_popuptext' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_popuptext' ] == 1 ) ) {
 						echo '<br/>' . stripslashes($row['mpopuptext']);
-						if ($lmm_options['directions_popuptext_panel'] == 'yes') {
+					}
+					if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_address' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_address' ] == 1 ) ) {
+						if ( $row['mpopuptext'] == NULL ) {
 							echo stripslashes(htmlspecialchars($row['maddress']));
+						} else if ( ($row['mpopuptext'] != NULL) && ($row['maddress'] != NULL) ) {
+							echo '<br/><div style="border-top:1px solid #f0f0e7;padding-top:5px;margin-top:5px;">' . stripslashes(htmlspecialchars($row['maddress'])) . '</div>';
 						}
 					}
 					echo '</td></tr>';

@@ -804,7 +804,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section4',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Will be used when creating a new marker. All values can be changed afterwards on each marker.', 'lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-marker-defaults.jpg" />',
+			'desc'    => __( 'Will be used when creating a new marker. All values can be changed afterwards on each marker.', 'lmm') . '<br/>' . __('The following screenshot was taken with the advanced editor enabled:','lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-marker-defaults.jpg" />',
 			'type'    => 'helptext'
 		);
 		$this->settings['defaults_marker_lat'] = array(
@@ -1611,7 +1611,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section8',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Will be used when creating a new layer. All values can be changed afterwards on each layer.', 'lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-layer-defaults.jpg" />',
+			'desc'    => __( 'Will be used when creating a new layer. All values can be changed afterwards on each layer.', 'lmm') . '<br/>' . __('The following screenshot was taken with the advanced editor enabled:','lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-layer-defaults.jpg" />',
 			'type'    => 'helptext'
 		);
 		$this->settings['defaults_layer_lat'] = array(
@@ -1952,6 +1952,15 @@ class Class_leaflet_options {
 			'type'    => 'checkbox',
 			'std'     => 1 
 		);
+		$this->settings['defaults_layer_listmarkers_show_address'] = array(
+			'version' => '3.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section9',
+			'title'    => '',
+			'desc'    => __('Address','lmm'),
+			'type'    => 'checkbox',
+			'std'     => 1 
+		);		
 		$this->settings['defaults_layer_listmarkers_order_by'] = array(
 			'version' => '1.5',
 			'pane'    => 'mapdefaults',
