@@ -111,6 +111,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
+		updated Japanese translations thanks to <a href="http://twitter.com/higa4" target="_blank">Shu Higash</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		updated Italian translation thanks to Luca Barbetti, <a href="http://twitter.com/okibone" target="_blank">http://twitter.com/okibone</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
 		updated German translation
 		</td></tr>
 		<tr><td>
@@ -195,6 +205,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 
+	if ( ($lmm_version_old < '2.9.2' ) ){
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.9.2') . '</strong> - ' . __('released on','lmm') . ' 11.11.2012 (<a href="http://www.mapsmarker.com/v2.9.2" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
@@ -233,6 +244,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		new settings panel was broken when certain translations were loaded
 		</td></tr>
 		</table>'.PHP_EOL;
+	}
 
 	if ( ($lmm_version_old < '2.9.1' ) ){
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.9.1') . '</strong> - ' . __('released on','lmm') . ' 05.11.2012 (<a href="http://www.mapsmarker.com/v2.9.1" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>

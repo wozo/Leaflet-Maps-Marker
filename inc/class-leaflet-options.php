@@ -6786,19 +6786,6 @@ class Class_leaflet_options {
 				'disabled' => __('disabled','lmm')
 			)
 		);
-		$this->settings['misc_plugin_update_info'] = array(
-			'version' => '3.0',
-			'pane'    => 'misc',
-			'section' => 'misc-section1',
-			'title'   => __('Plugin update info','lmm'),
-			'desc'    => __('display update info if a new version is available','lmm'),
-			'type'    => 'radio',
-			'std'     => 'enabled',
-			'choices' => array(
-				'enabled' => __('enabled','lmm'),
-				'disabled' => __('disabled','lmm')
-			)
-		);		
 		$this->settings['misc_qrcode_size'] = array(
 			'version' => '1.1',
 			'pane'    => 'misc',
@@ -7784,7 +7771,6 @@ class Class_leaflet_options {
 		$options_new = array_merge($options_current, $new_options_defaults);
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
-		/* template for plugin updates 
 		//info:  set defaults for options introduced in v3.0
 		if (get_option('leafletmapsmarker_version') == '2.9.2' )
 		{
@@ -7792,6 +7778,22 @@ class Class_leaflet_options {
 			foreach ( $this->settings as $id => $setting ) 
 			{
 				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '3.0')
+				{
+				$new_options_defaults[$id] = $setting['std'];
+				}
+			}
+		$options_current = get_option( 'leafletmapsmarker_options' );
+		$options_new = array_merge($options_current, $new_options_defaults);
+		update_option( 'leafletmapsmarker_options', $options_new );
+		}
+		/* template for plugin updates 
+		//info:  set defaults for options introduced in v3.1
+		if (get_option('leafletmapsmarker_version') == '3.0' )
+		{
+			$new_options_defaults = array();
+			foreach ( $this->settings as $id => $setting ) 
+			{
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '3.1')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}

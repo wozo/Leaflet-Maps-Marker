@@ -7,8 +7,8 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
-Tested up to:      3.5RC1
-Stable tag:        2.9.2
+Tested up to:      3.5
+Stable tag:        3.0
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
@@ -61,6 +61,7 @@ to the visitors of your website.
 * export your markers as GeoRSS for embedding in external websites or apps
 * export your markers as ARML for displaying in the augmented-reality browser from Wikitude
 * export your markers as csv-file
+* option to switch between simplified and advanced editor 
 * option to add widgets showing recent marker entries
 * configure up to 3 basemaps from Cloudmade with custom styles
 * option to add an unobtrusive scale control to maps
@@ -87,6 +88,7 @@ to the visitors of your website.
 * WordPress Admin Bar integration to quickly access plugins features (can be disabled)
 * "OGD Vienna selector": if a place within boundaries of Vienna/Austria is chosen, OGD Vienna basemaps are automatically selected
 * admin dashboard widget showing latest markers and blog posts from mapsmarker.com
+* support for google maps and bing map localization (cultures)
 * integrated [donation links](http://www.mapsmarker.com/donations) to show your support for this plugin :-)
 
 = Technical details =
@@ -100,6 +102,8 @@ to the visitors of your website.
 * GeoJSON feeds for every marker and layer with [JSONP support](http://www.mapsmarker.com/geojson)
 * use of Wordpress settings API for storing options
 * TinyMCE editor on backend for editing popuptext
+* integrated plugin compatibility check to warn about incompatible plugins
+* dynamic changelog to show all changes since your last plugin update
 * version check for minimum Wordpress (3.0) and PHP (5.2) requirements
 * use of prepared SQL statements to prevent SQL injections
 * use of Wordpress nounces on forms to prevent attacks and input mistakes
@@ -182,10 +186,9 @@ Do you have questions or issues with Leaflet Maps Marker? Please use these suppo
 
 1. [FAQ](www.mapsmarker.com/faq/)
 2. [Docs](http://www.mapsmarker.com/docs/)
-3. [Ideas (for feature requests)](www.mapsmarker.com/ideas/)
-4. [Wordpress Support Forum](http://wordpress.org/tags/leaflet-maps-marker?forum_id=10) (free community support)
-5. [WP Questions](http://wpquestions.com/affiliates/register/name/robertharm) (paid community support)
-6. [WordPress HelpCenter](http://wphelpcenter.com/) (paid professional support)
+3. [Wordpress Support Forum](http://wordpress.org/tags/leaflet-maps-marker?forum_id=10) (free community support)
+4. [WP Questions](http://wpquestions.com/affiliates/register/name/robertharm) (paid community support)
+5. [WordPress HelpCenter](http://wphelpcenter.com/) (paid professional support)
 
 [More info on support](http://mapsmarker.com/support/)
 == Screenshots ==
@@ -218,9 +221,12 @@ This program is free software; you can redistribute it and/or modify it under th
 * Jquery TimePicker, by Trent Richardson, [http://trentrichardson.com/examples/timepicker/](http://trentrichardson.com/examples/timepicker/), licence: GPL
 * Adress autocompletion powered by [Google Places API](http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html)
 * Map center icon [Joseph Wain](http://glyphish.com/) - Creative Commons Attribution (by)
-* Plus, json & csv-export icon by [Yusuke Kamiyamane](http://www.pinvoke.com/) - Creative Commons Attribution (by)
+* Plus-, json-, layer-, language- & csv-export icon by icon by [Yusuke Kamiyamane](http://www.pinvoke.com/) - Creative Commons Attribution (by)
 * Question Mark icon by [RandomJabber](http://www.randomjabber.com/)
 * Home icon by [ Pro Theme Design](http://prothemedesign.com/) - Creative Commons Attribution (by)
+* Images for changelog from [Firefox release notes](http://www.mozilla.org/en-US/firefox/11.0/releasenotes/), licence: Creative Commons Attribution ShareAlike (CC BY-SA 3.0)
+* Home-Icon from [Pro Theme Design](http://prothemedesign.com), licence: Creative Commons Attribution (by)
+* Editor-Switch-Icon by AMAZIGH Aneglus, license: GNU/GPL
 
 = Credits & special thanks to =
 * Sindre Wimberger ([http://www.sindre.at](http://www.sindre.at)) for help with bugfixing & geo-consulting
@@ -312,6 +318,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: optimized TinyMCE popup (new with links to add new marker and layer maps)
 * CHANGED: changed position of delete marker and layer buttons
 * CHANGED: updated Polish transation thanks to Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
+* CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
+* CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * CHANGED: updated German translation
 * CHANGED: optimized use of WordPress Transients API (saving less rows to wp_options-table)
 * CHANGED: optimized plugin active check for higher performance (use of isset() instead of in_array())
