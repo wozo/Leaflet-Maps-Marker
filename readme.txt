@@ -244,6 +244,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
+= v3.1 =
+
 = v3.0 =
 new option to switch between simplified and advanced map editor, Hungarian translation and lots of usability improvements
 = v2.9.2 =
@@ -310,6 +312,9 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v3.1 - xx.12.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v3.1)
+
 = v3.0 - 28.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)
 * NEW: option to switch between simplified and advanced editor
