@@ -203,6 +203,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td><td>
 		list of assigned markers to multi-layer-maps was broken when more than 1 layer was checked
 		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		zooming on layer maps on backend was broken on WordPress < v3.3
+		</td></tr>
 		</table>'.PHP_EOL;
 
 	if ( ($lmm_version_old < '2.9.2' ) ){

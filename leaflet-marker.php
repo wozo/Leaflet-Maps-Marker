@@ -27,8 +27,13 @@ function curPageURL() {
 }
 $back_reload_url = isset($_GET['back_reload_url']) ? $_GET['back_reload_url'] : '';
 //info: workaround - select shortcode on input focus doesnt work on iOS
-$is_ios = wp_is_mobile() && preg_match( '/iPad|iPod|iPhone/', $_SERVER['HTTP_USER_AGENT'] );
-$shortcode_select = ( $is_ios ) ? '' : 'onfocus="this.select();" readonly="readonly"';
+global $wp_version;
+if ( version_compare( $wp_version, '3.4', '>=' ) ) { 
+	 $is_ios = wp_is_mobile() && preg_match( '/iPad|iPod|iPhone/', $_SERVER['HTTP_USER_AGENT'] );
+	 $shortcode_select = ( $is_ios ) ? '' : 'onfocus="this.select();" readonly="readonly"';
+} else {
+	 $shortcode_select = '';
+}
 $table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
 $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
 $action = isset($_POST['action']) ? $_POST['action'] : (isset($_GET['action']) ? $_GET['action'] : ''); 

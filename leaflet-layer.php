@@ -27,8 +27,13 @@ function curPageURL() {
 }
 $back_reload_url = isset($_GET['back_reload_url']) ? $_GET['back_reload_url'] : '';
 //info: workaround - select shortcode on input focus doesnt work on iOS
-$is_ios = wp_is_mobile() && preg_match( '/iPad|iPod|iPhone/', $_SERVER['HTTP_USER_AGENT'] );
-$shortcode_select = ( $is_ios ) ? '' : 'onfocus="this.select();" readonly="readonly"';
+global $wp_version;
+if ( version_compare( $wp_version, '3.4', '>=' ) ) { 
+	 $is_ios = wp_is_mobile() && preg_match( '/iPad|iPod|iPhone/', $_SERVER['HTTP_USER_AGENT'] );
+	 $shortcode_select = ( $is_ios ) ? '' : 'onfocus="this.select();" readonly="readonly"';
+} else {
+	 $shortcode_select = '';
+}
 $table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
 $table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
 $layerlist = $wpdb->get_results('SELECT l.id as lid,l.name as lname FROM '.$table_name_layers.' as l WHERE l.multi_layer_map = 0 and l.id != 0', ARRAY_A);
@@ -1170,6 +1175,8 @@ var markers = {};
       mapcentermarker.setLatLng(e.latlng);
   });
   var mapElement = $('#selectlayer'), mapWidth = $('#mapwidth'), mapHeight = $('#mapheight'), layerviewlat = $('#layerviewlat'), layerviewlon = $('#layerviewlon'), panel = $('#lmm-panel'), lmm = $('#lmm'), layername = $('#layername'), listmarkers = $('#lmm-listmarkers'), multi_layer_map = $('#lmm-multi_layer_map'), zoom = $('#layerzoom');
+	//info: bugfix causing maps not to show up in WP 3.0 and errors in WP <3.3
+	<?php if ( version_compare( $wp_version, '3.3', '>=' ) ) { ?>
 	//info: change zoom level when changing form field
 	zoom.on('blur', function(e) {
 		if(isNaN(zoom.val())) {
@@ -1179,8 +1186,6 @@ var markers = {};
 		}
 	});
 	//info: bugfix causing maps not to show up in WP 3.0 and errors in WP <3.3
-	<?php global $wp_version;
-	if ( version_compare( $wp_version, '3.3', '>=' ) ) { ?>
 	layername.on('blur', function(e) { 
 		if( layername.val() ){
 			document.getElementById('lmm-panel-text').innerHTML = layername.val();

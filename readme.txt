@@ -339,6 +339,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: layout of map panel was broken on preview if empty marker/layer name was entered
 * BUGFIX: shortcode form field could not be focused on iOS
 * BUGFIX: list of assigned markers to multi-layer-maps was broken when more than 1 layer was checked
+* BUGFIX: zooming on layer maps on backend was broken on WordPress < v3.3
 
 = v2.9.2 - 11.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v2.9.2)
