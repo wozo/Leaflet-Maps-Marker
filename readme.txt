@@ -120,7 +120,7 @@ to the visitors of your website.
 * French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
 * German (de_DE)
 * Hindi (hi_IN) thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
-* Hungarian (hu_HU) thanks to István Pintér
+* Hungarian (hu_HU) thanks to István Pintér, [http://www.logicit.hu](http://www.logicit.hu)
 * Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
 * Japanese (ja) thanks to [Shu Higashi](http://twitter.com/higa4)
 * Polish (pl_PL) translation thanks to Pawel Wyszynski, [http://injit.pl](http://injit.pl) and Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
@@ -194,20 +194,22 @@ Do you have questions or issues with Leaflet Maps Marker? Please use these suppo
 == Screenshots ==
 For demo maps please visit [http://www.mapsmarker.com/demo](http://www.mapsmarker.com/demo).
 
-1. Frontend: marker map (with open popup and image, basemap: OGD Vienna satellite, overlay: OGD Vienna addresses, controlbox: expanded)
-2. Frontend: layer map (5 marker, different icons, basemap: OpenStreetMap, controlbox: collapsed)
-3. Frontend: map with WMS layer enabled and additional marker
-4. [youtube http://www.youtube.com/watch?v=LXliLaZ4u-E]
-5. Frontend: layer map in Google Earth (via KML export)
-6. Frontend: layer map in Google Maps (via KML export)
-7. Frontend: showing marker in Wikitude (via Augmented-Reality API)
-8. Backend: add/edit marker-screen - allows you to fully customize the marker map (used basemap & overlays, map size, zoom, controlbox status, marker icon, popup-text and behaviour etc).
-9. Backend: add/edit layer - allows you to fully customize the layer map (used basemap & overlays, set center, map size, zoom, controlbox status etc).
-10. Backend: markerlist - for easy administration of all your markers
-11. Backend: layerlist - for easy administration of all your layers
-12. Backend: plugin settings page allows you to easily set all necessary settings & restore the defaults if you messed something up
-13. Backend: csv-export of all markers - just copy and paste into your favorite spreadsheet application for use in other applications
-14. Backend: tools section - allows mass-actions more markers (assignements, deletions)
+01. Frontend: marker map (with open popup and image, basemap: OGD Vienna satellite, overlay: OGD Vienna addresses, controlbox: expanded)
+02. Frontend: layer map (5 marker, different icons, basemap: OpenStreetMap, controlbox: collapsed)
+03. Frontend: map with WMS layer enabled and additional marker
+04. [youtube http://www.youtube.com/watch?v=LXliLaZ4u-E]
+05. Frontend: layer map in Google Earth (via KML export)
+06. Frontend: layer map in Google Maps (via KML export)
+07. Frontend: showing marker in Wikitude (via Augmented-Reality API)
+08. Backend: simplified editor - create maps with an intuitive interface
+09. Backend: advanced editor (optional) - allows you to set all available options
+10. Backend: add/edit layer - allows you to fully customize the layer map (used basemap & overlays, set center, map size, zoom, controlbox status etc).
+11. Backend: markerlist - for easy administration of all your markers
+12. Backend: layerlist - for easy administration of all your layers
+13. Backend: plugin settings page allows you to easily set all necessary settings & restore the defaults if you messed something up
+14. Backend: csv-export of all markers - just copy and paste into your favorite spreadsheet application for use in other applications
+15. Backend: tools section - allows mass-actions more markers (assignements, deletions)
+
 == Other Notes ==
 = Licence =
 Good news, this plugin is free for everyone! Since it's released under the GPL, you can use it free of charge on your personal or commercial blog. But if you enjoy this plugin, you can thank me and leave a small donation for the time I've spent writing and supporting this plugin. Please see [http://www.mapsmarker.com/donations](http://www.mapsmarker.com/donations) for details.
@@ -243,7 +245,7 @@ Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
 = v3.0 =
-new option to switch between simplified and advanced map editor and lots of usability improvements
+new option to switch between simplified and advanced map editor, Hungarian translation and lots of usability improvements
 = v2.9.2 =
 fix for broken settings panel when certain translations were loaded
 = v2.9.1 =
@@ -308,11 +310,11 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v3.0 - xx.11.2012 =
+= v3.0 - 28.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)
 * NEW: option to switch between simplified and advanced editor
 * NEW: address now also gets saved to database and displayed on maps
-* NEW: Hungarian translation thanks to István Pintér
+* NEW: Hungarian translation thanks to István Pintér, [http://www.logicit.hu](http://www.logicit.hu)
 * NEW: show info on top of Maps Marker pages if plugin update is available
 * CHANGED: layer control box is not opened by default on mobile devices anymore
 * CHANGED: optimized TinyMCE popup (new with links to add new marker and layer maps)

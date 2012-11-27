@@ -120,9 +120,9 @@ $csvexportlink = LEAFLET_PLUGIN_URL . 'leaflet-exportcsv.php?_wpnonce=' . $nonce
 		<?php echo $showall = (isset($_POST['searchtext']) != NULL) ? "<a style=\"text-decoration:none;\" href=\"" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_markers\">" . __('show all markers','lmm') . "</a>" : ""; ?>
 	</div>
 	
-	<div id="exportlinkstext" style="display:inline;">
+	<div style="display:inline;">
 		<p>
-		<?php echo "<a href=\"" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_marker\" style=\"text-decoration:none;\"><img src=\"" . LEAFLET_PLUGIN_URL . "inc/img/icon-add.png\" /></a> <a href=\"" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_marker\" style=\"text-decoration:none;\">" . __('Add new marker','lmm') . "</a>"; ?>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a style="text-decoration:none;" href="javascript:();"><?php _e('Export and API links for all markers','lmm'); ?></a></div>
+		<span id="exportlinkstext1"><?php echo "<a href=\"" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_marker\" style=\"text-decoration:none;\"><img src=\"" . LEAFLET_PLUGIN_URL . "inc/img/icon-add.png\" /></a> <a href=\"" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_marker\" style=\"text-decoration:none;\">" . __('Add new marker','lmm') . "</a>"; ?></span><span id="exportlinkstext2">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a style="text-decoration:none;" href="javascript:();"><?php _e('Export and API links for all markers','lmm'); ?></a></span></div>
 		</p>
 	<div id="exportlinks" style="display:none;">
 	<p>
@@ -344,8 +344,9 @@ $csvexportlink = LEAFLET_PLUGIN_URL . 'leaflet-exportcsv.php?_wpnonce=' . $nonce
 <script type="text/javascript">
 //info: show all API links on click on simplified editor
 (function($) {
-	$('#exportlinkstext').click(function(e) {
-			$('#exportlinkstext').hide();
+	$('#exportlinkstext2').click(function(e) {
+			$('#exportlinkstext1').hide();
+			$('#exportlinkstext2').hide();
 			$('#exportlinks').show();
 	});	
 })(jQuery)
