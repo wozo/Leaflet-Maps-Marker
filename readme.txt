@@ -314,6 +314,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v3.1 - xx.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.1)
+* NEW: Croatian translation thanks to Neven Pausic, [http://www.airsoft-hrvatska.com](http://www.airsoft-hrvatska.com)
 * NEW: added "show less icons" link for simplified editor on marker maps
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * CHANGED: updated German translation
