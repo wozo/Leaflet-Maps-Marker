@@ -115,6 +115,7 @@ to the visitors of your website.
 * Bulgarian (bg_BG) thanks to Andon Ivanov, [http://coffebreak.info](http://coffebreak.info)
 * Catalan (ca) thanks to Vicent Cubells, [http://vcubells.net](http://vcubells.net)
 * Chinese (zh_CN) thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* Croatian (hr) thanks to Neven Pausic, [http://www.airsoft-hrvatska.com](http://www.airsoft-hrvatska.com) and Alan Benic
 * Dutch (nl_NL) thanks to Marijke Metz, [http://www.mergenmetz.nl](http://www.mergenmetz.nl) and Patrick Ruers, [http://www.stationskwartiersittard.nl](http://www.stationskwartiersittard.nl)
 * English (en_US)
 * French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
@@ -314,9 +315,11 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v3.1 - xx.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.1)
-* NEW: Croatian translation thanks to Neven Pausic, [http://www.airsoft-hrvatska.com](http://www.airsoft-hrvatska.com)
+* NEW: add TMS option to custom overlays to support overlays from tools like maptiler
+* NEW: Croatian translation thanks to Neven Pausic, [http://www.airsoft-hrvatska.com](http://www.airsoft-hrvatska.com) and Alan Benic
 * NEW: added "show less icons" link for simplified editor on marker maps
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* CHANGED: updated Hungarian translation thanks to István Pintér, [http://www.logicit.hu](http://www.logicit.hu)
 * CHANGED: updated German translation
 * BUGFIX: editor broke with error "Cannot redeclare curpageurl()" on some installations
 

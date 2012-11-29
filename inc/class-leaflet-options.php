@@ -3234,6 +3234,19 @@ class Class_leaflet_options {
 			'std'     => '1.0',
 			'type'    => 'text'
 		);		
+		$this->settings['overlays_custom_tms'] = array(
+			'version' => '3.1',
+			'pane'    => 'overlays',
+			'section' => 'overlays-section2',
+			'title'   => 'tms',
+			'desc'    => __('If true, inverses Y axis numbering for tiles (turn this on for TMS services).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);		
 		$this->settings['overlays_custom_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
@@ -3323,6 +3336,19 @@ class Class_leaflet_options {
 			'std'     => '1.0',
 			'type'    => 'text'
 		);		
+		$this->settings['overlays_custom2_tms'] = array(
+			'version' => '3.1',
+			'pane'    => 'overlays',
+			'section' => 'overlays-section3',
+			'title'   => 'tms',
+			'desc'    => __('If true, inverses Y axis numbering for tiles (turn this on for TMS services).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);		
 		$this->settings['overlays_custom2_subdomains_enabled'] = array(
 			'version' => '1.0',
 			'pane'    => 'overlays',
@@ -3410,6 +3436,19 @@ class Class_leaflet_options {
 			'desc'    => __('The opacity of the tile layer.','lmm'),
 			'std'     => '1.0',
 			'type'    => 'text'
+		);		
+		$this->settings['overlays_custom3_tms'] = array(
+			'version' => '3.1',
+			'pane'    => 'overlays',
+			'section' => 'overlays-section4',
+			'title'   => 'tms',
+			'desc'    => __('If true, inverses Y axis numbering for tiles (turn this on for TMS services).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
 		);		
 		$this->settings['overlays_custom3_subdomains_enabled'] = array(
 			'version' => '1.0',
@@ -3499,6 +3538,19 @@ class Class_leaflet_options {
 			'desc'    => __('The opacity of the tile layer.','lmm'),
 			'std'     => '1.0',
 			'type'    => 'text'
+		);		
+		$this->settings['overlays_custom4_tms'] = array(
+			'version' => '3.1',
+			'pane'    => 'overlays',
+			'section' => 'overlays-section5',
+			'title'   => 'tms',
+			'desc'    => __('If true, inverses Y axis numbering for tiles (turn this on for TMS services).','lmm'),
+			'type'    => 'radio',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
 		);		
 		$this->settings['overlays_custom4_subdomains_enabled'] = array(
 			'version' => '1.0',
