@@ -93,6 +93,7 @@ to the visitors of your website.
 
 = Technical details =
 * Wordpress Multisite compatibility
+* Full RTL (Right-to-Left) Language Support
 * plugin was successfully tested to ÖNORM 7700 and OWASP TOP 10 for security issues
 * full UTF8-support for cyrillic, chinese or other alphabets on marker/layername and marker popup text
 * integrated check for known incompatible plugins (and instructions on how to fix)
@@ -321,6 +322,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * CHANGED: updated Hungarian translation thanks to István Pintér, [http://www.logicit.hu](http://www.logicit.hu)
 * CHANGED: updated German translation
+* BUGFIX: display of markers was broken on RTL (right to left) WordPress sites
 * BUGFIX: editor broke with error "Cannot redeclare curpageurl()" on some installations
 
 = v3.0 - 28.11.2012 =

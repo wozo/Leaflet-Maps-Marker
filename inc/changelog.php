@@ -101,6 +101,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
+		display of markers was broken on RTL (right to left) WordPress sites
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
 		editor broke with error "Cannot redeclare curpageurl()" on some installations
 		</td></tr>
 		</table>'.PHP_EOL;
