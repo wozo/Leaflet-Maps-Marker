@@ -319,7 +319,6 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * CHANGED: updated German translation
 * BUGFIX: editor broke with error "Cannot redeclare curpageurl()" on some installations
-* BUGFIX: break out of frames on fullscreen maps if set (caused maps to break)
 
 = v3.0 - 28.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)
