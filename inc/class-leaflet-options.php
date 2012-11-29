@@ -888,7 +888,7 @@ class Class_leaflet_options {
 			'std'     => '1',
 			'choices' => array(
 				'0' => __('hidden','lmm'),
-				'1' => __('collapsed (except on mobiles)','lmm'),
+				'1' => __('collapsed','lmm'),
 				'2' => __('expanded','lmm')
 			)
 		);		
@@ -1468,7 +1468,7 @@ class Class_leaflet_options {
 			'std'     => '1',
 			'choices' => array(
 				'0' => __('hidden','lmm'),
-				'1' => __('collapsed (except on mobiles)','lmm'),
+				'1' => __('collapsed','lmm'),
 				'2' => __('expanded','lmm')
 			)
 		);		
@@ -1682,7 +1682,7 @@ class Class_leaflet_options {
 			'std'     => '1',
 			'choices' => array(
 				'0' => __('hidden','lmm'),
-				'1' => __('collapsed (except on mobiles)','lmm'),
+				'1' => __('collapsed','lmm'),
 				'2' => __('expanded','lmm')
 			)
 		);		
