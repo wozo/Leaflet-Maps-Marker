@@ -917,7 +917,7 @@ elseif (isset($_GET['marker'])) {
 	if ($lmm_options['directions_popuptext_panel'] == 'yes') {
 
 	 	$mpopuptext_css = ($mpopuptext != NULL) ? "border-top:1px solid #f0f0e7;padding-top:5px;margin-top:5px;" : "";
-		$mpopuptext = $mpopuptext . '<div style=\'' . $popuptext_css . '\'>' . $address . ' (';
+		$mpopuptext = $mpopuptext . '<div style=\'' . $mpopuptext_css . '\'>' . $address . ' (';
 
 		if ($lmm_options['directions_provider'] == 'googlemaps') { 
 			$avoidhighways = (isset($lmm_options[ 'directions_googlemaps_route_type_highways' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_highways' ] == 1 ) ? '&dirflg=h' : '';

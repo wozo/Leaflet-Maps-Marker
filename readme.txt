@@ -318,12 +318,16 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.1)
 * NEW: add TMS option to custom overlays to support overlays from tools like maptiler
 * NEW: Croatian translation thanks to Neven Pausic, [http://www.airsoft-hrvatska.com](http://www.airsoft-hrvatska.com) and Alan Benic
+* NEW: option to add extra css for list of markers table (to customize the padding for example)
 * NEW: added "show less icons" link for simplified editor on marker maps
+* NEW: added compatibility check for incompatible plugin [JavaScript to Footer](http://wordpress.org/extend/plugins/footer-javascript/)
+* NEW: added fallback for installations where editor switch link above tables did not work
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * CHANGED: updated Hungarian translation thanks to István Pintér, [http://www.logicit.hu](http://www.logicit.hu)
 * CHANGED: updated German translation
 * BUGFIX: display of markers was broken on RTL (right to left) WordPress sites
 * BUGFIX: editor broke with error "Cannot redeclare curpageurl()" on some installations
+* BUGFIX: warning messages on WordPress 3.5 when debug is enabled
 
 = v3.0 - 28.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)

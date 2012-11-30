@@ -41,7 +41,7 @@ class Class_leaflet_options {
 		$this->sections['mapdefaults-section6']		= esc_attr__('Default values for marker popups','lmm');
 		$this->sections['mapdefaults-section7']		= esc_attr__('Default values for markers added directly','lmm');
 		$this->sections['mapdefaults-section8']		= esc_attr__('Default values for new layer maps','lmm');
-		$this->sections['mapdefaults-section9']		= esc_attr__('List marker settings','lmm');
+		$this->sections['mapdefaults-section9']		= esc_attr__('List of markers settings','lmm');
 		$this->sections['mapdefaults-section10']	= esc_attr__('Interaction options','lmm');
 		$this->sections['mapdefaults-section11']	= esc_attr__('Keyboard navigation options','lmm');
 		$this->sections['mapdefaults-section12']	= esc_attr__('Panning inertia options','lmm');
@@ -1294,7 +1294,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section6',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => '<img src="'. LEAFLET_PLUGIN_URL .'/inc/img/help-popup.jpg" />',
+			'desc'    => '<img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-popup.jpg" />',
 			'type'    => 'helptext'
 		);
 		$this->settings['defaults_marker_popups_maxwidth'] = array(
@@ -1901,7 +1901,7 @@ class Class_leaflet_options {
 			'std'     => 0 
 		);	
 		/*
-		* List marker settings
+		* List of markers settings
 		*/
 		$this->settings['defaults_layer_listmarkers_helptext'] = array(
 			'version' => '3.0',
@@ -2062,6 +2062,15 @@ class Class_leaflet_options {
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);	
+		$this->settings['defaults_layer_listmarkers_extracss'] = array(
+			'version' => '3.1',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section9',
+			'title'   => __( 'Extra CSS for table cells', 'lmm' ),
+			'desc'    => __( 'example: <strong>padding:20px 0 !important;</strong> increases the default padding between list entries', 'lmm' ),
+			'std'     => '',
+			'type'    => 'text'
+		);
 		/*
 		* Interaction options 
 		* formerly "General map settings" and moved to "Basemaps" from "Misc" tab
@@ -6597,7 +6606,7 @@ class Class_leaflet_options {
 			'section' => 'ar-section1',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Markers created with Leaflet Maps Marker can also be displayed via <a href="http://en.wikipedia.org/wiki/Augmented_reality" target="_blank">Augmented-Reality technology</a> on mobile devices. As a first steps, an API to <a href="http://www.wikitude.com" target="_blank">Wikitude</a> has been implemented. APIs to other Augmented-Reality-Providers (like <a href="http://www.layar.com" target="_blank">Layar</a> or <a href="http://www.junaio.de" target="_blank">Junaio</a>) will probably follow in one of the next versions. Sample screenshots:', 'lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'/inc/img/help-wikitude.jpg" />',
+			'desc'    => __( 'Markers created with Leaflet Maps Marker can also be displayed via <a href="http://en.wikipedia.org/wiki/Augmented_reality" target="_blank">Augmented-Reality technology</a> on mobile devices. As a first steps, an API to <a href="http://www.wikitude.com" target="_blank">Wikitude</a> has been implemented. APIs to other Augmented-Reality-Providers (like <a href="http://www.layar.com" target="_blank">Layar</a> or <a href="http://www.junaio.de" target="_blank">Junaio</a>) will probably follow in one of the next versions. Sample screenshots:', 'lmm') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-wikitude.jpg" />',
 			'type'    => 'helptext'
 		);
 		/*

@@ -305,16 +305,16 @@
     $lmm_out .= '<table width="' . $mapwidth.$mapwidthunit . '">';
     foreach ($layer_marker_list as $row){
         if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_icon' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_icon' ] == 1 ) ) {
-            $lmm_out .= '<tr><td style="width:35px;vertical-align:top;text-align:center;">';
+            $lmm_out .= '<tr><td style="width:35px;vertical-align:top;text-align:center;' . $lmm_options[ 'defaults_layer_listmarkers_extracss' ] . '">';
             if ($row['micon'] != null) { 
                 $lmm_out .= '<img src="' . LEAFLET_PLUGIN_ICONS_URL . '/'.$row['micon'].'" title="' . stripslashes($row['markername']) . '" />'; 
             } else { 
                 $lmm_out .= '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png" title="' . stripslashes($row['markername']) . '" />';
             };
         } else {
-            $lmm_out .= '<tr><td>';            
+            $lmm_out .= '<tr><td style="' . $lmm_options[ 'defaults_layer_listmarkers_extracss' ] . '">';            
         };
-        $lmm_out .= '</td><td><div class="lmm-listmarkers-panel-icons">';
+        $lmm_out .= '</td><td style="' . $lmm_options[ 'defaults_layer_listmarkers_extracss' ] . '"><div class="lmm-listmarkers-panel-icons">';
         if ( (isset($lmm_options[ 'defaults_layer_listmarkers_api_directions' ] ) == TRUE ) && ( $lmm_options[ 'defaults_layer_listmarkers_api_directions' ] == 1 ) ) {
             if ($lmm_options['directions_provider'] == 'googlemaps') {
                 if ((isset($lmm_options[ 'directions_googlemaps_route_type_walking' ] ) == TRUE ) && ( $lmm_options[ 'directions_googlemaps_route_type_walking' ] == 1 )) { $yours_transport_type_icon = 'icon-walk.png'; } else { $yours_transport_type_icon = 'icon-car.png'; }
