@@ -322,6 +322,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: added "show less icons" link for simplified editor on marker maps
 * NEW: added compatibility check for incompatible plugin [JavaScript to Footer](http://wordpress.org/extend/plugins/footer-javascript/)
 * NEW: added fallback for installations where editor switch link above tables did not work
+* CHANGED: unchecked custom overlay 1 in setting "Available overlays in control box" - [action is needed if you changed this!](http://mapsmarker.com/v3.1)
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * CHANGED: updated Hungarian translation thanks to István Pintér, [http://www.logicit.hu](http://www.logicit.hu)
 * CHANGED: updated German translation

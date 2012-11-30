@@ -3139,13 +3139,13 @@ class Class_leaflet_options {
 			'type'    => 'helptext'
 		);
 		$this->settings['overlays_custom'] = array(
-			'version' => '1.0',
+			'version' => '3.1',
 			'pane'    => 'overlays',
 			'section' => 'overlays-section1',
 			'title'    => __('Available overlays in control box','lmm'),
 			'desc'    => __('Custom overlay','lmm'),
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0
 		);
 		$this->settings['overlays_custom2'] = array(
 			'version' => '1.0',
@@ -3407,7 +3407,7 @@ class Class_leaflet_options {
 			'section' => 'overlays-section4',
 			'title'   => __( 'Tiles URL', 'lmm' ),
 			'desc'    => __("For example","lmm"). ": http://maps.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png",
-			'std'     => 'http://maps.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png',
+			'std'     => 'http://{s}.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png',
 			'type'    => 'text'
 		);
 		$this->settings['overlays_custom3_attribution'] = array(
@@ -3509,7 +3509,7 @@ class Class_leaflet_options {
 			'section' => 'overlays-section5',
 			'title'   => __( 'Tiles URL', 'lmm' ),
 			'desc'    => __("For example","lmm"). ": http://maps.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png",
-			'std'     => 'http://maps.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png',
+			'std'     => 'http://{s}.wien.gv.at/wmts/beschriftung/normal/google3857/{z}/{y}/{x}.png',
 			'type'    => 'text'
 		);
 		$this->settings['overlays_custom4_attribution'] = array(
