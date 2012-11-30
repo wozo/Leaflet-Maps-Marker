@@ -328,6 +328,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * BUGFIX: display of markers was broken on RTL (right to left) WordPress sites
 * BUGFIX: editor broke with error "Cannot redeclare curpageurl()" on some installations
 * BUGFIX: warning messages on WordPress 3.5 when debug is enabled
+* BUGFIX: unchecked but active overlays were not shown in layer controlbox on frontend
 
 = v3.0 - 28.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)
