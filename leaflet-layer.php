@@ -374,7 +374,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 			</tr>
 			<tr>
 				<td><label for="address"><strong><?php _e('Location','lmm') ?></strong></label><br/><br/><a href="http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/powered-by-google.png" /></a></td>
-				<td><p><label for="address"><?php _e('Please select a place or an address','lmm') ?></label> <?php if (current_user_can('activate_plugins')) { echo '<span style="' . $current_editor_css . '"><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings#google_places">(' . __('Settings','lmm') . ')</a></span>'; } ?><br/>
+				<td><p><label for="address"><?php _e('Please select a place or an address','lmm') ?></label> <?php if (current_user_can('activate_plugins')) { echo '<span style="' . $current_editor_css . '"><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings#google">(' . __('Settings','lmm') . ')</a></span>'; } ?><br/>
 					<input style="width: 640px;" type="text" id="address" name="address" value="<?php echo stripslashes(htmlspecialchars($laddress)); ?>" />
 					<div style="<?php echo $current_editor_css; ?>">
 					<?php _e('or paste coordinates here','lmm') ?> -  
@@ -1121,36 +1121,6 @@ var markers = {};
 			return L.marker(latlng, {icon: mapIcon, clickable: marker_clickable, title: marker_title, opacity: <?php echo floatval($lmm_options[ 'defaults_marker_icon_opacity' ]) ?>});
 		}
 	}).addTo(selectlayer);
-  
-  <?php if ($lmm_options[ 'ogdvienna_selector' ] != 'disabled') { ?>
-  //info: set OGD Vienna basemap if position between 48.321560/16.182175 and 48.116142/16.579056
-  selectlayer.on('click', function(e) 
-  {
-		if( ('<?php echo $basemap ?>' != 'ogdwien_basemap') && ('<?php echo $basemap ?>' != 'ogdwien_satellite') && (e.latlng.lat.toFixed(6) <= 48.321560) && (e.latlng.lat.toFixed(6) >= 48.116142) && (e.latlng.lng.toFixed(6) >= 16.182175) && (e.latlng.lng.toFixed(6) <= 16.579056) ) 
-		{
-			selectlayer.attributionControl._attributions = [];
-			selectlayer.removeControl(layersControl).addLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>);
-				<?php if ( (isset($lmm_options[ 'ogdvienna_selector_addresses' ]) == TRUE) && ($lmm_options[ 'ogdvienna_selector_addresses' ] == 1) ) { ?>
-				selectlayer.addLayer(overlays_custom);
-				<?php }?>
-			selectlayer.addControl(layersControl);
-		}
-  });
-  //info: set basemap back to OSM if marker outside of Vienna boundaries
-  selectlayer.on('click', function(e) 
-  {
-		if( ((e.latlng.lat.toFixed(6) > 48.321560) || (e.latlng.lat.toFixed(6) < 48.116142) || (e.latlng.lng.toFixed(6) < 16.182175) || (e.latlng.lng.toFixed(6) > 16.579056)) && (('<?php echo $basemap ?>' == 'ogdwien_basemap') || ('<?php echo $basemap ?>' == 'ogdwien_satellite')) ) 
-		{
-			selectlayer.attributionControl._attributions = [];
-			selectlayer.removeLayer(<?php if ($lmm_options[ 'ogdvienna_selector' ] == 'ogdwien_basemap') { echo 'ogdwien_basemap'; } else { echo 'ogdwien_satellite'; }?>);
-			selectlayer.removeControl(layersControl);
-			selectlayer.addLayer(<?php if ( ($lmm_options[ 'standard_basemap' ] == 'ogdwien_basemap') || ($lmm_options[ 'standard_basemap' ] == 'ogdwien_satellite') ) { echo 'osm_mapnik'; } else { echo $lmm_options[ 'standard_basemap' ]; } ?>);
-			selectlayer.removeLayer(overlays_custom);
-			selectlayer.addControl(layersControl);
-		}
-  });
-  <?php }?>  
-  
   //info: load wms layer when checkbox gets checked
 	$('#wmscheckboxes input:checkbox').click(function(el) {
 		if(el.target.checked) {
@@ -1294,27 +1264,6 @@ gLoader = function(){
 			map.setView(markerLocation, selectlayer.getZoom());
 			document.getElementById('layerviewlat').value = place.geometry.location.lat().toFixed(6);
 			document.getElementById('layerviewlon').value = place.geometry.location.lng().toFixed(6);
-			<?php if ($lmm_options[ 'ogdvienna_selector' ] != 'disabled') { ?>
-			//info: set OGD Vienna basemap if position between 48.321560/16.182175 and 48.116142/16.579056
-			if ( ('<?php echo $basemap ?>' != 'ogdwien_basemap') && ('<?php echo $basemap ?>' != 'ogdwien_satellite') && (place.geometry.location.lat().toFixed(6) <= 48.321560) && (place.geometry.location.lat().toFixed(6) >= 48.116142) && (place.geometry.location.lng().toFixed(6) >= 16.182175) && (place.geometry.location.lng().toFixed(6) <= 16.579056) ) {
-			selectlayer.attributionControl._attributions = [];
-			selectlayer.removeControl(layersControl).addLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>);
-			<?php if ( (isset($lmm_options[ 'ogdvienna_selector_addresses' ]) == TRUE) && ($lmm_options[ 'ogdvienna_selector_addresses' ] == 1) ) { ?>
-				selectlayer.addLayer(overlays_custom);
-			<?php }?>
-			selectlayer.addControl(layersControl);
-			}
-			//info: set basemap back to OSM if marker outside of Vienna boundaries (Google autocomplete)
-			if( ((place.geometry.location.lat().toFixed(6) > 48.321560) || (place.geometry.location.lat().toFixed(6) < 48.116142) || (place.geometry.location.lng().toFixed(6) < 16.182175) || (place.geometry.location.lng().toFixed(6) > 16.579056)) && (('<?php echo $basemap ?>' == 'ogdwien_basemap') || ('<?php echo $basemap ?>' == 'ogdwien_satellite')) ) 
-			{
-				selectlayer.attributionControl._attributions = [];
-				selectlayer.removeLayer(<?php if ($lmm_options[ 'ogdvienna_selector' ] == 'ogdwien_basemap') { echo 'ogdwien_basemap'; } else { echo 'ogdwien_satellite'; }?>);
-				selectlayer.removeControl(layersControl);
-				selectlayer.addLayer(<?php if ( ($lmm_options[ 'standard_basemap' ] == 'ogdwien_basemap') || ($lmm_options[ 'standard_basemap' ] == 'ogdwien_satellite') ) { echo 'osm_mapnik'; } else { echo $lmm_options[ 'standard_basemap' ]; } ?>);
-				selectlayer.removeLayer(overlays_custom);
-				selectlayer.addControl(layersControl);					
-			}
-			<?php }?>
 		 });
 		var input = document.getElementById('address');
 		google.maps.event.addDomListener(input, 'keydown', 

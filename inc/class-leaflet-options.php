@@ -368,7 +368,7 @@ class Class_leaflet_options {
 			'title'   => __('Default basemap','lmm'),
 			'desc'    => '',
 			'type'    => 'radio',
-			'std'     => 'ogdwien_basemap',
+			'std'     => 'osm_mapnik',
 			'choices' => array(
 				'osm_mapnik' => __('OpenStreetMap (Mapnik, max zoom 18)','lmm'),
 				'mapquest_osm' => __('MapQuest (OSM, max zoom 18)','lmm'),
@@ -411,7 +411,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section2',
 			'title'   => 'OpenStreetMap (Mapnik)',
 			'desc'    => '',
-			'std'     => 'OSM Mapnik',
+			'std'     => 'OpenStreetMap',
 			'type'    => 'text'
 		);
 		$this->settings['default_basemap_name_mapquest_osm'] = array(
@@ -420,7 +420,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section2',
 			'title'   => 'Mapquest',
 			'desc'    => '',
-			'std'     => 'Mapquest OSM',
+			'std'     => 'Mapquest (OSM)',
 			'type'    => 'text'
 		);
 		$this->settings['default_basemap_name_mapquest_aerial'] = array(
@@ -701,18 +701,18 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section3',
 			'title'   => '',
-			'desc'    => __('OGD Vienna basemap','lmm') . '<br/><span class="description">' . __('Info: gets removed from control box automatically if location of marker or layer is outside Vienna','lmm') . '</span>',
+			'desc'    => __('OGD Vienna basemap','lmm'),
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);
 		$this->settings['controlbox_ogdwien_satellite'] = array(
 			'version' => '1.0',
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section3',
 			'title'   => '',
-			'desc'    => __('OGD Vienna satellite','lmm') . '<br/><span class="description">' . __('Info: gets removed from control box automatically if location of marker or layer is outside Vienna','lmm') . '</span>',
+			'desc'    => __('OGD Vienna satellite','lmm'),
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 0 
 		);
 		$this->settings['controlbox_cloudmade'] = array(
 			'version' => '1.6',
@@ -775,7 +775,7 @@ class Class_leaflet_options {
 			'title'   => '',
 			'desc'    => __('Custom basemap','lmm'),
 			'type'    => 'checkbox',
-			'std'     => 0 
+			'std'     => 1 
 		);	
 		$this->settings['controlbox_custom_basemap2'] = array(
 			'version' => '1.0',
@@ -784,7 +784,7 @@ class Class_leaflet_options {
 			'title'   => '',
 			'desc'    => __('Custom basemap 2','lmm'),
 			'type'    => 'checkbox',
-			'std'     => 0 
+			'std'     => 1 
 		);	
 		$this->settings['controlbox_custom_basemap3'] = array(
 			'version' => '1.0',
@@ -793,7 +793,7 @@ class Class_leaflet_options {
 			'title'   => '',
 			'desc'    => __('Custom basemap 3','lmm'),
 			'type'    => 'checkbox',
-			'std'     => 0 
+			'std'     => 1 
 		);	
 		/*
 		* Default values for new marker maps
@@ -3121,41 +3121,6 @@ class Class_leaflet_options {
 				'true' => __('true','lmm'),
 				'false' => __('false','lmm')
 			)
-		);
-		/*
-		* OGD Vienna Selector
-		*/
-		$this->settings['ogdvienna_selector_helptext'] = array(
-			'version' => '1.0',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section10',
-			'std'     => '', 
-			'title'   => '',
-			'desc'    => __( 'If coordinates within boundaries of Vienna/Austria are selected for a marker or layer, the basemap automatically switches to OGD Vienna basemap and the overlay OGD Vienna addresses gets checked.', 'lmm').'<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-ogdvienna-selector.jpg" />',
-			'type'    => 'helptext'
-		);
-		$this->settings['ogdvienna_selector'] = array(
-			'version' => '1.0',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section10',
-			'title'   => __('OGD Vienna Selector','lmm'),
-			'desc'    => '',
-			'type'    => 'radio',
-			'std'     => 'ogdwien_basemap',
-			'choices' => array(
-				'ogdwien_basemap' => __('enabled (use OGD Vienna basemap)','lmm'),
-				'ogdwien_satellite' => __('enabled (use OGD Vienna satellite)','lmm'),
-				'disabled' => __('disabled (use default basemap)','lmm')
-			)
-		);
-		$this->settings['ogdvienna_selector_addresses'] = array(
-			'version' => '1.0',
-			'pane'    => 'basemaps',
-			'section' => 'basemaps-section10',
-			'title'   => '',
-			'desc'    => __( 'enable OGD Vienna addresses overlay', 'lmm' ),
-			'type'    => 'checkbox',
-			'std'     => 1 
 		);
 			
 		/*===========================================

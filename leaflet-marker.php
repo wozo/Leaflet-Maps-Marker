@@ -911,34 +911,6 @@ var marker,selectlayer,googleLayer_roadmap,googleLayer_satellite,googleLayer_hyb
  }
  ?>
   marker.bindPopup('<?php echo preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$popuptext) ?>',{maxWidth: <?php echo intval($lmm_options['defaults_marker_popups_maxwidth']) ?>, minWidth: <?php echo intval($lmm_options['defaults_marker_popups_minwidth']) ?>, maxHeight: <?php echo intval($lmm_options['defaults_marker_popups_maxheight']) ?>, autoPan: <?php echo $lmm_options['defaults_marker_popups_autopan'] ?>, closeButton: <?php echo $lmm_options['defaults_marker_popups_closebutton'] ?>, autoPanPadding: new L.Point(<?php echo intval($lmm_options['defaults_marker_popups_autopanpadding_x']) ?>, <?php echo intval($lmm_options['defaults_marker_popups_autopanpadding_y']) ?>)})<?php  if ($openpopup == 1) { echo '.openPopup()'; } ?>;
-  <?php if ($lmm_options[ 'ogdvienna_selector' ] != 'disabled') { ?>
-  //info: set OGD Vienna basemap if position between 48.321560/16.182175 and 48.116142/16.579056
-  selectlayer.on('click', function(e) 
-  {
-		if( ('<?php echo $basemap ?>' != 'ogdwien_basemap') && ('<?php echo $basemap ?>' != 'ogdwien_satellite') && (e.latlng.lat.toFixed(6) <= 48.321560) && (e.latlng.lat.toFixed(6) >= 48.116142) && (e.latlng.lng.toFixed(6) >= 16.182175) && (e.latlng.lng.toFixed(6) <= 16.579056) ) 
-		{
-			selectlayer.attributionControl._attributions = [];
-			selectlayer.removeControl(layersControl).addLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>);
-				<?php if ( (isset($lmm_options[ 'ogdvienna_selector_addresses' ]) == TRUE) && ($lmm_options[ 'ogdvienna_selector_addresses' ] == 1) ) { ?>
-				selectlayer.addLayer(overlays_custom);
-				<?php }?>
-			selectlayer.addControl(layersControl);
-		}
-  });
-  //info: set basemap back to OSM if marker outside of Vienna boundaries
-  selectlayer.on('click', function(e) 
-  {
-		if( ((e.latlng.lat.toFixed(6) > 48.321560) || (e.latlng.lat.toFixed(6) < 48.116142) || (e.latlng.lng.toFixed(6) < 16.182175) || (e.latlng.lng.toFixed(6) > 16.579056)) && (('<?php echo $basemap ?>' == 'ogdwien_basemap') || ('<?php echo $basemap ?>' == 'ogdwien_satellite')) ) 
-		{
-			selectlayer.attributionControl._attributions = [];
-			selectlayer.removeLayer(<?php if ($lmm_options[ 'ogdvienna_selector' ] == 'ogdwien_basemap') { echo 'ogdwien_basemap'; } else { echo 'ogdwien_satellite'; }?>);
-			selectlayer.removeControl(layersControl);
-			selectlayer.addLayer(<?php if ( ($lmm_options[ 'standard_basemap' ] == 'ogdwien_basemap') || ($lmm_options[ 'standard_basemap' ] == 'ogdwien_satellite') ) { echo 'osm_mapnik'; } else { echo $lmm_options[ 'standard_basemap' ]; } ?>);
-			selectlayer.removeLayer(overlays_custom);
-			selectlayer.addControl(layersControl);
-		}
-  });
-  <?php } ?>
   //info: load wms layer when checkbox gets checked
 	$('#wmscheckboxes input:checkbox').click(function(el) {
 		if(el.target.checked) {
@@ -1102,27 +1074,6 @@ gLoader = function(){
 			document.getElementById('lon').value = place.geometry.location.lng().toFixed(6);
 			<?php if ($popuptext != NULL) { ?>
 			marker.bindPopup('<?php echo preg_replace('/(\015\012)|(\015)|(\012)/','<br/>',$popuptext) ?>',{maxWidth: <?php echo intval($lmm_options['defaults_marker_popups_maxwidth']) ?>, minWidth: <?php echo intval($lmm_options['defaults_marker_popups_minwidth']) ?>, maxHeight: <?php echo intval($lmm_options['defaults_marker_popups_maxheight']) ?>, autoPan: <?php echo $lmm_options['defaults_marker_popups_autopan'] ?>, closeButton: <?php echo $lmm_options['defaults_marker_popups_closebutton'] ?>, autoPanPadding: new L.Point(<?php echo intval($lmm_options['defaults_marker_popups_autopanpadding_x']) ?>, <?php echo intval($lmm_options['defaults_marker_popups_autopanpadding_y']) ?>)})<?php  if ($openpopup == 1) { echo '.openPopup()'; } ?>;
-			<?php }?>
-			<?php if ($lmm_options[ 'ogdvienna_selector' ] != 'disabled') { ?>
-			//info: set OGD Vienna basemap if position between 48.321560/16.182175 and 48.116142/16.579056
-			if ( ('<?php echo $basemap ?>' != 'ogdwien_basemap') && ('<?php echo $basemap ?>' != 'ogdwien_satellite') && (place.geometry.location.lat().toFixed(6) <= 48.321560) && (place.geometry.location.lat().toFixed(6) >= 48.116142) && (place.geometry.location.lng().toFixed(6) >= 16.182175) && (place.geometry.location.lng().toFixed(6) <= 16.579056) ) {
-			selectlayer.attributionControl._attributions = [];
-			selectlayer.removeControl(layersControl).addLayer(<?php echo $lmm_options[ 'ogdvienna_selector' ] ?>);
-			<?php if ( (isset($lmm_options[ 'ogdvienna_selector_addresses' ]) == TRUE) && ($lmm_options[ 'ogdvienna_selector_addresses' ] == 1) ) { ?>
-				selectlayer.addLayer(overlays_custom);
-			<?php }?>
-			selectlayer.addControl(layersControl);
-			}
-			//info: set basemap back to OSM if marker outside of Vienna boundaries (Google autocomplete)
-			if( ((place.geometry.location.lat().toFixed(6) > 48.321560) || (place.geometry.location.lat().toFixed(6) < 48.116142) || (place.geometry.location.lng().toFixed(6) < 16.182175) || (place.geometry.location.lng().toFixed(6) > 16.579056)) && (('<?php echo $basemap ?>' == 'ogdwien_basemap') || ('<?php echo $basemap ?>' == 'ogdwien_satellite')) ) 
-			{
-				selectlayer.attributionControl._attributions = [];
-				selectlayer.removeLayer(<?php if ($lmm_options[ 'ogdvienna_selector' ] == 'ogdwien_basemap') { echo 'ogdwien_basemap'; } else { echo 'ogdwien_satellite'; }?>);
-				selectlayer.removeControl(layersControl);
-				selectlayer.addLayer(<?php if ( ($lmm_options[ 'standard_basemap' ] == 'ogdwien_basemap') || ($lmm_options[ 'standard_basemap' ] == 'ogdwien_satellite') ) { echo 'osm_mapnik'; } else { echo $lmm_options[ 'standard_basemap' ]; } ?>);
-				selectlayer.removeLayer(overlays_custom);
-				selectlayer.addControl(layersControl);					
-			}
 			<?php }?>
 		 });
 		var input = document.getElementById('address');
