@@ -153,6 +153,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td><td>
 		unchecked but active overlays were not shown in layer controlbox on frontend
 		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		maps on backend were broken when certain translation like Italian were active
+		</td></tr>
 		</table>'.PHP_EOL;
 
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.0') . '</strong> - ' . __('released on','lmm') . ' 28.11.2012 (<a href="http://www.mapsmarker.com/v3.0" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
