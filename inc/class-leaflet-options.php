@@ -573,7 +573,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section2',
 			'title'   => __( 'Custom Basemap', 'lmm' ),
 			'desc'    => '',
-			'std'     => 'Custom1',
+			'std'     => 'Open Cycle Map',
 			'type'    => 'text'
 		);		
 		$this->settings['custom_basemap2_name'] = array(
@@ -582,7 +582,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section2',
 			'title'   => __( 'Custom Basemap 2', 'lmm' ),
 			'desc'    => '',
-			'std'     => 'Custom2',
+			'std'     => 'Stamen Watercolor',
 			'type'    => 'text'
 		);		
 		$this->settings['custom_basemap3_name'] = array(
@@ -591,7 +591,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section2',
 			'title'   => __( 'Custom Basemap 3', 'lmm' ),
 			'desc'    => '',
-			'std'     => 'Custom3',
+			'std'     => 'Transport Map',
 			'type'    => 'text'
 		);		
 		/*
@@ -2773,8 +2773,8 @@ class Class_leaflet_options {
 			'pane'    => 'basemaps',
 			'section' => 'basemaps-section7',
 			'title'   => __( 'Tiles URL', 'lmm' ),
-			'desc'    => __("For example","lmm"). ": http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png",
-			'std'     => 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+			'desc'    => __("For example","lmm"). ": http://tile.opencyclemap.org/cycle/{z}/{x}/{y}.png",
+			'std'     => 'http://tile.opencyclemap.org/cycle/{z}/{x}/{y}.png',
 			'type'    => 'text'
 		);
 		$this->settings['custom_basemap_attribution'] = array(
@@ -2782,8 +2782,8 @@ class Class_leaflet_options {
 			'pane'    => 'basemaps',
 			'section' => 'basemaps-section7',
 			'title'   => __( 'Attribution', 'lmm' ),
-			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider X&lt;/a&gt;",
-			'std'     => "Copyright ".date('Y')." <a href=&quot;http://xy.com&quot;>Provider X</a>",
+			'desc'    => __("For example","lmm"). ": &copy; &lt;a href=&quot;http://openstreetmap.org/&quot;&gt;OpenStreetMap contributors&lt;/a&gt; CC-BY-SA",
+			'std'	  => "&copy; <a href=&quot;http://openstreetmap.org/&quot; target=&quot;_blank&quot;>OpenStreetMap contributors</a>, <a href=&quot;http://creativecommons.org/licenses/by-sa/2.0/&quot; target=&quot;_blank&quot;>CC-BY-SA</a>",
 			'type'    => 'text'
 		);
 		$this->settings['custom_basemap_minzoom'] = array(
@@ -2801,7 +2801,7 @@ class Class_leaflet_options {
 			'section' => 'basemaps-section7',
 			'title'   => __( 'Maximum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
-			'std'     => '18',
+			'std'     => '17',
 			'type'    => 'text'
 		);		
 		$this->settings['custom_basemap_tms'] = array(
@@ -2824,7 +2824,7 @@ class Class_leaflet_options {
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from tiles url if available','lmm'),
 			'type'    => 'radio',
-			'std'     => 'yes',
+			'std'     => 'no',
 			'choices' => array(
 				'yes' => __('Yes (please enter subdomains in next form field)','lmm'),
 				'no' => __('No','lmm')
@@ -2835,8 +2835,8 @@ class Class_leaflet_options {
 			'pane'    => 'basemaps',
 			'section' => 'basemaps-section7',
 			'title'   => __( 'Subdomain names', 'lmm' ),
-			'desc'    => __('For example','lmm'). ": &quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;",
-			'std'     => '&quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;',
+			'desc'    => __('For example','lmm'). ": &quot;a&quot;, &quot;b&quot;, &quot;c&quot;",
+			'std'     => '&quot;a&quot;, &quot;b&quot;, &quot;c&quot;',
 			'type'    => 'text'
 		);		
 		$this->settings['custom_basemap_continuousworld_enabled'] = array(
@@ -2865,6 +2865,19 @@ class Class_leaflet_options {
 				'true' => __('true','lmm')
 			)
 		);
+		$this->settings['custom_basemap_errortileurl'] = array(
+			'version' => '3.1',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section7',
+			'title'   => __('Show errorTile-images if map could not be loaded?','lmm'),
+			'desc'    => __('Set to false if you want to use basemaps produced with maptiler for example','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);
 		/*
 		* Custom basemap 2 settings
 		*/
@@ -2882,8 +2895,8 @@ class Class_leaflet_options {
 			'pane'    => 'basemaps',
 			'section' => 'basemaps-section8',
 			'title'   => __( 'Tiles URL', 'lmm' ),
-			'desc'    => __("For example","lmm"). ": http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png",
-			'std'     => 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+			'desc'    => __("For example","lmm"). ": http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",
+			'std'     => 'http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg',
 			'type'    => 'text'
 		);
 		$this->settings['custom_basemap2_attribution'] = array(
@@ -2891,8 +2904,8 @@ class Class_leaflet_options {
 			'pane'    => 'basemaps',
 			'section' => 'basemaps-section8',
 			'title'   => __( 'Attribution', 'lmm' ),
-			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider X&lt;/a&gt;",
-			'std'     => "Copyright ".date('Y')." <a href=&quot;http://xy.com&quot;>Provider Y</a>",
+			'desc'    => __("For example","lmm"). ":  Map tiles: &lt;a href=&quot;http://stamen.com&quot;&gt;Stamen Design&lt;/a&gt;, &lt;a href=&quot;http://creativecommons.org/licenses/by/3.0&quot;&gt;CC BY 3.0&lt;/a&gt;. Data: &lt;a href=&quot;http://openstreetmap.org&quot;&gt;OpenStreetMap&lt;/a&gt;, &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/3.0&quot;&gt;CC BY SA&lt;/a&gt;",
+			'std'     => "Map tiles: <a href=&quot;http://stamen.com&quot; target=&quot;_blank&quot;>Stamen Design</a>, <a href=&quot;http://creativecommons.org/licenses/by/3.0&quot; target=&quot;_blank&quot;>CC BY 3.0</a>. Data: <a href=&quot;http://openstreetmap.org&quot; target=&quot;_blank&quot;>OpenStreetMap</a>, <a href=&quot;http://creativecommons.org/licenses/by-sa/3.0&quot; target=&quot;_blank&quot;>CC BY SA</a>",
 			'type'    => 'text'
 		);
 		$this->settings['custom_basemap2_minzoom'] = array(
@@ -2910,7 +2923,7 @@ class Class_leaflet_options {
 			'section' => 'basemaps-section8',
 			'title'   => __( 'Maximum zoom level', 'lmm' ),
 			'desc'    => __('Note: maximum zoom level may vary on your basemap','lmm'),
-			'std'     => '18',
+			'std'     => '17',
 			'type'    => 'text'
 		);		
 		$this->settings['custom_basemap2_tms'] = array(
@@ -2933,7 +2946,7 @@ class Class_leaflet_options {
 			'title'   => __('Support for subdomains?','lmm'),
 			'desc'    => __('Will replace {s} from tiles url if available','lmm'),
 			'type'    => 'radio',
-			'std'     => 'yes',
+			'std'     => 'no',
 			'choices' => array(
 				'yes' => __('Yes (please enter subdomains in next form field)','lmm'),
 				'no' => __('No','lmm')
@@ -2944,8 +2957,8 @@ class Class_leaflet_options {
 			'pane'    => 'basemaps',
 			'section' => 'basemaps-section8',
 			'title'   => __( 'Subdomain names', 'lmm' ),
-			'desc'    => __('For example','lmm'). ": &quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;",
-			'std'     => '&quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;',
+			'desc'    => __('For example','lmm'). ": &quot;a&quot;, &quot;b&quot;, &quot;c&quot;",
+			'std'     => '&quot;a&quot;, &quot;b&quot;, &quot;c&quot;',
 			'type'    => 'text'
 		);
 		$this->settings['custom_basemap2_continuousworld_enabled'] = array(
@@ -2974,6 +2987,19 @@ class Class_leaflet_options {
 				'true' => __('true','lmm')
 			)
 		);
+		$this->settings['custom_basemap2_errortileurl'] = array(
+			'version' => '3.1',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section8',
+			'title'   => __('Show errorTile-images if map could not be loaded?','lmm'),
+			'desc'    => __('Set to false if you want to use basemaps produced with maptiler for example','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);
 		/*
 		* Custom basemap 3 settings
 		*/
@@ -2991,8 +3017,8 @@ class Class_leaflet_options {
 			'pane'    => 'basemaps',
 			'section' => 'basemaps-section9',
 			'title'   => __( 'Tiles URL', 'lmm' ),
-			'desc'    => __("For example","lmm"). ": http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png",
-			'std'     => 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+			'desc'    => __("For example","lmm"). ": http://{s}.tile2.opencyclemap.org/transport/${z}/${x}/${y}.png",
+			'std'     => 'http://{s}.tile2.opencyclemap.org/transport/{z}/{x}/{y}.png',
 			'type'    => 'text'
 		);
 		$this->settings['custom_basemap3_attribution'] = array(
@@ -3000,8 +3026,8 @@ class Class_leaflet_options {
 			'pane'    => 'basemaps',
 			'section' => 'basemaps-section9',
 			'title'   => __( 'Attribution', 'lmm' ),
-			'desc'    => __("For example","lmm"). ": Copyright ".date('Y')." &lt;a href=&quot;http://xy.com&quot;&gt;Provider XY&lt;/a&gt;",
-			'std'     => "Copyright ".date('Y')." <a href=&quot;http://xy.com&quot;>Provider Z</a>",
+			'desc'    => __("For example","lmm"). ": &copy Gravitystorm Ltd. &lt;a href=&quot;http://www.thunderforest.com&quot;&gt;Thunderforest&lt;/a&gt;",
+			'std'     => "&copy; Gravitystorm Ltd. <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a>",
 			'type'    => 'text'
 		);
 		$this->settings['custom_basemap3_minzoom'] = array(
@@ -3053,8 +3079,8 @@ class Class_leaflet_options {
 			'pane'    => 'basemaps',
 			'section' => 'basemaps-section9',
 			'title'   => __( 'Subdomain names', 'lmm' ),
-			'desc'    => __('For example','lmm'). ": &quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;",
-			'std'     => '&quot;otile1&quot;, &quot;otile2&quot;, &quot;otile3&quot;, &quot;otile4&quot;',
+			'desc'    => __('For example','lmm'). ": &quot;a&quot;, &quot;b&quot;, &quot;c&quot;",
+			'std'     => '&quot;a&quot;, &quot;b&quot;, &quot;c&quot;',
 			'type'    => 'text'
 		);
 		$this->settings['custom_basemap3_continuousworld_enabled'] = array(
@@ -3082,7 +3108,20 @@ class Class_leaflet_options {
 				'false' => __('false','lmm'),
 				'true' => __('true','lmm')
 			)
-		);		
+		);	
+		$this->settings['custom_basemap3_errortileurl'] = array(
+			'version' => '3.1',
+			'pane'    => 'basemaps',
+			'section' => 'basemaps-section9',
+			'title'   => __('Show errorTile-images if map could not be loaded?','lmm'),
+			'desc'    => __('Set to false if you want to use basemaps produced with maptiler for example','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);
 		/*
 		* OGD Vienna Selector
 		*/

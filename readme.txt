@@ -123,7 +123,7 @@ to the visitors of your website.
 * German (de_DE)
 * Hindi (hi_IN) thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
 * Hungarian (hu_HU) thanks to István Pintér, [http://www.logicit.hu](http://www.logicit.hu)
-* Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
+* Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone) and Elisa Cucco, [http://www.ec-media.it](http://www.ec-media.it)
 * Japanese (ja) thanks to [Shu Higashi](http://twitter.com/higa4)
 * Polish (pl_PL) translation thanks to Pawel Wyszynski, [http://injit.pl](http://injit.pl) and Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
 * Russian (ru_RU) thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
@@ -247,7 +247,7 @@ Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
 = v3.1 =
-
+better performance by loading javascripts in footer and only if shortcode is used
 = v3.0 =
 new option to switch between simplified and advanced map editor, Hungarian translation and lots of usability improvements
 = v2.9.2 =
@@ -316,7 +316,10 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v3.1 - xx.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.1)
-* NEW: add TMS option to custom overlays to support overlays from tools like maptiler
+* NEW: better performance by loading javascripts in footer and only if shortcode is used
+* NEW: changed default custom basemaps for new installs to [OpenCycleMaps](http://www.opencyclemap.org/), [Stamen Watercolor](http://maps.stamen.com/#watercolor) and [Transport Map](http://www.thunderforest.com/transport/)
+* NEW: added option to disable errorTile-images for custom basemaps to better support tools like maptiler
+* NEW: added TMS option to custom overlays to support overlays from tools like maptiler
 * NEW: Croatian translation thanks to Neven Pausic, [http://www.airsoft-hrvatska.com](http://www.airsoft-hrvatska.com) and Alan Benic
 * NEW: option to add extra css for list of markers table (to customize the padding for example)
 * NEW: added "show less icons" link for simplified editor on marker maps
@@ -342,7 +345,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: changed position of delete marker and layer buttons
 * CHANGED: updated Polish transation thanks to Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
 * CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
-* CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
+* CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone) and Elisa Cucco, [http://www.ec-media.it](http://www.ec-media.it)
 * CHANGED: updated German translation
 * CHANGED: optimized use of WordPress Transients API (saving less rows to wp_options-table)
 * CHANGED: optimized plugin active check for higher performance (use of isset() instead of in_array())
