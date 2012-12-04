@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.5
-Stable tag:        3.0
+Stable tag:        3.1
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
@@ -123,7 +123,7 @@ to the visitors of your website.
 * German (de_DE)
 * Hindi (hi_IN) thanks to by Outshine Solutions, [http://outshinesolutions.com](http://outshinesolutions.com) and Guntupalli Karunakar, [http://indlinux.org](http://indlinux.org)
 * Hungarian (hu_HU) thanks to István Pintér, [http://www.logicit.hu](http://www.logicit.hu)
-* Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone) and Elisa Cucco, [http://www.ec-media.it](http://www.ec-media.it)
+* Italian (it_IT) thanks to [Luca Barbetti](http://twitter.com/okibone)
 * Japanese (ja) thanks to [Shu Higashi](http://twitter.com/higa4)
 * Polish (pl_PL) translation thanks to Pawel Wyszynski, [http://injit.pl](http://injit.pl) and Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
 * Russian (ru_RU) thanks to Ekaterina Golubina, supported by Teplitsa of Social Technologies - [http://te-st.ru](http://te-st.ru)
@@ -329,12 +329,14 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: unchecked custom overlay 1 in setting "Available overlays in control box" - [action is needed if you changed this!](http://mapsmarker.com/v3.1)
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * CHANGED: updated Hungarian translation thanks to István Pintér, [http://www.logicit.hu](http://www.logicit.hu)
+* CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * CHANGED: updated German translation
 * BUGFIX: display of markers was broken on RTL (right to left) WordPress sites
 * BUGFIX: editor broke with error "Cannot redeclare curpageurl()" on some installations
 * BUGFIX: warning messages on WordPress 3.5 when debug is enabled
 * BUGFIX: unchecked but active overlays were not shown in layer controlbox on frontend
-* BUGFIX: maps on backend were broken when certain translation like Italian were active
+* BUGFIX: maps on backend were broken when certain translation like Italian were active (thx Elisa Cucco!)
+* BUGFIX: if all basemaps were available in control box, markers+popups could be hidden
 
 = v3.0 - 28.11.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.0)
@@ -347,7 +349,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: changed position of delete marker and layer buttons
 * CHANGED: updated Polish transation thanks to Tomasz Rudnicki, [http://www.kochambieszczady.pl](http://www.kochambieszczady.pl)
 * CHANGED: updated Japanese translations thanks to [Shu Higashi](http://twitter.com/higa4)
-* CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone) and Elisa Cucco, [http://www.ec-media.it](http://www.ec-media.it)
+* CHANGED: updated Italian translation thanks to [Luca Barbetti](http://twitter.com/okibone)
 * CHANGED: updated German translation
 * CHANGED: optimized use of WordPress Transients API (saving less rows to wp_options-table)
 * CHANGED: optimized plugin active check for higher performance (use of isset() instead of in_array())
