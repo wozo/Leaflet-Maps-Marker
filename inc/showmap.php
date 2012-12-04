@@ -6,7 +6,7 @@
             remove_filter('the_content', 'seo_friendly_images', 100);
         }
     }
-    global $wpdb;
+    global $wpdb, $wp_version, $lmmjs_out;
     $lmm_options = get_option( 'leafletmapsmarker_options' );
     $uid = substr(md5(''.rand()), 0, 8);
     extract(shortcode_atts(array(
@@ -377,11 +377,17 @@
     } //info: end foreach
     $lmm_out .= '</table></div>';
     } //info: end display a list of markers under the map
-    $lmm_out .= '</div>'; //info: end leaflet_maps_marker_$uid
-
+	
+	//info: fallback for adding js to footer 1
+	if ( version_compare( $wp_version, '3.3', '>=' ) ) {
+	    $lmm_out .= '</div>'; //info: end leaflet_maps_marker_$uid
+	}
+	//info: fallback for adding js to footer 2
+	if ( version_compare( $wp_version, '3.3', '<' ) ) {
+		$lmmjs_out .= '<script type="text/javascript">'.PHP_EOL;
+ 	}
     //info: assign $lmmjs_out-variable for adding to footer
     $plugin_version = get_option('leafletmapsmarker_version');
-    global $lmmjs_out;
     $lmmjs_out .= '/* Maps created with MapsMarker.com WordPress plugin - version '.$plugin_version.' */'.PHP_EOL;
     $lmmjs_out .= 'var layers = {};'.PHP_EOL;
     $lmmjs_out .= 'var markers = {};'.PHP_EOL;
@@ -711,11 +717,17 @@
     }
     $lmmjs_out .= '})(jQuery);'.PHP_EOL;
 
-    //info: enqueue map js to footer
-    wp_enqueue_script( 'show_map' );
-    global $wp_scripts;
-    $wp_scripts->add_data( 'show_map', 'data', $lmmjs_out );
-
+	//info: fallback for adding js to footer 3
+	if ( version_compare( $wp_version, '3.3', '>=' ) ) {
+		//info: enqueue map js to footer
+		wp_enqueue_script( 'show_map' );
+		global $wp_scripts;
+		$wp_scripts->add_data( 'show_map', 'data', $lmmjs_out );
+	} else if ( version_compare( $wp_version, '3.3', '<' ) ) {
+		$lmmjs_out .= '</script>'.PHP_EOL;
+		$lmmjs_out .= '</div>'; //info: end leaflet_maps_marker_$uid
+		$lmm_out = $lmm_out . $lmmjs_out;
+	}
   } //info: end (!is_feed())
 }
 ?>
