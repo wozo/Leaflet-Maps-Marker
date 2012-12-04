@@ -96,6 +96,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
+		Danish translation thanks to Mads Dyrmann Larsen
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
 		option to add extra css for list of markers table (to customize the padding for example)
 		</td></tr>
 		<tr><td>

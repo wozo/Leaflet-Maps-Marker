@@ -117,6 +117,7 @@ to the visitors of your website.
 * Catalan (ca) thanks to Vicent Cubells, [http://vcubells.net](http://vcubells.net)
 * Chinese (zh_CN) thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * Croatian (hr) thanks to Neven Pausic, [http://www.airsoft-hrvatska.com](http://www.airsoft-hrvatska.com) and Alan Benic
+* Danish (da_DK) thanks to Mads Dyrmann Larsen
 * Dutch (nl_NL) thanks to Marijke Metz, [http://www.mergenmetz.nl](http://www.mergenmetz.nl) and Patrick Ruers, [http://www.stationskwartiersittard.nl](http://www.stationskwartiersittard.nl)
 * English (en_US)
 * French (fr_FR) thanks to Vincèn Pujol, [http://www.skivr.com](http://www.skivr.com) and Rodolphe Quiedeville, [http://rodolphe.quiedeville.org/](http://rodolphe.quiedeville.org/)
@@ -321,6 +322,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: added option to disable errorTile-images for custom basemaps to better support tools like maptiler
 * NEW: added TMS option to custom overlays to support overlays from tools like maptiler
 * NEW: Croatian translation thanks to Neven Pausic, [http://www.airsoft-hrvatska.com](http://www.airsoft-hrvatska.com) and Alan Benic
+* NEW: Danish translation thanks to Mads Dyrmann Larsen
 * NEW: option to add extra css for list of markers table (to customize the padding for example)
 * NEW: added "show less icons" link for simplified editor on marker maps
 * NEW: added compatibility check for incompatible plugin [JavaScript to Footer](http://wordpress.org/extend/plugins/footer-javascript/)

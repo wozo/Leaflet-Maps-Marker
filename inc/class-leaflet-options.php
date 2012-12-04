@@ -6899,6 +6899,7 @@ class Class_leaflet_options {
 				'ca' => __('Catalan','lmm') . ' (ca)',
 				'zh_CN' => __('Chinese','lmm') . ' (zh_CN)',
 				'hr' => __('Croatian','lmm') . ' (hr)',
+				'da_DK' => __('Danish','lmm') . ' (da_DK)',
 				'nl_NL' => __('Dutch','lmm') . ' (nl_NL)',
 				'en_US' => __('English','lmm') . ' (en_US)',
 				'fr_FR' => __('French','lmm') . ' (fr_FR)',
