@@ -6,7 +6,7 @@
             remove_filter('the_content', 'seo_friendly_images', 100);
         }
     }
-    global $wpdb, $wp_version, $lmmjs_out;
+    global $wpdb, $wp_version;
     $lmm_options = get_option( 'leafletmapsmarker_options' );
     $uid = substr(md5(''.rand()), 0, 8);
     extract(shortcode_atts(array(
@@ -381,10 +381,11 @@
 	//info: fallback for adding js to footer 1
 	if ( version_compare( $wp_version, '3.3', '>=' ) ) {
 	    $lmm_out .= '</div>'; //info: end leaflet_maps_marker_$uid
+		global $lmmjs_out; //info: dont add to WP<3.3 as js gets duplicated!
 	}
 	//info: fallback for adding js to footer 2
 	if ( version_compare( $wp_version, '3.3', '<' ) ) {
-		$lmmjs_out .= '<script type="text/javascript">'.PHP_EOL;
+		$lmmjs_out = '<script type="text/javascript">'.PHP_EOL;
  	}
     //info: assign $lmmjs_out-variable for adding to footer
     $plugin_version = get_option('leafletmapsmarker_version');
