@@ -58,7 +58,6 @@ class Class_leaflet_options {
 		$this->sections['basemaps-section7']		= esc_attr__('Custom basemap 1 settings','lmm');
 		$this->sections['basemaps-section8']		= esc_attr__('Custom basemap 2 settings','lmm');
 		$this->sections['basemaps-section9']		= esc_attr__('Custom basemap 3 settings','lmm');
-		$this->sections['basemaps-section10']		= esc_attr__('OGD Vienna Selector','lmm');
 
 		$this->sections['overlays-section1']		= esc_attr__('Available overlays for new markers/layers','lmm');
 		$this->sections['overlays-section2']		= esc_attr__('Custom overlay settings','lmm');
@@ -382,9 +381,9 @@ class Class_leaflet_options {
 				'bingroad' => __('Bing Maps (Road)','lmm') . ' - <strong>' . __('API key required!','lmm'). '</strong> <a href="http://www.mapsmarker.com/bing-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 				'ogdwien_basemap' => __('OGD Vienna basemap (max zoom 19)','lmm'),
 				'ogdwien_satellite' => __('OGD Vienna satellite (max zoom 19)','lmm'),
-				'cloudmade' => 'Cloudmade - <strong>' . __('API key required!','lmm') . '</strong> <a href="http://www.mapsmarker.com/cloudmade" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
-				'cloudmade2' => 'Cloudmade 2 - <strong>' . __('API key required!','lmm') . '</strong> <a href="http://www.mapsmarker.com/cloudmade" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
-				'cloudmade3' => 'Cloudmade 3 - <strong>' . __('API key required!','lmm') . '</strong> <a href="http://www.mapsmarker.com/cloudmade" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+				'cloudmade' => 'Cloudmade - <strong>' . __('API key required!','lmm') . '</strong> <a href="http://www.mapsmarker.com/cloudmade-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+				'cloudmade2' => 'Cloudmade 2 - <strong>' . __('API key required!','lmm') . '</strong> <a href="http://www.mapsmarker.com/cloudmade-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
+				'cloudmade3' => 'Cloudmade 3 - <strong>' . __('API key required!','lmm') . '</strong> <a href="http://www.mapsmarker.com/cloudmade-maps" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-question-mark.png" width="12" height="12" border="0"/></a>',
 				'mapbox' => 'MapBox 1',
 				'mapbox2' => 'MapBox 2',
 				'mapbox3' => 'MapBox 3',
@@ -2465,7 +2464,7 @@ class Class_leaflet_options {
 			'section' => 'basemaps-section1',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').' <a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-cloudmade.jpg" />',
+			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-cloudmade.jpg" />',
 			'type'    => 'helptext'
 		);
 		$this->settings['cloudmade_api_key'] = array(
@@ -2508,7 +2507,7 @@ class Class_leaflet_options {
 			'section' => 'basemaps-section2',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').' <a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-cloudmade.jpg" />',
+			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-cloudmade.jpg" />',
 			'type'    => 'helptext'
 		);
 		$this->settings['cloudmade2_api_key'] = array(
@@ -2551,7 +2550,7 @@ class Class_leaflet_options {
 			'section' => 'basemaps-section3',
 			'std'     => '', 
 			'title'   => '',
-			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').' <a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-cloudmade.jpg" />',
+			'desc'    => __( 'Tutorial for Cloudmade configuration:', 'lmm').'<a href="http://mapsmarker.com/cloudmade" target="_blank">http://mapsmarker.com/cloudmade</a><br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-default-basemap-cloudmade.jpg" />',
 			'type'    => 'helptext'
 		);
 		$this->settings['cloudmade3_api_key'] = array(
@@ -3017,7 +3016,7 @@ class Class_leaflet_options {
 			'pane'    => 'basemaps',
 			'section' => 'basemaps-section9',
 			'title'   => __( 'Tiles URL', 'lmm' ),
-			'desc'    => __("For example","lmm"). ": http://{s}.tile2.opencyclemap.org/transport/${z}/${x}/${y}.png",
+			'desc'    => __("For example","lmm"). ": http://{s}.tile2.opencyclemap.org/transport/{z}/{x}/{y}.png",
 			'std'     => 'http://{s}.tile2.opencyclemap.org/transport/{z}/{x}/{y}.png',
 			'type'    => 'text'
 		);
