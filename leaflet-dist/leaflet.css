@@ -144,11 +144,12 @@
 .leaflet-objects-pane { z-index: 3; }
 .leaflet-overlay-pane { z-index: 4; }
 .leaflet-shadow-pane { z-index: 5; }
-.leaflet-marker-pane { z-index: 15; } /*changed RH*/
-.leaflet-popup-pane { z-index: 16; } /*changed RH*/	
+.leaflet-marker-pane { z-index: 19; } /*changed RH*/
+.leaflet-popup-pane { z-index: 20; } /*changed RH*/	
 .leaflet-tile {
 	filter: inherit;
 	visibility: hidden;
+	z-index: 18; /*added RH*/
 	}
 .leaflet-tile-loaded {
 	visibility: inherit;
