@@ -696,7 +696,7 @@ class Class_leaflet_options {
 			'std'     => 0 
 		);
 		$this->settings['controlbox_ogdwien_basemap'] = array(
-			'version' => '1.0',
+			'version' => '3.1',
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section3',
 			'title'   => '',
@@ -705,7 +705,7 @@ class Class_leaflet_options {
 			'std'     => 0 
 		);
 		$this->settings['controlbox_ogdwien_satellite'] = array(
-			'version' => '1.0',
+			'version' => '3.1',
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section3',
 			'title'   => '',
