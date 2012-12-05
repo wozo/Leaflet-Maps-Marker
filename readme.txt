@@ -248,7 +248,7 @@ Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
 = v3.1 =
-better performance by loading javascripts in footer and only if shortcode is used
+highlight: better performance by loading javascripts in footer and only if shortcode is used - see http://www.mapsmarker.com/v3.1 for more details
 = v3.0 =
 new option to switch between simplified and advanced map editor, Hungarian translation and lots of usability improvements
 = v2.9.2 =
@@ -315,19 +315,19 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v3.1 - xx.12.2012 =
+= v3.1 - 05.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.1)
 * NEW: better performance by loading javascripts in footer and only if shortcode is used
 * NEW: changed default custom basemaps for new installs to [OpenCycleMaps](http://www.opencyclemap.org/), [Stamen Watercolor](http://maps.stamen.com/#watercolor) and [Transport Map](http://www.thunderforest.com/transport/)
-* NEW: added option to disable errorTile-images for custom basemaps to better support tools like maptiler
-* NEW: added TMS option to custom overlays to support overlays from tools like maptiler
+* NEW: added option to disable errorTile-images for custom basemaps to better support tools like [maptiler](http://www.maptiler.org/)
+* NEW: added TMS option to custom overlays to support overlays from tools like [maptiler](http://www.maptiler.org/)
 * NEW: Croatian translation thanks to Neven Pausic, [http://www.airsoft-hrvatska.com](http://www.airsoft-hrvatska.com) and Alan Benic
 * NEW: Danish translation thanks to Mads Dyrmann Larsen
 * NEW: option to add extra css for list of markers table (to customize the padding for example)
 * NEW: added "show less icons" link for simplified editor on marker maps
 * NEW: added compatibility check for incompatible plugin [JavaScript to Footer](http://wordpress.org/extend/plugins/footer-javascript/)
 * NEW: added fallback for installations where editor switch link above tables did not work
-* CHANGED: changed default basemap to OpenStreetMap for new installs and removed OGD Vienna selector for usability reasons
+* CHANGED: changed default basemap to OpenStreetMap and removed OGD Vienna selector for usability reasons
 * CHANGED: unchecked custom overlay 1 in setting "Available overlays in control box" - [action is needed if you changed this!](http://mapsmarker.com/v3.1)
 * CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * CHANGED: updated Hungarian translation thanks to István Pintér, [http://www.logicit.hu](http://www.logicit.hu)

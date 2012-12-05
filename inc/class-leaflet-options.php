@@ -361,7 +361,7 @@ class Class_leaflet_options {
 			'type'    => 'helptext'
 		);
 		$this->settings['standard_basemap'] = array(
-			'version' => '1.9',
+			'version' => '3.1',
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section1',
 			'title'   => __('Default basemap','lmm'),
@@ -405,7 +405,7 @@ class Class_leaflet_options {
 			'type'    => 'helptext'
 		);
 		$this->settings['default_basemap_name_osm_mapnik'] = array(
-			'version' => '1.0',
+			'version' => '3.1',
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section2',
 			'title'   => 'OpenStreetMap (Mapnik)',
@@ -414,7 +414,7 @@ class Class_leaflet_options {
 			'type'    => 'text'
 		);
 		$this->settings['default_basemap_name_mapquest_osm'] = array(
-			'version' => '1.0',
+			'version' => '3.1',
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section2',
 			'title'   => 'Mapquest',
@@ -6871,6 +6871,19 @@ class Class_leaflet_options {
 				'L.CRS.EPSG3857' => __('EPSG:3857 (Spherical Mercator), used by most of commercial map providers (CloudMade, Google, Yahoo, Bing, etc.)', 'lmm'),
 				'L.CRS.EPSG4326' => __('EPSG:4326 (Plate Carree), very popular among GIS enthusiasts', 'lmm'),
 				'L.CRS.EPSG3395' => __('EPSG:4326 (Mercator), used by some map providers.', 'lmm')
+			)
+		);
+		$this->settings['misc_javascript_header_footer'] = array(
+			'version' => '3.1',
+			'pane'    => 'misc',
+			'section' => 'misc-section1',
+			'title'   => __('Where to insert Javascript files on frontend?','lmm'),
+			'desc'    => __('Footer is recommended for better performance. If you are using WordPress lesser than v3.3, Javascript files automatically get inserted into the header of your site and the javascript needed for each maps inline within the content.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'footer',
+			'choices' => array(
+				'header' => __('header (+ inline javascript)','lmm'),
+				'footer' => __('footer','lmm')
 			)
 		);
 		/*

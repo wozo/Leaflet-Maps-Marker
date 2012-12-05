@@ -379,12 +379,12 @@
     } //info: end display a list of markers under the map
 	
 	//info: fallback for adding js to footer 1
-	if ( version_compare( $wp_version, '3.3', '>=' ) ) {
+	if ( (version_compare( $wp_version, '3.3', '>=' )) && ($lmm_options['misc_javascript_header_footer'] == 'footer')) {
 	    $lmm_out .= '</div>'; //info: end leaflet_maps_marker_$uid
 		global $lmmjs_out; //info: dont add to WP<3.3 as js gets duplicated!
 	}
 	//info: fallback for adding js to footer 2
-	if ( version_compare( $wp_version, '3.3', '<' ) ) {
+	if ( (version_compare( $wp_version, '3.3', '<' )) || ((version_compare( $wp_version, '3.3', '>=' )) && ($lmm_options['misc_javascript_header_footer'] == 'header')) ) {
 		$lmmjs_out = '<script type="text/javascript">'.PHP_EOL;
  	}
     //info: assign $lmmjs_out-variable for adding to footer
@@ -538,9 +538,9 @@
         if ( (isset($lmm_options[ 'controlbox_bingroad' ]) == TRUE ) && ($lmm_options[ 'controlbox_bingroad' ] == 1 ) )
             $basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_bingroad' ]) . "': bingroad,";
     };
-    if (((isset($lmm_options[ 'controlbox_ogdwien_basemap' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_basemap' ] == 1 )) && ((($lat <= '48.326583')  && ($lat >= '48.114308')) && (($lon <= '16.55056')  && ($lon >= '16.187325')) ))
+    if ( (((isset($lmm_options[ 'controlbox_ogdwien_basemap' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_basemap' ] == 1 )) && ((($lat <= '48.326583')  && ($lat >= '48.114308')) && (($lon <= '16.55056')  && ($lon >= '16.187325')) )) || ($basemap == 'ogdwien_basemap') )
         $basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_ogdwien_basemap' ]) . "': ogdwien_basemap,";
-    if (((isset($lmm_options[ 'controlbox_ogdwien_satellite' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_satellite' ] == 1 )) && ((($lat <= '48.326583')  && ($lat >= '48.114308')) && (($lon <= '16.55056')  && ($lon >= '16.187325')) ))
+    if ( (((isset($lmm_options[ 'controlbox_ogdwien_satellite' ]) == TRUE ) && ($lmm_options[ 'controlbox_ogdwien_satellite' ] == 1 )) && ((($lat <= '48.326583')  && ($lat >= '48.114308')) && (($lon <= '16.55056')  && ($lon >= '16.187325')) )) || ($basemap == 'ogdwien_satellite') )
         $basemaps_available .= "'" . addslashes($lmm_options[ 'default_basemap_name_ogdwien_satellite' ]) . "': ogdwien_satellite,";
     if ( (isset($lmm_options[ 'controlbox_cloudmade' ]) == TRUE ) && ($lmm_options[ 'controlbox_cloudmade' ] == 1 ) )
         $basemaps_available .= "'".addslashes($lmm_options[ 'cloudmade_name' ])."': cloudmade,";
@@ -719,12 +719,12 @@
     $lmmjs_out .= '})(jQuery);'.PHP_EOL;
 
 	//info: fallback for adding js to footer 3
-	if ( version_compare( $wp_version, '3.3', '>=' ) ) {
+	if ( (version_compare( $wp_version, '3.3', '>=' )) && ($lmm_options['misc_javascript_header_footer'] == 'footer')) {
 		//info: enqueue map js to footer
 		wp_enqueue_script( 'show_map' );
 		global $wp_scripts;
 		$wp_scripts->add_data( 'show_map', 'data', $lmmjs_out );
-	} else if ( version_compare( $wp_version, '3.3', '<' ) ) {
+	} else if ( (version_compare( $wp_version, '3.3', '<' )) || ((version_compare( $wp_version, '3.3', '>=' )) && ($lmm_options['misc_javascript_header_footer'] == 'header')) ) {
 		$lmmjs_out .= '</script>'.PHP_EOL;
 		$lmmjs_out .= '</div>'; //info: end leaflet_maps_marker_$uid
 		$lmm_out = $lmm_out . $lmmjs_out;

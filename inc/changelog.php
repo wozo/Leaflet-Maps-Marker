@@ -66,7 +66,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 */
-		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.1') . '</strong> - ' . __('released on','lmm') . ' xx.12.2012 (<a href="http://www.mapsmarker.com/v3.1" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
+		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.1') . '</strong> - ' . __('released on','lmm') . ' 05.12.2012 (<a href="http://www.mapsmarker.com/v3.1" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
@@ -81,12 +81,12 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
-		added option to disable errorTile-images for custom basemaps to better support tools like maptiler	
+		added option to disable errorTile-images for custom basemaps to better support tools like <a href="http://www.maptiler.org/" target="_blank">maptiler</a>
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
-		added TMS option to custom overlays to support overlays from tools like maptiler
+		added TMS option to custom overlays to support overlays from tools like <a href="http://www.maptiler.org/" target="_blank">maptiler</a>
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
@@ -121,7 +121,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
-		changed default basemap to OpenStreetMap for new installs and removed OGD Vienna selector for usability reasons
+		changed default basemap to OpenStreetMap and removed OGD Vienna selector for usability reasons
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
