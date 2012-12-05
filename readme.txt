@@ -247,6 +247,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
+= v3.2 =
+ - see http://www.mapsmarker.com/v3.2 for more details
 = v3.1 =
 highlight: better performance by loading javascripts in footer and only if shortcode is used - see http://www.mapsmarker.com/v3.1 for more details
 = v3.0 =
@@ -315,6 +317,11 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v3.2 - xx.12.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v3.2)
+* NEW: added <noscript>-infotext for browsers with Javascript disabled
+* CHANGED: updated German translation
+
 = v3.1 - 05.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.1)
 * NEW: better performance by loading javascripts in footer and only if shortcode is used
