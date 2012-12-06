@@ -157,7 +157,7 @@
     } else {
     //info: starting output on frontend
     $lmm_out = '';
-    $lmm_out .= '<div id="lmm_'.$uid.'" style="width:' . $mapwidth.$mapwidthunit . ';">'.PHP_EOL;
+    $lmm_out .= '<div id="lmm_'.$uid.'" style="width:' . $mapwidth.$mapwidthunit . ';" class="mapsmarker">'.PHP_EOL;
     //info: panel for layer/marker name and API URLs
     if ($panel == 1) {
         $lmm_out .= '<div id="lmm_panel_'.$uid.'" class="lmm-panel" style="background: ' . ((!empty($marker)) ? addslashes($lmm_options[ 'defaults_marker_panel_background_color' ]) : (!empty($layer)) ? addslashes($lmm_options[ 'defaults_layer_panel_background_color' ]) : '') . ';">'.PHP_EOL;
@@ -721,14 +721,24 @@
 	//info: fallback for adding js to footer 3
 	if ( (version_compare( $wp_version, '3.3', '>=' )) && ($lmm_options['misc_javascript_header_footer'] == 'footer')) {
 		//info: enqueue map js to footer
-		wp_enqueue_script( 'show_map' );
 		global $wp_scripts;
+		wp_enqueue_script( 'show_map' );
 		$wp_scripts->add_data( 'show_map', 'data', $lmmjs_out );
 	} else if ( (version_compare( $wp_version, '3.3', '<' )) || ((version_compare( $wp_version, '3.3', '>=' )) && ($lmm_options['misc_javascript_header_footer'] == 'header')) ) {
 		$lmmjs_out .= '</script>'.PHP_EOL;
 		$lmmjs_out .= '</div>'; //info: end leaflet_maps_marker_$uid
 		$lmm_out = $lmm_out . $lmmjs_out;
 	}
+
+	//info: if do_shortcode() within template files is used to show maps
+	global $wp_styles;
+	if ( (!wp_style_is( 'leafletmapsmarker', 'done' )) || (!wp_style_is( 'leafletmapsmarker-ie-only', 'done' )) ) {
+		echo "<div style='background:white;border:2px solid red;padding:5px;'><p><strong>Leaflet Maps Marker warning!</strong><br/>You must enqueue the plugin stylesheets manually if you want to show maps by calling <code>do_shortcode()</code> in your template files!</p>";
+		echo "<p>Please add the following code <u>before</u> your <code>get_header()</code> call inside your template, which is usually located in <code>header.php</code>:<br/><div style='background:#efefef;'><code>";
+		echo "\$plugin_version = get_option('leafletmapsmarker_version');<br/>global \$wp_styles;<br/>wp_enqueue_style( 'leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.css', array(), \$plugin_version );<br/>wp_enqueue_style( 'leafletmapsmarker-ie-only', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.ie.css', array(), \$plugin_version );<br/>\$wp_styles->add_data('leafletmapsmarker-ie-only', 'conditional', 'lt IE 9');";
+		echo "</code></div></p></div>";
+	}
+
   } //info: end (!is_feed())
 }
 ?>

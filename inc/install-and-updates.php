@@ -462,6 +462,11 @@ if (get_option('leafletmapsmarker_version') == '3.0' ) {
 		update_option('leafletmapsmarker_update_info', 'show');
 	}
 }
+/* 2do: add for v3.2 update routine */
+$lmm_options = get_option( 'leafletmapsmarker_options' );
+$editor_to_use = ( isset($lmm_options['misc_map_editor']) && ($lmm_options['misc_map_editor'] == 'advanced') ) ? 'advanced' : 'simplified';
+update_option('leafletmapsmarker_editor', $editor_to_use);
+*/
 /* template for plugin updates 
 if (get_option('leafletmapsmarker_version') == '3.1' ) {
 	delete_transient( 'leafletmapsmarker_install_update_cache_v31'); //2do: update to version before update

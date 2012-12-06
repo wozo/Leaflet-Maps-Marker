@@ -12,6 +12,7 @@ if (is_multisite()) {
 		delete_option('leafletmapsmarker_version_before_update');
 		delete_option('leafletmapsmarker_redirect');
 		delete_option('leafletmapsmarker_update_info');
+		delete_option('leafletmapsmarker_editor');
 		//info: delete transients (needed for reinstalls within validity of transients)
 		$schedule_transient = 'leafletmapsmarker_install_update_cache_' . $current_version;
 		$install_update_schedule = get_transient( $schedule_transient );
@@ -42,6 +43,7 @@ if (is_multisite()) {
 			delete_option('leafletmapsmarker_version_before_update');
 			delete_option('leafletmapsmarker_redirect');
 			delete_option('leafletmapsmarker_update_info');
+			delete_option('leafletmapsmarker_editor');
 			//info: delete transients (needed for reinstalls within validity of transients)
 			$schedule_transient = 'leafletmapsmarker_install_update_cache_' . $current_version;
 			$install_update_schedule = get_transient( $schedule_transient );
@@ -81,6 +83,7 @@ else
 	delete_option('leafletmapsmarker_version_before_update');
 	delete_option('leafletmapsmarker_redirect');
 	delete_option('leafletmapsmarker_update_info');
+	delete_option('leafletmapsmarker_editor');
 	//info: delete transients (needed for reinstalls within validity of transients)
 	$schedule_transient = 'leafletmapsmarker_install_update_cache_' . $current_version;
 	$install_update_schedule = get_transient( $schedule_transient );
