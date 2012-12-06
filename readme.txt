@@ -322,6 +322,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: css files now also get loaded only if a shortcode for a map is used
 * NEW: added <noscript>-infotext for browsers with Javascript disabled
 * NEW: added css class "mapsmarker" to all maps divs
+* NEW: allow bing map tiles to be served over SSL
 * CHANGED: function for editor switch link (should now work on all installs)
 * CHANGED: updated German translation
 

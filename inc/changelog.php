@@ -79,6 +79,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		added css class "mapsmarker" to all maps divs
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
+		allow bing map tiles to be served over SSL
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		function for editor switch link (should now work on all installs)
