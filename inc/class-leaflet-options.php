@@ -1965,14 +1965,15 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section9',
 			'title'   => __('Order list of markers by','lmm'),
-			'desc'    =>  __('(not available on multi layer maps)','lmm'),
+			'desc'    =>  '',
 			'type'    => 'radio',
 			'std'     => 'm.id',
 			'choices' => array(
 				'm.id' => 'ID',
 				'm.markername' => __('marker name','lmm'),
 				'm.createdon' => __('created on','lmm'),
-				'm.updatedon' => __('updated on','lmm')
+				'm.updatedon' => __('updated on','lmm'),
+				'm.layer' => __('layer ID','lmm')
 			)
 		);
 		$this->settings['defaults_layer_listmarkers_sort_order'] = array(
@@ -1980,7 +1981,7 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section9',
 			'title'   => __('Sort order','lmm'),
-			'desc'    =>  __('(not available on multi layer maps)','lmm'),
+			'desc'    => '',
 			'type'    => 'radio',
 			'std'     => 'ASC',
 			'choices' => array(
@@ -1993,7 +1994,7 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section9',
 			'title'   => __( 'Limit', 'lmm' ),
-			'desc'    => __( 'maximum number of markers to display in the list', 'lmm' ) . ' ' .  __('(not available on multi layer maps)','lmm'),
+			'desc'    => __( 'maximum number of markers to display in the list', 'lmm' ),
 			'std'     => '100',
 			'type'    => 'text'
 		);
