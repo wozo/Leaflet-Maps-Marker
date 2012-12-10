@@ -105,6 +105,7 @@
                     $wms9 = $row['wms9'];
                     $wms10 = $row['wms10'];
 					$address = htmlspecialchars($row['address']);
+					$listmarkers = 0;
                 }
     }
     //info: prepare markers only added by shortcode and not defined in backend
@@ -127,6 +128,7 @@
         $wms9 = isset($lmm_options[ 'defaults_marker_shortcode_wms9_active' ]) == TRUE && ($lmm_options[ 'defaults_marker_shortcode_wms9_active' ] == 1 ) ? '1' : '0';
         $wms10 = isset($lmm_options[ 'defaults_marker_shortcode_wms10_active' ]) == TRUE && ($lmm_options[ 'defaults_marker_shortcode_wms10_active' ] == 1 ) ? '1' : '0';
         $mopenpopup = '';
+		$listmarkers = 0;
     }
 
     //info: show static image with link in feeds
