@@ -71,6 +71,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
+		support for responsive designs (map gets resized automatically to width=100% if parent element is smaller)
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
 		css files now also get loaded only if a shortcode for a map is used
 		</td></tr>
 		<tr><td>
@@ -116,7 +121,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		list of markers and table of assigned markers to a layer in backend showed wrong number of markers (thanks Coen!)
+		list of markers and table of assigned markers to a layer in backend partly showed wrong markers (thanks Coen!)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
@@ -127,6 +132,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		Available API links for list of markers on backend didnt reflect the set options from settings
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		list of markers below layer maps did not have the same width as map if map width was <100%
 		</td></tr>
 		</table>'.PHP_EOL;
 

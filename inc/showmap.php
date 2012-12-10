@@ -321,8 +321,14 @@
 			}
     } //info: end main - else if ($multi_layer_map == 1)
 
-    $lmm_out .= '<div id="lmm-listmarkers-'.$uid.'" class="lmm-listmarkers" style="width:' . $mapwidth.$mapwidthunit . ';">'.PHP_EOL;
-    $lmm_out .= '<table style="width:' . $mapwidth.$mapwidthunit . ';" id="lmm-listmarkers-table-'.$uid.'">';
+	//info: set list markers width to be 100% of maps width
+	if ($mapwidthunit == '%') {
+		$layer_marker_list_width = '100%';
+	} else {
+		$layer_marker_list_width = $mapwidth.$mapwidthunit;
+	}
+    $lmm_out .= '<div id="lmm-listmarkers-'.$uid.'" class="lmm-listmarkers" style="width:' . $layer_marker_list_width . ';">'.PHP_EOL;
+    $lmm_out .= '<table style="width:' . $layer_marker_list_width . ';" id="lmm-listmarkers-table-'.$uid.'">';
     foreach ($layer_marker_list as $row){
         if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_icon' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_icon' ] == 1 ) ) {
             $lmm_out .= '<tr><td style="width:35px;vertical-align:top;text-align:center;' . $lmm_options[ 'defaults_layer_listmarkers_extracss' ] . '">';
@@ -410,6 +416,33 @@
     //info: assign $lmmjs_out-variable for adding to footer
     $plugin_version = get_option('leafletmapsmarker_version');
     $lmmjs_out .= '/* Maps created with MapsMarker.com WordPress plugin - version '.$plugin_version.' */'.PHP_EOL;
+
+	//info: support for responsive templates
+    if ( ($mapwidthunit != '%') && ($lmm_options['misc_responsive_support'] == 'enabled') ) {
+		$lmmjs_out .= "jQuery(document).ready( function($) {
+				function resizeMap() {
+					var map = $('#lmm_".$uid."');
+					";
+					if ($listmarkers == 1) {
+						$lmmjs_out .= "var map_list_markers_div = $('#lmm-listmarkers-".$uid."');".PHP_EOL;
+						$lmmjs_out .= "\t\t\t\t\t" . "var map_list_markers_table = $('#lmm-listmarkers-table-".$uid."');".PHP_EOL;
+					}
+					$lmmjs_out .= "\t\t\t\t\t" . "var map_parent_size = $('#lmm_".$uid."').parent().width();
+					if( map_parent_size < ".$mapwidth." ) {
+						map.css({ 'width': '100%'});".PHP_EOL;
+						if ($listmarkers == 1) {
+							$lmmjs_out .= "\t\t\t\t\t\t" . "map_list_markers_div.css({ 'width': '100%'});".PHP_EOL;
+							$lmmjs_out .= "\t\t\t\t\t\t" . "map_list_markers_table.css({ 'width': '100%'});".PHP_EOL;
+						}
+					$lmmjs_out .= "\t\t\t\t\t\t" . $mapname.".invalidateSize();
+					}";
+		$lmmjs_out .= "
+				}
+				resizeMap();
+				$(window).resize(resizeMap);
+			});".PHP_EOL;
+	}
+
     $lmmjs_out .= 'var layers = {};'.PHP_EOL;
     $lmmjs_out .= 'var markers = {};'.PHP_EOL;
     $lmmjs_out .= 'var lmm_map_'.$uid.' = {};'.PHP_EOL;
@@ -739,25 +772,7 @@
     $lmmjs_out .= '})(jQuery);'.PHP_EOL;
 
 
-//RH responsive
-		$lmmjs_out .= "
 
-
-jQuery(document).ready( function($) {
-	function resizeMapDIVs() {
-		var size = $('#lmm_".$uid."').parent().width();
-		console.log(size);
-		if( size < ".$mapwidth." ) {
-			console.log('smaller');
-		} else {
-			console.log('larger');
-		}
-	}
-	resizeMapDIVs();
-	$(window).resize(resizeMapDIVs);
-});
-				 ".PHP_EOL;
-	 
 				 
 
 

@@ -6866,12 +6866,25 @@ class Class_leaflet_options {
 			'pane'    => 'misc',
 			'section' => 'misc-section1',
 			'title'   => __('Where to insert Javascript files on frontend?','lmm'),
-			'desc'    => __('Footer is recommended for better performance. If you are using WordPress lesser than v3.3, Javascript files automatically get inserted into the header of your site and the javascript needed for each maps inline within the content.','lmm'),
+			'desc'    => __('Footer is recommended for better performance. If you are using WordPress lesser than v3.3, Javascript files automatically get inserted into the header of your site and the javascript needed for each maps inline within the content.','lmm') . ' ' . __('If you choose footer, javascripts will also only be loaded when a shortcode is used and not on all pages.','lmm'),
 			'type'    => 'radio',
 			'std'     => 'footer',
 			'choices' => array(
 				'header' => __('header (+ inline javascript)','lmm'),
 				'footer' => __('footer','lmm')
+			)
+		);
+		$this->settings['misc_responsive_support'] = array(
+			'version' => '3.2',
+			'pane'    => 'misc',
+			'section' => 'misc-section1',
+			'title'   => __('Support for responsive designs?','lmm'),
+			'desc'    => __('If enabled, maps will automatically be resized to width=100% if map width unit is set to px and the div parent element is smaller than the width of the map.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'enabled',
+			'choices' => array(
+				'enabled' => __('enabled','lmm'),
+				'disabled' => __('disabled','lmm')
 			)
 		);
 		/*

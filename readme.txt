@@ -319,6 +319,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v3.2 - xx.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2)
+* NEW: support for responsive designs (map gets resized automatically to width=100% if parent element is smaller)
 * NEW: css files now also get loaded only if a shortcode for a map is used
 * NEW: list of markers below multi-layer-map can now also be sorted 
 * NEW: sort order "layer ID" for list of markers below (multi-)layer-maps
@@ -329,9 +330,10 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * CHANGED: function for editor switch link (should now work on all installs)
 * CHANGED: updated Dutch translation thanks to Patrick Ruers, [http://www.stationskwartiersittard.nl](http://www.stationskwartiersittard.nl)
 * CHANGED: updated German translation
-* BUGFIX: list of markers and table of assigned markers to a layer in backend showed wrong number of markers (thanks Coen!)
+* BUGFIX: list of markers and table of assigned markers to a layer in backend partly showed wrong markers (thanks Coen!)
 * BUGFIX: QR-Code, GeoRSS, Wikitude-links in list of markers under layer maps pointed to layer-API links (thanks Felix!)
 * BUGFIX: Available API links for list of markers on backend didnt reflect the set options from settings
+* BUGFIX: list of markers below layer maps did not have the same width as map if map width was <100%
 
 = v3.1 - 05.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.1)
