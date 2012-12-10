@@ -572,13 +572,15 @@ function __construct() {
 	wp_register_style('leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.css', array(), $plugin_version);
 	wp_register_style('leafletmapsmarker-ie-only', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.ie.css', array(), $plugin_version);
 
-	foreach ($posts as $post) {
-		if ( preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches ) && array_key_exists( 2, $matches ) && in_array( $lmm_options['shortcode'], $matches[2] ) ) {
-			wp_enqueue_style('leafletmapsmarker');
-			wp_enqueue_style('leafletmapsmarker-ie-only');
-			$wp_styles->add_data('leafletmapsmarker-ie-only', 'conditional', 'lt IE 9');
-			break;	
-		}    
+	if (is_array($posts)) {
+		foreach ($posts as $post) {
+			if ( preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches ) && array_key_exists( 2, $matches ) && in_array( $lmm_options['shortcode'], $matches[2] ) ) {
+				wp_enqueue_style('leafletmapsmarker');
+				wp_enqueue_style('leafletmapsmarker-ie-only');
+				$wp_styles->add_data('leafletmapsmarker-ie-only', 'conditional', 'lt IE 9');
+				break;	
+			}    
+		}
 	}
   }
   function lmm_admin_enqueue_stylesheets() {
