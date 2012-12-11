@@ -248,6 +248,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
+= v3.3 =
+ - see http://www.mapsmarker.com/v3.3 for more details
 = v3.2 =
 support for responsive templates, conditional css loading and more - see http://www.mapsmarker.com/v3.2 for more details
 = v3.1 =
@@ -318,6 +320,9 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v3.3 - xx.12.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v3.3)
+
 = v3.2 - 12.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2)
 * NEW: support for responsive designs (map gets resized automatically to width=100% if parent element is smaller)
