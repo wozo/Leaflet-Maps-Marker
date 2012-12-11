@@ -66,7 +66,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 */
-		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.2') . '</strong> - ' . __('released on','lmm') . ' xx.12.2012 (<a href="http://www.mapsmarker.com/v3.2" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
+		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.2') . '</strong> - ' . __('released on','lmm') . ' 12.12.2012 (<a href="http://www.mapsmarker.com/v3.2" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
@@ -76,7 +76,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
-		css files now also get loaded only if a shortcode for a map is used
+		conditional css loading (css files now also get loaded only if a shortcode for a map is used)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
@@ -96,12 +96,22 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
-		added css class "mapsmarker" to all maps divs
+		line breaks in popup texts are now also shown in the list of markers below layer maps (thanks Felix!)
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
+		added css class "mapsmarker" to main map div on frontend for better styling
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
 		allow bing map tiles to be served over SSL
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
+		added option to disable errorTile-images for custom overlays to better support tools like <a href="http://www.maptiler.org/" target="_blank">maptiler</a>
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
@@ -112,6 +122,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		updated Dutch translation thanks to Patrick Ruers, <a href="http://www.stationskwartiersittard.nl" target="_blank">http://www.stationskwartiersittard.nl</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		updated Japanese translations thanks to <a href="http://twitter.com/higa4" target="_blank">Shu Higash</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		updated Italian translation thanks to Luca Barbetti, <a href="http://twitter.com/okibone" target="_blank">http://twitter.com/okibone</a>
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
@@ -137,6 +157,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		list of markers below layer maps did not have the same width as map if map width was <100%
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		TMS options for custom overlays were not loaded on frontend
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		bulk actions on list of markers were broken since v3.0 (thanks Maik!)
 		</td></tr>
 		</table>'.PHP_EOL;
 

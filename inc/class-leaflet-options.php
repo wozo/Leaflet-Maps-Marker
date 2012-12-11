@@ -3282,6 +3282,19 @@ class Class_leaflet_options {
 			'std'     => '&quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;',
 			'type'    => 'text'
 		);
+		$this->settings['overlays_custom_errortileurl'] = array(
+			'version' => '3.2',
+			'pane'    => 'overlays',
+			'section' => 'overlays-section2',
+			'title'   => __('Show errorTile-images if map could not be loaded?','lmm'),
+			'desc'    => __('Set to false if you want to use overlays produced with maptiler for example','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);
 		/*
 		* Custom overlay 2 settings
 		*/
@@ -3384,6 +3397,19 @@ class Class_leaflet_options {
 			'std'     => '&quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;',
 			'type'    => 'text'
 		);
+		$this->settings['overlays_custom2_errortileurl'] = array(
+			'version' => '3.2',
+			'pane'    => 'overlays',
+			'section' => 'overlays-section3',
+			'title'   => __('Show errorTile-images if map could not be loaded?','lmm'),
+			'desc'    => __('Set to false if you want to use overlays produced with maptiler for example','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
+		);
 		/*
 		* Custom overlay 3 settings
 		*/
@@ -3484,6 +3510,19 @@ class Class_leaflet_options {
 			'desc'    => __('For example','lmm'). ": &quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;",
 			'std'     => '&quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;',
 			'type'    => 'text'
+		);
+		$this->settings['overlays_custom3_errortileurl'] = array(
+			'version' => '3.2',
+			'pane'    => 'overlays',
+			'section' => 'overlays-section4',
+			'title'   => __('Show errorTile-images if map could not be loaded?','lmm'),
+			'desc'    => __('Set to false if you want to use overlays produced with maptiler for example','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
 		);
 		/*
 		* Custom overlay 4 settings
@@ -3586,6 +3625,19 @@ class Class_leaflet_options {
 			'desc'    => __('For example','lmm'). ": &quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;",
 			'std'     => '&quot;maps&quot;, &quot;maps1&quot;, &quot;maps2&quot;, &quot;maps3&quot;',
 			'type'    => 'text'
+		);
+		$this->settings['overlays_custom4_errortileurl'] = array(
+			'version' => '3.2',
+			'pane'    => 'overlays',
+			'section' => 'overlays-section5',
+			'title'   => __('Show errorTile-images if map could not be loaded?','lmm'),
+			'desc'    => __('Set to false if you want to use overlays produced with maptiler for example','lmm'),
+			'type'    => 'radio',
+			'std'     => 'true',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm')
+			)
 		);
 		
 		/*===========================================
