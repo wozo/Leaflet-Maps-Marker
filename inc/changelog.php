@@ -170,7 +170,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 
-	if ( ($lmm_version_old < '3.1' ) ){
+	if ( ( $lmm_version_old < '3.1' ) && ( $lmm_version_old > '0' ) ){
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.1') . '</strong> - ' . __('released on','lmm') . ' 05.12.2012 (<a href="http://www.mapsmarker.com/v3.1" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
@@ -286,7 +286,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</table>'.PHP_EOL;
 	}
 	
-	if ( ($lmm_version_old < '3.0' ) ){
+	if ( ( $lmm_version_old < '3.0' ) && ( $lmm_version_old > '0' ) ){
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.0') . '</strong> - ' . __('released on','lmm') . ' 28.11.2012 (<a href="http://www.mapsmarker.com/v3.0" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
@@ -432,7 +432,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</table>'.PHP_EOL;
 	}
 
-	if ( ($lmm_version_old < '2.9.2' ) ){
+	if ( ( $lmm_version_old < '2.9.2' ) && ( $lmm_version_old > '0' ) ){
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.9.2') . '</strong> - ' . __('released on','lmm') . ' 11.11.2012 (<a href="http://www.mapsmarker.com/v2.9.2" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
@@ -473,7 +473,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</table>'.PHP_EOL;
 	}
 
-	if ( ($lmm_version_old < '2.9.1' ) ){
+	if ( ( $lmm_version_old < '2.9.1' ) && ( $lmm_version_old > '0' ) ){
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.9.1') . '</strong> - ' . __('released on','lmm') . ' 05.11.2012 (<a href="http://www.mapsmarker.com/v2.9.1" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
@@ -513,7 +513,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 	}
-	if ( ($lmm_version_old < '2.9' ) ){
+	if ( ( $lmm_version_old < '2.9' ) && ( $lmm_version_old > '0' ) ){
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.9') . '</strong> - ' . __('released on','lmm') . ' 02.11.2012 (<a href="http://www.mapsmarker.com/v2.9" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
@@ -638,7 +638,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 	}
-	if ( ($lmm_version_old < '2.8.2' ) ){
+	if ( ( $lmm_version_old < '2.8.2' ) && ( $lmm_version_old > '0' ) ){
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.8.2') . '</strong> - ' . __('released on','lmm') . ' 26.09.2012 (<a href="http://www.mapsmarker.com/v2.8.2" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
@@ -683,7 +683,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 	}
-	if ( ($lmm_version_old < '2.8.1' ) ){
+	if ( ( $lmm_version_old < '2.8.1' ) && ( $lmm_version_old > '0' ) ){
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.8.1') . '</strong> - ' . __('released on','lmm') . ' 09.09.2012 (<a href="http://www.mapsmarker.com/v2.8.1" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
@@ -698,7 +698,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 	}
-	if ( ($lmm_version_old < '2.8' ) ){
+	if ( ( $lmm_version_old < '2.8' ) && ( $lmm_version_old > '0' ) ){
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.8') . '</strong> - ' . __('released on','lmm') . ' 08.09.2012 (<a href="http://www.mapsmarker.com/v2.8" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
@@ -803,7 +803,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 	}
-	if ( ($lmm_version_old < '2.7.1' ) ){
+	if ( ( $lmm_version_old < '2.7.1' ) && ( $lmm_version_old > '0' ) ){
 		echo '<hr noshade size="1"><p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '2.7.1') . '</strong> - ' . __('released on','lmm') . ' 24.08.2012 (<a href="http://www.mapsmarker.com/v2.7.1" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
