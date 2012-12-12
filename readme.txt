@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.5
-Stable tag:        3.2
+Stable tag:        3.2.1
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
@@ -248,8 +248,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v3.3 =
- - see http://www.mapsmarker.com/v3.3 for more details
+= v3.2.1 =
+no more manual edits needed if you add maps via do_shortcode() - see http://www.mapsmarker.com/v3.2.1 for more details
 = v3.2 =
 support for responsive templates, conditional css loading and more - see http://www.mapsmarker.com/v3.2 for more details
 = v3.1 =
@@ -320,8 +320,12 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v3.3 - xx.12.2012 =
-* [Blog post with more details about this release](http://www.mapsmarker.com/v3.3)
+= v3.2.1 - 13.12.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v3.2.1)
+* CHANGED: no more manual template edits needed if you use do_shortcode() to display maps
+* CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* BUGFIX: recent marker widget showed error message with WordPress 3.5
+* BUGFIX: margin was added within basemap control box on some templates
 
 = v3.2 - 12.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2)
