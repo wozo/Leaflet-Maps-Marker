@@ -324,6 +324,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v3.3 - xx.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.3)
+* NEW: added check for wp_footer() in template files (footer.php or index.php)
 
 = v3.2.1 - 13.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2.1)

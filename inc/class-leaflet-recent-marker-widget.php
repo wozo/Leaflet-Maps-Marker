@@ -133,7 +133,7 @@ class Class_leaflet_recent_marker_widget extends WP_Widget {
 			echo '<p style="margin-bottom:5px;">' . $instance['lmm-widget-textbeforelist'] . '</p>';
 		} 
 		if ($result != NULL) {
-			echo '<table><tr>';
+			echo '<table style="border:none;"><tr>';
 			foreach ($result as $row ) {
 				if (!empty($instance['lmm-widget-showicons'])) {
 					$icon = ($row['icon'] == NULL) ? LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' : LEAFLET_PLUGIN_ICONS_URL.'/'.$row['icon'];
