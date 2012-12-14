@@ -248,6 +248,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
+= v3.3 =
+- see http://www.mapsmarker.com/v3.3 for more details
 = v3.2.2 =
 add compatibility checks for footer and condition css loading - see http://www.mapsmarker.com/v3.2.2 for more details
 = v3.2.1 =
@@ -322,6 +324,9 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v3.3 - xx.12.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v3.3)
+
 = v3.2.2 - 15.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2.2)
 * NEW: map shortcode can now also be used in widgets out of the box
