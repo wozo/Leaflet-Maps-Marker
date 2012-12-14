@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.6-alpha
-Stable tag:        3.2.1
+Stable tag:        3.2.2
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
@@ -248,8 +248,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v3.3 =
- - see http://www.mapsmarker.com/v3.3 for more details
+= v3.2.2 =
+add compatibility checks for footer and condition css loading - see http://www.mapsmarker.com/v3.2.2 for more details
 = v3.2.1 =
 no more manual edits needed if you add maps via do_shortcode() - see http://www.mapsmarker.com/v3.2.1 for more details
 = v3.2 =
@@ -322,9 +322,14 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v3.3 - xx.12.2012 =
-* [Blog post with more details about this release](http://www.mapsmarker.com/v3.3)
+= v3.2.2 - 15.12.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v3.2.2)
+* NEW: map shortcode can now also be used in widgets out of the box
 * NEW: added check for wp_footer() in template files (footer.php or index.php)
+* NEW: added troubleshooting link on frontpage if map could not be loaded
+* NEW: option to disable conditional css loading
+* CHANGED: updated Dutch translation thanks to Patrick Ruers, [http://www.stationskwartiersittard.nl](http://www.stationskwartiersittard.nl)
+* FIXED: W3C validator errors for marker maps, layer maps and recent marker widget
 
 = v3.2.1 - 13.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2.1)
