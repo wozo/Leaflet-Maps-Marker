@@ -568,7 +568,7 @@ function __construct() {
   function lmm_frontend_enqueue_stylesheets() {
 	//info: conditional loading of css files
 	$lmm_options = get_option( 'leafletmapsmarker_options' );
-	if ($lmm_options['misc_conditional_css_loading'] == 'enabled') {
+	if ( (isset($lmm_options['misc_conditional_css_loading'])) && ($lmm_options['misc_conditional_css_loading'] == 'enabled') ){
 			global $wp_query;	
 			$posts = $wp_query->posts;
 			$pattern = get_shortcode_regex();
