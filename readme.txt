@@ -326,6 +326,10 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 == Changelog ==
 = v3.3 - xx.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.3)
+* CHANGED: updated Dutch translation thanks to Patrick Ruers, [http://www.stationskwartiersittard.nl](http://www.stationskwartiersittard.nl)
+* CHANGED: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
+* CHANGED: updated German translation
+* FIXED: editor switch link did not work on some installations
 
 = v3.2.2 - 15.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2.2)
