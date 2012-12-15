@@ -248,6 +248,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
+= v3.3 =
+ - see http://www.mapsmarker.com/v3.3 for more details
 = v3.2.3 =
 compatibility fix for flickr gallery plugin (settings page was broken) - see http://www.mapsmarker.com/v3.2.3 for more details
 = v3.2.2 =
@@ -324,6 +326,10 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v3.3 - xx.12.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v3.3)
+* CHANGED: updated German translation
+
 = v3.2.3 - 16.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2.3)
 * CHANGED: updated Dutch translation thanks to Patrick Ruers, [http://www.stationskwartiersittard.nl](http://www.stationskwartiersittard.nl)
