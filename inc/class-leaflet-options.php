@@ -1011,7 +1011,7 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section4',
 			'title'   => __( 'Panel background color', 'lmm' ),
-			'desc'    => 'Please use hexadecimal color values',
+			'desc'    => __('Please use hexadecimal color values','lmm'),
 			'std'     => '#efefef',
 			'type'    => 'text'
 		);		
@@ -1795,7 +1795,7 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section8',
 			'title'   => __( 'Panel background color', 'lmm' ),
-			'desc'    => 'Please use hexadecimal color values',
+			'desc'    => __('Please use hexadecimal color values','lmm'),
 			'std'     => '#efefef',
 			'type'    => 'text'
 		);		
@@ -6926,6 +6926,19 @@ class Class_leaflet_options {
 				'footer' => __('footer','lmm')
 			)
 		);
+		$this->settings['misc_template_check_wpfooter'] = array(
+			'version' => '3.2.4',
+			'pane'    => 'misc',
+			'section' => 'misc-section1',
+			'title'   => __('Check for template tag wp_footer();','lmm'),
+			'desc'    => __('If enabled, index.php and footer.php of your theme are searched for wp_footer(); - if not found, a warning message in backend is displayed. Please disable this check if you added the template tag in another file in order to hide the warning message.','lmm'),
+			'type'    => 'radio',
+			'std'     => 'enabled',
+			'choices' => array(
+				'enabled' => __('enabled','lmm'),
+				'disabled' => __('disabled','lmm')
+			)
+		);		
 		$this->settings['misc_conditional_css_loading'] = array(
 			'version' => '3.2.2',
 			'pane'    => 'misc',
