@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0 
 Tested up to:      3.6-alpha
-Stable tag:        3.2.3
+Stable tag:        3.2.4
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, GeoRSS or Augmented-Reality browsers
@@ -248,8 +248,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v3.3 =
- - see http://www.mapsmarker.com/v3.3 for more details
+= v3.2.4 =
+removed check for wp_footer(); in backend (did not work on child themes) - see http://www.mapsmarker.com/v3.3 for more details
 = v3.2.3 =
 compatibility fix for flickr gallery plugin (settings page was broken) - see http://www.mapsmarker.com/v3.2.3 for more details
 = v3.2.2 =
@@ -326,11 +326,12 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
-= v3.2.4 - xx.12.2012 =
+= v3.2.4 - 17.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2.4)
-* NEW: option to disable check for wp_footer(); in template files
+* CHANGED: removed check for wp_footer(); in backend (did not work on child themes)
 * CHANGED: updated Dutch translation thanks to Patrick Ruers, [http://www.stationskwartiersittard.nl](http://www.stationskwartiersittard.nl)
 * CHANGED: updated German translation
+* FIXED: missing translation strings on settings page (thanks Patrick!)
 
 = v3.2.3 - 16.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2.3)

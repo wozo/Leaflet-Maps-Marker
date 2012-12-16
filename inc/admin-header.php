@@ -81,26 +81,6 @@ $admin_quicklink_tools_buttons = ( current_user_can( "activate_plugins" ) ) ? "<
 $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ? "<a class='" . $buttonclass6 ."' href='" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_settings'>".__('Settings','lmm')."</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" : "";
 
 //info: admin notices which only show on LMM pages
-
-//info: check if footer.php or index.php includes wp_footer()
-if ( (isset($lmm_options['misc_template_check_wpfooter'])) && ($lmm_options['misc_template_check_wpfooter'] == 'enabled') ){
-	global $wp_version;
-	if ( (version_compare( $wp_version, '3.3', '>=' )) && ($lmm_options['misc_javascript_header_footer'] == 'footer') ) {
-		$searchterm = 'wp_footer()';
-		$files = array( get_stylesheet_directory() . DIRECTORY_SEPARATOR . 'index.php', get_stylesheet_directory() . DIRECTORY_SEPARATOR . 'footer.php' );
-		$contents_all = '';
-		foreach( $files as $file ) {
-			if( file_exists($file) ) {
-				$contents = file_get_contents($file);
-				$contents_all .= $contents;
-			}
-		}
-		if( !strpos( $contents, $searchterm )) {
-			echo '<p><div class="error" style="padding:10px;">' . __('<strong>Warning: your theme seems to be missing the template tag wp_footer();</strong><br/>wp_footer(); could not be found within your template files index.php or footer.php - this could cause maps to break on frontend! If you did not add this template tag in another template file, please add <span style="color:red;font-weight:bold;">&lt;?php wp_footer(); ?&gt;</span> to your template file <span style="color:red;">footer.php</span> (or index.php if not exists) right before the <span style="color:red;">&lt;/body&gt;</span>-tag.<br/>If you do not want to change your theme files, you can go to Settings / Misc / General settings and change the option "Where to insert Javascript files on frontend?" to "header (+ inline javascript)". Please also see <a href="http://mapsmarker.com/wp_footer" target="_blank">http://mapsmarker.com/wp_footer</a> for more details.<br/><br/>You can hide this warning message by changing the option "Check for template tag wp_footer();" under Settings / Misc / General Settings to disabled.','lmm') . '</div></p>';
-		}
-	}
-}
-
 //info: check if newer plugin version is available
 $plugin_updates = get_site_transient( 'update_plugins' );
 if (isset($plugin_updates->response['leaflet-maps-marker/leaflet-maps-marker.php']->new_version)) { 

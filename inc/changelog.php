@@ -67,17 +67,12 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</table>'.PHP_EOL;
 */
 
-		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.4') . '</strong> - ' . __('released on','lmm') . ' xx.12.2012 (<a href="http://www.mapsmarker.com/v3.4" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
+		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.2.4') . '</strong> - ' . __('released on','lmm') . ' 17.12.2012 (<a href="http://www.mapsmarker.com/v3.2.4" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
-		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
-		</td><td>
-		option to disable check for wp_footer(); in template files
-		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
-		
+		removed check for wp_footer(); in backend (did not work on child themes)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
@@ -92,7 +87,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		
+		missing translation strings on settings page (thanks Patrick!)
 		</td></tr>
 		</table>'.PHP_EOL;
 
