@@ -77,7 +77,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
-		custom Google basemap setting is now also considered on directions link (thanks Pepperbase!)
+		custom Google base domain setting is now also considered on directions link (thanks Pepperbase!)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">

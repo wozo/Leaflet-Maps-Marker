@@ -332,7 +332,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 = v3.2.5 - 18.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2.5)
 * NEW: Portuguese (pt_PT) translation thanks to Joao Campos, [http://www.all-about-portugal.com](http://www.all-about-portugal.com)
-* NEW: custom Google basemap setting is now also considered on directions link (thanks Pepperbase!)
+* NEW: custom Google base domain setting is now also considered on directions link (thanks Pepperbase!)
 * CHANGED: updated German translation
 * FIXED: plugin conflict with [Jetpack plugin](http://wordpress.org/extend/plugins/jetpack/) which caused maps not to break (thanks John, Norman and Evan!)
 * FIXED: warning message for multi-layer-maps with all layers ($wpdb->prepare issue)
