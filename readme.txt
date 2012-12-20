@@ -370,7 +370,7 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * TRANSLATIONS: updated Chinese translation thanks to John Shen, [http://www.synyan.net](http://www.synyan.net)
 * TRANSLATIONS: updated German translation
 * FIXED: compatibility fix with flickr gallery plugin (settings page was broken)
-* FIXED: editor switch link did not work on some installations
+* FIXED: editor switch link did not work on some installations 
 
 = v3.2.2 - 15.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.2.2)
