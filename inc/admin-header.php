@@ -81,6 +81,10 @@ $admin_quicklink_tools_buttons = ( current_user_can( "activate_plugins" ) ) ? "<
 $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ? "<a class='" . $buttonclass6 ."' href='" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_settings'>".__('Settings','lmm')."</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" : "";
 
 //info: admin notices which only show on LMM pages
+//info: plugin WordPress Ultra Simple Paypal Shopping Cart
+if (is_plugin_active('wp-ultra-simple-paypal-shopping-cart/wp_ultra_simple_shopping_cart.php') ) {
+	echo '<p><div class="error" style="padding:10px;"><strong>' . __('Warning: you are using the plugin WordPress Ultra Simple Paypal Shopping Cart which is causing the Leaflet Maps Marker settings page to break! Please temporarily deactivate this plugin if you want change the settings. The plugin developer has already been contacted and will hopefully release a fix soon.','lmm') . '</strong></div></p>';
+}
 //info: check if newer plugin version is available
 $plugin_updates = get_site_transient( 'update_plugins' );
 if (isset($plugin_updates->response['leaflet-maps-marker/leaflet-maps-marker.php']->new_version)) { 
