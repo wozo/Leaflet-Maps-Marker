@@ -9,7 +9,7 @@ $lmm_options = get_option( 'leafletmapsmarker_options' ); //info: required for b
 
 //info: hide update info on new installs
 $version_before_update = get_option('leafletmapsmarker_version_before_update');
-if ($version_before_update != '0') {
+if ($version_before_update == '0') {
 		update_option('leafletmapsmarker_update_info', 'hide');
 }
 
