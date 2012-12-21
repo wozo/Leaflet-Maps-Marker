@@ -342,6 +342,8 @@ Initial release - see http://www.mapsmarker.com/v1.0 for more details
 * NEW: option to use an empty basemap (in case you just want to work with overlays only)
 * NEW: added menu icons on backend and translations image on changelog
 * NEW: added warning message if plugin "WordPress Ultra Simple Paypal Shopping Cart" which breaks settings page is active
+* NEW: autofocus marker/layer name input field on backend (HTML5)
+* CHANGED: improved tab order of input fields on marker and layer edit pages on backend
 * FIXED: reset Wikitude world logo and icon to default values (please update if you changed them!)
 * FIXED: warning message with WordPress 3.5 on layer edit pages on backend ($wpdb->prepare issue)
 * TRANSLATIONS: updated Portuguese (pt_PT) translation thanks to Joao Campos, [http://www.all-about-portugal.com](http://www.all-about-portugal.com)

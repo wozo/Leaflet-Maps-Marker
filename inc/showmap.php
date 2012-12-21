@@ -482,7 +482,7 @@
 				$(window).resize(resizeMap);
 				function appendeditlink() {
 					var boundingbox = ".$mapname.".getBounds().toBBoxString();
-					var editlink = ' (<a href=\"http://www.openstreetmap.org/edit?editor=potlatch2&bbox='+boundingbox+'\" target=\"_blank\" title=\"" . esc_attr__('help improving this map by editing it on openstreetmap.org (free account needed)','lmm') . "\">" . __('edit map','lmm') . "</a>)';
+					var editlink = ' (<a href=\"http://www.openstreetmap.org/edit?editor=potlatch2&bbox='+boundingbox+'\" target=\"_blank\" title=\"" . esc_attr__('help OpenStreetMap.org to improve map details','lmm') . "\">" . __('edit','lmm') . "</a>)';
 					$('.editlink_" . $uid . "').append(editlink);	
 				}
 				appendeditlink();".PHP_EOL;

@@ -525,11 +525,11 @@ if (get_option('leafletmapsmarker_version') == '3.2.5' ) {
 	}
 	update_option('leafletmapsmarker_version', '3.3');
 	update_option('leafletmapsmarker_update_info', 'show');
-	//info: redirect to settings page only on first plugin activation, otherwise redirect is also done on bulk plugin activations
+	//info: redirect to create marker page only on first plugin activation, otherwise redirect is also done on bulk plugin activations
 	if (get_option('leafletmapsmarker_redirect') == 'true') 
 	{
 		update_option('leafletmapsmarker_redirect', 'false');
-		wp_redirect(LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&display=install_note');
+		wp_redirect(LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker');
 	} else {
 		update_option('leafletmapsmarker_update_info', 'show');
 	}

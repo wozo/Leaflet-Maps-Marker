@@ -109,6 +109,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		added warning message if plugin "WordPress Ultra Simple Paypal Shopping Cart" which breaks settings page is active
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
+		autofocus marker/layer name input field on backend (HTML5)
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		improved tab order of input fields on marker and layer edit pages on backend
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		reset Wikitude world logo and icon to default values (please update if you changed them!)
