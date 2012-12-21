@@ -250,6 +250,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
+= v3.x =
+ - see http://www.mapsmarker.com/v3.x for more details
 = v3.3 =
 added OSM edit link, enhance Wikitude Augmented-Reality API, usability optimizations - see http://www.mapsmarker.com/v3.3 for more details
 = v3.2.5 =
@@ -332,6 +334,10 @@ Added new features and bugfixes - see http://www.mapsmarker.com/v1.1 for more de
 Initial release - see http://www.mapsmarker.com/v1.0 for more details
 
 == Changelog ==
+= v3.x - xx.12.2012 =
+* [Blog post with more details about this release](http://www.mapsmarker.com/v3.x)
+* TRANSLATIONS: updated German translation
+
 = v3.3 - 21.12.2012 =
 * [Blog post with more details about this release](http://www.mapsmarker.com/v3.3)
 * NEW: edit map-link for OpenStreetMap and Mapbox (OSM) maps (can be disabled)
