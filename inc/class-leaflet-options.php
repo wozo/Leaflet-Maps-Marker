@@ -883,6 +883,15 @@ class Class_leaflet_options {
 			'std'     => '480',
 			'type'    => 'text'
 		);
+		$this->settings['defaults_marker_default_layer'] = array(
+			'version' => '3.4',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section4',
+			'title'   => __( 'Default layer ID', 'lmm' ),
+			'desc'    => __('Set to 0 if you do not want to assign new markers to a layer','lmm'),
+			'std'     => '0',
+			'type'    => 'text'
+		);		
 		$this->settings['defaults_marker_openpopup'] = array(
 			'version' => '1.0',
 			'pane'    => 'mapdefaults',
@@ -6759,12 +6768,12 @@ class Class_leaflet_options {
 			)
 		);
 		$this->settings['ar_wikitude_featuregraphic'] = array(
-			'version' => '3.3',
+			'version' => '3.4',
 			'pane'    => 'ar',
 			'section' => 'ar-section1',
 			'title'   => __( 'Feature graphic', 'lmm' ),
 			'desc'    => __( 'A graphic spotlighting your World in promotions. Format: 1024x500 pixel, transparent PNG', 'lmm' ),
-			'std'     => LEAFLET_PLUGIN_URL . 'inc/img/wikitude-featuregraphic-180x200.png',
+			'std'     => LEAFLET_PLUGIN_URL . 'inc/img/wikitude-featuregraphic-1024x500.png',
 			'type'    => 'text'
 		);
 		$this->settings['ar_wikitude_provider_url'] = array(

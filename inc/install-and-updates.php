@@ -533,6 +533,11 @@ if (get_option('leafletmapsmarker_version') == '3.2.5' ) {
 	} else {
 		update_option('leafletmapsmarker_update_info', 'show');
 	}
+	//info: hide changelog for new installations
+	$version_before_update = get_option('leafletmapsmarker_version_before_update');
+	if ($version_before_update == '0') {
+			update_option('leafletmapsmarker_update_info', 'hide');
+	}
 }
 
 /* template for plugin updates 
@@ -550,7 +555,7 @@ if (get_option('leafletmapsmarker_version') == '3.3' ) {
 	update_option('leafletmapsmarker_version', '3.4');
 	//2do - mandatory: remove update_option('leafletmapsmarker_update_info', 'show'); from last version
 	update_option('leafletmapsmarker_update_info', 'show');
-	//mandatory: move code for redirect-on-first-activation-check to here
+	//mandatory: move code for redirect-on-first-activation-check and hide changelog for new installs to here
 	//2do - mandatory: set $current_version in leaflet-maps-marker.php / function lmm_install_and_updates()
 	//2do - mandatory: set $current_version in uninstall.php
 }
