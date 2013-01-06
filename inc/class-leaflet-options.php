@@ -7082,6 +7082,7 @@ class Class_leaflet_options {
 			'std'     => 'automatic',
 			'choices' => array(
 				'automatic' => __('automatic (use WordPress default)','lmm'),
+				'bs_BA' => __('Bosnian','lmm') . ' (bs_BA)',
 				'bg_BG' => __('Bulgarian','lmm') . ' (bg_BG)',
 				'ca' => __('Catalan','lmm') . ' (ca)',
 				'zh_CN' => __('Chinese','lmm') . ' (zh_CN)',
@@ -8100,7 +8101,6 @@ class Class_leaflet_options {
 		$options_new = array_merge($options_current, $new_options_defaults);
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
-		/* template for plugin updates 
 		//info:  set defaults for options introduced in v3.4
 		if (get_option('leafletmapsmarker_version') == '3.3' )
 		{
@@ -8108,6 +8108,22 @@ class Class_leaflet_options {
 			foreach ( $this->settings as $id => $setting ) 
 			{
 				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '3.4')
+				{
+				$new_options_defaults[$id] = $setting['std'];
+				}
+			}
+		$options_current = get_option( 'leafletmapsmarker_options' );
+		$options_new = array_merge($options_current, $new_options_defaults);
+		update_option( 'leafletmapsmarker_options', $options_new );
+		}
+		/* template for plugin updates 
+		//info:  set defaults for options introduced in v3.5
+		if (get_option('leafletmapsmarker_version') == '3.4' )
+		{
+			$new_options_defaults = array();
+			foreach ( $this->settings as $id => $setting ) 
+			{
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '3.5')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
