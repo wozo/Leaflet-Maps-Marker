@@ -256,8 +256,8 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2012, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v3.4 =
-added Bosnian translation, backend usability fixes - see http://www.mapsmarker.com/v3.4 for more details
+= v3.5 =
+ - see http://www.mapsmarker.com/v3.5 for more details
 
 == Changelog ==
 
