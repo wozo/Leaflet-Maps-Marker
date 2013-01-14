@@ -6929,7 +6929,7 @@ class Class_leaflet_options {
 			'pane'    => 'misc',
 			'section' => 'misc-section1',
 			'title'   => __( 'Shortcode', 'lmm' ),
-			'desc'    => __( 'Shortcode to add markers or layers into articles or pages  - Example: [<strong>mapsmarker</strong> marker="1"].<br/> Attention: if you change the shortcode after having embedded shortcodes into posts/Pages, the shortcode on these specific articles/pages has to be changed also manually - otherwise these markers/layers will not be show on frontend!', 'lmm' ),
+			'desc'    => __( 'Shortcode to add markers or layers into articles or pages  - Example: [mapsmarker marker="1"].<br/> Attention: if you change the shortcode after having embedded shortcodes into posts/Pages, the shortcode on these specific articles/pages has to be changed also manually - otherwise these markers/layers will not be show on frontend!', 'lmm' ),
 			'std'     => 'mapsmarker',
 			'type'    => 'text'
 		);
@@ -8118,7 +8118,7 @@ class Class_leaflet_options {
 		}
 		/* template for plugin updates 
 		//info:  set defaults for options introduced in v3.5
-		if (get_option('leafletmapsmarker_version') == '3.4' )
+		if (get_option('leafletmapsmarker_version') == '3.4.1' )
 		{
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
