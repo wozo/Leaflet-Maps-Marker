@@ -279,12 +279,19 @@ class Class_leaflet_options {
 			case 'helptext':
 				echo '</td></tr><tr valign="top"><td colspan="2">' . $desc . '';
 				break;
+
 			case 'checkbox':
 				echo '<input class="checkbox' . $field_class . '" type="checkbox" id="' . $id . '" name="leafletmapsmarker_options[' . $id . ']" value="1" ' . checked( $options[$id], 1, false ) . ' /> <label for="' . $id . '">' . $desc . '</label>';
 				break;
+
+			case 'checkbox-pro':
+				echo '<input class="checkbox' . $field_class . '" type="checkbox" id="' . $id . '" name="leafletmapsmarker_options[' . $id . ']" value="1" ' . checked( $options[$id], 1, false ) . ' disabled="disabled" /> <label for="' . $id . '">' . $desc . '</label>';
+				break;
+
 			case 'checkbox-readonly':
 				echo '<input class="checkbox' . $field_class . '" type="checkbox" id="' . $id . '" name="leafletmapsmarker_options[' . $id . ']" value="1" ' . checked( $options[$id], 1, false ) . ' disabled="disabled" /> <label for="' . $id . '">' . $desc . '</label>';
 				break;
+
 			case 'select':
 				echo '<select class="select' . $field_class . '" name="leafletmapsmarker_options[' . $id . ']">';
 				foreach ( $choices as $value => $label )
@@ -293,10 +300,32 @@ class Class_leaflet_options {
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
 				break;
+
+			case 'select-pro':
+				echo '<select class="select' . $field_class . '" name="leafletmapsmarker_options[' . $id . ']">';
+				foreach ( $choices as $value => $label )
+					echo '<option value="' . esc_attr( $value ) . '"' . selected( $options[$id], $value, false ) . ' disabled="disabled">' . $label . '</option>';
+				echo '</select>';
+				if ( $desc != '' )
+					echo '<br /><span class="description">' . $desc . '</span>';
+				break;
+				
 			case 'radio':
 				$i = 0;
 				foreach ( $choices as $value => $label ) {
 					echo '<input class="radio' . $field_class . '" type="radio" name="leafletmapsmarker_options[' . $id . ']" id="' . $id . $i . '" value="' . esc_attr( $value ) . '" ' . checked( $options[$id], $value, false ) . '> <label for="' . $id . $i . '">' . $label . '</label>';
+					if ( $i < count( $options ) - 1 )
+						echo '<br />';
+					$i++;
+				}
+				if ( $desc != '' )
+					echo '<span class="description">' . $desc . '</span>';
+				break;
+
+			case 'radio-pro':
+				$i = 0;
+				foreach ( $choices as $value => $label ) {
+					echo '<input class="radio' . $field_class . '" type="radio" name="leafletmapsmarker_options[' . $id . ']" id="' . $id . $i . '" value="' . esc_attr( $value ) . '" ' . checked( $options[$id], $value, false ) . ' disabled="disabled"> <label for="' . $id . $i . '">' . $label . '</label>';
 					if ( $i < count( $options ) - 1 )
 						echo '<br />';
 					$i++;
@@ -311,17 +340,34 @@ class Class_leaflet_options {
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
 				break;
+
+			case 'textarea-pro':
+				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="leafletmapsmarker_options[' . $id . ']" placeholder="' . $std . '" rows="5" cols="30" disabled="disabled">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
+				
+				if ( $desc != '' )
+					echo '<br /><span class="description">' . $desc . '</span>';
+				break;
+				
 			case 'password':
 				echo '<input class="regular-text' . $field_class . '" type="password" id="' . $id . '" name="leafletmapsmarker_options[' . $id . ']" value="' . esc_attr( $options[$id] ) . '" />';
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
 				break;
+
 			case 'text':
 			default:
 		 		echo '<input class="regular-text' . $field_class . '" style="width:30em;" type="text" id="' . $id . '" name="leafletmapsmarker_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
 		 		if ( $desc != '' )
 		 			echo '<br /><span class="description">' . $desc . '</span>';
 		 		break;
+
+			case 'text-pro':
+			default:
+		 		echo '<input class="regular-text' . $field_class . '" style="width:30em;" type="text" id="' . $id . '" name="leafletmapsmarker_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" disabled="disabled" />';
+		 		if ( $desc != '' )
+		 			echo '<br /><span class="description">' . $desc . '</span>';
+		 		break;
+				
 			case 'text-readonly':
 			default:
 		 		echo '<input readonly="readonly" class="regular-text' . $field_class . '" style="width:60em;" type="text" id="' . $id . '" name="leafletmapsmarker_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
@@ -6883,6 +6929,19 @@ class Class_leaflet_options {
 			'desc'    => '', //empty for not breaking settings layout
 			'type'    => 'helptext'
 		);
+		$this->settings['misc_backlink'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'misc',
+			'section' => 'misc-section1',
+			'title'   => __('MapsMarker.com backlinks','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => '<a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is only available in the pro version! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-backlink.jpg" />',
+			'type'    => 'radio-pro',
+			'std'     => 'show',
+			'choices' => array(
+				'show' => __('show','lmm'),
+				'hide' => __('hide','lmm')
+			)
+		);
 		$this->settings['capabilities_edit'] = array(
 			'version' => '1.0',
 			'pane'    => 'misc',
@@ -7731,7 +7790,7 @@ class Class_leaflet_options {
 	public function initialize_settings() {
 		$default_settings = array();
 		foreach ( $this->settings as $id => $setting ) {
-			if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' ) {
+			if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' ) {
 				$default_settings[$id] = $setting['std'];
 				}
 		}
@@ -7762,7 +7821,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.1')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '1.1')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7777,7 +7836,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.2')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '1.2')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7792,7 +7851,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.4')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '1.4')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7807,7 +7866,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.4.3')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '1.4.3')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7822,7 +7881,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.5')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '1.5')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7837,7 +7896,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.6')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '1.6')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7852,7 +7911,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.7')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '1.7')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7867,7 +7926,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.8')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '1.8')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7882,7 +7941,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '1.9')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '1.9')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7897,7 +7956,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.1')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '2.1')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7912,7 +7971,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.2')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '2.2')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7927,7 +7986,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.3')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '2.3')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7942,7 +8001,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.4')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '2.4')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7957,7 +8016,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.5')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '2.5')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7972,7 +8031,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.6')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '2.6')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -7987,7 +8046,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.7.1')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '2.7.1')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -8002,7 +8061,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.8')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '2.8')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -8017,7 +8076,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '2.9')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '2.9')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -8032,7 +8091,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '3.0')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '3.0')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -8047,7 +8106,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '3.1')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '3.1')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -8062,7 +8121,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '3.2')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '3.2')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -8077,7 +8136,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '3.2.2')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '3.2.2')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -8092,7 +8151,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '3.3')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '3.3')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -8107,7 +8166,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '3.4')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '3.4')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}
@@ -8123,7 +8182,7 @@ class Class_leaflet_options {
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting ) 
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['version'] == '3.5')
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['version'] == '3.5')
 				{
 				$new_options_defaults[$id] = $setting['std'];
 				}

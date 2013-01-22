@@ -29,6 +29,10 @@ along with this program (see file licence-gpl20.txt)
 if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-maps-marker.php') { die ("Please do not access this file directly. Thanks!<br/><a href='http://www.mapsmarker.com/go'>www.mapsmarker.com</a>"); }
 //info: Compatibility checks
 global $wp_version;
+include_once( ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'plugin.php' );
+if (is_plugin_active('leaflet-maps-marker-pro/leaflet-maps-marker.php') ) {
+	exit('We are sorry that you want to use the free version again - please deactivate "Leaflet Maps Marker Pro" first!<br/>Tell us why at http://www.mapsmarker.com/contact and receive a discount voucher!');
+}
 if (version_compare($wp_version,"3.0","<")){
   exit('[Leaflet Maps Marker Plugin - installation failed!]: WordPress Version 3.0 or higher is needed for this plugin (you are using version '.$wp_version.') - please upgrade your WordPress installation!');
 }
@@ -350,6 +354,7 @@ function __construct() {
 	$page7 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Settings', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-settings.png"> ' . __('Settings', 'lmm'), 'activate_plugins','leafletmapsmarker_settings', array(&$this, 'lmm_settings') );
 	$page8 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Help & Credits', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-help.png"> ' . __('Help', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_help', array(&$this, 'lmm_help') );
 	$page9 = add_submenu_page('leafletmapsmarker_markers', 'www.mapsmarker.com', '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-external.png"> ' . 'mapsmarker.com', $lmm_options[ 'capabilities_edit' ], 'www_mapsmarker_com', array(&$this, 'lmm_mapsmarker_com') );
+	$page10 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Upgrade to Pro', 'lmm'), '<hr noshade size="1"/>' . '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-up.png"> ' . __('Upgrade to Pro', 'lmm'), 'install_plugins', 'leafletmapsmarker_pro_upgrade', array(&$this, 'lmm_pro_upgrade') );
 
 	//info: add javascript - leaflet.js - for admin area
 	add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_admin_enqueue_scripts'),7);
@@ -384,6 +389,9 @@ function __construct() {
   function lmm_mapsmarker_com(){
 	 echo '<script type="text/javascript">window.location.href = "http://www.mapsmarker.com";</script>  ';
   }
+  function lmm_pro_upgrade(){
+	include('leaflet-pro-upgrade.php');
+  }  
   function lmm_add_admin_bar_menu() {
 	global $wp_version;
 	if ( version_compare( $wp_version, '3.1', '>=' ) )
