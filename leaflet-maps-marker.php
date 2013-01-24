@@ -354,7 +354,7 @@ function __construct() {
 	$page7 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Settings', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-settings.png"> ' . __('Settings', 'lmm'), 'activate_plugins','leafletmapsmarker_settings', array(&$this, 'lmm_settings') );
 	$page8 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Help & Credits', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-help.png"> ' . __('Help', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_help', array(&$this, 'lmm_help') );
 	$page9 = add_submenu_page('leafletmapsmarker_markers', 'www.mapsmarker.com', '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-external.png"> ' . 'mapsmarker.com', $lmm_options[ 'capabilities_edit' ], 'www_mapsmarker_com', array(&$this, 'lmm_mapsmarker_com') );
-	$page10 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Upgrade to Pro', 'lmm'), '<hr noshade size="1"/>' . '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-up.png"> ' . __('Upgrade to Pro', 'lmm'), 'install_plugins', 'leafletmapsmarker_pro_upgrade', array(&$this, 'lmm_pro_upgrade') );
+	$page10 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Upgrade to Pro', 'lmm'), '<hr noshade size="1"/>' . '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-up.png"> ' . __('Upgrade to Pro', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_pro_upgrade', array(&$this, 'lmm_pro_upgrade') );
 
 	//info: add javascript - leaflet.js - for admin area
 	add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_admin_enqueue_scripts'),7);
@@ -461,6 +461,12 @@ function __construct() {
 						'title' => '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-external.png"> ' . 'mapsmarker.com',
 						'href' => 'http://www.mapsmarker.com',
 						'meta' => array( 'target' => '_blank', 'title' => __('Open plugin website','lmm') )
+					),
+					array(
+						'id' => 'lmm-upgrade',
+						'parent' => 'lmm',
+						'title' => '<hr style="margin:3px 0;" noshade size="1"/><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-up.png"> ' . __('Upgrade to Pro','lmm'),
+						'href' => admin_url('admin.php?page=leafletmapsmarker_pro_upgrade')
 					)
 				));
 

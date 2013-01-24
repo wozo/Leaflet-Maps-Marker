@@ -409,6 +409,12 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 				<br/><br/>
 				<strong><?php _e('Display panel','lmm') ?></strong>&nbsp;&nbsp;<input type="checkbox" name="panel" id="panel" <?php checked($panel, 1 ); ?>><br/>
 				<small><?php _e('If checked, panel on top of map is displayed','lmm') ?></small>		
+				<br/><br/>
+				<label for="hide-backlinks"><strong><?php _e('Hide MapsMarker.com backlinks','lmm') ?></strong></label>
+				&nbsp;&nbsp;<input type="checkbox" name="hide-backlinks" id="hide-backlinks" disabled="disabled" />
+				<br/><small>
+				<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="<?php esc_attr_e('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm'); ?>"><?php _e('Feature available in pro version only','lmm'); ?></a>
+				</small>				
 				</p>
 				</div>
 				</td>

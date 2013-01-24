@@ -6933,8 +6933,8 @@ class Class_leaflet_options {
 			'version' => 'p1.0',
 			'pane'    => 'misc',
 			'section' => 'misc-section1',
-			'title'   => __('MapsMarker.com backlinks','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
-			'desc'    => '<a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is only available in the pro version! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-backlink.jpg" />',
+			'title'   => __('MapsMarker.com backlinks','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '" /></a>',
+			'desc'    => '<a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-backlink.jpg" />',
 			'type'    => 'radio-pro',
 			'std'     => 'show',
 			'choices' => array(
