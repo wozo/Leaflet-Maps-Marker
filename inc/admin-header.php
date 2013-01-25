@@ -18,6 +18,7 @@ if ($page == 'leafletmapsmarker_markers') {
 	$buttonclass5 = 'button-secondary';
 	$buttonclass6 = 'button-secondary';
 	$buttonclass7 = 'button-secondary';
+	$buttonclass8 = 'button-secondary';
 } else if ($page == 'leafletmapsmarker_marker') {
 	$buttonclass1 = 'button-secondary';
 	$buttonclass2 = 'button-primary';
@@ -26,6 +27,7 @@ if ($page == 'leafletmapsmarker_markers') {
 	$buttonclass5 = 'button-secondary';
 	$buttonclass6 = 'button-secondary';
 	$buttonclass7 = 'button-secondary';
+	$buttonclass8 = 'button-secondary';
 } else if ($page == 'leafletmapsmarker_layers') {
 	$buttonclass1 = 'button-secondary';
 	$buttonclass2 = 'button-secondary';
@@ -34,6 +36,7 @@ if ($page == 'leafletmapsmarker_markers') {
 	$buttonclass5 = 'button-secondary';
 	$buttonclass6 = 'button-secondary';
 	$buttonclass7 = 'button-secondary';
+	$buttonclass8 = 'button-secondary';
 } else if ($page == 'leafletmapsmarker_layer') {
 	$buttonclass1 = 'button-secondary';
 	$buttonclass2 = 'button-secondary';
@@ -42,6 +45,7 @@ if ($page == 'leafletmapsmarker_markers') {
 	$buttonclass5 = 'button-secondary';
 	$buttonclass6 = 'button-secondary';
 	$buttonclass7 = 'button-secondary';
+	$buttonclass8 = 'button-secondary';
 } else if ($page == 'leafletmapsmarker_tools') {
 	$buttonclass1 = 'button-secondary';
 	$buttonclass2 = 'button-secondary';
@@ -50,6 +54,7 @@ if ($page == 'leafletmapsmarker_markers') {
 	$buttonclass5 = 'button-primary';
 	$buttonclass6 = 'button-secondary';
 	$buttonclass7 = 'button-secondary';
+	$buttonclass8 = 'button-secondary';
 } else if ($page == 'leafletmapsmarker_settings') {
 	$buttonclass1 = 'button-secondary';
 	$buttonclass2 = 'button-secondary';
@@ -58,6 +63,7 @@ if ($page == 'leafletmapsmarker_markers') {
 	$buttonclass5 = 'button-secondary';
 	$buttonclass6 = 'button-primary';
 	$buttonclass7 = 'button-secondary';
+	$buttonclass8 = 'button-secondary';
 } else if ($page == 'leafletmapsmarker_help') {
 	$buttonclass1 = 'button-secondary';
 	$buttonclass2 = 'button-secondary';
@@ -66,6 +72,16 @@ if ($page == 'leafletmapsmarker_markers') {
 	$buttonclass5 = 'button-secondary';
 	$buttonclass6 = 'button-secondary';
 	$buttonclass7 = 'button-primary';
+	$buttonclass8 = 'button-secondary';
+} else if ($page == 'leafletmapsmarker_pro_upgrade') {
+	$buttonclass1 = 'button-secondary';
+	$buttonclass2 = 'button-secondary';
+	$buttonclass3 = 'button-secondary';
+	$buttonclass4 = 'button-secondary';
+	$buttonclass5 = 'button-secondary';
+	$buttonclass6 = 'button-secondary';
+	$buttonclass7 = 'button-secondary';
+	$buttonclass8 = 'button-primary';
 }
 $admin_quicklink_tools_buttons = ( current_user_can( "activate_plugins" ) ) ? "<a class='" . $buttonclass5 ."' href='" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_tools'><img src='" . LEAFLET_PLUGIN_URL . "inc/img/icon-menu-tools.png'> ".__('Tools','lmm')."</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" : "";
 $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ? "<a class='" . $buttonclass6 ."' href='" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_settings'><img src='" . LEAFLET_PLUGIN_URL . "inc/img/icon-menu-settings.png'> ".__('Settings','lmm')."</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" : "";
@@ -125,7 +141,9 @@ if (isset($plugin_updates->response['leaflet-maps-marker/leaflet-maps-marker.php
   </a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
   <?php echo $admin_quicklink_tools_buttons ?>
   <?php echo $admin_quicklink_settings_buttons ?>
-  <a class="<?php echo $buttonclass7; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_help"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-menu-help.png"> <?php _e("Help", "lmm") ?></a>
+  <a class="<?php echo $buttonclass7; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_help"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-menu-help.png"> <?php _e("Support", "lmm") ?></a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+  <a class="<?php echo $buttonclass8; ?>" style="background-color:#F99755;background-image:none;text-shadow:none;" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_pro_upgrade"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-up.png"> <?php _e("Upgrade to Pro", "lmm") ?></a>
+
   </p>
 </td></tr></table>
 

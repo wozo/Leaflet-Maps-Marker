@@ -11,7 +11,7 @@ Donate link: http://www.mapsmarker.com/donations
 Requires at least: 3.0
 Tested up to: 3.6-alpha-23288
 Requires at least PHP 5.2
-Copyright 2011-2012 - @RobertHarm - All rights reserved
+Copyright 2011-2013 - @RobertHarm - All rights reserved
 MapsMarker &reg; - registration pending
 Parts of this plugin were originally based on the Leaflet Plugin by Hind (Copyright 2011)
 
@@ -107,6 +107,31 @@ function __construct() {
 	if ( (isset($lmm_options['misc_conditional_css_loading'])) && ($lmm_options['misc_conditional_css_loading'] == 'enabled') ){
 		add_action('template_include', array( &$this,'lmm_template_check_shortcode' ));
 	}
+	//info: style & add extra links to plugin page
+	add_action('plugin_row_meta', array( &$this,'lmm_plugins_page_add_links' ), 10, 2);
+	add_action( 'admin_enqueue_scripts', array( $this, 'lmm_style_plugins_page' ));
+  }
+  function lmm_style_plugins_page() {
+	global $pagenow;
+	if ($pagenow == "plugins.php") {
+		$plugin_version = get_option('leafletmapsmarker_version_pro');
+		wp_register_style( 'leafletmapsmarker-plugin-styling', LEAFLET_PLUGIN_URL . 'inc/css/leafletmapsmarker-plugins-styling.css', array(), $plugin_version);
+		wp_enqueue_style( 'leafletmapsmarker-plugin-styling' );
+	}
+  }
+  function lmm_plugins_page_add_links($links, $file) {
+	$plugin = plugin_basename(__FILE__);
+	if ($file == $plugin) {
+		$go_pro_link = '<a style="float:left;" href="http://wordpress.org/support/view/plugin-reviews/leaflet-maps-marker" target="_blank"  title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img style="margin-top:4px;margin-right:5px;" src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-upgrade.png" width="80" height="15" alt="go pro"></a>';
+		$rate_link = '<a style="text-decoration:none;" href="http://wordpress.org/support/view/plugin-reviews/leaflet-maps-marker" target="_blank" title="' . esc_attr__('please rate this plugin on wordpress.org','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-star.png" width="16" height="16" alt="ratings"></a>';
+		$translation_link = '<a href="http://translate.mapsmarker.com/projects/lmm" target="_blank" title="' . esc_attr__('translations','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-translations.png" width="16" height="16" alt="translations"></a>';
+		$fbook_link = '<a href="http://facebook.com/mapsmarker" target="_blank" title="' . esc_attr__('Follow MapsMarker on Facebook','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-facebook.png" width="16" height="16" alt="facebook"></a>';
+		$twitter_link = '<a href="http://twitter.com/mapsmarker" target="_blank" title="' . esc_attr__('Follow @MapsMarker on Twitter','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-twitter.png" width="16" height="16" alt="twitter"></a>';
+		$rss_link = '<a href="http://feeds.feedburner.com/MapsMarker" target="_blank" title="RSS"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss.png" width="16" height="16" alt="rss"></a>';
+		$rss_email_link = '<a href="http://feedburner.google.com/fb/a/mailverify?uri=MapsMarker" target="_blank" title="RSS (via Email)"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss-email.png" width="16" height="16" alt="rss-email"></a>';
+		$links[] = $go_pro_link . $rate_link . '&nbsp;&nbsp;&nbsp;' . $translation_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $fbook_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $twitter_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $rss_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $rss_email_link;
+	}
+	return $links;
   }
   function lmm_delete_multisite_blog($blog_id) {
 	switch_to_blog($blog_id);
@@ -143,7 +168,7 @@ function __construct() {
 	$lmm_version_new = get_option( 'leafletmapsmarker_version' );
 	$version_without_dots = "lmmv" . str_replace('.', '', $lmm_version_new);
 	$pointer_content = '<h3>' . sprintf(__('Leaflet Maps Marker plugin update to v%1s was successful','lmm'), $lmm_version_new) . '</h3>';
-	$changelog_url = '<a href="' . admin_url('/admin.php?page=leafletmapsmarker_markers') .'" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
+	$changelog_url = '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers' . '" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
 	$blogpost_url = '<a href="http://www.mapsmarker.com/v' . $lmm_version_new . '" target="_blank" style="text-decoration:none;">mapsmarker.com</a>';
 	$pointer_content .= '<p>' . sprintf(__('Please see the %1s for new features or the blog post on %2s for more details','lmm'), $changelog_url, $blogpost_url) . '</p>';
   ?>
@@ -240,7 +265,7 @@ function __construct() {
 				echo '<p>' . $item->get_date('j F Y') . ': <strong><a href="' . $item->get_permalink() . '">' . $item->get_title() . '</a></strong><br/>' . $item->get_description() . '</p>'.PHP_EOL;
 			}
 			echo '<p><a style="text-decoration:none;" href="http://www.mapsmarker.com" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-website-home.png" width="16" height="16" alt="mapsmarker.com"> MapsMarker.com</a>&nbsp;&nbsp;&nbsp;
-			<a href="http://www.mapsmarker.com/donations" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-donations.png" width="16" height="16" alt="donations"> ' . __('donations','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a style="text-decoration:none;" href="http://wordpress.org/support/view/plugin-reviews/leaflet-maps-marker" target="_blank" title="' . esc_attr__('please rate this plugin on wordpress.org','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-star.png" width="16" height="16" alt="ratings"> ' . __('rate plugin','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="http://translate.mapsmarker.com/projects/lmm" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-translations.png" width="16" height="16" alt="translations"> ' . __('translations','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/robertharm/Leaflet-Maps-Marker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-github.png" width="16" height="16" alt="github"> github</a>&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/mapsmarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-twitter.png" width="16" height="16" alt="twitter"> Twitter</a>&nbsp;&nbsp;&nbsp;<a href="http://facebook.com/mapsmarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-facebook.png" width="16" height="16" alt="facebook"> Facebook</a>&nbsp;&nbsp;&nbsp;<a style="text-decoration:none;" href="http://www.mapsmarker.com/changelog" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-changelog-header.png" width="16" height="16" alt="changelog"> ' . __('Changelog','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="http://feeds.feedburner.com/MapsMarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss.png" width="16" height="16" alt="rss"> RSS</a>&nbsp;&nbsp;&nbsp;<a href="http://feedburner.google.com/fb/a/mailverify?uri=MapsMarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss-email.png" width="16" height="16" alt="rss-email"> ' . __('E-Mail','lmm') . '</a>&nbsp;&nbsp;&nbsp;</p>';
+			<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade' . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-up16.png" width="16" height="16" alt="upgrade to pro"> ' . __('Upgrade to Pro','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a style="text-decoration:none;" href="http://wordpress.org/support/view/plugin-reviews/leaflet-maps-marker" target="_blank" title="' . esc_attr__('please rate this plugin on wordpress.org','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-star.png" width="16" height="16" alt="ratings"> ' . __('rate plugin','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="http://translate.mapsmarker.com/projects/lmm" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-translations.png" width="16" height="16" alt="translations"> ' . __('translations','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/mapsmarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-twitter.png" width="16" height="16" alt="twitter"> Twitter</a>&nbsp;&nbsp;&nbsp;<a href="http://facebook.com/mapsmarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-facebook.png" width="16" height="16" alt="facebook"> Facebook</a>&nbsp;&nbsp;&nbsp;<a style="text-decoration:none;" href="http://www.mapsmarker.com/changelog" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-changelog-header.png" width="16" height="16" alt="changelog"> ' . __('Changelog','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a href="http://feeds.feedburner.com/MapsMarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss.png" width="16" height="16" alt="rss"> RSS</a>&nbsp;&nbsp;&nbsp;<a href="http://feedburner.google.com/fb/a/mailverify?uri=MapsMarker" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss-email.png" width="16" height="16" alt="rss-email"> ' . __('E-Mail','lmm') . '</a>&nbsp;&nbsp;&nbsp;</p>';
 	}
   }
   function lmm_dashboard_widget_control(){
@@ -352,9 +377,9 @@ function __construct() {
 	$page5 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('add/edit layer', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-add.png"> ' . $layer_menu_name, $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_layer', array(&$this, 'lmm_layer') );
 	$page6 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Tools', 'lmm'), '<hr noshade size="1"/>' . '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-tools.png"> ' . __('Tools', 'lmm'), 'activate_plugins','leafletmapsmarker_tools', array(&$this, 'lmm_tools') );
 	$page7 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Settings', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-settings.png"> ' . __('Settings', 'lmm'), 'activate_plugins','leafletmapsmarker_settings', array(&$this, 'lmm_settings') );
-	$page8 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Help & Credits', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-help.png"> ' . __('Help', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_help', array(&$this, 'lmm_help') );
+	$page8 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Support', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-help.png"> ' . __('Support', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_help', array(&$this, 'lmm_help') );
 	$page9 = add_submenu_page('leafletmapsmarker_markers', 'www.mapsmarker.com', '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-external.png"> ' . 'mapsmarker.com', $lmm_options[ 'capabilities_edit' ], 'www_mapsmarker_com', array(&$this, 'lmm_mapsmarker_com') );
-	$page10 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Upgrade to Pro', 'lmm'), '<hr noshade size="1"/>' . '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-up.png"> ' . __('Upgrade to Pro', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_pro_upgrade', array(&$this, 'lmm_pro_upgrade') );
+	$page10 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('Upgrade to Pro', 'lmm'), '<span style="background:#F99755;color:#000;padding:3px;"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-up.png"> ' . __('Upgrade to Pro', 'lmm') . '&nbsp;&nbsp;&nbsp;</span>', $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_pro_upgrade', array(&$this, 'lmm_pro_upgrade') );
 
 	//info: add javascript - leaflet.js - for admin area
 	add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_admin_enqueue_scripts'),7);
@@ -404,32 +429,32 @@ function __construct() {
 				array(
 					'id' => 'lmm',
 					'title' => '<img style="float:left;margin:3px 5px 0 0;" src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-tinymce.png"/></span> Maps Marker',
-					'href' => admin_url('admin.php?page=leafletmapsmarker_markers'),
+					'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers',
 					'meta' => array( 'title' => 'Wordpress-Plugin ' . __('by','lmm') . ' www.mapsmarker.com' )
 				),
 				array(
 					'id' => 'lmm-markers',
 					'parent' => 'lmm',
 					'title' => '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-list.png"> ' . __('List all markers','lmm'),
-					'href' => admin_url('admin.php?page=leafletmapsmarker_markers')
+					'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers'
 				),
 				array(
 					'id' => 'lmm-add-marker',
 					'parent' => 'lmm',
 					'title' => '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-add.png"> ' . __('Add new marker','lmm'),
-					'href' => admin_url('admin.php?page=leafletmapsmarker_marker')
+					'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker'
 				),
 				array(
 					'id' => 'lmm-layers',
 					'parent' => 'lmm',
 					'title' => '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-list.png"> ' . __('List all layers','lmm'),
-					'href' => admin_url('admin.php?page=leafletmapsmarker_layers')
+					'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layers'
 				),
 				array(
 					'id' => 'lmm-add-layers',
 					'parent' => 'lmm',
 					'title' => '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-add.png"> ' . __('Add new layer','lmm'),
-					'href' => admin_url('admin.php?page=leafletmapsmarker_layer')
+					'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_layer'
 				)
 			);
 			if ( current_user_can( 'activate_plugins' ) ) {
@@ -438,13 +463,13 @@ function __construct() {
 						'id' => 'lmm-tools',
 						'parent' => 'lmm',
 						'title' => '<hr style="margin:3px 0;" noshade size="1"/><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-tools.png"> ' . __('Tools','lmm'),
-						'href' => admin_url('admin.php?page=leafletmapsmarker_tools')
+						'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_tools'
 					),
 					array(
 						'id' => 'lmm-settings',
 						'parent' => 'lmm',
 						'title' => '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-settings.png"> ' . __('Settings','lmm'),
-						'href' => admin_url('admin.php?page=leafletmapsmarker_settings')
+						'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_settings'
 					)
 				));
 			}
@@ -452,8 +477,8 @@ function __construct() {
 					array(
 						'id' => 'lmm-help-credits',
 						'parent' => 'lmm',
-						'title' => '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-help.png"> ' . __('Help & Credits','lmm'),
-						'href' => admin_url('admin.php?page=leafletmapsmarker_help')
+						'title' => '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-help.png"> ' . __('Support','lmm'),
+						'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_help'
 					),
 					array(
 						'id' => 'lmm-plugin-website',
@@ -465,8 +490,8 @@ function __construct() {
 					array(
 						'id' => 'lmm-upgrade',
 						'parent' => 'lmm',
-						'title' => '<hr style="margin:3px 0;" noshade size="1"/><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-up.png"> ' . __('Upgrade to Pro','lmm'),
-						'href' => admin_url('admin.php?page=leafletmapsmarker_pro_upgrade')
+						'title' => '<span style="background:#F99755;color:#000;padding:3px;text-shadow:none;"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-up.png"> ' . __('Upgrade to Pro','lmm') . '&nbsp;&nbsp;</span>',
+						'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade'
 					)
 				));
 
@@ -484,8 +509,6 @@ function __construct() {
 	$helptext .= '<li><a href="http://www.mapsmarker.com/faq/" target="_blank">' . __('FAQ','lmm') . '</a> (' . __('frequently asked questions','lmm') . ')</li>';
 	$helptext .= '<li><a href="http://www.mapsmarker.com/docs/" target="_blank">' . __('Documentation','lmm') . '</a></li>';
 	$helptext .= '<li><a href="http://wordpress.org/support/plugin/leaflet-maps-marker" target="_blank">WordPress Support Forum</a> (' . __('free community support','lmm') . ')</li>';
-	$helptext .= '<li><a href="http://wpquestions.com/affiliates/register/name/robertharm" target="_blank">WP Questions</a> (' . __('paid community support','lmm') . ')</li>';
-	$helptext .= '<li><a href="http://wphelpcenter.com/" target="_blank">WordPress HelpCenter</a> (' . __('paid professional support','lmm') . ')</li>';
 	$helptext .= '</ul>';
 	$helptext .= '<p>' . __('More information on support','lmm') . ': <a href="http://www.mapsmarker.com/support/" target="_blank">http://www.mapsmarker.com/support</a></p>';
 	if ( version_compare( $wp_version, '3.3', '<' ) )

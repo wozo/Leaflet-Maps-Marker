@@ -253,7 +253,7 @@ For more information on translations of the plugin and how to contribute a new t
 
 = Trademark and copyright =
 MapsMarker &reg; - registration pending
-Copyright 2011-2012, Robert Harm, All Rights Reserved
+Copyright 2011-2013, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
 = v3.5 =
