@@ -79,7 +79,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		
+		undefined index message on adding new recent marker widget
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">

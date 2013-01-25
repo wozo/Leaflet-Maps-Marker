@@ -27,7 +27,9 @@ class Class_leaflet_recent_marker_widget extends WP_Widget {
 			'lmm-widget-orderby' => 'createdon',
 			'lmm-widget-orderby-sortorder' => 'desc',
 			'lmm-widget-georss' => 'on',
-			'lmm-widget-attributionlink' => 'on'
+			'lmm-widget-attributionlink' => 'on',
+			'lmm-widget-textbeforelist' => '',
+			'lmm-widget-textafterlist' => ''			
 		));
 		echo '<p><label for="lmm-widget-title">' . __('Title', 'lmm') . ':</label>';
 		echo '<input type="text" value="' . $instance['lmm-widget-title'] . '" name="' . $this->get_field_name('lmm-widget-title') . '" id="' . $this->get_field_id('lmm-widget-title') . '" class="widefat" /></p>';
@@ -78,6 +80,11 @@ class Class_leaflet_recent_marker_widget extends WP_Widget {
 		echo '<select name="' . $this->get_field_name('lmm-widget-orderby-sortorder') . '">';
 		echo '<option value="desc" ' . selected($orderbysortorder, 'desc', false) . '>' . __('desc','lmm') . '</option>';
 		echo '<option value="asc" ' . selected($orderbysortorder, 'asc', false) . '>' . __('asc','lmm') . '</option></select></p>';
+		echo '<hr style="border:0;height:1px;background-color:#d8d8d8;">';
+		echo '<p><div style="float:right"><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-feature-banner-small.png" width="68" height="9" border="0"></a></div><label for="lmm-widget-exclude-markers">' . __('Exclude markers', 'lmm') . ':</label>';
+		echo '<input type="text" value="' . esc_attr__('Feature available in pro version only','lmm') . '" name="" id="" class="widefat" disabled="disabled" readonly="readonly" /></p>';
+		echo '<p><div style="float:right"><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-feature-banner-small.png" width="68" height="9" border="0"></a></div><label for="lmm-widget-exclude-layers">' . __('Exclude layers', 'lmm') . ':</label>';
+		echo '<input type="text" value="' . esc_attr__('Feature available in pro version only','lmm') . '" name="" id="" class="widefat" disabled="disabled" readonly="readonly" /></p>';
 		echo '<hr style="border:0;height:1px;background-color:#d8d8d8;">';
 		echo '<p><label for="lmm-widget-textafterlist">' . __('Text after list of markers', 'lmm') . ':</label>';
 		echo '<input type="text" value="' . $instance['lmm-widget-textafterlist'] . '" name="' . $this->get_field_name('lmm-widget-textafterlist') . '" id="' . $this->get_field_id('lmm-widget-textafterlist') . '" class="widefat" /></p>';
