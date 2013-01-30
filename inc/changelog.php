@@ -90,7 +90,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
-		optimized total default marker icons size with Yahoo! Smush.it by 50kb (automatic for new installs only!)
+		optimized plugins total images size with Yahoo! Smush.it by 100kb (optimized marker icons for new installs only automatically!)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
