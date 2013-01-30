@@ -78,14 +78,29 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		option to disable global admin notices (showing plugin compatibilities or marker icon directory warnings for example)
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
+		improved performance for addming OSM edit link
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		added rel="nofollow" to Wikitude links to exclude user-irrelevant search results
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		optimized total default marker icons size with Yahoo! Smush.it by 50kb (automatic for new installs only!)
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		undefined index message on adding new recent marker widget
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		removed duplicate mapicons.zip (decreasing plugin size by 150kb)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
