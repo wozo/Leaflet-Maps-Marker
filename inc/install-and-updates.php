@@ -589,7 +589,7 @@ if (get_option('leafletmapsmarker_version') == '3.4.3' ) {
 }
 /* template for plugin updates 
 if (get_option('leafletmapsmarker_version') == '3.5' ) {
-	delete_transient( 'leafletmapsmarker_install_update_cache_v343'); //2do: update to version from line above
+	delete_transient( 'leafletmapsmarker_install_update_cache_v35'); //2do: update to version from line above
 	//2do - optional: add code for sql updates (no ddl - done by dbdelta!)
 	//2do - mandatory if new options in class-leaflet-options.php were added & update /inc/class-leaflet-options.php update routine
 	$save_defaults_for_new_options = new Class_leaflet_options();
