@@ -4,7 +4,7 @@ Plugin Name: Leaflet Maps Marker &reg;
 Plugin URI: http://www.mapsmarker.com
 Description: Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, APIs or Augmented-Reality browsers
 Tags: map, maps, Leaflet, OpenStreetMap, geoJSON, json, jsonp, OSM, travelblog, opendata, open data, opengov, open government, ogdwien, WMTS, geoRSS, location, geo, geo-mashup, geocoding, geolocation, travel, mapnick, osmarender, cloudmade, mapquest, geotag, geocaching, gpx, OpenLayers, mapping, bikemap, coordinates, geocode, geocoding, geotagging, latitude, longitude, position, route, tracks, google maps, googlemaps, gmaps, google map, google map short code, google map widget, google maps v3, google earth, gmaps, ar, augmented-reality, wikitude, wms, web map service, geocache, geocaching, qr, qr code, fullscreen, marker, marker icons, layer, multiple markers, karte, blogmap, geocms, geographic, routes, tracks, directions, navigation, routing, location plan, YOURS, yournavigation, ORS, openrouteservice, widget, bing, bing maps, microsoft, map short code, map widget, kml, cross-browser, fully documented, traffic, bike lanes, map short code, custom marker text, custom marker icons and text
-Version: 3.5
+Version: 3.5.1
 Author: Robert Harm
 Author URI: http://www.harm.co.at
 Donate link: http://www.mapsmarker.com/donations
@@ -570,13 +570,13 @@ function __construct() {
 	} else if ( (version_compare( $wp_version, '3.3', '<' )) || ((version_compare( $wp_version, '3.3', '>=' )) && ($lmm_options['misc_javascript_header_footer'] == 'header')) ) {
 		wp_enqueue_script( 'leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js', array('leafletmapsmarker-googlemaps-loader'), $plugin_version); 
 	}
-	wp_localize_script('leafletmapsmarker', 'leafletmapsmarker_L10n', array(
-		'lmm_zoom_in' => __( 'Zoom in', 'lmm' ),
-		'lmm_zoom_out' => __( 'Zoom out', 'lmm' ),
-		'lmm_googlemaps_language' => $google_language,
-		'lmm_googlemaps_libraries' => $gmaps_libraries,
-		'lmm_googlemaps_base_domain' => $gmaps_base_domain,
-		'lmm_bing_culture' => $bing_culture
+	wp_localize_script('leafletmapsmarker', 'mapsmarkerjs', array(
+		'zoom_in' => __( 'Zoom in', 'lmm' ),
+		'zoom_out' => __( 'Zoom out', 'lmm' ),
+		'googlemaps_language' => $google_language,
+		'googlemaps_libraries' => $gmaps_libraries,
+		'googlemaps_base_domain' => $gmaps_base_domain,
+		'bing_culture' => $bing_culture
 		) );
   }
   function lmm_admin_enqueue_scripts() {
@@ -609,13 +609,13 @@ function __construct() {
 	}
 	//info: load leaflet.js + plugins
 	wp_enqueue_script( 'leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.js', array('leafletmapsmarker-googlemaps-loader'), $plugin_version);
-	wp_localize_script('leafletmapsmarker', 'leafletmapsmarker_L10n', array(
-		'lmm_zoom_in' => __( 'Zoom in', 'lmm' ),
-		'lmm_zoom_out' => __( 'Zoom out', 'lmm' ),
-		'lmm_googlemaps_language' => $google_language,
-		'lmm_googlemaps_libraries' => $gmaps_libraries,
-		'lmm_googlemaps_base_domain' => $gmaps_base_domain,
-		'lmm_bing_culture' => $bing_culture
+	wp_localize_script('leafletmapsmarker', 'mapsmarkerjs', array(
+		'zoom_in' => __( 'Zoom in', 'lmm' ),
+		'zoom_out' => __( 'Zoom out', 'lmm' ),
+		'googlemaps_language' => $google_language,
+		'googlemaps_libraries' => $gmaps_libraries,
+		'googlemaps_base_domain' => $gmaps_base_domain,
+		'bing_culture' => $bing_culture
 		) );
   }
   function lmm_image_css_override() {
@@ -715,7 +715,7 @@ function __construct() {
    }
   function lmm_install_and_updates() {
 	//info: set transient to execute install & update-routine only once a day
-	$current_version = "v35"; //2do - mandatory: change on each update to new version!
+	$current_version = "v351"; //2do - mandatory: change on each update to new version!
 	$schedule_transient = 'leafletmapsmarker_install_update_cache_' . $current_version;
 	$install_update_schedule = get_transient( $schedule_transient );
 	if ( $install_update_schedule === FALSE ) {

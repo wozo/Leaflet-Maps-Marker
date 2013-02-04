@@ -126,7 +126,7 @@ if (isset($_GET['layer'])) {
 	}
 	$lmm_out .= '<script type="text/javascript">'.PHP_EOL;
 	$lmm_out .= '/* <![CDATA[ */'.PHP_EOL;
-	$lmm_out .= 'var leafletmapsmarker_L10n = {"lmm_zoom_in":"' . __('Zoom in','lmm') . '","lmm_zoom_out":"' . __('Zoom out','lmm') . '","lmm_googlemaps_language":"' . $google_language . '","lmm_googlemaps_libraries":"' . $gmaps_libraries . '","lmm_googlemaps_base_domain":"' . $gmaps_base_domain . '","lmm_bing_culture":"' . $bing_culture . '"};'.PHP_EOL;
+	$lmm_out .= 'var mapsmarkerjs = {"zoom_in":"' . __('Zoom in','lmm') . '","zoom_out":"' . __('Zoom out','lmm') . '","googlemaps_language":"' . $google_language . '","googlemaps_libraries":"' . $gmaps_libraries . '","googlemaps_base_domain":"' . $gmaps_base_domain . '","bing_culture":"' . $bing_culture . '"};'.PHP_EOL;
 	$lmm_out .= '/* ]]> */'.PHP_EOL;
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<style>form { margin: 0 ; } </style>'.PHP_EOL; //info: for layer controlbox
@@ -610,7 +610,7 @@ elseif (isset($_GET['marker'])) {
 	}
 	$lmm_out .= '<script type="text/javascript">'.PHP_EOL;
 	$lmm_out .= '/* <![CDATA[ */'.PHP_EOL;
-	$lmm_out .= 'var leafletmapsmarker_L10n = {"lmm_zoom_in":"' . __('Zoom in','lmm') . '","lmm_zoom_out":"' . __('Zoom out','lmm') . '","lmm_googlemaps_language":"' . $google_language . '","lmm_googlemaps_libraries":"' . $gmaps_libraries . '","lmm_googlemaps_base_domain":"' . $gmaps_base_domain . '","lmm_bing_culture":"' . $bing_culture . '"};'.PHP_EOL;
+	$lmm_out .= 'var mapsmarkerjs = {"zoom_in":"' . __('Zoom in','lmm') . '","zoom_out":"' . __('Zoom out','lmm') . '","googlemaps_language":"' . $google_language . '","googlemaps_libraries":"' . $gmaps_libraries . '","googlemaps_base_domain":"' . $gmaps_base_domain . '","bing_culture":"' . $bing_culture . '"};'.PHP_EOL;
 	$lmm_out .= '/* ]]> */'.PHP_EOL;
 	$lmm_out .= '</script>'.PHP_EOL;
 	$lmm_out .= '<style>form { margin: 0 ; } </style>'.PHP_EOL; //info: for layer controlbox
