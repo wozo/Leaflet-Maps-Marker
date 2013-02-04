@@ -99,6 +99,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		update jQuery-Timepicker-Addon to v1.2 and compress file with jscompress.com
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		update jQuery for TinyMCE-button to v1.8.3
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		custom icon directory could not be set (thanks burgerdev for reporting!)
