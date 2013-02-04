@@ -6256,7 +6256,7 @@ class Class_leaflet_options {
 			'version' => 'p1.0',
 			'pane'    => 'google',
 			'section' => 'google-section6',
-			'title'   => 'Google Adsense' . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'title'   => 'Google Adsense<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
 			'desc'    => __('Please set to disabled if you do not want to display ads on Google basemaps','lmm') . '<a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-adsense.jpg" />',
 			'type'    => 'radio-pro',
 			'std'     => 'disabled',
@@ -6298,7 +6298,7 @@ class Class_leaflet_options {
 			'version' => 'p1.0',
 			'pane'    => 'google',
 			'section' => 'google-section6',
-			'title'   => __('Position','lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" />',
+			'title'   => __('Position','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
 			'desc'    => '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-google-adsense-positions.jpg" />',
 			'type'    => 'radio-pro',
 			'std'     => 'TOP_CENTER',
@@ -6321,7 +6321,7 @@ class Class_leaflet_options {
 			'version' => 'p1.0',
 			'pane'    => 'google',
 			'section' => 'google-section6',
-			'title'   => 'backgroundColor<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" />',
+			'title'   => 'backgroundColor<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
 			'desc'    => __('Ad unit background color','lmm'),
 			'std'     => '#c4d4f3',
 			'type'    => 'text-pro'
@@ -6330,7 +6330,7 @@ class Class_leaflet_options {
 			'version' => 'p1.0',
 			'pane'    => 'google',
 			'section' => 'google-section6',
-			'title'   => 'borderColor<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" />',
+			'title'   => 'borderColor<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
 			'desc'    => __('Ad unit border color','lmm'),
 			'std'     => '#e5ecf9',
 			'type'    => 'text-pro'
@@ -6339,7 +6339,7 @@ class Class_leaflet_options {
 			'version' => 'p1.0',
 			'pane'    => 'google',
 			'section' => 'google-section6',
-			'title'   => 'titleColor<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" />',
+			'title'   => 'titleColor<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
 			'desc'    => __('Ad title link color','lmm'),
 			'std'     => '#0000cc',
 			'type'    => 'text-pro'
@@ -6349,7 +6349,7 @@ class Class_leaflet_options {
 
 			'pane'    => 'google',
 			'section' => 'google-section6',
-			'title'   => 'textColor<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" />',
+			'title'   => 'textColor<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
 			'desc'    => __('Ad creative text color','lmm'),
 			'std'     => '#000000',
 			'type'    => 'text-pro'
@@ -6358,17 +6358,26 @@ class Class_leaflet_options {
 			'version' => 'p1.0',
 			'pane'    => 'google',
 			'section' => 'google-section6',
-			'title'   => 'urlColor<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" />',
+			'title'   => 'urlColor<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
 			'desc'    => __('Ad attribution URL link color','lmm'),
 			'std'     => '#009900',
 			'type'    => 'text-pro'
 		);				
+		$this->settings['google_adsense_channelNumber'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'google',
+			'section' => 'google-section6',
+			'title'   => 'channelNumber<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('The AdSense For Content channel number for tracking the performance of this AdUnit. It must be stored as a string as it will typically be a large UINT64.','lmm'),
+			'std'     => '',
+			'type'    => 'text-pro'
+		);		
 		$this->settings['google_adsense_publisherId'] = array(
 			'version' => 'p1.0',
 			'pane'    => 'google',
 			'section' => 'google-section6',
-			'title'   => 'publisherId<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" />',
-			'desc'    => sprintf(__('Adding display ads to your map requires that you have an AdSense account enabled for AdSense for Content. If you do not yet have an AdSense account, <a href="%1s" target="_blank">sign up for one</a>. Once you have done so (or if you already have an account) make sure you have also enabled the account with <a href="%2s" target="_blank">AdSense for Content</a>. Once you have an Adsense for Content account, you will have received an AdSense for Content (AFC) publisher ID. This publisher ID is used within your code to link any advertising shown to your AdSense account, allowing you to share in advertising revenue when a user clicks on one of the ads shown on your map.<br/>By default, the publisherID of the plugins author is used. If you do not want to support the free edition of this plugin, please enter your publisherID or disable the display Google Adsense for maps above.','lmm'), 'https://www.google.com/adsense/support/bin/answer.py?answer=10162', 'https://www.google.com/adsense/support/bin/answer.py?hl=en&answer=17470'),
+			'title'   => 'publisherId<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => sprintf(__('Adding display ads to your map requires that you have an AdSense account enabled for AdSense for Content. If you do not yet have an AdSense account, <a href="%1s" target="_blank">sign up for one</a>. Once you have done so (or if you already have an account) make sure you have also enabled the account with <a href="%2s" target="_blank">AdSense for Content</a>. Once you have an Adsense for Content account, you will have received an AdSense for Content (AFC) publisher ID. This publisher ID is used within your code to link any advertising shown to your AdSense account, allowing you to share in advertising revenue when a user clicks on one of the ads shown on your map.','lmm'), 'https://www.google.com/adsense/support/bin/answer.py?answer=10162', 'https://www.google.com/adsense/support/bin/answer.py?hl=en&answer=17470'),
 			'std'     => 'pub-4906650925210476',
 			'type'    => 'text-pro'
 		);	
