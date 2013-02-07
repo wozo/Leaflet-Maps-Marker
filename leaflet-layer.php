@@ -10,7 +10,16 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-layer.php') { die ("Please
 <?php
 global $wpdb;
 $lmm_options = get_option( 'leafletmapsmarker_options' );
-$defaults_marker_icon_url = $lmm_options['defaults_marker_icon_url'];
+//info: set marker shadow url
+if ( $lmm_options['defaults_marker_icon_shadow_url_status'] == 'default' ) {
+	if ( $lmm_options['defaults_marker_icon_shadow_url'] == NULL ) {
+		$marker_shadow_url = '';
+	} else {
+		$marker_shadow_url = LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker-shadow.png';
+	}
+} else {
+	$marker_shadow_url = htmlspecialchars($lmm_options['defaults_marker_icon_shadow_url']);
+}
 $current_editor = get_option( 'leafletmapsmarker_editor' );
 $new_editor = isset($_GET['new_editor']) ? $_GET['new_editor'] : '';
 $current_editor_css = ($current_editor == 'simplified') ? 'display:none;' : '';
@@ -468,7 +477,7 @@ echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.
 						if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_icon' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_icon' ] == 1 ) ) {
 							echo '<tr><td style="width:35px;vertical-align:top;text-align:center;' . $lmm_options[ 'defaults_layer_listmarkers_extracss' ] . '">';
 							if ($row['micon'] != null) { 
-								echo '<img src="' . $defaults_marker_icon_url . '/'.$row['micon'].'" title="' . stripslashes(htmlspecialchars($row['markername'])) . '" />'; 
+								echo '<img src="' . LEAFLET_PLUGIN_ICONS_URL . '/'.$row['micon'].'" title="' . stripslashes(htmlspecialchars($row['markername'])) . '" />'; 
 							} else { 
 								echo '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png" title="' . stripslashes(htmlspecialchars($row['markername'])) . '" />';
 							};
@@ -849,7 +858,7 @@ $markernonce = wp_create_nonce('marker-nonce'); //info: for delete-links
       <td>'.$row['markerid'].'</td>
       <td>';
       if ($row['micon'] != null) { 
-         echo '<img src="' . $defaults_marker_icon_url . '/'.$row['micon'].'" title="'.$row['micon'].'" />'; 
+         echo '<img src="' . LEAFLET_PLUGIN_ICONS_URL . '/'.$row['micon'].'" title="'.$row['micon'].'" />'; 
          } else { 
          echo '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png" title="' . esc_attr__('standard icon','lmm') . '" />';};
       echo '</td>
@@ -1135,7 +1144,7 @@ var markers = {};
 	  echo 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?layer=' . $id . '", async: false, cache: false}).responseText + ")");';
   } else if ($multi_layer_map == 1) {
 	  echo 'geojsonObj = eval("(" + jQuery.ajax({url: "' . LEAFLET_PLUGIN_URL . 'leaflet-geojson.php?layer=' . $multi_layer_map_list . '", async: false, cache: false}).responseText + ")");';
-  };?>
+  }; ?>
 	L.geoJson(geojsonObj, {
 		onEachFeature: function(feature, marker) {
 			if (feature.properties.text != '') {
@@ -1151,11 +1160,11 @@ var markers = {};
 		},
 		pointToLayer: function (feature, latlng) {
 			mapIcon = L.icon({ 
-				iconUrl: (feature.properties.icon != '') ? "<?php echo $defaults_marker_icon_url ?>/" + feature.properties.icon : "<?php echo LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' ?>",
+				iconUrl: (feature.properties.icon != '') ? "<?php echo LEAFLET_PLUGIN_ICONS_URL ?>/" + feature.properties.icon : "<?php echo LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' ?>",
 				iconSize: [<?php echo intval($lmm_options[ 'defaults_marker_icon_iconsize_x' ]); ?>, <?php echo intval($lmm_options[ 'defaults_marker_icon_iconsize_y' ]); ?>],
 				iconAnchor: [<?php echo intval($lmm_options[ 'defaults_marker_icon_iconanchor_x' ]); ?>, <?php echo intval($lmm_options[ 'defaults_marker_icon_iconanchor_y' ]); ?>],
 				popupAnchor: [<?php echo intval($lmm_options[ 'defaults_marker_icon_popupanchor_x' ]); ?>, <?php echo intval($lmm_options[ 'defaults_marker_icon_popupanchor_y' ]); ?>],
-				shadowUrl: '<?php echo htmlspecialchars($lmm_options[ 'defaults_marker_icon_shadow_url' ]); ?>',
+				shadowUrl: '<?php echo $marker_shadow_url; ?>',
 				shadowSize: [<?php echo intval($lmm_options[ 'defaults_marker_icon_shadowsize_x' ]); ?>, <?php echo intval($lmm_options[ 'defaults_marker_icon_shadowsize_y' ]); ?>],
 				shadowAnchor: [<?php echo intval($lmm_options[ 'defaults_marker_icon_shadowanchor_x' ]); ?>, <?php echo intval($lmm_options[ 'defaults_marker_icon_shadowanchor_y' ]); ?>],
 				className: (feature.properties.icon == '') ? "lmm_marker_icon_default" : "lmm_marker_icon_"+ feature.properties.icon.slice(0,-4)
