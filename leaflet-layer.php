@@ -100,7 +100,7 @@ if (!empty($action)) {
 		$panel_checkbox = isset($_POST['panel']) ? '1' : '0';
 		$layername_quotes = str_replace("\"", "'", $_POST['name']);
 		$multi_layer_map_checkbox = isset($_POST['multi_layer_map']) ? '1' : '0';
-		$multi_layer_map_edit_link = ($_POST['multi_layer_map'] == 0) ? '<a class=\'button-primary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&addtoLayer=' . intval($_POST['id']) . '&Layername=' . urlencode($_POST['name']) . '\'>' . __('add new marker to this layer','lmm') . '</a>&nbsp;&nbsp;&nbsp;' : '';
+		$multi_layer_map_edit_link = ($multi_layer_map_checkbox == 0) ? '<a class=\'button-primary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&addtoLayer=' . intval($_POST['id']) . '&Layername=' . urlencode($_POST['name']) . '\'>' . __('add new marker to this layer','lmm') . '</a>&nbsp;&nbsp;&nbsp;' : '';
 		$mlm_checked_imploded = isset($_POST['mlm-all']) ? 'all' : '';
 		if ($mlm_checked_imploded != 'all') {
 			$mlm_checked_temp = '';

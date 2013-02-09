@@ -1206,7 +1206,7 @@ class Class_leaflet_options {
 			'version' => 'p1.0',
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section5',
-			'title'   => __('Use custom icon directory','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'title'   => __('Use custom icon URL and directory','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
 			'desc'    => __('If set to yes, please be aware that the pro settings below have to be changed when you move your WordPress installation to another server for example!','lmm') . '<a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a>',
 			'type'    => 'radio-pro',
 			'std'     => 'no',
@@ -1220,7 +1220,7 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section5',
 			'title'   => __( 'Custom icons URL', 'lmm' ) . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
-			'desc'    => __( 'Icons copied to this directory will automatically be available when creating or editing marker maps', 'lmm' ) . __('currently used marker icon url:','lmm') . '<br/><strong>' . LEAFLET_PLUGIN_ICONS_URL . '</strong>',
+			'desc'    => __( 'If the option above is set to yes, icons will automatically be loaded from this URL. If the option above is set to no, the following marker icons url will be used:','lmm') . '<br/><strong>' . LEAFLET_PLUGIN_ICONS_URL . '</strong>',
 			'std'     => __('Custom directories can be set in the pro version only!','lmm'),
 			'type'    => 'text-pro'
 		);		
@@ -1229,7 +1229,7 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section5',
 			'title'   => __( 'Custom icons directory', 'lmm' ) . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
-			'desc'    => __( 'Directory on server where icons are stored - needed especially for WordPress Multisite blogs', 'lmm' ) . __('currently used icons directory:','lmm') . '<br/><strong>' . LEAFLET_PLUGIN_ICONS_DIR . '</strong>',
+			'desc'    => __( 'If option above is set to yes, the directory on server where icons are stored will be used (needed for backend only). If the option above is set to no, the following marker icons directory will be used:','lmm') . '<br/><strong>' . LEAFLET_PLUGIN_ICONS_DIR . '</strong>',
 			'std'     => __('Custom directories can be set in the pro version only!','lmm'),
 			'type'    => 'text-pro'
 		);	
@@ -1269,7 +1269,7 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section5',
 			'title'   => __('Marker tooltip','lmm') . '<br/><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-marker-title.jpg">',
-			'desc'    => __('Show marker name for the browser tooltip that appear on marker hover (tooltip is always hidden if marker name is empty).','lmm'),
+			'desc'    => __('Show marker name for the browser tooltip that appear on marker hover (tooltip is always hidden if marker name is empty). Please be aware that this settings has to be changed when you move your WordPress installation to another server for example!','lmm'),
 			'type'    => 'radio',
 			'std'     => 'show',
 			'choices' => array(

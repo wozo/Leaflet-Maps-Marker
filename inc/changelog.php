@@ -78,10 +78,15 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td><td>
 		added rel="nofollow" to Wikitude links to exclude user-irrelevant search results
 		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		undefined index message when saving layers with debug enabled on older WordPress versions
+		</td></tr>
 		</table>'.PHP_EOL;
 
 	if ( ( $lmm_version_old < '3.5.2' ) && ( $lmm_version_old > '0' ) ) {
-		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.5.2') . '</strong> - ' . __('released on','lmm') . ' 08.02.2013 (<a href="http://www.mapsmarker.com/v3.5.2" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
+		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.5.2') . '</strong> - ' . __('released on','lmm') . ' 09.02.2013 (<a href="http://www.mapsmarker.com/v3.5.2" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
