@@ -83,6 +83,16 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td><td>
 		undefined index message when saving layers with debug enabled on older WordPress versions
 		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated Bengali translation thanks to Nur Hasan, <a href="http://www.answersbd.com" target="_blank">http://www.answersbd.com</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated German translation
+		</td></tr>
 		</table>'.PHP_EOL;
 
 	if ( ( $lmm_version_old < '3.5.2' ) && ( $lmm_version_old > '0' ) ) {
