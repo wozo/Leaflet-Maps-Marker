@@ -71,6 +71,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
+		use custom QR codes with background image thanks to <a href="http://www.visualead.com" target="_blank">Visualead.com</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
 		URL parameter full_icon_url for GeoJSON API to easier embedd maps on external sites
 		</td></tr>
 		<tr><td>
