@@ -48,6 +48,7 @@ class Class_leaflet_options {
 		$this->sections['mapdefaults-section13']	= esc_attr__('Control options','lmm');
 		$this->sections['mapdefaults-section14']	= esc_attr__('Scale control','lmm');
 		$this->sections['mapdefaults-section15']	= esc_attr__('Retina display detection','lmm');
+		$this->sections['mapdefaults-section16']	= esc_attr__('Mobile web app settings','lmm');
 	
 		$this->sections['basemaps-section1']		= esc_attr__('Cloudmade 1 settings','lmm');
 		$this->sections['basemaps-section2']		= esc_attr__('Cloudmade 2 settings','lmm');
@@ -2563,7 +2564,132 @@ class Class_leaflet_options {
 			'desc'    => '<div style="height:430px;"></div>',
 			'type'    => 'helptext'
 		);			
-		
+		/*
+		* Mobile web app detection
+		*/
+		$this->settings['map_webapp_helptext'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'Fullscreen maps are optimized for mobile devices in the pro version. This means that the viewport of the map automatically adjusts to the width of the device used and native javascript is used instead of jQuery which results in higher performance when loading maps.<br/><br/>For iOS devices (iphone, ipad, ipod) it is also possible to add maps with a custom icon to the homescreen and open them as web apps with a custom launch image and without the address bar of the browser.', 'lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-webapp.jpg" />'  . '<a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a>',
+			'type'    => 'helptext'
+		);	
+		$this->settings['map_webapp_images'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('Images to use','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('If you want to use custom images, please enter the URL to app icons and launch images below:','lmm'),
+			'type'    => 'radio-pro',
+			'std'     => 'default',
+			'choices' => array(
+				'none' => __('disable images','lmm'),
+				'default' => __('use default images','lmm'),
+				'custom' => __('use custom images','lmm')
+			)
+		);	
+		$this->settings['map_webapp_icon57'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('App icon URL','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('Size for iPhone and iPod touch','lmm') . ' (57x57px)',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->settings['map_webapp_icon114'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('App icon URL','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('Size for high-resolution iPhone and iPod touch','lmm') . ' (114x114px)',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->settings['map_webapp_icon72'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('App icon URL','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('Size for iPad','lmm') . ' (72x72px)',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->settings['map_webapp_icon144'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('App icon URL','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('Size for high-resolution iPad','lmm') . ' (144x144px)',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->settings['map_webapp_launch1024'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('Launch image URL','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('Size for iPad','lmm') . ' (1024x748px)',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->settings['map_webapp_launch2048'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('Launch image URL','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('Size for high-resolution iPad','lmm') . ' (2048x1496px)',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->settings['map_webapp_launch768'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('Launch image URL','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('Size for iPad','lmm') . ' (768x1004px)',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->settings['map_webapp_launch1536'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('Launch image URL','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('Size for high-resolution iPad','lmm') . ' (1536x2008px)',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->settings['map_webapp_launch320'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('Launch image URL','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('Size for iPhone and iPod touch','lmm') . ' (320x460px)',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->settings['map_webapp_launch640'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('Launch image URL','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('Size for high-resolution iPhone and iPod touch','lmm') . ' (640x920px)',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->settings['map_webapp_launch640_1096'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section16',
+			'title'   => __('Launch image URL','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => __('Size for iPhone 5 and iPod 5','lmm') . ' (640x1096px)',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+				
 		/*===========================================
 		*
 		*
@@ -6296,7 +6422,7 @@ class Class_leaflet_options {
 			'version' => 'p1.0',
 			'pane'    => 'google',
 			'section' => 'google-section6',
-			'title'   => __('Format','lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" />',
+			'title'   => __('Format','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
 			'desc'    => sprintf(__('Display formats of type google.maps.adsense.AdFormat, both text ads and link units are supported. Please see %1s for more details and examples','lmm'),'<a href="https://support.google.com/adsense/bin/answer.py?hl=de&utm_medium=link&utm_campaign=ww-ww-et-asfe_&utm_source=aso&answer=185665" target="_blank">https://support.google.com/adsense/...</a>'),
 			'type'    => 'radio-pro',
 			'std'     => 'HALF_BANNER',
