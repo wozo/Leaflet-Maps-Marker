@@ -55,6 +55,4 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-pro-upgrade.php') { die ("
 		</form>
 </div>
 <!--wrap-->
-<?php }
-include('inc' . DIRECTORY_SEPARATOR . 'admin-footer.php');
-?>
+<?php } ?>

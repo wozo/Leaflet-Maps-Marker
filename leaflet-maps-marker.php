@@ -175,6 +175,8 @@ function __construct() {
 	$changelog_url = '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers' . '" style="text-decoration:none;">' . __('changelog','lmm') . '</a>';
 	$blogpost_url = '<a href="http://www.mapsmarker.com/v' . $lmm_version_new . '" target="_blank" style="text-decoration:none;">mapsmarker.com</a>';
 	$pointer_content .= '<p>' . sprintf(__('Please see the %1s for new features or the blog post on %2s for more details','lmm'), $changelog_url, $blogpost_url) . '</p>';
+	$pointer_content .= '<hr noshade size="1"><p><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-upgrade.png"></a></p>';
+	$pointer_content .= '<p><a style="background:#f99755;display:block;padding:5px;text-decoration:none;color:#2702c6;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('Upgrade to pro version for more features, higher performance and more! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a></p>';
   ?>
 	<script type="text/javascript">// <![CDATA[
 	jQuery(document).ready(function($) {
@@ -410,6 +412,7 @@ function __construct() {
 	add_action('admin_print_scripts-'.$page6, array(&$this, 'lmm_add_contextual_help'));
 	add_action('admin_print_scripts-'.$page7, array(&$this, 'lmm_add_contextual_help'));
 	add_action('admin_print_scripts-'.$page8, array(&$this, 'lmm_add_contextual_help'));
+	add_action('admin_print_scripts-'.$page10, array(&$this, 'lmm_add_contextual_help'));
 	//info: add jquery datepicker on marker page
 	add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_admin_enqueue_scripts_jquerydatepicker'));
 	//info: add image css override for marker+layer edit page
@@ -515,7 +518,8 @@ function __construct() {
 	$helptext .= '<li><a href="http://www.mapsmarker.com/docs/" target="_blank">' . __('Documentation','lmm') . '</a></li>';
 	$helptext .= '<li><a href="http://wordpress.org/support/plugin/leaflet-maps-marker" target="_blank">WordPress Support Forum</a> (' . __('free community support','lmm') . ')</li>';
 	$helptext .= '</ul>';
-	$helptext .= '<p>' . __('More information on support','lmm') . ': <a href="http://www.mapsmarker.com/support/" target="_blank">http://www.mapsmarker.com/support</a></p>';
+	$helptext .= '<a style="background:#f99755;display:block;padding:5px 5px 5px 10px;text-decoration:none;color:#2702c6;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 
+'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('If you want to get dedicated 1:1 support from the plugin author, please upgrade to the pro version. Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a>';
 	if ( version_compare( $wp_version, '3.3', '<' ) )
 	{
 		global $current_screen;

@@ -84,6 +84,7 @@ class Class_leaflet_options {
 		$this->sections['google-section4']			= esc_attr__('Google Places bounds','lmm');
 		$this->sections['google-section5']			= esc_attr__('Google Places search prefix','lmm');
 		$this->sections['google-section6']			= esc_attr__('Google Adsense settings','lmm');
+		$this->sections['google-section7']			= esc_attr__('Google Maps styling','lmm');
 
 		$this->sections['bing-section1']			= esc_attr__('Bing Maps API Key','lmm');
 		$this->sections['bing-section2']			= esc_attr__('Bing Culture Parameter','lmm');
@@ -6534,7 +6535,27 @@ class Class_leaflet_options {
 			'std'     => 'pub-4906650925210476',
 			'type'    => 'text-pro'
 		);	
-				
+		/*
+		* Google Maps styling
+		*/
+		$this->settings['google_styling_helptext1'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'google',
+			'section' => 'google-section7',
+			'std'     => '', 
+			'title'   => '',
+			'desc'    => __( 'Styled maps allow you to customize the presentation of the standard Google base maps, changing the visual display of such elements as roads, parks, and built-up areas.', 'lmm') . '<br/><a href="http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/examplestyles.html" target="_blank" title="' . esc_attr__('show examples','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-google-styling-preview.jpg" /></a><a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a>',
+			'type'    => 'helptext'
+		);
+		$this->settings['google_styling_json'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'google',
+			'section' => 'google-section7',
+			'title'   => 'JSON<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" /></a>',
+			'desc'    => sprintf(__('Please enter the custom JSON array to style your Google maps (you can use the <a href="%1s" target="_blank">Google Styled Maps Wizard</a> to create custom styles easily). Example for hiding roads:','lmm'), 'http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html') . ' <br/><strong>[ { &#39;featureType&#39;: &#39;road.highway&#39;, &#39;elementType&#39;: &#39;geometry&#39;, &#39;stylers&#39;: [ { &#39;visibility&#39;: &#39;off&#39; } ] },{ &#39;featureType&#39;: &#39;road.arterial&#39;, &#39;stylers&#39;: [ { &#39;visibility&#39;: &#39;off&#39; } ] },{ &#39;featureType&#39;: &#39;road.local&#39;, &#39;stylers&#39;: [ { &#39;visibility&#39;: &#39;off&#39; } ] } ]</strong>',
+			'std'     => '',
+			'type'    => 'text-pro'
+		);				
 		/*===========================================
 		*
 		*
