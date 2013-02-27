@@ -94,6 +94,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		compatibility check for Lazy Load plugin now only shows warning if javascript inclusion is set to header or WordPress <3.3 is used
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		removed trailing whitespaces from all plugin files
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		undefined index message when saving layers with debug enabled on older WordPress versions
