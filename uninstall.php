@@ -75,7 +75,7 @@ if (is_multisite()) {
 				}
 		}
 	}
-} 
+}
 else
 {
 	//info: delete transients (needed for reinstalls within validity of transients)
@@ -109,7 +109,7 @@ else
 				unlink($v);
 			}
 		rmdir($icons_directory);
-		}			
+		}
 	}
 }
 ?>
