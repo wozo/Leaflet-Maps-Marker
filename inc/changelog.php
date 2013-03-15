@@ -84,6 +84,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		URL parameter full_icon_url for GeoJSON API to easier embedd maps on external sites
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
+		Compatibility check for Daily Stat plugin (which is causing settings page to break)
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		added rel="nofollow" to Wikitude links to exclude user-irrelevant search results
@@ -102,6 +107,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		undefined index message when saving layers with debug enabled on older WordPress versions
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		warning message on login screen with debug enabled when custom plugin translation was set
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">

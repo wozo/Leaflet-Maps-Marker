@@ -308,6 +308,7 @@ class Leafletmapsmarker
 	}
 	function lmm_set_plugin_locale( $lang ) {
 		$lmm_options = get_option( 'leafletmapsmarker_options' );
+		global $locale;
 		if ($lmm_options['misc_plugin_language_area'] == 'backend') {
 			return is_admin() ? $lmm_options['misc_plugin_language'] : $locale;
 		} else if ($lmm_options['misc_plugin_language_area'] == 'frontend') {

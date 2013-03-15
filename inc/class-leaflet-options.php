@@ -2427,7 +2427,7 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section13',
 			'title'   => 'zoomControl',
-			'desc'    => __('Whether the zoom control is added to the map by default.','lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-zoomcontrol.jpg" />',
+			'desc'    => __('Whether the zoom control is added to the map by default.','lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-zoomcontrol.png" />',
 			'type'    => 'radio',
 			'std'     => 'true',
 			'choices' => array(
@@ -2435,6 +2435,19 @@ class Class_leaflet_options {
 				'false' => __('false','lmm')
 			)
 		);
+		$this->settings['map_fullscreen_button'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section13',
+			'title'   => __('Fullscreen button','lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" />',
+			'desc'    => __('Whether to add a button for displaying maps in fullscreen via HTML5','lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-fullscreen.png" /><a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a>',
+			'type'    => 'radio-pro',
+			'std'     => 'false',
+			'choices' => array(
+				'true' => __('true','lmm'),
+				'false' => __('false','lmm'),
+			)
+		);		
 		$this->settings['map_control_options_helptext2'] = array(
 			'version' => '2.7.1',
 			'pane'    => 'mapdefaults',
