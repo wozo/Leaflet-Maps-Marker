@@ -114,6 +114,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		warning message on login screen with debug enabled when custom plugin translation was set
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		update pointer was broken if translations with apostrophes were loaded (thx joke2k!)
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
 		</td><td>
 		updated Bengali translation thanks to Nur Hasan, <a href="http://www.answersbd.com" target="_blank">http://www.answersbd.com</a>
