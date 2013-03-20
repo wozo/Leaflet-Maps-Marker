@@ -119,6 +119,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		update pointer was broken if translations with apostrophes were loaded (thx joke2k!)
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		OSM edit link was not added on fullscreen marker maps
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
 		</td><td>
 		updated Bengali translation thanks to Nur Hasan, <a href="http://www.answersbd.com" target="_blank">http://www.answersbd.com</a>
