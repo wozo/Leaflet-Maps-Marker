@@ -86,7 +86,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
-		automatic redirect to maps after saving for enhanced usability (thx Pat!)
+		automatic redirect to maps after saving and editor switch for enhanced usability (thx Pat!)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
