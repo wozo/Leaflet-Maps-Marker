@@ -181,6 +181,58 @@ $layerlist = $wpdb->get_results('SELECT * FROM ' . $table_name_layers . ' WHERE 
 <h3 style="font-size:23px;"><?php _e('Tools','lmm'); ?></h3>
 <?php $nonce= wp_create_nonce('tool-nonce'); ?>
 <form method="post">
+<input type="hidden" name="action" value="update-settings" />
+<?php wp_nonce_field('tool-nonce'); 
+$serialized_options = serialize($lmm_options);
+?>
+<table class="widefat" style="width:100%;height:100px;">
+	<tr style="background-color:#efefef;">
+		<td colspan="2"><strong><?php _e('Backup/Restore settings','lmm'); ?> <a href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_pro_upgrade" title="<?php esc_attr_e('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') ?>"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/help-pro-feature.png" /></a></strong></td>
+	</tr>
+	<tr>
+		<td style="vertical-align:top;">
+		<p><?php _e('Below you find you current settings. Use copy and paste to make a backup or restore.','lmm'); ?></p>
+		<?php 
+		global $wp_version;
+		if ( version_compare( $wp_version, '3.3', '>=' ) ) {
+				$settings_tinymce = array(
+				'wpautop' => false,
+				'media_buttons' => false,
+				'tinymce' => array(
+				 ),
+				'quicktags' => false
+				);
+				wp_editor( $serialized_options, 'settings-array', $settings_tinymce);
+		} else { 
+			if (function_exists( 'wp_tiny_mce' ) ) {
+				add_filter( 'teeny_mce_before_init', create_function( '$a', '
+				$a["height"] = "110";
+				$a["width"] = "640";
+				$a["editor_selector"] = "mceEditor";
+				$a["force_br_newlines"] = false;
+				$a["force_p_newlines"] = false;
+				$a["convert_newlines_to_brs"] = false;
+				return $a;'));
+				wp_tiny_mce(true);
+			}
+			echo '<textarea id="settings-array" name="settings-array">' . $serialized_options . '</textarea>';
+		}
+		echo '<div style="margin:10px 0;"><strong><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a></strong></div>';
+		?>
+		<script type="text/javascript">
+			(function($) {
+				$("#settings-array").click(function(){
+					this.select();
+				});
+			})(jQuery);
+		</script>
+		</td>
+	</tr>
+</table>
+</form>
+<br/><br/>
+<?php $nonce= wp_create_nonce('tool-nonce'); ?>
+<form method="post">
 <input type="hidden" name="action" value="mass_assign" />
 <?php wp_nonce_field('tool-nonce'); ?>
 <table class="widefat fixed" style="width:auto;">

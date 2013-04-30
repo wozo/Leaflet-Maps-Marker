@@ -8422,6 +8422,15 @@ class Class_leaflet_options {
 		*
 		*
 		===========================================*/
+		$this->_settings['reset_helptext'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'misc',
+			'section' => 'reset-section1',
+			'std'     => '',
+			'title'   => '',
+			'desc'    => '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-feature.png" /></a> ' . sprintf(__('You can backup your current settings on the <a href="%1$s">tools page</a> before resetting all options to their default values.','lmm'), LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_tools'),
+			'type'    => 'helptext'
+		);
 		$this->_settings['reset_settings'] = array(
 			'version' => '1.0',
 			'pane'    => 'reset',
