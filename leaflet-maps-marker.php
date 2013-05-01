@@ -135,7 +135,7 @@ class Leafletmapsmarker
 			$googleplus_link = '<a href="http://www.mapsmarker.com/+" target="_blank" title="' . esc_attr__('Follow MapsMarker on Google+','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-google-plus.png" width="16" height="16" alt="google+"></a>';
 			$rss_link = '<a href="http://feeds.feedburner.com/MapsMarker" target="_blank" title="RSS"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss.png" width="16" height="16" alt="rss"></a>';
 			$rss_email_link = '<a href="http://feedburner.google.com/fb/a/mailverify?uri=MapsMarker" target="_blank" title="RSS (via Email)"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-rss-email.png" width="16" height="16" alt="rss-email"></a>';
-			$links[] = $rate_link . '&nbsp;&nbsp;&nbsp;' . $translation_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $fbook_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $twitter_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $googleplus_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $rss_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $rss_email_link;
+			$links[] = $go_pro_link . $rate_link . '&nbsp;&nbsp;&nbsp;' . $translation_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $fbook_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $twitter_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $googleplus_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $rss_link . '&nbsp;&nbsp;&nbsp;&nbsp;' . $rss_email_link;
 		}
 		return $links;
 	}
@@ -387,6 +387,7 @@ class Leafletmapsmarker
 		add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_admin_enqueue_scripts'),7);
 		add_action('admin_print_scripts-'.$page5, array(&$this, 'lmm_admin_enqueue_scripts'),8);
 		add_action('admin_print_scripts-'.$page7, array(&$this, 'lmm_admin_jquery_ui'),9);
+		add_action('admin_print_scripts-'.$page10, array(&$this, 'lmm_admin_jquery_ui_accordion'),9);
 		//info: add css styles for admin area
 		add_action('admin_print_styles-'.$page, array(&$this, 'lmm_admin_enqueue_stylesheets'),17);
 		add_action('admin_print_styles-'.$page2, array(&$this, 'lmm_admin_enqueue_stylesheets'),18);
@@ -528,6 +529,12 @@ class Leafletmapsmarker
 	}
 	function lmm_admin_jquery_ui() {
 		wp_enqueue_script( array ( 'jquery', 'jquery-ui-tabs' ) );
+	}
+	function lmm_admin_jquery_ui_accordion() {
+		$plugin_version = get_option('leafletmapsmarker_version');
+		wp_enqueue_script( array ( 'jquery-ui-accordion' ) );
+		wp_register_style( 'leafletmapsmarker-admin-upgrade', LEAFLET_PLUGIN_URL . 'inc/css/jquery_ui.css', array(), $plugin_version);
+		wp_enqueue_style('leafletmapsmarker-admin-upgrade' );
 	}
 	function lmm_frontend_enqueue_scripts() {
 		global $wp_version;
