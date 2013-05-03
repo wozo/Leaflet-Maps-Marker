@@ -27,65 +27,139 @@ if ( $action != NULL ) {
 		echo '<p>' . __('If you like using Leaflet Maps Marker, you might also be interested in starting a free 30-day-trial of Leaflet Maps Marker Pro, which offers even more features, higher performance and more. <br/>Below you find some highlights you will get when going pro (please click on the heading for more details):','lmm') . '</p>';
 		echo '<p>
 			<div id="accordion">
-				<h3>Latest leaflet version</h3>
+				<h3>' . __('integration of the latest leaflet.js version','lmm') . '</h3>
 				<div>
-				<p></p>
+				<p style="margin:0 0 1em 0;">
+				<div style="float:right;margin:0 10px 10px 0;"><a href="http://www.leafletjs.com" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-feature-leaflet.png"></a></div>' . __('Leaflet Maps Marker Pro supports the latest leaflet.js version, which is the core library used for displaying maps.','lmm') . '
+				</p>
+				<p>
+				' . __('Major highlights:','lmm') . '
+				<ul style="list-style-type:disc;margin-left:15px;">
+					<li>' . __('support for IE10 touch devices','lmm') . '</li>
+					<li>' . __('support for Metro apps','lmm') . '</li>
+					<li>' . __('a much better panning inertia implementation','lmm') . '</li>
+					<li>' . __('improved zoom animation curve for a better feel overal','lmm') . '</li>
+					<li>' . __('improved scroll wheel zoom to be more responsive','lmm') . '</li>
+					<li>' . __('hand cursors for dragging','lmm') . '</li>
+					<li>' . __('optimized zoom control design','lmm') . '</li>
+				</ul>	
+				' . __('But the real power of the leaflet.js version used in Leaflet Maps Marker pro comes with about a hundred of subtle improvements and bugfixes, improving usability, performance and overall "feel" of browsing the map even further.','lmm') . '		
+				</p>
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-leaflet-changelog" target="_blank">' . sprintf(__('Click here to get the full changelog for leaflet.js v%1s currently integrated in the pro version','lmm'), '0.5.1') . '</a>
+				</p>
 				</div>
 				
-				<h3>mobile optimized maps through use of native javascript instead of jQuery</h3>
+				<h3>' . __('mobile optimized maps through use of native javascript instead of jQuery','lmm') . '</h3>
 				<div>
-				<p></p>
+				<p style="margin:0 0 1em 0;">
+				<div style="float:left;margin:0 10px 10px 0;"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-no-jquery.png"></div>' . __('Maps will be loaded much faster with Leaflet Maps Marker Pro – especially on mobile devices - as no jQuery is needed anymore for displaying maps on frontend. This reduces the download size of each map by about 90kb and also minimizes the browser resources needed for displaying maps.','lmm') . '
+				</p>
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-nojquery" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>				
 				</div>
 
-				<h3>remove backlinks</h3>
+				<h3>' . __('option to remove MapsMarker.com backlinks','lmm') . '</h3>
 				<div>
-				<p></p>
+				<p style="margin:0 0 1em 0;">
+				' . __('Leaflet Maps Marker Pro allows you to hide MapsMarker.com-backlinks from maps, KML files and from the Wikitude app:','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-backlink.jpg"><br/><br/>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-backlink-kml.jpg"><br/><br/>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-feature-wikitude-backlink.jpg">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-backlink-uploadbutton" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>					
 				</div>
 
-				<h3>HTML5 fullscreen maps</h3>
+				<h3>' . __('HTML5 fullscreen maps','lmm') . '</h3>
 				<div>
-				<p></p>
+				<p style="margin:0 0 1em 0;">
+				<div style="float:left;margin:0 10px 10px 0;"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-html5-fullscreen.png"></div>' . __('Leaflet Maps Marker Pro allows you to add a fullscreen button to maps. Clicking on this button will open an HTML5 fullscreen map without leaving the page you are currently viewing.','lmm') . '
+				</p>
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-htlm5-fullscreen-maps" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>				
 				</div>
 				
-				<h3>Minimaps</h3>
+				<h3>' . __('Minimaps','lmm') . '</h3>
 				<div>
-				<p></p>
+				<p style="margin:0 0 1em 0;">
+				' . __('Leaflet Maps Marker Pro allows you to add a small map in the corner which shows the same as the main map with a set zoom offset:','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-minimap.jpg">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-minimaps" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>
 				</div>
 
-				<h3>mobile web app support for fullscreen maps</h3>
+				<h3>' . __('mobile web app support for fullscreen maps and optimized mobile viewport','lmm') . '</h3>
 				<div>
-				<p></p>
-				</div>
-				
-				<h3>custom Google Maps styling</h3>
-				<div>
-				<p></p>
-				</div>
-				
-				<h3>QR codes with custom backgrounds thanks to Visualead.com</h3>
-				<div>
-				<p></p>
-				</div>
-
-				<h3>upload icon button & custom icon directory</h3>
-				<div>
-				<p></p>
-				</div>
-				
-				<h3>Google Adsense for maps integration</h3>
-				<div>
-				<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
-				<ul>
-					<li>- ' . __('a','lmm') . '</li>
-					<li>- ' . __('b','lmm') . '</li>
-					<li>- ' . __('b','lmm') . '</li>
-					<li>- ' . __('c','lmm') . '</li>
-				</ul>
+				<p style="margin:0 0 1em 0;">
+				' . __('Leaflet Maps Marker Pro enables you to save the link to the fullscreen map to the homescreen on iOS devices and reopen the map with an optional launch image as web app – meaning the display of the map in fullscreen mode with no address bar:','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-webapp.jpg">
+				<p>
+				' . __('Furthermore the viewport of the device used is considered, which results in optimized display of fullscreen maps especially on mobile devices:','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-feature-viewport-mobile.jpg">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-webapp" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>
 				</div>
 
-				<h3>backup and restore of settings</h3>
+				<h3>' . __('custom Google Maps styling','lmm') . '</h3>
 				<div>
-				<p></p>
+				<p style="margin:0 0 1em 0;">
+				' . __('Leaflet Maps Marker Pro allow you to easily customize the presentation of the standard Google base maps, changing the visual display of such elements as roads, parks, and built-up areas:','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-google-styling-preview.jpg">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-google-styling" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>
+				</div>
+				
+				<h3>' . __('QR codes with custom backgrounds','lmm') . '</h3>
+				<div>
+				<p style="margin:0 0 1em 0;">
+				<div style="float:left;margin:0 10px 10px 0;"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-visualead.png"></div>' . __('Leaflet Maps Marker Pro allows you to use custom backgrounds for QR codes.','lmm') . '
+				<br/><br/>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-qrcode" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>
+				</div>
+
+				<h3>' . __('Google Adsense for maps integration','lmm') . '</h3>
+				<div>
+				<p style="margin:0 0 1em 0;">
+				' . __('Leaflet Maps Marker Pro supports Google Adsense for maps. This allows you to add different types of ads to your Google maps:','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-adsense.jpg">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-adsense" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>
+				</div>
+
+				<h3>' . __('upload icon button & custom icon directory','lmm') . '</h3>
+				<div>
+				<p style="margin:0 0 1em 0;">
+				' . __('Uploading new icons gets easier with Leaflet Maps Marker Pro - no more need to use a FTP client, just click on the new upload button and add new icons from WordPress admin area easily:','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-feature-icon-upload.jpg">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-backlink-uploadbutton" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>					
+				</div>
+				
+				<h3>' . __('backup and restore of settings','lmm') . '</h3>
+				<div>
+				<p style="margin:0 0 1em 0;">
+				' . __('Leaflet Maps Marker Pro allows you to backup and restore your settings which makes it possible to quickly switch between different plugin profiles. This is especially useful if you want to deploy the plugin with custom configuration on multiple sites:','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-backup-restore-settings.png">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-backup-restore" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>
 				</div>
 
 			</div>
@@ -102,8 +176,8 @@ if ( $action != NULL ) {
 					})(jQuery);
 				</script>
 				</p>';
-		echo '<p>' . __('For more details, showcases and reviews please also visit <a href="http://www.mapsmarker.com">www.mapsmarker.com</a>','lmm') . '</p>';
-		echo '<p>' . sprintf(__('To start your free 30-day-trial of Leaflet Maps Marker Pro, please click on the button "start installation" below. This will start the download of Leaflet Maps Marker Pro from <a href="%1s">%2s</a> and installation as a separate plugin.<br/>Afterwards please activate the pro plugin and you will be guided through the process to receive a free 30-day-trial license without any obligations. Your trial will expire automatically unless you purchase a valid pro license. You can also switch back to the free version at any time.','lmm'), 'http://www.mapsmarker.com/download', 'www.mapsmarker.com/download') . '</p>';
+		echo '<p>' . __('For more details, showcases and reviews please also visit <a style="text-decoration:none;" href="http://www.mapsmarker.com">www.mapsmarker.com</a>','lmm') . '</p>';
+		echo '<p>' . sprintf(__('To start your free 30-day-trial of Leaflet Maps Marker Pro, please click on the button "start installation" below. This will start the download of Leaflet Maps Marker Pro from <a style="text-decoration:none;" href="%1s">%2s</a> and installation as a separate plugin.<br/>Afterwards please activate the pro plugin and you will be guided through the process to receive a free 30-day-trial license without any obligations. Your trial will expire automatically unless you purchase a valid pro license. You can also switch back to the free version at any time.','lmm'), 'http://www.mapsmarker.com/download', 'www.mapsmarker.com/download') . '</p>';
 		if ( current_user_can( 'install_plugins' ) ) {
 			$submit_button = ' class="submit button-primary"';
 		} else {
