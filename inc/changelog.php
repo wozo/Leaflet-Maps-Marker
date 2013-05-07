@@ -91,6 +91,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
+		OpenStreetMap editor link now supports <a href="http://ideditor.com/" target="_blank">iD editor</a>, potlatch2 and remote editor (JOSM)
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
 		URL parameter full_icon_url for GeoJSON API to easier embedd maps on external sites
 		</td></tr>
 		<tr><td>

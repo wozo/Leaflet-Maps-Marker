@@ -2323,6 +2323,20 @@ class Class_leaflet_options {
 				'hide' => __('hide','lmm')
 			)
 		);
+		$this->_settings['misc_map_osm_editlink_editor'] = array(
+			'version' => '3.6',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section10',
+			'title'   => __('OpenStreetMap edit link editor','lmm'),
+			'desc'    => __('Editor used to edit maps','lmm'),
+			'type'    => 'radio',
+			'std'     => 'id',
+			'choices' => array(
+				'id' => '<a href="http://ideditor.com/" target="_blank">iD</a>',
+				'potlatch2' => '<a href="http://wiki.openstreetmap.org/wiki/Potlatch_2" target="_blank">Potlatch 2</a>',
+				'remote' => __('remote editor','lmm') . ' (<a href="http://wiki.openstreetmap.org/wiki/JOSM" target="_blank">JOSM</a> / <a href="http://wiki.openstreetmap.org/wiki/Merkaartor" target="_blank">Merkaartor</a>)'
+			)
+		);
 		/*
 		* Keyboard navigation options
 		*/

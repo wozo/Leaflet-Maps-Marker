@@ -37,7 +37,17 @@ if (version_compare(phpversion(),"5.2","<")){
 //info: die if pro version is active
 include_once( ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'plugin.php' );
 if (is_plugin_active('leaflet-maps-marker-pro/leaflet-maps-marker.php') ) {
-	exit('Too bad you want to use the free version again - please deactivate "Leaflet Maps Marker Pro" first!<br/>Tell us why at <a href="http://www.mapsmarker.com/contact" target="_blank">www.mapsmarker.com/contact</a> and receive a discount voucher!');
+	if (!is_multisite()) {
+		exit('Too bad you want to use the free version again :-( Please deactivate "Leaflet Maps Marker Pro" first before downgrading to the free version!<br/>Please tell us what we can do to win you as a happy pro user at <a href="http://www.mapsmarker.com/contact" target="_blank">www.mapsmarker.com/contact</a> and receive a discount voucher!');
+	} else {
+		echo 'The plugin "<a href="http://www.mapsmarker.com" target="_blank">Leaflet Maps Marker Pro</a>" is still active on at least one site of this WordPress Multi Site installation. Please deactivate all instances first before downgrading to the free version!<br/>';
+		$super_admins = get_super_admins();
+		echo 'Super-admin users who can deactivate plugins: ';
+		foreach ($super_admins as $admin) {
+			echo $admin . ' ';
+		}
+		exit();
+	}
 }
 //info: define necessary paths and urls
 if ( ! defined( 'LEAFLET_WP_ADMIN_URL' ) )
