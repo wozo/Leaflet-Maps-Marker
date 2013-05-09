@@ -40,13 +40,11 @@ if (is_plugin_active('leaflet-maps-marker-pro/leaflet-maps-marker.php') ) {
 	if (!is_multisite()) {
 		exit('Too bad you want to use the free version again :-( Please deactivate "Leaflet Maps Marker Pro" first before downgrading to the free version!<br/>Please tell us what we can do to win you as a happy pro user at <a href="http://www.mapsmarker.com/contact" target="_blank">www.mapsmarker.com/contact</a> and receive a discount voucher!');
 	} else {
-		echo 'The plugin "<a href="http://www.mapsmarker.com" target="_blank">Leaflet Maps Marker Pro</a>" is still active on at least one site of this WordPress Multi Site installation. Please deactivate all instances first before downgrading to the free version!<br/>';
-		$super_admins = get_super_admins();
-		echo 'Super-admin users who can deactivate plugins: ';
-		foreach ($super_admins as $admin) {
-			echo $admin . ' ';
+		if (is_network_admin()) {
+			echo 'Network wide activation of the plugin "Leaflet Maps Marker" failed as the plugin "Leaflet Maps Marker Pro" is still active on subsites. Please activate "Leaflet Maps Marker" on desired subsites only!<br/>Please tell us what we can do to win you as a happy pro user at <a href="http://www.mapsmarker.com/contact" target="_blank">www.mapsmarker.com/contact</a> and receive a discount voucher!<br/><br/>';
+		} else {
+			echo 'Too bad you want to use the free version again :-( Please deactivate "Leaflet Maps Marker Pro" first before downgrading to the free version!<br/>Please tell us what we can do to win you as a happy pro user at <a href="http://www.mapsmarker.com/contact" target="_blank">www.mapsmarker.com/contact</a> and receive a discount voucher!<br/><br/>';
 		}
-		exit();
 	}
 }
 //info: define necessary paths and urls
