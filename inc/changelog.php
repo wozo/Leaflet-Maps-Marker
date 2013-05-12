@@ -81,6 +81,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
+		Swedish translation thanks to Olof Odier <a href="http://www.historiskastadsvandringar.se" target="_blank">http://www.historiskastadsvandringar.se</a>, Tedy Warsitha <a href="http://codeorig.in/" target="_blank">http://codeorig.in/</a> and Dan Paulsson <a href="http://www.paulsson.eu" target="_blank">http://www.paulsson.eu</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
 		use custom QR codes with background image thanks to <a href="http://www.visualead.com" target="_blank">Visualead.com</a>
 		</td></tr>
 		<tr><td>
@@ -104,6 +109,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		add hover effect for nav menu buttons for better usability (thx Georgia!)
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
+		add compatibility check for <a href="http://wordpress.org/extend/plugins/wp-minify/" target="_blank">WP Minify</a> (which is causing layer maps to break if HTML minification is active)
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		update jQuery-Timepicker-Addon to v1.2.2 and compress file with jscompress.com
@@ -122,6 +132,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		removed trailing whitespaces from all plugin files
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		Mapquest Aerial basemap was broken as API endpoint was changed
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
@@ -182,6 +197,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
 		</td><td>
 		updated Dutch translation thanks to Patrick Ruers, <a href="http://www.stationskwartiersittard.nl" target="_blank">http://www.stationskwartiersittard.nl</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated French translation thanks to Vincèn Pujol, <a href="http://www.skivr.com" target="_blank">http://www.skivr.com</a> and Rodolphe Quiedeville, <a href="http://rodolphe.quiedeville.org/" target="_blank">http://rodolphe.quiedeville.org/</a>
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
