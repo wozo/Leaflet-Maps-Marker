@@ -161,6 +161,17 @@ if ( $action != NULL ) {
 				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-backup-restore" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
 				</p>
 				</div>
+				
+				<h3>' . __('MapsMarker API (manage your markers and layers via external applications)','lmm') . '</h3>
+				<div>
+				<p style="margin:0 0 1em 0;">
+				' . __('highly customizable and with focus on security','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-mapsmarker-api.png">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-mapsmarker-api" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>
+				</div>				
 
 			</div>
 				<script type="text/javascript">
