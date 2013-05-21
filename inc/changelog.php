@@ -134,6 +134,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		removed trailing whitespaces from all plugin files
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		updated OpenStreetMap attribution text and link
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		Mapquest Aerial basemap was broken as API endpoint was changed
