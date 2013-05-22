@@ -162,14 +162,14 @@ if ( $action != NULL ) {
 				</p>
 				</div>
 				
-				<h3>' . __('MapsMarker API (manage your markers and layers via external applications)','lmm') . '</h3>
+				<h3>' . __('MapsMarker API','lmm') . '</h3>
 				<div>
 				<p style="margin:0 0 1em 0;">
-				' . __('highly customizable and with focus on security','lmm') . '
+				' . __('Manage your markers and layers through a highly customizable REST API, which supports GET & POST requests, JSON & XML as formats and was developed with a focus on security.','lmm') . '
 				</p>
 				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-mapsmarker-api.png">
 				<p>
-				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-mapsmarker-api" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-mapsmarker-api" target="_blank">' . __('For more details please visit the MapsMarker API docs.','lmm') . '</a>
 				</p>
 				</div>				
 

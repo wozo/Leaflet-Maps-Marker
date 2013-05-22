@@ -151,6 +151,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
+		removed double resolution settings for Cloudmade basemaps as tiles were distorted on non-retina displays
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
 		OSM edit link was not added on fullscreen marker maps
 		</td></tr>
 		<tr><td>
