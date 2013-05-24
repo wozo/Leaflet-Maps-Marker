@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0
 Tested up to:      3.6
-Stable tag:        3.5
+Stable tag:        3.5.4
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, APIs or Augmented-Reality browsers
@@ -172,7 +172,7 @@ For basic usage and tutorials, you can also have a look at [http://www.mapsmarke
 
 If you do not want to use the built-in plugin installation procedure from WordPress, you can also install the plugin manually:
 
-1. Navigate to [http://wordpress.org/extend/plugins/leaflet-maps-marker/](http://wordpress.org/extend/plugins/leaflet-maps-marker/)
+1. Navigate to [http://wordpress.org/plugins/leaflet-maps-marker/](http://wordpress.org/plugins/leaflet-maps-marker/)
 2. Click on red button "Download Version X.X" and download the plugin as ZIP-file
 3. Login on your WordPress site with your user account (needs to have admin rights!)
 4. Select "Add New" from the "Plugins" menu
@@ -185,7 +185,7 @@ Done. You can create your first marker map (you are getting redirected after fir
 
 = Detailed Installation Instructions (via FTP) =
 
-1. Navigate to [http://wordpress.org/extend/plugins/leaflet-maps-marker/](http://wordpress.org/extend/plugins/leaflet-maps-marker/)
+1. Navigate to [http://wordpress.org/plugins/leaflet-maps-marker/](http://wordpress.org/plugins/leaflet-maps-marker/)
 2. Click on red button "Download Version X.X" and download the plugin as ZIP-file
 3. Login on your WordPress site with your user account (needs to have admin rights!)
 4. unzip and upload the leaflet-maps-marker folder to the `/wp-content/plugins/` directory
@@ -263,10 +263,10 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2013, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v3.5 =
-security hardening for APIs, option to disable global admin notices - see http://www.mapsmarker.com/v3.5 for more details
+= v3.5.4 =
+security hardening on backend, translations updates and bugfixes - see http://www.mapsmarker.com/v3.5.4 for more details
 
 == Changelog ==
-[blog post with details about v3.5](http://www.mapsmarker.com/v3.5)
+[blog post with details about v3.5.4](http://www.mapsmarker.com/v3.5.4)
 
 [changelog for all versions](http://www.mapsmarker.com/changelog)
