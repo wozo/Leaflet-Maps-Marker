@@ -165,7 +165,7 @@ if ( $action != NULL ) {
 				<h3>' . __('advanced recent marker widget','lmm') . '</h3>
 				<div>
 				<p style="margin:0 0 1em 0;">
-				' . __('The recent marker widget in Leaflet Maps Marker Pro allows you to include and exclude markers as well as layers:','lmm') . '
+				' . __('Leaflet Maps Marker Pro allows you to customize which markers and layers to include or exclude in the recent marker widget:','lmm') . '
 				</p>
 				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-advanced-widget.png">
 				<p>
