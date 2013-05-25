@@ -161,6 +161,17 @@ if ( $action != NULL ) {
 				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-backup-restore" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
 				</p>
 				</div>
+
+				<h3>' . __('advanced recent marker widget','lmm') . '</h3>
+				<div>
+				<p style="margin:0 0 1em 0;">
+				' . __('The recent marker widget in Leaflet Maps Marker Pro allows you to include and exclude markers as well as layers:','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-advanced-widget.png">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-advanced-widget" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>
+				</div>
 				
 				<h3>' . __('MapsMarker API','lmm') . '</h3>
 				<div>

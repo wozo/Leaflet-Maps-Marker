@@ -107,6 +107,25 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td><td>
 		OSM edit link was not added on fullscreen marker maps
 		</td></tr>
+		<tr><td colspan="2">
+		<p><strong>' . __('Translation updates','lmm') . '</a></p></strong>
+		<p>' . sprintf(__('In case you want to help with translations, please visit the <a href="%1s" target="_blank">web-based translation plattform</a>','lmm'), 'http://translate.mapsmarker.com/projects/lmm') . '</p>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
+		Korean translation thanks to Andy Park, <a href="http://wcpadventure.com" target="_blank">http://wcpadventure.com</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated Romanian translation thanks to Daniel Codrea, <a href="http://www.inadcod.com" target="_blank">http://www.inadcod.com</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated German translation
+		</td></tr>
 		</table>'.PHP_EOL;
 
 	if ( ( $lmm_version_old < '3.5.4' ) && ( $lmm_version_old > '0' ) ) {

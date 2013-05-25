@@ -132,6 +132,7 @@ to the visitors of your website.
 * Indonesian (id_ID) thanks to Emir Hartato
 * Italian (it_IT) thanks to Luca Barbetti
 * Japanese (ja) thanks to Shu Higashi
+* Korean (ko_KR) thanks to Andy Park
 * Polish (pl_PL) translation thanks to Pawel Wyszynski and Tomasz Rudnicki
 * Portuguese (pt_BR) thanks to Andre Santos and Antonio Hammerl
 * Portuguese (pt_PT) translation thanks to Joao Campos
