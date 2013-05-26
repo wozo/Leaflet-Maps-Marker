@@ -184,6 +184,34 @@ if ( $action != NULL ) {
 				</p>
 				</div>				
 
+				<h3>' . __('features planned for future releases','lmm') . '</h3>
+				<div>
+				<p style="margin:0 0 1em 0;">
+				' . __('We are working hard on delivering the best mapping solution available for WordPress - helping you to share your favorite spots. Therefore we are commited to constantly improving Leaflet Maps Marker Pro. Below you find some highlights from our development roadmap - if an important one is missing for you, let us know and we will check if we can include it in a future release:','lmm') . '
+				</p>
+				<ul style="list-style-type:disc;margin-left:15px;">
+					<li>' . __('filtering markers on frontend','lmm') . '</li>
+					<li>' . __('support for displaying routes (GPX)','lmm') . '</li>
+					<li>' . __('support for displaying KML files','lmm') . '</li>
+					<li>' . __('adding markers from frontend','lmm') . '</li>
+					<li>' . __('support for Google Street View','lmm') . '</li>
+					<li>' . __('import and export function for markers and layers','lmm') . '</li>
+					<li>' . __('better integration into the publication workflow (adding markers from posts or as custom post type)','lmm') . '</li>
+					<li>' . __('support for Wikitude AR launchlinks','lmm') . '</li>
+					<li>' . __('search for markers on frontend','lmm') . '</li>
+					<li>' . __('draw features like polylines, polygons, rectangles, circles and markers on maps','lmm') . '</li>
+					<li>' . __('email notify on marker/layer actions','lmm') . '</li>
+					<li>' . __('assign markers to multiple layers','lmm') . '</li>
+					<li>' . __('support for permalinks','lmm') . ' (http://your-domain.com/maps/marker/1/kml)</li>
+					<li>' . __('support for geocoding services other than Google Places','lmm') . '</li>
+					<li>' . __('better integration with other plugins','lmm') . ' (Google XML Sitemap, Contact Form 7, Event Organizer...)</li>
+					<li>...</li>
+				</ul>
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/contact" target="_blank">' . __('Visit our contact form to submit your feature request or idea','lmm') . '</a>
+				</p>
+				</div>				
+
 			</div>
 				<script type="text/javascript">
 					(function($) {
@@ -203,9 +231,8 @@ if ( $action != NULL ) {
 		if ( current_user_can( 'install_plugins' ) ) {
 			$submit_button = ' class="submit button-primary"';
 		} else {
-			function hide_email($email) { $character_set = '+-.0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz'; $key = str_shuffle($character_set); $cipher_text = ''; $id = 'e'.rand(1,999999999); for ($i=0;$i<strlen($email);$i+=1) $cipher_text.= $key[strpos($character_set,$email[$i])]; $script = 'var a="'.$key.'";var b=a.split("").sort().join("");var c="'.$cipher_text.'";var d="";'; $script.= 'for(var e=0;e<c.length;e++)d+=b.charAt(a.indexOf(c.charAt(e)));'; $script.= 'document.getElementById("'.$id.'").innerHTML="<a href=\\"mailto:"+d+"\\">"+d+"</a>"'; $script = "eval(\"".str_replace(array("\\",'"'),array("\\\\",'\"'), $script)."\")"; $script = '<script type="text/javascript">/*<![CDATA[*/'.$script.'/*]]>*/</script>'; return '<span id="'.$id.'">[javascript protected email address]</span>'.$script; }
 			$submit_button = ' class="submit button-secondary" disabled="disabled"';
-			echo '<div class="error" style="padding:10px;"><strong>' . sprintf(__('Warning: your user does not have the capability to install new plugins - please contact your administrator (%1s)','lmm'), hide_email(get_bloginfo('admin_email')) ) . '</strong></div>';
+			echo '<div class="error" style="padding:10px;"><strong>' . sprintf(__('Warning: your user does not have the capability to install new plugins - please contact your administrator (%1s)','lmm'), '<a href="mailto:' . get_bloginfo('admin_email') . '?subject=' . esc_attr__('Please install the plugin "Leaflet MapsMarker Pro"','lmm') . '">' . get_bloginfo('admin_email') . '</a>' ) . '</strong></div>';
 		}
 		echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" ' . $submit_button . ' /></form>';
 	} else if (file_exists($lmm_pro_readme)) {
@@ -214,8 +241,7 @@ if ( $action != NULL ) {
 		if ( current_user_can( 'install_plugins' ) ) {
 			echo sprintf(__('Please navigate to <a href="%1$s">Plugins / Installed Plugins</a> and activate the plugin "Leaflet Maps Marker Pro".','lmm'), LEAFLET_WP_ADMIN_URL . 'plugins.php');
 		} else {
-				function hide_email($email) { $character_set = '+-.0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz'; $key = str_shuffle($character_set); $cipher_text = ''; $id = 'e'.rand(1,999999999); for ($i=0;$i<strlen($email);$i+=1) $cipher_text.= $key[strpos($character_set,$email[$i])]; $script = 'var a="'.$key.'";var b=a.split("").sort().join("");var c="'.$cipher_text.'";var d="";'; $script.= 'for(var e=0;e<c.length;e++)d+=b.charAt(a.indexOf(c.charAt(e)));'; $script.= 'document.getElementById("'.$id.'").innerHTML="<a href=\\"mailto:"+d+"\\">"+d+"</a>"'; $script = "eval(\"".str_replace(array("\\",'"'),array("\\\\",'\"'), $script)."\")"; $script = '<script type="text/javascript">/*<![CDATA[*/'.$script.'/*]]>*/</script>'; return '<span id="'.$id.'">[javascript protected email address]</span>'.$script; }
-			echo sprintf(__('Please contact your administrator (%1s) to activate the plugin "Leaflet Maps Marker Pro".','lmm'), hide_email(get_bloginfo('admin_email')) );
+			echo sprintf(__('Please contact your administrator (%1s) to activate the plugin "Leaflet Maps Marker Pro".','lmm'), '<a href="mailto:' . get_bloginfo('admin_email') . '?subject=' . esc_attr__('Please activate the plugin "Maps Marker Pro"','lmm') . '">' . get_bloginfo('admin_email') . '</a>' );
 		}
 	}
 }
