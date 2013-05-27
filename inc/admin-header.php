@@ -128,6 +128,11 @@ if ( isset($lmm_options['misc_global_admin_notices']) && ($lmm_options['misc_glo
 	if (is_plugin_active('daily-stat/statpress.php') ) {
 		echo '<p><div class="error" style="padding:10px;"><strong>' . __('Warning: you are using the plugin Daily Stat which is causing the Leaflet Maps Marker settings page to break! Please temporarily deactivate this plugin if you want change the settings. The plugin developer has already been contacted and will hopefully release a fix soon.','lmm') . '</strong></div></p>';
 	}
+	//info: display admin notice (lmm only) if user switches back to free version
+	$lmm_pro_version = get_option( 'leafletmapsmarker_version_pro' );
+	if ( $lmm_pro_version != NULL) {
+		echo '<p><div  class="updated" style="padding:5px;">' . sprintf(__('Too bad you are using the free version again :-( <a href="%1s" target="_blank">Please tell us what we can do to win you as a happy pro user and receive a discount voucher!</a>','lmm'), 'http://www.mapsmarker.com/feedback') . '<br/>' . __('This message will disappear once the pro version has been activated or deleted from your server (via the WordPress Plugins page!)','lmm') . '</div></p>';
+	}
 }//info: end misc_global_admin_notices check
 //info: check if newer plugin version is available
 $plugin_updates = get_site_transient( 'update_plugins' );
