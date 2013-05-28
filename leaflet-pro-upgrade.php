@@ -23,7 +23,6 @@ if ( $action != NULL ) {
 		echo '<h3 style="font-size:23px;">' . __('Upgrade to pro version','lmm') . '</h3>';
 		echo '<form method="post"><input type="hidden" name="action" value="upgrade_to_pro_version" />';
 		wp_nonce_field('pro-upgrade-nonce');
-		//2do: add texts
 		echo '<p>' . __('If you like using Leaflet Maps Marker, you might also be interested in starting a free 30-day-trial of Leaflet Maps Marker Pro, which offers even more features, higher performance and more. <br/>Below you find some highlights you will get when going pro (please click on the heading for more details):','lmm') . '</p>';
 		echo '<p>
 			<div id="accordion">
@@ -229,12 +228,17 @@ if ( $action != NULL ) {
 		echo '<p>' . __('For more details, showcases and reviews please also visit <a style="text-decoration:none;" href="http://www.mapsmarker.com">www.mapsmarker.com</a>','lmm') . '</p>';
 		echo '<p>' . sprintf(__('To start your free 30-day-trial of Leaflet Maps Marker Pro, please click on the button "start installation" below. This will start the download of Leaflet Maps Marker Pro from <a style="text-decoration:none;" href="%1s">%2s</a> and installation as a separate plugin.<br/>Afterwards please activate the pro plugin and you will be guided through the process to receive a free 30-day-trial license without any obligations. Your trial will expire automatically unless you purchase a valid pro license. You can also switch back to the free version at any time.','lmm'), 'http://www.mapsmarker.com/download', 'www.mapsmarker.com/download') . '</p>';
 		if ( current_user_can( 'install_plugins' ) ) {
-			$submit_button = ' class="submit button-primary"';
+			if (extension_loaded('ionCube Loader')) {
+				echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" class="submit button-primary" />';
+			} else {
+				echo '<div class="error" style="padding:10px;"><strong>' . sprintf(__('Attention: your web server does not meet the requirements for "Leaflet Maps Marker Pro". <a href="%1s" target="_blank">Please click here to start the installation wizard</a> which offers an interactive tutorial on how to install the required "ionCube Loader" first.','lmm'), LEAFLET_PLUGIN_URL . 'inc/loader-wizard.php' ) . '</strong></div>';
+				echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" class="submit button-secondary" disabled="disabled" />';
+			}
 		} else {
-			$submit_button = ' class="submit button-secondary" disabled="disabled"';
 			echo '<div class="error" style="padding:10px;"><strong>' . sprintf(__('Warning: your user does not have the capability to install new plugins - please contact your administrator (%1s)','lmm'), '<a href="mailto:' . get_bloginfo('admin_email') . '?subject=' . esc_attr__('Please install the plugin "Leaflet MapsMarker Pro"','lmm') . '">' . get_bloginfo('admin_email') . '</a>' ) . '</strong></div>';
+			echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" class="submit button-secondary" disabled="disabled" />';
 		}
-		echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" ' . $submit_button . ' /></form>';
+		echo '</form>';
 	} else if (file_exists($lmm_pro_readme)) {
 		echo '<h3 style="font-size:23px;">' . __('Upgrade to pro version','lmm') . '</h3>';
 		echo '<div class="error" style="padding:10px;"><strong>' . __('You already downloaded "Leaflet Maps Marker Pro" to your server but did not activate the plugin yet!','lmm') . '</strong></div>';
