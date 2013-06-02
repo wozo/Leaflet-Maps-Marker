@@ -168,6 +168,10 @@ if ( $action != NULL ) {
 				</p>
 				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-advanced-widget.png">
 				<p>
+				' . __('Furthermore can also remove the attribution link from the recent marker widget:','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-advanced-widget-noattribution.png">
+				<p>
 				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-advanced-widget" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
 				</p>
 				</div>

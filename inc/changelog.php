@@ -144,6 +144,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
 		</td><td>
+		updated German translation
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
 		Indonesian translation thanks to Emir Hartato, <a href="http://whateverisaid.wordpress.com" target="_blank">http://whateverisaid.wordpress.com</a>
 		</td></tr>
 		<tr><td>
@@ -159,7 +164,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
 		</td><td>
-		updated German translation
+		Swedish translation thanks to Olof Odier <a href="http://www.historiskastadsvandringar.se" target="_blank">http://www.historiskastadsvandringar.se</a>, Tedy Warsitha <a href="http://codeorig.in/" target="_blank">http://codeorig.in/</a> and Dan Paulsson <a href="http://www.paulsson.eu" target="_blank">http://www.paulsson.eu</a>
 		</td></tr>
 		</table>'.PHP_EOL;
 
