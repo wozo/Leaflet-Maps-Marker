@@ -734,6 +734,21 @@ $serialized_options = serialize($lmm_options);
 		</form>
 		</td>
 	</tr>
+	<tr>
+		<td>
+		<form method="post">
+		<strong><?php _e('Marker clustering','lmm') ?></strong><br/><a href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_pro_upgrade" title="<?php esc_attr_e('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') ?>"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/help-pro-feature.png" /></a>
+		</td>
+		<td style="vertical-align:middle;">
+		<input id="layermaps_clustering_enabled" type="radio" name="listmarkers-clustering" value="1" disabled="disabled" />
+		<label for="layermaps_clustering_enabled"><?php _e('enabled','lmm') ?></label><br/>
+		<input id="layermaps_clustering_disabled" type="radio" name="listmarkers-clustering" value="0" checked disabled="disabled" />
+		<label for="layermaps_listmarkers_disabled"><?php _e('disabled','lmm') ?></label></p></td>
+		<td style="vertical-align:middle;">
+		<input style="font-weight:bold;" class="submit button-primary" type="submit" name="listmarkers-clustering-submit" value="<?php _e('change clustering status for all layers','lmm') ?> &raquo;" disabled="disabled" />
+		</form>
+		</td>
+	</tr>
 </table>
 <br/><br/>
 <?php $nonce= wp_create_nonce('tool-nonce'); ?>
