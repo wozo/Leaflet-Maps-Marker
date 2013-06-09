@@ -2977,7 +2977,7 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section18',
 			'title'   =>'polygonOptions<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
-			'desc'    => sprintf(__('Options to pass when creating the L.Polygon to show the bounds of a cluster (<a href="%1s" target="_blank">more details</a>)','lmm'), 'http://leafletjs.com/reference.html#path-options') . ' - ' . __('example','lmm') . ': <strong>color: "#ff0000", weight: 3, fill: false</strong><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-clustering-polygon-options.jpg" width="141" height="91" />',
+			'desc'    => sprintf(__('Options to pass when creating the L.Polygon for styling (<a href="%1s" target="_blank">more details</a>)','lmm'), 'http://leafletjs.com/reference.html#path-options') . ' - ' . __('example','lmm') . ': <strong>color: "#ff0000", weight: 3, fill: false</strong><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-clustering-polygon-options.jpg" width="141" height="91" />',
 			'std'     => '',
 			'type'    => 'text-pro'
 		);	
