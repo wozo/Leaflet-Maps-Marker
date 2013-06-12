@@ -133,6 +133,7 @@ to the visitors of your website.
 * Italian (it_IT) thanks to Luca Barbetti
 * Japanese (ja) thanks to Shu Higashi
 * Korean (ko_KR) thanks to Andy Park
+* Latvian (lv) thanks to Juris Orlovs and Eriks Remess
 * Polish (pl_PL) translation thanks to Pawel Wyszynski and Tomasz Rudnicki
 * Portuguese (pt_BR) thanks to Andre Santos and Antonio Hammerl
 * Portuguese (pt_PT) translation thanks to Joao Campos
