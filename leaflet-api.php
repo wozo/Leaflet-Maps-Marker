@@ -166,7 +166,7 @@ if (!lmm_is_plugin_active('leaflet-maps-marker/leaflet-maps-marker.php') ) {
 												echo '"message":"' . esc_attr__('API call was successful','lmm') . '",'.PHP_EOL;
 												echo '"data": {'.PHP_EOL;
 													echo '"' . $remap_id . '":"' . $query_result['id'] . '",'.PHP_EOL;
-													echo '"' . $remap_markername . '":"' . stripslashes($query_result['markername']) . '",'.PHP_EOL;
+													echo '"' . $remap_markername . '":"' . stripslashes(esc_js($query_result['markername'])) . '",'.PHP_EOL;
 													echo '"' . $remap_basemap . '":"' . $query_result['basemap'] . '",'.PHP_EOL;
 													echo '"' . $remap_layer . '":"' . $query_result['layer'] . '",'.PHP_EOL;
 													echo '"' . $remap_lat . '":"' . $query_result['lat'] . '",'.PHP_EOL;
@@ -255,7 +255,7 @@ if (!lmm_is_plugin_active('leaflet-maps-marker/leaflet-maps-marker.php') ) {
 												echo '<message>' . esc_attr__('API call was successful','lmm') . '</message>'.PHP_EOL;
 												echo '<data>'.PHP_EOL;
 													echo '<' . $remap_id . '>' . $query_result['id'] . '</' . $remap_id . '>'.PHP_EOL;
-													echo '<' . $remap_markername . '><![CDATA[' . stripslashes($query_result['markername']) . ']]></' . $remap_markername . '>'.PHP_EOL;
+													echo '<' . $remap_markername . '><![CDATA[' . stripslashes(esc_js($query_result['markername'])) . ']]></' . $remap_markername . '>'.PHP_EOL;
 													echo '<' . $remap_basemap . '>' . $query_result['basemap'] . '</' . $remap_basemap . '>'.PHP_EOL;
 													echo '<' . $remap_layer . '>' . $query_result['layer'] . '</' . $remap_layer . '>'.PHP_EOL;
 													echo '<' . $remap_lat . '>' . $query_result['lat'] . '</' . $remap_lat . '>'.PHP_EOL;

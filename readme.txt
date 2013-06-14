@@ -128,7 +128,7 @@ to the visitors of your website.
 * French (fr_FR) thanks to Vincèn Pujol and Rodolphe Quiedeville
 * German (de_DE)
 * Hindi (hi_IN) thanks to by Outshine Solutions and Guntupalli Karunakar
-* Hungarian (hu_HU) thanks to István Pintér
+* Hungarian (hu_HU) thanks to István Pintér and Csaba Orban
 * Indonesian (id_ID) thanks to Emir Hartato
 * Italian (it_IT) thanks to Luca Barbetti
 * Japanese (ja) thanks to Shu Higashi

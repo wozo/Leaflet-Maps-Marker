@@ -57,7 +57,7 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-help-credits.php') { die (
 		<li>- French (fr_FR) by Vincèn Pujol, <a href="http://www.skivr.com" target="_blank">http://www.skivr.com</a></li>
 		<li>- German (de_DE) by <a href="http://twitter.com/robertharm" target="_blank">@RobertHarm</a></li>
 		<li>- Hindi (hi_IN) by Outshine Solutions, <a href="http://outshinesolutions.com" target="_blank">http://outshinesolutions.com</a> and Guntupalli Karunakar, <a href="http://indlinux.org" target="_blank">http://indlinux.org</a></li>
-		<li>- Hungarian (hu_HU) thanks to István Pintér, <a href="http://www.logicit.hu" target="_blank">http://www.logicit.hu</a></li>
+		<li>- Hungarian (hu_HU) thanks to István Pintér, <a href="http://www.logicit.hu" target="_blank">http://www.logicit.hu</a> and Csaba Orban, <a href="http://www.foto-dvd.hu" target="_blank">http://www.foto-dvd.hu</a></li>
 		<li>- Indonesian (id_ID) thanks to Emir Hartato, <a href="http://whateverisaid.wordpress.com" target="_blank">http://whateverisaid.wordpress.com</a></li>
 		<li>- Italian (it_IT) by <a href="mailto:lucabarbetti@gmail.com">Luca Barbetti</a></li>
 		<li>- Japanese (ja) by Shu Higashi, <a href="http://twitter.com/higa4" target="_blank">@higa4</a></li>

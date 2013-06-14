@@ -192,7 +192,7 @@ if (! wp_verify_nonce($markernonce, 'marker-nonce') ) die('<br/>'.__('Security c
   if ($isedit) {
     $id = intval($_GET['id']);
     $row = $wpdb->get_row('SELECT markername,basemap,layer,lat,lon,icon,popuptext,zoom,openpopup,mapwidth,mapwidthunit,mapheight,panel,createdby,createdon,updatedby,updatedon,controlbox,overlays_custom,overlays_custom2,overlays_custom3,overlays_custom4,wms,wms2,wms3,wms4,wms5,wms6,wms7,wms8,wms9,wms10,kml_timestamp,address FROM '.$table_name_markers.' WHERE id='.$id, ARRAY_A);
-    $markername = htmlspecialchars($row['markername']);
+    $markername = esc_js(htmlspecialchars($row['markername']));
     $basemap = $row['basemap'];
     $layer = $row['layer'];
     $lat = $row['lat'];

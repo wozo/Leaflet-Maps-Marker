@@ -108,7 +108,7 @@ if (isset($_GET['layer'])) {
 	echo '<Style id="' . $micon_name . '"><IconStyle><Icon><href>' . $micon_url . '</href></Icon></IconStyle></Style>'.PHP_EOL;
   }
 
-  $layername = $wpdb->get_var('SELECT name FROM '.$table_name_layers.' WHERE id = '.intval($_GET['layer']).'');
+  $layername = $wpdb->get_var( $wpdb->prepare("SELECT name FROM $table_name_layers WHERE id = %d", intval($_GET['layer']) ) );
 	if ($_GET['layer'] != 'all') {
 	  echo '<Folder>'.PHP_EOL;
 	  echo '<name>' . htmlspecialchars($layername) . '</name>'.PHP_EOL;
