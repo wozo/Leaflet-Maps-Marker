@@ -21,10 +21,11 @@ if ( $action != NULL ) {
 } else {
 	if (!file_exists($lmm_pro_readme)) {
 		echo '<h3 style="font-size:23px;">' . __('Upgrade to Pro','lmm') . '</h3>';
+		echo '<div style="float:left;margin: 0 10px 10px 0;"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/logo-mapsmarker-pro.png" alt="Pro Logo" title="Leaflet Maps Marker Pro Logo"></div>';
 		echo '<form method="post"><input type="hidden" name="action" value="upgrade_to_pro_version" />';
 		wp_nonce_field('pro-upgrade-nonce');
-		echo '<p>' . __('If you like using Leaflet Maps Marker, you might also be interested in starting a free 30-day-trial of Leaflet Maps Marker Pro, which offers even more features, higher performance and more. <br/>Below you find some highlights you will get when going pro (please click on the heading for more details):','lmm') . '</p>';
-		echo '<p>
+		echo '<p style="padding-top:15px;">' . __('If you like using Leaflet Maps Marker, you might also be interested in starting a free 30-day-trial of Leaflet Maps Marker Pro, which offers even more features, higher performance and more. <br/>Below you find some highlights you will get when going pro (please click on the heading for more details):','lmm') . '</p>';
+		echo '<p style="clear:both;">
 			<div id="accordion">
 				<h3>' . __('integration of the latest leaflet.js version','lmm') . '</h3>
 				<div>
