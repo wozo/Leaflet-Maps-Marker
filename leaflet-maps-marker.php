@@ -363,6 +363,11 @@ class Leafletmapsmarker
 		return $lmm_out;
 	}
 	function lmm_admin_menu() {
+		if ( is_admin() ) {
+			require_once( plugin_dir_path( __FILE__ ) . 'inc' . DIRECTORY_SEPARATOR . 'class-leaflet-options.php' );
+			global $lmm_options_class;
+			$lmm_options_class = new Class_leaflet_options();
+		}		
 		$page = (isset($_GET['page']) ? $_GET['page'] : '');
 		$oid = isset($_POST['id']) ? intval($_POST['id']) : (isset($_GET['id']) ? intval($_GET['id']) : '');
 		if ( ($oid == NULL) && ($page == 'leafletmapsmarker_marker') ) {
