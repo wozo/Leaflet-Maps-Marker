@@ -7,14 +7,16 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0
-Tested up to:      3.6
-Stable tag:        3.5.4
+Tested up to:      3.6beta4
+Stable tag:        3.6
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, APIs or Augmented-Reality browsers
 
 == Description ==
 Maps Marker allows you to pin, organize and share your favorite spots through your WordPress powered site easily. You can use maps from OpenStreetMap, Google Maps, Google Earth, Bing Maps or custom maps and additionally display your spots in innovative ways like through augmented-reality browsers.
+
+For even more features please try "[Leaflet Maps Marker Pro](http://www.mapsmarker.com)". This plugin includes a pro upgrader which allows you to start a free 30 day trial easily.
 
 = Vision =
 We are working hard on delivering the best mapping solution available for WordPress - helping you to share your favorite spots
@@ -25,7 +27,7 @@ We are working hard on delivering the best mapping solution available for WordPr
 = Plugin's Official Site =
 http://mapsmarker.com
 
-* [Demo](http://www.mapsmarker.com/demo/) - [FAQ](http://www.mapsmarker.com/faq/) - [Docs](http://www.mapsmarker.com/docs/) - [Support](http://mapsmarker.com/support/) - [Github](https://github.com/robertharm/Leaflet-Maps-Marker) - [Donations](http://mapsmarker.com/donations) - [Twitter](http://twitter.com/mapsmarker) - [Facebook](http://facebook.com/mapsmarker) - [Translations](http://translate.mapsmarker.com/projects/lmm)
+* [FAQ](http://www.mapsmarker.com/faq/) - [Docs](http://www.mapsmarker.com/docs/) - [Support](http://mapsmarker.com/support/) - [Github](https://github.com/robertharm/Leaflet-Maps-Marker) - [Donations](http://mapsmarker.com/donations) - [Twitter](http://twitter.com/mapsmarker) - [Facebook](http://facebook.com/mapsmarker) - [Google+](http://www.mapsmarker.com/+) - [Translations](http://translate.mapsmarker.com/projects/lmm)
 
 = Main features =
 Leaflet Maps Marker allows you to
@@ -265,10 +267,10 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2013, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v3.5.4 =
-security hardening on backend, translations updates and bugfixes - see http://www.mapsmarker.com/v3.5.4 for more details
+= v3.6 =
+MapsMarker API, iD editor and pro upgrader - see http://www.mapsmarker.com/v3.6 for more details
 
 == Changelog ==
-[blog post with details about v3.5.4](http://www.mapsmarker.com/v3.5.4)
+[blog post with details about v3.6](http://www.mapsmarker.com/v3.6)
 
 [changelog for all versions](http://www.mapsmarker.com/changelog)

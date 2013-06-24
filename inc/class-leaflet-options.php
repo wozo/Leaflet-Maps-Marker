@@ -2404,7 +2404,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section11',
 			'std'     => '',
 			'title'   => '',
-			'desc'    => '<div style="height:305px;"></div>',
+			'desc'    => '<div style="height:380px;"></div>',
 			'type'    => 'helptext'
 		);
 		/*
@@ -2456,7 +2456,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section12',
 			'std'     => '',
 			'title'   => '',
-			'desc'    => '<div style="height:305px;"></div>',
+			'desc'    => '<div style="height:380px;"></div>',
 			'type'    => 'helptext'
 		);
 		/*
@@ -2609,6 +2609,15 @@ class Class_leaflet_options {
 				'false' => __('false','lmm')
 			)
 		);
+		$this->_settings['map_scale_control_helptext2'] = array(
+			'version' => '3.6',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section14',
+			'std'     => '',
+			'title'   => '',
+			'desc'    => '<div style="height:30px;"></div>',
+			'type'    => 'helptext'
+		);
 		/*
 		* Retina display detection
 		*/
@@ -2640,7 +2649,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section15',
 			'std'     => '',
 			'title'   => '',
-			'desc'    => '<div style="height:430px;"></div>',
+			'desc'    => '<div style="height:490px;"></div>',
 			'type'    => 'helptext'
 		);
 		/*
@@ -6436,7 +6445,7 @@ class Class_leaflet_options {
 			'section' => 'google-section1',
 			'std'     => '',
 			'title'   => '',
-			'desc'    => '<div style="height:10px;"></div>',
+			'desc'    => '<div style="height:60px;"></div>',
 			'type'    => 'helptext'
 		);
 		/*
@@ -7837,7 +7846,7 @@ class Class_leaflet_options {
 			'section' => 'misc-section3',
 			'std'     => '',
 			'title'   => '',
-			'desc'    => '<div style="height:80px;"></div>',
+			'desc'    => '<div style="height:150px;"></div>',
 			'type'    => 'helptext'
 		);
 
@@ -8388,7 +8397,7 @@ class Class_leaflet_options {
 			'section' => 'misc-section7',
 			'std'     => '',
 			'title'   => '',
-			'desc'    => '<div style="height:0px;"></div>',
+			'desc'    => '<div style="height:40px;"></div>',
 			'type'    => 'helptext'
 		);
 		/*
@@ -9125,7 +9134,7 @@ class Class_leaflet_options {
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}
 		//info:  set defaults for options introduced in v3.6
-		if (get_option('leafletmapsmarker_version') == '3.5.3' )
+		if (get_option('leafletmapsmarker_version') == '3.5.4' )
 		{
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting )
