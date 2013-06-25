@@ -2786,7 +2786,7 @@ class Class_leaflet_options {
 			'section' => 'mapdefaults-section17',
 			'std'     => '',
 			'title'   => '',
-			'desc'    => __( 'Add an expandable minimap to your maps in the top right corner which shows the same as the main map with a set zoom offset', 'lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-minimap.jpg" width="400" height="183" /><a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a>',
+			'desc'    => __( 'Add an expandable minimap to your maps which shows the same as the main map with a set zoom offset', 'lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-minimap.jpg" width="400" height="183" /><a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a>',
 			'type'    => 'helptext'
 		);
 		$this->_settings['minimap_status'] = array(
