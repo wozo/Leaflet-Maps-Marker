@@ -4,12 +4,29 @@
 */
 //info prevent file from being accessed directly
 if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-pro-upgrade.php') { die ("Please do not access this file directly. Thanks!<br/><a href='http://www.mapsmarker.com/go'>www.mapsmarker.com</a>"); }
+
+function lmm_check_ioncube_loaders() {
+	if (extension_loaded('ionCube Loader')) {
+		return true;
+	}
+	if ( function_exists('ioncube_file_is_encoded') ) {
+		return true;
+	}
+	if ( function_exists('phpinfo') ) {
+		ob_start();
+		phpinfo(8);
+		$phpinfo = ob_get_clean();
+		if ( false !== strpos($phpinfo, 'ionCube') ) {
+			return true;
+		}
+	}
+	return false;
+}
 ?>
 <div class="wrap">
 <?php 
 include('inc' . DIRECTORY_SEPARATOR . 'admin-header.php'); 
 $lmm_pro_readme = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'leaflet-maps-marker-pro' . DIRECTORY_SEPARATOR . 'readme.txt';
-//2do testing - remove - $lmm_pro_readme = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'antispam-bee' . DIRECTORY_SEPARATOR . 'readme.txt';
 $action = isset($_POST['action']) ? $_POST['action'] : '';
 if ( $action != NULL ) {
 	if (!wp_verify_nonce( $_POST['_wpnonce'], 'pro-upgrade-nonce') ) { wp_die('<br/>'.__('Security check failed - please call this function from the according Leaflet Maps Marker admin page!','lmm').''); };
@@ -244,7 +261,7 @@ if ( $action != NULL ) {
 		echo '<p>' . __('For more details, showcases and reviews please also visit <a style="text-decoration:none;" href="http://www.mapsmarker.com">www.mapsmarker.com</a>','lmm') . '</p>';
 		echo '<p>' . sprintf(__('To start your free 30-day-trial of Leaflet Maps Marker Pro, please click on the button "start installation" below. This will start the download of Leaflet Maps Marker Pro from <a style="text-decoration:none;" href="%1s">%2s</a> and installation as a separate plugin.<br/>Afterwards please activate the pro plugin and you will be guided through the process to receive a free 30-day-trial license without any obligations. Your trial will expire automatically unless you purchase a valid pro license. You can also switch back to the free version at any time.','lmm'), 'http://www.mapsmarker.com/download', 'www.mapsmarker.com/download') . '</p>';
 		if ( current_user_can( 'install_plugins' ) ) {
-			if (extension_loaded('ionCube Loader')) {
+			if (lmm_check_ioncube_loaders() == true) {
 				echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" class="submit button-primary" />';
 			} else {
 				echo '<div class="error" style="padding:10px;"><strong>' . sprintf(__('Attention: your web server does not meet the requirements for "Leaflet Maps Marker Pro". <a href="%1s" target="_blank">Please click here to start the installation wizard</a> which offers an interactive tutorial on how to install the required "ionCube Loader" first.','lmm'), LEAFLET_PLUGIN_URL . 'inc/loader-wizard.php' ) . '</strong></div>';
