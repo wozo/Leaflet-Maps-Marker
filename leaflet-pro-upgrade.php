@@ -264,7 +264,12 @@ if ( $action != NULL ) {
 			if (lmm_check_ioncube_loaders() == true) {
 				echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" class="submit button-primary" />';
 			} else {
-				echo '<div class="error" style="padding:10px;"><strong>' . sprintf(__('Attention: your web server does not meet the requirements for "Leaflet Maps Marker Pro". <a href="%1s" target="_blank">Please click here to start the installation wizard</a> which offers an interactive tutorial on how to install the required "ionCube Loader" first.','lmm'), LEAFLET_PLUGIN_URL . 'inc/loader-wizard.php' ) . '</strong></div>';
+				$ioncube_php_ini_exists = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'leaflet-maps-marker' . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR . 'php.ini';
+				if (!file_exists($ioncube_php_ini_exists)) {
+					echo '<div class="error" style="padding:10px;"><strong>' . sprintf(__('Attention: your web server does not meet the requirements for "Leaflet Maps Marker Pro". <a href="%1s" target="_blank">Please click here to start the installation wizard</a> which offers an interactive tutorial on how to install the required "ionCube Loader" first.','lmm'), LEAFLET_PLUGIN_URL . 'inc/loader-wizard.php' ) . '</strong></div>';
+				} else {
+					echo '<div class="error" style="padding:10px;">' . sprintf(__('You already ran the <a href="%1s" target="_blank">ioncube installation wizard</a> and copied the created php.ini file to <strong>%2s</strong><br/>To finish the ioncube installation, please also copy the file <strong>php.ini</strong> to the directory <strong>%3s</strong><br/>Afterwards the ioncube installation is finished and you should be able to start using Leaflet Maps Marker Pro. If you still encounter an issue, please <a href="%4s" target="_blank">get in contact</a>','lmm'), plugin_dir_url(__FILE__) . 'inc/loader-wizard.php', plugin_dir_path(__FILE__) . 'inc/', ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR, 'http://www.mapsmarker.com/contact' ) . '</div>';	
+				}
 				echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" class="submit button-secondary" disabled="disabled" />';
 			}
 		} else {
