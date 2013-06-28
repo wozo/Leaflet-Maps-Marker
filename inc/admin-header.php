@@ -21,7 +21,13 @@ if ($page == 'leafletmapsmarker_markers') {
 	$buttonclass8 = 'button-secondary lmm-nav-secondary';
 } else if ($page == 'leafletmapsmarker_marker') {
 	$buttonclass1 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2 = 'button-primary lmm-nav-primary';
+	if ( ($oid == NULL) && ($page == 'leafletmapsmarker_marker') ) {
+		$buttonclass2 = 'button-primary lmm-nav-primary';
+	} else if ( ($oid != NULL) && ($page == 'leafletmapsmarker_marker') ) {
+		$buttonclass2 = 'button-secondary lmm-nav-secondary';		
+	} else {
+		$buttonclass2 = 'button-secondary lmm-nav-secondary';
+	}
 	$buttonclass3 = 'button-secondary lmm-nav-secondary';
 	$buttonclass4 = 'button-secondary lmm-nav-secondary';
 	$buttonclass5 = 'button-secondary lmm-nav-secondary';
@@ -41,7 +47,13 @@ if ($page == 'leafletmapsmarker_markers') {
 	$buttonclass1 = 'button-secondary lmm-nav-secondary';
 	$buttonclass2 = 'button-secondary lmm-nav-secondary';
 	$buttonclass3 = 'button-secondary lmm-nav-secondary';
-	$buttonclass4 = 'button-primary lmm-nav-primary';
+	if ( ($oid == NULL) && ($page == 'leafletmapsmarker_layer') ) {
+		$buttonclass4 = 'button-primary lmm-nav-primary';
+	} else if ( ($oid != NULL) && ($page == 'leafletmapsmarker_layer') ) {
+		$buttonclass4 = 'button-secondary lmm-nav-secondary';
+	} else {
+		$buttonclass4 = 'button-secondary lmm-nav-secondary';
+	}
 	$buttonclass5 = 'button-secondary lmm-nav-secondary';
 	$buttonclass6 = 'button-secondary lmm-nav-secondary';
 	$buttonclass7 = 'button-secondary lmm-nav-secondary';
@@ -154,27 +166,9 @@ if (isset($plugin_updates->response['leaflet-maps-marker/leaflet-maps-marker.php
 <div style="font-size:1.5em;margin-bottom:5px;padding:2px 0 0 0;"><span style="font-weight:bold;">Maps Marker<sup style="font-size:75%;">&reg;</sup> <a href="http://www.mapsmarker.com/v<?php echo $free_version; ?>" target="_blank" title="<?php esc_attr_e('view blogpost for current version','lmm');?>">v<?php echo $free_version; ?></a> - <?php _e('Lite Edition','lmm'); ?></span></div>
   <p style="margin:1em 0 0 0;line-height:32px;">
   <a class="<?php echo $buttonclass1; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_markers"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-menu-list.png" width="10" height="10" /><?php _e("List all markers", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a class="<?php echo $buttonclass2; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_marker"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-menu-add.png" width="10" height="10" />
-    <?php
-  if ( ($oid == NULL) && ($page == 'leafletmapsmarker_marker') ) {
-  		_e("Add new marker", "lmm");
-  } else if ( ($oid != NULL) && ($page == 'leafletmapsmarker_marker') ) {
-		_e("Edit marker", "lmm");
-  } else {
-  		_e("Add new marker", "lmm");
-  }?>
-  </a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+  <a class="<?php echo $buttonclass2; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_marker"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-menu-add.png" width="10" height="10" /> <?php _e("Add new marker", "lmm"); ?></a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
   <a class="<?php echo $buttonclass3; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layers"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-menu-list.png" width="10" height="10" /> <?php _e("List all layers", "lmm") ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a class="<?php echo $buttonclass4; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layer"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-menu-add.png" width="10" height="10" />
-  <?php
-  if ( ($oid == NULL) && ($page == 'leafletmapsmarker_layer') ) {
-  		_e("Add new layer", "lmm");
-  } else if ( ($oid != NULL) && ($page == 'leafletmapsmarker_layer') ) {
-		_e("Edit layer", "lmm");
-  } else {
-  		_e("Add new layer", "lmm");
-  }?>
-  </a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+  <a class="<?php echo $buttonclass4; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layer"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-menu-add.png" width="10" height="10" /> <?php _e("Add new layer", "lmm"); ?></a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
   <?php echo $admin_quicklink_tools_buttons ?>
   <?php echo $admin_quicklink_settings_buttons ?>
   <a class="<?php echo $buttonclass7; ?>" href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_help"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/icon-menu-help.png" width="10" height="10" /> <?php _e("Support", "lmm") ?></a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;

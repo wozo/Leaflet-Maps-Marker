@@ -371,22 +371,6 @@ class Leafletmapsmarker
 		}	
 	}	
 	function lmm_admin_menu() {
-		$page = (isset($_GET['page']) ? $_GET['page'] : '');
-		$oid = isset($_POST['id']) ? intval($_POST['id']) : (isset($_GET['id']) ? intval($_GET['id']) : '');
-		if ( ($oid == NULL) && ($page == 'leafletmapsmarker_marker') ) {
-			$marker_menu_name = __("Add new marker", "lmm");
-		} else if ( ($oid != NULL) && ($page == 'leafletmapsmarker_marker') ) {
-			$marker_menu_name = __("Edit marker", "lmm");
-		} else {
-			$marker_menu_name = __("Add new marker", "lmm");
-		}
-		if ( ($oid == NULL) && ($page == 'leafletmapsmarker_layer') ) {
-			$layer_menu_name = __("Add new layer", "lmm");
-		} else if ( ($oid != NULL) && ($page == 'leafletmapsmarker_layer') ) {
-			$layer_menu_name = __("Edit layer", "lmm");
-		} else {
-			$layer_menu_name = __("Add new layer", "lmm");
-		}
 		$lmm_options = get_option( 'leafletmapsmarker_options' );
 		if ( !empty($lmm_options) ) { //info: needed to suppress warning when reseting settings
 			$capabilities = $lmm_options[ 'capabilities_edit' ];
@@ -396,9 +380,9 @@ class Leafletmapsmarker
 		$page = add_object_page('Maps Marker', 'Maps Marker', $capabilities, 'leafletmapsmarker_markers', array(&$this, 'lmm_list_markers'), LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-page.png' );
 		if ( !empty($lmm_options) ) { //info: needed to suppress warning when reseting settings
 			$page2 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('List all markers', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-list.png"> ' . __('List all markers', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_markers', array(&$this, 'lmm_list_markers') );
-			$page3 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('add/edit marker', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-add.png"> ' . $marker_menu_name, $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_marker', array(&$this, 'lmm_marker') );
+			$page3 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('add/edit marker', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-add.png"> ' . __('Add new marker', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_marker', array(&$this, 'lmm_marker') );
 			$page4 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('List all layers', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-list.png"> ' . __('List all layers', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_layers', array(&$this, 'lmm_list_layers') );
-			$page5 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('add/edit layer', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-add.png"> ' . $layer_menu_name, $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_layer', array(&$this, 'lmm_layer') );
+			$page5 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('add/edit layer', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-add.png"> ' . __('Add new layer', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_layer', array(&$this, 'lmm_layer') );
 		} else {
 			$page = '';
 			$page2 = '';
