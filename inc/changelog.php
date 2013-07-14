@@ -135,6 +135,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
+		adding maps via tinyMCE button was broken when using WordPress 3.6
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
 		undefined index message when saving layers with debug enabled on older WordPress versions
 		</td></tr>
 		<tr><td>
