@@ -117,7 +117,7 @@ function get_mm_list(){
                 e.preventDefault();
                 self.close();
             })
-            $('.list_item').live('click touchstart', function(e){
+            $(document).on('click touchstart', '.list_item', function(e){
                 e.preventDefault();
                 var id = $(this).find('input[name="msb_id"]').val();
                 var type = $(this).find('input[name="msb_type"]').val();

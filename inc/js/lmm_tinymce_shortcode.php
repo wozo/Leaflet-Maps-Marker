@@ -27,7 +27,7 @@ if ( isset($lmm_options['misc_tinymce_button']) && ($lmm_options['misc_tinymce_b
 						inline: 1
 					});
 				}
-				$('#globe, #ed_insertMap').live('click', function(){
+				$(document).on('click', '#globe, #ed_insertMap', function(){
 				    open_map();
 				    return false;
 				});

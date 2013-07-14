@@ -31,7 +31,7 @@ jQuery(function($) {
                 autoOpen : false,
                 closeOnEscape : true,
             });
-            $("#globe, #ed_insertMap").live('click', function(event) {
+            $(document).on('click', '#globe, #ed_insertMap', function(event) {
                 info.wpdialog('open');
                 return false;
             });
