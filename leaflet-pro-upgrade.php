@@ -32,8 +32,10 @@ if ( $action != NULL ) {
 	if (!wp_verify_nonce( $_POST['_wpnonce'], 'pro-upgrade-nonce') ) { wp_die('<br/>'.__('Security check failed - please call this function from the according Leaflet Maps Marker admin page!','lmm').''); };
 	if ($action == 'upgrade_to_pro_version') {
 		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		add_filter( 'https_ssl_verify', '__return_false' ); //info: otherwise SSL error on localhost installs.
+		add_filter( 'https_local_ssl_verify', '__return_false' ); //info: not sure if needed, added to be sure
 		$upgrader = new Plugin_Upgrader( new Plugin_Upgrader_Skin() );
-		//2do: $upgrader->install( "https://www.mapsmarker.com/download" );
+		$upgrader->install( "https://www.mapsmarker.com/download" );
 	} 
 } else {
 	if (!file_exists($lmm_pro_readme)) {
