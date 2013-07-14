@@ -75,7 +75,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 */
-		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.6') . '</strong> - ' . __('released on','lmm') . ' xx.01.2013 (<a href="http://www.mapsmarker.com/v3.6" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
+		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.6') . '</strong> - ' . __('released on','lmm') . ' 22.07.2013 (<a href="http://www.mapsmarker.com/v3.6" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-pro.png">
