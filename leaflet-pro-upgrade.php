@@ -4,40 +4,14 @@
 */
 //info prevent file from being accessed directly
 if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-pro-upgrade.php') { die ("Please do not access this file directly. Thanks!<br/><a href='http://www.mapsmarker.com/go'>www.mapsmarker.com</a>"); }
-
-function lmm_check_ioncube_loaders() {
-	if (extension_loaded('ionCube Loader')) {
-		return true;
-	}
-	if ( function_exists('ioncube_file_is_encoded') ) {
-		return true;
-	}
-	if ( function_exists('phpinfo') ) {
-		ob_start();
-		phpinfo(8);
-		$phpinfo = ob_get_clean();
-		if ( false !== strpos($phpinfo, 'ionCube') ) {
-			return true;
-		}
-	}
-	return false;
-}
 ?>
 <div class="wrap">
 <?php 
 include('inc' . DIRECTORY_SEPARATOR . 'admin-header.php'); 
 $lmm_pro_readme = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'leaflet-maps-marker-pro' . DIRECTORY_SEPARATOR . 'readme.txt';
 $action = isset($_POST['action']) ? $_POST['action'] : '';
-if ( $action != NULL ) {
-	if (!wp_verify_nonce( $_POST['_wpnonce'], 'pro-upgrade-nonce') ) { wp_die('<br/>'.__('Security check failed - please call this function from the according Leaflet Maps Marker admin page!','lmm').''); };
-	if ($action == 'upgrade_to_pro_version') {
-		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-		add_filter( 'https_ssl_verify', '__return_false' ); //info: otherwise SSL error on localhost installs.
-		add_filter( 'https_local_ssl_verify', '__return_false' ); //info: not sure if needed, added to be sure
-		$upgrader = new Plugin_Upgrader( new Plugin_Upgrader_Skin() );
-		$upgrader->install( "https://www.mapsmarker.com/download" );
-	} 
-} else {
+if (extension_loaded('ionCube Loader')) { if ( function_exists('ioncube_loader_iversion') ) { $ic_lv = ioncube_loader_iversion(); $lmm_ic_lv = (int)substr($ic_lv,0,1); } else { $ic_lv = ioncube_loader_version(); $lmm_ic_lv = (int)substr($ic_lv,0,1); } if ($lmm_ic_lv >= 4) { $sf = ''; } else { $sf = strrev('orp-'); } } else { $sf = strrev('orp-'); }
+if ( $action == NULL ) {
 	if (!file_exists($lmm_pro_readme)) {
 		echo '<h3 style="font-size:23px;">' . __('Upgrade to Pro','lmm') . '</h3>';
 		echo '<div style="float:left;margin: 0 10px 10px 0;"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/logo-mapsmarker-pro.png" alt="Pro Logo" title="Leaflet Maps Marker Pro Logo"></div>';
@@ -261,19 +235,11 @@ if ( $action != NULL ) {
 				</script>
 				</p>';
 		echo '<p>' . __('For more details, showcases and reviews please also visit <a style="text-decoration:none;" href="http://www.mapsmarker.com">www.mapsmarker.com</a>','lmm') . '</p>';
-		echo '<p>' . sprintf(__('To start your free 30-day-trial of Leaflet Maps Marker Pro, please click on the button "start installation" below. This will start the download of Leaflet Maps Marker Pro from <a style="text-decoration:none;" href="%1s">%2s</a> and installation as a separate plugin.<br/>Afterwards please activate the pro plugin and you will be guided through the process to receive a free 30-day-trial license without any obligations. Your trial will expire automatically unless you purchase a valid pro license. You can also switch back to the free version at any time.','lmm'), 'http://www.mapsmarker.com/download', 'www.mapsmarker.com/download') . '</p>';
+		$dl_l = 'https://www.mapsmarker.com/download' . $sf;
+		$dl_lt = 'www.mapsmarker.com/download' . $sf;
+		echo '<p>' . sprintf(__('To start your free 30-day-trial of Leaflet Maps Marker Pro, please click on the button "start installation" below. This will start the download of Leaflet Maps Marker Pro from <a style="text-decoration:none;" href="%1s">%2s</a> and installation as a separate plugin.<br/>Afterwards please activate the pro plugin and you will be guided through the process to receive a free 30-day-trial license without any obligations. Your trial will expire automatically unless you purchase a valid pro license. You can also switch back to the free version at any time.','lmm'), $dl_l, $dl_lt) . '</p>';
 		if ( current_user_can( 'install_plugins' ) ) {
-			if (lmm_check_ioncube_loaders() == true) {
-				echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" class="submit button-primary" />';
-			} else {
-				$ioncube_php_ini_exists = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'leaflet-maps-marker' . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR . 'php.ini';
-				if (!file_exists($ioncube_php_ini_exists)) {
-					echo '<div class="error" style="padding:10px;"><strong>' . sprintf(__('Attention: your web server does not meet the requirements for "Leaflet Maps Marker Pro". <a href="%1s" target="_blank">Please click here to start the installation wizard</a> which offers an interactive tutorial on how to install the required "ionCube Loader" first.','lmm'), LEAFLET_PLUGIN_URL . 'inc/loader-wizard.php' ) . '</strong></div>';
-				} else {
-					echo '<div class="error" style="padding:10px;">' . sprintf(__('You already ran the <a href="%1s" target="_blank">ioncube installation wizard</a> and copied the created php.ini file to <strong>%2s</strong><br/>To finish the ioncube installation, please also copy the file <strong>php.ini</strong> to the directory <strong>%3s</strong><br/>Afterwards the ioncube installation is finished and you should be able to start using Leaflet Maps Marker Pro. If you still encounter an issue, please <a href="%4s" target="_blank">get in contact</a>','lmm'), plugin_dir_url(__FILE__) . 'inc/loader-wizard.php', plugin_dir_path(__FILE__) . 'inc/', ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR, 'http://www.mapsmarker.com/contact' ) . '</div>';	
-				}
-				echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" class="submit button-secondary" disabled="disabled" />';
-			}
+			echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" class="submit button-primary" />';
 		} else {
 			echo '<div class="error" style="padding:10px;"><strong>' . sprintf(__('Warning: your user does not have the capability to install new plugins - please contact your administrator (%1s)','lmm'), '<a href="mailto:' . get_bloginfo('admin_email') . '?subject=' . esc_attr__('Please install the plugin "Leaflet MapsMarker Pro"','lmm') . '">' . get_bloginfo('admin_email') . '</a>' ) . '</strong></div>';
 			echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" class="submit button-secondary" disabled="disabled" />';
@@ -288,6 +254,16 @@ if ( $action != NULL ) {
 			echo sprintf(__('Please contact your administrator (%1s) to activate the plugin "Leaflet Maps Marker Pro".','lmm'), '<a href="mailto:' . get_bloginfo('admin_email') . '?subject=' . esc_attr__('Please activate the plugin "Maps Marker Pro"','lmm') . '">' . get_bloginfo('admin_email') . '</a>' );
 		}
 	}
+} else {
+	if (!wp_verify_nonce( $_POST['_wpnonce'], 'pro-upgrade-nonce') ) { wp_die('<br/>'.__('Security check failed - please call this function from the according Leaflet Maps Marker admin page!','lmm').''); };
+	if ($action == 'upgrade_to_pro_version') {
+		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		add_filter( 'https_ssl_verify', '__return_false' ); //info: otherwise SSL error on localhost installs.
+		add_filter( 'https_local_ssl_verify', '__return_false' ); //info: not sure if needed, added to be sure
+		$upgrader = new Plugin_Upgrader( new Plugin_Upgrader_Skin() );
+		$dl = 'https://www.mapsmarker.com/download' . $sf;
+		$upgrader->install( $dl );
+	} 
 }
 ?>
 </div>
