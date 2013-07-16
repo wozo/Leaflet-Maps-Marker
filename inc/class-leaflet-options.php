@@ -6827,7 +6827,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'section' => 'google-section6',
 			'std'     => '',
 			'title'   => '',
-			'desc'    => __( 'Use the settings below to customize the display of ads on Google basemaps.', 'lmm'),
+			'desc'    => __( 'Use the settings below to customize the display of ads on Google basemaps.', 'lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-adsense.jpg" width="625" height="67" /><br/><br/><a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a><br/><span style="font-weight:bold;color:red;">' . sprintf(__( 'Attention: please be aware that although the plugin has been designed to meet the <a href="%1s" target="_blank">Google AdSense programme policies</a>, finally it is your responsibility to verify that your maps meet the Adsense requirements (as this is heavily depended on how you have configured your maps). For example it is advised to double check the position of the ads in order that they are not being overlayed by map controls (which is not allowed by Google and could result in sanctions like the cancellation of your Adsense publisher account)!', 'lmm'), 'https://support.google.com/adsense/answer/48182') . '</span>',
 			'type'    => 'helptext'
 		);
 		$this->_settings['google_adsense_status'] = array(
@@ -6835,7 +6835,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'pane'    => 'google',
 			'section' => 'google-section6',
 			'title'   => 'Google Adsense<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
-			'desc'    => __('Please set to disabled if you do not want to display ads on Google basemaps','lmm') . '<a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-adsense.jpg" width="625" height="67" />',
+			'desc'    => __('Please set to disabled if you do not want to display ads on Google basemaps','lmm'),
 			'type'    => 'radio-pro',
 			'std'     => 'disabled',
 			'choices' => array(
@@ -6843,6 +6843,15 @@ $this->_settings['clustering_helptext2'] = array(
 				'disabled' => __('disabled','lmm')
 			)
 		);
+		$this->_settings['google_adsense_publisherId'] = array(
+			'version' => 'p1.0',
+			'pane'    => 'google',
+			'section' => 'google-section6',
+			'title'   => 'publisherId<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
+			'desc'    => sprintf(__('Adding display ads to your map requires that you have an AdSense account enabled for AdSense for Content. If you do not yet have an AdSense account, <a href="%1s" target="_blank">sign up for one</a>. Once you have done so (or if you already have an account) make sure you have also enabled the account with <a href="%2s" target="_blank">AdSense for Content</a>. Once you have an Adsense for Content account, you will have received an AdSense for Content (AFC) publisher ID. This publisher ID is used within your code to link any advertising shown to your AdSense account, allowing you to share in advertising revenue when a user clicks on one of the ads shown on your map.','lmm'), 'https://www.google.com/adsense/support/bin/answer.py?answer=10162', 'https://www.google.com/adsense/support/bin/answer.py?hl=en&answer=17470'),
+			'std'     => '',
+			'type'    => 'text-pro'
+		);		
 		$this->_settings['google_adsense_format'] = array(
 			'version' => 'p1.0',
 			'pane'    => 'google',
@@ -6882,17 +6891,17 @@ $this->_settings['clustering_helptext2'] = array(
 			'std'     => 'TOP_CENTER',
 			'choices' => array(
 				'TOP_CENTER' => 'TOP_CENTER',
-				'TOP_LEFT' => 'TOP_LEFT',
-				'TOP_RIGHT' => 'TOP_RIGHT',
-				'LEFT_TOP' => 'LEFT_TOP',
-				'RIGHT_TOP' => 'RIGHT_TOP',
+				'TOP_LEFT' => 'TOP_LEFT' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
+				'TOP_RIGHT' => 'TOP_RIGHT' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
+				'LEFT_TOP' => 'LEFT_TOP' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
+				'RIGHT_TOP' => 'RIGHT_TOP' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
 				'LEFT_CENTER' => 'LEFT_CENTER',
 				'RIGHT_CENTER' => 'RIGHT_CENTER',
-				'LEFT_BOTTOM' => 'LEFT_BOTTOM',
-				'RIGHT_BOTTOM' => 'RIGHT_BOTTOM',
-				'BOTTOM_LEFT' => 'BOTTOM_LEFT',
-				'BOTTOM_CENTER' => 'BOTTOM_CENTER',
-				'BOTTOM_RIGHT' => 'BOTTOM_RIGHT'
+				'LEFT_BOTTOM' => 'LEFT_BOTTOM' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
+				'RIGHT_BOTTOM' => 'RIGHT_BOTTOM' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
+				'BOTTOM_LEFT' => 'BOTTOM_LEFT' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
+				'BOTTOM_CENTER' => 'BOTTOM_CENTER' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
+				'BOTTOM_RIGHT' => 'BOTTOM_RIGHT' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>'
 			)
 		);
 		$this->_settings['google_adsense_backgroundColor'] = array(
@@ -6948,15 +6957,6 @@ $this->_settings['clustering_helptext2'] = array(
 			'title'   => 'channelNumber<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
 			'desc'    => __('The AdSense For Content channel number for tracking the performance of this AdUnit. It must be stored as a string as it will typically be a large UINT64.','lmm'),
 			'std'     => '',
-			'type'    => 'text-pro'
-		);
-		$this->_settings['google_adsense_publisherId'] = array(
-			'version' => 'p1.0',
-			'pane'    => 'google',
-			'section' => 'google-section6',
-			'title'   => 'publisherId<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
-			'desc'    => sprintf(__('Adding display ads to your map requires that you have an AdSense account enabled for AdSense for Content. If you do not yet have an AdSense account, <a href="%1s" target="_blank">sign up for one</a>. Once you have done so (or if you already have an account) make sure you have also enabled the account with <a href="%2s" target="_blank">AdSense for Content</a>. Once you have an Adsense for Content account, you will have received an AdSense for Content (AFC) publisher ID. This publisher ID is used within your code to link any advertising shown to your AdSense account, allowing you to share in advertising revenue when a user clicks on one of the ads shown on your map.','lmm'), 'https://www.google.com/adsense/support/bin/answer.py?answer=10162', 'https://www.google.com/adsense/support/bin/answer.py?hl=en&answer=17470'),
-			'std'     => 'pub-4906650925210476',
 			'type'    => 'text-pro'
 		);
 		/*
