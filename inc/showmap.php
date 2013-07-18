@@ -1,13 +1,6 @@
 <?php
 //info prevent file from being accessed directly
 if (basename($_SERVER['SCRIPT_FILENAME']) == 'showmap.php') { die ("Please do not access this file directly. Thanks!<br/><a href='http://www.mapsmarker.com/go'>www.mapsmarker.com</a>"); }
-	//info: remove filter from SEO Friendly Images for compatibility reasons
-	include_once( ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'plugin.php' );
-	if (is_plugin_active('seo-image/seo-friendly-images.php') ) {
-		if ( function_exists( 'seo_friendly_images_install' ) ) {
-			remove_filter('the_content', 'seo_friendly_images', 100);
-		}
-	}
 	global $wpdb, $wp_version;
 	$lmm_options = get_option( 'leafletmapsmarker_options' );
 	//info: set marker shadow url

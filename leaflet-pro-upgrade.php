@@ -263,6 +263,15 @@ if ( $action == NULL ) {
 		$upgrader = new Plugin_Upgrader( new Plugin_Upgrader_Skin() );
 		$dl = 'https://www.mapsmarker.com/download' . $sf;
 		$upgrader->install( $dl );
+		//info: check if download was successful
+		$lmm_pro_readme = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'leaflet-maps-marker-pro' . DIRECTORY_SEPARATOR . 'readme.txt';
+		if (file_exists($lmm_pro_readme)) {
+			echo '<p>' . __('Please activate the plugin by clicking the link above','lmm') . '</p>';
+		} else {
+			$dl_l = 'https://www.mapsmarker.com/download' . $sf;
+			$dl_lt = 'www.mapsmarker.com/download' . $sf;
+			echo '<p>' . sprintf(__('The pro plugin package could not be downloaded automatically. Please download the plugin from <a href="%1s">%2s</a> and upload it to the directory /wp-content/plugins on your server manually','lmm'), $dl_l, $dl_lt) . '</p>';
+		}
 	} 
 }
 ?>

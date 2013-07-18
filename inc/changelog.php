@@ -128,6 +128,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		use of prepared statement for KML layer name parameter to improve security
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		removed plugin compatibility check for "<a href="http://wordpress.org/extend/plugins/seo-image/" target="_blank">SEO Friendly Images</a>" plugin (thx for the fix Vladimir!)
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		settings page headings were not localized since v3.5.3 (thanks again <a href="http://www.yakirs.net/" target="_blank">Yakir</a>!)
