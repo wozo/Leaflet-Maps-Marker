@@ -235,8 +235,8 @@ if ( $action == NULL ) {
 				</script>
 				</p>';
 		echo '<p>' . __('For more details, showcases and reviews please also visit <a style="text-decoration:none;" href="http://www.mapsmarker.com">www.mapsmarker.com</a>','lmm') . '</p>';
-		$dl_l = 'https://www.mapsmarker.com/download' . $sf;
-		$dl_lt = 'www.mapsmarker.com/download' . $sf;
+		$dl_l = 'https://www.mapsmarker.com/upgrade' . $sf;
+		$dl_lt = 'www.mapsmarker.com/upgrade' . $sf;
 		echo '<p>' . sprintf(__('To start your free 30-day-trial of Leaflet Maps Marker Pro, please click on the button "start installation" below. This will start the download of Leaflet Maps Marker Pro from <a style="text-decoration:none;" href="%1s">%2s</a> and installation as a separate plugin.<br/>Afterwards please activate the pro plugin and you will be guided through the process to receive a free 30-day-trial license without any obligations. Your trial will expire automatically unless you purchase a valid pro license. You can also switch back to the free version at any time.','lmm'), $dl_l, $dl_lt) . '</p>';
 		if ( current_user_can( 'install_plugins' ) ) {
 			echo '<input style="font-weight:bold;" type="submit" name="submit_upgrade_to_pro_version" value="' . __('start installation','lmm') . ' &raquo;" class="submit button-primary" />';
@@ -261,15 +261,15 @@ if ( $action == NULL ) {
 		add_filter( 'https_ssl_verify', '__return_false' ); //info: otherwise SSL error on localhost installs.
 		add_filter( 'https_local_ssl_verify', '__return_false' ); //info: not sure if needed, added to be sure
 		$upgrader = new Plugin_Upgrader( new Plugin_Upgrader_Skin() );
-		$dl = 'https://www.mapsmarker.com/download' . $sf;
+		$dl = 'https://www.mapsmarker.com/upgrade' . $sf;
 		$upgrader->install( $dl );
 		//info: check if download was successful
 		$lmm_pro_readme = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'leaflet-maps-marker-pro' . DIRECTORY_SEPARATOR . 'readme.txt';
 		if (file_exists($lmm_pro_readme)) {
 			echo '<p>' . __('Please activate the plugin by clicking the link above','lmm') . '</p>';
 		} else {
-			$dl_l = 'https://www.mapsmarker.com/download' . $sf;
-			$dl_lt = 'www.mapsmarker.com/download' . $sf;
+			$dl_l = 'https://www.mapsmarker.com/upgrade' . $sf;
+			$dl_lt = 'www.mapsmarker.com/upgrade' . $sf;
 			echo '<p>' . sprintf(__('The pro plugin package could not be downloaded automatically. Please download the plugin from <a href="%1s">%2s</a> and upload it to the directory /wp-content/plugins on your server manually','lmm'), $dl_l, $dl_lt) . '</p>';
 		}
 	} 
