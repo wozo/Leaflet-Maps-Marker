@@ -6886,7 +6886,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'pane'    => 'google',
 			'section' => 'google-section6',
 			'title'   => __('Position','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
-			'desc'    => '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-google-adsense-positions.jpg" width="640" height="480" />',
+			'desc'    => sprintf(__('<a href="%1s" target="_blank">click here for more information on ad positions which might cause conflicts with Google AdSense programme policies</a>','lmm'), 'http://www.mapsmarker.com/docs/pro-version-docs/how-to-configure-google-adsense-in-order-not-to-violate-google-adsense-programme-policies/') . '<br/><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-google-adsense-positions.jpg" width="640" height="480" />',
 			'type'    => 'radio-pro',
 			'std'     => 'TOP_CENTER',
 			'choices' => array(
@@ -6897,10 +6897,10 @@ $this->_settings['clustering_helptext2'] = array(
 				'RIGHT_TOP' => 'RIGHT_TOP' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
 				'LEFT_CENTER' => 'LEFT_CENTER',
 				'RIGHT_CENTER' => 'RIGHT_CENTER',
-				'LEFT_BOTTOM' => 'LEFT_BOTTOM' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
+				'LEFT_BOTTOM' => 'LEFT_BOTTOM',
 				'RIGHT_BOTTOM' => 'RIGHT_BOTTOM' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
 				'BOTTOM_LEFT' => 'BOTTOM_LEFT' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
-				'BOTTOM_CENTER' => 'BOTTOM_CENTER' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>',
+				'BOTTOM_CENTER' => 'BOTTOM_CENTER',
 				'BOTTOM_RIGHT' => 'BOTTOM_RIGHT' . ' <span style="font-weight:bold;color:red;">(' . __('likely to violate Google AdSense programme policies with default configuration!','lmm') . ')</span>'
 			)
 		);
