@@ -307,7 +307,7 @@ class Class_leaflet_options {
 
 			case 'helptext-twocolumn':
 				echo $desc;
-				break;				
+				break;
 
 			case 'checkbox':
 				echo '<input class="checkbox' . $field_class . '" type="checkbox" id="' . $id . '" name="leafletmapsmarker_options[' . $id . ']" value="1" ' . checked( $options[$id], 1, false ) . ' /> <label for="' . $id . '">' . $desc . '</label>';
@@ -3015,7 +3015,7 @@ class Class_leaflet_options {
 			'desc'    => __('If set (1 to 18 repectively 19 if supported), at this zoom level and below markers will not be clustered.','lmm'),
 			'std'     => '',
 			'type'    => 'text-pro'
-		);			
+		);
 		$this->_settings['clustering_maxClusterRadius'] = array(
 			'version' => 'p1.0',
 			'pane'    => 'mapdefaults',
@@ -3024,7 +3024,7 @@ class Class_leaflet_options {
 			'desc'    => __('The maximum radius that a cluster will cover from the central marker (in pixels). Decreasing will make more smaller clusters.','lmm'),
 			'std'     => '80',
 			'type'    => 'text-pro'
-		);	
+		);
 $this->_settings['clustering_helptext2'] = array(
 			'version' => 'p1.0',
 			'pane'    => 'mapdefaults',
@@ -3033,7 +3033,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'title'   =>'polygonOptions<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" />',
 			'desc'    => sprintf(__('Options to pass when creating the L.Polygon for styling (<a href="%1s" target="_blank">more details</a>)','lmm'), 'http://leafletjs.com/reference.html#path-options') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-clustering-polygon-options.jpg" width="141" height="91" />',
 			'type'    => 'helptext-twocolumn'
-		);		
+		);
 		$this->_settings['clustering_polygonOptions_stroke'] = array(
 			'version' => 'p1.0',
 			'pane'    => 'mapdefaults',
@@ -3055,7 +3055,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'desc'    => __('color (stroke color)','lmm') . ' - ' . __('example','lmm') . ': ff0000',
 			'std'     => '03f',
 			'type'    => 'text-reverse-pro'
-		);	
+		);
 		$this->_settings['clustering_polygonOptions_weight'] = array(
 			'version' => 'p1.0',
 			'pane'    => 'mapdefaults',
@@ -3064,7 +3064,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'desc'    => __('weight (stroke width in pixel)','lmm') . ' - ' . __('example','lmm') . ': 5',
 			'std'     => '5',
 			'type'    => 'text-reverse-pro'
-		);	
+		);
 		$this->_settings['clustering_polygonOptions_opacity'] = array(
 			'version' => 'p1.0',
 			'pane'    => 'mapdefaults',
@@ -3130,7 +3130,7 @@ $this->_settings['clustering_helptext2'] = array(
 				'true' => __('true','lmm'),
 				'false' => __('false','lmm')
 			)
-		);	
+		);
 		$this->_settings['clustering_spiderfyDistanceMultiplier'] = array(
 			'version' => 'p1.0',
 			'pane'    => 'mapdefaults',
@@ -3139,7 +3139,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'desc'    => __('Increase from 1 to increase the distance away from the center that spiderfied markers are placed. Use if you are using big marker icons:','lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-clustering-spiderify-distance.jpg" width="117" height="100" />',
 			'std'     => '1',
 			'type'    => 'text-pro'
-		);			
+		);
 		$this->_settings['clustering_animateAddingMarkers'] = array(
 			'version' => 'p1.0',
 			'pane'    => 'mapdefaults',
@@ -3152,7 +3152,7 @@ $this->_settings['clustering_helptext2'] = array(
 				'true' => __('true','lmm'),
 				'false' => __('false','lmm')
 			)
-		);		
+		);
 
 		/*===========================================
 		*
@@ -6851,7 +6851,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'desc'    => sprintf(__('Adding display ads to your map requires that you have an AdSense account enabled for AdSense for Content. If you do not yet have an AdSense account, <a href="%1s" target="_blank">sign up for one</a>. Once you have done so (or if you already have an account) make sure you have also enabled the account with <a href="%2s" target="_blank">AdSense for Content</a>. Once you have an Adsense for Content account, you will have received an AdSense for Content (AFC) publisher ID. This publisher ID is used within your code to link any advertising shown to your AdSense account, allowing you to share in advertising revenue when a user clicks on one of the ads shown on your map.','lmm'), 'https://www.google.com/adsense/support/bin/answer.py?answer=10162', 'https://www.google.com/adsense/support/bin/answer.py?hl=en&answer=17470'),
 			'std'     => '',
 			'type'    => 'text-pro'
-		);		
+		);
 		$this->_settings['google_adsense_format'] = array(
 			'version' => 'p1.0',
 			'pane'    => 'google',
@@ -7871,6 +7871,19 @@ $this->_settings['clustering_helptext2'] = array(
 			'choices' => array(
 				'show' => __('show','lmm'),
 				'hide' => __('hide','lmm')
+			)
+		);
+		$this->_settings['misc_betatest'] = array(
+			'version' => 'p1.1',
+			'pane'    => 'misc',
+			'section' => 'misc-section1',
+			'title'   => __('Beta testing','lmm'). '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
+			'desc'    => __('Set to enabled if you want to easily upgrade to beta releases.','lmm') . ' <span style="font-weight:bold;color:red;">' . __('Warning: not recommended on production sites - use on your own risk!','lmm') . '</span>',
+			'type'    => 'radio-pro',
+			'std'     => 'disabled',
+			'choices' => array(
+				'disabled' => __('disabled','lmm'),
+				'enabled' => __('enabled','lmm')
 			)
 		);
 		/*
