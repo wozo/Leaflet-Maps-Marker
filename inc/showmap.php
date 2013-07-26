@@ -346,7 +346,7 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'showmap.php') { die ("Please do no
 		$layer_marker_list_width = $mapwidth.$mapwidthunit;
 	}
 	$lmm_out .= '<div id="lmm_listmarkers_'.$uid.'" class="lmm-listmarkers" style="width:' . $layer_marker_list_width . ';">'.PHP_EOL;
-	$lmm_out .= '<table style="width:' . $layer_marker_list_width . ';" id="lmm-listmarkers-table-'.$uid.'">';
+	$lmm_out .= '<table style="width:' . $layer_marker_list_width . ';" id="lmm_listmarkers_table_'.$uid.'">';
 	foreach ($layer_marker_list as $row){
 		if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_icon' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_icon' ] == 1 ) ) {
 			$lmm_out .= '<tr><td style="width:35px;vertical-align:top;text-align:center;' . $lmm_options[ 'defaults_layer_listmarkers_extracss' ] . '">';
@@ -478,8 +478,8 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'showmap.php') { die ("Please do no
 					var map = $('#lmm_".$uid."');
 					";
 					if ($listmarkers == 1) {
-						$lmmjs_out .= "var map_list_markers_div = $('#lmm-listmarkers-".$uid."');".PHP_EOL;
-						$lmmjs_out .= "\t\t\t\t\t" . "var map_list_markers_table = $('#lmm-listmarkers-table-".$uid."');".PHP_EOL;
+						$lmmjs_out .= "var map_list_markers_div = $('#lmm_listmarkers_".$uid."');".PHP_EOL;
+						$lmmjs_out .= "\t\t\t\t\t" . "var map_list_markers_table = $('#lmm_listmarkers_table_".$uid."');".PHP_EOL;
 					}
 					$lmmjs_out .= "\t\t\t\t\t" . "var map_parent_size = $('#lmm_".$uid."').parent().width();
 					if( map_parent_size < ".$mapwidth." ) {
