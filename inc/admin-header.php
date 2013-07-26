@@ -24,7 +24,7 @@ if ($page == 'leafletmapsmarker_markers') {
 	if ( ($oid == NULL) && ($page == 'leafletmapsmarker_marker') ) {
 		$buttonclass2 = 'button-primary lmm-nav-primary';
 	} else if ( ($oid != NULL) && ($page == 'leafletmapsmarker_marker') ) {
-		$buttonclass2 = 'button-secondary lmm-nav-secondary';		
+		$buttonclass2 = 'button-secondary lmm-nav-secondary';
 	} else {
 		$buttonclass2 = 'button-secondary lmm-nav-secondary';
 	}

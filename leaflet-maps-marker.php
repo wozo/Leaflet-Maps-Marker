@@ -59,7 +59,7 @@ if ( ! defined( 'LEAFLET_PLUGIN_ICONS_URL' ) )
 	define ("LEAFLET_PLUGIN_ICONS_URL", $lmm_upload_dir['baseurl'] . "/leaflet-maps-marker-icons");
 if ( ! defined( 'LEAFLET_PLUGIN_ICONS_DIR' ) )
 	define ("LEAFLET_PLUGIN_ICONS_DIR", $lmm_upload_dir['basedir'] . DIRECTORY_SEPARATOR . "leaflet-maps-marker-icons");
-class Leafletmapsmarker 
+class Leafletmapsmarker
 {
 	function __construct() {
 		global $wp_version;
@@ -88,7 +88,7 @@ class Leafletmapsmarker
 				add_action( 'wp_head', array( &$this, 'lmm_add_georss_to_head' ) );
 			}
 		}
-		
+
 		if ( isset($lmm_options['misc_tinymce_button']) && ($lmm_options['misc_tinymce_button'] == 'enabled') ) {
 			require_once( plugin_dir_path( __FILE__ ) . 'inc' . DIRECTORY_SEPARATOR . 'tinymce-plugin.php' );
 		}
@@ -169,7 +169,7 @@ class Leafletmapsmarker
 		$do_add_script = false;
 		$lmm_version_new = get_option( 'leafletmapsmarker_version' );
 		$version_without_dots = "lmmv" . str_replace('.', '', $lmm_version_new);
-	
+
 		if ( !isset($dismissed_pointers[$version_without_dots]) ) {
 			$do_add_script = true;
 			add_action( 'admin_print_footer_scripts', array( $this, 'lmm_update_pointer_footer_script' ) );
@@ -368,8 +368,8 @@ class Leafletmapsmarker
 			require_once( plugin_dir_path( __FILE__ ) . 'inc' . DIRECTORY_SEPARATOR . 'class-leaflet-options.php' );
 			global $lmm_options_class;
 			$lmm_options_class = new Class_leaflet_options();
-		}	
-	}	
+		}
+	}
 	function lmm_admin_menu() {
 		$lmm_options = get_option( 'leafletmapsmarker_options' );
 		if ( !empty($lmm_options) ) { //info: needed to suppress warning when reseting settings
@@ -400,7 +400,7 @@ class Leafletmapsmarker
 			$page8 = '';
 			$page9 = '';
 			$page10 = '';
-		}	
+		}
 		//info: add javascript - leaflet.js - for admin area
 		add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_admin_enqueue_scripts'),7);
 		add_action('admin_print_scripts-'.$page5, array(&$this, 'lmm_admin_enqueue_scripts'),8);
@@ -518,7 +518,7 @@ class Leafletmapsmarker
 							'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade'
 						)
 					));
-	
+
 				foreach ($menu_items as $menu_item) {
 					$wp_admin_bar->add_menu($menu_item);
 				}
@@ -671,12 +671,12 @@ class Leafletmapsmarker
 				global $wp_query, $wp_version;
 				$posts = $wp_query->posts;
 				$pattern = get_shortcode_regex();
-	
+
 				$plugin_version = get_option('leafletmapsmarker_version');
 				global $wp_styles;
 				wp_register_style('leafletmapsmarker', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.css', array(), $plugin_version);
 				wp_register_style('leafletmapsmarker-ie-only', LEAFLET_PLUGIN_URL . 'leaflet-dist/leaflet.ie.css', array(), $plugin_version);
-	
+
 				if (is_array($posts)) {
 					foreach ($posts as $post) {
 						if ( preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches ) && array_key_exists( 2, $matches ) && in_array( $lmm_options['shortcode'], $matches[2] ) ) {
