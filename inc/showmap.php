@@ -35,7 +35,8 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'showmap.php') { die ("Please do no
 	//info: prepare layers
 	if (!empty($layer)) {
 		$uid = 'layer_' . $layer;
-		$mapname = 'lmm_map_' . $uid;
+		$uid2 = substr(md5(''.rand()), 0, 8); //info: needed if same map is loaded twice
+		$mapname = 'lmm_map_layer_' . $layer. '_' . $uid2;
 		$table_name_layers = $wpdb->prefix.'leafletmapsmarker_layers';
 		$row = $wpdb->get_row('SELECT id,name,basemap,mapwidth,mapheight,mapwidthunit,panel,layerzoom,layerviewlat,layerviewlon,controlbox,overlays_custom,overlays_custom2,overlays_custom3,overlays_custom4,wms,wms2,wms3,wms4,wms5,wms6,wms7,wms8,wms9,wms10,listmarkers,multi_layer_map,multi_layer_map_list FROM '.$table_name_layers.' WHERE id='.intval($layer), ARRAY_A);
 		$id = $row['id'];
@@ -72,7 +73,8 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'showmap.php') { die ("Please do no
 	if (!empty($marker))  {
 			$table_name_markers = $wpdb->prefix.'leafletmapsmarker_markers';
 			$uid = 'marker_' . $marker;
-			$mapname = 'lmm_map_' . $uid;
+			$uid2 = substr(md5(''.rand()), 0, 8); //info: needed if same map is loaded twice
+			$mapname = 'lmm_map_marker_' . $marker. '_' . $uid2;
 				$row = $wpdb->get_row('SELECT id,markername,basemap,layer,lat,lon,icon,popuptext,zoom,openpopup,mapwidth,mapwidthunit,mapheight,panel,controlbox,overlays_custom,overlays_custom2,overlays_custom3,overlays_custom4,wms,wms2,wms3,wms4,wms5,wms6,wms7,wms8,wms9,wms10,address FROM '.$table_name_markers.' WHERE id='.intval($marker), ARRAY_A);
 				if(!empty($row)) {
 					$id = $row['id'];
@@ -118,7 +120,8 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'showmap.php') { die ("Please do no
 	//info: prepare markers only added by shortcode and not defined in backend
 	if (empty($layer) and empty($marker)) {
 		$uid = 'shortcode_' . str_replace(',','_',$mlat) . '_' . str_replace(',','_',$mlon);
-		$mapname = 'lmm_map_' . $uid;
+		$uid2 = substr(md5(''.rand()), 0, 8); //info: needed if same map is loaded twice
+		$mapname = 'lmm_map_shortcode_' . $uid2;
 		$lat = $mlat;
 		$lon = $mlon;
 		$controlbox = $lmm_options[ 'defaults_marker_shortcode_controlbox' ];
