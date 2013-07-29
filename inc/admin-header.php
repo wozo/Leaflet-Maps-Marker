@@ -141,9 +141,14 @@ if ( isset($lmm_options['misc_global_admin_notices']) && ($lmm_options['misc_glo
 		echo '<p><div class="error" style="padding:10px;"><strong>' . __('Warning: you are using the plugin Daily Stat which is causing the Leaflet Maps Marker settings page to break! Please temporarily deactivate this plugin if you want change the settings. The plugin developer has already been contacted and will hopefully release a fix soon.','lmm') . '</strong></div></p>';
 	}
 	//info: display admin notice (lmm only) if user switches back to free version
-	$lmm_pro_version = get_option( 'leafletmapsmarker_version_pro' );
-	if ( $lmm_pro_version != NULL) {
-		echo '<p><div  class="updated" style="padding:5px;">' . sprintf(__('Too bad you are using the free version again :-( <a href="%1s" target="_blank">Please tell us what we can do to win you as a happy pro user and receive a discount voucher!</a>','lmm'), 'http://www.mapsmarker.com/feedback') . '<br/>' . __('This message will disappear once the pro version has been activated or deleted from your server (via the WordPress Plugins page!)','lmm') . '</div></p>';
+	$lmm_pro_readme = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . 'leaflet-maps-marker-pro' . DIRECTORY_SEPARATOR . 'readme.txt';
+	if (file_exists($lmm_pro_readme)) {
+		$lmm_pro_version = get_option( 'leafletmapsmarker_version_pro' );
+		if ( $lmm_pro_version != NULL) {
+			echo '<p><div  class="updated" style="padding:5px;">' . sprintf(__('Too bad you are using the free version again :-( <a href="%1s" target="_blank">Please tell us what we can do to win you as a happy pro user and receive a discount voucher!</a>','lmm'), 'http://www.mapsmarker.com/feedback') . '<br/>' . __('This message will disappear once the pro version has been activated or deleted from your server (via the WordPress Plugins page!)','lmm') . '</div></p>';
+		} else {
+			echo '<p><div  class="updated" style="padding:5px;">' . sprintf(__('You downloaded <a href="%1s" target="_blank">Leaflet Maps Marker Pro</a> but did not register a free 30-day-trial license key. Please note that <a href="%2s" target="_blank">according to our privacy policy</a> we will not disclose, rent or sell your personal information!<br/>If you install Leaflet Maps Marker Pro on a localhost installation (<a href="%3s" target="_blank">see available packages on Wikipedia</a>) you can also test the pro plugin without registering a free 30-day-trial license key and without time limitation.','lmm'), 'http://www.mapsmarker.com', 'http://www.mapsmarker.com/privacy', 'http://en.wikipedia.org/wiki/List_of_AMP_packages') . '<br/>' . __('This message will disappear once the pro version has been activated or deleted from your server (via the WordPress Plugins page!)','lmm') . '</div></p>';
+		}
 	}
 }//info: end misc_global_admin_notices check
 //info: check if newer plugin version is available

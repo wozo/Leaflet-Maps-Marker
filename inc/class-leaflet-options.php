@@ -2852,7 +2852,7 @@ class Class_leaflet_options {
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section17',
 			'title'   => __('Basemap','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
-			'desc'    => __('Please select basemap which should be used for minimaps (bing maps currently not supported)','lmm'),
+			'desc'    => __('Please select basemap which should be used for minimaps','lmm'),
 			'type'    => 'radio-pro',
 			'std'     => 'automatic',
 			'choices' => array(
@@ -2863,7 +2863,10 @@ class Class_leaflet_options {
 				'googleLayer_roadmap_minimap' => __('Google Maps (Roadmap)','lmm'),
 				'googleLayer_satellite_minimap' => __('Google Maps (Satellite)','lmm'),
 				'googleLayer_hybrid_minimap' => __('Google Maps (Hybrid)','lmm'),
-				'googleLayer_terrain_minimap' => __('Google Maps (Terrain)','lmm')
+				'googleLayer_terrain_minimap' => __('Google Maps (Terrain)','lmm'),
+				'bingaerial_minimap' => __('Bing Maps (Aerial)','lmm') . ' - <strong>' . __('API key required!','lmm') . '</strong>',
+				'bingaerialwithlabels_minimap' => __('Bing Maps (Aerial+Labels)','lmm') . ' - <strong>' . __('API key required!','lmm') . '</strong>',
+				'bingroad_minimap' => __('Bing Maps (Road)','lmm') . ' - <strong>' . __('API key required!','lmm') . '</strong>'
 				)
 		);
 		$this->_settings['minimap_position'] = array(

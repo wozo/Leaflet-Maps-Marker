@@ -238,6 +238,7 @@ class Leafletmapsmarker
 		$widget_id = 'lmm-admin-dashboard-widget';
 		$number_of_markers =  isset( $widgets[$widget_id] ) && isset( $widgets[$widget_id]['items'] ) ? absint( $widgets[$widget_id]['items'] ) : 4;
 		$result = $wpdb->get_results($wpdb->prepare("SELECT ID,markername,icon,createdon,createdby FROM $table_name_markers ORDER BY createdon desc LIMIT %d", $number_of_markers), ARRAY_A);
+		echo '<p><a style="background:#f99755;display:block;padding:5px;text-decoration:none;color:#2702c6;text-align:center;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '</a><hr style="border:0;height:1px;background-color:#d8d8d8;"/></p>';
 		if ($result != NULL) {
 			echo '<table style="margin-bottom:5px;"><tr>';
 			foreach ($result as $row ) {
