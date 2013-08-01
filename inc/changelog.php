@@ -1,3 +1,9 @@
+<?php
+while(!is_file('wp-load.php')) {
+	if(is_dir('..' . DIRECTORY_SEPARATOR)) chdir('..' . DIRECTORY_SEPARATOR);
+	else die('Error: Could not construct path to wp-load.php - please check <a href="http://mapsmarker.com/path-error">http://mapsmarker.com/path-error</a> for more details');
+}
+include( 'wp-load.php' );?>
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
@@ -33,11 +39,6 @@ hr {
 </head>
 <body>
 <?php
-while(!is_file('wp-load.php')) {
-	if(is_dir('..' . DIRECTORY_SEPARATOR)) chdir('..' . DIRECTORY_SEPARATOR);
-	else die('Error: Could not construct path to wp-load.php - please check <a href="http://mapsmarker.com/path-error">http://mapsmarker.com/path-error</a> for more details');
-}
-include( 'wp-load.php' );
 if (get_option('leafletmapsmarker_update_info') == 'show') {
 	$lmm_version_old = get_option( 'leafletmapsmarker_version_before_update' );
 	$lmm_version_new = get_option( 'leafletmapsmarker_version' );
@@ -82,6 +83,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" target="_blank" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-pro.png"></a>
 		</td><td>
+		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" target="_blank" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '">upgraded leaflet.js ("the engine of this plugin") v0.5.1 to v0.6.4 (free version uses v0.4.5)</a>
+		</td></tr>
+		<tr><td>
+		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" target="_blank" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-pro.png"></a>
+		</td><td>
 		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" target="_blank" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '">Leaflet Maps Marker Pro can now be tested on localhost installations without time limitation and on up to 25 domains on live installations</a>
 		</td></tr>
 		<tr><td>
@@ -92,7 +98,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
 		</td><td>
-
+		show compatibility warning if plugin "Dreamgrow Scrolled Triggered Box" is active (which is causing settings page to break)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
@@ -107,7 +113,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-
+		fixed warning message "Cannot modify header information" when plugin woocommerce is active
 		</td></tr>
 		<tr><td colspan="2">
 		<p><strong>' . __('Translation updates','lmm') . '</a></p></strong>
