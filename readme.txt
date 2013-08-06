@@ -123,11 +123,11 @@ to the visitors of your website.
 * Chinese (zh_CN) thanks to John Shen and ck
 * Chinese (zh_TW) thanks to jamesho Ho
 * Croatian (hr) thanks to Neven Pausic, Alan Benic and Marijan Rajic
-* Czech (cs_CZ) thanks to Viktor Kleiner
+* Czech (cs_CZ) thanks to Viktor Kleiner and Vlad Kuzba
 * Danish (da_DK) thanks to Mads Dyrmann Larsen
 * Dutch (nl_NL) thanks to Marijke Metz and Patrick Ruers
 * English (en_US)
-* French (fr_FR) thanks to Vincèn Pujol and Rodolphe Quiedeville and Fx Benard
+* French (fr_FR) thanks to Vincèn Pujol and Rodolphe Quiedeville, Fx Benard and cazal cédric
 * German (de_DE)
 * Hindi (hi_IN) thanks to by Outshine Solutions and Guntupalli Karunakar
 * Hungarian (hu_HU) thanks to István Pintér and Csaba Orban
