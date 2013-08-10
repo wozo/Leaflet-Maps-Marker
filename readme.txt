@@ -54,6 +54,7 @@ to the visitors of your website.
 
 = Additional features =
 
+
 * show directions for your locations using Google Maps, yournavigation.org, openrouteservice.org or map.project-osrm.org
 * support for Google Maps API key which is required for commercial users
 * configure up to 10 WMS servers to display additional information from external geodata providers (like the European Environment Agency) on your maps
@@ -267,10 +268,10 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2013, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v3.6.2 =
-fix for loading maps in (jquery ui) tabs - see http://www.mapsmarker.com/v3.6.2 for more details
+= v3.6.3 =
+ - see http://www.mapsmarker.com/v3.6.3 for more details
 
 == Changelog ==
-[blog post with details about v3.6.2](http://www.mapsmarker.com/v3.6.2)
+[blog post with details about v3.6.3](http://www.mapsmarker.com/v3.6.3)
 
 [changelog for all versions](http://www.mapsmarker.com/changelog)
