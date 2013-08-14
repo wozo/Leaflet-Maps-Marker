@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0
 Tested up to:      3.6
-Stable tag:        3.6.2
+Stable tag:        3.6.3
 License:           GPLv2
 
 Pin, organize & show your favorite places through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, APIs or Augmented-Reality browsers
@@ -269,7 +269,7 @@ Copyright 2011-2013, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
 = v3.6.3 =
- - see http://www.mapsmarker.com/v3.6.3 for more details
+translatin updates & small tweaks to multi-layer-maps - see http://www.mapsmarker.com/v3.6.3 for more details
 
 == Changelog ==
 [blog post with details about v3.6.3](http://www.mapsmarker.com/v3.6.3)

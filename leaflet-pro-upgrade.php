@@ -129,6 +129,8 @@ if ( $action == NULL ) {
 				<p style="margin:0 0 1em 0;">
 				<div style="float:left;margin:0 10px 10px 0;"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-visualead.png"></div>' . __('Leaflet Maps Marker Pro allows you to use custom backgrounds for QR codes.','lmm') . '
 				<br/><br/>
+				' . __('Additionally the pro version does not display the visualead logo on the QR code output pages.','lmm') . '
+				<br/><br/>
 				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-qrcode" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
 				</p>
 				</div>

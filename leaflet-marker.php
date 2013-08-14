@@ -275,11 +275,11 @@ if ( $edit_status == 'updated') {
 		<table class="widefat fixed">
 			<?php if ($isedit === true) { ?>
 			<tr>
-				<td style="width:170px;"><label for="shortcode"><strong><?php _e('Shortcode and API links','lmm') ?></strong></label></td>
-				<td style="width:85%;"><input id="shortcode" style="width:200px;background:#f3efef;" type="text" value="[<?php echo $lmm_options[ 'shortcode' ]; ?> marker=&quot;<?php echo $id?>&quot;]" <?php echo $shortcode_select; ?>>
+				<td style="width:230px;"><label for="shortcode"><strong><?php _e('Shortcode and API links','lmm') ?></strong></label></td>
+				<td><input id="shortcode" style="width:200px;background:#f3efef;" type="text" value="[<?php echo $lmm_options[ 'shortcode' ]; ?> marker=&quot;<?php echo $id?>&quot;]" <?php echo $shortcode_select; ?>>
 				<?php
 					if ($current_editor == 'simplified') {
-						echo '<div id="apilinkstext" style="display:inline;"><a tabindex="123" href="javascript:();">' . __('show API links','lmm') . '</a></div>';
+						echo '<div id="apilinkstext" style="display:inline;"><a tabindex="123" style="cursor:pointer;">' . __('show API links','lmm') . '</a></div>';
 						echo '<span id="apilinks" style="display:none;">';
 					}
 				?>
@@ -294,8 +294,8 @@ if ( $edit_status == 'updated') {
 			</tr>
 			<?php } ?>
 			<tr>
-				<td style="width:170px;"><label for="markername"><strong><?php _e('Marker name','lmm') ?></strong></label></td>
-				<td style="width:85%;"><input <?php if (get_option('leafletmapsmarker_update_info') == 'hide') { echo 'autofocus'; } ?> style="width:640px;" type="text" id="markername" name="markername" value="<?php echo stripslashes($markername) ?>" /></td>
+				<td style="width:230px;"><label for="markername"><strong><?php _e('Marker name','lmm') ?></strong></label></td>
+				<td><input <?php if (get_option('leafletmapsmarker_update_info') == 'hide') { echo 'autofocus'; } ?> style="width:640px;" type="text" id="markername" name="markername" value="<?php echo stripslashes($markername) ?>" /></td>
 			</tr>
 			<tr>
 				<td><label for="address"><strong><?php _e('Location','lmm') ?></strong></label><br/><br/><a tabindex="99" href="http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/powered-by-google.png" width="104" height="16" /></a></td>
@@ -548,19 +548,19 @@ if ( $edit_status == 'updated') {
 						echo '<div style="text-align:center;float:left;line-height:0px;margin-bottom:3px;"><label for="default_icon"><img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png" width="32" height="37" title="' . esc_attr__('filename','lmm') . ': marker.png, ' . esc_attr__('CSS classname','lmm') . ': lmm_marker_icon_default" alt="default.png" /></label><br/><input id="default_icon" style="margin:1px 0 0 1px;" onchange="updateicon(this.value);" type="radio" name="icon" value="" ' . ($icon == NULL ? ' checked' : '') . '/></div>';
 						if ($icon != NULL) {
 							echo '<div style="text-align:center;float:left;line-height:0px;margin-bottom:3px;"><label for="' . $icon . '"><img src="' . LEAFLET_PLUGIN_ICONS_URL . '/' . $icon . '" width="' . $lmm_options['defaults_marker_icon_iconsize_x'] . '" height="' . $lmm_options['defaults_marker_icon_iconsize_y'] . '" title="' . esc_attr__('filename','lmm') . ': ' . $icon . ', ' . esc_attr__('CSS classname','lmm') . ': lmm_marker_icon_' . $icon .'" alt="' . $icon . '" /></label><br/><input id="' . $icon . '" style="margin:1px 0 0 1px;" onchange="updateicon(this.value);" type="radio" name="icon" value="' . $icon . '" checked="" /></div>';
-							echo '<div id="moreiconslink" style="display:block;margin:15px 0 0 45px;"><a href="javascript:();">' . __('show more icons','lmm') . '</a></div>';
+							echo '<div id="moreiconslink" style="display:block;margin:15px 0 0 45px;"><a style="cursor:pointer;">' . __('show more icons','lmm') . '</a></div>';
 							echo '<div id="moreicons" style="display:none;">';
 							foreach ($iconlist as $row) {
 								echo '<div style="text-align:center;float:left;line-height:0px;margin-bottom:3px;"><label for="'.$row.'"><img src="' . LEAFLET_PLUGIN_ICONS_URL . '/' . $row . '" title="' . esc_attr__('filename','lmm') . ': ' . $row . ', ' . esc_attr__('CSS classname','lmm') . ': lmm_marker_icon_' . substr($row, 0, -4) . '" alt="' . $row . '" width="' . $lmm_options['defaults_marker_icon_iconsize_x'] . '" height="' . $lmm_options['defaults_marker_icon_iconsize_y'] . '" /></label><br/><input id="'.$row.'" style="margin:1px 0 0 1px;" onchange="updateicon(this.value);" type="radio" name="icon" value="'.$row.'"/></div>';
 							}
 						} else {
-							echo '<div id="moreiconslink" style="display:block;margin:15px 0 0 45px;"><a href="javascript:();">' . __('show more icons','lmm') . '</a></div>';
+							echo '<div id="moreiconslink" style="display:block;margin:15px 0 0 45px;"><a style="cursor:pointer;">' . __('show more icons','lmm') . '</a></div>';
 							echo '<div id="moreicons" style="display:none;">';
 							foreach ($iconlist as $row) {
 								echo '<div style="text-align:center;float:left;line-height:0px;margin-bottom:3px;"><label for="'.$row.'"><img src="' . LEAFLET_PLUGIN_ICONS_URL . '/' . $row . '" title="' . esc_attr__('filename','lmm') . ': ' . $row . ', ' . esc_attr__('CSS classname','lmm') . ': lmm_marker_icon_' . substr($row, 0, -4) . '" alt="' . $row . '" width="' . $lmm_options['defaults_marker_icon_iconsize_x'] . '" height="' . $lmm_options['defaults_marker_icon_iconsize_y'] . '" /></label><br/><input id="'.$row.'" style="margin:1px 0 0 1px;" onchange="updateicon(this.value);" type="radio" name="icon" value="'.$row.'"'.($row == $icon ? ' checked' : '').'/></div>';
 							}
 						}
-						echo '<div style="text-align:center;float:left;line-height:0px;margin:23px 10px;" id="showlessicons"><a href="javascript:();">' . __('show fewer icons','lmm') . '</a></div>';
+						echo '<div style="text-align:center;float:left;line-height:0px;margin:23px 10px;" id="showlessicons"><a style="cursor:pointer;">' . __('show fewer icons','lmm') . '</a></div>';
 						echo '<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img style="margin-top:7px;" src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-feature-upload-icons.png"></a>';
 						echo '</div>';
 					} else if ($current_editor == 'advanced') {

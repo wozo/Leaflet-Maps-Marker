@@ -374,11 +374,11 @@ if ( $edit_status == 'updated') {
 		<table class="widefat fixed">
 			<?php if ($isedit === true) { ?>
 			<tr>
-				<td style="width:170px;"><label for="shortcode"><strong><?php _e('Shortcode and API links','lmm') ?>:</strong></label></td>
-				<td style="width:85%;"><input <?php echo $shortcode_select; ?> style="width:170px;background:#f3efef;" type="text" value="[<?php echo $lmm_options[ 'shortcode' ]; ?> layer=&quot;<?php echo $id?>&quot;]">
+				<td style="width:230px;"><label for="shortcode"><strong><?php _e('Shortcode and API links','lmm') ?>:</strong></label></td>
+				<td><input <?php echo $shortcode_select; ?> style="width:170px;background:#f3efef;" type="text" value="[<?php echo $lmm_options[ 'shortcode' ]; ?> layer=&quot;<?php echo $id?>&quot;]">
 				<?php
 				if ($current_editor == 'simplified') {
-					echo '<div id="apilinkstext" style="display:inline;"><a tabindex="100" href="javascript:();">' . __('show API links','lmm') . '</a></div>';
+					echo '<div id="apilinkstext" style="display:inline;"><a tabindex="100" style="cursor:pointer;">' . __('show API links','lmm') . '</a></div>';
 					echo '<span id="apilinks" style="display:none;">';
 				}
 				?>
@@ -394,8 +394,8 @@ if ( $edit_status == 'updated') {
 			</tr>
 			<?php } ?>
 			<tr>
-				<td style="width:170px;"><label for="layername"><strong><?php _e('Layer name', 'lmm') ?></strong></label></td>
-				<td style="width:85%;"><input <?php if (get_option('leafletmapsmarker_update_info') == 'hide') { echo 'autofocus'; } ?> style="width: 640px;" maxlenght="255" type="text" id="layername" name="name" value="<?php echo stripslashes($name) ?>" /></td>
+				<td style="width:230px;"><label for="layername"><strong><?php _e('Layer name', 'lmm') ?></strong></label></td>
+				<td><input <?php if (get_option('leafletmapsmarker_update_info') == 'hide') { echo 'autofocus'; } ?> style="width: 640px;" maxlenght="255" type="text" id="layername" name="name" value="<?php echo stripslashes($name) ?>" /></td>
 			</tr>
 			<tr>
 				<td><label for="address"><strong><?php _e('Location','lmm') ?></strong></label><br/><br/><a tabindex="111" href="http://code.google.com/intl/de-AT/apis/maps/documentation/places/autocomplete.html" target="_blank"><img src="<?php echo LEAFLET_PLUGIN_URL ?>inc/img/powered-by-google.png" width="104" height="16" /></a></td>
