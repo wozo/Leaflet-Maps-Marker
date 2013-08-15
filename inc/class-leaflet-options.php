@@ -7939,6 +7939,7 @@ $this->_settings['clustering_helptext2'] = array(
 				'sk_SK' => __('Slovak','lmm') . ' (sk_SK)',
 				'sv_SE' => __('Swedish','lmm') . ' (sv_SE)',
 				'es_ES' => __('Spanish','lmm') . ' (es_ES)',
+				'es_MX' => __('Spanish','lmm') . ' (es_MX)',
 				'tr_TR' => __('Turkish','lmm') . ' (tr_TR)',
 				'uk_UK' => __('Ukrainian','lmm') . ' (uk_UK)',
 				'yi' => __('Yiddish','lmm') . ' (yi)'
