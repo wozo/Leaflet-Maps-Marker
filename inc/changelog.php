@@ -119,7 +119,27 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
+		marker icons in widgets were not aligned correctly on IE<9 on some themes
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
 		javascript errors on backend pages when clicking "show more" links
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		Using W3 Total Cache >=v0.9.3 with active CDN no longer requires custom config
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		wrong image url on on backend edit pages resulting in 404 http request
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		wrong css url on on tools page resulting in 404 http request
 		</td></tr>
 		<tr><td colspan="2">
 		<p><strong>' . __('Translation updates','lmm') . '</a></p></strong>

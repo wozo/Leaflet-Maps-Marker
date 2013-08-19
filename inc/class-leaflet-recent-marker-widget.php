@@ -155,9 +155,9 @@ class Class_leaflet_recent_marker_widget extends WP_Widget {
 				if (!empty($instance['lmm-widget-showicons'])) {
 					$icon = ($row['icon'] == NULL) ? LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png' : LEAFLET_PLUGIN_ICONS_URL . '/'.$row['icon'];
 						if ($instance['lmm-widget-linktarget'] != 'none') {
-							echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;min-width:30px;border:none;"><a href="' . LEAFLET_PLUGIN_URL . 'leaflet-' . $instance['lmm-widget-linktarget'] . '.php?marker='.$row['ID'].'" title="' . esc_attr__('show map','lmm') . ' (' . $instance['lmm-widget-linktarget'] . ')" target="_blank"><img alt="' . esc_attr__('show map','lmm') . '" src="'.$icon.'" style="width:' . $instance['lmm-widget-iconsize'] . '%;box-shadow:none;border-radius:0;"></a></td>';
+							echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;min-width:30px;border:none;"><a href="' . LEAFLET_PLUGIN_URL . 'leaflet-' . $instance['lmm-widget-linktarget'] . '.php?marker='.$row['ID'].'" title="' . esc_attr__('show map','lmm') . ' (' . $instance['lmm-widget-linktarget'] . ')" target="_blank"><img alt="' . esc_attr__('show map','lmm') . '" src="'.$icon.'" style="width:' . $instance['lmm-widget-iconsize'] . '%;box-shadow:none;border-radius:0;display:inline;"></a></td>';
 							} else {
-							echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;border:none;"><img alt="' . esc_attr__('show map','lmm') . '" src="'.$icon.'" style="width:' . $instance['lmm-widget-iconsize'] . '%;border:none;box-shadow:none;border-radius:0;"></td>';
+							echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;border:none;"><img alt="' . esc_attr__('show map','lmm') . '" src="'.$icon.'" style="width:' . $instance['lmm-widget-iconsize'] . '%;border:none;box-shadow:none;border-radius:0;display:inline;"></td>';
 						}
 				}
 				echo '<td style="vertical-align:top;line-height:1.2em;padding-top:1px;width:100%;border:none;">';
