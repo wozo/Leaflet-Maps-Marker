@@ -7889,6 +7889,19 @@ $this->_settings['clustering_helptext2'] = array(
 				'enabled' => __('enabled','lmm')
 			)
 		);
+		$this->_settings['misc_whitelabel_backend'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'misc',
+			'section' => 'misc-section1',
+			'title'   => __('Whitelabel backend','lmm'). '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
+			'desc'    => __('Set to enabled if you want to remove all backlinks and logos on backend as well as making the pages and menu entries for Tools, Settings, Support, License visible to admins only (user capability activate_plugins).','lmm'),
+			'type'    => 'radio-pro',
+			'std'     => 'disabled',
+			'choices' => array(
+				'disabled' => __('disabled','lmm'),
+				'enabled' => __('enabled','lmm')
+			)
+		);
 		/*
 		* Language Settings
 		*/

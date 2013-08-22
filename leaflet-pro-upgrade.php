@@ -194,6 +194,17 @@ if ( $action == NULL ) {
 				</p>
 				</div>
 
+				<h3>' . __('whitelabel backend admin pages','lmm') . '</h3>
+				<div>
+				<p style="margin:0 0 1em 0;">
+				' . __('Leaflet Maps Marker Pro allows you to remove all backlinks and logos on backend as well as making the pages and menu entries for Tools, Settings, Support, License visible to admins only.','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-whitelabel-backend.png">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/v1.2p" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>
+				</div>
+
 				<h3>' . __('features planned for future releases','lmm') . '</h3>
 				<div>
 				<p style="margin:0 0 1em 0;">
