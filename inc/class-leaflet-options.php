@@ -65,6 +65,7 @@ class Class_leaflet_options {
 		$this->sections['mapdefaults-section16']	= esc_attr__('Mobile web app settings','lmm');
 		$this->sections['mapdefaults-section17']	= esc_attr__('Minimap settings','lmm');
 		$this->sections['mapdefaults-section18']	= esc_attr__('Marker clustering settings','lmm');
+		$this->sections['mapdefaults-section19']	= esc_attr__('GPX tracks settings','lmm');
 
 		$this->sections['basemaps-section1']		= esc_attr__('Cloudmade 1 settings','lmm');
 		$this->sections['basemaps-section2']		= esc_attr__('Cloudmade 2 settings','lmm');
@@ -3033,7 +3034,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'pane'    => 'mapdefaults',
 			'section' => 'mapdefaults-section18',
 			'std'     => '',
-			'title'   =>'polygonOptions<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" />',
+			'title'   =>'polygonOptions<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
 			'desc'    => sprintf(__('Options to pass when creating the L.Polygon for styling (<a href="%1s" target="_blank">more details</a>)','lmm'), 'http://leafletjs.com/reference.html#path-options') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-clustering-polygon-options.jpg" width="141" height="91" />',
 			'type'    => 'helptext-twocolumn'
 		);
@@ -3156,6 +3157,319 @@ $this->_settings['clustering_helptext2'] = array(
 				'false' => __('false','lmm')
 			)
 		);
+
+		/*
+		* GPX tracks settings
+		*/
+		$this->_settings['gpx_helptext'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'std'     => '',
+			'title'   => '',
+			'desc'    => '<a style="background:#f99755;display:block;padding:3px;text-decoration:none;color:#2702c6;width:635px;margin:10px 0;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade">' . __('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '</a><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-gpx.jpg" width="449" height="263" /><br/>' . __( 'Settings below will be applied to all GPX tracks added to marker or layer maps.', 'lmm'),
+			'type'    => 'helptext'
+		);
+		$this->_settings['gpx_track_color'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => __('Polygon options','lmm'). '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
+			'desc'    => __('Track color','lmm') . ' - ' . sprintf(__('Please enter the hex value of the color you would like to use. For help please visit <a href="%1s" target="_blank">%2s</a>.','lmm'), 'http://www.mapsmarker.com/colorpicker', 'mapsmarker.com/colorpicker'),
+			'std'     => '#0000FF',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_track_weight'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __('Track weight','lmm') . ' - ' . __('Stroke width in pixels','lmm'),
+			'std'     => '5',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_track_opacity'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __('Stroke opacity','lmm'),
+			'std'     => '0.5',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_track_clickable'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __('Clickable','lmm') . ' - ' . __('If true, the vector will emit mouse events and will act as a part of the underlying map.','lmm'),
+			'type'    => 'radio-pro',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);
+		$this->_settings['gpx_track_noClip'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => 'noClip' . ' - ' . __('polyline clipping','lmm'),
+			'type'    => 'radio-pro',
+			'std'     => 'false',
+			'choices' => array(
+				'false' => __('false','lmm'),
+				'true' => __('true','lmm')
+			)
+		);
+		$this->_settings['gpx_track_smoothFactor'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __('Track smoothFactor','lmm') . ' - ' . __('How much to simplify the polyline on each zoom level. More means better performance and smoother look, and less means more accurate representation.','lmm'),
+			'std'     => '1.0',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_metadata_units'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => __('GPX metadata settings','lmm'). '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
+			'desc'    => __('Distance units','lmm'),
+			'type'    => 'radio-pro',
+			'std'     => 'metric',
+			'choices' => array(
+				'metric' => __('metric (km)','lmm'),
+				'imperial' => __('imperial (miles)','lmm')
+			)
+		);		
+		$this->_settings['gpx_metadata_name'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Track name', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 1
+		);
+		$this->_settings['gpx_metadata_start'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Starting time', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 1
+		);
+		$this->_settings['gpx_metadata_end'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'End time', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 0
+		);
+		$this->_settings['gpx_metadata_distance'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Total track distance', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 1
+		);
+		$this->_settings['gpx_metadata_duration_total'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Duration', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 1
+		);
+		$this->_settings['gpx_metadata_duration_moving'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Moving time', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 0
+		);
+		$this->_settings['gpx_metadata_avpace'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Average moving pace', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 1
+		);
+		$this->_settings['gpx_metadata_avhr'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Average heart rate', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 0
+		);
+		$this->_settings['gpx_metadata_hr_full'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Full heart rate data', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 0
+		);		
+		$this->_settings['gpx_metadata_elev_gain'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Elevation gain', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 1
+		);
+		$this->_settings['gpx_metadata_elev_loss'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Elevation loss', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 1
+		);
+		$this->_settings['gpx_metadata_elev_net'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Elevation net', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 1
+		);
+		$this->_settings['gpx_metadata_elev_full'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Full elevation data', 'lmm' ),
+			'type'    => 'checkbox-pro',
+			'std'     => 0
+		);
+		$this->_settings['gpx_max_point_interval'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => __('Maximum interval between points','lmm'). '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
+			'desc'    => __('GPX parsing will automatically handle pauses in the track with a default tolerance interval of 15 seconds between points.','lmm'),
+			'std'     => '15000',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_startIconUrl'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => __('GPX icon settings','lmm'). '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
+			'desc'    => __('Start icon','lmm') . ' - ' . sprintf(__('Leave empty to use the <a href="%1s" target="_blank">default icon</a>. To use a custom icon, please enter the file name of the icon within your marker icon directory (%2s)','lmm'), LEAFLET_PLUGIN_URL . 'leaflet-dist/images/gpx-icon-start.png', LEAFLET_PLUGIN_ICONS_URL),
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_endIconUrl'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __('End icon','lmm') . ' - ' . sprintf(__('Leave empty to use the <a href="%1s" target="_blank">default icon</a>. To use a custom icon, please enter the file name of the icon within your marker icon directory (%2s)','lmm'), LEAFLET_PLUGIN_URL . 'leaflet-dist/images/gpx-icon-end.png', LEAFLET_PLUGIN_ICONS_URL),
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_shadowUrl'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __('Shadow icon','lmm') . ' - ' . sprintf(__('Leave empty to use the <a href="%1s" target="_blank">default icon</a>. To use a custom icon, please enter the file name of the icon within your marker icon directory (%2s)','lmm'), LEAFLET_PLUGIN_URL . 'leaflet-dist/images/gpx-icon-shadow.png', LEAFLET_PLUGIN_ICONS_URL),
+			'std'     => '',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_iconSize_x'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Icon size', 'lmm' ) . ' (x) - ' . __( 'Width of the icons in pixel', 'lmm' ),
+			'std'     => '33',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_iconSize_y'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Icon size', 'lmm' ) . ' (y) - ' . __( 'Width of the icons in pixel', 'lmm' ),
+			'std'     => '50',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_shadowSize_x'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Shadow size', 'lmm' ) . ' (x) - ' . __( 'Width of the shadow in pixel', 'lmm' ),
+			'std'     => '50',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_shadowSize_y'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Shadow size', 'lmm' ) . ' (y) - ' . __( 'Height of the shadow in pixel', 'lmm' ),
+			'std'     => '50',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_iconAnchor_x'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Icon anchor', 'lmm' ) . ' (x) - ' . __( 'The x-coordinates of the icons in pixel', 'lmm' ),
+			'std'     => '16',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_iconAnchor_y'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Icon anchor', 'lmm' ) . ' (y) - ' . __( 'The y-coordinates of the icons in pixel', 'lmm' ),
+			'std'     => '45',
+			'type'    => 'text-pro'
+		);		
+		$this->_settings['gpx_shadowAnchor_x'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Shadow anchor', 'lmm' ) . ' (x) - ' . __( 'The x-coordinates of the shadow in pixel', 'lmm' ),
+			'std'     => '16',
+			'type'    => 'text-pro'
+		);
+		$this->_settings['gpx_shadowAnchor_y'] = array(
+			'version' => 'p1.2',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section19',
+			'title'   => '',
+			'desc'    => __( 'Shadow anchor', 'lmm' ) . ' (y) - ' . __( 'The x-coordinates of the shadow in pixel', 'lmm' ),
+			'std'     => '47',
+			'type'    => 'text-pro'
+		);		
 
 		/*===========================================
 		*
@@ -8651,7 +8965,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'pane'    => 'misc',
 			'section' => 'misc-section8',
 			'title'   => __( 'QR gravity', 'lmm' ) . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
-			'desc'    => esc_attr__('center/N/S/W/E (Or common combinations such as NW or Scenter) – will position the QR Code accordingly. Once this parameter is used then the "qr_x and "qr_y" parameters are ignored.','lmm'),
+			'desc'    => esc_attr__('center/N/S/W/E (or common combinations such as NW or Scenter) - will position the QR Code accordingly. Once this parameter is used then the "qr_x and "qr_y" parameters are ignored.','lmm'),
 			'std'     => '',
 			'type'    => 'text-pro'
 		);

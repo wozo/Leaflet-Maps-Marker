@@ -77,6 +77,17 @@ if ( $action == NULL ) {
 				</p>
 				</div>
 
+				<h3>' . __('GPX tracks','lmm') . '</h3>
+				<div>
+				<p style="margin:0 0 1em 0;">
+				' . __('Leaflet Maps Marker Pro allows you to also display GPX tracks with optional metadata on your maps:','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-gpx.jpg">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-gpx" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>
+				</div>
+
 				<h3>' . __('HTML5 fullscreen maps','lmm') . '</h3>
 				<div>
 				<p style="margin:0 0 1em 0;">
@@ -201,7 +212,7 @@ if ( $action == NULL ) {
 				</p>
 				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-whitelabel-backend.png">
 				<p>
-				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/v1.2p" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-whitelabel" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
 				</p>
 				</div>
 
@@ -212,7 +223,6 @@ if ( $action == NULL ) {
 				</p>
 				<ul style="list-style-type:disc;margin-left:15px;">
 					<li>' . __('filtering markers on frontend','lmm') . '</li>
-					<li>' . __('support for displaying routes (GPX)','lmm') . '</li>
 					<li>' . __('support for displaying KML files','lmm') . '</li>
 					<li>' . __('adding markers from frontend','lmm') . '</li>
 					<li>' . __('support for Google Street View','lmm') . '</li>

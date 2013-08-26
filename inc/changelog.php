@@ -102,11 +102,6 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"  target="_top" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '">removed visualead logo and backlink from QR code output pages</a>
 		</td></tr>
 		<tr><td>
-		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
-		</td><td>
-
-		</td></tr>
-		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
 		increased database field for multi layer maps from 255 to 4000 (allowing you to add more layers to a multi layer map)
@@ -150,6 +145,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		wrong css url on on tools page resulting in 404 http request
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		Wikitude API was broken when multiple multi-layer-maps were selected
 		</td></tr>
 		<tr><td colspan="2">
 		<p><strong>' . __('Translation updates','lmm') . '</a></p></strong>
