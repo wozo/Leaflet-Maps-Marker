@@ -443,6 +443,11 @@ if ( $edit_status == 'updated') {
 				<br/><small>
 				<a href="<?php echo LEAFLET_WP_ADMIN_URL; ?>admin.php?page=leafletmapsmarker_pro_upgrade" title="<?php esc_attr_e('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm'); ?>"><?php _e('Feature available in pro version only','lmm'); ?></a>
 				</small>
+				<br/><br/>
+				<div style="float:right;"><?php _e('display panel','lmm') ?>&nbsp;&nbsp;<input type="checkbox" name="gpx_panel" id="gpx_panel" disabled="disabled"></div>
+				<label for="gpx_url"><strong><?php _e('URL to GPX track','lmm') ?></strong></label><br/>
+				<input style="width:229px;" type="text" id="gpx_url" name="gpx_url" value="<?php echo __(' Feature available in pro version only','lmm'); ?>" disabled="disabled" /><br/>
+				<?php echo '<small>' . __('add file','lmm') . ' | ' . __('convert','lmm') . ' | ' . __('settings','lmm') . ' | ' . __('fit bounds','lmm') . '</small>'; ?>
 				</p>
 				<div style="<?php echo $current_editor_css; ?>">
 				<p><br/>
@@ -868,7 +873,7 @@ $markernonce = wp_create_nonce('marker-nonce'); //info: for delete-links
 		$delete_link_marker = '';
 	}
   if (count($layer_marker_list_table) < 1)
-    echo '<tr><td colspan="8">'.__('No marker assigned to this layer', 'lmm').'</td></tr>';
+    echo '<tr><td colspan="7">'.__('No marker assigned to this layer', 'lmm').'</td></tr>';
   else
     foreach ($layer_marker_list_table as $row){
 	//info: set column display variables - need for for-each
@@ -895,7 +900,7 @@ $markernonce = wp_create_nonce('marker-nonce'); //info: for delete-links
 	$openpopupstatus = ($row['mopenpopup'] == 1) ? __('open','lmm') : __('closed','lmm');
 	$popuptextabstract = (strlen($row['mpopuptext']) >= 90) ? "...": "";
 	$column_popuptext = ((isset($lmm_options[ 'misc_marker_listing_columns_popuptext' ] ) == TRUE ) && ( $lmm_options[ 'misc_marker_listing_columns_popuptext' ] == 1 )) ?
-'<td><a title="' . esc_attr__('Edit marker ', 'lmm') . ' ' . $row['markerid'] . '" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['markerid'] . '" >' . mb_substr(strip_tags(stripslashes($row['mpopuptext'])), 0, 90) . $popuptextabstract . '</a></td>' : '';
+'<td><a title="' . esc_attr__('Edit marker', 'lmm') . ' ' . $row['markerid'] . '" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['markerid'] . '" >' . mb_substr(strip_tags(stripslashes($row['mpopuptext'])), 0, 90) . $popuptextabstract . '</a></td>' : '';
 	echo '<tr valign="middle" class="alternate" id="link-'.$row['markerid'].'">
       <td>'.$row['markerid'].'</td>
       <td>';

@@ -349,6 +349,11 @@ if ( $edit_status == 'updated') {
 					<input type="hidden" name="layer" value="<?php echo $addtoLayer ?>" />
 					<a href="<?php LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_layer&id=<?php echo $addtoLayer ?>"><?php echo htmlspecialchars($layername) ?> (ID <?php echo $addtoLayer ?>)</a>
 					<?php } //info: addtoLayer part3/3 ?>
+					<br/><br/>
+					<div style="float:right;"><?php _e('display panel','lmm') ?>&nbsp;&nbsp;<input type="checkbox" name="gpx_panel" id="gpx_panel" disabled="disabled"></div>
+					<label for="gpx_url"><strong><?php _e('URL to GPX track','lmm') ?></strong></label><br/>
+					<input style="width:229px;" type="text" id="gpx_url" name="gpx_url" value="<?php echo __(' Feature available in pro version only','lmm'); ?>" disabled="disabled" /><br/>
+					<?php echo '<small>' . __('add file','lmm') . ' | ' . __('convert','lmm') . ' | ' . __('settings','lmm') . ' | ' . __('fit bounds','lmm') . '</small>'; ?>
 					</p>
 					<div style="<?php echo $current_editor_css; ?>">
 					<p><br/>

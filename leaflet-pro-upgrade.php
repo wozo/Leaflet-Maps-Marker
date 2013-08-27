@@ -216,6 +216,17 @@ if ( $action == NULL ) {
 				</p>
 				</div>
 
+				<h3>' . __('advanced permission settings','lmm') . '</h3>
+				<div>
+				<p style="margin:0 0 1em 0;">
+				' . __('Leaflet Maps Marker Pro allows you to set the user level needed for editing and deleting marker and layer maps from other users.','lmm') . '
+				</p>
+				<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-feature-advanced-permissions.png">
+				<p>
+				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-advanced-permissions" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
+				</p>
+				</div>
+
 				<h3>' . __('features planned for future releases','lmm') . '</h3>
 				<div>
 				<p style="margin:0 0 1em 0;">
