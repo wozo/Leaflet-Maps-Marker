@@ -549,7 +549,14 @@ class Leafletmapsmarker
 		}
 	}
 	function lmm_admin_jquery_ui() {
-		wp_enqueue_script( array ( 'jquery', 'jquery-ui-tabs' ) );
+		$plugin_version = get_option('leafletmapsmarker_version');
+		wp_enqueue_script( array ( 'jquery' ) );
+		wp_enqueue_script( 'leafletmapsmarker-bootstrap-tabs', LEAFLET_PLUGIN_URL . 'inc/js/bootstrap-tabs.min.js', array('jquery'), $plugin_version);
+		wp_enqueue_script( 'leafletmapsmarker-select2', LEAFLET_PLUGIN_URL . 'inc/js/select2/select2.min.js', array('jquery'), $plugin_version);
+		wp_enqueue_style( 'leafletmapsmarker-select2', LEAFLET_PLUGIN_URL . 'inc/js/select2/select2.css', array(), $plugin_version);
+		wp_localize_script('leafletmapsmarker-select2', 'mapsmarkerjs', array(
+				'settings_search_placeholder' => __( 'start full-text search', 'lmm')
+		) );
 	}
 	function lmm_admin_jquery_ui_accordion() {
 		global $wp_version;
@@ -654,8 +661,6 @@ class Leafletmapsmarker
 			'bing_culture' => $bing_culture
 			) );
 	}
-
-
 	function lmm_image_css_override() {
 		$lmm_options = get_option( 'leafletmapsmarker_options' );
 		echo '<style type="text/css" id="leafletmapsmarker-image-css-override">.leaflet-popup-content img { max-width:' . intval($lmm_options['defaults_marker_popups_image_max_width']) . 'px !important; height:auto; margin: 0px !important; padding: 0px !important; box-shadow:none !important; width:auto !important; }</style>';

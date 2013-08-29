@@ -288,7 +288,7 @@ Copyright 2011-2013, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
 = v3.6.3 =
-translatin updates & small tweaks to multi-layer-maps - see http://www.mapsmarker.com/v3.6.3 for more details
+optimized settings page, translatin updates & small tweaks to multi-layer-maps - see http://www.mapsmarker.com/v3.6.3 for more details
 
 == Changelog ==
 [blog post with details about v3.6.3](http://www.mapsmarker.com/v3.6.3)

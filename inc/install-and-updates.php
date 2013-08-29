@@ -646,7 +646,7 @@ if (get_option('leafletmapsmarker_version') == '3.6.2' ) {
 	$version_before_update = get_transient( 'leafletmapsmarker_version_before_update' );
 	if ( $version_before_update === FALSE ) {
 		set_transient( 'leafletmapsmarker_version_before_update', 'deleted-in-1-hour', 60*3 );
-		update_option('leafletmapsmarker_version_before_update', '3.6.2'); //2do - update to version before update
+		update_option('leafletmapsmarker_version_before_update', '3.6.2');
 	}
 	update_option('leafletmapsmarker_version', '3.6.3');
 	//info: redirect to create marker page only on first plugin activation, otherwise redirect is also done on bulk plugin activations

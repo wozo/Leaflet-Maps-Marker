@@ -179,33 +179,51 @@ class Class_leaflet_options {
 		include(LEAFLET_PLUGIN_DIR . 'inc' . DIRECTORY_SEPARATOR . 'admin-header.php');
 		if ( isset( $_GET['settings-updated'] ) )
 			echo '<div style="margin:15px 0 0 0;" class="updated"><p>' . __( 'Plugin options updated.','lmm' ) . '</p></div>';
-		echo '<h3 style="font-size:23px;margin:0.83em 0 0 0;">'.__('Settings','lmm').'</h3><div class="wrap lmmsettings">';
+		
+		echo '<h3 style="font-size:23px;margin:0.83em 0 0 0;float:left;">'.__('Settings','lmm').'</h3><div class="wrap lmmsettings" style="clear:both;">';
 		echo '<form action="options.php" method="post">';
 		settings_fields( 'leafletmapsmarker_options' );
-		echo '<div class="ui-tabs tabs-top">
-			<ul class="ui-tabs-nav-top">';
+		echo '<div class="lmm-ui-tabs tabs-top tabbable tabs-top">
+			<ul class="lmm-ui-tabs-nav-top ul-outter tabs" id="lmm-admin-top-tabs">';
 
-		foreach ( $this->panes as $pane_slug => $pane )
-			echo '<li><a href="#' . $pane_slug . '">' . $pane . '</a></li>';
+		$section_index = 0;
+		foreach ( $this->panes as $pane_slug => $pane ) {
+			$li_class = 0 === $section_index ? ' class="active"' : '';
+			$section_index++;
+			
+			echo '<li' . $li_class . '><a href="#' . $pane_slug . '" data-toggle="tab">' . $pane . '</a></li>';
+		}
 
 		echo '</ul>';
-
+		echo '<div class="tab-content">';
+		
+		$panel_index = 0;
         foreach($this->panes as $pane_slug => $pane){
-            echo '<div id = '.$pane_slug.' class="ui-tabs tabs-left">';
-            echo '<ul class="ui-tabs-nav ui-tabs-navleft">';
+	        $li_class = 0 === $panel_index ? ' in active' : '';
+	        $panel_index++;
+	        
+            echo '<div id = '.$pane_slug.' class="lmm-ui-tabs tabs-left tab-pane fade' . $li_class . '">';
+	        echo '<div class="tabbable tabs-left">';
+            echo '<ul class="lmm-ui-tabs-nav lmm-ui-tabs-navleft tabs lmm-admin-navleft-tabs">';
             $sections = array();
+	        $sub_panel_index = 0;
             foreach ( $this->sections as $key => $row ){
-
-                $k = explode("-",$key);
-                if($k[0]==$pane_slug){
-                echo '<li><a href="#' . $key . '">' . $row . '</a></li>';
-                $sections[] = $key;
-                }
+	            $k = explode("-",$key);
+	            if ( $k[0] == $pane_slug ) {
+		            $li_class = 0 === $sub_panel_index ? ' class="active"' : '';
+		            $sub_panel_index ++;
+		            echo '<li' . $li_class . '><a href="#' . $key . '" data-toggle="tab">' . $row . '</a></li>';
+		            $sections[] = $key;
+	            }
             }
             echo '</ul>';
-
+	        echo '<div class="tab-content">';
+	        
+	        $sub_panel_index = 0;
                 foreach($sections as $slug => $section){
-                    echo '<div class="section">';
+	                $li_class = 0 === $sub_panel_index ? ' in active' : '';
+	                $sub_panel_index++;
+                    echo '<div class="section tab-pane fade' . $li_class . '" id="' . $section. '">';
                     echo "<h3 class='titl'>".$this->sections[$section]."</h3>";
                     if (function_exists('display_'.$pane_slug.'_section')) { //info: Phalanger fix
                     	@call_user_func(array(&$this, 'display_'.$pane_slug.'_section'), array());
@@ -216,10 +234,12 @@ class Class_leaflet_options {
                     echo '</div>';
                 }
 
-            echo '</div>';
+            echo '</div>'; // tab-content
+            echo '</div>'; // tabs-left
+            echo '</div>'; // tab-pane
         }
-
-		echo '</div>';
+		echo '</div>'; // tab-content
+		echo '</div>'; // tabs-top
 		echo '<p class="submit"><input name="Submit" type="submit" class="button-primary" value="' . __( 'Save Changes','lmm' ) . '" /></p>
 
 	</form>';
@@ -232,19 +252,8 @@ class Class_leaflet_options {
 
 			foreach ( $this->sections as $pane_slug => $pane )
 				echo "panes['$pane'] = '$pane_slug';";
-			echo 'var wrapped = $(".wrap h3").wrap("<div class=\"ui-tabs-panel\">");
-			wrapped.each(function() {
-				$(this).parent().append($(this).parent().nextUntil("div.ui-tabs-panel"));
-			});
-			$(".ui-tabs-panel").each(function(index) {
-				$(this).attr("id", panes[$(this).children("h3").text()]);
-				if (index > 0)
-					$(this).addClass("ui-tabs-hide");
-			});
-			$(".ui-tabs").tabs({
-				//fx: { opacity: "toogle", duration: "fast"}
-			});
-  		$("input[type=text], textarea").each(function() {
+			echo '
+			$("input[type=text], textarea").each(function() {
 				if ($(this).val() == $(this).attr("placeholder") || $(this).val() == "")
 					$(this).css("color", "#999");
 			});
@@ -276,6 +285,8 @@ class Class_leaflet_options {
 			         $("form").attr("autocomplete", "off");
 		});
 	</script></div>';
+		?>
+	<?php
 	}
 
 	/**
@@ -2559,15 +2570,6 @@ class Class_leaflet_options {
 				'topleft' => __('Top left of the map','lmm')
 			)
 		);
-		$this->_settings['map_control_options_helptext2'] = array(
-			'version' => '2.7.1',
-			'pane'    => 'mapdefaults',
-			'section' => 'mapdefaults-section13',
-			'title'   => '',
-			'desc'    => '<div style="height:425px;"></div>',
-			'std'     => '',
-			'type'    => 'helptext'
-		);
 		/*
 		* Scale control options
 		*/
@@ -2655,15 +2657,6 @@ class Class_leaflet_options {
 				'true' => __('true','lmm'),
 				'false' => __('false','lmm')
 			)
-		);
-		$this->_settings['map_scale_control_helptext2'] = array(
-			'version' => '3.6',
-			'pane'    => 'mapdefaults',
-			'section' => 'mapdefaults-section14',
-			'std'     => '',
-			'title'   => '',
-			'desc'    => '<div style="height:30px;"></div>',
-			'type'    => 'helptext'
 		);
 		/*
 		* Retina display detection
@@ -8016,7 +8009,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'pane'    => 'misc',
 			'section' => 'misc-section1',
 			'title'   => __( 'User role needed for adding and editing markers/layers', 'lmm' ),
-			'desc'    => __( 'Note: the settings and tools pages are always visible to admins only.', 'lmm' ),
+			'desc'    => '',
 			'type'    => 'radio',
 			'std'     => 'edit_posts',
 			'choices' => array(
@@ -8048,7 +8041,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'pane'    => 'misc',
 			'section' => 'misc-section1',
 			'title'   => __( 'User role needed for deleting markers/layers', 'lmm' ),
-			'desc'    => __( 'Note: the settings and tool pages are always visible to admins only.', 'lmm' ),
+			'desc'    => '',
 			'type'    => 'radio',
 			'std'     => 'edit_posts',
 			'choices' => array(
@@ -9656,7 +9649,7 @@ $this->_settings['clustering_helptext2'] = array(
 		}
 		/* template for plugin updates
 		//info:  set defaults for options introduced in v3.7
-		if (get_option('leafletmapsmarker_version') == '3.6.2' )
+		if (get_option('leafletmapsmarker_version') == '3.6.4' )
 		{
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting )
