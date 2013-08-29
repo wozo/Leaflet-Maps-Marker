@@ -555,7 +555,8 @@ class Leafletmapsmarker
 		wp_enqueue_script( 'leafletmapsmarker-select2', LEAFLET_PLUGIN_URL . 'inc/js/select2/select2.min.js', array('jquery'), $plugin_version);
 		wp_enqueue_style( 'leafletmapsmarker-select2', LEAFLET_PLUGIN_URL . 'inc/js/select2/select2.css', array(), $plugin_version);
 		wp_localize_script('leafletmapsmarker-select2', 'mapsmarkerjs', array(
-				'settings_search_placeholder' => __( 'start full-text search', 'lmm')
+				'settings_search_placeholder' => __( 'start full-text search', 'lmm'),
+				'settings_search_no_results' => __( 'No matches found', 'lmm')
 		) );
 	}
 	function lmm_admin_jquery_ui_accordion() {
