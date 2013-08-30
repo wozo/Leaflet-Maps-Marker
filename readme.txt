@@ -19,9 +19,9 @@ Maps Marker allows you to pin, organize and share your favorite places & tracks 
 For even more features please try "[Leaflet Maps Marker Pro](http://www.mapsmarker.com/comparison)": 
 
 * integration of the latest leaflet.js version
-* [mobile optimized maps](http://www.mapsmarker.com/pro-feature-nojquery)
 * [marker clustering](http://www.mapsmarker.com/pro-feature-clustering)
 * [GPX tracks](http://www.mapsmarker.com/pro-feature-gpx)
+* [mobile optimized maps](http://www.mapsmarker.com/pro-feature-nojquery)
 * [HTML5 fullscreen maps](http://www.mapsmarker.com/pro-feature-html-fullscreen-maps)
 * [minimaps](http://www.mapsmarker.com/pro-feature-minimaps)
 * [mobile web app support and optimized mobile viewport](http://www.mapsmarker.com/pro-feature-webapp)
@@ -34,6 +34,8 @@ For even more features please try "[Leaflet Maps Marker Pro](http://www.mapsmark
 * [advanced recent marker widget](http://www.mapsmarker.com/pro-feature-advanced-widget)
 * [MapsMarker API](http://www.mapsmarker.com/pro-feature-mapsmarker-api)
 * [whitelabel backend admin pages](http://www.mapsmarker.com/pro-feature-whitelabel)
+* [advanced permission settings](http://www.mapsmarker.com/pro-feature-advanced-permissions)
+* priority support
 
 The free version includes a pro upgrader which allows you to start a free 30 day trial easily. For a live demo of the admin area please visit [demo.mapsmarker.com](http://demo.mapsmarker.com).
 
