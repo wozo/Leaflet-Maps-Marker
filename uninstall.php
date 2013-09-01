@@ -50,10 +50,6 @@ if (is_multisite()) {
 				$GLOBALS['wpdb']->query("DROP TABLE `".$GLOBALS['wpdb']->prefix."leafletmapsmarker_layers`");
 				$GLOBALS['wpdb']->query("DROP TABLE `".$GLOBALS['wpdb']->prefix."leafletmapsmarker_markers`");
 				$GLOBALS['wpdb']->query("OPTIMIZE TABLE `" .$GLOBALS['wpdb']->prefix."options`");
-			}
-		}
-		restore_current_blog();
-		if (!file_exists($lmm_pro_readme)) {
 				/*remove map icons directory for subsites*/
 				$lmm_upload_dir = wp_upload_dir();
 				$icons_directory = $lmm_upload_dir['basedir'] . DIRECTORY_SEPARATOR . "leaflet-maps-marker-icons" . DIRECTORY_SEPARATOR;
@@ -63,6 +59,8 @@ if (is_multisite()) {
 					}
 					rmdir($icons_directory);
 				}
+			}
+			restore_current_blog();
 		}
 	}
 }

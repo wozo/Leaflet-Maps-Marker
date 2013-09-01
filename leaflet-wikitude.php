@@ -103,9 +103,16 @@ if (isset($_GET['layer'])) {
 		echo '<Document>'.PHP_EOL;
 		echo '<ar:provider id="' . $ar_wikitude_provider_name_sanitized . '">'.PHP_EOL;
 		if (($layer == '*' or $layer == 'all')  or (intval($clayer) > 0) ) {
-			$layername = get_bloginfo('name');
+			$layername = $wpdb->get_var('SELECT l.name FROM '.$table_name_layers.' as l WHERE l.id='.$layer);
+			if ($layername == NULL) { 
+				$layername = get_bloginfo('name');
+				if ($layername == NULL) { //info: as Wikitude does not accept empty name
+					$layername = __('layer','lmm') . ' ID ' . $layer; 
+				}
+			}
 		} else {
 			$layername = $wpdb->get_var('SELECT l.name FROM '.$table_name_layers.' as l WHERE l.id='.$layer);
+			if ($layername == NULL) { $layername = __('layer','lmm') . ' ID ' . $layer; }
 		}
 		echo '<ar:name><![CDATA[' . $layername . ']]></ar:name>'.PHP_EOL;
 		echo '<ar:description>' . __('Wikitude API powered by www.mapsmarker.com','lmm') . '</ar:description>'.PHP_EOL;
@@ -187,9 +194,16 @@ if (isset($_GET['layer'])) {
 		echo '<Document>'.PHP_EOL;
 		echo '<ar:provider id="' . $ar_wikitude_provider_name_sanitized . '">'.PHP_EOL;
 		if (($layer == '*' or $layer == 'all')  or (intval($clayer) > 0) ) {
-			$layername = get_bloginfo('name');
+			$layername = $wpdb->get_var('SELECT l.name FROM '.$table_name_layers.' as l WHERE l.id='.$layer);
+			if ($layername == NULL) { 
+				$layername = get_bloginfo('name');
+				if ($layername == NULL) { //info: as Wikitude does not accept empty name
+					$layername = __('layer','lmm') . ' ID ' . $layer; 
+				}
+			}
 		} else {
 			$layername = $wpdb->get_var('SELECT l.name FROM '.$table_name_layers.' as l WHERE l.id='.$layer);
+			if ($layername == NULL) { $layername = __('layer','lmm') . ' ID ' . $layer; }
 		}
 		echo '<ar:name><![CDATA[' . $layername . ']]></ar:name>'.PHP_EOL;
 		echo '<ar:description>' . __('Wikitude API powered by www.mapsmarker.com','lmm') . '</ar:description>'.PHP_EOL;
@@ -276,7 +290,8 @@ elseif (isset($_GET['marker'])) {
 		  echo '<Document>'.PHP_EOL;
 		  echo '<ar:provider id="' . $ar_wikitude_provider_name_sanitized . '">'.PHP_EOL;
 		  foreach ($markers as $marker) {
-		  echo '<ar:name><![CDATA[' . $marker[ 'mmarkername' ] . ']]></ar:name>'.PHP_EOL;
+				$markername = ($marker[ 'mmarkername' ] != NULL) ? $marker[ 'mmarkername' ] : __('marker','lmm') . ' ID ' . $marker['mid'];
+				echo '<ar:name><![CDATA[' . $markername . ']]></ar:name>'.PHP_EOL;
 		  }
 		  echo '<ar:description>' . __('Wikitude API powered by www.mapsmarker.com','lmm') . '</ar:description>'.PHP_EOL;
 		  echo '<wikitude:providerUrl><![CDATA[' . $lmm_options[ 'ar_wikitude_provider_url' ] . ']]></wikitude:providerUrl>'.PHP_EOL;
@@ -351,7 +366,8 @@ elseif (isset($_GET['marker'])) {
 		  echo '<Document>'.PHP_EOL;
 		  echo '<ar:provider id="' . $ar_wikitude_provider_name_sanitized . '">'.PHP_EOL;
 		  foreach ($markers as $marker) {
-		  echo '<ar:name><![CDATA[' . $marker[ 'mmarkername' ] . ']]></ar:name>'.PHP_EOL;
+				$markername = ($marker[ 'mmarkername' ] != NULL) ? $marker[ 'mmarkername' ] : __('marker','lmm') . ' ID ' . $marker['mid'];
+				echo '<ar:name><![CDATA[' . $markername . ']]></ar:name>'.PHP_EOL;
 		  }
 		  echo '<ar:description>' . __('Wikitude API powered by www.mapsmarker.com','lmm') . '</ar:description>'.PHP_EOL;
 		  echo '<wikitude:providerUrl><![CDATA[' . $lmm_options[ 'ar_wikitude_provider_url' ] . ']]></wikitude:providerUrl>'.PHP_EOL;
