@@ -7991,6 +7991,15 @@ $this->_settings['clustering_helptext2'] = array(
 			'desc'    => '', //empty for not breaking settings layout
 			'type'    => 'helptext'
 		);
+		$this->_settings['affiliate_id'] = array(
+			'version' => '3.6.4',
+			'pane'    => 'misc',
+			'section' => 'misc-section1',
+			'title'   => __( 'Affiliate ID', 'lmm' ),
+			'desc'    => __( 'Enter your affiliate ID to replace the default MapsMarker.com-backlink on all maps with your personal affiliate link - enabling you to receive commissions up to 50% from sales of the pro version.', 'lmm' ) . '<br/><a href="http://www.mapsmarker.com/affiliateid" target="_blank">' . __('Click here for more infos on the Maps Marker affiliate program and how to get your affiliate ID','lmm') . '</a>',
+			'std'     => '',
+			'type'    => 'text'
+		);
 		$this->_settings['misc_backlink'] = array(
 			'version' => 'p1.0',
 			'pane'    => 'misc',
