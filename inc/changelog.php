@@ -99,6 +99,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
+		MapsMarker API - icon-parameter could not be set (always returned null) - thx Hovhannes!
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
 		fixed broken settings page when plugin wp photo album plus was active (thx Martin!)
 		</td></tr>		
 		<tr><td>

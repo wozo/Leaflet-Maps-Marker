@@ -557,7 +557,7 @@ if (!lmm_is_plugin_active('leaflet-maps-marker/leaflet-maps-marker.php') ) {
 										$layer = isset($_POST['layer']) ? intval($_POST['layer']) : (isset($_GET['layer']) ? intval($_GET['layer']) : (($lmm_options[ 'defaults_marker_default_layer' ] == '0') ? '0' : intval($lmm_options[ 'defaults_marker_default_layer' ])));
 										$lat = isset($_POST['lat']) ? floatval($_POST['lat']) : (isset($_GET['lat']) ? floatval($_GET['lat']) : floatval($lmm_options[ 'defaults_marker_lat' ]));
 										$lon = isset($_POST['lon']) ? floatval($_POST['lon']) : (isset($_GET['lon']) ? floatval($_GET['lon']) : floatval($lmm_options[ 'defaults_marker_lon' ]));
-										$icon = isset($_POST['icon']) ? $_POST['icon'] : (isset($_GET['icon']) ? $_GET['icon'] : ($lmm_options[ 'defaults_marker_icon' ] == NULL) ? '' : $lmm_options[ 'defaults_marker_icon' ]);
+										$icon = isset($_POST['icon']) ? $_POST['icon'] : (isset($_GET['icon']) ? $_GET['icon'] : (($lmm_options[ 'defaults_marker_icon' ] == NULL) ? '' : $lmm_options[ 'defaults_marker_icon' ]));
 										$popuptext = $mpopuptext;
 										$zoom = isset($_POST['zoom']) ? intval($_POST['zoom']) : (isset($_GET['zoom']) ? intval($_GET['zoom']) : intval($lmm_options[ 'defaults_marker_zoom' ]));
 										$openpopup = ( isset($_POST['openpopup']) && ( ($_POST['openpopup'] == '0') || ($_POST['openpopup'] == '1')) ) ? $_POST['openpopup'] : ( isset($_GET['openpopup']) && ( ($_GET['openpopup'] == '0') || ($_GET['openpopup'] == '1') ) ? $_GET['openpopup'] : $lmm_options[ 'defaults_marker_openpopup' ]);
