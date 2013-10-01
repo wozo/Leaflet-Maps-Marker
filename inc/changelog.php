@@ -104,6 +104,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
+		htmlspecialchars in marker name (< > &) were not shown correctly on hover text (thx fredel+devEdge!)
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
 		tabs from address now get removed on edits as this brakes GeoJSON/layer maps (thx Chris!)
 		</td></tr>
 		<tr><td colspan="2">
