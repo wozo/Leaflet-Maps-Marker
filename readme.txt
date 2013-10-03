@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0
 Tested up to:      3.6
-Stable tag:        3.6.4
+Stable tag:        3.6.5
 License:           GPLv2
 
 Pin, organize & show your favorite places & tracks through OpenStreetMap, Google Maps, KML, Bing Maps, APIs or Augmented-Reality browsers
@@ -144,10 +144,10 @@ to the visitors of your website.
 * Chinese (zh_TW) thanks to jamesho Ho
 * Croatian (hr) thanks to Neven Pausic, Alan Benic and Marijan Rajic
 * Czech (cs_CZ) thanks to Viktor Kleiner and Vlad Kuzba
-* Danish (da_DK) thanks to Mads Dyrmann Larsen
+* Danish (da_DK) thanks to Mads Dyrmann Larsen and Peter Erfurt
 * Dutch (nl_NL) thanks to Marijke Metz and Patrick Ruers
 * English (en_US)
-* French (fr_FR) thanks to Vincèn Pujol and Rodolphe Quiedeville, Fx Benard and cazal cédric
+* French (fr_FR) thanks to Vincèn Pujol and Rodolphe Quiedeville, Fx Benard, cazal cédric and Fabien Hurelle
 * German (de_DE)
 * Hindi (hi_IN) thanks to by Outshine Solutions and Guntupalli Karunakar
 * Hungarian (hu_HU) thanks to István Pintér and Csaba Orban
@@ -285,10 +285,10 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2013, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v3.6.4 =
-support for Maps Marker affiliate links - see http://www.mapsmarker.com/v3.6.4 for more details
+= v3.6.5 =
+optimized marker and layer admin pages for mobile devices plus bugfixes and optimizations - see http://www.mapsmarker.com/v3.6.5 for more details
 
 == Changelog ==
-[blog post with details about v3.6.4](http://www.mapsmarker.com/v3.6.4)
+[blog post with details about v3.6.5](http://www.mapsmarker.com/v3.6.5)
 
 [changelog for all versions](http://www.mapsmarker.com/changelog)
