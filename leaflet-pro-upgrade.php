@@ -231,6 +231,7 @@ if ( $action == NULL ) {
 				<div>
 				<ul style="list-style-type:disc;margin-left:15px;">
 					<li>' . __('improved performance for layer maps with a huge number of markers (parsing of GeoJSON is up to 3 times faster)','lmm') . '</li>
+					<li>' . __('support for shortcodes in popup texts','lmm') . '</li>
 				</ul>
 				</div>
 
