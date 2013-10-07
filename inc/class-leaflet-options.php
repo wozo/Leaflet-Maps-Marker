@@ -3141,7 +3141,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'section' => 'mapdefaults-section18',
 			'std'     => '',
 			'title'   => __('Cluster colors','lmm') . '<br/><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade" title="' . esc_attr__('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-pro-option.png" width="65" height="15" /></a>',
-			'desc'    => __('Options to set the colors of the cluster circles','lmm') . '<br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-clustering-colors.jpg" width="195" height="98" />',
+			'desc'    => __('Options to set the colors of the cluster circles','lmm') . ' - <a href="http://www.mapsmarker.com/colorpicker" target="_blank">http://www.mapsmarker.com/colorpicker</a><br/><img src="'. LEAFLET_PLUGIN_URL .'inc/img/help-clustering-colors.jpg" width="400" height="98" />',
 			'type'    => 'helptext-twocolumn'
 		);
 		$this->_settings['clustering_color_small'] = array(
@@ -9754,7 +9754,7 @@ $this->_settings['clustering_helptext2'] = array(
 		}		
 		/* template for plugin updates
 		//info:  set defaults for options introduced in v3.7
-		if (get_option('leafletmapsmarker_version') == '3.6.4' )
+		if (get_option('leafletmapsmarker_version') == '3.6.5' )
 		{
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting )
