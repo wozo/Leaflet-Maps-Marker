@@ -8,7 +8,7 @@ Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0
 Tested up to:      3.6
-Stable tag:        3.6.5
+Stable tag:        3.6.6
 License:           GPLv2
 
 Pin, organize & show your favorite places & tracks through OpenStreetMap, Google Maps, KML, Bing Maps, APIs or Augmented-Reality browsers
@@ -285,10 +285,10 @@ MapsMarker &reg; - registration pending
 Copyright 2011-2013, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
-= v3.6.5 =
-optimized marker and layer admin pages for mobile devices plus bugfixes and optimizations - see http://www.mapsmarker.com/v3.6.5 for more details
+= v3.6.6 =
+bugfix release; special chars in marker names could break layer maps - see http://www.mapsmarker.com/v3.6.6 for more details
 
 == Changelog ==
-[blog post with details about v3.6.5](http://www.mapsmarker.com/v3.6.5)
+[blog post with details about v3.6.6](http://www.mapsmarker.com/v3.6.6)
 
 [changelog for all versions](http://www.mapsmarker.com/changelog)
