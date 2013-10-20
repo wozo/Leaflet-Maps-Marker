@@ -71,6 +71,7 @@
 	border:none !important;
 	border-radius:0 !important;
 	box-shadow:none !important;
+	display:inline !important;
 }
 .lmm-geo-tags { display:none!important; }
 .leaflet-container {
