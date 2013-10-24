@@ -99,7 +99,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		alignment of panel icon images could be broken on certain themes
+		alignment of panel and list marker icon images could be broken on certain themes
 		</td></tr>
 		<tr><td colspan="2">
 		<p><strong>' . __('Translation updates','lmm') . '</a></p></strong>
