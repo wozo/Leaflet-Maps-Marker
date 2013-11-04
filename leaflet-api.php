@@ -13,12 +13,9 @@ include( 'wp-load.php' );
  * originially based on allow_url_fopen-scripty by Abdullah Rubiyath
  */
 function lmm_getLatLng($address) {
-	$url = 'http://maps.googleapis.com/maps/api/geocode/xml?address=' . $address . '&sensor=false';
-	$ch = curl_init($url);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	$xml_raw = curl_exec($ch);
-	curl_close($ch);
-	$xml = simplexml_load_string($xml_raw);
+	$url = 'http://maps.googleapis.com/maps/api/geocode/xml?address=' . urlencode($address) . '&sensor=false';
+	$xml_raw = wp_remote_post( $url, array( 'sslverify' => false, 'timeout' => 10 ) );	
+	$xml = simplexml_load_string($xml_raw['body']);
 	$response = array();
 	$statusCode = $xml->status;
 	if ( ($statusCode != false) && ($statusCode != NULL) && ($statusCode == 'OK') ) {

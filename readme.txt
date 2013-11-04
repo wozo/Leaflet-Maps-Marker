@@ -7,7 +7,7 @@ Author URI:        http://www.harm.co.at
 Author:            Robert Harm
 Donate link:       http://www.mapsmarker.com/donations
 Requires at least: 3.0
-Tested up to:      3.7
+Tested up to:      3.7.1
 Stable tag:        3.6.6
 License:           GPLv2
 
@@ -156,6 +156,7 @@ to the visitors of your website.
 * Japanese (ja) thanks to Shu Higashi
 * Korean (ko_KR) thanks to Andy Park
 * Latvian (lv) thanks to Juris Orlovs and Eriks Remess
+* Norwegian/Bokmål (nb_NO) thanks to Inge Tang
 * Polish (pl_PL) translation thanks to Pawel Wyszynski and Tomasz Rudnicki
 * Portuguese (pt_BR) thanks to Andre Santos and Antonio Hammerl
 * Portuguese (pt_PT) translation thanks to Joao Campos
@@ -225,8 +226,7 @@ One personal request: before you post a new support ticket in the [Wordpress Sup
 1. [FAQ](www.mapsmarker.com/faq/)
 2. [Docs](http://www.mapsmarker.com/docs/)
 3. [Wordpress Support Forum](http://wordpress.org/support/plugin/leaflet-maps-marker) (free community support)
-4. [WP Questions](http://wpquestions.com/affiliates/register/name/robertharm) (paid community support)
-5. [WordPress HelpCenter](http://wphelpcenter.com/) (paid professional support)
+4. [Upgrade to Pro](http://www.mapsmarker.com/install) (paid developer support)
 
 [More info on support](http://mapsmarker.com/support/)
 
