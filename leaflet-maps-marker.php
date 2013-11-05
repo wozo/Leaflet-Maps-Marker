@@ -353,6 +353,9 @@ class Leafletmapsmarker
 	function lmm_marker() {
 		include('leaflet-marker.php');
 	}
+	function lmm_import_export() {
+		include('leaflet-import-export.php');
+	}
 	function lmm_tools() {
 		include('leaflet-tools.php');
 	}
@@ -389,6 +392,7 @@ class Leafletmapsmarker
 			$page = '';
 			$page2 = '';
 			$page3 = '';
+			$page3b = '';
 			$page4 = '';
 			$page5 = '';
 		}
@@ -412,6 +416,7 @@ class Leafletmapsmarker
 		add_action('admin_print_styles-'.$page, array(&$this, 'lmm_admin_enqueue_stylesheets'),17);
 		add_action('admin_print_styles-'.$page2, array(&$this, 'lmm_admin_enqueue_stylesheets'),18);
 		add_action('admin_print_styles-'.$page3, array(&$this, 'lmm_admin_enqueue_stylesheets'),19);
+		add_action('admin_print_styles-'.$page3b, array(&$this, 'lmm_admin_enqueue_stylesheets'),19);
 		add_action('admin_print_styles-'.$page4, array(&$this, 'lmm_admin_enqueue_stylesheets'),20);
 		add_action('admin_print_styles-'.$page5, array(&$this, 'lmm_admin_enqueue_stylesheets'),21);
 		add_action('admin_print_styles-'.$page6, array(&$this, 'lmm_admin_enqueue_stylesheets'),22);
@@ -425,6 +430,7 @@ class Leafletmapsmarker
 		add_action('admin_print_scripts-'.$page, array(&$this, 'lmm_add_contextual_help'));
 		add_action('admin_print_scripts-'.$page2, array(&$this, 'lmm_add_contextual_help'));
 		add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_add_contextual_help'));
+		add_action('admin_print_scripts-'.$page3b, array(&$this, 'lmm_add_contextual_help'));
 		add_action('admin_print_scripts-'.$page4, array(&$this, 'lmm_add_contextual_help'));
 		add_action('admin_print_scripts-'.$page5, array(&$this, 'lmm_add_contextual_help'));
 		add_action('admin_print_scripts-'.$page6, array(&$this, 'lmm_add_contextual_help'));
