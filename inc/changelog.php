@@ -102,6 +102,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		switched from curl() to wp_remote_post() on API geocoding calls for higher compatibility
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		Improved error handling on metadata errors on bing maps - use console.log() instead of alert()
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		added fix for loading maps in woocommerce tabs (thx Glenn!)
@@ -114,12 +119,12 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		default error tile image showed wrong www.mapsmarker.com url (ups)
+		default error tile image and map deleted image showed wrong www.mapsmarker.com url (ups)
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		
+		backslashes in map name and address broke GeoJSON output (and thus layer maps) - now replaced with /
 		</td></tr>
 		<tr><td colspan="2">
 		<p><strong>' . __('Translation updates','lmm') . '</a></p></strong>
