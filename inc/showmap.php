@@ -161,7 +161,7 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'showmap.php') { die ("Please do no
 		if (empty($marker)) {
 			$lmm_out .= $error_layer_not_exists . '<br/>';
 		}
-	$lmm_out .= '<a href="http://www.mapsmarker.com" target="_blank" title="' . esc_attr__('Go to plugin website','lmm') . '"><img style="border:1px solid #ccc;" src="' . LEAFLET_PLUGIN_URL . 'inc/img/map-deleted-image.png"></a></div>';
+	$lmm_out .= '<a href="http://www.mapsmarker.com" target="_blank" title="' . esc_attr__('Go to plugin website','lmm') . '"><img style="border:1px solid #ccc;" src="' . LEAFLET_PLUGIN_URL . 'inc/img/map-deleted-image.png" width="244" height="224" /></a></div>';
 	} else {
 	//info: starting output on frontend
 	$lmm_out = '';
@@ -852,6 +852,21 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'showmap.php') { die ("Please do no
 			}
 		}
 	";	
+
+	//info: fix for loading maps in woocommmerce tabs
+	include_once( ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'plugin.php' );
+    	if (is_plugin_active('woocommerce/woocommerce.php') ) {
+		$lmmjs_out .= "
+			if (typeof jQuery != 'undefined') {
+				jQuery(document).ready(function($) {
+					".$mapname.".invalidateSize();
+					$('.woocommerce-tabs ul.tabs li a').click(function(){
+						".$mapname.".invalidateSize();
+					});
+				});
+			}
+		";
+	}
 
 	//info: fallback for adding js to footer 3
 	if ( (version_compare( $wp_version, '3.3', '>=' )) && ($lmm_options['misc_javascript_header_footer'] == 'footer')) {

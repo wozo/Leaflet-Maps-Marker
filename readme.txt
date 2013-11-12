@@ -22,6 +22,7 @@ For even more features please try "[Leaflet Maps Marker Pro](http://www.mapsmark
 * [marker clustering](http://www.mapsmarker.com/pro-feature-clustering)
 * [GPX tracks](http://www.mapsmarker.com/pro-feature-gpx)
 * [mobile optimized maps](http://www.mapsmarker.com/pro-feature-nojquery)
+* [support for CSV/XLS/XLSX/ODS import and export for bulk additions and bulk updates of markers](http://www.mapsmarker.com/pro-feature-import)
 * [HTML5 fullscreen maps](http://www.mapsmarker.com/pro-feature-html-fullscreen-maps)
 * [minimaps](http://www.mapsmarker.com/pro-feature-minimaps)
 * [mobile web app support and optimized mobile viewport](http://www.mapsmarker.com/pro-feature-webapp)
