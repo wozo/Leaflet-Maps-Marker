@@ -126,15 +126,65 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td><td>
 		backslashes in map name and address broke GeoJSON output (and thus layer maps) - now replaced with /
 		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
+		</td><td>
+		tabs in popuptext (character literals) broke GeoJSON output (and thus layer maps) - now replaced with space
+		</td></tr>
 		<tr><td colspan="2">
 		<p><strong>' . __('Translation updates','lmm') . '</a></p></strong>
 		<p>' . sprintf(__('In case you want to help with translations, please visit the <a href="%1s" target="_blank">web-based translation plattform</a>','lmm'), 'http://translate.mapsmarker.com/projects/lmm') . '</p>
+		</td></tr>
+				<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated Chinese translation thanks to John Shen, <a href="http://www.synyan.net" target="_blank">http://www.synyan.net</a> and ck
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated Chinese (zh_TW) translation thanks to jamesho Ho, <a href="http://outdooraccident.org" target="_blank">http://outdooraccident.org</a>
+		</td></tr>	
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated Czech translation thanks to Viktor Kleiner and Vlad Kuzba, <a href="http://kuzbici.eu" target="_blank">http://kuzbici.eu</a>
+		</td></tr>		
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated Dutch translation thanks to Patrick Ruers, <a href="http://www.stationskwartiersittard.nl" target="_blank">http://www.stationskwartiersittard.nl</a>
 		</td></tr>
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
 		</td><td>
 		updated German translation
 		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated Indonesian translation thanks to Andy Aditya Sastrawikarta and Emir Hartato, <a href="http://whateverisaid.wordpress.com" target="_blank">http://whateverisaid.wordpress.com</a>
+		</td></tr>	
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated Italian translation thanks to Luca Barbetti, <a href="http://twitter.com/okibone" target="_blank">http://twitter.com/okibone</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated Latvian translation thanks to Juris Orlovs, <a href="http://lbpa.lv" target="_blank">http://lbpa.lv</a> and Eriks Remess <a href="http://geekli.st/Eriks" target="_blank">http://geekli.st/Eriks</a>
+		</td></tr>		
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated Polish translation thanks to Tomasz Rudnicki, <a href="http://www.kochambieszczady.pl" target="_blank">http://www.kochambieszczady.pl</a>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated Romanian translation thanks to Arian, <a href="http://administrare-cantine.ro" target="_blank">http://administrare-cantine.ro</a> and Daniel Codrea, <a href="http://www.inadcod.com" target="_blank">http://www.inadcod.com</a>
+		</td></tr>		
 		</table>'.PHP_EOL;
 
 	if ( ( $lmm_version_old < '3.6.6' ) && ( $lmm_version_old > '0' ) ) {
