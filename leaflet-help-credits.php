@@ -94,6 +94,7 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'leaflet-help-credits.php') { die (
 		<li>- Editor-Switch-Icon by AMAZIGH Aneglus, license: GNU/GPL</li>
 		<li>- Submenu icons from <a href="http://bijou.im/" target="_blank">Bijou</a> and <a href="http://somerandomdude.com/work/iconic/" target="_blank">Iconic</a> icon sets (GPL)</li>
 		<li>- Import/Export icons by <a href="http://momentumdesignlab.com/" target="_blank">Momenticons</a>, license: Creative Commons Attribution (by)</li>
+		<li>- PHPExcel library for import/export <a href="http://phpexcel.codeplex.com/" target="_blank">http://phpexcel.codeplex.com/</a>, License: LGPL</li>
 	</ul>
 	<h3 style="font-size:23px;"><?php _e('Credits & special thanks','lmm') ?></h3>
 	<ul>
