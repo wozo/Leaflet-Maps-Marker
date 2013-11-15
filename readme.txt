@@ -271,7 +271,7 @@ This program is free software; you can redistribute it and/or modify it under th
 * Home-Icon from [Pro Theme Design](http://prothemedesign.com), licence: Creative Commons Attribution (by)
 * Editor-Switch-Icon by AMAZIGH Aneglus, license: GNU/GPL
 * Submenu icons from [Bijou](http://bijou.im) and [Iconic](http://somerandomdude.com/work/iconic/) icon sets (GPL)
-
+* PHPExcel for import/export [http://phpexcel.codeplex.com/](http://phpexcel.codeplex.com/) (LGPL)
 = Credits & special thanks to =
 * Sindre Wimberger ([http://www.sindre.at](http://www.sindre.at)) for help with bugfixing & geo-consulting
 * Julia Loew ([http://www.weiderand.net](http://www.weiderand.net)) for logo and corporate design
@@ -287,7 +287,7 @@ Copyright 2011-2013, Robert Harm, All Rights Reserved
 
 == Upgrade Notice ==
 = v3.7 =
-bugfix release; special chars in marker names could break layer maps - see http://www.mapsmarker.com/v3.7 for more details
+export markers as csv/xls/xlsx files; optimizations and bugfixes (special chars in marker names could break layer maps) - see http://www.mapsmarker.com/v3.7 for more details
 
 == Changelog ==
 [blog post with details about v3.7](http://www.mapsmarker.com/v3.7)
