@@ -172,7 +172,14 @@ class PHPExcel_Shared_File
 		// use ordinary built-in PHP function
 		//	There should be no problem with the 5.2.4 Suhosin realpath() bug, because this line should only
 		//		be called if we're running 5.2.1 or earlier
-		return realpath(sys_get_temp_dir());
-	}
 
+		//info: use wp temp directory if php temp is not writeble
+		$php_temp_directory = realpath(sys_get_temp_dir());
+		if (is_writable($php_temp_directory)) {
+			return realpath(sys_get_temp_dir());
+		} else {
+			$wp_upload_dir = wp_upload_dir();
+			return $wp_upload_dir['path'];
+		}
+	}
 }
