@@ -523,6 +523,15 @@ class Class_leaflet_options {
 				'empty_basemap' => __('empty basemap','lmm')
 			)
 		);
+		$this->_settings['global_maxzoom_level'] = array(
+			'version' => 'p1.5',
+			'pane'    => 'mapdefaults',
+			'section' => 'mapdefaults-section1',
+			'title'   => __('Global maximum zoom level','lmm') . $pro_button_link,
+			'desc'    => __('If the native maximum zoom level of a basemap is lower, tiles will be upscaled automatically.','lmm'),
+			'std'     => '21',
+			'type'    => 'text-pro'
+		);
 		/*
 		* Names for default basemaps
 		*/
