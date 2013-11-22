@@ -11,107 +11,107 @@ $lmm_options = get_option( 'leafletmapsmarker_options' ); //info: required for b
 $page = (isset($_GET['page']) ? $_GET['page'] : '');
 $oid = isset($_POST['id']) ? intval($_POST['id']) : (isset($_GET['id']) ? intval($_GET['id']) : '');
 if ($page == 'leafletmapsmarker_markers') {
-	$buttonclass1 = 'button-primary lmm-nav-primary';
-	$buttonclass2 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2b = 'button-secondary lmm-nav-secondary';
-	$buttonclass3 = 'button-secondary lmm-nav-secondary';
-	$buttonclass4 = 'button-secondary lmm-nav-secondary';
-	$buttonclass5 = 'button-secondary lmm-nav-secondary';
-	$buttonclass6 = 'button-secondary lmm-nav-secondary';
-	$buttonclass7 = 'button-secondary lmm-nav-secondary';
-	$buttonclass8 = 'button-secondary lmm-nav-secondary';
+	$buttonclass1 = 'button button-primary lmm-nav-primary';
+	$buttonclass2 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2b = 'button button-secondary lmm-nav-secondary';
+	$buttonclass3 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass4 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass5 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass6 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass7 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass8 = 'button button-secondary lmm-nav-secondary';
 } else if ($page == 'leafletmapsmarker_marker') {
-	$buttonclass1 = 'button-secondary lmm-nav-secondary';
+	$buttonclass1 = 'button button-secondary lmm-nav-secondary';
 	if ( ($oid == NULL) && ($page == 'leafletmapsmarker_marker') ) {
-		$buttonclass2 = 'button-primary lmm-nav-primary';
+		$buttonclass2 = 'button button-primary lmm-nav-primary';
 	} else if ( ($oid != NULL) && ($page == 'leafletmapsmarker_marker') ) {
-		$buttonclass2 = 'button-secondary lmm-nav-secondary';
+		$buttonclass2 = 'button button-secondary lmm-nav-secondary';
 	} else {
-		$buttonclass2 = 'button-secondary lmm-nav-secondary';
+		$buttonclass2 = 'button button-secondary lmm-nav-secondary';
 	}
-	$buttonclass2b = 'button-secondary lmm-nav-secondary';
-	$buttonclass3 = 'button-secondary lmm-nav-secondary';
-	$buttonclass4 = 'button-secondary lmm-nav-secondary';
-	$buttonclass5 = 'button-secondary lmm-nav-secondary';
-	$buttonclass6 = 'button-secondary lmm-nav-secondary';
-	$buttonclass7 = 'button-secondary lmm-nav-secondary';
-	$buttonclass8 = 'button-secondary lmm-nav-secondary';
+	$buttonclass2b = 'button button-secondary lmm-nav-secondary';
+	$buttonclass3 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass4 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass5 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass6 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass7 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass8 = 'button button-secondary lmm-nav-secondary';
 } else if ($page == 'leafletmapsmarker_import_export') {
-	$buttonclass1 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2b = 'button-primary lmm-nav-primary';
-	$buttonclass3 = 'button-secondary lmm-nav-secondary';
-	$buttonclass4 = 'button-secondary lmm-nav-secondary';
-	$buttonclass5 = 'button-secondary lmm-nav-secondary';
-	$buttonclass6 = 'button-secondary lmm-nav-secondary';
-	$buttonclass7 = 'button-secondary lmm-nav-secondary';
-	$buttonclass8 = 'button-secondary lmm-nav-secondary';
+	$buttonclass1 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2b = 'button button-primary lmm-nav-primary';
+	$buttonclass3 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass4 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass5 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass6 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass7 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass8 = 'button button-secondary lmm-nav-secondary';
 } else if ($page == 'leafletmapsmarker_layers') {
-	$buttonclass1 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2b = 'button-secondary lmm-nav-secondary';
-	$buttonclass3 = 'button-primary lmm-nav-primary';
-	$buttonclass4 = 'button-secondary lmm-nav-secondary';
-	$buttonclass5 = 'button-secondary lmm-nav-secondary';
-	$buttonclass6 = 'button-secondary lmm-nav-secondary';
-	$buttonclass7 = 'button-secondary lmm-nav-secondary';
-	$buttonclass8 = 'button-secondary lmm-nav-secondary';
+	$buttonclass1 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2b = 'button button-secondary lmm-nav-secondary';
+	$buttonclass3 = 'button button-primary lmm-nav-primary';
+	$buttonclass4 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass5 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass6 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass7 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass8 = 'button button-secondary lmm-nav-secondary';
 } else if ($page == 'leafletmapsmarker_layer') {
-	$buttonclass1 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2b = 'button-secondary lmm-nav-secondary';
-	$buttonclass3 = 'button-secondary lmm-nav-secondary';
+	$buttonclass1 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2b = 'button button-secondary lmm-nav-secondary';
+	$buttonclass3 = 'button button-secondary lmm-nav-secondary';
 	if ( ($oid == NULL) && ($page == 'leafletmapsmarker_layer') ) {
-		$buttonclass4 = 'button-primary lmm-nav-primary';
+		$buttonclass4 = 'button button-primary lmm-nav-primary';
 	} else if ( ($oid != NULL) && ($page == 'leafletmapsmarker_layer') ) {
-		$buttonclass4 = 'button-secondary lmm-nav-secondary';
+		$buttonclass4 = 'button button-secondary lmm-nav-secondary';
 	} else {
-		$buttonclass4 = 'button-secondary lmm-nav-secondary';
+		$buttonclass4 = 'button button-secondary lmm-nav-secondary';
 	}
-	$buttonclass5 = 'button-secondary lmm-nav-secondary';
-	$buttonclass6 = 'button-secondary lmm-nav-secondary';
-	$buttonclass7 = 'button-secondary lmm-nav-secondary';
-	$buttonclass8 = 'button-secondary lmm-nav-secondary';
+	$buttonclass5 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass6 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass7 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass8 = 'button button-secondary lmm-nav-secondary';
 } else if ($page == 'leafletmapsmarker_tools') {
-	$buttonclass1 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2b = 'button-secondary lmm-nav-secondary';
-	$buttonclass3 = 'button-secondary lmm-nav-secondary';
-	$buttonclass4 = 'button-secondary lmm-nav-secondary';
-	$buttonclass5 = 'button-primary lmm-nav-primary';
-	$buttonclass6 = 'button-secondary lmm-nav-secondary';
-	$buttonclass7 = 'button-secondary lmm-nav-secondary';
-	$buttonclass8 = 'button-secondary lmm-nav-secondary';
+	$buttonclass1 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2b = 'button button-secondary lmm-nav-secondary';
+	$buttonclass3 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass4 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass5 = 'button button-primary lmm-nav-primary';
+	$buttonclass6 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass7 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass8 = 'button button-secondary lmm-nav-secondary';
 } else if ($page == 'leafletmapsmarker_settings') {
-	$buttonclass1 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2b = 'button-secondary lmm-nav-secondary';
-	$buttonclass3 = 'button-secondary lmm-nav-secondary';
-	$buttonclass4 = 'button-secondary lmm-nav-secondary';
-	$buttonclass5 = 'button-secondary lmm-nav-secondary';
-	$buttonclass6 = 'button-primary lmm-nav-primary';
-	$buttonclass7 = 'button-secondary lmm-nav-secondary';
-	$buttonclass8 = 'button-secondary lmm-nav-secondary';
+	$buttonclass1 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2b = 'button button-secondary lmm-nav-secondary';
+	$buttonclass3 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass4 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass5 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass6 = 'button button-primary lmm-nav-primary';
+	$buttonclass7 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass8 = 'button button-secondary lmm-nav-secondary';
 } else if ($page == 'leafletmapsmarker_help') {
-	$buttonclass1 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2b = 'button-secondary lmm-nav-secondary';
-	$buttonclass3 = 'button-secondary lmm-nav-secondary';
-	$buttonclass4 = 'button-secondary lmm-nav-secondary';
-	$buttonclass5 = 'button-secondary lmm-nav-secondary';
-	$buttonclass6 = 'button-secondary lmm-nav-secondary';
-	$buttonclass7 = 'button-primary lmm-nav-primary';
-	$buttonclass8 = 'button-secondary lmm-nav-secondary';
+	$buttonclass1 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2b = 'button button-secondary lmm-nav-secondary';
+	$buttonclass3 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass4 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass5 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass6 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass7 = 'button button-primary lmm-nav-primary';
+	$buttonclass8 = 'button button-secondary lmm-nav-secondary';
 } else if ($page == 'leafletmapsmarker_pro_upgrade') {
-	$buttonclass1 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2 = 'button-secondary lmm-nav-secondary';
-	$buttonclass2b = 'button-secondary lmm-nav-secondary';
-	$buttonclass3 = 'button-secondary lmm-nav-secondary';
-	$buttonclass4 = 'button-secondary lmm-nav-secondary';
-	$buttonclass5 = 'button-secondary lmm-nav-secondary';
-	$buttonclass6 = 'button-secondary lmm-nav-secondary';
-	$buttonclass7 = 'button-secondary lmm-nav-secondary';
-	$buttonclass8 = 'button-primary lmm-nav-primary';
+	$buttonclass1 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass2b = 'button button-secondary lmm-nav-secondary';
+	$buttonclass3 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass4 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass5 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass6 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass7 = 'button button-secondary lmm-nav-secondary';
+	$buttonclass8 = 'button button-primary lmm-nav-primary';
 }
 $admin_quicklink_tools_buttons = ( current_user_can( "activate_plugins" ) ) ? "<a class='" . $buttonclass5 ."' href='" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_tools'><img src='" . LEAFLET_PLUGIN_URL . "inc/img/icon-menu-tools.png' width='10' height='10'/> ".__('Tools','lmm')."</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" : "";
 $admin_quicklink_settings_buttons = ( current_user_can( "activate_plugins" ) ) ? "<a class='" . $buttonclass6 ."' href='" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_settings'><img src='" . LEAFLET_PLUGIN_URL . "inc/img/icon-menu-settings.png' width='10' height='10'/> ".__('Settings','lmm')."</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;" : "";
