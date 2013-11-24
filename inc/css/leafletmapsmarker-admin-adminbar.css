@@ -1,0 +1,10 @@
+/*MP6 admin bar */
+#wp-admin-bar-lmm > .ab-item .ab-icon:before {
+	content: url('../img/icon-adminbar.png');
+}
+@media screen and ( max-width: 782px ) {
+	#wp-admin-bar-lmm > .ab-item .ab-icon:before {
+			content: url('../img/icon-adminbar-2x.png');
+			float:right;
+	}
+}

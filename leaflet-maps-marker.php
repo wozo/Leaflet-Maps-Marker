@@ -4,12 +4,12 @@ Plugin Name: Leaflet Maps Marker &reg;
 Plugin URI: http://www.mapsmarker.com
 Description: Pin, organize & show your favorite places & tracks through OpenStreetMap, Google Maps, Google Earth (KML), Bing Maps, APIs or Augmented-Reality browsers
 Tags: map, maps, Leaflet, OpenStreetMap, geoJSON, json, jsonp, OSM, travelblog, opendata, open data, opengov, open government, ogdwien, WMTS, geoRSS, location, geo, geo-mashup, geocoding, geolocation, travel, mapnick, osmarender, cloudmade, mapquest, geotag, geocaching, gpx, OpenLayers, mapping, bikemap, coordinates, geocode, geocoding, geotagging, latitude, longitude, position, route, tracks, google maps, googlemaps, gmaps, google map, google map short code, google map widget, google maps v3, google earth, gmaps, ar, augmented-reality, wikitude, wms, web map service, geocache, geocaching, qr, qr code, fullscreen, marker, marker icons, layer, multiple markers, karte, blogmap, geocms, geographic, routes, tracks, directions, navigation, routing, location plan, YOURS, yournavigation, ORS, openrouteservice, widget, bing, bing maps, microsoft, map short code, map widget, kml, cross-browser, fully documented, traffic, bike lanes, map short code, custom marker text, custom marker icons and text, gpx
-Version: 3.7
+Version: 3.8
 Author: Robert Harm
 Author URI: http://www.harm.co.at
 Donate link: http://www.mapsmarker.com/donations
 Requires at least: 3.0
-Tested up to: 3.7.1
+Tested up to: 3.8
 Requires at least PHP 5.2
 Copyright 2011-2013 - @RobertHarm - All rights reserved
 MapsMarker &reg; - registration pending
@@ -376,7 +376,7 @@ class Leafletmapsmarker
 	}
 	function lmm_admin_menu() {
 		global $wp_version;
-		if ( version_compare( $wp_version, '3.8', '>=' ) ) { //info: for mp6 theme compatibility
+		if ( version_compare( $wp_version, '3.8-alpha', '>' ) ) { //info: for mp6 theme compatibility
 			$mp6_icon = '-white';
 		} else {
 			$mp6_icon = '';
@@ -387,7 +387,7 @@ class Leafletmapsmarker
 		} else {
 			$capabilities = 'edit_posts';
 		}
-		$page = add_object_page('Maps Marker', 'Maps Marker', $capabilities, 'leafletmapsmarker_markers', array(&$this, 'lmm_list_markers'), LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-page.png' );
+		$page = add_object_page('Maps Marker', 'Maps Marker', $capabilities, 'leafletmapsmarker_markers', array(&$this, 'lmm_list_markers'), LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-page' . $mp6_icon . '.png' );
 		if ( !empty($lmm_options) ) { //info: needed to suppress warning when reseting settings
 			$page2 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('List all markers', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-list' . $mp6_icon . '.png"> ' . __('List all markers', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_markers', array(&$this, 'lmm_list_markers') );
 			$page3 = add_submenu_page('leafletmapsmarker_markers', 'Maps Marker - ' . __('add/edit marker', 'lmm'), '<img src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-menu-add' . $mp6_icon . '.png"> ' . __('Add new marker', 'lmm'), $lmm_options[ 'capabilities_edit' ], 'leafletmapsmarker_marker', array(&$this, 'lmm_marker') );
@@ -430,6 +430,8 @@ class Leafletmapsmarker
 		add_action('admin_print_styles-'.$page10, array(&$this, 'lmm_admin_enqueue_stylesheets_jqueryui'),23);
 		//info: add css styles for datepicker
 		add_action('admin_print_styles-'.$page3, array(&$this, 'lmm_admin_enqueue_stylesheets_datepicker'),24);
+		//info: add css for adminbar entry for MP6
+		add_action('admin_enqueue_scripts', array(&$this, 'lmm_admin_enqueue_stylesheets_adminbar'),25);		
 		//info: add contextual help on all pages
 		add_action('admin_print_scripts-'.$page, array(&$this, 'lmm_add_contextual_help'));
 		add_action('admin_print_scripts-'.$page2, array(&$this, 'lmm_add_contextual_help'));
@@ -457,16 +459,19 @@ class Leafletmapsmarker
 			$lmm_options = get_option( 'leafletmapsmarker_options' );
 			if ( $lmm_options[ 'admin_bar_integration' ] == 'enabled' && current_user_can($lmm_options[ 'capabilities_edit' ]) )
 			{
-			global $wp_admin_bar;
-			if ( version_compare( $wp_version, '3.8', '>=' ) ) { //info: for mp6 theme compatibility
-				$mp6_icon = '-white';
-			} else {
-				$mp6_icon = '';
-			}
+				global $wp_admin_bar;
+				//info: mp6 only for WP3.8+
+				if ( version_compare( $wp_version, '3.8-alpha', '>' ) ) {
+					$mp6_icon = '-white';
+					$admin_bar_main = '<span class="ab-icon"></span><span class="ab-label">Maps Marker</span>';
+				} else {
+					$admin_bar_main = '<img style="float:left;margin:3px 5px 0 0;" src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-tinymce.png"/> Maps Marker';
+					$mp6_icon = '';
+				}
 				$menu_items = array(
 					array(
 						'id' => 'lmm',
-						'title' => '<img style="float:left;margin:3px 5px 0 0;" src="' . LEAFLET_PLUGIN_URL . 'inc/img/icon-tinymce.png"/></span> Maps Marker',
+						'title' => $admin_bar_main,
 						'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers',
 						'meta' => array( 'title' => 'Wordpress-Plugin ' . __('by','lmm') . ' www.mapsmarker.com' )
 					),
@@ -774,9 +779,18 @@ class Leafletmapsmarker
 		wp_register_style( 'jquery-ui-timepicker-addon', LEAFLET_PLUGIN_URL . 'inc/css/jquery-datepicker-theme/jquery-ui-timepicker-addon.css', array('jquery-ui-all'), NULL );
 		wp_enqueue_style( 'jquery-ui-timepicker-addon' );
 	}
+	function lmm_admin_enqueue_stylesheets_adminbar() {
+		$lmm_options = get_option( 'leafletmapsmarker_options' );
+		if ( $lmm_options[ 'admin_bar_integration' ] == 'enabled' && current_user_can($lmm_options[ 'capabilities_edit' ]) )
+		{
+			$plugin_version = get_option('leafletmapsmarker_version');
+			wp_register_style( 'leafletmapsmarker-admin-adminbar', LEAFLET_PLUGIN_URL . 'inc/css/leafletmapsmarker-admin-adminbar.css', array(), $plugin_version);
+			wp_enqueue_style( 'leafletmapsmarker-admin-adminbar' );
+		}
+	}	
 	function lmm_install_and_updates() {
 		//info: set transient to execute install & update-routine only once a day
-		$current_version = "v37"; //2do - mandatory: change on each update to new version!
+		$current_version = "v38"; //2do - mandatory: change on each update to new version!
 		$schedule_transient = 'leafletmapsmarker_install_update_cache_' . $current_version;
 		$install_update_schedule = get_transient( $schedule_transient );
 		if ( $install_update_schedule === FALSE ) {

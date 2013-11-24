@@ -9790,14 +9790,13 @@ $this->_settings['clustering_helptext2'] = array(
 		update_option( 'leafletmapsmarker_options', $options_new );
 		}		
 		/* template for plugin updates
-		//info:  set defaults for options introduced in v3.8
-		if (get_option('leafletmapsmarker_version') == '3.7' )
+		//info:  set defaults for options introduced in v3.9
+		if (get_option('leafletmapsmarker_version') == '3.8' )
 		{
 			$new_options_defaults = array();
 			foreach ( $this->settings as $id => $setting )
 			{
-				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'helptext-twocolumn' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'radio-reverse-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['type'] != 'text-reverse-pro' && $setting['version'] == '3.8')
-				{
+				if ( $setting['type'] != 'heading' && $setting['type'] != 'helptext' && $setting['type'] != 'helptext-twocolumn' && $setting['type'] != 'checkbox-pro' && $setting['type'] != 'select-pro' && $setting['type'] != 'radio-pro' && $setting['type'] != 'radio-reverse-pro' && $setting['type'] != 'textarea-pro' && $setting['type'] != 'text-pro' && $setting['type'] != 'text-reverse-pro' && $setting['version'] == '3.9
 				$new_options_defaults[$id] = $setting['std'];
 				}
 			}

@@ -21,6 +21,9 @@ table {
 	font-size:12px;
 	font-family:sans-serif;
 }
+td {
+	line-height:1.1em;
+}
 .updated {
 	padding:10px;
 	background-color: #FFFFE0;
@@ -79,6 +82,45 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</table>'.PHP_EOL;
 *************************************************************************************************************************************/
 
+		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.8') . '</strong> - ' . __('released on','lmm') . ' xx.12.2013 (<a href="http://www.mapsmarker.com/v3.8" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
+		<table>
+		<tr><td>
+		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"  target="_top" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-pro.png"></a>
+		</td><td>
+		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"  target="_top" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '">global maximum zoom level (21) for all basemaps with automatic upscaling if native maximum zoom level is lower</a>
+		</td></tr>
+		<tr><td>
+		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"  target="_top" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-pro.png"></a>
+		</td><td>
+		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"  target="_top" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '">improved accessibility by adding marker name as alt attribute for marker icon</a>
+		</td></tr>		
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-new.png">
+		</td><td>
+		compatibility with WordPress 3.8/MP6 (responsive admin template)
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		cleaned up admin dashboard widget (showing blog post titles only) 
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		upgraded visualead.com QR API to use version 3 for higher performance
+		</td></tr>
+		<tr><td colspan="2">
+		<p><strong>' . __('Translation updates','lmm') . '</a></p></strong>
+		<p>' . sprintf(__('In case you want to help with translations, please visit the <a href="%1s" target="_blank">web-based translation plattform</a>','lmm'), 'http://translate.mapsmarker.com/projects/lmm') . '</p>
+		</td></tr>
+		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-translations.png">
+		</td><td>
+		updated German translation
+		</td></tr>
+		</table>'.PHP_EOL;
+
+		echo '<p><hr noshade size="1"/></p>';
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.7') . '</strong> - ' . __('released on','lmm') . ' 16.11.2013 (<a href="http://www.mapsmarker.com/v3.7" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
 		<tr><td>
