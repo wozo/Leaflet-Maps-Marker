@@ -87,6 +87,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"  target="_top" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-pro.png"></a>
 		</td><td>
+		upgrade to leaflet.js v0.7 with lots of improvements and bugfixes (more infos: <a href="http://leafletjs.com/2013/11/18/leaflet-0-7-released-plans-for-future.html" target="_blank">release notes</a> and <a href="https://github.com/Leaflet/Leaflet/blob/master/CHANGELOG.md#07-dev-master" target="_blank">detailed changelog</a>)
+		</td></tr>
+		<tr><td>
+		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"  target="_top" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '"><img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-pro.png"></a>
+		</td><td>
 		<a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_pro_upgrade"  target="_top" title="' . esc_attr__('Upgrade to pro version for even more features - click here to find out how you can start a free 30-day-trial easily','lmm') . '">global maximum zoom level (21) for all basemaps with automatic upscaling if native maximum zoom level is lower</a>
 		</td></tr>
 		<tr><td>
@@ -107,7 +112,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
 		</td><td>
-		upgraded visualead.com QR API to use version 3 for higher performance
+		upgraded visualead QR API to use version 3 for higher performance
 		</td></tr>
 		<tr><td colspan="2">
 		<p><strong>' . __('Translation updates','lmm') . '</a></p></strong>
@@ -120,6 +125,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		</td></tr>
 		</table>'.PHP_EOL;
 
+	if ( ( $lmm_version_old < '3.7' ) && ( $lmm_version_old > '0' ) ) {
 		echo '<p><hr noshade size="1"/></p>';
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.7') . '</strong> - ' . __('released on','lmm') . ' 16.11.2013 (<a href="http://www.mapsmarker.com/v3.7" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
 		<table>
@@ -233,7 +239,8 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		updated Romanian translation thanks to Arian, <a href="http://administrare-cantine.ro" target="_blank">http://administrare-cantine.ro</a> and Daniel Codrea, <a href="http://www.inadcod.com" target="_blank">http://www.inadcod.com</a>
 		</td></tr>		
 		</table>'.PHP_EOL;
-
+	}
+	
 	if ( ( $lmm_version_old < '3.6.6' ) && ( $lmm_version_old > '0' ) ) {
 		echo '<p><hr noshade size="1"/></p>';
 		echo '<p style="margin:0.5em 0 0 0;"><strong>' . sprintf(__('Changelog for version %s','lmm'), '3.6.6') . '</strong> - ' . __('released on','lmm') . ' 09.10.2013 (<a href="http://www.mapsmarker.com/v3.6.6" target="_blank">' . __('blog post with more details about this release','lmm') . '</a>):</p>
