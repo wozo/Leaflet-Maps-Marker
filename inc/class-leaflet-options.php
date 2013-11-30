@@ -9087,7 +9087,7 @@ $this->_settings['clustering_helptext2'] = array(
 			'pane'    => 'misc',
 			'section' => 'misc-section8',
 			'title'   => __( 'Image URL', 'lmm' ) . $pro_button_link,
-			'desc'    => sprintf(__('A custom image can only be used if you sign up for a custom visualead API key! Please visit %s for more information.','lmm'), '<a href="http://www.mapsmarker.com/visualead" target="_blank">mapsmarker.com/visualead</a>'),
+			'desc'    => sprintf(__('A custom image can only be used if you sign up for a custom visualead API key! Please visit %s for more information.','lmm'), '<a href="http://www.mapsmarker.com/pro-feature-qrcode" target="_blank">mapsmarker.com/visualead</a>'),
 			'std'     => '',
 			'type'    => 'text-pro'
 		);
