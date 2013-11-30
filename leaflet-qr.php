@@ -40,7 +40,7 @@ if (!lmm_is_plugin_active('leaflet-maps-marker/leaflet-maps-marker.php') ) {
 		//$results = json_decode($output);
 		if($results->response ==1){
 			$image_decoded= base64_decode($results->image);
-			echo '<a href="http://www.visualead.com/api/?pricing_mapsmarker" target="_blank" title="' . sprintf(esc_attr__('QR code image for link to full screen map (%s)','lmm'),$url) . '"><img src="data:image/png;base64,' . $results->image . '" alt="QR-Code"/></a>';
+			echo '<span title="' . sprintf(esc_attr__('QR code image for link to full screen map (%s)','lmm'),$url) . '"><img src="data:image/png;base64,' . $results->image . '" alt="QR-Code"/></span>';
 			echo '<br/><a href="http://www.visualead.com/api/?pricing_mapsmarker" target="_blank" title="' . esc_attr__('QR code powered by visualead.com','lmm') . '"><img style="margin:10px 0 0 35px;" src="' . LEAFLET_PLUGIN_URL . 'inc/img/logo-visualead.png"></a>';
 		} else {
 			echo __('QR code could not be generated!','lmm') . '<br/>';
