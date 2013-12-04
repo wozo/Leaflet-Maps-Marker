@@ -472,7 +472,7 @@ class Leafletmapsmarker
 					array(
 						'id' => 'lmm',
 						'title' => $admin_bar_main,
-						'href' => LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers',
+						'href' => '',
 						'meta' => array( 'title' => 'Wordpress-Plugin ' . __('by','lmm') . ' www.mapsmarker.com' )
 					),
 					array(
