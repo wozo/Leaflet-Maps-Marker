@@ -84,7 +84,7 @@ if ($mcount > intval($lmm_options[ 'markers_per_page' ])) {
 	$massactionnonce = isset($_POST['_wpnonce']) ? $_POST['_wpnonce'] : (isset($_GET['_wpnonce']) ? $_GET['_wpnonce'] : '');
 	if ( ($deleteselected == '1') && ($assignselected == '1') ) {
 		echo '<p><div class="error" style="padding:10px;">' . __('Please only select one bulk action','lmm') . ' </div>';
-		echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers\'>' . __('show all markers','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker\'>' . __('add new maker','lmm') . '</a></p>';
+		echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers\'>' . __('list all markers','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker\'>' . __('add new maker','lmm') . '</a></p>';
 	} else if ( ($deleteselected == '1') && isset($_POST['checkedmarkers']) ) {
 		if (! wp_verify_nonce($massactionnonce, 'massaction-nonce') ) die('<br/>'.__('Security check failed - please call this function from the according Leaflet Maps Marker admin page!','lmm').'');
 		$checked_markers_prepared = implode(",", $_POST['checkedmarkers']);
@@ -92,14 +92,14 @@ if ($mcount > intval($lmm_options[ 'markers_per_page' ])) {
 		$wpdb->query( "DELETE FROM $table_name_markers WHERE id IN (" . htmlspecialchars($checked_markers) . ")");
 		$wpdb->query( "OPTIMIZE TABLE $table_name_markers" );
 		echo '<p><div class="updated" style="padding:10px;">' . __('The selected markers have been deleted','lmm') . ' (ID ' . htmlspecialchars($checked_markers) . ')</div>';
-		echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers\'>' . __('show all markers','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker\'>' . __('add new maker','lmm') . '</a></p>';
+		echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers\'>' . __('list all markers','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker\'>' . __('add new maker','lmm') . '</a></p>';
 	} else if ( ($assignselected == '1') && isset($_POST['checkedmarkers']) ) {
 		if (! wp_verify_nonce($massactionnonce, 'massaction-nonce') ) die('<br/>'.__('Security check failed - please call this function from the according Leaflet Maps Marker admin page!','lmm').'');
 		$checked_markers_prepared = implode(",", $_POST['checkedmarkers']);
 		$checked_markers = preg_replace('/[a-z|A-Z| |\=]/', '', $checked_markers_prepared);
 		$wpdb->query( "UPDATE $table_name_markers SET layer = " . intval($_POST['layer']) . " where id IN (" . $checked_markers . ")");
 		echo '<p><div class="updated" style="padding:10px;">' . __('The selected markers have been assigned to the selected layer','lmm') . ' (' . __('Marker','lmm') . ' ID ' . htmlspecialchars($checked_markers) . ', ' . __('Layer','lmm') . ' ID ' . htmlspecialchars($_POST['layer']) . ')</div>';
-		echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers\'>' . __('show all markers','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker\'>' . __('add new maker','lmm') . '</a></p>';
+		echo '<p><a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_markers\'>' . __('list all markers','lmm') . '</a>&nbsp;&nbsp;&nbsp;<a class=\'button-secondary\' href=\'' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker\'>' . __('add new maker','lmm') . '</a></p>';
 	} else {
 	?>
 	<h3 style="font-size:23px;">
@@ -113,7 +113,7 @@ if ($mcount > intval($lmm_options[ 'markers_per_page' ])) {
 			<input type="text" id="searchtext" name="searchtext" value="<?php echo (isset($_POST['searchtext']) != NULL) ? htmlspecialchars(stripslashes($_POST['searchtext'])) : "" ?>"/>
 			<input type="submit" class="button" name="searchsubmit" value="<?php _e('Search markers', 'lmm') ?>"/>
 		</form>
-		<?php echo $showall = (isset($_POST['searchtext']) != NULL) ? "<a style=\"text-decoration:none;\" href=\"" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_markers\">" . __('show all markers','lmm') . "</a>" : ""; ?>
+		<?php echo $showall = (isset($_POST['searchtext']) != NULL) ? "<a style=\"text-decoration:none;\" href=\"" . LEAFLET_WP_ADMIN_URL . "admin.php?page=leafletmapsmarker_markers\">" . __('list all markers','lmm') . "</a>" : ""; ?>
 	</div>
 
 	<div style="display:inline;">
@@ -239,7 +239,7 @@ if ($mcount > intval($lmm_options[ 'markers_per_page' ])) {
     foreach ($marklist as $row)
 	{
 		if (current_user_can( $lmm_options[ 'capabilities_delete' ])) {
-			$delete_link_marker = '<div style="float:right;"><a onclick="if ( confirm( \'' . __('Do you really want to delete this marker?', 'lmm') . ' (' . $row['markername'] . ' - ID ' . $row['id'] . ')\' ) ) { return true;}return false;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&action=delete&id=' . $row['id'] . '&_wpnonce=' . $markernonce . '" class="submitdelete">' . __('delete marker','lmm') . '</a></div>';
+			$delete_link_marker = '<div style="float:right;"><a onclick="if ( confirm( \'' . __('Do you really want to delete this marker?', 'lmm') . ' (' . $row['markername'] . ' - ID ' . $row['id'] . ')\' ) ) { return true;}return false;" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&action=delete&id=' . $row['id'] . '&_wpnonce=' . $markernonce . '" class="submitdelete">' . __('delete','lmm') . '</a></div>';
 		} else {
 			$delete_link_marker = '';
 		}
@@ -292,7 +292,7 @@ if ($mcount > intval($lmm_options[ 'markers_per_page' ])) {
          } else {
          echo '<img src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png" title="' . esc_attr__('standard icon','lmm') . '" />';};
       echo '</td>
-		  <td><strong><a title="' . esc_attr__('edit marker','lmm') . ' (' . $row['id'].')" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['id'] . '" class="row-title">' . stripslashes(htmlspecialchars($row['markername'])) . '</a></strong><br/><div class="row-actions"><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['id'] . '">' . __('edit marker','lmm') . '</a>' . $delete_link_marker . '</div></td>
+		  <td><strong><a title="' . esc_attr__('edit marker','lmm') . ' (' . $row['id'].')" href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['id'] . '" class="row-title">' . stripslashes(htmlspecialchars($row['markername'])) . '</a></strong><br/><div class="row-actions"><a href="' . LEAFLET_WP_ADMIN_URL . 'admin.php?page=leafletmapsmarker_marker&id=' . $row['id'] . '">' . __('edit','lmm') . '</a><span style="margin-left:20px;color:#ccc;" title="' . esc_attr__('Feature available in pro version only','lmm') . '">' . __('duplicate','lmm') . '</span>' . $delete_link_marker . '</div></td>
 		  ' . $column_address . '
 		  ' . $column_popuptext . '
 		  ' . $column_layer . '
@@ -324,8 +324,16 @@ if ($mcount > intval($lmm_options[ 'markers_per_page' ])) {
 		<tr><td>
 		<p><b><?php _e('Bulk actions for selected markers','lmm') ?></b></p>
 		<?php wp_nonce_field('massaction-nonce'); ?>
+		<p>
+		<table>
+		<tr><td style="margin:0;padding:0;border:none;">
+		<input type="checkbox" id="duplicateselected" name="duplicateselected" disabled="disabled" /> <label for="duplicateselected"><?php _e('duplicate','lmm') ?></label></td>
+		<td style="margin:0;padding:1px 0 0 5px;border:none;"><a href="<?php echo LEAFLET_WP_ADMIN_URL ?>admin.php?page=leafletmapsmarker_pro_upgrade" title="<?php esc_attr_e('This feature is available in the pro version only! Click here to find out how you can start a free 30-day-trial easily','lmm') ; ?>"><img src="<?php  echo LEAFLET_PLUGIN_URL ?>inc/img/help-pro-feature.png" width="70" height="15" /></a>
+		</td></tr>
+		</table>
+		</p>
 		<?php if (current_user_can( $lmm_options[ 'capabilities_delete' ])) { ?>
-		<input type="checkbox" id="deleteselected" name="deleteselected" /> <label for="deleteselected"><?php _e('delete','lmm') ?></label><br/>
+		<p><input type="checkbox" id="deleteselected" name="deleteselected" /> <label for="deleteselected"><?php _e('delete','lmm') ?></label></p>
 		<?php } ?>
 		<?php $layerlist = $wpdb->get_results('SELECT * FROM '.$table_name_layers.' WHERE id>0 AND multi_layer_map = 0', ARRAY_A); ?>
 		<input type="checkbox" id="assignselected" name="assignselected" /> <label for="assignselected"><?php _e('assign to the following layer:','lmm') ?></label>

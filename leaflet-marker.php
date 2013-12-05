@@ -672,6 +672,14 @@ if ( $edit_status == 'updated') {
 	<input style="font-weight:bold;<?php echo $margin_top = ($isedit === false) ? 'margin-top:17px;' : '' ?>" type="submit" name="marker" class="submit button-primary" value="<?php ($isedit === true) ? _e('update','lmm') : _e('publish','lmm') ?>" />
 	</form>
 	</td>
+	<td>
+		<?php  
+				echo '<form method="post">';
+				echo '<div class="submit" style="margin:0 0 0 40px;">';
+				echo '<input title="' . esc_attr__('Feature available in pro version only','lmm') . '" class="submit button-secondary lmm-nav-secondary" type="submit" name="marker" value="' . __('duplicate', 'lmm') . '" disabled="disabled" />';
+				echo '</div></form>';
+		?>
+	</td>	
 	<?php if ( ($isedit) && (current_user_can( $lmm_options[ 'capabilities_delete' ]) )) { ?>
 	<td>
 		<form method="post">
