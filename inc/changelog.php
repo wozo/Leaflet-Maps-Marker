@@ -122,7 +122,7 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
-		broken terms of service and feedback links on Google Maps
+		broken terms of service and feedback links on Google marker maps
 		</td></tr>
 		<tr><td colspan="2">
 		<p><strong>' . __('Translation updates','lmm') . '</a></p></strong>
