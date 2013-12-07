@@ -11,7 +11,7 @@
 .fixed .column-icon { width: 5%; }
 .fixed .column-popuptext { width: 210px; }
 .fixed .column-openpopup { width: 60px; }
-.fixed .column-code { width: 150px; }
+.fixed .column-code { width: 170px; }
 .fixed .column-geojson { width: 80px;text-align:center; }
 .fixed .column-georss { width: 68px;text-align:center; }
 .fixed .column-kml { width: 50px;text-align:center; }
@@ -600,4 +600,8 @@ a.pro-upgrade-external-links:hover {
 	background: transparent url('../img/icon-scroll-to-top.png') no-repeat left top;
 	padding-left:17px;
 	text-decoration:none;
+}
+/*3.8+ borders*/
+.lmm-border {
+	border-bottom:1px solid #DFDFDF;
 }
