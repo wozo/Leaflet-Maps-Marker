@@ -415,7 +415,6 @@ class Leafletmapsmarker
 		add_action('admin_print_scripts-'.$page3, array(&$this, 'lmm_admin_enqueue_scripts'),7);
 		add_action('admin_print_scripts-'.$page5, array(&$this, 'lmm_admin_enqueue_scripts'),8);
 		add_action('admin_print_scripts-'.$page7, array(&$this, 'lmm_admin_jquery_ui'),9);
-		add_action('admin_print_scripts-'.$page10, array(&$this, 'lmm_admin_jquery_ui_accordion'),9);
 		//info: add css styles for admin area
 		add_action('admin_print_styles-'.$page, array(&$this, 'lmm_admin_enqueue_stylesheets'),17);
 		add_action('admin_print_styles-'.$page2, array(&$this, 'lmm_admin_enqueue_stylesheets'),18);
@@ -427,7 +426,6 @@ class Leafletmapsmarker
 		add_action('admin_print_styles-'.$page7, array(&$this, 'lmm_admin_enqueue_stylesheets'),23);
 		add_action('admin_print_styles-'.$page8, array(&$this, 'lmm_admin_enqueue_stylesheets'),23);
 		add_action('admin_print_styles-'.$page10, array(&$this, 'lmm_admin_enqueue_stylesheets'),23);
-		add_action('admin_print_styles-'.$page10, array(&$this, 'lmm_admin_enqueue_stylesheets_jqueryui'),23);
 		//info: add css styles for datepicker
 		add_action('admin_print_styles-'.$page3, array(&$this, 'lmm_admin_enqueue_stylesheets_datepicker'),24);
 		//info: add css for adminbar entry for MP6
@@ -575,20 +573,6 @@ class Leafletmapsmarker
 				'settings_search_placeholder' => __( 'start full-text search', 'lmm'),
 				'settings_search_no_results' => __( 'No matches found', 'lmm')
 		) );
-	}
-	function lmm_admin_jquery_ui_accordion() {
-		global $wp_version;
-		$plugin_version = get_option('leafletmapsmarker_version');
-		if ( version_compare( $wp_version, '3.3', '<' ) )
-		{
-			wp_enqueue_script( 'leafletmapsmarker-jquery-ui-core', LEAFLET_PLUGIN_URL . 'inc/js/jquery.ui.core.min.js', array('jquery'), $plugin_version);
-			wp_enqueue_script( 'leafletmapsmarker-jquery-ui-widget', LEAFLET_PLUGIN_URL . 'inc/js/jquery.ui.widget.min.js', array('leafletmapsmarker-jquery-ui-core'), $plugin_version);
-			wp_enqueue_script( 'leafletmapsmarker-jquery-accordion', LEAFLET_PLUGIN_URL . 'inc/js/jquery.ui.accordion.min.js', array('leafletmapsmarker-jquery-ui-widget'), $plugin_version);
-		}
-		else if ( version_compare( $wp_version, '3.3', '>=' ) )
-		{
-			wp_enqueue_script( array ( 'jquery-ui-accordion' ) );
-		}
 	}
 	function lmm_frontend_enqueue_scripts() {
 		global $wp_version;
@@ -766,11 +750,6 @@ class Leafletmapsmarker
 		if (is_plugin_active('flickr-gallery/flickr-gallery.php') ) {
 			wp_dequeue_style('fg-jquery-ui');
 		}
-	}
-	function lmm_admin_enqueue_stylesheets_jqueryui() {
-		$plugin_version = get_option('leafletmapsmarker_version');
-		wp_register_style( 'leafletmapsmarker-admin-upgrade', LEAFLET_PLUGIN_URL . 'inc/css/jquery_ui.css', array(), $plugin_version);
-		wp_enqueue_style('leafletmapsmarker-admin-upgrade' );
 	}
 	function lmm_admin_enqueue_stylesheets_datepicker() {
 		$plugin_version = get_option('leafletmapsmarker_version');

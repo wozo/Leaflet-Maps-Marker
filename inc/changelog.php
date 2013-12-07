@@ -110,6 +110,11 @@ if (get_option('leafletmapsmarker_update_info') == 'show') {
 		hardened SQL statements needed for fullscreen maps by additionally using prepared-statements
 		</td></tr>
 		<tr><td>
+		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-changed.png">
+		</td><td>
+		optimized pro upgrade page (no more jquery accordion needed)
+		</td></tr>
+		<tr><td>
 		<img src="' . LEAFLET_PLUGIN_URL .'inc/img/icon-changelog-fixed.png">
 		</td><td>
 		broken terms of service and feedback links on Google Maps

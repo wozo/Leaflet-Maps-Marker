@@ -579,3 +579,26 @@ a.pro-upgrade-external-links:hover {
 .lmmsettings .form-table th {
 	padding:20px 10px;
 }
+/*pro upgrade */
+.pro-feature-header {
+	display:block;
+	font-size:130%;
+	font-weight: bold;
+	background:#F99755;
+	color:black;
+	border:1px solid #666;
+	padding: 10px 0 8px 10px;
+	clear:both;
+}
+.pro-feature-content {
+	background: #f2f2f2;
+	padding: 10px 10px 0 10px;
+	border-right:1px solid #666;	
+	border-left:1px solid #666;
+	border-bottom:1px solid #666;	
+}
+.upgrade-top-link {
+	background: transparent url('../img/icon-scroll-to-top.png') no-repeat left top;
+	padding-left:17px;
+	text-decoration:none;
+}
