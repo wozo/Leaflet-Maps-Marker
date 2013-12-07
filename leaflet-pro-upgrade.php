@@ -183,7 +183,7 @@ if ( $action == NULL ) {
 				<br/><br/>
 				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-qrcode" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
 				</p>
-				<p style="margin-bottom:90px;"></p>
+				<p style="margin-bottom:95px;"></p>
 				</div>
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
@@ -277,7 +277,7 @@ if ( $action == NULL ) {
 
 				<span class="pro-feature-header">' . __('additional optimizations and improvements','lmm') . '</span>
 				<div class="pro-feature-content">
-				<ul style="list-style-type:disc;margin-left:15px;">
+				<ul style="list-style-type:disc;margin-left:15px;margin-top:0;">
 					<li><a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/v1.2.1p" target="_blank">' . __('improved performance for layer maps with a huge number of markers (parsing of GeoJSON is up to 3 times faster)','lmm') . '</a></li>
 					<li><a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/v1.3p" target="_blank">' . __('support for shortcodes in popup texts','lmm') . '</a></li>
 					<li><a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/v1.5p" target="_blank">' . __('support for setting global maximum zoom level to 21 (tiles from basemaps with lower native zoom levels will be upscaled automatically)','lmm') . '</a></li>
