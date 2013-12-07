@@ -38,11 +38,18 @@ if ( $action == NULL ) {
 		echo '<p>' . sprintf(__('If you want to compare the free and pro version side by side, please visit %1s.','lmm'), '<a href="http://www.mapsmarker.com/comparison" target="_blank" style="text-decoration:none;">mapsmarker.com/comparison</a>') . '</p>';
 
 		echo '<hr noshade size="1" style="margin-top:15px;"/><h2 style="margin-top:10px;">' . __('Highlights of Leaflet Maps Marker Pro','lmm') . '</h2>';
+		//info: different backgrounds for WP3.8+
+		global $wp_version;
+		if ( version_compare( $wp_version, '3.8-alpha', '>' ) ) { //info: for mp6 theme compatibility
+			$bgcolor = '#FFFFFF';
+		} else {
+			$bgcolor = '#F2F2F2';
+		}
 		echo '<p style="clear:both;">
 			<div id="pro-features">
 				<span class="pro-feature-header">' . __('integration of the latest leaflet.js version','lmm') . '</span>
-				<div class="pro-feature-content">
-				<p style="margin:0 0 10px 0;">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
+				<p style="margin:0;">
 				<div style="float:right;margin:0 10px 10px 0;"><a href="http://www.leafletjs.com" target="_blank"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-feature-leaflet.png"></a></div>' . __('Leaflet Maps Marker Pro supports the latest leaflet.js version, which is the core library used for displaying maps.','lmm') . ' ' . __('Major highlights:','lmm') . '
 				<ul style="list-style-type:disc;margin-left:15px;">
 					<li>' . __('significantly improved controls design on mobile devices','lmm') . '</li>
@@ -61,18 +68,18 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('mobile optimized maps through use of native javascript instead of jQuery','lmm') . '</span>
-				<div class="pro-feature-content">
-				<p style="margin:0 0 10px 0;">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
+				<p style="margin:0;">
 				<div style="float:left;margin:0 10px 10px 0;"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-no-jquery.png"></div>' . __('Maps will be loaded much faster with Leaflet Maps Marker Pro – especially on mobile devices - as no jQuery is needed anymore for displaying maps on frontend. This reduces the download size of each map by about 90kb and also minimizes the browser resources needed for displaying maps.','lmm') . '
 				</p>
-				<p style="margin-bottom:20px;">
+				<p style="margin-bottom:25px;">
 				<a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/pro-feature-nojquery" target="_blank">' . __('Click here to get more information about this pro feature on mapsmarker.com','lmm') . '</a>
 				</p>
 				</div>
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('option to remove MapsMarker.com backlinks','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro allows you to hide MapsMarker.com-backlinks from maps, KML files and from the Wikitude app:','lmm') . '
 				</p>
@@ -86,7 +93,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('Marker clustering','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro allows you to create beautifully animated marker clusters for layer maps:','lmm') . '
 				</p>
@@ -98,7 +105,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('support for CSV/XLS/XLSX/ODS import and export for bulk additions and bulk updates of markers','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro allows you to easily perform bulk updates on markers by using the integrated import feature:','lmm') . '
 				</p>
@@ -110,7 +117,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('GPX tracks','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro allows you to also display GPX tracks with optional metadata on your maps:','lmm') . '
 				</p>
@@ -122,7 +129,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('HTML5 fullscreen maps','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0;">
 				<div style="float:left;margin:0 10px 10px 0;"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/pro-preview-html5-fullscreen.png"></div>' . __('Leaflet Maps Marker Pro allows you to add a fullscreen button to maps. Clicking on this button will open an HTML5 fullscreen map without leaving the page you are currently viewing.','lmm') . '
 				</p>
@@ -133,7 +140,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('Minimaps','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro allows you to add a small map in the corner which shows the same as the main map with a set zoom offset:','lmm') . '
 				</p>
@@ -145,7 +152,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('mobile web app support for fullscreen maps and optimized mobile viewport','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro enables you to save the link to the fullscreen map to the homescreen on iOS devices and reopen the map with an optional launch image as web app – meaning the display of the map in fullscreen mode with no address bar:','lmm') . '
 				</p>
@@ -161,7 +168,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('custom Google Maps styling','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro allow you to easily customize the presentation of the standard Google base maps, changing the visual display of such elements as roads, parks, and built-up areas:','lmm') . '
 				</p>
@@ -173,7 +180,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('QR codes with custom backgrounds','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0;">
 				<div style="float:left;margin:0 10px 10px 0;"><img src="' . LEAFLET_PLUGIN_URL . 'inc/img/help-visualead.png"></div>' . __('Leaflet Maps Marker Pro allows you to use custom backgrounds for QR codes.','lmm') . ' (' . __('custom visualead API key required!','lmm') . ')
 				<br/><br/>
@@ -188,7 +195,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('Google Adsense for maps integration','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro supports Google Adsense for maps. This allows you to add different types of ads to your Google maps:','lmm') . '
 				</p>
@@ -200,7 +207,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('upload icon button & custom icon directory','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Uploading new icons gets easier with Leaflet Maps Marker Pro - no more need to use a FTP client, just click on the new upload button and add new icons from WordPress admin area easily:','lmm') . '
 				</p>
@@ -212,7 +219,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('backup and restore of settings','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro allows you to backup and restore your settings which makes it possible to quickly switch between different plugin profiles. This is especially useful if you want to deploy the plugin with custom configuration on multiple sites:','lmm') . '
 				</p>
@@ -224,7 +231,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('advanced recent marker widget','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro allows you to customize which markers and layers to include or exclude in the recent marker widget:','lmm') . '
 				</p>
@@ -240,7 +247,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('MapsMarker API','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Manage your markers and layers through a highly customizable REST API, which supports GET & POST requests, JSON & XML as formats and was developed with a focus on security.','lmm') . '
 				</p>
@@ -252,7 +259,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('whitelabel backend admin pages','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro allows you to remove all backlinks and logos on backend as well as making the pages and menu entries for Tools, Settings, Support, License visible to admins only.','lmm') . '
 				</p>
@@ -264,7 +271,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('advanced permission settings','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('Leaflet Maps Marker Pro allows you to set the user level needed for editing and deleting marker and layer maps from other users.','lmm') . '
 				</p>
@@ -276,7 +283,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('additional optimizations and improvements','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<ul style="list-style-type:disc;margin-left:15px;margin-top:0;">
 					<li><a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/v1.2.1p" target="_blank">' . __('improved performance for layer maps with a huge number of markers (parsing of GeoJSON is up to 3 times faster)','lmm') . '</a></li>
 					<li><a class="pro-upgrade-external-links" href="http://www.mapsmarker.com/v1.3p" target="_blank">' . __('support for shortcodes in popup texts','lmm') . '</a></li>
@@ -287,7 +294,7 @@ if ( $action == NULL ) {
 				<p><a href="#top" class="upgrade-top-link">' . __('back to top to start free 30-day-trial','lmm') . '</a></p>
 
 				<span class="pro-feature-header">' . __('features planned for future releases','lmm') . '</span>
-				<div class="pro-feature-content">
+				<div class="pro-feature-content" style="background:' . $bgcolor . ';">
 				<p style="margin:0 0 10px 0;">
 				' . __('We are working hard on delivering the best mapping solution available for WordPress - helping you to share your favorite spots. Therefore we are commited to constantly improving Leaflet Maps Marker Pro. Below you find some highlights from our development roadmap - if an important one is missing for you, let us know and we will check if we can include it in a future release:','lmm') . '
 				</p>
