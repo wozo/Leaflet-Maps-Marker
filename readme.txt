@@ -156,7 +156,7 @@ to the visitors of your website.
 * German (de_DE)
 * Hindi (hi_IN) thanks to by Outshine Solutions and Guntupalli Karunakar
 * Hungarian (hu_HU) thanks to István Pintér and Csaba Orban
-* Indonesian (id_ID) thanks to Andy Aditya Sastrawikarta and Emir Hartato
+* Indonesian (id_ID) thanks to Andy Aditya Sastrawikarta, Emir Hartato and Phibu Reza
 * Italian (it_IT) thanks to Luca Barbetti
 * Japanese (ja) thanks to Shu Higashi
 * Korean (ko_KR) thanks to Andy Park
