@@ -343,6 +343,12 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'showmap.php') { die ("Please do no
 	}
 	$lmm_out .= '<div id="lmm_listmarkers_'.$uid.'" class="lmm-listmarkers" style="width:' . $layer_marker_list_width . ';">'.PHP_EOL;
 	$lmm_out .= '<table style="width:' . $layer_marker_list_width . ';" id="lmm_listmarkers_table_'.$uid.'">';
+	$lmm_out .= '<caption id="lmm_panel_text_caption_'.$uid.'" class="lmm-panel-text-caption" style="' . addslashes($lmm_options[ 'defaults_layer_panel_paneltext_css' ]) . '">' . stripslashes($paneltext) . '</caption>';
+	$lmm_out .= '<thead class="lmm_listmarkers_header"><tr>';
+	if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_icon' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_icon' ] == 1 ) ) {
+		$lmm_out .=	'<th>' . esc_attr__('Icon','lmm') . '</th>';
+	}
+	$lmm_out .= '<th>' . esc_attr__('Description','lmm') . '</th></tr></thead>';
 	foreach ($layer_marker_list as $row){
 		if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_icon' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_icon' ] == 1 ) ) {
 			$lmm_out .= '<tr><td style="width:35px;vertical-align:top;text-align:center;' . $lmm_options[ 'defaults_layer_listmarkers_extracss' ] . '">';
@@ -351,10 +357,11 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'showmap.php') { die ("Please do no
 			} else {
 				$lmm_out .= '<img style="border-radius:0;box-shadow:none;" alt="marker icon" src="' . LEAFLET_PLUGIN_URL . 'leaflet-dist/images/marker.png" title="' . stripslashes($row['markername']) . '" />';
 			};
+			$lmm_out .= '</td>';
 		} else {
-			$lmm_out .= '<tr><td style="' . $lmm_options[ 'defaults_layer_listmarkers_extracss' ] . '">';
+			$lmm_out .= '<tr>';
 		};
-		$lmm_out .= '</td><td style="' . $lmm_options[ 'defaults_layer_listmarkers_extracss' ] . '"><div class="lmm-listmarkers-panel-icons">';
+		$lmm_out .= '<td style="' . $lmm_options[ 'defaults_layer_listmarkers_extracss' ] . '"><div class="lmm-listmarkers-panel-icons">';
 		if ( (isset($lmm_options[ 'defaults_layer_listmarkers_api_directions' ] ) == TRUE ) && ( $lmm_options[ 'defaults_layer_listmarkers_api_directions' ] == 1 ) ) {
 			if ($lmm_options['directions_provider'] == 'googlemaps') {
 				if ( isset($lmm_options['google_maps_base_domain_custom']) && ($lmm_options['google_maps_base_domain_custom'] == NULL) ) { $gmaps_base_domain_directions = $lmm_options['google_maps_base_domain']; } else { $gmaps_base_domain_directions = urlencode($lmm_options['google_maps_base_domain_custom']); }
@@ -448,7 +455,11 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'showmap.php') { die ("Please do no
 	} else if ($lmm_options['defaults_layer_listmarkers_order_by'] == 'm.layer') {
 		$orderby = __('layer ID','lmm');
 	}
-	$lmm_out .= '<tr><td colspan="2" style="text-align:center">' . sprintf(__('The table above is listing %1s out of %2s markers (sorted by %3s %4s)','lmm'), $lmm_options[ 'defaults_layer_listmarkers_limit' ], $markercount, $orderby, $asc_desc) . '</td></tr>';
+	$llm_tempColSpan = '';
+	if ( (isset($lmm_options[ 'defaults_layer_listmarkers_show_icon' ]) == TRUE ) && ($lmm_options[ 'defaults_layer_listmarkers_show_icon' ] == 1 ) ) {
+		$llm_tempColSpan = 'colspan="2"';
+	}
+	$lmm_out .= '<tr><td ' . $llm_tempColSpan . ' style="text-align:center">' . sprintf(__('The table above is listing %1s out of %2s markers (sorted by %3s %4s)','lmm'), $lmm_options[ 'defaults_layer_listmarkers_limit' ], $markercount, $orderby, $asc_desc) . '</td></tr>';
 	}
 	$lmm_out .= '</table></div>';
 	} //info: end display a list of markers under the map
